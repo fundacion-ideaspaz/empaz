@@ -29,6 +29,7 @@
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-primary" value="Guardar">
+          <a href="/users" class="btn btn-default">Cancelar</a>
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">

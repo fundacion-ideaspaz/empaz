@@ -23,6 +23,11 @@
         </tbody>
       </table>
     </div>
+    <div class="card-footer">
+      <div class="pull-righ">
+        <a href="/users/new" class="btn btn-primary">Create user</a>
+      </div>
+    </div>
   </div>
 </div>
 @endsection
