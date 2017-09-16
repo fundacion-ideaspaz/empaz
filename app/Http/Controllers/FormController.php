@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FormController extends Controller
+{
+    public function create(){
+        return view('form.create');
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'nombre' => 'required|max:255',
+            'version' => 'required|max:255',
+            'estado' => 'required|max:255',
+        ]);
+        $inputs = $request->only('nombre', 'version', 'estado');
+        return $inputs['nombre'];
+    }
+}
