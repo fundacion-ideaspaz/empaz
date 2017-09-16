@@ -1,3 +1,7 @@
 body{
   background-color: #f7fbfc;
 }
+
+.app-container{
+  padding-top: 20px;
+}
