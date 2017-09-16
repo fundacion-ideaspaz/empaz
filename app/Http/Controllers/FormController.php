@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
+  public function index(){
+      $forms = Form::all();
+      return view('form.index')->with(['forms' => $forms]);
+  }
+
     public function create(){
         return view('form.create');
     }
@@ -17,6 +22,7 @@ class FormController extends Controller
             'estado' => 'required|max:255',
         ]);
         $inputs = $request->only('nombre', 'version', 'estado');
-        return $inputs['nombre'];
+        $form = Form::create($inputs);
+        return redirect("/form");
     }
 }

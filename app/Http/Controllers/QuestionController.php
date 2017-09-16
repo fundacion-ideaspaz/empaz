@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class QuestionController extends Controller
 {
+
+  public function index(){
+      $questions = Question::all();
+      return view('question.index')->with(['questions' => $questions]);
+  }
+
     public function create(){
-        return view('users.create');
+        return view('question.create');
     }
 
     public function store(Request $request){
@@ -18,6 +24,7 @@ class UserController extends Controller
             'textorespuesta' => 'required|max:255',
         ]);
         $inputs = $request->only('texto', 'descripcion', 'tipoderespuesta', 'textorespuesta');
-        return $inputs['nombre'];
+        $question = Question::create($inputs);
+        return redirect("/question");
     }
 }

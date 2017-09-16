@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
+
+    public function index(){
+        $companies = Company::all();
+        return view('company.index')->with(['companies' => $companies]);
+    }
+
     public function create(){
         return view('company.create');
     }
@@ -28,6 +34,7 @@ class CompanyController extends Controller
             'operacion' => 'required|max:255',
         ]);
         $inputs = $request->only('nombre', 'direccion', 'departamento', 'municipio', 'telefono', 'sitioweb', 'cargo', 'nit', 'sector', 'tamano', 'nit', 'numerotrabajadores', 'ciudadprincipal', 'operacion');
-        return $inputs['nombre'];
+        $company = Company::create($inputs);
+        return redirect("/company");
     }
 }
