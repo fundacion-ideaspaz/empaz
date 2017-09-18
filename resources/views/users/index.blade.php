@@ -17,7 +17,7 @@
           <tr>
             <td>{{$user->nombre}}</td>
             <td>{{$user->role}}</td>
-            <td>{{$user->correo}}</td>
+            <td>{{$user->email}}</td>
           </tr>
           @endforeach
         </tbody>
