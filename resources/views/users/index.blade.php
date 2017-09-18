@@ -7,7 +7,7 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Cargo</th>
+            <th>role</th>
             <th>Email</th>
           </tr>
         </thead>
@@ -16,7 +16,7 @@
           <p></p>
           <tr>
             <td>{{$user->nombre}}</td>
-            <td>{{$user->cargo}}</td>
+            <td>{{$user->role}}</td>
             <td>{{$user->correo}}</td>
           </tr>
           @endforeach
@@ -25,7 +25,15 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <a href="/users/new" class="btn btn-primary">Create user</a>
+          <div class="btn-group" role="group">
+              <button id="createButtonsGroup" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </button>
+              <div class="dropdown-menu" aria-labelledby="createButtonsGroup">
+                <a href="/users/new" class="dropdown-item">Create user</a>
+                <a href="#" class="dropdown-item">Dropdown link</a>
+              </div>
+            </div>
       </div>
     </div>
   </div>

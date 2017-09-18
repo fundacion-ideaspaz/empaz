@@ -8,24 +8,33 @@ use App\User;
 class UserController extends Controller
 {
 
-    public function index(){
+    protected $roles = ['consulta','superadmin','experto','empresa'];
+
+    public function index()
+    {
         $users = User::all();
         return view('users.index')->with(['users' => $users]);
     }
 
-    public function create(){
-        return view('users.create');
+    public function create($role)
+    {
+        if (in_array($role, $this->roles)) {
+            return view('users.create-'.$role)->with(["role" => $role]);
+        }
+        return view('errors.404');
     }
 
-    public function store(Request $request){
-        $this->validate($request, [
-            'nombre' => 'required|max:255',
-            'correo' => 'required|email',//|unique:users',
-            'cargo' => 'required|max:255',
-            'password' => 'required|min:5',
-        ]);
-        $inputs = $request->only('nombre', 'correo', 'password', 'cargo');
-        $user = User::create($inputs);
-        return redirect("/users");
+    public function store($role, Request $request)
+    {
+        if (in_array($role, $this->roles)) {
+            $validate = User::getValidateInputs($role);
+            $this->validate($request, $validate);
+            $inputs = $request->only('nombre', 'correo', 'password', 'cargo');
+            $inputs["role"] = $role;
+            $user = User::create($inputs);
+            return redirect("/users");
+        } else {
+            return redirect()->back();
+        }
     }
 }
