@@ -1,23 +1,25 @@
-@extends('layouts.master') @section('title', 'Panel de Usuarios') @section('content')
+@extends('layouts.master') @section('title', 'Panel de Preguntas') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
-      <h2>Lista de Usuarios</h2>
+      <h2>Lista de Preguntas</h2>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Cargo</th>
-            <th>Email</th>
+            <th>Texto Pregunta</th>
+            <th>Descripción Pregunta</th>
+            <th>Tipo de Respuesta</th>
+            <th>Texto de Respuesta</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($users as $user)
+          @foreach($questions as $question)
           <p></p>
           <tr>
-            <td>{{$user->nombre}}</td>
-            <td>{{$user->cargo}}</td>
-            <td>{{$user->correo}}</td>
+            <td>{{$question->texto}}</td>
+            <td>{{$question->descripcion}}</td>
+            <td>{{$question->tiporespuesta}}</td>
+            <td>{{$question->textorespuesta}}</td>
           </tr>
           @endforeach
         </tbody>
@@ -25,7 +27,7 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <a href="/users/new" class="btn btn-primary">Create user</a>
+        <a href="/questions/new" class="btn btn-primary">Create a Question</a>
       </div>
     </div>
   </div>
