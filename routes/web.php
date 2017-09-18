@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/users', 'UserController@index');
-Route::get('/users/new', 'UserController@create');
+Route::get('/users/new/{role}', 'UserController@create');
 Route::post('/users', 'UserController@store');

@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 
@@ -17,6 +18,8 @@ class User extends Authenticatable
         'nombre',
         'correo',
         'cargo',
+        'role',
+        'telefono',
         'password',
     ];
 
@@ -28,4 +31,27 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function getValidateInputs($role)
+    {
+        $validate = [
+            "nombre" => "required",
+            "correo" => "required|unique:users|email",
+            "password" => "required|min:5",
+        ];
+        switch ($role) {
+            case "superadmin":
+                break;
+            case "consulta":
+                break;
+            case "empresa":
+                $validate["cargo"] = "required";
+                $validate["telefono"] = "required|numeric";
+                break;
+            case "experto":
+                $validate["cargo"] = "required";
+                break;
+        }
+        return $validate;
+    }
 }

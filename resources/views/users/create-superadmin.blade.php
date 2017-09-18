@@ -3,9 +3,8 @@
   <div class="card col-12">
     <div class="card-body">
       <h2>Crear Usuario</h2>
-      <form action="/users" method="post" class="form">
+      <form action="/users/{{$role}}" method="post" class="form">
         {{ csrf_field() }}
-        <input type="hidden" name="role" id="role" value="{{$role}}">
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -18,18 +17,6 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
-        @if($role === 'empresa' || $role === 'experto')
-        <div class="form-group">
-          <label for="cargo">Cargo</label>
-          <input type="text" name="cargo" id="cargo" class="form-control" required>
-        </div>
-        @endif
-        @if($role === 'empresa')
-        <div class="form-group">
-          <label for="telefono">Telefono</label>
-          <input type="tel" name="telefono" id="telefono" class="form-control" required>
-        </div>
-        @endif
         <div class="form-group">
           <input type="submit" class="btn btn-primary" value="Guardar">
           <a href="/users" class="btn btn-default">Cancelar</a>
