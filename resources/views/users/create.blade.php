@@ -11,8 +11,8 @@
           <input type="text" id="nombre" name="nombre" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" name="correo" class="form-control" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>

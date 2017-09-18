@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'nombre',
-        'correo',
+        'email',
         'cargo',
         'role',
         'telefono',
@@ -36,7 +36,7 @@ class User extends Authenticatable
     {
         $validate = [
             "nombre" => "required",
-            "correo" => "required|unique:users|email",
+            "email" => "required|unique:users|email",
             "password" => "required|min:5",
         ];
         switch ($role) {
