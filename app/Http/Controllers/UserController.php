@@ -19,17 +19,18 @@ class UserController extends Controller
     public function create($role)
     {
         if (in_array($role, $this->roles)) {
-            return view('users.create-'.$role)->with(["role" => $role]);
+            return view('users.create')->with(["role" => $role]);
         }
         return view('errors.404');
     }
 
-    public function store($role, Request $request)
+    public function store(Request $request)
     {
+        $role = $request->role;
         if (in_array($role, $this->roles)) {
             $validate = User::getValidateInputs($role);
             $this->validate($request, $validate);
-            $inputs = $request->only('nombre', 'correo', 'password', 'cargo');
+            $inputs = $request->all();
             $inputs["role"] = $role;
             $user = User::create($inputs);
             return redirect("/users");

@@ -5,19 +5,10 @@
       <h2>Crear Usuario</h2>
       <form action="/users" method="post" class="form">
         {{ csrf_field() }}
+        <input type="hidden" name="role" id="role" value="{{$role}}">
         <div class="form-group">
           <label for="nombre">Nombre</label>
           <input type="text" id="nombre" name="nombre" class="form-control" required>
-        </div>
-        <div class="form-group">
-          <label for="cargo">Cargo</label>
-          <select name="cargo" id="cargo" class="form-control" required>
-            <option selected disabled>Escoja un cargo</option>
-            <option value="experto">Experto tematico</option>
-            <option value="empresa">Empresa</option>
-            <option value="consulta">Consulta</option>
-            <option value="superadmin">Superadmin</option>
-          </select>
         </div>
         <div class="form-group">
           <label for="correo">Correo</label>
@@ -27,6 +18,18 @@
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
+        @if($role === 'empresa' || $role === 'experto')
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <input type="text" name="cargo" id="cargo" class="form-control" required>
+        </div>
+        @endif
+        @if($role === 'empresa')
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="tel" name="telefono" id="telefono" class="form-control" required>
+        </div>
+        @endif
         <div class="form-group">
           <input type="submit" class="btn btn-primary" value="Guardar">
           <a href="/users" class="btn btn-default">Cancelar</a>
