@@ -14,6 +14,12 @@ class UserController extends Controller
     }
 
     protected $roles = ['consulta','superadmin','experto','empresa'];
+    protected $rolesSelect = [
+        'consulta' => 'consulta',
+        'superadmin' => 'superadmin',
+        'experto' => 'experto',
+        'empresa' => 'empresa'
+    ];
 
     public function index(){
         $users = User::all();
@@ -33,7 +39,7 @@ class UserController extends Controller
 
     public function edit($id){
         $user = User::find($id);
-        return view("users.edit")->with(["user" => $user, "role" => $user->role]);
+        return view("users.edit")->with(["user" => $user, "role" => $user->role, "roles" => $this->rolesSelect]);
     }
 
     public function update($id, Request $request){

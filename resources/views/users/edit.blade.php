@@ -8,11 +8,11 @@
         <input value="{{$role}}" type="hidden" name="role" id="role">
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input value="{{$user->nombre}}" type="text" id="nombre" name="nombre" class="form-control" required>
+          <input value="{{$user->nombre}}" type="text" id="nombre" name="nombre" class="form-control">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input value="{{$user->email}}" type="email" id="email" name="email" class="form-control" required autocomplete="new-password">
+          <input value="{{$user->email}}" type="email" id="email" name="email" class="form-control" autocomplete="new-password">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -24,15 +24,28 @@
         @if($role === 'empresa' || $role === 'experto')
         <div class="form-group">
           <label for="cargo">Cargo</label>
-          <input value="{{$user->cargo}}" type="text" name="cargo" id="cargo" class="form-control" required>
+          <input value="{{$user->cargo}}" type="text" name="cargo" id="cargo" class="form-control">
         </div>
         @endif
         @if($role === 'empresa')
         <div class="form-group">
           <label for="telefono">Telefono</label>
-          <input value="{{$user->telefono}}" type="tel" name="telefono" id="telefono" class="form-control" required>
+          <input value="{{$user->telefono}}" type="tel" name="telefono" id="telefono" class="form-control">
         </div>
         @endif
+        <div class="form-group">
+          <label for="role">Rol de usuario</label>
+          <select name="role" id="role" class="form-control">
+            <option value="superadmin" {{ $role === 'superadmin' ? 'selected': ''}} >Superadmin</option>
+            <option value="empresa" {{ $role === 'empresa' ? 'selected': ''}} >Empresa</option>
+            <option value="consulta" {{ $role === 'consulta' ? 'selected': ''}} >Consulta</option>
+            <option value="experto" {{ $role === 'experto' ? 'selected': ''}} >Experto</option>
+          </select>
+          <small id="roleHelp" class="form-text text-muted">
+            Al cambiar el rol, algunos cambos correspondientes al nuevo rol podrian aparecer en blanco.
+            Puedes actualizarlos editando nuevamente el usuario.
+          </small>
+        </div>
         <div class="form-group">
           <input type="submit" class="btn btn-primary" value="Guardar">
           <a href="/users" class="btn btn-default">Cancelar</a>
