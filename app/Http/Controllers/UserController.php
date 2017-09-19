@@ -15,22 +15,40 @@ class UserController extends Controller
 
     protected $roles = ['consulta','superadmin','experto','empresa'];
 
-    public function index()
-    {
+    public function index(){
         $users = User::all();
         return view('users.index')->with(['users' => $users]);
     }
 
-    public function create($role)
-    {
+    public function create($role){
         if (in_array($role, $this->roles)) {
             return view('users.create')->with(["role" => $role]);
         }
         return view('errors.404');
     }
 
-    public function store(Request $request)
-    {
+    public function show($id){
+        return redirect("/users/".$id."/edit");
+    }
+
+    public function edit($id){
+        $user = User::find($id);
+        return view("users.edit")->with(["user" => $user, "role" => $user->role]);
+    }
+
+    public function update($id, Request $request){
+        $user = User::find($id);
+        if(!$request->password){
+            $user->update($request->except('password'));
+        }else{
+            $request["password"] = bcrypt($request->password);
+            $user->update($request->all());
+            $user->save();
+        }
+        return redirect("/users");
+    }
+
+    public function store(Request $request){
         $role = $request->role;
         if (in_array($role, $this->roles)) {
             $validate = User::getValidateInputs($role);
@@ -43,5 +61,16 @@ class UserController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+
+    public function delete($id, Request $request){
+        $user = User::find($id);
+        return view("users.delete")->with(["user" => $user]);
+    }
+
+    public function deleteConfirm($id, Request $request){
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/users');
     }
 }

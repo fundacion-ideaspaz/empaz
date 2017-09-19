@@ -9,6 +9,7 @@
             <th>Nombre</th>
             <th>role</th>
             <th>Email</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,10 @@
             <td>{{$user->nombre}}</td>
             <td>{{$user->role}}</td>
             <td>{{$user->email}}</td>
+            <td>
+              <a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/edit">Edit</a>
+              <a class="btn btn-sm btn-danger" href="/users/{{$user->id}}/delete">Delete</a>
+            </td>
           </tr>
           @endforeach
         </tbody>
