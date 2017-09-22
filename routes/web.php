@@ -29,6 +29,9 @@ Route::post('/users/{id}/delete', 'UserController@deleteConfirm');
 Route::get('/dimensiones', 'DimensionesController@index');
 Route::get('/dimensiones/new/', 'DimensionesController@create');
 Route::post('/dimensiones', 'DimensionesController@store');
+Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
+Route::post('/dimensiones/{id}', 'DimensionesController@update');
+Route::get('/dimensiones/{id}', 'DimensionesController@show');
 
 Auth::routes();
 

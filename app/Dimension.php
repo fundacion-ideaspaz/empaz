@@ -26,4 +26,17 @@ class Dimension extends Eloquent
                 return "muy alto";
         };
     }
+
+    public function nivel_importancia_int(){
+        switch($this->nivel_importancia){
+            case "bajo":
+                return 1;
+            case "medio":
+                return 2;
+            case "alto":
+                return 3;
+            case "muy alto":
+                return 4;
+        };
+    }
 }
