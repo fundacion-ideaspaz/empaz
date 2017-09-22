@@ -19,10 +19,12 @@ class DimensionesController extends Controller
     }
 
     public function store(Request $request){
+        dd($request["enunciados"]);
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required"
+            "nivel_importancia" => "required",
+            "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
         $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
@@ -41,7 +43,8 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required"
+            "nivel_importancia" => "required",
+            "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
         $dimension = Dimension::find($id);
