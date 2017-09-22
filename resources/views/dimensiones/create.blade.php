@@ -1,7 +1,8 @@
-@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.master') @section('title', 'Crear Dimension') @section('content')
 <div class="row dimensiones-form">
     <div class="card col-12">
         <div class="card-body">
+            <h3>Crear Dimension</h3>
             <form action="/dimensiones/" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -28,7 +29,7 @@
                         data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
                     />
                 </div>
-                <h3>Enunciados</h3>
+                <h4>Enunciados</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo</label>
                     <input type="text" class="form-control" name="enunciados[]" placeholder="Bajo" required>
