@@ -60,4 +60,14 @@ class DimensionesController extends Controller
     public function show($id){
         return redirect("/dimensiones/".$id."/edit");
     }
+
+    public function delete($id, Request $request){
+        return view("dimensiones.delete")->with(["id" => $id]);
+    }
+
+    public function deleteConfirm($id, Request $request){
+        $dimension = Dimension::find($id);
+        $dimension->delete();
+        return redirect('/dimensiones');
+    }
 }

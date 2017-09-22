@@ -70,8 +70,7 @@ class UserController extends Controller
     }
 
     public function delete($id, Request $request){
-        $user = User::find($id);
-        return view("users.delete")->with(["user" => $user]);
+        return view("users.delete")->with(["id" => $id]);
     }
 
     public function deleteConfirm($id, Request $request){
