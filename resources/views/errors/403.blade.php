@@ -1,0 +1,1 @@
+No tienes permiso para acceder a esta sección.

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class SuperAdmin
+class Experto
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class SuperAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role === 'superadmin'){
+        if(Auth::user()->role === 'experto'){
             return $next($request);
         }else{
             return abort(403, 'Unauthorized.');
