@@ -21,32 +21,37 @@ class UserController extends Controller
         'empresa' => 'empresa'
     ];
 
-    public function index(){
+    public function index()
+    {
         $users = User::all();
         return view('users.index')->with(['users' => $users]);
     }
 
-    public function create($role){
+    public function create($role)
+    {
         if (in_array($role, $this->roles)) {
             return view('users.create')->with(["role" => $role]);
         }
         return view('errors.404');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         return redirect("/users/".$id."/edit");
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user = User::find($id);
         return view("users.edit")->with(["user" => $user, "role" => $user->role, "roles" => $this->rolesSelect]);
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $user = User::find($id);
-        if(!$request->password){
+        if (!$request->password) {
             $user->update($request->except('password'));
-        }else{
+        } else {
             $request["password"] = bcrypt($request->password);
             $user->update($request->all());
             $user->save();
@@ -54,7 +59,8 @@ class UserController extends Controller
         return redirect("/users");
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $role = $request->role;
         if (in_array($role, $this->roles)) {
             $validate = User::getValidateInputs($role);
@@ -69,11 +75,13 @@ class UserController extends Controller
         }
     }
 
-    public function delete($id, Request $request){
+    public function delete($id, Request $request)
+    {
         return view("users.delete")->with(["id" => $id]);
     }
 
-    public function deleteConfirm($id, Request $request){
+    public function deleteConfirm($id, Request $request)
+    {
         $user = User::find($id);
         $user->delete();
         return redirect('/users');
