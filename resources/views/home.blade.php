@@ -15,7 +15,7 @@
                     @endif
                     @if(Auth::user()->role === 'superadmin')
                         <a href="/users" class="btn btn-primary">Users List</a>
-                        <a href="/questions" class="btn btn-primary">Questions List</a>
+                        <a href="/dimensiones" class="btn btn-primary">Dimensiones List</a>
                     @endif
                 </div>
             </div>

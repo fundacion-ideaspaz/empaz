@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Users Routes
 Route::get('/users', 'UserController@index');
 Route::get('/users/new/{role}', 'UserController@create');
 Route::post('/users', 'UserController@store');
@@ -23,6 +24,17 @@ Route::post('/users/{id}', 'UserController@update');
 Route::get('/users/{id}', 'UserController@show');
 Route::get('/users/{id}/delete', 'UserController@delete');
 Route::post('/users/{id}/delete', 'UserController@deleteConfirm');
+
+// Dimensiones Routes
+Route::get('/dimensiones', 'DimensionesController@index');
+Route::get('/dimensiones/new/', 'DimensionesController@create');
+Route::post('/dimensiones', 'DimensionesController@store');
+Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
+Route::post('/dimensiones/{id}', 'DimensionesController@update');
+Route::get('/dimensiones/{id}', 'DimensionesController@show');
+Route::get('/dimensiones/{id}/delete', 'DimensionesController@delete');
+Route::post('/dimensiones/{id}/delete', 'DimensionesController@deleteConfirm');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -5,3 +5,7 @@ body{
 .app-container{
   padding-top: 20px;
 }
+
+.dimensiones-form .slider.slider-horizontal{
+  margin-left: 10px;
+}
