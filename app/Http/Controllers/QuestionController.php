@@ -30,6 +30,7 @@ class QuestionController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $validations = [
             "texto" => "required",
             "descripcion" => "required",

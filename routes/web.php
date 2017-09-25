@@ -45,9 +45,16 @@ Route::get('/indicadores/{id}', 'IndicadoresController@show');
 Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
 Route::post('/indicadores/{id}/delete', 'IndicadoresController@deleteConfirm');
 
+// Questions Routes
+Route::get('/questions', 'QuestionController@index');
+Route::get('/questions/new/', 'QuestionController@create');
+Route::post('/questions', 'QuestionController@store');
+Route::get('/questions/{id}/edit', 'QuestionController@edit');
+Route::post('/questions/{id}', 'QuestionController@update');
+Route::get('/questions/{id}', 'QuestionController@show');
+Route::get('/questions/{id}/delete', 'QuestionController@delete');
+Route::post('/questions/{id}/delete', 'QuestionController@deleteConfirm');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/questions', 'QuestionController@index');
-Route::get('/questions/new/', 'QuestionController@create');

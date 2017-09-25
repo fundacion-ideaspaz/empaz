@@ -8,7 +8,7 @@
           <tr>
             <th>Texto</th>
             <th>Descripción</th>
-            <th>Tipo Preguntas</th>
+            <th>Tipo de Respuesta</th>
             <th>Indicadores</th>
             <th>Actions</th>
           </tr>
@@ -17,9 +17,9 @@
           @foreach($questions as $question)
           <p></p>
           <tr>
-            <td>{{$question->nombre}}</td>
+            <td>{{$question->texto}}</td>
             <td>{{$question->descripcion}}</td>
-            <td>{{ucfirst($question->tipo_pregunta)}}</td>
+            <td>{{ucfirst($question->tipo_respuesta)}}</td>
             <td>
               <ul>
                 @foreach($question->indicadores as $indicador)
