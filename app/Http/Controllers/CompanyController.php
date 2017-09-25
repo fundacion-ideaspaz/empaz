@@ -16,6 +16,27 @@ class CompanyController extends Controller
         return view('company.create');
     }
 
+    public function show($id){
+        return redirect("/users/".$id."/edit");
+    }
+
+    public function edit($id){
+        $user = User::find($id);
+        return view("users.edit")->with(["user" => $user, "role" => $user->role, "roles" => $this->rolesSelect]);
+    }
+
+    public function update($id, Request $request){
+        $user = User::find($id);
+        if(!$request->password){
+            $user->update($request->except('password'));
+        }else{
+            $request["password"] = bcrypt($request->password);
+            $user->update($request->all());
+            $user->save();
+        }
+        return redirect("/users");
+    }
+    
     public function store(Request $request){
         $request->validate([
             'nombre' => 'required|max:255',

@@ -6,20 +6,31 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Texto Pregunta</th>
-            <th>Descripción Pregunta</th>
-            <th>Tipo de Respuesta</th>
-            <th>Texto de Respuesta</th>
+            <th>Texto</th>
+            <th>Descripción</th>
+            <th>Tipo Preguntas</th>
+            <th>Indicadores</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           @foreach($questions as $question)
           <p></p>
           <tr>
-            <td>{{$question->texto}}</td>
+            <td>{{$question->nombre}}</td>
             <td>{{$question->descripcion}}</td>
-            <td>{{$question->tiporespuesta}}</td>
-            <td>{{$question->textorespuesta}}</td>
+            <td>{{ucfirst($question->tipo_pregunta)}}</td>
+            <td>
+              <ul>
+                @foreach($question->indicadores as $indicador)
+                <li>{{\App\Indicador::find($indicador)->nombre}}</li>
+                @endforeach
+              </ul>
+            </td>
+            <td>
+              <a class="btn btn-sm btn-primary" href="/questions/{{$question->id}}/edit">Edit</a>
+              <a class="btn btn-sm btn-danger" href="/questions/{{$question->id}}/delete">Delete</a>
+            </td>
           </tr>
           @endforeach
         </tbody>
@@ -27,7 +38,7 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <a href="/questions/new" class="btn btn-primary">Create a Question</a>
+        <a class="btn btn-primary" href="/questions/new/">Crear Pregunta</a>
       </div>
     </div>
   </div>

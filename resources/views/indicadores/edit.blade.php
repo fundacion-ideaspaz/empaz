@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.master') @section('title', 'Editar Indicador') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">

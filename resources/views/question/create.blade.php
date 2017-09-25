@@ -1,47 +1,54 @@
-@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
-<div class="row">
-  <div class="card col-12">
-    <div class="card-body">
-      <h2>Crear Usuario</h2>
-      <form action="/users" method="post" class="form">
-        {{ csrf_field() }}
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" class="form-control" required>
+@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
+<div class="row indicadores-form">
+    <div class="card col-12">
+        <div class="card-body">
+            <h3>Crear Indicador</h3>
+            <form action="/questions" method="post" class="form" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="importancia">Tipo de Pregunta</label>
+                    <br>
+                    <input name="tipo_pergunta" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
+                        data-slider-min="1" data-slider-max="4" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="importancia">indicadores</label>
+                    <select name="indicadores[]" id="indicadores-select" multiple="multiple">
+                        @foreach($indicadores as $indicador)
+                        <option value="{{$indicador->id}}">{{$indicador->nombre}}</option>
+                        @endforeach
+                    </select>
+                </div>
         </div>
-        <div class="form-group">
-          <label for="cargo">Cargo</label>
-          <select name="cargo" id="cargo" class="form-control" required>
-            <option selected disabled>Escoja un cargo</option>
-            <option value="experto">Experto tematico</option>
-            <option value="empresa">Empresa</option>
-            <option value="consulta">Consulta</option>
-            <option value="superadmin">Superadmin</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" name="correo" class="form-control" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" required>
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btn btn-primary" value="Guardar">
-          <a href="/users" class="btn btn-default">Cancelar</a>
+        <div class="from-group">
+            <input type="submit" class="btn btn-primary" value="Guardar">
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">
-          <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-          </ul>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
         @endif
-      </form>
+        </form>
     </div>
-  </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#indicadores-select').multiSelect()
+    });
+
+</script>
 @endsection
