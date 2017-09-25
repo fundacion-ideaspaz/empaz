@@ -1,9 +1,9 @@
 @extends('layouts.master') @section('title', 'Crear Dimension') @section('content')
-<div class="row dimensiones-form">
+<div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h3>Crear Dimension</h3>
-            <form action="/dimensiones/" method="post" class="form" enctype="multipart/form-data">
+            <h3>Crear Indicador</h3>
+            <form action="/indicadores" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -15,36 +15,19 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="file">Logo de la dimensión</label>
-                    <br>
-                    <!-- <label class="custom-file"> -->
-                    <input type="file" name="logo" id="logo" class="form-control">
-                    <!-- <span class="custom-file-control"></span> -->
-                    </label>
-                </div>
-                <div class="form-group">
                     <label for="importancia">Nivel de importancia</label>
                     <br>
                     <input name="nivel_importancia" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
                         data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
                     />
                 </div>
-                <h4>Enunciados</h4>
                 <div class="form-group">
-                    <label for="enunciados">Bajo</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Bajo" required>
-                </div>
-                <div class="form-group">
-                    <label for="enunciados">Medio</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio" required>
-                </div>
-                <div class="form-group">
-                    <label for="enunciados">Alto</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Alto" required>
-                </div>
-                <div class="form-group">
-                    <label for="enunciados">Muy Alto</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Muy Alto" required>
+                    <label for="importancia">Dimensiones</label>
+                    <select name="dimensiones[]" id="dimensiones-select" multiple="multiple">
+                        @foreach($dimensiones as $dimension)
+                        <option value="{{$dimension->id}}">{{$dimension->nombre}}</option>
+                        @endforeach
+                    </select>
                 </div>
         </div>
         <div class="from-group">
@@ -62,5 +45,10 @@
         </form>
     </div>
 </div>
-</div>
+<script>
+    $(document).ready(function () {
+        $('#dimensiones-select').multiSelect()
+    });
+
+</script>
 @endsection

@@ -16,9 +16,10 @@ class Experto
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role === 'experto'){
+        $currentRole = Auth::user()->role;
+        if ($currentRole === 'experto'|| $currentRole === 'superadmin') {
             return $next($request);
-        }else{
+        } else {
             return abort(403, 'Unauthorized.');
         }
     }

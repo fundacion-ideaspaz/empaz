@@ -9,7 +9,7 @@
                     <input type="text" class="form-control" name="nombre" value="{{$dimension->nombre}}">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Descripción</label>
                     <textarea name="descripcion" id="descripcion" class="form-control">{{$dimension->descripcion}}</textarea>
                     </textarea>
                 </div>

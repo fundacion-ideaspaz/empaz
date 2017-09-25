@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EmPaz - @yield('title')</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
+  <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -26,6 +28,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/dimensiones">Dimensiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/indicadores">Indicadores</a>
         </li>
       </ul>
       <ul class="navbar-nav">
@@ -45,10 +50,9 @@
     @yield('content')
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="/popper/umd/popper.js"></script>
 <script src="/js/bootstrap-slider.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-  crossorigin="anonymous"></script>
-
+crossorigin="anonymous"></script>
+<script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 </html>

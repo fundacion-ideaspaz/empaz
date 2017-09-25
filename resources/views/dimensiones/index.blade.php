@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Panel de Usuarios') @section('content')
+@extends('layouts.master') @section('title', 'Panel de Dimensiones') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
@@ -7,7 +7,7 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Descripcion</th>
+            <th>Descripción</th>
             <th>Nivel de Importancia</th>
             <th>Logo</th>
             <th>Actions</th>
@@ -34,7 +34,7 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <a class="btn btn-primary" href="/dimensiones/new/">Crear dimension</a>
+        <a class="btn btn-primary" href="/dimensiones/new/">Crear dimensión</a>
       </div>
     </div>
   </div>

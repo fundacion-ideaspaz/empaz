@@ -35,6 +35,16 @@ Route::get('/dimensiones/{id}', 'DimensionesController@show');
 Route::get('/dimensiones/{id}/delete', 'DimensionesController@delete');
 Route::post('/dimensiones/{id}/delete', 'DimensionesController@deleteConfirm');
 
+// Indicadores Routes
+Route::get('/indicadores', 'IndicadoresController@index');
+Route::get('/indicadores/new/', 'IndicadoresController@create');
+Route::post('/indicadores', 'IndicadoresController@store');
+Route::get('/indicadores/{id}/edit', 'IndicadoresController@edit');
+Route::post('/indicadores/{id}', 'IndicadoresController@update');
+Route::get('/indicadores/{id}', 'IndicadoresController@show');
+Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
+Route::post('/indicadores/{id}/delete', 'IndicadoresController@deleteConfirm');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
