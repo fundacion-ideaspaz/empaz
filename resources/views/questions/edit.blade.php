@@ -6,7 +6,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Texto</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$question->nombre}}">
+                    <input type="text" class="form-control" name="texto" value="{{$question->texto}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -14,12 +14,14 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="importancia">Tipo de Pregunta</label>
+                    <label for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <input name="nivel_importancia" value="{{$question->tipo_pregunta}}" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
-                        data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5"
-                        data-slider-step="1" data-slider-value="{{$question->tipo_pregunta_int()}}" data-slider-tooltip="hide"
-                    />
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
+                        <option value="tipo_1" {{ $question->tipo_respuesta === 'tipo_1' ? 'selected': ''}}>Tipo 1</option>
+                        <option value="tipo_2" {{ $question->tipo_respuesta === 'tipo_2' ? 'selected': ''}}>Tipo 2</option>
+                        <option value="tipo_3" {{ $question->tipo_respuesta === 'tipo_3' ? 'selected': ''}}>Tipo 3</option>
+                        <option value="tipo_4" {{ $question->tipo_respuesta === 'tipo_4' ? 'selected': ''}}>Tipo 4</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="importancia">Indicadores</label>

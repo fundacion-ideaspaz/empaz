@@ -52,7 +52,7 @@ class QuestionController extends Controller
             array_push($indicadores, $indicador_obj);
         }
         $restIndicadores = Question::whereNotIn("_id", $question->indicadores)->get();
-        return view("question.edit")->with([
+        return view("questions.edit")->with([
             "question" => $question,
             "indicadores" => $indicadores,
             "restIndicadores" => $restIndicadores
