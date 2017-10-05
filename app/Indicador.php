@@ -2,11 +2,14 @@
 
 namespace App;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\Storage;
+use Eloquent;
 
 class Indicador extends Eloquent
 {
+
+    protected $table = 'indicadores';
+
     protected $fillable = [
         "nombre",
         "descripcion",

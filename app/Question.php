@@ -2,11 +2,13 @@
 
 namespace App;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\Storage;
+use Eloquent;
 
 class Question extends Eloquent
 {
+    protected $table = 'preguntas';
+
     protected $fillable = [
       'texto',
       'descripcion',
