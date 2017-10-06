@@ -7,7 +7,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
+                    <input type="text" class="form-control" name="texto">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -15,14 +15,33 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="importancia">Tipo de Pregunta</label>
+                    <label for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <input name="tipo_pergunta" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
-                        data-slider-min="1" data-slider-max="4" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
-                    />
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
+                        <option value="tipo_1">Tipo 1</option>
+                        <option value="tipo_2">Tipo 2</option>
+                        <option value="tipo_3">Tipo 3</option>
+                        <option value="tipo_4">Tipo 4</option>
+                    </select>
+                </div>
+                <div class="form-group" id="respuesta_1">
+                    <label for="respuesta_1">Respuesta 1</label>
+                    <input type="text" name="respuesta_1" class="form-control">
+                </div>
+                <div class="form-group" id="respuesta_2">
+                    <label for="respuesta_2">Respuesta 2</label>
+                    <input type="text" name="respuesta_2" class="form-control">
+                </div>
+                <div class="form-group" id="respuesta_3">
+                    <label for="respuesta_3">Respuesta 3</label>
+                    <input type="text" name="respuesta_3" class="form-control">
+                </div>
+                <div class="form-group" id="respuesta_4">
+                    <label for="respuesta_4">Respuesta 4</label>
+                    <input type="text" name="respuesta_4" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="importancia">indicadores</label>
+                    <label for="importancia">Indicadores</label>
                     <select name="indicadores[]" id="indicadores-select" multiple="multiple">
                         @foreach($indicadores as $indicador)
                         <option value="{{$indicador->id}}">{{$indicador->nombre}}</option>
@@ -48,6 +67,29 @@
 <script>
     $(document).ready(function () {
         $('#indicadores-select').multiSelect()
+        // Tipos de respuestas
+        $("#tipo_respuesta").on("change", function(){
+            var tipoRespuesta = this.value;
+            if(tipoRespuesta === "tipo_1"){
+                $("#respuesta_4").css("display", "block");
+                $("#respuesta_3").css("display", "block");
+                $("#respuesta_4").attr("disabled", "false");
+                $("#respuesta_3").attr("disabled", "false");
+            }
+            if(tipoRespuesta === "tipo_2"){
+                $("#respuesta_4").css("display", "none");
+                $("#respuesta_3").css("display", "block");
+                $("#respuesta_4").attr("disabled", true);
+                $("#respuesta_3").attr("disabled", "false");                
+            }
+            if(tipoRespuesta === "tipo_3" || tipoRespuesta === "tipo_4"){
+                $("#respuesta_4").css("display", "none");
+                $("#respuesta_3").css("display", "none");
+                $("#respuesta_4").attr("disabled", true);
+                $("#respuesta_3").attr("disabled", true);
+                
+            }
+        })
     });
 
 </script>

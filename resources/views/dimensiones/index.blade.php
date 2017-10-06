@@ -21,7 +21,11 @@
             <td>{{$dimension->descripcion}}</td>
             <td>{{ucfirst($dimension->nivel_importancia)}}</td>
             <td>
-              <img src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
+              @if($dimension->logo)
+              <img class="dimension-logo" src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
+              @else
+              <span>No logo avalaible.</span>
+              @endif
             </td>
             <td>
               <a class="btn btn-sm btn-primary" href="/dimensiones/{{$dimension->id}}/edit">Edit</a>

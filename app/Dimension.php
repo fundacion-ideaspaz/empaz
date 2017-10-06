@@ -2,17 +2,19 @@
 
 namespace App;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\Storage;
+use Eloquent;
 
 class Dimension extends Eloquent
 {
+
+    protected $table = 'dimensiones';
+
     protected $fillable = [
         "nombre",
         "descripcion",
         "nivel_importancia",
-        "logo",
-        "enunciados"
+        "logo"
     ];
 
     public function getNivelImportanciaAttribute($value){

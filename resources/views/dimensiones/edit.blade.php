@@ -30,10 +30,10 @@
                     />
                 </div>
                 <h4>Enunciados</h4>
-                @foreach($dimension->enunciados as $enunciado => $value)
+                @foreach($enunciados as $enunciado)
                 <div class="form-group">
-                    <label for="enunciados">{{ucfirst($enunciado)}}</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="{{ucfirst($enunciado)}}" required value="{{$value}}">
+                    <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="{{ucfirst($enunciado->nivel_importancia)}}" required value="{{$enunciado->descripcion}}">
                 </div>
                 @endforeach
                 <div class="from-group">
