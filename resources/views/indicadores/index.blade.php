@@ -23,7 +23,7 @@
             <td>
               <ul>
                 @foreach($indicador->dimensiones as $dimension)
-                <li>{{\App\Dimension::find($dimension)->nombre}}</li>
+                <li>{{$dimension->nombre}}</li>
                 @endforeach
               </ul>
             </td>

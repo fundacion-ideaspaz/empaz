@@ -44,4 +44,9 @@ class Indicador extends Eloquent
                 return 4;
         };
     }
+
+    public function dimensiones()
+    {
+        return $this->belongsToMany("App\Dimension");
+    }
 }

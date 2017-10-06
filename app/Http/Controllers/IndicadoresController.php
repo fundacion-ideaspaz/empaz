@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Indicador;
 use App\Dimension;
+use App\IndicadoresDimensiones;
 use Storage;
 
 class IndicadoresController extends Controller
@@ -37,8 +38,14 @@ class IndicadoresController extends Controller
             "dimensiones" => "required|array"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->all();
+        $inputs = $request->except("dimensiones");
         $indicador = Indicador::create($inputs);
+        foreach ($request["dimensiones"] as $dimension) {
+            IndicadoresDimensiones::create([
+            "dimension_id" => $dimension,
+            "indicador_id" => $indicador->id
+            ]);
+        }
         return redirect("/indicadores");
     }
 
@@ -47,10 +54,9 @@ class IndicadoresController extends Controller
         $indicador = Indicador::find($id);
         $dimensiones = [];
         foreach ($indicador->dimensiones as $dimension) {
-            $dimension_obj = Dimension::find($dimension);
-            array_push($dimensiones, $dimension_obj);
+            array_push($dimensiones, $dimension);
         }
-        $restDimensiones = Dimension::whereNotIn("_id", $indicador->dimensiones)->get();
+        $restDimensiones = Dimension::whereNotIn("id", $indicador->dimensiones)->get();
         return view("indicadores.edit")->with([
             "indicador" => $indicador,
             "dimensiones" => $dimensiones,
@@ -67,10 +73,17 @@ class IndicadoresController extends Controller
             "dimensiones" => "required|array"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->all();
+        $inputs = $request->except("dimensiones");
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
         $indicador->save();
+        foreach ($request["dimensiones"] as $dimension) {
+            $newDimension = Dimensiones::where("indicador_id", "=", $dimension);
+            IndicadoresDimensiones::create([
+                "dimension_id" => $dimension,
+                "indicador_id" => $indicador->id
+            ]);
+        }
         return redirect("/indicadores");
     }
 

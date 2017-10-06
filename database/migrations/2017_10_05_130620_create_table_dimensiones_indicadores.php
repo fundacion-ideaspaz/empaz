@@ -8,18 +8,18 @@ class CreateTableDimensionesIndicadores extends Migration
 {
     public function up()
     {
-        Schema::create('indicadores_dimensiones', function (Blueprint $table) {
+        Schema::create('dimension_indicador', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dimensiones_id')->unsigned();
-            $table->foreign('dimensiones_id')->references('id')->on('dimensiones')->onDelete('cascade');
-            $table->integer('indicadores_id')->unsigned();
-            $table->foreign('indicadores_id')->references('id')->on('indicadores')->onDelete('cascade');
+            $table->integer('dimension_id')->unsigned();
+            $table->foreign('dimension_id')->references('id')->on('dimensiones')->onDelete('cascade');
+            $table->integer('indicador_id')->unsigned();
+            $table->foreign('indicador_id')->references('id')->on('indicadores')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('indicadores_dimensiones');
+        Schema::dropIfExists('dimension_indicador');
     }
 }
