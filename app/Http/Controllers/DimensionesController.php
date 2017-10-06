@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Dimension;
+use App\Enunciado;
 use Storage;
 
 class DimensionesController extends Controller
@@ -33,7 +34,10 @@ class DimensionesController extends Controller
             "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
-        $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
+        $logo = '';
+        if ($request->file("logo")) {
+            $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
+        }
         $inputs = $request->all();
         $enunciados = [
             "bajo" => $inputs["enunciados"][0],
@@ -41,16 +45,23 @@ class DimensionesController extends Controller
             "alto" => $inputs["enunciados"][2],
             "muy alto" => $inputs["enunciados"][3]
         ];
-        $inputs["enunciados"] = $enunciados;
         $inputs["logo"] = $logo;
         $dimension = Dimension::create($inputs);
+        foreach ($enunciados as $nivel_importancia => $enunciado) {
+            $new_enunciado = Enunciado::create([
+                "nivel_importancia" => $nivel_importancia,
+                "descripcion" => $enunciado,
+                "dimensiones_id" => $dimension->id
+            ]);
+        }
         return redirect("/dimensiones");
     }
 
     public function edit($id)
     {
         $dimension = Dimension::find($id);
-        return view("dimensiones.edit")->with(["dimension" => $dimension]);
+        $enunciados = Enunciado::where("dimensiones_id", "=", $dimension->id)->get();
+        return view("dimensiones.edit")->with(["dimension" => $dimension, "enunciados" => $enunciados]);
     }
 
     public function update($id, Request $request)
@@ -76,9 +87,14 @@ class DimensionesController extends Controller
             "alto" => $inputs["enunciados"][2],
             "muy alto" => $inputs["enunciados"][3]
         ];
-        $inputs["enunciados"] = $enunciados;
         $dimension->update($inputs);
         $dimension->save();
+        foreach ($enunciados as $nivel_importancia => $enunciado) {
+            $newEnunciado = Enunciado::where("dimensiones_id", "=", $dimension->id)
+                        ->where("nivel_importancia", "=", $nivel_importancia)->first();
+            $newEnunciado->descripcion = $enunciado;
+            $newEnunciado->save();
+        }
         return redirect("/dimensiones");
     }
 

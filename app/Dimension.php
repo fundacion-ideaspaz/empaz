@@ -14,8 +14,7 @@ class Dimension extends Eloquent
         "nombre",
         "descripcion",
         "nivel_importancia",
-        "logo",
-        "enunciados"
+        "logo"
     ];
 
     public function getNivelImportanciaAttribute($value){

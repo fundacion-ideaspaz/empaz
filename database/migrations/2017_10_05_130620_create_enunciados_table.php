@@ -11,7 +11,7 @@ class CreateEnunciadosTable extends Migration
         Schema::create('enunciados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('dimensiones_id')->unsigned();
-            $table->foreign('dimensiones_id')->references('id')->on('dimensiones');
+            $table->foreign('dimensiones_id')->references('id')->on('dimensiones')->onDelete('cascade');
             $table->string('nivel_importancia');
             $table->string('descripcion');
             $table->timestamps();
