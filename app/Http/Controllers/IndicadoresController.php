@@ -53,10 +53,12 @@ class IndicadoresController extends Controller
     {
         $indicador = Indicador::find($id);
         $dimensiones = [];
+        $dimensionesIds = [];
         foreach ($indicador->dimensiones as $dimension) {
             array_push($dimensiones, $dimension);
+            array_push($dimensionesIds, $dimension->id);
         }
-        $restDimensiones = Dimension::whereNotIn("id", $indicador->dimensiones)->get();
+        $restDimensiones = Dimension::whereNotIn("id", $dimensionesIds)->get();
         return view("indicadores.edit")->with([
             "indicador" => $indicador,
             "dimensiones" => $dimensiones,
@@ -77,10 +79,17 @@ class IndicadoresController extends Controller
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
         $indicador->save();
-        foreach ($request["dimensiones"] as $dimension) {
-            $newDimension = Dimensiones::where("indicador_id", "=", $dimension);
+        $dimensiones = $request["dimensiones"];
+        $updateDimensiones = IndicadoresDimensiones::whereIn("dimension_id", $dimensiones)
+            ->pluck("dimension_id");
+        IndicadoresDimensiones::whereNotIn("dimension_id", $dimensiones)
+            ->delete();
+        $newDimensiones = Dimension::whereIn("id", $dimensiones)
+            ->whereNotIn("id", $updateDimensiones)
+            ->get();
+        foreach ($newDimensiones as $dimension) {
             IndicadoresDimensiones::create([
-                "dimension_id" => $dimension,
+                "dimension_id" => $dimension->id,
                 "indicador_id" => $indicador->id
             ]);
         }
