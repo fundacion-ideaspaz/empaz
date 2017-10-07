@@ -10,10 +10,10 @@ class CreateTablePreguntasIndicadores extends Migration
     {
         Schema::create('preguntas_indicadores', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('preguntas_id')->unsigned();
-            $table->foreign('preguntas_id')->references('id')->on('preguntas')->onDelete('cascade');
-            $table->integer('indicadores_id')->unsigned();
-            $table->foreign('indicadores_id')->references('id')->on('indicadores')->onDelete('cascade');
+            $table->integer('pregunta_id')->unsigned();
+            $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
+            $table->integer('indicador_id')->unsigned();
+            $table->foreign('indicador_id')->references('id')->on('indicadores')->onDelete('cascade');
             $table->timestamps();
         });
     }
