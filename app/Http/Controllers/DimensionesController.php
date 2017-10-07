@@ -51,7 +51,7 @@ class DimensionesController extends Controller
             $new_enunciado = Enunciado::create([
                 "nivel_importancia" => $nivel_importancia,
                 "descripcion" => $enunciado,
-                "dimensiones_id" => $dimension->id
+                "dimension_id" => $dimension->id
             ]);
         }
         return redirect("/dimensiones");
@@ -60,7 +60,7 @@ class DimensionesController extends Controller
     public function edit($id)
     {
         $dimension = Dimension::find($id);
-        $enunciados = Enunciado::where("dimensiones_id", "=", $dimension->id)->get();
+        $enunciados = Enunciado::where("dimension_id", "=", $dimension->id)->get();
         return view("dimensiones.edit")->with(["dimension" => $dimension, "enunciados" => $enunciados]);
     }
 
@@ -90,7 +90,7 @@ class DimensionesController extends Controller
         $dimension->update($inputs);
         $dimension->save();
         foreach ($enunciados as $nivel_importancia => $enunciado) {
-            $newEnunciado = Enunciado::where("dimensiones_id", "=", $dimension->id)
+            $newEnunciado = Enunciado::where("dimension_id", "=", $dimension->id)
                         ->where("nivel_importancia", "=", $nivel_importancia)->first();
             $newEnunciado->descripcion = $enunciado;
             $newEnunciado->save();

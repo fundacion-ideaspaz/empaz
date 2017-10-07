@@ -11,6 +11,6 @@ class Enunciado extends Model
     protected $fillable = [
         "descripcion",
         "nivel_importancia",
-        "dimensiones_id"
+        "dimension_id"
     ];
 }
