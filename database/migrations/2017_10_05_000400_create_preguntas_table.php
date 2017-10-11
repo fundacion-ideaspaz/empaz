@@ -13,7 +13,6 @@ class CreatePreguntasTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('tipo_respuesta');
-            $table->string('logo');
             $table->timestamps();
         });
     }

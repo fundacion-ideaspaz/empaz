@@ -2,12 +2,12 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h3>Crear Indicador</h3>
-            <form action="/questions" method="post" class="form" enctype="multipart/form-data">
+            <h3>Crear Pregunta</h3>
+            <form action="/preguntas" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="texto">
+                    <input type="text" class="form-control" name="nombre">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -26,19 +26,19 @@
                 </div>
                 <div class="form-group" id="respuesta_1">
                     <label for="respuesta_1">Respuesta 1</label>
-                    <input type="text" name="respuesta_1" class="form-control">
+                    <input type="text" name="respuestas[]" class="form-control">
                 </div>
                 <div class="form-group" id="respuesta_2">
                     <label for="respuesta_2">Respuesta 2</label>
-                    <input type="text" name="respuesta_2" class="form-control">
+                    <input type="text" name="respuestas[]" class="form-control">
                 </div>
                 <div class="form-group" id="respuesta_3">
                     <label for="respuesta_3">Respuesta 3</label>
-                    <input type="text" name="respuesta_3" class="form-control">
+                    <input type="text" name="respuestas[]" class="form-control">
                 </div>
                 <div class="form-group" id="respuesta_4">
                     <label for="respuesta_4">Respuesta 4</label>
-                    <input type="text" name="respuesta_4" class="form-control">
+                    <input type="text" name="respuestas[]" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="importancia">Indicadores</label>

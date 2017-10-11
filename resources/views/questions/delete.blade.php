@@ -3,14 +3,14 @@
   <div class="card col-12">
     <div class="card-body">
       <h2>¿Eliminar Pregunta?</h2>
-      <form action="/questions/{{$id}}/delete" method="post" class="form">
+      <form action="/preguntas/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">
           <label for="confirm">Seguro deseas eliminar esta pregunta? De ser asi, da click en el boton de abajo.</label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-danger" value="Eliminar">
-          <a href="/questions" class="btn btn-primary">Cancelar</a>
+          <a href="/preguntas" class="btn btn-primary">Cancelar</a>
         </div>
       </form>
     </div>

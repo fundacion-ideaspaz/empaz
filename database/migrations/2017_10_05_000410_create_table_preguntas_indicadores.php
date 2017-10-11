@@ -8,7 +8,7 @@ class CreateTablePreguntasIndicadores extends Migration
 {
     public function up()
     {
-        Schema::create('preguntas_indicadores', function (Blueprint $table) {
+        Schema::create('indicador_pregunta', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pregunta_id')->unsigned();
             $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');

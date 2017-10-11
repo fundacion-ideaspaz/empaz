@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Users Routes
 Route::get('/users', 'UserController@index');
@@ -45,16 +50,12 @@ Route::get('/indicadores/{id}', 'IndicadoresController@show');
 Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
 Route::post('/indicadores/{id}/delete', 'IndicadoresController@deleteConfirm');
 
-// Questions Routes
-Route::get('/preguntas', 'QuestionController@index');
-Route::get('/preguntas/new/', 'QuestionController@create');
-Route::post('/preguntas', 'QuestionController@store');
-Route::get('/preguntas/{id}/edit', 'QuestionController@edit');
-Route::post('/preguntas/{id}', 'QuestionController@update');
-Route::get('/preguntas/{id}', 'QuestionController@show');
-Route::get('/preguntas/{id}/delete', 'QuestionController@delete');
-Route::post('/preguntas/{id}/delete', 'QuestionController@deleteConfirm');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Preguntas Routes
+Route::get('/preguntas', 'PreguntasController@index');
+Route::get('/preguntas/new/', 'PreguntasController@create');
+Route::post('/preguntas', 'PreguntasController@store');
+Route::get('/preguntas/{id}/edit', 'PreguntasController@edit');
+Route::post('/preguntas/{id}', 'PreguntasController@update');
+Route::get('/preguntas/{id}', 'PreguntasController@show');
+Route::get('/preguntas/{id}/delete', 'PreguntasController@delete');
+Route::post('/preguntas/{id}/delete', 'PreguntasController@deleteConfirm');

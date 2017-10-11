@@ -14,22 +14,24 @@
           </tr>
         </thead>
         <tbody>
-          @foreach($questions as $question)
+          @foreach($questions as $pregunta)
           <p></p>
           <tr>
-            <td>{{$question->texto}}</td>
-            <td>{{$question->descripcion}}</td>
-            <td>{{ucfirst($question->tipo_respuesta)}}</td>
+            <td>{{$pregunta->nombre}}</td>
+            <td>{{$pregunta->descripcion}}</td>
+            <td>
+              {{ ucfirst(str_replace('_', ' ', $pregunta->tipo_respuesta)) }}
+            </td>
             <td>
               <ul>
-                @foreach($question->indicadores as $indicador)
-                <li>{{\App\Indicador::find($indicador)->nombre}}</li>
+                @foreach($pregunta->indicadores as $indicador)
+                <li>{{$indicador->nombre}}</li>
                 @endforeach
               </ul>
             </td>
             <td>
-              <a class="btn btn-sm btn-primary" href="/questions/{{$question->id}}/edit">Edit</a>
-              <a class="btn btn-sm btn-danger" href="/questions/{{$question->id}}/delete">Delete</a>
+              <a class="btn btn-sm btn-primary" href="/preguntas/{{$pregunta->id}}/edit">Edit</a>
+              <a class="btn btn-sm btn-danger" href="/preguntas/{{$pregunta->id}}/delete">Delete</a>
             </td>
           </tr>
           @endforeach
@@ -38,7 +40,7 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <a class="btn btn-primary" href="/questions/new/">Crear Pregunta</a>
+        <a class="btn btn-primary" href="/preguntas/new/">Crear Pregunta</a>
       </div>
     </div>
   </div>

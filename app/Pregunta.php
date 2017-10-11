@@ -5,15 +5,14 @@ namespace App;
 use Illuminate\Support\Facades\Storage;
 use Eloquent;
 
-class Question extends Eloquent
+class Pregunta extends Eloquent
 {
     protected $table = 'preguntas';
 
     protected $fillable = [
-      'texto',
+      'nombre',
       'descripcion',
-      'tipo_respuesta',
-      'indicadores'
+      'tipo_respuesta'
     ];
 
     public function getTipoPreguntaAttribute($value)
@@ -44,4 +43,8 @@ class Question extends Eloquent
         };
     }
 
+    public function indicadores()
+    {
+        return $this->belongsToMany("App\Indicador");
+    }
 }

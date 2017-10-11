@@ -2,25 +2,25 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <form action="/questions/{{$question->id}}" method="post" class="form" enctype="multipart/form-data">
+            <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Texto</label>
-                    <input type="text" class="form-control" name="texto" value="{{$question->texto}}">
+                    <input type="text" class="form-control" name="texto" value="{{$pregunta->texto}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{$question->descripcion}}</textarea>
+                    <textarea name="descripcion" id="descripcion" class="form-control">{{$pregunta->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
-                        <option value="tipo_1" {{ $question->tipo_respuesta === 'tipo_1' ? 'selected': ''}}>Tipo 1</option>
-                        <option value="tipo_2" {{ $question->tipo_respuesta === 'tipo_2' ? 'selected': ''}}>Tipo 2</option>
-                        <option value="tipo_3" {{ $question->tipo_respuesta === 'tipo_3' ? 'selected': ''}}>Tipo 3</option>
-                        <option value="tipo_4" {{ $question->tipo_respuesta === 'tipo_4' ? 'selected': ''}}>Tipo 4</option>
+                        <option value="tipo_1" {{ $pregunta->tipo_respuesta === 'tipo_1' ? 'selected': ''}}>Tipo 1</option>
+                        <option value="tipo_2" {{ $pregunta->tipo_respuesta === 'tipo_2' ? 'selected': ''}}>Tipo 2</option>
+                        <option value="tipo_3" {{ $pregunta->tipo_respuesta === 'tipo_3' ? 'selected': ''}}>Tipo 3</option>
+                        <option value="tipo_4" {{ $pregunta->tipo_respuesta === 'tipo_4' ? 'selected': ''}}>Tipo 4</option>
                     </select>
                 </div>
                 <div class="form-group">
