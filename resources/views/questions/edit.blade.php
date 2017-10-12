@@ -5,8 +5,8 @@
             <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="nombre">Texto</label>
-                    <input type="text" class="form-control" name="texto" value="{{$pregunta->texto}}">
+                    <label for="nombre">Nombre de la pregunta</label>
+                    <input type="text" class="form-control" name="nombre" value="{{$pregunta->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -43,6 +43,7 @@
                     <input type="text" name="respuesta_{{$opcion->number}}"
                         id="respuesta_{{$opcion->number}}"
                         class="form-control"
+                        value="{{$opcion->descripcion}}"
                     />
                     @endforeach
                 </div>
