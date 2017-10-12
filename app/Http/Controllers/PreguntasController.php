@@ -47,7 +47,7 @@ class PreguntasController extends Controller
         foreach ($respuestas as $number => $respuesta) {
             if ($respuesta != null) {
                 $newRespuesta = new OpcionesRespuestas();
-                $newRespuesta->number = $number;
+                $newRespuesta->number = $number+1;
                 $newRespuesta->pregunta_id = $pregunta->id;
                 $newRespuesta->descripcion = $respuesta;
                 $newRespuesta->save();
@@ -65,15 +65,9 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $indicadores = [];
-        foreach ($pregunta->indicadores as $indicador) {
-            $indicador_obj = Indicador::find($indicador);
-            array_push($indicadores, $indicador_obj);
-        }
-        $restIndicadores = Pregunta::whereNotIn("_id", $pregunta->indicadores)->get();
+        $restIndicadores = Indicador::whereNotIn("id", $pregunta->indicadores)->get();
         return view("questions.edit")->with([
             "pregunta" => $pregunta,
-            "indicadores" => $indicadores,
             "restIndicadores" => $restIndicadores
         ]);
     }

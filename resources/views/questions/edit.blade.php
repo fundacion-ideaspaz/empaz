@@ -26,13 +26,25 @@
                 <div class="form-group">
                     <label for="importancia">Indicadores</label>
                     <select name="indicadores[]" id="indicadores-select" multiple="multiple">
-                        @foreach($indicadores as $indicador)
+                        @foreach($pregunta->indicadores as $indicador)
                         <option value="{{$indicador->id}}" selected>{{$indicador->nombre}}</option>
                         @endforeach
+                        <!-- -->
                         @foreach($restIndicadores as $indicador)
                         <option value="{{$indicador->id}}">{{$indicador->nombre}}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    @foreach($pregunta->opcionesRespuestas as $opcion)
+                    <label for="respuesta_{{$opcion->number}}">
+                        Respuesta {{ $opcion->number}}
+                    </label>
+                    <input type="text" name="respuesta_{{$opcion->number}}"
+                        id="respuesta_{{$opcion->number}}"
+                        class="form-control"
+                    />
+                    @endforeach
                 </div>
                 <div class="from-group">
                     <input type="submit" class="btn btn-primary" value="Guardar">
@@ -55,5 +67,4 @@
         $('#indicadores-select').multiSelect()
     });
 
-</script>
-@endsection
+</script> @endsection

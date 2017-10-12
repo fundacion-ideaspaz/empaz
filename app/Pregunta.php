@@ -47,4 +47,9 @@ class Pregunta extends Eloquent
     {
         return $this->belongsToMany("App\Indicador");
     }
+
+    public function opcionesRespuestas()
+    {
+        return $this->hasMany("App\OpcionesRespuestas");
+    }
 }
