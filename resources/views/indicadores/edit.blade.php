@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <label for="importancia">Dimensiones</label>
                     <select name="dimensiones[]" id="dimensiones-select" multiple="multiple">
-                        @foreach($dimensiones as $dimension)
+                        @foreach($indicador->dimensiones as $dimension)
                         <option value="{{$dimension->id}}" selected>{{$dimension->nombre}}</option>
                         @endforeach
                         @foreach($restDimensiones as $dimension)

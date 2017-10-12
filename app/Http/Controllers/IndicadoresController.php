@@ -52,16 +52,11 @@ class IndicadoresController extends Controller
     public function edit($id)
     {
         $indicador = Indicador::find($id);
-        $dimensiones = [];
-        $dimensionesIds = [];
-        foreach ($indicador->dimensiones as $dimension) {
-            array_push($dimensiones, $dimension);
-            array_push($dimensionesIds, $dimension->id);
-        }
-        $restDimensiones = Dimension::whereNotIn("id", $dimensionesIds)->get();
+        $restDimensiones = Dimension
+                        ::whereNotIn("id", $indicador->dimensiones->pluck('id'))
+                        ->get();
         return view("indicadores.edit")->with([
             "indicador" => $indicador,
-            "dimensiones" => $dimensiones,
             "restDimensiones" => $restDimensiones
         ]);
     }

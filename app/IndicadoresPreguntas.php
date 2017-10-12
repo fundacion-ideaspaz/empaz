@@ -9,7 +9,7 @@ class IndicadoresPreguntas extends Model
     protected $table = 'indicador_pregunta';
     
     protected $fillable = [
-        'dimension_id',
+        'pregunta_id',
         'indicador_id'
     ];
 }

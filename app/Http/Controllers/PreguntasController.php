@@ -65,7 +65,9 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $restIndicadores = Indicador::whereNotIn("id", $pregunta->indicadores)->get();
+        $restIndicadores = Indicador
+                        ::whereNotIn("id", $pregunta->indicadores->pluck('id'))
+                        ->get();
         return view("questions.edit")->with([
             "pregunta" => $pregunta,
             "restIndicadores" => $restIndicadores
@@ -75,7 +77,7 @@ class PreguntasController extends Controller
     public function update($id, Request $request)
     {
         $validations = [
-            "texto" => "required",
+            "nombre" => "required",
             "descripcion" => "required",
             "tipo_respuesta" => "required",
             "indicadores" => "required|array"
@@ -84,6 +86,20 @@ class PreguntasController extends Controller
         $inputs = $request->all();
         $pregunta = Pregunta::find($id);
         $pregunta->update($inputs);
+        $indicadores = $request["indicadores"];
+        $updateIndicadores = IndicadoresPreguntas::whereIn("indicador_id", $indicadores)
+        ->pluck("indicador_id");
+        IndicadoresPreguntas::whereNotIn("indicador_id", $indicadores)
+        ->delete();
+        $newIndicadores = Indicador::whereIn("id", $indicadores)
+        ->whereNotIn("id", $updateIndicadores)
+        ->get();
+        foreach ($newIndicadores as $indicador) {
+            IndicadoresPreguntas::create([
+            "indicador_id" => $indicador->id,
+            "pregunta_id" => $pregunta->id
+            ]);
+        }
         $pregunta->save();
         return redirect("/preguntas");
     }
