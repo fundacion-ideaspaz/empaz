@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="text" class="form-control" name="version">
+                    <input type="number" class="form-control" name="version">
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>

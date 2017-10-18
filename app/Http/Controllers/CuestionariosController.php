@@ -34,7 +34,7 @@ class CuestionariosController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "estado" => "required",
-            "version" => "required",
+            "version" => "required|integer",
             "preguntas" => "required|array",
         ];
         $this->validate($request, $validations);
@@ -68,7 +68,7 @@ class CuestionariosController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "estado" => "required",
-            "version" => "required",
+            "version" => "required|integer",
             "preguntas" => "required|array",
         ];
         $this->validate($request, $validations);

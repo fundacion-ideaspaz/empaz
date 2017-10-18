@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="text" class="form-control" name="version" value="{{$cuestionario->version}}">
+                    <input type="number" class="form-control" name="version" value="{{$cuestionario->version}}">
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
