@@ -59,3 +59,13 @@ Route::post('/preguntas/{id}', 'PreguntasController@update');
 Route::get('/preguntas/{id}', 'PreguntasController@show');
 Route::get('/preguntas/{id}/delete', 'PreguntasController@delete');
 Route::post('/preguntas/{id}/delete', 'PreguntasController@deleteConfirm');
+
+// Cuestionarios Routes
+Route::get('/cuestionarios', 'CuestionariosController@index');
+Route::get('/cuestionarios/new/', 'CuestionariosController@create');
+Route::post('/cuestionarios', 'CuestionariosController@store');
+Route::get('/cuestionarios/{id}/edit', 'CuestionariosController@edit');
+Route::post('/cuestionarios/{id}', 'CuestionariosController@update');
+Route::get('/cuestionarios/{id}', 'CuestionariosController@show');
+Route::get('/cuestionarios/{id}/delete', 'CuestionariosController@delete');
+Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm');
