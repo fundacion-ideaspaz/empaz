@@ -52,13 +52,13 @@ class CuestionariosController extends Controller
 
     public function edit($id)
     {
-        $pregunta = Pregunta::find($id);
-        $restIndicadores = Indicador
-                        ::whereNotIn("id", $pregunta->indicadores->pluck('id'))
+        $cuestionario = Cuestionario::find($id);
+        $restPreguntas = Pregunta
+                        ::whereNotIn("id", $cuestionario->preguntas->pluck('id'))
                         ->get();
         return view("cuestionarios.edit")->with([
-            "pregunta" => $pregunta,
-            "restIndicadores" => $restIndicadores
+            "cuestionario" => $cuestionario,
+            "restPreguntas" => $restPreguntas
         ]);
     }
 
@@ -67,34 +67,37 @@ class CuestionariosController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "tipo_respuesta" => "required",
-            "indicadores" => "required|array"
+            "estado" => "required",
+            "version" => "required",
+            "preguntas" => "required|array",
         ];
         $this->validate($request, $validations);
-        $inputs = $request->all();
-        $pregunta = Pregunta::find($id);
-        $pregunta->update($inputs);
-        $indicadores = $request["indicadores"];
-        $updateIndicadores = IndicadoresPreguntas::whereIn("indicador_id", $indicadores)
-        ->pluck("indicador_id");
-        IndicadoresPreguntas::whereNotIn("indicador_id", $indicadores)
-        ->delete();
-        $newIndicadores = Indicador::whereIn("id", $indicadores)
-        ->whereNotIn("id", $updateIndicadores)
+        $inputs = $request->except("preguntas");
+        $cuestionario = Cuestionario::find($id);
+        $cuestionario->update($inputs);
+        $preguntas = $request["preguntas"];
+        $preguntasToConserve = PreguntaCuestionario::whereIn("pregunta_id", $preguntas)
+            ->where("cuestionario_id", "=", $cuestionario->id)
+            ->pluck("pregunta_id");
+        PreguntaCuestionario::whereNotIn("pregunta_id", $preguntas)
+            ->where("cuestionario_id", "=", $cuestionario->id)
+            ->delete();
+        $newPreguntas = Pregunta::whereIn("id", $preguntas)
+        ->whereNotIn("id", $preguntasToConserve)
         ->get();
-        foreach ($newIndicadores as $indicador) {
-            IndicadoresPreguntas::create([
-            "indicador_id" => $indicador->id,
-            "pregunta_id" => $pregunta->id
+        foreach ($newPreguntas as $pregunta) {
+            PreguntaCuestionario::create([
+                "cuestionario_id" => $cuestionario->id,
+                "pregunta_id" => $pregunta->id
             ]);
         }
-        $pregunta->save();
-        return redirect("/preguntas");
+        $cuestionario->save();
+        return redirect("/cuestionarios");
     }
 
     public function show($id)
     {
-        return redirect("/preguntas/".$id."/edit");
+        return redirect("/cuestionarios/".$id."/edit");
     }
 
     public function delete($id, Request $request)
@@ -104,8 +107,8 @@ class CuestionariosController extends Controller
 
     public function deleteConfirm($id, Request $request)
     {
-        $pregunta = Pregunta::find($id);
+        $pregunta = Cuestionario::find($id);
         $pregunta->delete();
-        return redirect('/preguntas');
+        return redirect('/cuestionarios');
     }
 }

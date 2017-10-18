@@ -76,8 +76,10 @@ class IndicadoresController extends Controller
         $indicador->save();
         $dimensiones = $request["dimensiones"];
         $updateDimensiones = IndicadoresDimensiones::whereIn("dimension_id", $dimensiones)
+            ->where("indicador_id", "=", $indicador->id)
             ->pluck("dimension_id");
         IndicadoresDimensiones::whereNotIn("dimension_id", $dimensiones)
+            ->where("indicador_id", "=", $indicador->id)
             ->delete();
         $newDimensiones = Dimension::whereIn("id", $dimensiones)
             ->whereNotIn("id", $updateDimensiones)

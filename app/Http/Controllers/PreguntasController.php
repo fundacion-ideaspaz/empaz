@@ -88,12 +88,14 @@ class PreguntasController extends Controller
         $pregunta->update($inputs);
         $indicadores = $request["indicadores"];
         $updateIndicadores = IndicadoresPreguntas::whereIn("indicador_id", $indicadores)
-        ->pluck("indicador_id");
+            ->where("pregunta_id", "=", $pregunta->id)
+            ->pluck("indicador_id");
         IndicadoresPreguntas::whereNotIn("indicador_id", $indicadores)
-        ->delete();
+            ->where("pregunta_id", "=", $pregunta->id)
+            ->delete();
         $newIndicadores = Indicador::whereIn("id", $indicadores)
-        ->whereNotIn("id", $updateIndicadores)
-        ->get();
+            ->whereNotIn("id", $updateIndicadores)
+            ->get();
         foreach ($newIndicadores as $indicador) {
             IndicadoresPreguntas::create([
             "indicador_id" => $indicador->id,

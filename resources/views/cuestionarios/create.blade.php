@@ -50,32 +50,4 @@
         </form>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#indicadores-select').multiSelect()
-        // Tipos de respuestas
-        $("#tipo_respuesta").on("change", function () {
-            var tipoRespuesta = this.value;
-            if (tipoRespuesta === "tipo_1") {
-                $("#respuesta_4").css("display", "block");
-                $("#respuesta_3").css("display", "block");
-                $("#respuesta_4").attr("disabled", "false");
-                $("#respuesta_3").attr("disabled", "false");
-            }
-            if (tipoRespuesta === "tipo_2") {
-                $("#respuesta_4").css("display", "none");
-                $("#respuesta_3").css("display", "block");
-                $("#respuesta_4").attr("disabled", true);
-                $("#respuesta_3").attr("disabled", "false");
-            }
-            if (tipoRespuesta === "tipo_3" || tipoRespuesta === "tipo_4") {
-                $("#respuesta_4").css("display", "none");
-                $("#respuesta_3").css("display", "none");
-                $("#respuesta_4").attr("disabled", true);
-                $("#respuesta_3").attr("disabled", true);
-
-            }
-        })
-    });
-
-</script> @endsection
+@endsection
