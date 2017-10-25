@@ -16,7 +16,7 @@
                 <div class="form-group">
                     <label for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control" disabled>
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control" readonly>
                         <option value="tipo_1" {{ $pregunta->tipo_respuesta === 'tipo_1' ? 'selected': ''}}>Tipo 1</option>
                         <option value="tipo_2" {{ $pregunta->tipo_respuesta === 'tipo_2' ? 'selected': ''}}>Tipo 2</option>
                         <option value="tipo_3" {{ $pregunta->tipo_respuesta === 'tipo_3' ? 'selected': ''}}>Tipo 3</option>

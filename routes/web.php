@@ -69,3 +69,14 @@ Route::post('/cuestionarios/{id}', 'CuestionariosController@update');
 Route::get('/cuestionarios/{id}', 'CuestionariosController@show');
 Route::get('/cuestionarios/{id}/delete', 'CuestionariosController@delete');
 Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm');
+
+// Responder Cuestionario Routes
+
+Route::get('/responder/{id}', 'ResponderController@index');
+// Route::get('/responder/new/', 'ResponderController@create');
+// Route::post('/responder', 'ResponderController@store');
+// Route::get('/responder/{id}/edit', 'ResponderController@edit');
+// Route::post('/responder/{id}', 'ResponderController@update');
+// Route::get('/responder/{id}', 'ResponderController@show');
+// Route::get('/responder/{id}/delete', 'ResponderController@delete');
+// Route::post('/responder/{id}/delete', 'ResponderController@deleteConfirm');
