@@ -22,6 +22,31 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Manual de usuario</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="preguntas.html">Preguntas frecuentes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Glosario</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuario
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <span>Cuestionario</span>
+          <a class="dropdown-item" href="/cuestionarios">Crear cuestionario</a>
+          <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
+          <a class="dropdown-item" href="/indicadores">Indicadores</a>
+          <a class="dropdown-item" href="/preguntas">Preguntas</a>
+        </div>
+      </li>
+    </ul>
+
+
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="/users">Usuarios</a>
