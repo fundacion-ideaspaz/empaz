@@ -1,4 +1,7 @@
-@extends('layouts.master') @section('title', 'login') @section('content')
+@extends('layouts.master') @section('title', 'login') 
+
+<div class="login-content">
+@section('content')
 
 <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -107,14 +110,6 @@
       </div>
     </div>
   </div>
-</div>  
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-        </div>
-    </div>
-</div>
-
+</div> 
+</div> 
 @endsection
