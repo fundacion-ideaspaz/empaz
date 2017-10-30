@@ -38,6 +38,19 @@ header.master{
 	background-color:#00aabf; 
 }
 
+.dropdown-menu:before{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    margin-left: -2px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid #fff;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #00aabf;
