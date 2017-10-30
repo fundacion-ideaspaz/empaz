@@ -42,9 +42,13 @@ header.master{
 	content: " ";
 	position: absolute;
 	left: 50%;
+	margin-left: -3px;
 	top: -15px;
-	width: 15px;
-	height: 15px;
+  width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #000;
 }
 
 .btn-primary {
