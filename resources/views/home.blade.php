@@ -1,5 +1,5 @@
 @extends('layouts.master') @section('title', 'login') @section('content')
-
+@endsection
 <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -30,7 +30,6 @@
 </div>
 </section>
 <section id="section02"></section>
-@section('content')
 
 <div class="container">
     <div class="row">
@@ -53,4 +52,4 @@
         </div>
     </div>
 </div>
-@endsection
+
