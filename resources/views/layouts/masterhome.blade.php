@@ -35,7 +35,7 @@
         <a class="nav-link" href="#">Manual de usuario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="preguntas.html">Preguntas frecuentes</a>
+        <a class="nav-link" href="/faq">Preguntas frecuentes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Glosario</a>
