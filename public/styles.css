@@ -34,6 +34,10 @@ nav .row{
         font-weight: 300;
 }
 
+header.master{
+	background-color:#00aabf; 
+}
+
 .btn-primary {
     color: #fff;
     background-color: #00aabf;
