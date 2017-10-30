@@ -11,7 +11,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
 
 </head>
