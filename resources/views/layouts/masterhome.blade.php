@@ -88,9 +88,6 @@
   </div>
 </div>  
 </section>
-  <div class="container app-container">
-    @yield('content')
-  </div>
 </body>
 <script src="/popper/umd/popper.js"></script>
 <script src="/js/bootstrap-slider.js"></script>
