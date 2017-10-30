@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master') @section('title', 'login') 
 
 @section('content')
 <div class="container">
@@ -8,10 +8,14 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="myform" class="fs-form fs-form-full" autocomplete="off">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+<ol class="fs-fields">
+                        <li>
+                            <label class="fs-field-label fs-anim-upper" for="q1">Nombre </label>
+                            <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" value="{{ old('name') }}" required/>
+                        </li>
+                       <!--  <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
@@ -23,8 +27,8 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
+                        </div> -->
+</ol>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
