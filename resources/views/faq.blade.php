@@ -1,7 +1,7 @@
 @extends('layouts.master') @section('title', 'login') @section('content')
 
 
-
+<h2>Preguntas frecuentes</h2>
   <div id="accordion" role="tablist">
   <div class="card">
     <div class="card-header" role="tab" id="headingOne">
