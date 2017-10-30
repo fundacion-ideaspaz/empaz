@@ -1,5 +1,4 @@
 @extends('layouts.master') @section('title', 'login') @section('content')
-@section('content')
 <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
