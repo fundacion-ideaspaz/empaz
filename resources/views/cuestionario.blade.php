@@ -3,7 +3,7 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
-      <form action="/cuestionarios/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
+      <form action="/responder/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
         @foreach($cuestionario->preguntas as $pregunta)
           @component('components/preguntafield', ['pregunta' => $pregunta])

@@ -75,6 +75,7 @@ Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm
 // Responder Cuestionario Routes
 
 Route::get('/responder/{id}', 'ResponderController@index');
+Route::post('/responder/{id}', 'ResponderController@store');
 // Route::get('/responder/new/', 'ResponderController@create');
 // Route::post('/responder', 'ResponderController@store');
 // Route::get('/responder/{id}/edit', 'ResponderController@edit');
