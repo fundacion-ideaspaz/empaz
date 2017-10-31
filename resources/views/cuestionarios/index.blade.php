@@ -26,15 +26,6 @@
               {{ $cuestionario->estado }}
             </td>
             <td>
-              <ul>
-                @foreach($cuestionario->preguntas as $pregunta)
-                <li>
-                  {{ $pregunta->nombre }}
-                </li>
-                @endforeach
-              </ul>
-            </td>
-            <td>
               <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit">Edit</a>
               <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete">Delete</a>
             </td>

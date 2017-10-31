@@ -51,14 +51,17 @@ header.master{
     border-bottom: 14px solid #fff;
 }
 
+.btn{
+    border-radius: 18px;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 36px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #00aabf;
     border-color: #00aabf;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 20px;
-    border-radius: 18px;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 0.9em;

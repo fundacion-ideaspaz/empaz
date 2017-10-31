@@ -2,7 +2,7 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h3>Crear Pregunta</h3>
+            <h3>Editar Cuestionario</h3>
             <form action="/cuestionarios/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -25,24 +25,6 @@
                         <option value="inactivo" @if($cuestionario->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>
                 </div>
-                <h5>Preguntas</h5>
-                <p>Seleccione las preguntas del cuestionario</p>
-                @foreach($cuestionario->preguntas as $pregunta)
-                <div class="form-group">
-                    <label class="form-check-label">
-                        <input class="form-check-input" name="preguntas[]" type="checkbox" value="{{$pregunta->id}}" checked>
-                        {{$pregunta->nombre}}
-                    </label>
-                </div>
-                @endforeach
-                @foreach($restPreguntas as $pregunta)
-                <div class="form-group">
-                    <label class="form-check-label">
-                        <input class="form-check-input" name="preguntas[]" type="checkbox" value="{{$pregunta->id}}">
-                        {{$pregunta->nombre}}
-                    </label>
-                </div>
-                @endforeach
         </div>
         <div class="from-group">
             <input type="submit" class="btn btn-primary" value="Guardar">
