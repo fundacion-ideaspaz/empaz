@@ -13,7 +13,6 @@ class Dimension extends Eloquent
     protected $fillable = [
         "nombre",
         "descripcion",
-        "nivel_importancia",
         "logo"
     ];
 

@@ -8,7 +8,6 @@
           <tr>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Nivel de Importancia</th>
             <th>Logo</th>
             <th>Actions</th>
           </tr>
@@ -19,7 +18,6 @@
           <tr>
             <td>{{$dimension->nombre}}</td>
             <td>{{$dimension->descripcion}}</td>
-            <td>{{ucfirst($dimension->nivel_importancia)}}</td>
             <td>
               @if($dimension->logo)
               <img class="dimension-logo" src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">

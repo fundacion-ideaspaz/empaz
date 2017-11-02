@@ -22,8 +22,7 @@ class initial_seed extends Seeder
             'id' => 1,
             'nombre' => 'Dimension 1',
             'descripcion' => 'Descripcion de prueba.',
-            'logo' => '',
-            'nivel_importancia' => 1
+            'logo' => ''
         ]);
         DB::table('enunciados')->insert([
             'dimension_id' => 1,
@@ -49,8 +48,7 @@ class initial_seed extends Seeder
             'id' => 2,
             'nombre' => 'Dimension 2',
             'descripcion' => 'Descripcion de prueba.',
-            'logo' => '',
-            'nivel_importancia' => 2
+            'logo' => ''
         ]);
         DB::table('enunciados')->insert([
             'dimension_id' => 2,

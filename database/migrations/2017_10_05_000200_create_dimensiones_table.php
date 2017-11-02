@@ -12,7 +12,6 @@ class CreateDimensionesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('nivel_importancia');
             $table->string('logo');
             $table->timestamps();
         });

@@ -21,14 +21,6 @@
                             </small>
                     <img src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
                 </div>
-                <div class="form-group">
-                    <label for="importancia">Nivel de importancia</label>
-                    <br>
-                    <input name="nivel_importancia" value="{{$dimension->nivel_importancia}}" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
-                        data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5"
-                        data-slider-step="1" data-slider-value="{{$dimension->nivel_importancia_int()}}" data-slider-tooltip="hide"
-                    />
-                </div>
                 <h4>Enunciados</h4>
                 @foreach($enunciados as $enunciado)
                 <div class="form-group">

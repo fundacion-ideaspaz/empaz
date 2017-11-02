@@ -30,7 +30,6 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
             "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
@@ -69,7 +68,6 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
             "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
