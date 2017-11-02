@@ -37,6 +37,10 @@ Route::get('/dimensiones', 'DimensionesController@index');
 Route::get('/dimensiones/new/', 'DimensionesController@create');
 Route::post('/dimensiones', 'DimensionesController@store');
 Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
+Route::get('/dimensiones/{id}/indicadores', 'DimensionesController@addIndicadores');
+Route::post('/dimensiones/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
+Route::post('/dimensiones/{id}/indicadores/{indicador_id}/delete',
+            'DimensionesController@deleteIndicadores');
 Route::post('/dimensiones/{id}', 'DimensionesController@update');
 Route::get('/dimensiones/{id}', 'DimensionesController@show');
 Route::get('/dimensiones/{id}/delete', 'DimensionesController@delete');

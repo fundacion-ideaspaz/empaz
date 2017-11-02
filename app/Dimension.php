@@ -41,4 +41,9 @@ class Dimension extends Eloquent
                 return 4;
         };
     }
+
+    public function indicadores(){
+        return $this->belongsToMany("App\Indicador", "dimension_indicador")
+        ->withPivot("nivel_importancia");
+    }
 }

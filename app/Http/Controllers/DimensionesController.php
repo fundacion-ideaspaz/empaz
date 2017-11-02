@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Dimension;
 use App\Enunciado;
+use App\IndicadoresDimensiones;
 use Storage;
 
 class DimensionesController extends Controller
@@ -111,5 +112,53 @@ class DimensionesController extends Controller
         $dimension = Dimension::find($id);
         $dimension->delete();
         return redirect('/dimensiones');
+    }
+
+    public function addIndicadores($id)
+    {
+        $dimension = Dimension::find($id);
+        $indicadoresIds = IndicadoresDimensiones
+            ::where("dimension_id", "=", $id)->pluck("indicador_id");
+        $indicadores = Dimension::whereNotIn("id", $indicadoresIds)->get();
+        return view('dimensiones.indicadores')->with([
+            "dimension" => $dimension,
+            "indicadores" => $indicadores
+        ]);
+    }
+
+    public function storeIndicadores($id, $dimension_id, Request $request)
+    {
+        $validations = [
+            "importancia" => "required"
+        ];
+        $this->validate($request, $validations);
+        $importancia = $request->importancia;
+        $importancias = DimensionCuestionario
+            ::where("cuestionario_id", "=", $id)
+            ->pluck("importancia");
+        $importanciaTotal = 0;
+        foreach($importancias as $imp){
+            $importanciaTotal += $imp;
+        }
+        if($importanciaTotal + $importancia > 100){
+            return redirect("/cuestionarios/".$id."/dimensiones")->withErrors([
+                "errors" => "La suma de la importancia de las dimensiones no puede superar el 100%"
+            ]);
+        }
+        $dimensionCuestionario = new DimensionCuestionario();
+        $dimensionCuestionario->cuestionario_id = $id;
+        $dimensionCuestionario->dimension_id = $dimension_id;
+        $dimensionCuestionario->importancia = $importancia;
+        $dimensionCuestionario->save();
+        return redirect("/cuestionarios/".$id."/dimensiones");
+    }
+
+    public function deleteIndicadores($id, $dimension_id, Request $request)
+    {
+        $dimensionCuestionario = DimensionCuestionario
+            ::where("cuestionario_id", "=", $id)
+            ->where("dimension_id", "=", $dimension_id)->first();
+        $dimensionCuestionario->delete();
+        return redirect("/cuestionarios/".$id."/dimensiones");
     }
 }
