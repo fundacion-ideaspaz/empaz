@@ -40,14 +40,6 @@
                     <label for="respuesta_4">Respuesta 4</label>
                     <input type="text" name="respuestas[]" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="importancia">Indicadores</label>
-                    <select name="indicadores[]" id="indicadores-select" multiple="multiple">
-                        @foreach($indicadores as $indicador)
-                        <option value="{{$indicador->id}}">{{$indicador->nombre}}</option>
-                        @endforeach
-                    </select>
-                </div>
         </div>
         <div class="from-group">
             <input type="submit" class="btn btn-primary" value="Guardar">

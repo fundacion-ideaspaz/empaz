@@ -9,7 +9,6 @@
             <th>Texto</th>
             <th>Descripción</th>
             <th>Tipo de Respuesta</th>
-            <th>Indicadores</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -21,13 +20,6 @@
             <td>{{$pregunta->descripcion}}</td>
             <td>
               {{ ucfirst(str_replace('_', ' ', $pregunta->tipo_respuesta)) }}
-            </td>
-            <td>
-              <ul>
-                @foreach($pregunta->indicadores as $indicador)
-                <li>{{$indicador->nombre}}</li>
-                @endforeach
-              </ul>
             </td>
             <td>
               <a class="btn btn-sm btn-primary" href="/preguntas/{{$pregunta->id}}/edit">Edit</a>
