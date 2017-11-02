@@ -22,6 +22,7 @@ class initial_seed extends Seeder
             'id' => 1,
             'nombre' => 'Dimension 1',
             'descripcion' => 'Descripcion de prueba.',
+            'estado' => 'activo',
             'logo' => ''
         ]);
         DB::table('enunciados')->insert([
@@ -48,6 +49,7 @@ class initial_seed extends Seeder
             'id' => 2,
             'nombre' => 'Dimension 2',
             'descripcion' => 'Descripcion de prueba.',
+            'estado' => 'activo',
             'logo' => ''
         ]);
         DB::table('enunciados')->insert([

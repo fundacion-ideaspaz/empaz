@@ -10,10 +10,13 @@
           <div class="col-sm-12">
             <label>{{$indicador->nombre}}</label>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <div class="input-group">
-              <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" type="text" required/>
-              <div class="input-group-addon">%</div>
+              <label for="importancia">Nivel de importancia</label>
+              <input name="nivel_importancia" value="{{$indicador->pivot->nivel_importancia}}" class="slider-select" id="ex21" type="text"
+                data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
+                data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="{{$indicador->pivot->nivel_importancia}}" data-slider-tooltip="hide"
+              />
             </div>
           </div>
           <div class="col-sm-3">
@@ -31,9 +34,9 @@
           <div class="col-sm-5">
             <div class="input-group">
               <label for="importancia">Nivel de importancia</label>
-              <input name="nivel_importancia" class="slider-select" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
-                data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
-              />
+              <input name="nivel_importancia" class="slider-select" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
+                data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5" data-slider-step="1"
+                data-slider-value="1" data-slider-tooltip="hide" />
             </div>
           </div>
           <div class="col-sm-3">

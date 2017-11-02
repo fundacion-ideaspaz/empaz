@@ -139,15 +139,15 @@ class DimensionesController extends Controller
         $dimensionCuestionario->dimension_id = $id;
         $dimensionCuestionario->nivel_importancia = $importancia;
         $dimensionCuestionario->save();
-        return redirect("/cuestionarios/".$id."/dimensiones");
+        return redirect("/dimensiones/".$id."/indicadores");
     }
 
-    public function deleteIndicadores($id, $dimension_id, Request $request)
+    public function deleteIndicadores($id, $indicador_id, Request $request)
     {
-        $dimensionCuestionario = DimensionCuestionario
-            ::where("cuestionario_id", "=", $id)
-            ->where("dimension_id", "=", $dimension_id)->first();
+        $dimensionCuestionario = IndicadoresDimensiones
+            ::where("dimension_id", "=", $id)
+            ->where("indicador_id", "=", $indicador_id)->first();
         $dimensionCuestionario->delete();
-        return redirect("/cuestionarios/".$id."/dimensiones");
+        return redirect("/dimensiones/".$id."/indicadores");
     }
 }
