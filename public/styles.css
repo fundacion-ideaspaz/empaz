@@ -194,3 +194,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .dimension-logo{
   width: 100px;
 }
+
+/* App Styles - Don't override or delete */
+
+.slider.slider-horizontal{
+    margin-left: 25px;
+}

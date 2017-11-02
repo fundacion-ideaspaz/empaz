@@ -15,18 +15,10 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="importancia">Nivel de importancia</label>
-                    <br>
-                    <input name="nivel_importancia" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
-                        data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="importancia">Dimensiones</label>
-                    <select name="dimensiones[]" id="dimensiones-select" multiple="multiple">
-                        @foreach($dimensiones as $dimension)
-                        <option value="{{$dimension->id}}">{{$dimension->nombre}}</option>
-                        @endforeach
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
                     </select>
                 </div>
         </div>
@@ -45,10 +37,4 @@
         </form>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#dimensiones-select').multiSelect()
-    });
-
-</script>
 @endsection

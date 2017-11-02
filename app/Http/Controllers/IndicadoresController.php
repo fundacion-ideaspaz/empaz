@@ -34,30 +34,19 @@ class IndicadoresController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
-            "dimensiones" => "required|array"
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->except("dimensiones");
+        $inputs = $request->all();
         $indicador = Indicador::create($inputs);
-        foreach ($request["dimensiones"] as $dimension) {
-            IndicadoresDimensiones::create([
-            "dimension_id" => $dimension,
-            "indicador_id" => $indicador->id
-            ]);
-        }
         return redirect("/indicadores");
     }
 
     public function edit($id)
     {
         $indicador = Indicador::find($id);
-        $restDimensiones = Dimension
-                        ::whereNotIn("id", $indicador->dimensiones->pluck('id'))
-                        ->get();
         return view("indicadores.edit")->with([
-            "indicador" => $indicador,
-            "restDimensiones" => $restDimensiones
+            "indicador" => $indicador
         ]);
     }
 
@@ -66,30 +55,13 @@ class IndicadoresController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
-            "dimensiones" => "required|array"
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->except("dimensiones");
+        $inputs = $request->all();
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
         $indicador->save();
-        $dimensiones = $request["dimensiones"];
-        $updateDimensiones = IndicadoresDimensiones::whereIn("dimension_id", $dimensiones)
-            ->where("indicador_id", "=", $indicador->id)
-            ->pluck("dimension_id");
-        IndicadoresDimensiones::whereNotIn("dimension_id", $dimensiones)
-            ->where("indicador_id", "=", $indicador->id)
-            ->delete();
-        $newDimensiones = Dimension::whereIn("id", $dimensiones)
-            ->whereNotIn("id", $updateDimensiones)
-            ->get();
-        foreach ($newDimensiones as $dimension) {
-            IndicadoresDimensiones::create([
-                "dimension_id" => $dimension->id,
-                "indicador_id" => $indicador->id
-            ]);
-        }
         return redirect("/indicadores");
     }
 

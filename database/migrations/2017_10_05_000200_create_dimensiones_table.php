@@ -13,6 +13,7 @@ class CreateDimensionesTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('logo');
+            $table->string('estado');
             $table->timestamps();
         });
     }
