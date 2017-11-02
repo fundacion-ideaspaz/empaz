@@ -51,6 +51,10 @@ Route::get('/indicadores', 'IndicadoresController@index');
 Route::get('/indicadores/new/', 'IndicadoresController@create');
 Route::post('/indicadores', 'IndicadoresController@store');
 Route::get('/indicadores/{id}/edit', 'IndicadoresController@edit');
+Route::get('/indicadores/{id}/preguntas', 'IndicadoresController@addPreguntas');
+Route::post('/indicadores/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
+Route::post('/indicadores/{id}/preguntas/{pregunta_id}/delete',
+            'IndicadoresController@deletePreguntas');
 Route::post('/indicadores/{id}', 'IndicadoresController@update');
 Route::get('/indicadores/{id}', 'IndicadoresController@show');
 Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
