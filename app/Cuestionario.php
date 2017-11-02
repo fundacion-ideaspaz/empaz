@@ -15,8 +15,9 @@ class Cuestionario extends Model
         'estado'
     ];
 
-    public function preguntas()
+    public function dimensiones()
     {
-        return $this->belongsToMany("App\Pregunta", "cuestionarios_preguntas");
+        return $this->belongsToMany("App\Dimension", "cuestionarios_dimensiones")
+            ->withPivot("importancia");
     }
 }

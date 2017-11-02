@@ -3,6 +3,25 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Agregar dimensiones al cuestionario {{$cuestionario->nombre}}</h3>
+      @foreach($cuestionario->dimensiones as $dimension)
+      <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}/delete" method="post" class="form" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <label>{{$dimension->nombre}}</label>
+          </div>
+          <div class="col-sm-3">
+            <div class="input-group">
+              <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" type="text" required/>
+              <div class="input-group-addon">%</div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <button class="btn btn-danger">Eliminar</button>
+          </div>
+        </div>
+      </form>
+      @endforeach
       @foreach($dimensiones as $dimension)
       <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}

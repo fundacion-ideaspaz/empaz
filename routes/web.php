@@ -69,6 +69,8 @@ Route::post('/cuestionarios', 'CuestionariosController@store');
 Route::get('/cuestionarios/{id}/edit', 'CuestionariosController@edit');
 Route::get('/cuestionarios/{id}/dimensiones', 'CuestionariosController@addDimensiones');
 Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}', 'CuestionariosController@storeDimensiones');
+Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}/delete',
+            'CuestionariosController@deleteDimensiones');
 Route::post('/cuestionarios/{id}', 'CuestionariosController@update');
 Route::get('/cuestionarios/{id}', 'CuestionariosController@show');
 Route::get('/cuestionarios/{id}/delete', 'CuestionariosController@delete');
