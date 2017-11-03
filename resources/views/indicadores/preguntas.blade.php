@@ -3,6 +3,9 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Agregar preguntas al indicador {{$indicador->nombre}}</h3>
+      @if(sizeof($indicador->preguntas) > 0)
+      <h4>Preguntas asignadas a el indicador</h4>
+      @endif
       @foreach($indicador->preguntas as $pregunta)
       <form action="/indicadores/{{$indicador->id}}/preguntas/{{$pregunta->id}}/delete" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -24,7 +27,11 @@
           </div>
         </div>
       </form>
-      @endforeach @foreach($preguntas as $pregunta)
+      @endforeach
+      @if(sizeof($preguntas) > 0)
+      <h4>Preguntas disponibles para ser asignadas</h4>
+      @endif
+      @foreach($preguntas as $pregunta)
       <form action="/indicadores/{{$indicador->id}}/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">

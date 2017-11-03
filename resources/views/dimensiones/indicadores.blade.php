@@ -3,6 +3,9 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Agregar indicadores al dimension {{$dimension->nombre}}</h3>
+      @if(sizeof($dimension->indicadores) > 0)
+      <h4>Indicadores asignados a la dimension</h4>
+      @endif
       @foreach($dimension->indicadores as $indicador)
       <form action="/dimensiones/{{$dimension->id}}/indicadores/{{$indicador->id}}/delete" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -24,7 +27,11 @@
           </div>
         </div>
       </form>
-      @endforeach @foreach($indicadores as $indicador)
+      @endforeach 
+      @if(sizeof($indicadores) > 0)
+      <h4>Indicadores disponibles para ser asignados</h4>
+      @endif
+      @foreach($indicadores as $indicador)
       <form action="/dimensiones/{{$dimension->id}}/indicadores/{{$indicador->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group row">

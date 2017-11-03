@@ -3,6 +3,9 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Agregar dimensiones al cuestionario {{$cuestionario->nombre}}</h3>
+      @if(sizeof($cuestionario->dimensiones) > 0)
+      <h4>Dimensiones asignadas al cuestionario</h4>
+      @endif
       @foreach($cuestionario->dimensiones as $dimension)
       <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}/delete" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -22,6 +25,9 @@
         </div>
       </form>
       @endforeach
+      @if(sizeof($dimensiones) > 0)
+      <h4>Dimensiones disponibles para ser asignadas</h4>
+      @endif
       @foreach($dimensiones as $dimension)
       <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
