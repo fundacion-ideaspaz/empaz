@@ -26,8 +26,7 @@ class PreguntasController extends Controller
 
     public function create()
     {
-        $indicadores = Indicador::all();
-        return view("questions.create")->with(["indicadores" => $indicadores]);
+        return view("questions.create");
     }
 
     public function store(Request $request)
@@ -36,13 +35,11 @@ class PreguntasController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "tipo_respuesta" => "required",
-            "indicadores" => "required|array",
             "respuestas" => "required|array"
         ];
         $this->validate($request, $validations);
         $respuestas = $request->respuestas;
-        $indicadores = $request->indicadores;
-        $inputs = $request->except(["respuestas", "indicadores"]);
+        $inputs = $request->except(["indicadores"]);
         $pregunta = Pregunta::create($inputs);
         foreach ($respuestas as $number => $respuesta) {
             if ($respuesta != null) {
@@ -53,24 +50,14 @@ class PreguntasController extends Controller
                 $newRespuesta->save();
             }
         }
-        foreach ($indicadores as $number => $indicador) {
-            $newIndicador = new IndicadoresPreguntas();
-            $newIndicador->pregunta_id = $pregunta->id;
-            $newIndicador->indicador_id = $indicador;
-            $newIndicador->save();
-        }
         return redirect("/preguntas");
     }
 
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $restIndicadores = Indicador
-                        ::whereNotIn("id", $pregunta->indicadores->pluck('id'))
-                        ->get();
         return view("questions.edit")->with([
-            "pregunta" => $pregunta,
-            "restIndicadores" => $restIndicadores
+            "pregunta" => $pregunta
         ]);
     }
 
@@ -78,30 +65,12 @@ class PreguntasController extends Controller
     {
         $validations = [
             "nombre" => "required",
-            "descripcion" => "required",
-            "tipo_respuesta" => "required",
-            "indicadores" => "required|array"
+            "descripcion" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->all();
+        $inputs = $request->except('tipo_respuesta');
         $pregunta = Pregunta::find($id);
         $pregunta->update($inputs);
-        $indicadores = $request["indicadores"];
-        $updateIndicadores = IndicadoresPreguntas::whereIn("indicador_id", $indicadores)
-            ->where("pregunta_id", "=", $pregunta->id)
-            ->pluck("indicador_id");
-        IndicadoresPreguntas::whereNotIn("indicador_id", $indicadores)
-            ->where("pregunta_id", "=", $pregunta->id)
-            ->delete();
-        $newIndicadores = Indicador::whereIn("id", $indicadores)
-            ->whereNotIn("id", $updateIndicadores)
-            ->get();
-        foreach ($newIndicadores as $indicador) {
-            IndicadoresPreguntas::create([
-            "indicador_id" => $indicador->id,
-            "pregunta_id" => $pregunta->id
-            ]);
-        }
         $pregunta->save();
         return redirect("/preguntas");
     }

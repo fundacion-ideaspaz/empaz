@@ -12,6 +12,7 @@ class CreatePreguntasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
+            $table->string('estado');
             $table->string('tipo_respuesta');
             $table->timestamps();
         });

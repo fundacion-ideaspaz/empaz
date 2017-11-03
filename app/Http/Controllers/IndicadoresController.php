@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Indicador;
-use App\Dimension;
+use App\Pregunta;
 use App\IndicadoresDimensiones;
+use App\IndicadoresPreguntas;
 use Storage;
 
 class IndicadoresController extends Controller
@@ -25,8 +26,7 @@ class IndicadoresController extends Controller
 
     public function create()
     {
-        $dimensiones = Dimension::all();
-        return view("indicadores.create")->with(["dimensiones" => $dimensiones]);
+        return view("indicadores.create");
     }
 
     public function store(Request $request)
@@ -34,30 +34,19 @@ class IndicadoresController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
-            "dimensiones" => "required|array"
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->except("dimensiones");
+        $inputs = $request->all();
         $indicador = Indicador::create($inputs);
-        foreach ($request["dimensiones"] as $dimension) {
-            IndicadoresDimensiones::create([
-            "dimension_id" => $dimension,
-            "indicador_id" => $indicador->id
-            ]);
-        }
         return redirect("/indicadores");
     }
 
     public function edit($id)
     {
         $indicador = Indicador::find($id);
-        $restDimensiones = Dimension
-                        ::whereNotIn("id", $indicador->dimensiones->pluck('id'))
-                        ->get();
         return view("indicadores.edit")->with([
-            "indicador" => $indicador,
-            "restDimensiones" => $restDimensiones
+            "indicador" => $indicador
         ]);
     }
 
@@ -66,30 +55,13 @@ class IndicadoresController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
-            "dimensiones" => "required|array"
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->except("dimensiones");
+        $inputs = $request->all();
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
         $indicador->save();
-        $dimensiones = $request["dimensiones"];
-        $updateDimensiones = IndicadoresDimensiones::whereIn("dimension_id", $dimensiones)
-            ->where("indicador_id", "=", $indicador->id)
-            ->pluck("dimension_id");
-        IndicadoresDimensiones::whereNotIn("dimension_id", $dimensiones)
-            ->where("indicador_id", "=", $indicador->id)
-            ->delete();
-        $newDimensiones = Dimension::whereIn("id", $dimensiones)
-            ->whereNotIn("id", $updateDimensiones)
-            ->get();
-        foreach ($newDimensiones as $dimension) {
-            IndicadoresDimensiones::create([
-                "dimension_id" => $dimension->id,
-                "indicador_id" => $indicador->id
-            ]);
-        }
         return redirect("/indicadores");
     }
 
@@ -108,5 +80,41 @@ class IndicadoresController extends Controller
         $indicador = Indicador::find($id);
         $indicador->delete();
         return redirect('/indicadores');
+    }
+
+    public function addPreguntas($id)
+    {
+        $indicador = Indicador::find($id);
+        $preguntasIds = IndicadoresPreguntas
+            ::where("indicador_id", "=", $id)->pluck("pregunta_id");
+        $preguntas = Pregunta::whereNotIn("id", $preguntasIds)->get();
+        return view('indicadores.preguntas')->with([
+            "indicador" => $indicador,
+            "preguntas" => $preguntas
+        ]);
+    }
+
+    public function storePreguntas($id, $pregunta_id, Request $request)
+    {
+        $validations = [
+            "required" => "required"
+        ];
+        $this->validate($request, $validations);
+        $required = filter_var($request->required, FILTER_VALIDATE_BOOLEAN);
+        $indicadorCuestionario = new IndicadoresPreguntas();
+        $indicadorCuestionario->pregunta_id = $pregunta_id;
+        $indicadorCuestionario->indicador_id = $id;
+        $indicadorCuestionario->required = $required;
+        $indicadorCuestionario->save();
+        return redirect("/indicadores/".$id."/preguntas");
+    }
+
+    public function deletePreguntas($id, $pregunta_id, Request $request)
+    {
+        $indicadorCuestionario = IndicadoresPreguntas
+            ::where("indicador_id", "=", $id)
+            ->where("pregunta_id", "=", $pregunta_id)->first();
+        $indicadorCuestionario->delete();
+        return redirect("/indicadores/".$id."/preguntas");
     }
 }

@@ -37,6 +37,10 @@ Route::get('/dimensiones', 'DimensionesController@index');
 Route::get('/dimensiones/new/', 'DimensionesController@create');
 Route::post('/dimensiones', 'DimensionesController@store');
 Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
+Route::get('/dimensiones/{id}/indicadores', 'DimensionesController@addIndicadores');
+Route::post('/dimensiones/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
+Route::post('/dimensiones/{id}/indicadores/{indicador_id}/delete',
+            'DimensionesController@deleteIndicadores');
 Route::post('/dimensiones/{id}', 'DimensionesController@update');
 Route::get('/dimensiones/{id}', 'DimensionesController@show');
 Route::get('/dimensiones/{id}/delete', 'DimensionesController@delete');
@@ -47,6 +51,10 @@ Route::get('/indicadores', 'IndicadoresController@index');
 Route::get('/indicadores/new/', 'IndicadoresController@create');
 Route::post('/indicadores', 'IndicadoresController@store');
 Route::get('/indicadores/{id}/edit', 'IndicadoresController@edit');
+Route::get('/indicadores/{id}/preguntas', 'IndicadoresController@addPreguntas');
+Route::post('/indicadores/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
+Route::post('/indicadores/{id}/preguntas/{pregunta_id}/delete',
+            'IndicadoresController@deletePreguntas');
 Route::post('/indicadores/{id}', 'IndicadoresController@update');
 Route::get('/indicadores/{id}', 'IndicadoresController@show');
 Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
@@ -67,6 +75,10 @@ Route::get('/cuestionarios', 'CuestionariosController@index');
 Route::get('/cuestionarios/new/', 'CuestionariosController@create');
 Route::post('/cuestionarios', 'CuestionariosController@store');
 Route::get('/cuestionarios/{id}/edit', 'CuestionariosController@edit');
+Route::get('/cuestionarios/{id}/dimensiones', 'CuestionariosController@addDimensiones');
+Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}', 'CuestionariosController@storeDimensiones');
+Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}/delete',
+            'CuestionariosController@deleteDimensiones');
 Route::post('/cuestionarios/{id}', 'CuestionariosController@update');
 Route::get('/cuestionarios/{id}', 'CuestionariosController@show');
 Route::get('/cuestionarios/{id}/delete', 'CuestionariosController@delete');

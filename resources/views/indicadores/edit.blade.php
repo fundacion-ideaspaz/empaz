@@ -14,25 +14,16 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="importancia">Nivel de importancia</label>
-                    <br>
-                    <input name="nivel_importancia" value="{{$indicador->nivel_importancia}}" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
-                        data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5"
-                        data-slider-step="1" data-slider-value="{{$indicador->nivel_importancia_int()}}" data-slider-tooltip="hide"
-                    />
-                </div>
-                <div class="form-group">
-                    <label for="importancia">Dimensiones</label>
-                    <select name="dimensiones[]" id="dimensiones-select" multiple="multiple">
-                        @foreach($indicador->dimensiones as $dimension)
-                        <option value="{{$dimension->id}}" selected>{{$dimension->nombre}}</option>
-                        @endforeach
-                        @foreach($restDimensiones as $dimension)
-                        <option value="{{$dimension->id}}">{{$dimension->nombre}}</option>
-                        @endforeach
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                        <option value="activo" @if($indicador->estado === "activo") selected @endif>Activo</option>
+                        <option value="inactivo" @if($indicador->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>
                 </div>
                 <div class="from-group">
+                        <a href="/indicadores/{{$indicador->id}}/preguntas" class="btn btn-info">
+                            Preguntas
+                        </a>
                     <input type="submit" class="btn btn-primary" value="Guardar">
                 </div>
                 @if ($errors->any())
@@ -48,10 +39,4 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function () {
-        $('#dimensiones-select').multiSelect()
-    });
-
-</script>
 @endsection

@@ -13,7 +13,6 @@ class Dimension extends Eloquent
     protected $fillable = [
         "nombre",
         "descripcion",
-        "nivel_importancia",
         "logo"
     ];
 
@@ -41,5 +40,10 @@ class Dimension extends Eloquent
             case "muy alto":
                 return 4;
         };
+    }
+
+    public function indicadores(){
+        return $this->belongsToMany("App\Indicador", "dimension_indicador")
+        ->withPivot("nivel_importancia");
     }
 }

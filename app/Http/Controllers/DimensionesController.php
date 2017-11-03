@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Dimension;
 use App\Enunciado;
+use App\Indicador;
+use App\IndicadoresDimensiones;
 use Storage;
 
 class DimensionesController extends Controller
@@ -30,7 +32,6 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
             "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
@@ -69,7 +70,6 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "nivel_importancia" => "required",
             "enunciados" => "required|array"
         ];
         $this->validate($request, $validations);
@@ -113,5 +113,41 @@ class DimensionesController extends Controller
         $dimension = Dimension::find($id);
         $dimension->delete();
         return redirect('/dimensiones');
+    }
+
+    public function addIndicadores($id)
+    {
+        $dimension = Dimension::find($id);
+        $indicadoresIds = IndicadoresDimensiones
+            ::where("dimension_id", "=", $id)->pluck("indicador_id");
+        $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
+        return view('dimensiones.indicadores')->with([
+            "dimension" => $dimension,
+            "indicadores" => $indicadores
+        ]);
+    }
+
+    public function storeIndicadores($id, $indicador_id, Request $request)
+    {
+        $validations = [
+            "nivel_importancia" => "required"
+        ];
+        $this->validate($request, $validations);
+        $importancia = $request->nivel_importancia;
+        $dimensionCuestionario = new IndicadoresDimensiones();
+        $dimensionCuestionario->indicador_id = $indicador_id;
+        $dimensionCuestionario->dimension_id = $id;
+        $dimensionCuestionario->nivel_importancia = $importancia;
+        $dimensionCuestionario->save();
+        return redirect("/dimensiones/".$id."/indicadores");
+    }
+
+    public function deleteIndicadores($id, $indicador_id, Request $request)
+    {
+        $dimensionCuestionario = IndicadoresDimensiones
+            ::where("dimension_id", "=", $id)
+            ->where("indicador_id", "=", $indicador_id)->first();
+        $dimensionCuestionario->delete();
+        return redirect("/dimensiones/".$id."/indicadores");
     }
 }

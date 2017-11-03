@@ -22,13 +22,6 @@
                     <!-- <span class="custom-file-control"></span> -->
                     </label>
                 </div>
-                <div class="form-group">
-                    <label for="importancia">Nivel de importancia</label>
-                    <br>
-                    <input name="nivel_importancia" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]" data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]'
-                        data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide"
-                    />
-                </div>
                 <h4>Enunciados</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo</label>

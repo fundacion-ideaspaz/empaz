@@ -17,7 +17,7 @@ class CreateIndicadoresTable extends Migration
              $table->increments('id');
              $table->string('nombre');
              $table->string('descripcion');
-             $table->string('nivel_importancia');
+             $table->string('estado');
              $table->timestamps();
          });
      }

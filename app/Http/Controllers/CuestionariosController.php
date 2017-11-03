@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cuestionario;
-use App\Pregunta;
-use App\PreguntaCuestionario;
+use App\Dimension;
+use App\DimensionCuestionario;
 
 class CuestionariosController extends Controller
 {
@@ -24,8 +24,7 @@ class CuestionariosController extends Controller
 
     public function create()
     {
-        $preguntas = Pregunta::all();
-        return view("cuestionarios.create")->with(["preguntas" => $preguntas]);
+        return view("cuestionarios.create");
     }
 
     public function store(Request $request)
@@ -34,31 +33,20 @@ class CuestionariosController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "estado" => "required",
-            "version" => "required|integer",
-            "preguntas" => "required|array",
+            "version" => "required|integer"
         ];
         $this->validate($request, $validations);
         $preguntas = $request["preguntas"];
         $cuestionario = $request->except('preguntas');
         $newCuestionario = Cuestionario::create($cuestionario);
-        foreach ($preguntas as $pregunta) {
-            $preguntaCuestionario = new PreguntaCuestionario();
-            $preguntaCuestionario->pregunta_id = $pregunta;
-            $preguntaCuestionario->cuestionario_id = $newCuestionario->id;
-            $preguntaCuestionario->save();
-        }
         return redirect("/cuestionarios");
     }
 
     public function edit($id)
     {
         $cuestionario = Cuestionario::find($id);
-        $restPreguntas = Pregunta
-                        ::whereNotIn("id", $cuestionario->preguntas->pluck('id'))
-                        ->get();
         return view("cuestionarios.edit")->with([
-            "cuestionario" => $cuestionario,
-            "restPreguntas" => $restPreguntas
+            "cuestionario" => $cuestionario
         ]);
     }
 
@@ -68,29 +56,12 @@ class CuestionariosController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "estado" => "required",
-            "version" => "required|integer",
-            "preguntas" => "required|array",
+            "version" => "required|integer"
         ];
         $this->validate($request, $validations);
         $inputs = $request->except("preguntas");
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
-        $preguntas = $request["preguntas"];
-        $preguntasToConserve = PreguntaCuestionario::whereIn("pregunta_id", $preguntas)
-            ->where("cuestionario_id", "=", $cuestionario->id)
-            ->pluck("pregunta_id");
-        PreguntaCuestionario::whereNotIn("pregunta_id", $preguntas)
-            ->where("cuestionario_id", "=", $cuestionario->id)
-            ->delete();
-        $newPreguntas = Pregunta::whereIn("id", $preguntas)
-        ->whereNotIn("id", $preguntasToConserve)
-        ->get();
-        foreach ($newPreguntas as $pregunta) {
-            PreguntaCuestionario::create([
-                "cuestionario_id" => $cuestionario->id,
-                "pregunta_id" => $pregunta->id
-            ]);
-        }
         $cuestionario->save();
         return redirect("/cuestionarios");
     }
@@ -107,8 +78,56 @@ class CuestionariosController extends Controller
 
     public function deleteConfirm($id, Request $request)
     {
-        $pregunta = Cuestionario::find($id);
-        $pregunta->delete();
+        $cuestionario = Cuestionario::find($id);
+        $cuestionario->delete();
         return redirect('/cuestionarios');
+    }
+
+    public function addDimensiones($id)
+    {
+        $cuestionario = Cuestionario::find($id);
+        $dimensionesIds = DimensionCuestionario
+            ::where("cuestionario_id", "=", $id)->pluck("dimension_id");
+        $dimensiones = Dimension::whereNotIn("id", $dimensionesIds)->get();
+        return view('cuestionarios.dimensiones')->with([
+            "cuestionario" => $cuestionario,
+            "dimensiones" => $dimensiones
+        ]);
+    }
+
+    public function storeDimensiones($id, $dimension_id, Request $request)
+    {
+        $validations = [
+            "importancia" => "required"
+        ];
+        $this->validate($request, $validations);
+        $importancia = $request->importancia;
+        $importancias = DimensionCuestionario
+            ::where("cuestionario_id", "=", $id)
+            ->pluck("importancia");
+        $importanciaTotal = 0;
+        foreach($importancias as $imp){
+            $importanciaTotal += $imp;
+        }
+        if($importanciaTotal + $importancia > 100){
+            return redirect("/cuestionarios/".$id."/dimensiones")->withErrors([
+                "errors" => "La suma de la importancia de las dimensiones no puede superar el 100%"
+            ]);
+        }
+        $dimensionCuestionario = new DimensionCuestionario();
+        $dimensionCuestionario->cuestionario_id = $id;
+        $dimensionCuestionario->dimension_id = $dimension_id;
+        $dimensionCuestionario->importancia = $importancia;
+        $dimensionCuestionario->save();
+        return redirect("/cuestionarios/".$id."/dimensiones");
+    }
+
+    public function deleteDimensiones($id, $dimension_id, Request $request)
+    {
+        $dimensionCuestionario = DimensionCuestionario
+            ::where("cuestionario_id", "=", $id)
+            ->where("dimension_id", "=", $dimension_id)->first();
+        $dimensionCuestionario->delete();
+        return redirect("/cuestionarios/".$id."/dimensiones");
     }
 }

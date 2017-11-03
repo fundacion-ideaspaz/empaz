@@ -8,8 +8,7 @@
           <tr>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Nivel de Importancia</th>
-            <th>Dimensiones</th>
+            <th>Estado</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -19,14 +18,7 @@
           <tr>
             <td>{{$indicador->nombre}}</td>
             <td>{{$indicador->descripcion}}</td>
-            <td>{{ucfirst($indicador->nivel_importancia)}}</td>
-            <td>
-              <ul>
-                @foreach($indicador->dimensiones as $dimension)
-                <li>{{$dimension->nombre}}</li>
-                @endforeach
-              </ul>
-            </td>
+            <td>{{ucfirst($indicador->estado)}}</td>
             <td>
               <a class="btn btn-sm btn-primary" href="/indicadores/{{$indicador->id}}/edit">Edit</a>
               <a class="btn btn-sm btn-danger" href="/indicadores/{{$indicador->id}}/delete">Delete</a>

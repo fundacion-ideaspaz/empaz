@@ -16,7 +16,6 @@ header{
     position: fixed;
     z-index: 10;
     width: 100%;
-    padding-top: 15px;
 }
 
 header .bg-light{
@@ -51,15 +50,18 @@ header.master{
     border-bottom: 14px solid #fff;
 }
 
+.btn{
+    border-radius: 18px;
+    padding: 0 20px;
+    height: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #00aabf;
     border-color: #00aabf;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 20px;
-    border-radius: 18px;
-    text-transform: uppercase;
     font-weight: 300;
     font-size: 0.9em;
 }
@@ -182,7 +184,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 
 .app-container{
-  padding-top: 140px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+
+.card{
+    padding: 25px 25px;
 }
 
 .dimensiones-form .slider.slider-horizontal{
@@ -191,4 +198,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 .dimension-logo{
   width: 100px;
+}
+
+/* App Styles - Don't override or delete */
+
+.slider.slider-horizontal{
+    margin-left: 25px;
+}
+
+.logout-link{
+    color: white;
+}
+
+.logout-link:hover{
+    text-decoration: none;
+    color: white;
 }
