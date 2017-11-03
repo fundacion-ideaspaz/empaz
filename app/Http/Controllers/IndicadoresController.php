@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Indicador;
-use App\Dimension;
+use App\Pregunta;
 use App\IndicadoresDimensiones;
+use App\IndicadoresPreguntas;
 use Storage;
 
 class IndicadoresController extends Controller
@@ -25,8 +26,7 @@ class IndicadoresController extends Controller
 
     public function create()
     {
-        $dimensiones = Dimension::all();
-        return view("indicadores.create")->with(["dimensiones" => $dimensiones]);
+        return view("indicadores.create");
     }
 
     public function store(Request $request)
@@ -85,8 +85,8 @@ class IndicadoresController extends Controller
     public function addPreguntas($id)
     {
         $indicador = Indicador::find($id);
-        $preguntasIds = PreguntasIndicadores
-            ::where("pregunta_id", "=", $id)->pluck("pregunta_id");
+        $preguntasIds = IndicadoresPreguntas
+            ::where("indicador_id", "=", $id)->pluck("pregunta_id");
         $preguntas = Pregunta::whereNotIn("id", $preguntasIds)->get();
         return view('indicadores.preguntas')->with([
             "indicador" => $indicador,
@@ -100,18 +100,18 @@ class IndicadoresController extends Controller
             "required" => "required"
         ];
         $this->validate($request, $validations);
-        $importancia = $request->nivel_importancia;
-        $indicadorCuestionario = new PreguntasIndicadores();
+        $required = filter_var($request->required, FILTER_VALIDATE_BOOLEAN);
+        $indicadorCuestionario = new IndicadoresPreguntas();
         $indicadorCuestionario->pregunta_id = $pregunta_id;
         $indicadorCuestionario->indicador_id = $id;
-        $indicadorCuestionario->nivel_importancia = $importancia;
+        $indicadorCuestionario->required = $required;
         $indicadorCuestionario->save();
         return redirect("/indicadores/".$id."/preguntas");
     }
 
     public function deletePreguntas($id, $pregunta_id, Request $request)
     {
-        $indicadorCuestionario = PreguntasIndicadores
+        $indicadorCuestionario = IndicadoresPreguntas
             ::where("indicador_id", "=", $id)
             ->where("pregunta_id", "=", $pregunta_id)->first();
         $indicadorCuestionario->delete();

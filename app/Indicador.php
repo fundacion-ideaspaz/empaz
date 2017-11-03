@@ -16,8 +16,9 @@ class Indicador extends Eloquent
         "estado"
     ];
 
-    public function dimensiones()
+    public function preguntas()
     {
-        return $this->belongsToMany("App\Dimension");
+        return $this->belongsToMany("App\Pregunta", 'indicador_pregunta')
+            ->withPivot("required");
     }
 }
