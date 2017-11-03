@@ -21,6 +21,9 @@
                     </select>
                 </div>
                 <div class="from-group">
+                        <a href="/indicadores/{{$indicador->id}}/preguntas" class="btn btn-info">
+                            Preguntas
+                        </a>
                     <input type="submit" class="btn btn-primary" value="Guardar">
                 </div>
                 @if ($errors->any())

@@ -29,6 +29,9 @@
                 </div>
                 @endforeach
                 <div class="from-group">
+                    <a href="/dimensiones/{{$dimension->id}}/indicadores" class="btn btn-info">
+                        Indicadores
+                    </a>
                     <input type="submit" class="btn btn-primary" value="Guardar">
                 </div>
                 @if ($errors->any())
