@@ -20,4 +20,16 @@ class Cuestionario extends Model
         return $this->belongsToMany("App\Dimension", "cuestionarios_dimensiones")
             ->withPivot("importancia");
     }
+
+    public function allPreguntas(){
+        $preguntas = [];
+        foreach($this->dimensiones as $dimension){
+            foreach($dimension->indicadores as $indicador){
+                foreach($indicador->preguntas as $pregunta){
+                    array_push($preguntas, $pregunta);
+                }
+            }
+        }
+        return $preguntas;
+    }
 }
