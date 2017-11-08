@@ -18,6 +18,7 @@ class ResponderController extends Controller
 
     public function store($id, Request $request)
     {
+        dd($request->all());
         // Validate and save the answers to the cuestionario.
         return redirect('home');
     }
