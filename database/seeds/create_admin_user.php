@@ -11,7 +11,7 @@ class create_admin_user extends Seeder
      */
     public function run()
     {
-        DB::table('users')->truncate();
+        DB::table('users')->delete();
         DB::table('users')->insert([
             'nombre' => 'Super Admin',
             'email' => 'admin1@empaz.com',

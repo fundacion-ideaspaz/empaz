@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cuestionario;
+use App\CuestionarioResult;
+use App\RespuestaCuestionario;
+use Auth;
 
 class ResponderController extends Controller
 {
@@ -18,8 +21,19 @@ class ResponderController extends Controller
 
     public function store($id, Request $request)
     {
-        dd($request->all());
-        // Validate and save the answers to the cuestionario.
+        $cuestionario = Cuestionario::find($id);
+        $cuestionarioResult = new CuestionarioResult();
+        $cuestionarioResult->cuestionario_id = $id;
+        $cuestionarioResult->user_id = Auth::user()->id;
+        $cuestionarioResult->save();
+        $answers = $request->except("_token");
+        foreach($answers as $preguntaId => $opcionRespuestaId){
+            $respuesta = new RespuestaCuestionario();
+            $respuesta->opcion_respuesta_id = $opcionRespuestaId;
+            $respuesta->pregunta_id = $preguntaId;
+            $respuesta->cuestionario_result_id = $cuestionarioResult->id;
+            $respuesta->save();
+        }
         return redirect('home');
     }
 }
