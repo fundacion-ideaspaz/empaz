@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/css/component.css">
   <link rel="stylesheet" href="/css/cs-select.css">
   <link rel="stylesheet" href="/css/cs-skin-boxes.css">
+  <script src="/js/modernizr.custom.js"></script>
 
 </head>
 
