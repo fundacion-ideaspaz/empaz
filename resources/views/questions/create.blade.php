@@ -1,7 +1,7 @@
 @extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
-        <div class="card-body">
+        <div class="fs-form-wrap" id="fs-form-wrap">
             <h3>Crear Pregunta</h3>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
