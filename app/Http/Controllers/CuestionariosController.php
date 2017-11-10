@@ -39,7 +39,7 @@ class CuestionariosController extends Controller
         $preguntas = $request["preguntas"];
         $cuestionario = $request->except('preguntas');
         $newCuestionario = Cuestionario::create($cuestionario);
-        return redirect("/cuestionarios");
+        return redirect("/cuestionarios/".$newCuestionario->id."/dimensiones");
     }
 
     public function edit($id)
@@ -81,18 +81,6 @@ class CuestionariosController extends Controller
         $cuestionario = Cuestionario::find($id);
         $cuestionario->delete();
         return redirect('/cuestionarios');
-    }
-
-    public function addDimensiones($id)
-    {
-        $cuestionario = Cuestionario::find($id);
-        $dimensionesIds = DimensionCuestionario
-            ::where("cuestionario_id", "=", $id)->pluck("dimension_id");
-        $dimensiones = Dimension::whereNotIn("id", $dimensionesIds)->get();
-        return view('cuestionarios.dimensiones')->with([
-            "cuestionario" => $cuestionario,
-            "dimensiones" => $dimensiones
-        ]);
     }
 
     public function storeDimensiones($id, $dimension_id, Request $request)

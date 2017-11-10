@@ -115,18 +115,6 @@ class DimensionesController extends Controller
         return redirect('/dimensiones');
     }
 
-    public function addIndicadores($id)
-    {
-        $dimension = Dimension::find($id);
-        $indicadoresIds = IndicadoresDimensiones
-            ::where("dimension_id", "=", $id)->pluck("indicador_id");
-        $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
-        return view('dimensiones.indicadores')->with([
-            "dimension" => $dimension,
-            "indicadores" => $indicadores
-        ]);
-    }
-
     public function storeIndicadores($id, $indicador_id, Request $request)
     {
         $validations = [

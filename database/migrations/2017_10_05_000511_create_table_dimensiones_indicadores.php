@@ -14,6 +14,8 @@ class CreateTableDimensionesIndicadores extends Migration
             $table->foreign('dimension_id')->references('id')->on('dimensiones')->onDelete('cascade');
             $table->integer('indicador_id')->unsigned();
             $table->foreign('indicador_id')->references('id')->on('indicadores')->onDelete('cascade');
+            $table->integer('cuestionario_id')->unsigned();
+            $table->foreign('cuestionario_id')->references('id')->on('cuestionarios')->onDelete('cascade');
             $table->string('nivel_importancia');
             $table->timestamps();
         });
