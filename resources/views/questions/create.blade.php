@@ -7,19 +7,19 @@
                 {{ csrf_field() }}
                 <ol class="fs-fields">
 
-                <li class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
+                <li>
+                    <label class="fs-field-label fs-anim-upper" for="nombre">Nombre</label>
+                    <input type="text" class="form-control fs-anim-lower" name="nombre">
                 </li>
 
-                <li class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+                <li >
+                    <label class="fs-field-label fs-anim-upper" for="descripcion">Descripción</label>
+                    <textarea name="descripcion" id="descripcion" class="form-control fs-anim-lower"></textarea>
                     </textarea>
                 </li>
 
-                <li class="form-group">
-                    <label for="tipo_respuesta">Tipo de Respuesta</label>
+                <li >
+                    <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
                         <option value="tipo_1">Tipo 1</option>
@@ -29,30 +29,28 @@
                     </select>
                 </li>
 
-                <li class="form-group" id="respuesta_1">
-                    <label for="respuesta_1">Respuesta 1</label>
-                    <input type="text" name="respuestas[]" class="form-control">
+                <li id="respuesta_1">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
                 </li>
 
-                <li class="form-group" id="respuesta_2">
-                    <label for="respuesta_2">Respuesta 2</label>
-                    <input type="text" name="respuestas[]" class="form-control">
+                <li id="respuesta_2">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_2">Respuesta 2</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
                 </li>
 
-                <li class="form-group" id="respuesta_3">
-                    <label for="respuesta_3">Respuesta 3</label>
-                    <input type="text" name="respuestas[]" class="form-control">
+                <li id="respuesta_3">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_3">Respuesta 3</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
                 </li>
 
-                <li class="form-group" id="respuesta_4">
-                    <label for="respuesta_4">Respuesta 4</label>
-                    <input type="text" name="respuestas[]" class="form-control">
+                <li  id="respuesta_4">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_4">Respuesta 4</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
                 </li>
                 </ol>
         </div>
-        <div class="from-group">
-            <input type="submit" class="btn btn-primary" value="Guardar">
-        </div>
+            <button class="fs-submit" type="submit" value="Guardar"></button>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
