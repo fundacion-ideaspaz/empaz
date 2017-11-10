@@ -13,9 +13,9 @@
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/component.css">
-  <link rel="stylesheet" href="/cs-select.css">
-  <link rel="stylesheet" href="/cs-skin-boxes.css">
+  <link rel="stylesheet" href="/css/component.css">
+  <link rel="stylesheet" href="/css/cs-select.css">
+  <link rel="stylesheet" href="/css/cs-skin-boxes.css">
 
 </head>
 
