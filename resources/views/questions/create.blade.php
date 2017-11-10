@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
