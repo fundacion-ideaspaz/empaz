@@ -1,49 +1,56 @@
-@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
-        <div class="card-body">
+        <div class="fs-form-wrap" id="fs-form-wrap">
             <h3>Crear Pregunta</h3>
-            <form action="/preguntas" method="post" class="form" enctype="multipart/form-data">
+            <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+                <ol class="fs-fields">
+
+                <li>
+                    <label class="fs-field-label fs-anim-upper" for="nombre">Nombre</label>
+                    <input type="text" class="form-control fs-anim-lower" name="nombre">
+                </li>
+
+                <li >
+                    <label class="fs-field-label fs-anim-upper" for="descripcion">Descripción</label>
+                    <textarea name="descripcion" id="descripcion" class="form-control fs-anim-lower"></textarea>
                     </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="tipo_respuesta">Tipo de Respuesta</label>
+                </li>
+
+                <li >
+                    <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
                         <option value="tipo_1">Tipo 1</option>
                         <option value="tipo_2">Tipo 2</option>
                         <option value="tipo_3">Tipo 3</option>
                         <option value="tipo_4">Tipo 4</option>
                     </select>
-                </div>
-                <div class="form-group" id="respuesta_1">
-                    <label for="respuesta_1">Respuesta 1</label>
-                    <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_2">
-                    <label for="respuesta_2">Respuesta 2</label>
-                    <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_3">
-                    <label for="respuesta_3">Respuesta 3</label>
-                    <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_4">
-                    <label for="respuesta_4">Respuesta 4</label>
-                    <input type="text" name="respuestas[]" class="form-control">
-                </div>
+                </li>
+
+                <li id="respuesta_1">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li id="respuesta_2">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_2">Respuesta 2</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li id="respuesta_3">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_3">Respuesta 3</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li  id="respuesta_4">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_4">Respuesta 4</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+                </ol>
         </div>
-        <div class="from-group">
-            <input type="submit" class="btn btn-primary" value="Guardar">
-        </div>
+            <button class="fs-submit" type="submit" value="Guardar"></button>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
