@@ -3,18 +3,22 @@
     <div class="card col-12">
         <div class="card-body">
             <h3>Crear Pregunta</h3>
-            <form action="/preguntas" method="post" class="form" enctype="multipart/form-data">
+            <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="form-group">
+                <ol class="fs-fields">
+
+                <li class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
-                </div>
-                <div class="form-group">
+                </li>
+
+                <li class="form-group">
                     <label for="descripcion">Descripción</label>
                     <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
                     </textarea>
-                </div>
-                <div class="form-group">
+                </li>
+
+                <li class="form-group">
                     <label for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
@@ -23,23 +27,28 @@
                         <option value="tipo_3">Tipo 3</option>
                         <option value="tipo_4">Tipo 4</option>
                     </select>
-                </div>
-                <div class="form-group" id="respuesta_1">
+                </li>
+
+                <li class="form-group" id="respuesta_1">
                     <label for="respuesta_1">Respuesta 1</label>
                     <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_2">
+                </li>
+
+                <li class="form-group" id="respuesta_2">
                     <label for="respuesta_2">Respuesta 2</label>
                     <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_3">
+                </li>
+
+                <li class="form-group" id="respuesta_3">
                     <label for="respuesta_3">Respuesta 3</label>
                     <input type="text" name="respuestas[]" class="form-control">
-                </div>
-                <div class="form-group" id="respuesta_4">
+                </li>
+
+                <li class="form-group" id="respuesta_4">
                     <label for="respuesta_4">Respuesta 4</label>
                     <input type="text" name="respuestas[]" class="form-control">
-                </div>
+                </li>
+                </ol>
         </div>
         <div class="from-group">
             <input type="submit" class="btn btn-primary" value="Guardar">
