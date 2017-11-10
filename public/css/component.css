@@ -51,7 +51,7 @@
 	padding: 2.5em 30% 6em;
 	width: 100%;
 	height: 100%;
-	background: #fffed8;
+	background: #eaeaea;
 	color: #3b3f45;
 	font-size: 1.2em;
 }
@@ -60,7 +60,7 @@
 	display: block;
 	margin-bottom: 2.5em;
 	color: #3b3f45;
-	content: 'Review & Submit';
+	content: 'Confirmar campos';
 	font-weight: 700;
 	font-size: 1.85em;
 }
@@ -181,6 +181,7 @@ button.fs-continue,
 	padding: 0 5px 1em 0;
 	font-weight: 700;
 	pointer-events: none;
+	color: #00aabf;
 }
 
 .fs-form-full .fs-fields > li label[data-info]::after {
@@ -374,7 +375,7 @@ button.fs-continue,
 	height: 200px;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-color: transparent;
-	color: #fffed8;
+	color: #00aabf;
 	font-weight: 700;
 	font-size: 0.85em;
 	resize: none;
@@ -506,7 +507,7 @@ button.fs-continue,
 
 .fs-nav-dots button:hover::before,
 .fs-nav-dots button.fs-dot-current::before {
-	background: #fffed8;
+	background: #00aabf;
 }
 
 /* Progress bar */
@@ -523,7 +524,7 @@ button.fs-continue,
 /* Number indicator */
 .fs-numbers {
 	position: absolute;
-	top: 0;
+	top: 90px;
 	right: 0;
 	overflow: hidden;
 	color: rgba(0,0,0,0.4);
@@ -624,11 +625,11 @@ button.fs-continue,
 /* Continue button and submit button */
 button.fs-submit,
 button.fs-continue {
-	padding: 0.6em 1.5em;
-	border: 3px solid #232529;
-	border-radius: 40px;
-	font-weight: 700;
-	color: rgba(0,0,0,0.4);
+    padding: 0.6em 1.5em;
+    border: 2px solid #00aabf;
+    border-radius: 40px;
+    font-weight: normal;
+    color: rgb(0, 170, 191);
 }
 
 .fs-form-overview .fs-submit,
@@ -653,7 +654,7 @@ button.fs-continue {
 button.fs-submit:hover,
 button.fs-submit:focus,
 button.fs-continue:hover {
-	background: #232529;
+	background: #00aabf;
 	color: #fff;
 }
 

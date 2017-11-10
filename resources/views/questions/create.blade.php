@@ -57,7 +57,7 @@
                 </li>
                 </ol>
         </div>
-            <button class="fs-submit" type="submit" value="Guardar"></button>
+            <button class="fs-submit" type="submit" value="Guardar">Guardar</button>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
