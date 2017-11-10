@@ -50,7 +50,7 @@
                 </li>
                 </ol>
         </div>
-            <imput class="fs-submit" type="submit" value="Guardar">
+            <button class="fs-submit" type="submit" value="Guardar"></button>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
