@@ -24,6 +24,13 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                        <option value="activo" @if($pregunta->estado === "activo") selected @endif >Activo</option>
+                        <option value="inactivo" @if($pregunta->estado === "inactivo") selected @endif >Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     @foreach($pregunta->opcionesRespuestas as $opcion)
                     <label for="respuesta_{{$opcion->number}}">
                         Respuesta {{ $opcion->number}}

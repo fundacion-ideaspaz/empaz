@@ -12,7 +12,8 @@ class Pregunta extends Eloquent
     protected $fillable = [
       'nombre',
       'descripcion',
-      'tipo_respuesta'
+      'tipo_respuesta',
+      'estado'
     ];
 
     public function getTipoPreguntaAttribute($value)

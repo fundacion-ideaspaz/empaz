@@ -29,6 +29,14 @@
                     </select>
                 </li>
 
+                <li>
+                    <label class="fs-field-label fs-anim-upper" for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </li>
+
                 <li id="respuesta_1">
                     <label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label>
                     <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
