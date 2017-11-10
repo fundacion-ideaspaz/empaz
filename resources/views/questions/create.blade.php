@@ -1,7 +1,9 @@
 @extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
     <div>
         <div class="fs-form-wrap" id="fs-form-wrap">
-            <h3>Crear Pregunta</h3>
+            <div class="fs-title">
+                    <h1>Prueba Formulario</h1>
+                </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <ol class="fs-fields">
