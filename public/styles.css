@@ -190,6 +190,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 .card{
     padding: 25px 25px;
+    border: none!important;
 }
 
 .dimensiones-form .slider.slider-horizontal{
