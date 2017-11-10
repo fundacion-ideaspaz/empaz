@@ -13,15 +13,20 @@
 /* Title */
 .fs-title {
 	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	padding: 40px;
-	width: 100%;
+    top: 90px;
+    margin: 0;
+    padding: 40px;
+    width: 100%;
+    max-width: 960px;
+    transform: translateX(-50%);
+    left: 50%;
+    padding-left: 0;
 }
 
 .fs-title h1 {
 	margin: 0;
+	color: #999;
+	font-size: 25px;
 }
 
 /* Form */

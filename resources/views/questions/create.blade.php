@@ -2,7 +2,7 @@
     <div>
         <div class="fs-form-wrap" id="fs-form-wrap">
             <div class="fs-title">
-                    <h1>Prueba Formulario</h1>
+                    <h1>Crear Nueva pregunta</h1>
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
