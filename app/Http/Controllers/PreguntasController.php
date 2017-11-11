@@ -35,7 +35,8 @@ class PreguntasController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "tipo_respuesta" => "required",
-            "respuestas" => "required|array"
+            "respuestas" => "required|array",
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
         $respuestas = $request->respuestas;
@@ -65,7 +66,8 @@ class PreguntasController extends Controller
     {
         $validations = [
             "nombre" => "required",
-            "descripcion" => "required"
+            "descripcion" => "required",
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
         $inputs = $request->except('tipo_respuesta');

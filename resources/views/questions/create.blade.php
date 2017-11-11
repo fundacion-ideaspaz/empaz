@@ -1,8 +1,9 @@
 @extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
-<div class="row indicadores-form">
-    <div class="card col-12">
+    <div>
         <div class="fs-form-wrap" id="fs-form-wrap">
-            <h3>Crear Pregunta</h3>
+            <div class="fs-title">
+                    <h1>Crear Nueva pregunta</h1>
+                </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <ol class="fs-fields">
@@ -29,6 +30,14 @@
                     </select>
                 </li>
 
+                <li>
+                    <label class="fs-field-label fs-anim-upper" for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </li>
+
                 <li id="respuesta_1">
                     <label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label>
                     <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
@@ -50,7 +59,7 @@
                 </li>
                 </ol>
         </div>
-            <button class="fs-submit" type="submit" value="Guardar"></button>
+            <button class="fs-submit" type="submit" value="Guardar">Guardar</button>
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -62,7 +71,6 @@
         @endif
         </form>
     </div>
-</div>
 <script>
     $(document).ready(function () {
         $('#indicadores-select').multiSelect()
