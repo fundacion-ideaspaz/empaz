@@ -73,6 +73,10 @@
     </div>
 <script>
     $(document).ready(function () {
+        $("#respuesta_1").css("display", "none");
+        $("#respuesta_2").css("display", "none");
+        $("#respuesta_3").css("display", "none");
+        $("#respuesta_4").css("display", "none");
         $('#indicadores-select').multiSelect()
         // Tipos de respuestas
         $("#tipo_respuesta").on("change", function(){

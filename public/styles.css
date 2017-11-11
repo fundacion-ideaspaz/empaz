@@ -181,7 +181,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     background: #f00;
 }
 
-
+.card-body {
+    padding: 0!important;
+}
 
 .app-container{
   padding-top: 100px;
