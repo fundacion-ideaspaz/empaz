@@ -94,7 +94,6 @@
                 $("#respuesta_3").css("display", "none");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", true);
-                
             }
         })
     });
