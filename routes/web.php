@@ -27,7 +27,8 @@ Route::get('/glosario', 'GlosarioController@index')->name('glosario');
 Route::get('/cuestionarios/new/', 'WizardController@new');
 Route::get('/cuestionarios/{cuest_id}/dimensiones/',
             'WizardController@dimensiones');
-Route::get('/cuestionarios/{id}/indicadores', 'WizardController@indicadores');
+Route::get('/cuestionarios/{cuest_id}/indicadores', 'WizardController@indicadores');
+Route::post('/cuestionarios/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
 Route::get('/cuestionarios/preguntas/', 'WizardController@preguntas');
 
 // Users Routes
@@ -45,7 +46,6 @@ Route::get('/dimensiones', 'DimensionesController@index');
 Route::get('/dimensiones/new/', 'DimensionesController@create');
 Route::post('/dimensiones', 'DimensionesController@store');
 Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
-Route::post('/dimensiones/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
 Route::post('/dimensiones/{id}/indicadores/{indicador_id}/delete',
             'DimensionesController@deleteIndicadores');
 Route::post('/dimensiones/{id}', 'DimensionesController@update');

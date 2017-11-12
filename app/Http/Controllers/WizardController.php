@@ -27,13 +27,21 @@ class WizardController extends Controller
         ]);
     }
 
-    public function indicadores($id)
+    public function indicadores($cuest_id)
     {
+        $cuestionario = Cuestionario::find($cuest_id);
+        $dimensionesIds = DimensionCuestionario
+        ::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
         $indicadoresIds = IndicadoresDimensiones
-            ::where("cuestionario_id", "=", $id)->pluck("indicador_id");
-        $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
+            ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
+        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
+        $indicadores = Indicador::where("estado", "=", "activo")
+                        ->whereNotIn("id", $indicadoresIds)
+                        ->get();
+        // $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
         return view('dimensiones.indicadores')->with([
-            "dimension" => $dimension,
+            "dimensiones" => $dimensiones,
+            "cuestionario" => $cuestionario,
             "indicadores" => $indicadores
         ]);
     }
