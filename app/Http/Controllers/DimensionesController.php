@@ -115,31 +115,22 @@ class DimensionesController extends Controller
         return redirect('/dimensiones');
     }
 
-    public function addIndicadores($id)
-    {
-        $dimension = Dimension::find($id);
-        $indicadoresIds = IndicadoresDimensiones
-            ::where("dimension_id", "=", $id)->pluck("indicador_id");
-        $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
-        return view('dimensiones.indicadores')->with([
-            "dimension" => $dimension,
-            "indicadores" => $indicadores
-        ]);
-    }
-
-    public function storeIndicadores($id, $indicador_id, Request $request)
+    public function storeIndicadores($cuest_id, $indicador_id, Request $request)
     {
         $validations = [
-            "nivel_importancia" => "required"
+            "nivel_importancia" => "required",
+            "dimension_id" => "required"
         ];
         $this->validate($request, $validations);
         $importancia = $request->nivel_importancia;
+        $dimension_id = $request->dimension_id;
         $dimensionCuestionario = new IndicadoresDimensiones();
         $dimensionCuestionario->indicador_id = $indicador_id;
-        $dimensionCuestionario->dimension_id = $id;
+        $dimensionCuestionario->dimension_id = $dimension_id;
+        $dimensionCuestionario->cuestionario_id = $cuest_id;
         $dimensionCuestionario->nivel_importancia = $importancia;
         $dimensionCuestionario->save();
-        return redirect("/dimensiones/".$id."/indicadores");
+        return redirect("/cuestionarios/".$cuest_id."/indicadores");
     }
 
     public function deleteIndicadores($id, $indicador_id, Request $request)
@@ -148,6 +139,7 @@ class DimensionesController extends Controller
             ::where("dimension_id", "=", $id)
             ->where("indicador_id", "=", $indicador_id)->first();
         $dimensionCuestionario->delete();
-        return redirect("/dimensiones/".$id."/indicadores");
+        $cuestionario_id = $request->cuestionario_id;
+        return redirect("/cuestionarios/".$cuestionario_id."/indicadores");
     }
 }

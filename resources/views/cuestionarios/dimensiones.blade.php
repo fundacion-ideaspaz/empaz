@@ -47,7 +47,16 @@
         </div>
       </form>
       @endforeach
-    </div>
+      <div class="form-group">
+          <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/edit">
+            Atrás
+          </a>
+          <a class="btn btn-primary pull-right"
+            href="/cuestionarios/{{$cuestionario->id}}/indicadores">
+            Siguiente
+          </a>
+        </div>
+      </div>
     @if ($errors->any())
     <div class="alert alert-danger">
       <ul>

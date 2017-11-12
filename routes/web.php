@@ -22,6 +22,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');
 
+// Wizard Steps
+
+Route::get('/cuestionarios/new/', 'WizardController@new');
+Route::get('/cuestionarios/{cuest_id}/dimensiones/',
+            'WizardController@dimensiones');
+Route::get('/cuestionarios/{cuest_id}/indicadores', 'WizardController@indicadores');
+Route::post('/cuestionarios/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
+Route::get('/cuestionarios/{cuest_id}/preguntas/', 'WizardController@preguntas');
+Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
+
 // Users Routes
 Route::get('/users', 'UserController@index');
 Route::get('/users/new/{role}', 'UserController@create');
@@ -37,8 +47,6 @@ Route::get('/dimensiones', 'DimensionesController@index');
 Route::get('/dimensiones/new/', 'DimensionesController@create');
 Route::post('/dimensiones', 'DimensionesController@store');
 Route::get('/dimensiones/{id}/edit', 'DimensionesController@edit');
-Route::get('/dimensiones/{id}/indicadores', 'DimensionesController@addIndicadores');
-Route::post('/dimensiones/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
 Route::post('/dimensiones/{id}/indicadores/{indicador_id}/delete',
             'DimensionesController@deleteIndicadores');
 Route::post('/dimensiones/{id}', 'DimensionesController@update');
@@ -51,8 +59,6 @@ Route::get('/indicadores', 'IndicadoresController@index');
 Route::get('/indicadores/new/', 'IndicadoresController@create');
 Route::post('/indicadores', 'IndicadoresController@store');
 Route::get('/indicadores/{id}/edit', 'IndicadoresController@edit');
-Route::get('/indicadores/{id}/preguntas', 'IndicadoresController@addPreguntas');
-Route::post('/indicadores/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
 Route::post('/indicadores/{id}/preguntas/{pregunta_id}/delete',
             'IndicadoresController@deletePreguntas');
 Route::post('/indicadores/{id}', 'IndicadoresController@update');
@@ -72,10 +78,8 @@ Route::post('/preguntas/{id}/delete', 'PreguntasController@deleteConfirm');
 
 // Cuestionarios Routes
 Route::get('/cuestionarios', 'CuestionariosController@index');
-Route::get('/cuestionarios/new/', 'CuestionariosController@create');
 Route::post('/cuestionarios', 'CuestionariosController@store');
 Route::get('/cuestionarios/{id}/edit', 'CuestionariosController@edit');
-Route::get('/cuestionarios/{id}/dimensiones', 'CuestionariosController@addDimensiones');
 Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}', 'CuestionariosController@storeDimensiones');
 Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}/delete',
             'CuestionariosController@deleteDimensiones');

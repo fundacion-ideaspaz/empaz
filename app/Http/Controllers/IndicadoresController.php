@@ -82,31 +82,22 @@ class IndicadoresController extends Controller
         return redirect('/indicadores');
     }
 
-    public function addPreguntas($id)
-    {
-        $indicador = Indicador::find($id);
-        $preguntasIds = IndicadoresPreguntas
-            ::where("indicador_id", "=", $id)->pluck("pregunta_id");
-        $preguntas = Pregunta::whereNotIn("id", $preguntasIds)->get();
-        return view('indicadores.preguntas')->with([
-            "indicador" => $indicador,
-            "preguntas" => $preguntas
-        ]);
-    }
-
-    public function storePreguntas($id, $pregunta_id, Request $request)
+    public function storePreguntas($cuest_id, $pregunta_id, Request $request)
     {
         $validations = [
+            "indicador_id" => "required",
             "required" => "required"
         ];
         $this->validate($request, $validations);
-        $required = filter_var($request->required, FILTER_VALIDATE_BOOLEAN);
+        $required = boolval($request->required);
+        $indicador_id = $request->indicador_id;
         $indicadorCuestionario = new IndicadoresPreguntas();
         $indicadorCuestionario->pregunta_id = $pregunta_id;
-        $indicadorCuestionario->indicador_id = $id;
+        $indicadorCuestionario->indicador_id = $indicador_id;
+        $indicadorCuestionario->cuestionario_id = $cuest_id;
         $indicadorCuestionario->required = $required;
         $indicadorCuestionario->save();
-        return redirect("/indicadores/".$id."/preguntas");
+        return redirect("/cuestionarios/".$cuest_id."/preguntas");
     }
 
     public function deletePreguntas($id, $pregunta_id, Request $request)
@@ -115,6 +106,7 @@ class IndicadoresController extends Controller
             ::where("indicador_id", "=", $id)
             ->where("pregunta_id", "=", $pregunta_id)->first();
         $indicadorCuestionario->delete();
-        return redirect("/indicadores/".$id."/preguntas");
+        $cuestionario_id = $request->cuestionario_id;
+        return redirect("/cuestionarios/".$cuestionario_id."/preguntas");
     }
 }

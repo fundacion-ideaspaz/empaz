@@ -44,11 +44,6 @@ class Pregunta extends Eloquent
         };
     }
 
-    public function indicadores()
-    {
-        return $this->belongsToMany("App\Indicador");
-    }
-
     public function opcionesRespuestas()
     {
         return $this->hasMany("App\OpcionesRespuestas");

@@ -5,7 +5,7 @@
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
-        @foreach($cuestionario->allPreguntas() as $pregunta)
+        @foreach($cuestionario->allPreguntas($cuestionario->id) as $pregunta)
           @component('components/preguntafield', ['pregunta' => $pregunta])
           @endcomponent
         @endforeach
