@@ -44,7 +44,6 @@ class Pregunta extends Eloquent
         };
     }
 
-
     public function opcionesRespuestas()
     {
         return $this->hasMany("App\OpcionesRespuestas");
