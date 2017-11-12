@@ -10,6 +10,8 @@ class IndicadoresPreguntas extends Model
     
     protected $fillable = [
         'pregunta_id',
-        'indicador_id'
+        'indicador_id',
+        'cuestionario_id',
+        'required'
     ];
 }

@@ -8,10 +8,14 @@ use App\DimensionCuestionario;
 use App\Dimension;
 use App\IndicadoresDimensiones;
 use App\Indicador;
+use App\IndicadorCuestionario;
+use App\IndicadoresPreguntas;
+use App\Pregunta;
 
 class WizardController extends Controller
 {
-    public function new(){
+    public function new()
+    {
         return view("cuestionarios.create");
     }
 
@@ -38,7 +42,6 @@ class WizardController extends Controller
         $indicadores = Indicador::where("estado", "=", "activo")
                         ->whereNotIn("id", $indicadoresIds)
                         ->get();
-        // $indicadores = Indicador::whereNotIn("id", $indicadoresIds)->get();
         return view('dimensiones.indicadores')->with([
             "dimensiones" => $dimensiones,
             "cuestionario" => $cuestionario,
@@ -46,8 +49,21 @@ class WizardController extends Controller
         ]);
     }
 
-    public function preguntas(){
-
+    public function preguntas($cuest_id)
+    {
+        $cuestionario = Cuestionario::find($cuest_id);
+        $indicadoresIds = IndicadoresDimensiones
+        ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
+        $preguntasIds = IndicadoresPreguntas
+            ::where("cuestionario_id", "=", $cuest_id)->pluck("pregunta_id");
+        $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
+        $preguntas = Pregunta::where("estado", "=", "activo")
+                        ->whereNotIn("id", $preguntasIds)
+                        ->get();
+        return view('indicadores.preguntas')->with([
+            "indicadores" => $indicadores,
+            "cuestionario" => $cuestionario,
+            "preguntas" => $preguntas
+        ]);
     }
-
 }
