@@ -84,4 +84,19 @@
 <script src="/js/classie.js"></script>
     <script src="/js/selectFx.js"></script>
     <script src="/js/fullscreenForm.js"></script>
+    <script>
+      (function() {
+
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+          new SelectFx( el, {
+            stickyPlaceholder: false,
+            onChange: function(val){
+              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+            }
+          });
+        } );
+
+      })();
+      
+    </script>
 </html>
