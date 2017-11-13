@@ -37,6 +37,25 @@
                         <option value="inactivo">Inactivo</option>
                     </select>
                 </li>
+                <li id="respuesta_1">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li id="respuesta_2">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_2">Respuesta 2</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li id="respuesta_3">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_3">Respuesta 3</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
+
+                <li  id="respuesta_4">
+                    <label class="fs-field-label fs-anim-upper" for="respuesta_4">Respuesta 4</label>
+                    <input type="text" name="respuestas[]" class="form-control fs-anim-lower">
+                </li>
 
                 </ol>
         </div>
@@ -87,11 +106,12 @@
             console.log(Loc0[0].value);
             console.log("entramos");
             if(Loc0[0].value === "tipo_1"){
-                $( ".fs-fields" ).append("<li id='respuesta_1'><label class='fs-field-label fs-anim-upper' for='respuesta_1'>Respuesta 1</label><input type='text' name='respuestas[]'' class='form-control fs-anim-lower'></li>");
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
                 $("#respuesta_3").attr("disabled", "false");
+                $("#respuesta_1").remove()
+                $("#respuesta_2").remove()
                 var formWrap = document.getElementById( 'fs-form-wrap' );
         new FForm( formWrap, {
           onReview : function() {
