@@ -110,14 +110,6 @@
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
                 $("#respuesta_3").attr("disabled", "false");
-                $("#respuesta_1").remove()
-                $("#respuesta_2").remove()
-        var formWrap = document.getElementById( 'fs-form-wrap' );
-        new FForm( formWrap, {
-          onReview : function() {
-            classie.add( document.body, 'overview' ); // for demo purposes only
-          }
-        } );
             }
             if(Loc0[0].value === "tipo_2"){
                 $("#respuesta_4").css("display", "none");
