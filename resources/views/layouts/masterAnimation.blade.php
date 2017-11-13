@@ -96,7 +96,13 @@
             }
           });
         } );
-      })();
 
+        new FForm( formWrap, {
+          onReview : function() {
+            classie.add( document.body, 'overview' ); // for demo purposes only
+          }
+        } );
+      })();
+      
     </script>
 </html>
