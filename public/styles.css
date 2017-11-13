@@ -37,6 +37,10 @@ header.master{
 	background-color:#00aabf; 
 }
 
+#respuesta_1, #respuesta_2, #respuesta_3, #respuesta_4{
+    display: none!important;
+}
+
 .dropdown-menu:before{
     content: " ";
     position: absolute;
