@@ -102,7 +102,7 @@
         $('#indicadores-select').multiSelect();
         //Tipos de respuestas
         var Loc0 = $("#tipo_respuesta");
-        $("#tipo_respuesta").change( function(){
+        $(".cs-select").click( function(){
             console.log(Loc0[0].value);
             console.log("entramos");
             if(Loc0[0].value === "tipo_1"){
