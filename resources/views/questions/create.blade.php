@@ -79,25 +79,29 @@
         $("#respuesta_4").css("display", "none");
         $('#indicadores-select').multiSelect()
         // Tipos de respuestas
-        $("#tipo_respuesta").on("click", function(){
+        $("#tipo_respuesta").on("change", function(){
             var tipoRespuesta = this.value;
             if(tipoRespuesta === "tipo_1"){
+                console.log("tipo1")
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
                 $("#respuesta_3").attr("disabled", "false");
             }
             if(tipoRespuesta === "tipo_2"){
+                console.log("tipo2")
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false");                
             }
             if(tipoRespuesta === "tipo_3" || tipoRespuesta === "tipo_4"){
+                console.log("tipo3")
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "none");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", true);
+                
             }
         })
     });
