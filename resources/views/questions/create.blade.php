@@ -8,6 +8,17 @@
                 {{ csrf_field() }}
                 <ol class="fs-fields">
 
+                 <li >
+                    <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
+                    <br>
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                        <option id="btn_respuesta_1" value="tipo_1">Tipo 1</option>
+                        <option value="tipo_2">Tipo 2</option>
+                        <option value="tipo_3">Tipo 3</option>
+                        <option value="tipo_4">Tipo 4</option>
+                    </select>
+                </li>
+
                 <li>
                     <label class="fs-field-label fs-anim-upper" for="nombre">Nombre</label>
                     <input type="text" class="form-control fs-anim-lower" name="nombre">
@@ -17,17 +28,6 @@
                     <label class="fs-field-label fs-anim-upper" for="descripcion">Descripción</label>
                     <textarea name="descripcion" id="descripcion" class="form-control fs-anim-lower"></textarea>
                     </textarea>
-                </li>
-
-                <li >
-                    <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
-                    <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
-                        <option id="btn_respuesta_1" value="tipo_1">Tipo 1</option>
-                        <option value="tipo_2">Tipo 2</option>
-                        <option value="tipo_3">Tipo 3</option>
-                        <option value="tipo_4">Tipo 4</option>
-                    </select>
                 </li>
 
                 <li>
