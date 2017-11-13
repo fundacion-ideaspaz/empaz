@@ -9,7 +9,7 @@
                  <div >
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
                         <option id="btn_respuesta_1" value="tipo_1">Tipo 1</option>
                         <option value="tipo_2">Tipo 2</option>
                         <option value="tipo_3">Tipo 3</option>
@@ -86,14 +86,6 @@
                 //$("#respuesta_3").attr("disabled", "false");
                 var formWrap = document.getElementById( 'fs-form-wrap' );
 
-        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
-          new SelectFx( el, {
-            stickyPlaceholder: false,
-            onChange: function(val){
-              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-            }
-          });
-        } );
                     new FForm( formWrap, {
                       onReview : function() {
                         classie.add( document.body, 'overview' ); // for demo purposes only
@@ -107,14 +99,6 @@
                 //$("#respuesta_3").attr("disabled", "false"); 
                 var formWrap = document.getElementById( 'fs-form-wrap' );
 
-        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
-          new SelectFx( el, {
-            stickyPlaceholder: false,
-            onChange: function(val){
-              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-            }
-          });
-        } ); 
                     new FForm( formWrap, {
                       onReview : function() {
                         classie.add( document.body, 'overview' ); // for demo purposes only
@@ -127,15 +111,6 @@
                 // $("#respuesta_4").attr("disabled", true);
                 // $("#respuesta_3").attr("disabled", true);
                 var formWrap = document.getElementById( 'fs-form-wrap' );
-
-        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
-          new SelectFx( el, {
-            stickyPlaceholder: false,
-            onChange: function(val){
-              document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-            }
-          });
-        } );
                     new FForm( formWrap, {
                       onReview : function() {
                         classie.add( document.body, 'overview' ); // for demo purposes only
