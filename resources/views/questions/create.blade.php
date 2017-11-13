@@ -73,8 +73,9 @@
     </div>
 <script>
     $(document).ready(function () {
-        $('#indicadores-select').multiSelect()
+        $('#indicadores-select').multiSelect();
         // Tipos de respuestas
+        console.log("estamos aqui");
         $("#tipo_respuesta").on("change", function(){
             var tipoRespuesta = this.value;
             console.log(tipoRespuesta);
@@ -97,7 +98,7 @@
                 $("#respuesta_3").attr("disabled", true);
                 
             }
-        })
+        });
     });
 
 </script>
