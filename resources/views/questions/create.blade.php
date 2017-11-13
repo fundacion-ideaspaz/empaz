@@ -75,23 +75,22 @@
     $(document).ready(function () {
         $('#indicadores-select').multiSelect();
         // Tipos de respuestas
-        console.log("estamos aqui");
+        var Loc0 = $("#tipo_respuesta");
         $("#tipo_respuesta").on("change", function(){
-            var tipoRespuesta = this.value;
-            console.log(tipoRespuesta);
-            if(tipoRespuesta === "tipo_1"){
+            console.log(Loc0[0].value);
+            if(Loc0[0].value === "tipo_1"){
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
                 $("#respuesta_3").attr("disabled", "false");
             }
-            if(tipoRespuesta === "tipo_2"){
+            if(Loc0[0].value === "tipo_2"){
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false");                
             }
-            if(tipoRespuesta === "tipo_3" || tipoRespuesta === "tipo_4"){
+            if(Loc0[0].value === "tipo_3" || Loc0[0].value === "tipo_4"){
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "none");
                 $("#respuesta_4").attr("disabled", true);
