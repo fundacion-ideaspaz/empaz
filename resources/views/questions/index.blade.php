@@ -26,7 +26,7 @@
             <td>
               <a class="btn btn-sm btn-primary editar" href="/preguntas/{{$pregunta->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger borrar" href="/preguntas/{{$pregunta->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title='{{$pregunta->descripcion}}'>Hover over me</a>
+              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title="Prueba"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
           </tr>
           @endforeach
