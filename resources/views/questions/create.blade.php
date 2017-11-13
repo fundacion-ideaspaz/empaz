@@ -6,7 +6,7 @@
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                 <div id="prueba1">
+                 <div id="preguntas">
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
@@ -77,11 +77,7 @@
         $('#indicadores-select').multiSelect();
         //Tipos de respuestas
         var Loc0 = $("#tipo_respuesta");
-        $("#prueba1 select").change( function(){
-            alert("prueba");
-        });
-
-        $("#prueba1 select").change( function(){
+        $("#preguntas select").change( function(){
             console.log(Loc0[0].value);
             console.log("entramos");
 
