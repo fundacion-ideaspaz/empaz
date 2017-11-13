@@ -87,7 +87,7 @@
             console.log(Loc0[0].value);
             console.log("entramos");
             if(Loc0[0].value === "tipo_1"){
-                $( "div.demo-container" ).html('<li id="respuesta_1"><label class="fs-field-label fs-anim-upper" for="respuesta_1">Respuesta 1</label><input type="text" name="respuestas[]" class="form-control fs-anim-lower"></li>")';
+                $( ".fs-fields" ).html("<li id='respuesta_1'><label class='fs-field-label fs-anim-upper' for='respuesta_1'>Respuesta 1</label><input type='text' name='respuestas[]'' class='form-control fs-anim-lower'></li>");
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
