@@ -42,6 +42,10 @@ header.master{
     justify-content: flex-end;
 }
 
+.navbar-brand{
+    margin-left: 15px;
+}
+
 .dropdown-menu:before{
     content: " ";
     position: absolute;
