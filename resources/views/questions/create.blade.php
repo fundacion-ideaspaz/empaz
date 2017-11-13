@@ -22,7 +22,7 @@
                 <li >
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
                         <option value="tipo_1">Tipo 1</option>
                         <option value="tipo_2">Tipo 2</option>
                         <option value="tipo_3">Tipo 3</option>
