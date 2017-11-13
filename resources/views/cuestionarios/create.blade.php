@@ -27,7 +27,8 @@
                 </div>
         </div>
         <div class="from-group">
-            <input type="submit" class="btn btn-primary" value="Guardar">
+            <a href="/cuestionarios" class="btn btn-warning">Atrás</a>
+            <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">

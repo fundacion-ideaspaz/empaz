@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Support\Facades\Storage;
 use Eloquent;
+use DB;
 
 class Dimension extends Eloquent
 {
@@ -13,7 +14,8 @@ class Dimension extends Eloquent
     protected $fillable = [
         "nombre",
         "descripcion",
-        "logo"
+        "logo",
+        "estado"
     ];
 
     public function getNivelImportanciaAttribute($value){
@@ -42,8 +44,12 @@ class Dimension extends Eloquent
         };
     }
 
-    public function indicadores(){
-        return $this->belongsToMany("App\Indicador", "dimension_indicador")
-        ->withPivot("nivel_importancia");
+    public function indicadores($cuestionario_id){
+        $dimension_id = $this->id;
+        return DB::table("dimension_indicador")
+            ->where("dimension_id", "=", $dimension_id)
+            ->where("cuestionario_id", "=", $cuestionario_id)
+            ->join("indicadores", "dimension_indicador.indicador_id", "=", "indicadores.id")
+            ->get();
     }
 }

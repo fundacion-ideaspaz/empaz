@@ -10,6 +10,7 @@ class IndicadoresDimensiones extends Model
     
     protected $fillable = [
         'dimension_id',
-        'indicador_id'
+        'indicador_id',
+        'cuestionario_id'
     ];
 }

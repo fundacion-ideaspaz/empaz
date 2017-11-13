@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Pregunta;
 
 class Cuestionario extends Model
 {
@@ -21,15 +22,11 @@ class Cuestionario extends Model
             ->withPivot("importancia");
     }
 
-    public function allPreguntas(){
-        $preguntas = [];
-        foreach($this->dimensiones as $dimension){
-            foreach($dimension->indicadores as $indicador){
-                foreach($indicador->preguntas as $pregunta){
-                    array_push($preguntas, $pregunta);
-                }
-            }
-        }
+    public function allPreguntas($cuest_id)
+    {
+        $preguntasIds = IndicadoresPreguntas::
+            where("cuestionario_id", "=", $cuest_id)->pluck("pregunta_id");
+        $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
         return $preguntas;
     }
 }
