@@ -76,7 +76,7 @@
         $('#indicadores-select').multiSelect();
         //Tipos de respuestas
         var Loc0 = $("#tipo_respuesta");
-        $(".cs-select").click( function(){
+        $(".cs-select").change( function(){
             console.log(Loc0[0].value);
             console.log("entramos");
             if(Loc0[0].value === "tipo_1"){
