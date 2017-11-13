@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
     <div>
         <div class="fs-form-wrap" id="fs-form-wrap">
             <div class="fs-title">
@@ -6,9 +6,7 @@
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <ol class="fs-fields">
-
-                 <li >
+                 <div >
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control cs-select cs-skin-boxes fs-anim-lower">
@@ -17,7 +15,8 @@
                         <option value="tipo_3">Tipo 3</option>
                         <option value="tipo_4">Tipo 4</option>
                     </select>
-                </li>
+                </div>
+                <ol class="fs-fields">
 
                 <li>
                     <label class="fs-field-label fs-anim-upper" for="nombre">Nombre</label>
