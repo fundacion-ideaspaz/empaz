@@ -1,4 +1,4 @@
-@extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
     <div>
         <div class="fs-form-wrap" id="fs-form-wrap">
             <div class="fs-title">
@@ -73,18 +73,11 @@
     </div>
 <script>
     $(document).ready(function () {
-        $("#btn_respuesta_1").click( function(){
-            console.log("tipo1")
-        })
-        $("#respuesta_2").css("display", "none");
-        $("#respuesta_3").css("display", "none");
-        $("#respuesta_4").css("display", "none");
         $('#indicadores-select').multiSelect()
         // Tipos de respuestas
         $("#tipo_respuesta").on("change", function(){
             var tipoRespuesta = this.value;
             if(tipoRespuesta === "tipo_1"){
-                console.log("tipo1")
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
