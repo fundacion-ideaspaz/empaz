@@ -79,7 +79,7 @@
         $("#respuesta_4").css("display", "none");
         $('#indicadores-select').multiSelect()
         // Tipos de respuestas
-        $("#tipo_respuesta").on("change", function(){
+        $("#tipo_respuesta").on("click", function(){
             var tipoRespuesta = this.value;
             if(tipoRespuesta === "tipo_1"){
                 $("#respuesta_4").css("display", "block");
