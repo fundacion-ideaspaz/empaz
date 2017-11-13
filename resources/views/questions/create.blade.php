@@ -73,7 +73,9 @@
     </div>
 <script>
     $(document).ready(function () {
-        $("#respuesta_1").css("display", "none");
+        $("#respuesta_1").click( function(){
+            console.log("tipo1")
+        })
         $("#respuesta_2").css("display", "none");
         $("#respuesta_3").css("display", "none");
         $("#respuesta_4").css("display", "none");
