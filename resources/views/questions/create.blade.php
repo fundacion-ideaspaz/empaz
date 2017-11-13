@@ -80,7 +80,7 @@
             alert("prueba");
         });
 
-        $("#prueba1 .cs-select").click( function(){
+        $("#prueba1 select").change( function(){
             console.log(Loc0[0].value);
             console.log("entramos");
 
