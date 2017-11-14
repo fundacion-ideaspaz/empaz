@@ -22,6 +22,13 @@
                     <!-- <span class="custom-file-control"></span> -->
                     </label>
                 </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
                 <h4>Enunciados</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo</label>

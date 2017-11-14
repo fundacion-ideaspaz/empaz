@@ -32,8 +32,9 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "enunciados" => "required|array"
-        ];
+            "enunciados" => "required|array",
+            "estado"  => "required"
+         ];
         $this->validate($request, $validations);
         $logo = '';
         if ($request->file("logo")) {
@@ -70,7 +71,8 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "enunciados" => "required|array"
+            "enunciados" => "required|array",
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
         $dimension = Dimension::find($id);

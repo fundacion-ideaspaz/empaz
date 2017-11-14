@@ -17,15 +17,23 @@
                     <label for="file">Logo de la dimension</label>
                     <input type="file" name="logo" id="logo" class="form-control">
                     <small id="passwordHelp" class="form-text text-muted">
-                                No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
-                            </small>
-                    <img src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
+                        No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
+                    </small>
+                    <img src="{{asset(" storage/ ".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select name="estado" id="estado" class="form-control">
+                        <option value="activo" @if($dimension->estado === "activo") selected @endif>Activo</option>
+                        <option value="inactivo" @if($dimension->estado === "inactivo") selected @endif>Inactivo</option>
+                    </select>
                 </div>
                 <h4>Enunciados</h4>
                 @foreach($enunciados as $enunciado)
                 <div class="form-group">
                     <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="{{ucfirst($enunciado->nivel_importancia)}}" required value="{{$enunciado->descripcion}}">
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="{{ucfirst($enunciado->nivel_importancia)}}" required
+                        value="{{$enunciado->descripcion}}">
                 </div>
                 @endforeach
                 <div class="from-group">
