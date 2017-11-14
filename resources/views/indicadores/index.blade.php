@@ -20,7 +20,7 @@
             <td>
               <a class="btn btn-sm btn-primary" href="/indicadores/{{$indicador->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger" href="/indicadores/{{$indicador->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title="{{$indicador->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" title="{{$indicador->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             </td>
           </tr>
           @endforeach
