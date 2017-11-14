@@ -6,17 +6,6 @@
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                 <div class="form-group">
-                    <label for="tipo_respuesta">Tipo de Respuesta</label>
-                    <br>
-                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
-                        <option >Tipo de pregunta</option>
-                        <option value="tipo_1">Tipo 1</option>
-                        <option value="tipo_2">Tipo 2</option>
-                        <option value="tipo_3">Tipo 3</option>
-                        <option value="tipo_4">Tipo 4</option>
-                    </select>
-                </div>
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
@@ -33,6 +22,17 @@
                     <select name="estado" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
                         <option value="activo">Activo</option>
                         <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipo_respuesta">Tipo de Respuesta</label>
+                    <br>
+                    <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
+                        <option >Tipo de respuesta</option>
+                        <option value="tipo_1">Tipo 1</option>
+                        <option value="tipo_2">Tipo 2</option>
+                        <option value="tipo_3">Tipo 3</option>
+                        <option value="tipo_4">Tipo 4</option>
                     </select>
                 </div>
                 <div class="form-group" id="respuesta_1">
