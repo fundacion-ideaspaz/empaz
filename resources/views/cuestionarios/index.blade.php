@@ -9,7 +9,7 @@
             <th>Nombre</th>
             <th>Versión</th>
             <th>Estado</th>
-            <th width="25%">Actions</th>
+            <th width="25%">Acciones</th>
           </tr>
         </thead>
         <tbody>

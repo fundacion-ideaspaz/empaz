@@ -8,7 +8,7 @@
           <tr>
             <th>Nombre</th>
             <th>Estado</th>
-            <th>Actions</th>
+            <th width="25%">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
               @endif
             </td> -->
             <td>{{ucfirst($dimension->estado)}}</td>
-            <td>
+            <td width="25%">
               <a class="btn btn-sm btn-primary" href="/dimensiones/{{$dimension->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger" href="/dimensiones/{{$dimension->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" title="{{$dimension->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
