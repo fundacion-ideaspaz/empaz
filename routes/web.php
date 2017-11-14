@@ -11,15 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    $cuestRes = \App\CuestionarioResult::find(1);
-    $cuestRes->puntajeIndicadores();
-    // return redirect('home');
-});
-
-
 Auth::routes();
-
+Route::get('/', function () {
+    return redirect('home');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');
