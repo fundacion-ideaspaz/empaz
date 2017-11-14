@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\User;
+use App\Mail\AccountCreated;
 
 class UserController extends Controller
 {
@@ -68,7 +70,10 @@ class UserController extends Controller
             $inputs = $request->all();
             $inputs["role"] = $role;
             $inputs["password"] = bcrypt($request->password);
+            $inputs["estado"] = 'inactivo';
+            $inputs["confirmation_code"] = str_random(12);
             $user = User::create($inputs);
+            Mail::to($user->email)->send(new AccountCreated($user));
             return redirect("/users");
         } else {
             return redirect()->back();
@@ -85,5 +90,16 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect('/users');
+    }
+
+    public function activateAccount($id, $code)
+    {
+        $user = User::find($id);
+        if ($user->confirmation_code == $code) {
+            $user->estado = 'activo';
+            $user->confirmation_code = '';
+            $user->save();
+        }
+        return redirect('/home');
     }
 }

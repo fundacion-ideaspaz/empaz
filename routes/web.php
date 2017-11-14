@@ -38,6 +38,7 @@ Route::post('/users/{id}', 'UserController@update');
 Route::get('/users/{id}', 'UserController@show');
 Route::get('/users/{id}/delete', 'UserController@delete');
 Route::post('/users/{id}/delete', 'UserController@deleteConfirm');
+Route::get('/users/{id}/activate/{code}', 'UserController@activateAccount');
 
 // Dimensiones Routes
 Route::get('/dimensiones', 'DimensionesController@index');
