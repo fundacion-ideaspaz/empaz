@@ -236,6 +236,13 @@ label {
     color: #999;
 }
 
+.container h1{
+    border-bottom: 1px solid #cccccc6b;
+    padding-bottom: 26px;
+    color: #00aabf;
+    margin-bottom: 30px;
+}
+
 input[type="text"].form-control {
     display: block;
     width: 100%;
