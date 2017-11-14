@@ -7,8 +7,6 @@
         <thead>
           <tr>
             <th>Texto</th>
-            <th>Descripción</th>
-            <th>Tipo de Respuesta</th>
             <th>Estado</th>
             <th>Actions</th>
           </tr>
@@ -18,15 +16,11 @@
           <p></p>
           <tr>
             <td>{{$pregunta->nombre}}</td>
-            <td>{{$pregunta->descripcion}}</td>
-            <td>
-              {{ ucfirst(str_replace('_', ' ', $pregunta->tipo_respuesta)) }}
-            </td>
             <td>{{ucfirst($pregunta->estado)}}</td>
             <td>
               <a class="btn btn-sm btn-primary editar" href="/preguntas/{{$pregunta->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger borrar" href="/preguntas/{{$pregunta->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title="Prueba"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title="{{$pregunta->descripcion}}"><<i class="fa fa-info-circle" aria-hidden="true"></i></a>
             </td>
           </tr>
           @endforeach
