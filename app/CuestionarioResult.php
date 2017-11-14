@@ -14,36 +14,8 @@ class CuestionarioResult extends Model
         'value'
     ];
 
-    public function buildMatrizIndicadores()
+    public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest )
     {
-        $cuestionario_id = $this->cuestionario_id;
-        $preguntasIds = RespuestaCuestionario
-                    ::where("cuestionario_id", "=", $cuestionario_id)
-                    ->pluck("pregunta_id");
-        $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
-        $indicadoresIds = IndicadoresDimensiones
-                        ::where("cuestionario_id", "=", $cuestionario_id)
-                        ->pluck("indicador_id");
-        $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
-        foreach ($indicadores as $indicador) {
-            foreach ($preguntas as $pregunta) {
-                $matriz[][] = $indicador->preguntas($cuestionario_id)->contains($pregunta) ? 1 : 0;
-            }
-        }
-        dd($matriz);
-    }
-
-    public function puntajeIndicadores()
-    {
-        $cuestionario_id = $this->cuestionario_id;
-        $preguntasCuest = RespuestaCuestionario
-                    ::where("cuestionario_id", "=", $cuestionario_id)->get();
-        $preguntasIds = $preguntasCuest->pluck("pregunta_id");
-        $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
-        $indicadoresIds = IndicadoresDimensiones
-                        ::where("cuestionario_id", "=", $cuestionario_id)
-                        ->pluck("indicador_id");
-        $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $cantidadPreguntas= $preguntas->count();
         $cantidadIndicadores= $indicadores->count();
         $matrizRelations = array_fill(0, $cantidadIndicadores, array_fill(0, $cantidadPreguntas, 0));
@@ -71,31 +43,29 @@ class CuestionarioResult extends Model
             }
             $j++;
         }
-        dd($resultMatriz);
+        $matrizPercentages = $matrizRelations;
+        $i=$j=0;
+        foreach ($indicadores as $indicador) {
+            $i=0;
+            foreach ($preguntas as $pregunta) {
+                $divisorResult = (5 * $this->contador($resultMatriz, $j, $cantidadPreguntas));
+                if ($divisorResult == 0) {
+                    $matrizPercentages[$i][$j] = 0;
+                } else {
+                    $matrizPercentages[$i][$j] = $resultMatriz[$i][$j] / $divisorResult;
+                }
+                $i++;
+            }
+            $j++;
+        }
 
-        // $matrizPercentages = $matrizRelations;
-        // $i=$j=0;
-        // foreach ($indicadores as $indicador) {
-        //     $i=0;
-        //     foreach ($preguntas as $pregunta) {
-        //         $divisorResult = (5 * $this->contador($resultMatriz, $i, $cantidadPreguntas));
-        //         if ($divisorResult == 0) {
-        //             $matrizPercentages[$i][$j] = 0;
-        //         } else {
-        //             $matrizPercentages[$i][$j] = $resultMatriz[$i][$j] / $divisorResult;
-        //         }
-        //         $i++;
-        //     }
-        //     $j++;
-        // }
-
-        // dd($matrizPercentages);
+        return $matrizPercentages;
     }
 
-    public function contador($matriz, $i, $cantidadPreguntas)
+    public function contador($matriz, $j, $cantidadPreguntas)
     {
         $cantidad=0;
-        for ($j=0; $j<$cantidadPreguntas-1; $j++) {
+        for ($i=0; $i<$cantidadPreguntas; $i++) {
             if ($matriz[$i][$j]>0) {
                   $cantidad++;
             }
