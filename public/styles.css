@@ -236,7 +236,7 @@ label {
     color: #999;
 }
 
-.container h1{
+.container h1, .container h2{
     border-bottom: 1px solid #cccccc6b;
     padding-bottom: 26px;
     color: #00aabf;
