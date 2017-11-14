@@ -80,9 +80,7 @@
   crossorigin="anonymous"></script>
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 <script type="text/javascript">
-$( document ).ready(function() {
     $('.btn').tooltip(options);
-});
   
 </script>
 </html>
