@@ -94,14 +94,6 @@ Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm
 
 Route::get('/responder/{id}', 'ResponderController@index');
 Route::post('/responder/{id}', 'ResponderController@store');
-// Route::get('/responder/new/', 'ResponderController@create');
-// Route::post('/responder', 'ResponderController@store');
-// Route::get('/responder/{id}/edit', 'ResponderController@edit');
-// Route::post('/responder/{id}', 'ResponderController@update');
-// Route::get('/responder/{id}', 'ResponderController@show');
-// Route::get('/responder/{id}/delete', 'ResponderController@delete');
-// Route::post('/responder/{id}/delete', 'ResponderController@deleteConfirm');
-
 
 //  Reportes
 

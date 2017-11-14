@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
             <h3>Crear Dimension</h3>
-            <form action="/dimensiones/" method="post" class="form" enctype="multipart/form-data">
+            <form action="/dimensiones" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
