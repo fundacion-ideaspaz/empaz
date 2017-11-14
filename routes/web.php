@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return redirect('home');
+    $cuestRes = \App\CuestionarioResult::find(1);
+    $cuestRes->puntajeIndicadores();
+    // return redirect('home');
 });
 
 

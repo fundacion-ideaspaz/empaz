@@ -16,6 +16,8 @@ class RespuestasCuestionarios extends Migration
             $table->foreign('pregunta_id')->references('id')->on('preguntas')->onDelete('cascade');
             $table->integer('cuestionario_result_id')->unsigned();
             $table->foreign('cuestionario_result_id')->references('id')->on('cuestionarios_result')->onDelete('cascade');
+            $table->integer('cuestionario_id')->unsigned();
+            $table->foreign('cuestionario_id')->references('id')->on('cuestionarios')->onDelete('cascade');
             $table->timestamps();
         });
     }

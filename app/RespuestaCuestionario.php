@@ -11,6 +11,12 @@ class RespuestaCuestionario extends Model
     protected $fillable = [
         'opcion_respuesta_id',
         'pregunta_id',
+        'cuestionario_id',
         'cuestionario_result_id'
     ];
+
+    public function opcion()
+    {
+        return $this->belongsTo("\App\OpcionesRespuestas", "opcion_respuesta_id", "id");
+    }
 }
