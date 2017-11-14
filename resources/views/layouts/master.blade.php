@@ -81,7 +81,7 @@
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 <script type="text/javascript">
 $( document ).ready(function() {
-    $('#example').tooltip(options);
+    $('.btn').tooltip(options);
 });
   
 </script>
