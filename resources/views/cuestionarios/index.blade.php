@@ -7,7 +7,6 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Descripción</th>
             <th>Versión</th>
             <th>Estado</th>
             <th>Actions</th>
@@ -18,7 +17,6 @@
           <p></p>
           <tr>
             <td>{{$cuestionario->nombre}}</td>
-            <td>{{$cuestionario->descripcion}}</td>
             <td>
               {{ $cuestionario->version }}
             </td>
@@ -26,8 +24,9 @@
               {{ $cuestionario->estado }}
             </td>
             <td>
-              <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit">Edit</a>
-              <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete">Delete</a>
+              <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary descripcion" href="#" data-toggle="tooltip" title="{{$cuestionario->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             </td>
           </tr>
           @endforeach
