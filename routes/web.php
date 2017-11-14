@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return redirect('home');
+    $cuestRes = \App\CuestionarioResult::find(1);
+    $cuestRes->puntajeIndicadores();
+    // return redirect('home');
 });
 
 
@@ -99,3 +101,8 @@ Route::post('/responder/{id}', 'ResponderController@store');
 // Route::get('/responder/{id}', 'ResponderController@show');
 // Route::get('/responder/{id}/delete', 'ResponderController@delete');
 // Route::post('/responder/{id}/delete', 'ResponderController@deleteConfirm');
+
+
+//  Reportes
+
+Route::get('reportes/indicadores/{cuest_id}', 'DashboardController@reporteIndicadores');

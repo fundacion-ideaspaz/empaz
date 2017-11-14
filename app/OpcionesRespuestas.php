@@ -13,4 +13,22 @@ class OpcionesRespuestas extends Model
         'number',
         'descripcion'
     ];
+
+    public function valueRespuesta()
+    {
+        switch ($this->number) {
+            case 1:
+                return 5;
+            case 2:
+                return 3;
+            case 3:
+                return 2;
+            case 4:
+                return 1;
+            case -1:
+                return 1;
+            case -2:
+                return 0;
+        }
+    }
 }

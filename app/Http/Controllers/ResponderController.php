@@ -32,6 +32,7 @@ class ResponderController extends Controller
             $respuesta->opcion_respuesta_id = $opcionRespuestaId;
             $respuesta->pregunta_id = $preguntaId;
             $respuesta->cuestionario_result_id = $cuestionarioResult->id;
+            $respuesta->cuestionario_id = $id;
             $respuesta->save();
         }
         return redirect('home');
