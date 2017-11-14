@@ -108,8 +108,8 @@
                     } );              
             }
             if(Loc0[0].value === "tipo_3" || Loc0[0].value === "tipo_4"){
-                $("#respuesta_4").css("display", "none");
-                $("#respuesta_3").css("display", "none");
+                $("#respuesta_4").remove();
+                $("#respuesta_3").remove();
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", true);
                 var formWrap = document.getElementById( 'fs-form-wrap' );
