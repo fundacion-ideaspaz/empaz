@@ -75,22 +75,24 @@
     $(document).ready(function () {
         $('#indicadores-select').multiSelect();
         //Tipos de respuestas
-        var respuestaTipo = document.getElementById("tipo_respuesta");
+        // var respuestaTipo = document.getElementById("tipo_respuesta");
         $("#tipo_respuesta").on('change', function(){
-            console.log((respuestaTipo).value);
-            if(respuestaTipo === "tipo_1"){
+            var respuestaTipo = this.value;
+            console.log(respuestaTipo);
+            // var TipoRespuesta =((respuestaTipo).value);
+            if(TipoRespuesta === "tipo_1"){
                 $("#respuesta_4").css("display", "block");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", "false");
                 $("#respuesta_3").attr("disabled", "false");
             }
-            if(respuestaTipo === "tipo_2"){
+            if(TipoRespuesta === "tipo_2"){
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false");          
             }
-            if(respuestaTipo === "tipo_3" || respuestaTipo === "tipo_4"){
+            if(TipoRespuesta === "tipo_3" || respuestaTipo === "tipo_4"){
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "none");
                 $("#respuesta_4").attr("disabled", true);
