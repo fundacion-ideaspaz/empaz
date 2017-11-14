@@ -228,3 +228,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     text-decoration: none;
     color: white;
 }
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-family: 'Roboto Slab', serif;
+    color: #999;
+}
