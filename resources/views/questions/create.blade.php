@@ -6,7 +6,7 @@
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                 <div id="preguntas" class="fs-anim-lower">
+                 <div id="preguntas">
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
