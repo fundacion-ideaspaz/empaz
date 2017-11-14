@@ -95,7 +95,7 @@
                     } );
             }
             if(Loc0[0].value === "tipo_2"){
-                $("#respuesta_4").css("display", "none");
+                $("#respuesta_4").remove();
                 $("#respuesta_3").css("display", "block");
                 $("#respuesta_4").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false"); 
