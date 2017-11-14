@@ -6,11 +6,11 @@
                 </div>
             <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                 <div id="preguntas">
+                 <div id="preguntas" class="fs-anim-lower">
                     <label class="fs-field-label fs-anim-upper" for="tipo_respuesta">Tipo de Respuesta</label>
                     <br>
                     <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
-                    <option >Tipo de pregunta</option>
+                        <option >Tipo de pregunta</option>
                         <option value="tipo_1">Tipo 1</option>
                         <option value="tipo_2">Tipo 2</option>
                         <option value="tipo_3">Tipo 3</option>
