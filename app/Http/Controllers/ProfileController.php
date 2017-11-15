@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Mail\AccountCreated;
+use Mail;
 use App\User;
 use App\ProfileEmpresa;
 
@@ -59,5 +61,29 @@ class ProfileController extends Controller
         $inputs["user_id"] = $id;
         ProfileEmpresa::create($inputs);
         return redirect("/");
+    }
+
+    public function registro()
+    {
+        return view('users.registro')->with(["role" => "empresa"]);
+    }
+
+    public function saveRegistro(Request $request)
+    {
+        $role = $request->role;
+        if ($role === "empresa") {
+            $validate = User::getValidateInputs($role);
+            $this->validate($request, $validate);
+            $inputs = $request->all();
+            $inputs["role"] = $role;
+            $inputs["password"] = bcrypt($request->password);
+            $inputs["estado"] = 'inactivo';
+            $inputs["confirmation_code"] = str_random(12);
+            $user = User::create($inputs);
+            Mail::to($user->email)->send(new AccountCreated($user));
+            return redirect("/home");
+        } else {
+            return redirect()->back();
+        }
     }
 }
