@@ -100,4 +100,22 @@ class CuestionarioResult extends Model
         }
         return $arraySumatorias;
     }
+
+    public function puntajeCuestionario($cuestionario_id, $dimensiones, $arrayDimensiones, $dimensionesCuest)
+    {
+        $sumaDimensiones = 0;
+        foreach ($arrayDimensiones as $dimension) {
+            $sumaDimensiones += $dimension;
+        }
+        $ponderacionDim = $sumaDimensiones/$dimensiones->count();
+        $i=0;
+        $sumatoria1 = $sumatoria2 = 0;
+        foreach ($arrayDimensiones as $dimension) {
+            $sumatoria1 += $dimension * $dimensionesCuest[$i]->importancia;
+            $sumatoria2 += $dimensionesCuest[$i]->importancia;
+            $i++;
+        }
+        $diagnostico = $sumatoria1 / $sumatoria2;
+        return $diagnostico;
+    }
 }

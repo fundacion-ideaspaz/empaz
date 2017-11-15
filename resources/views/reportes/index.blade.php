@@ -2,6 +2,13 @@
 <div class="row">
   <div class="card col-12">
     <div class="card-body">
+      <h1>Diagnostico: {{$rCuestionario}}</h1>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-body">
       <h1>Reporte de Indicadores</h1>
       <table class="table">
         @foreach($rIndicadores as $i=>$indicador)

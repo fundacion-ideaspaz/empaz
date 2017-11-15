@@ -9,6 +9,7 @@ use App\Pregunta;
 use App\IndicadoresDimensiones;
 use App\Indicador;
 use App\Dimension;
+use App\DimensionCuestionario;
 
 class DashboardController extends Controller
 {
@@ -24,14 +25,18 @@ class DashboardController extends Controller
         $dimensionesIds = $indicadoresCuest->pluck("dimension_id");
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
+        $dimensionesCuest = DimensionCuestionario::where("cuestionario_id", "=", $cuestionario_id)
+                            ->get();
         $rIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
         $rDimensiones = $cuestResult->puntajeDimensiones($cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $rIndicadores);
-        return view("reportes.indicadores")->with([
+        $rCuestionario = $cuestResult->puntajeCuestionario($cuestionario_id, $dimensiones, $rDimensiones, $dimensionesCuest);
+        return view("reportes.index")->with([
             'rIndicadores' => $rIndicadores,
             'rDimensiones' => $rDimensiones,
+            'rCuestionario' => $rCuestionario,
             'preguntas' => $preguntas,
             'indicadores' => $indicadores,
-            'dimensiones' => $dimensiones
+            'dimensiones' => $dimensiones,
         ]);
     }
 }
