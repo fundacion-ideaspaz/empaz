@@ -1,27 +1,16 @@
-@extends('layouts.master') @section('title', 'Crear Indicador') @section('content')
+@extends('layouts.master') @section('title', 'Perfil Empresa') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h1>{{Auth::user()->nombre}}</h1>
-            <form action="/" method="POST" class="form-control">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre empresa">
-                </div>
-                <div class="form-group">
-                    <label for="Pais">Pais</label>
-                    <input type="text" name="Pais" id="Pais" class="form-control" placeholder="Nombre empresa">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre empresa">
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre empresa">
-                </div>
-            </form>
+            <h1>{{$empresa->nombre}}</h1>
+            <ul>
+                <li>Pais: {{ $empresa->pais }}</li>
+                <li>Municipio: {{ $empresa->municipio }}</li>
+                <li>Departamento: {{ $empresa->departamento }}</li>
+                <li>Web: {{ $empresa->web }}</li>
+                <li>Numero de trabajadores: {{ $empresa->num_trabajadores }}</li>
+                <li>NIT: {{ $empresa->nit }}</li>
+            </ul>
         </div>
     </div>
 </div>

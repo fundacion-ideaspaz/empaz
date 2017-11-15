@@ -13,15 +13,30 @@
 
 Auth::routes();
 Route::get('/', function () {
+    if (!Auth::user()) {
+        return redirect('/login');
+    }
     $role = Auth::user()->role;
-    switch($role){
+    switch ($role) {
         case 'empresa':
-            return redirect('/perfil/empresa');
+            return redirect('/profile/empresa');
         default:
             return redirect('/profile/user');
     }
 });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function () {
+    if (!Auth::user()) {
+        return redirect('/login');
+    } else {
+        $role = Auth::user()->role;
+        switch ($role) {
+            case 'empresa':
+                return redirect('/profile/empresa');
+            default:
+                return redirect('/profile/user');
+        }
+    }
+});
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');
 
@@ -46,6 +61,7 @@ Route::get('/users/{id}/delete', 'UserController@delete');
 Route::post('/users/{id}/delete', 'UserController@deleteConfirm');
 Route::get('/users/{id}/activate/{code}', 'ProfileController@activateAccount');
 Route::get('/profile/empresa', 'ProfileController@profileEmpresa');
+Route::post('/profile/empresa/{id}', 'ProfileController@saveEmpresa');
 Route::get('/profile/user', 'ProfileController@profileUser');
 
 // Dimensiones Routes
