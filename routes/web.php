@@ -101,4 +101,4 @@ Route::post('/responder/{id}', 'ResponderController@store');
 
 //  Reportes
 
-Route::get('reportes/indicadores/{cuest_id}', 'DashboardController@reporteIndicadores');
+Route::get('reportes/{cuest_id}', 'DashboardController@reporteIndicadores');

@@ -13,7 +13,7 @@ class ResponderController extends Controller
     public function index($id)
     {
         $cuestionario = Cuestionario::find($id);
-        if($cuestionario->estado === 'inactivo'){
+        if ($cuestionario->estado === 'inactivo') {
             return redirect('/home');
         }
         return view('cuestionario')->with(['cuestionario' => $cuestionario]);
@@ -27,7 +27,7 @@ class ResponderController extends Controller
         $cuestionarioResult->user_id = Auth::user()->id;
         $cuestionarioResult->save();
         $answers = $request->except("_token");
-        foreach($answers as $preguntaId => $opcionRespuestaId){
+        foreach ($answers as $preguntaId => $opcionRespuestaId) {
             $respuesta = new RespuestaCuestionario();
             $respuesta->opcion_respuesta_id = $opcionRespuestaId;
             $respuesta->pregunta_id = $preguntaId;
@@ -35,6 +35,6 @@ class ResponderController extends Controller
             $respuesta->cuestionario_id = $id;
             $respuesta->save();
         }
-        return redirect('home');
+        return redirect('/reportes/'.$cuestionarioResult->id);
     }
 }
