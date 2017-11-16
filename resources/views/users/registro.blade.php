@@ -1,5 +1,4 @@
 @extends('layouts.masterAnimation') @section('title', 'Crear usuario') @section('content')
-<div class="container">
   <div class="fs-form-wrap" id="fs-form-wrap">
     <div class="fs-title">
       <h2>Crear Usuario</h2>
@@ -45,5 +44,4 @@
         @endif
       </form>
     </div>
-</div>
 @endsection
