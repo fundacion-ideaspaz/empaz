@@ -43,18 +43,6 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Glosario</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Acciones
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <span>Actions</span>
-          <a class="dropdown-item" href="/cuestionarios">Cuestionario</a>
-          <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
-          <a class="dropdown-item" href="/indicadores">Indicadores</a>
-          <a class="dropdown-item" href="/preguntas">Preguntas</a>
-        </div>
-      </li>
     </ul>
    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   <i class="fa fa-user" aria-hidden="true"></i> Ingresar
