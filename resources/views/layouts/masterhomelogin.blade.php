@@ -33,7 +33,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Manual de usuario</a>
+        <a class="nav-link" href="/home">Manual de usuario</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/faq">Preguntas frecuentes</a>
