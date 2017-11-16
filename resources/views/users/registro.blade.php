@@ -7,6 +7,7 @@
       <form action="/registro" method="post" id="myform" class="fs-form fs-form-full" autocomplete="off">
         {{ csrf_field() }}
         <input type="hidden" name="role" id="role" value="{{$role}}">
+        <ol class="fs-fields">
         <li>
           <label for="nombre" class="fs-field-label fs-anim-upper">Nombre</label>
           <input type="text" id="nombre" name="nombre" class="form-control fs-anim-lower" required>
@@ -29,6 +30,7 @@
           <label for="telefono" class="fs-field-label fs-anim-upper">Telefono</label>
           <input type="tel" name="telefono" id="telefono" class="form-control fs-anim-lower" required>
         </li>
+        </ol>
         @endif
           <input type="submit" class="btn btn-primary" value="Guardar">
           <a href="/users" class="btn btn-default">Cancelar</a>
