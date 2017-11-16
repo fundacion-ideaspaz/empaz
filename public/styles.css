@@ -28,6 +28,10 @@ nav .row{
 	width: 100%;
 }
 
+a{
+        color: #00aabf!important;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
     text-transform: uppercase;
