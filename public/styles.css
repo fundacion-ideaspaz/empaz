@@ -243,6 +243,10 @@ label {
     margin-bottom: 30px;
 }
 
+#accordion .card{
+    padding: 0;
+}
+
 input[type="text"].form-control {
     display: block;
     width: 100%;
