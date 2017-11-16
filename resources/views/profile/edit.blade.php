@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sector_economico">Código CIUD Actividad Económica Principal</label>
+                    <label for="sector_economico">Código CIIU Actividad Económica Principal</label>
                     <select class="form-control" name="sector_economico">
                         <option value="1011">   1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                         <option value="1012">   1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
@@ -443,7 +443,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="codigo_ciiu">Código CIUD Actividad Económica Secundaria</label>
+                    <label for="codigo_ciiu">Código CIIU Actividad Económica Secundaria</label>
                     <select class="form-control" name="codigo_ciiu">
                         <option value="1011">   1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                         <option value="1012">   1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
