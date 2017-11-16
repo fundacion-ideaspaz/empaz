@@ -204,13 +204,13 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapse05" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse13" aria-expanded="false" aria-controls="collapseThree">
           ¿Porqué se piden fuentes documentales para sustentar las respuestas?
 
         </a>
       </h5>
     </div>
-    <div id="collapse05" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse13" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>La transparencia y la facilidad de acceso a información para todos los grupos de interés son consideradas altamente importante en el marco del buen gobierno y la responsabilidad social de las empresas. Asimismo, el registro de datos con respecto a los diferentes temas relevantes es clave para poder medir los progresos de una empresa en construcción de paz. Es por esto que la herramienta EmPaz asigna un puntaje menor a una respuesta si la empresa no cuenta con información que permite soportarla con documentos, registros, u otras fuentes internas o externas de la empresa. </p>
       </div>
@@ -219,12 +219,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapse05" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse14" aria-expanded="false" aria-controls="collapseThree">
           ¿Cuánto me demoro en procesar la medición EmPaz?
         </a>
       </h5>
     </div>
-    <div id="collapse05" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse14" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>Llenar el autodiagnóstico (EmPaz Online) toma entre dos y tres horas, dependiendo de la facilidad de acceso a la información y los interlocutores dentro de la empresa para responder todas las preguntas. El proceso de evaluación de EmPaz Premium con acompañamiento de los investigadores FIP es más largo, pues requiere mayor profundidad en la revisión documental así como la programación de una serie de entrevistas. Estas tareas se realizarán durante un periodo de dos a cuatro semanas, dependiendo de las necesidades y agendas de la empresa y sus funcionarios.</p>
       </div>
@@ -233,12 +233,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapse05" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse15" aria-expanded="false" aria-controls="collapseThree">
           ¿Quiénes en la empresa deben realizar el diagnóstico?
         </a>
       </h5>
     </div>
-    <div id="collapse05" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse15" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>EmPaz evalúa políticas y prácticas en con construcción de paz que implican a diferentes áreas funcionales de la empresa, por ejemplo: alta dirección, gestión de la cadena de proveedores, relacionamiento con comunidades, responsabilidad social, y recursos humanos. En el caso de la valoración de una iniciativa concreta, la evaluación involucrará a los coordinadores/directores responsables de la implementación de la iniciativa. Por esto, se recomienda que un funcionario u área coordine la aplicación de EmPaz, y donde en donde se requiere información específica, consulte con las diferentes otras áreas relevantes.</p>
       </div>
