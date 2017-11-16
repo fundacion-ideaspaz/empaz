@@ -10,6 +10,13 @@ use Auth;
 
 class ResponderController extends Controller
 {
+
+    public function all()
+    {
+        $cuestionarios = Cuestionario::where("estado", '=', 'activo')->get();
+        return view('cuestionarios')->with(['cuestionarios' => $cuestionarios]);
+    }
+
     public function index($id)
     {
         $cuestionario = Cuestionario::find($id);
