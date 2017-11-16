@@ -32,7 +32,7 @@
         </ol>
         @endif
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
-          <a href="/users" class="btn btn-default">Cancelar</a>
+          <!-- <a href="/users" class="btn btn-default">Cancelar</a> -->
         @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
