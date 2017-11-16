@@ -52,12 +52,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse04" aria-expanded="false" aria-controls="collapseThree">
           ¿Para quién es EmPaz?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse04" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>La herramienta fue desarrollada para empresas de cualquier tamaño y sector, y cuenta con adaptaciones para fundaciones empresariales y otros tipos de organizaciones del sector privado, como por ejemplo asociaciones empresariales.</p>
         <p>EmPaz es aplicable a empresas en zonas afectadas por el conflicto – es decir, áreas rurales y urbanas que han sufrido enfrentamientos armados abiertos o sus consecuencias indirectas, como por ejemplo desplazamiento forzado, presencia cubierta de grupos armados ilegales, o infiltración de la economía local por actividades ilegales ligadas al conflicto. EmPaz también puede ser aplicada por empresas que realizan acciones dirigidas a impactar positivamente en la paz o la prevención de conflictos en otros territorios.</p>
@@ -67,12 +67,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse05" aria-expanded="false" aria-controls="collapseThree">
           ¿Para quién es EmPaz?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse05" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>La herramienta fue desarrollada para empresas de cualquier tamaño y sector, y cuenta con adaptaciones para fundaciones empresariales y otros tipos de organizaciones del sector privado, como por ejemplo asociaciones empresariales.</p>
         <p>EmPaz es aplicable a empresas en zonas afectadas por el conflicto – es decir, áreas rurales y urbanas que han sufrido enfrentamientos armados abiertos o sus consecuencias indirectas, como por ejemplo desplazamiento forzado, presencia cubierta de grupos armados ilegales, o infiltración de la economía local por actividades ilegales ligadas al conflicto. EmPaz también puede ser aplicada por empresas que realizan acciones dirigidas a impactar positivamente en la paz o la prevención de conflictos en otros territorios.</p>
@@ -82,12 +82,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse06" aria-expanded="false" aria-controls="collapseThree">
           ¿EmPaz tiene algún costo?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse06" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>La versión EmPaz Online es gratuita, y estará disponible en el segundo semestre de este año. EmPaz Premium implica costos, que se definirán en función de las necesidades específicas de la empresa.</p>
       </div>
@@ -96,12 +96,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse07" aria-expanded="false" aria-controls="collapseThree">
           ¿En qué se diferencian EmPaz Premium y Empaz Online?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse07" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>En ambas modalidades de la herramienta, la empresa obtiene un informe de diagnóstico que le ayuda a ampliar sus aportes a la construcción de paz en su área de influencia. Las dos modalidades se distinguen con respecto al proceso de evaluación y la profundidad del análisis, así:</p>
         <table>
@@ -144,12 +144,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse08" aria-expanded="false" aria-controls="collapseThree">
           ¿Qué beneficios tiene EmPaz para mi empresa?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse08" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>Después de aplicar la evaluación EmPaz, la empresa obtiene un informe de diagnóstico con los resultados cuantitativos y cualitativos. El informe contiene un análisis de las fortalezas y oportunidades de mejora así como recomendaciones para un plan de acción integral en construcción de paz (de carácter estandarizado para EmPaz Online y adaptado a la realidad específica de la empresa para EmPaz Premium). Es así que la herramienta propicia insumos para la toma de decisiones a nivel estratégico   y operativo, mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos y ampliar los aportes positivos a la paz en el área de influencia de la empresa.</p>
       </div>
@@ -158,12 +158,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse09" aria-expanded="false" aria-controls="collapseThree">
           ¿Qué evalúa EmPaz?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse09" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>EmPaz evalúa la gestión de una empresa – es decir, el conjunto de acciones que involucran procesos de administración y funcionamiento de la organización – y una o más iniciativas específicas implementada(s) por ella – es decir, programas, líneas de trabajo etc., con tiempos, poblaciones y objetivos preestablecidos – desde la perspectiva de su aportes positivos o negativos o no intencionados, a la construcción de paz en su área de influencia.</p>
       </div>
@@ -172,12 +172,12 @@
     <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse10" aria-expanded="false" aria-controls="collapseThree">
           ¿Cómo es el proceso para evaluar los aportes a la paz?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse10" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>EmPaz cuenta con dos versiones: EmPaz Premium y EmPaz online, que, ambas, miden los alcances de una empresa a la construcción de paz, con diferentes niveles de profundidad. EmPaz Premium, que es la versión desarrollada en los últimos dos años por la FIP con la CCB, consta de tres componentes: la revisión de las políticas, estrategias y otros documentos relevantes de la organización, el diligenciamiento de cuestionarios que evalúan los aportes de la gestión de la empresa y de sus iniciativas específicas a la construcción de paz, y la realización de entrevistas con directivas, gerentes, empleados, y grupos de interés externos de la empresa. Esta modalidad de EmPaz se implementa en un trabajo conjunto con la empresa y el equipo de la FIP.</p>
         <p>EmPaz online, que actualmente se está desarrollando, es la versión de la herramienta públicamente accesible, que cuenta con formularios de autodiagnóstico para empresas y un manual [protocolo?] para la revisión de los documentos de la empresas que puedan tener una relación con la construcción de paz.</p>
@@ -187,12 +187,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false" aria-controls="collapseThree">
           ¿Con base en qué criterios se mide el aporte de mi empresa a la paz?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>EmPaz parte de una visión integral de los diferentes ámbitos, interrelacionados y complementarios, donde las empresas y fundaciones empresariales pueden ayudar a transformar los factores estructurales que alimentan el conflicto.  Es así que la herramienta mide los alcances de estas organizaciones en seis dimensiones: la gestión estratégica para la paz – que comprende los mínimos de cumplimiento de una empresa para tener un aporte real a la construcción de paz – y cinco dimensiones temáticas: Desarrollo económico inclusivo, Sostenibilidad ambiental, Institucionalidad y participación democrática, Capital humano y Reconciliación y convivencia. Para la evaluación de los alcances de una empresa o fundación empresarial, EmPaz propone cuatro o cinco indicadores de medición en cada dimensión. </p>
         <p>Adicional a esto, la herramienta mide el desempeño con respecto a una serie de indicadores relacionados con el diseño, implementación, monitoreo y evaluación, y sostenibilidad de las acciones empresariales en construcción de paz.</p>
@@ -202,12 +202,12 @@
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" href="#collapse12" aria-expanded="false" aria-controls="collapseThree">
           ¿Cómo se llega a los resultados finales?
         </a>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+    <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <p>Cada respuesta tiene asignada un puntaje, de 1 o 5 (en donde 1 representa la valoración menor, y 5 la mayor). Cada pregunta tiene un peso igual en el resultado total. El porcentaje total obtenido es el promedio de todas las respuestas. </p>
         <p>La respuesta ´no aplica´ no tiene un puntaje asignado y no pesa en el resultado final, pues la organización puede escoger esta opción cuando la pregunta no aplica a la actividad de la empresa (por ejemplo: una pregunta sobre políticas de adquisición de tierras no es relevante para aquellas empresas cuya actividad de negocio no involucra adquirir tierras para su uso comercial).</p>
