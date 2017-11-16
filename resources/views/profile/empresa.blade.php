@@ -11,6 +11,7 @@
                 <li>Numero de trabajadores: {{ $empresa->num_trabajadores }}</li>
                 <li>NIT: {{ $empresa->nit }}</li>
             </ul>
+            <a class="btn btn-primary" href="/responder">Ver cuestionarios</a>
         </div>
     </div>
 </div>
