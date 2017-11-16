@@ -14,12 +14,12 @@
       <div class="modal-body">
       <div class="row">
       <div class="col-md-5">
-        <h2>Registrar nueva empresa</h2>
+        <h3>Registrar nueva empresa</h3>
+         <a href="/registro">Crear nueva empresa</a>
       </div>
       <div class="col-md-7">
       <h3>Ingresar</h3>
          <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
