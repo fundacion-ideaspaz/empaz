@@ -28,6 +28,10 @@ nav .row{
 	width: 100%;
 }
 
+nav a{
+    color: #fff!important;
+}
+
 a{
         color: #00aabf!important;
 }
