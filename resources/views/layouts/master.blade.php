@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="row">
   <div class="col-md-3">
-  <a class="navbar-brand" href="#"><img src="/img/logo-b.svg" width="130"></a>
+  <a class="navbar-brand" href="/home"><img src="/img/logo-b.svg" width="130"></a>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-6" >
