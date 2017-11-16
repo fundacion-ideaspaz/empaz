@@ -251,6 +251,11 @@ label {
     padding: 0;
 }
 
+#accordion .collapse{
+    padding: 20px;
+    background: #f2f2f2;
+}
+
 input[type="text"].form-control {
     display: block;
     width: 100%;
