@@ -86,6 +86,7 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
       (function() {
+        var formWrap = document.getElementById( 'fs-form-wrap' );
 
         [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
           new SelectFx( el, {
@@ -96,7 +97,11 @@
           });
         } );
 
+        new FForm( formWrap, {
+          onReview : function() {
+            classie.add( document.body, 'overview' ); // for demo purposes only
+          }
+        } );
       })();
-      
     </script>
 </html>
