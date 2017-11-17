@@ -4,8 +4,9 @@
         <div class="card-body">
             <h1>{{Auth::user()->nombre}}</h1>
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
+            <div class="row"> 
              @if ($errors->any())  
-             <div class="row">  
+
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -16,7 +17,7 @@
         @endif
                 {{ csrf_field() }}
                 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="nombre">Nombre de la Empresa</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la empresa">
                 </div>
@@ -51,22 +52,22 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="direccion">Dirección Empresa</label>
                     <input type="text" name="direccion" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="telefono">Telefono Empresa</label>
                     <input type="tel" name="telefono" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="web">Pagina Web Empresa</label>
                     <input type="text" name="web" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group  col-md-6">
                     <label for="tamano">Tamaño de la empresa</label>
                     <select class="form-control" name="tamano">
                         <option selected>Seleccionar...</option>
@@ -77,7 +78,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="num_trabajadores" class="form-label">Número de trabajadores</label>
                     <input class="form-control" name="num_trabajadores" type="number" value="0" id="num_trabajadores">
                 </div>
