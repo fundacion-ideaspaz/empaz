@@ -65,7 +65,7 @@
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
-          Logout
+          Cerrar sesión
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
