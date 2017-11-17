@@ -20,8 +20,12 @@ header{
     width: 100%;
 }
 
-a:hover, .btn:hover{
+a:hover{
     color: #7abee5!important;
+}
+
+.btn:hover{
+    background: #7abee5!important;
 }
 
 header .bg-light{
