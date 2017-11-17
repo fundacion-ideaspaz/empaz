@@ -148,6 +148,7 @@ header.master{
 .circular img{
  width: 100%;
  border-radius: 50%;
+ border: 20px solid rgba(0, 0, 0, 0.14);
 }
 
 .modal.show .modal-dialog {
