@@ -83,12 +83,12 @@
                     <input class="form-control" name="num_trabajadores" type="number" value="0" id="num_trabajadores">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="nit">NIT</label>
                     <input type="number" name="nit" class="form-control" placeholder="Enter NIT">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="sector_economico">Código CIIU Actividad Económica Principal</label>
                     <select class="form-control" name="sector_economico">
                         <option value="1011">   1011 - Procesamiento y conservación de carne y productos cárnicos</option>
@@ -454,7 +454,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-12">
                     <label for="codigo_ciiu">Código CIIU Actividad Económica Secundaria</label>
                     <select class="form-control" name="codigo_ciiu">
                         <option value="1011">   1011 - Procesamiento y conservación de carne y productos cárnicos</option>
