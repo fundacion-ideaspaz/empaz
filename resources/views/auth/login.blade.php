@@ -13,7 +13,7 @@
       </div>
       <div class="modal-body">
       <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-5 derecha">
         <h3>Registrar nueva empresa</h3>
          <a href="/registro">Crear nueva empresa</a>
       </div>
@@ -66,7 +66,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Ingresar
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
