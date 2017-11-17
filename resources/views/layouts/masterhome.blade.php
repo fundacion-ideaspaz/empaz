@@ -87,7 +87,7 @@
       <img src="/img/content1.jpg">
     </div>
     <div class="col-md-7"><div class="text">
-    h3>¿Por qué una herramienta de medición empresarial para la paz?</h3>
+    <h3>¿Por qué una herramienta de medición empresarial para la paz?</h3>
 
     <h4>Cada vez más empresas quieren invertir en la construcción de paz, pero no saben cómo, ni cómo medir los resultados de sus actividades al respecto. Las que ya están realizando acciones valiosas en la materia, también necesitan lineamientos sobre cómo planear y dar seguimiento a estas acciones y cómo superar las brechas.</h4>
 
