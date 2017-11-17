@@ -3,11 +3,11 @@ body{
 	font-size: 16px;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, ul li{
 	font-family: 'Roboto Slab', serif;
 }
 
-h4{
+h4, ul li{
 	font-size: 1.2em;
     font-weight: 200;
     margin-bottom: 40px;
@@ -85,6 +85,14 @@ header.master{
 .navbar-light .navbar-nav .nav-link{
     display: inline-block;
 }
+
+#section02 h3{
+    color: #fff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
 
 .navbar-brand{
     margin-left: 15px;
