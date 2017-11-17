@@ -28,6 +28,7 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                             <div class="col-md-10">
+                              <i class="fa fa-user" aria-hidden="true"></i>
                                 <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
