@@ -4,7 +4,7 @@
         <div class="card-body">
             <h1>{{Auth::user()->nombre}}</h1>
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
-             @if ($errors->any())
+             @if ($errors->any())    
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -19,7 +19,7 @@
                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la empresa">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label for="pais">País</label>
                     <select class="form-control" name="pais">
                         <option selected>Seleccionar...</option>
@@ -29,7 +29,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label for="departamento">Departamento</label>
                     <select class="form-control" name="departamento">
                         <option selected>Seleccionar...</option>
@@ -39,7 +39,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label for="municipio">Municipio</label>
                     <select class="form-control" name="municipio">
                         <option selected>Seleccionar...</option>
