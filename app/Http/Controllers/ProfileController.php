@@ -45,8 +45,6 @@ class ProfileController extends Controller
         $validations = [
             "nombre" => "required",
             "pais" => "required",
-            "departamento" => "required",
-            "municipio"  => "required",
             "direccion"  => "required",
             "telefono"  => "required",
             "web"  => "required",
