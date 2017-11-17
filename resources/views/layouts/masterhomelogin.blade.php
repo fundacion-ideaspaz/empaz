@@ -30,7 +30,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+ <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="#">Manual de usuario</a>
@@ -47,16 +47,16 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <span>Usuario</span>
-          <a class="dropdown-item" href="/cuestionarios">Cuestionario</a>
-          <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
-          <a class="dropdown-item" href="/indicadores">Indicadores</a>
-          <a class="dropdown-item" href="/preguntas">Preguntas</a>
+          <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Cuestionario</a>
+          <a class="dropdown-item" href="/dimensiones"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Dimensiones</a>
+          <a class="dropdown-item" href="/indicadores"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Indicadores</a>
+          <a class="dropdown-item" href="/preguntas"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Preguntas</a>
           <div class="menu-usuarios">
-            <a class="dropdown-item" href="/users">Usuarios</a>
+            <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
           </div>
           <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();">
+          document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
           Logout
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -69,7 +69,7 @@
       </li>
     </ul>
         
-</div>
+</div> 
   </div>
   </div>
 
