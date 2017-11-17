@@ -32,6 +32,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -54,28 +55,26 @@
                   {{ Auth::user()->nombre }} Acciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <span>Usuario</span>
-                  <a class="dropdown-item" href="/cuestionarios">Cuestionario</a>
-                  <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
-                  <a class="dropdown-item" href="/indicadores">Indicadores</a>
-                  <a class="dropdown-item" href="/preguntas">Preguntas</a>
-                  <div class="menu-usuarios">
-                    <a class="dropdown-item" href="/users">Usuarios</a>
-                  </div>
+                <div class="menu-usuarios">
+                    <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
                 </div>
-              </li>
-              @endif @if(Auth::user()->role === 'empresa')
-              <li class="nav-item">
+                    <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
+                    <a class="dropdown-item" href="/dimensiones"><i class="fa fa-list-ul" aria-hidden="true"></i> Dimensiones</a>
+                    <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
+                    <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
+                @endif @if(Auth::user()->role === 'empresa')
                 <a class="nav-link" href="/responder">Cuestionario(s)</a>
-              </li>
               @endif
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                  Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-                </form>
+              <div class="menu-logout">
+            <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
+          Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+          </div>
+                </div>
               </li>
               @endif
             </ul>

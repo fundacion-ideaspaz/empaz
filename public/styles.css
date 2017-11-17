@@ -78,6 +78,12 @@ header.master{
     display: inline-block;
     content: "/";
     color: #fff;
+    font-weight: 100;
+    margin: 0 10px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    display: inline-block;
 }
 
 .navbar-brand{
