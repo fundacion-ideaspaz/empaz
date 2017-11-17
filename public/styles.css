@@ -20,6 +20,10 @@ header{
     width: 100%;
 }
 
+a:hover{
+    color: #7abee5!important;
+}
+
 header .bg-light{
 	background-color: transparent!important;
 }
