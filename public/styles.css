@@ -210,6 +210,20 @@ header.master{
     color: rgba(255, 255, 255, 0.78);
 }
 
+.modal-content .btn-primary {
+    color: #00aabf!important;
+    background-color: #f7fafb;
+    border-color: #f8fafb;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.modal-content .recuperarpass{
+    color: #fff!important
+    margin-left: 20px;
+    font-size: 12px;
+}
+
 .modal-content .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(255, 255, 255, 0.67)!important;
 }
