@@ -51,7 +51,7 @@
                   {{ Auth::user()->nombre }} Acciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="nav-link" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
+                <a class="dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
                 <div class="menu-usuarios">
                 @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
                     <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
@@ -61,7 +61,7 @@
                     <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
                     <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
                 @endif @if(Auth::user()->role === 'empresa')
-                <a class="nav-link" href="/responder">Cuestionario(s)</a>
+                <a class="dropdown-item" href="/responder">Cuestionario(s)</a>
                 @endif
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
