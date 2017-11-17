@@ -42,6 +42,10 @@ nav a{
     color: #fff!important;
 }
 
+.navbar {
+    padding: 1rem 1rem;
+}
+
 .btn{
     color: #fff!important;
 }
