@@ -46,4 +46,9 @@ class User extends Authenticatable
         }
         return $validate;
     }
+
+    public function empresa()
+    {
+        return $this->hasOne("\App\ProfileEmpresa");
+    }
 }

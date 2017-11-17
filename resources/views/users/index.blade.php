@@ -8,6 +8,7 @@
           <tr>
             <th>Nombre</th>
             <th>Role</th>
+            <th>Empresa</th>
             <th>Email</th>
             <th width="20%">Acciones</th>
           </tr>
@@ -18,6 +19,9 @@
           <tr>
             <td>{{$user->nombre}}</td>
             <td>{{$user->role}}</td>
+            <td>
+              @if($user->empresa) {{$user->empresa->nombre}} @endif
+            </td>
             <td>{{$user->email}}</td>
             <td width="20%">
               <a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
@@ -33,8 +37,8 @@
         <div class="btn-group" role="group">
           <button id="createButtonsGroup" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-                Create new user
-              </button>
+            Create new user
+          </button>
           <div class="dropdown-menu" aria-labelledby="createButtonsGroup">
             <a href="/users/new/superadmin" class="dropdown-item">SuperAdmin</a>
             <a href="/users/new/experto" class="dropdown-item">Experto</a>
