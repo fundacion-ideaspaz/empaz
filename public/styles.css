@@ -74,6 +74,12 @@ header.master{
     justify-content: flex-end;
 }
 
+.nav-item:after{
+    display: inline-block;
+    content: "/";
+    color: #fff;
+}
+
 .navbar-brand{
     margin-left: 15px;
 }
