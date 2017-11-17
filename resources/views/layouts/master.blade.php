@@ -44,7 +44,7 @@
                 <a class="nav-link" href="/glosario">Glosario</a>
               </li>
               @if(Auth::user())
-              @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
@@ -53,6 +53,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="nav-link" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
                 <div class="menu-usuarios">
+                @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
                     <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
                 </div>
                     <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
@@ -61,7 +62,7 @@
                     <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
                 @endif @if(Auth::user()->role === 'empresa')
                 <a class="nav-link" href="/responder">Cuestionario(s)</a>
-              @endif
+                @endif
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
@@ -71,6 +72,12 @@
             {{ csrf_field() }}
         </form>
           </div>
+
+
+
+           
+
+
                 </div>
               </li>
               @endif
