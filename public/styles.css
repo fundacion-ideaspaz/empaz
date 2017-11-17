@@ -30,6 +30,11 @@ section ul li{
     padding: 50px 0;
 }
 
+#section02 h4, #section02 ul li{
+font-size: 1em;
+font-weight: 400; 
+}
+
 header{
     position: fixed;
     z-index: 10;
