@@ -46,16 +46,12 @@
           Acciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <span>Actions</span>
+        <span>Usuario</span>
           <a class="dropdown-item" href="/cuestionarios">Cuestionario</a>
           <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
           <a class="dropdown-item" href="/indicadores">Indicadores</a>
           <a class="dropdown-item" href="/preguntas">Preguntas</a>
         </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-        <li class="nav-item">
           <a class="logout-link" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">
           Logout
@@ -63,8 +59,9 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
-        </li>
-      </ul>
+      </li>
+    </ul>
+        
 </div> 
   </div>
   </div>
