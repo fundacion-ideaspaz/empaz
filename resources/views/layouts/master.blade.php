@@ -26,13 +26,12 @@
             <img src="/img/logo-b.svg" width="130">
           </a>
         </div>
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-9">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          
+
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
