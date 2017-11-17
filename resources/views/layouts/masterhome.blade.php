@@ -91,7 +91,7 @@
   </div>
 </div>  
 </section>
-  <div class="container app-container">
+  <div >
     @yield('content')
   </div>
 </body>
