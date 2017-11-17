@@ -41,26 +41,26 @@
                 <a class="nav-link" href="/glosario">Glosario</a>
               </li>
               @if(Auth::user())
-              <li class="nav-item">
-                <a class="nav-link" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
-              </li>
-              @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
-                  {{ Auth::user()->nombre }} Acciones
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ Auth::user()->nombre }} Acciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
+                @if(Auth::user()->role === 'superadmin')
                 <div class="menu-usuarios">
                     <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
                 </div>
+                 @if(Auth::user()->role === 'experto')
                     <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                     <a class="dropdown-item" href="/dimensiones"><i class="fa fa-list-ul" aria-hidden="true"></i> Dimensiones</a>
                     <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
                     <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
                 @endif @if(Auth::user()->role === 'empresa')
-                <a class="nav-link" href="/responder">Cuestionario(s)</a>
-              @endif
+                <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
+                @endif
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
