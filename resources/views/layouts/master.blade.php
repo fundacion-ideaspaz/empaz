@@ -44,9 +44,6 @@
                 <a class="nav-link" href="/glosario">Glosario</a>
               </li>
               @if(Auth::user())
-              <li class="nav-item">
-                <a class="nav-link" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
-              </li>
               @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -54,6 +51,7 @@
                   {{ Auth::user()->nombre }} Acciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="nav-link" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
                 <div class="menu-usuarios">
                     <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
                 </div>
