@@ -51,13 +51,19 @@
           <a class="dropdown-item" href="/dimensiones">Dimensiones</a>
           <a class="dropdown-item" href="/indicadores">Indicadores</a>
           <a class="dropdown-item" href="/preguntas">Preguntas</a>
-           <a class="logout-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+          <div class="menu-usuarios">
+            <a class="dropdown-item" href="/users">Usuarios</a>
+          </div>
+          <div class="menu-logout">
+            <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">
           Logout
         </a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form>
+          </div>
+           
         </div>
          
       </li>
