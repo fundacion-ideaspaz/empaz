@@ -25,6 +25,10 @@ section ul li{
     line-height: 1.5em;
 }
 
+#section02{
+    height: auto!important;
+}
+
 header{
     position: fixed;
     z-index: 10;
