@@ -83,7 +83,7 @@
 <section id="section02">
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5 circular">
       <img src="/img/content1.jpg">
     </div>
     <div class="col-md-7"><div class="text"><h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo con</h4>

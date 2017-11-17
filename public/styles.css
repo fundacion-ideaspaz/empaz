@@ -136,6 +136,11 @@ header.master{
  filter: brightness(.6);*/
 }
 
+.circular img{
+ width: 100%;
+ border-radius: 50%;
+}
+
 .modal.show .modal-dialog {
     -webkit-transform: translate(0,0);
     transform: translate(-50%,-50%);
