@@ -214,6 +214,11 @@ header.master{
     margin-top: 50px;
 }
 
+.modal-content .form-control#password{
+    position: relative;
+    padding-left: 30px;
+}
+
 .modal-content .col-md-10{
     position: relative;
 }
