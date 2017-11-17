@@ -42,6 +42,7 @@
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                             <div class="col-md-10">
+                              <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                                 <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
