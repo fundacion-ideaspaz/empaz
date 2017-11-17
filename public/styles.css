@@ -27,6 +27,7 @@ a:hover{
 .btn:hover{
     background: #7abee5!important;
     border-color: #7abee5!important;
+    color: #fff!important;
 }
 
 header .bg-light{
