@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="contentemail">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
