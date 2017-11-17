@@ -46,6 +46,10 @@ nav a{
     color: #fff!important;
 }
 
+.dropdown-menu a{
+    color: #00aabf!important;
+}
+
 a{
         color: #00aabf!important;
 }
