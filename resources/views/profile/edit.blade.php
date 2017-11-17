@@ -4,6 +4,15 @@
         <div class="card-body">
             <h1>{{Auth::user()->nombre}}</h1>
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
+             @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre de la Empresa</label>
@@ -809,15 +818,6 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Guardar</button>
-                @if ($errors->any())
-        <div class="alert alert-danger">
-          <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-        @endif
             </form>
         </div>
     </div>
