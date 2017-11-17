@@ -61,6 +61,7 @@
                 @endif @if(Auth::user()->role === 'empresa')
                 <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                 @endif
+                @endif
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
@@ -72,7 +73,6 @@
           </div>
                 </div>
               </li>
-              @endif
               @endif
             </ul>
           </div>
