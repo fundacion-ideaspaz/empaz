@@ -62,10 +62,10 @@ class CuestionarioResult extends Model
         return $matrizPercentages;
     }
 
-    public function contador($matriz, $j, $cantidadPreguntas)
+    public function contador($matriz, $i, $cantidadPreguntas)
     {
         $cantidad=0;
-        for ($i=0; $i<$cantidadPreguntas; $i++) {
+        for ($j=0; $j<$cantidadPreguntas; $j++) {
             if ($matriz[$i][$j]>0) {
                   $cantidad++;
             }
