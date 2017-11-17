@@ -4,7 +4,8 @@
         <div class="card-body">
             <h1>{{Auth::user()->nombre}}</h1>
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
-             @if ($errors->any())    
+             @if ($errors->any())  
+             <div class="row">  
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -14,6 +15,7 @@
         </div>
         @endif
                 {{ csrf_field() }}
+                
                 <div class="form-group">
                     <label for="nombre">Nombre de la Empresa</label>
                     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la empresa">
@@ -816,7 +818,7 @@
                         <option value="9512">   9512 - Mantenimiento y reparación de equipos de comunicación</option>
                     </select>
                 </div>
-
+</div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>
