@@ -2196,12 +2196,7 @@ $('#departamento').on('change', function (item) {
     var url = '/js/colombia.json';
 
 $.getJSON(url, function(data){
-    if (item.id){
-     $.each(data, function(id,value){
-
-        $("#municipio").append('<option value="'+item.id+'">'+item.value+'</option>');
-     });
-}
+      console.log(this.id)
     });
 
 });
