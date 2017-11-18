@@ -2175,14 +2175,7 @@
 
  function loadmunicipios(item) {
 
-    var url = '/js/colombia.json';
-    $.get(url, function (data) {
-        if (item.id){
-            var contentMenu = document.getElementById("municipio");
-            var ventana = '<option value="' + item.ciudades + '">' + item.ciudades + '</option>';
-            contentMenu.innerHTML = ventana;
-  }
-      });
+    
 }  
 
 
@@ -2200,13 +2193,14 @@
     })
 
     $('#departamento').on('change', function (item) {
-        var municipio = item.id;
-        if (municipio) {
-            loadmunicipios()
-        } else {
-            $('#municipio').prop('disabled', 'disabled');
-            $('#departamento').prop('disabled', 'disabled');
-        }
+        var url = '/js/colombia.json';
+    $.get(url, function (data) {
+        if (item.id){
+            var contentMenu = document.getElementById("municipio");
+            var ventana = '<option value="' + item.ciudades + '">' + item.ciudades + '</option>';
+            contentMenu.innerHTML = ventana;
+  }
+      });
         console.log(item.id);
     })
 
