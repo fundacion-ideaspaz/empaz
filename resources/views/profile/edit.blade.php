@@ -2207,7 +2207,7 @@
             $('#municipio').prop('disabled', 'disabled');
             $('#departamento').prop('disabled', 'disabled');
         }
-        console.log(target.value);
+        console.log(item.id);
     })
 
 
