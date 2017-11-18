@@ -2157,11 +2157,13 @@
 </div>
 <script>
 
+function loadCiiu(){
 $.getJSON('/js/ciiu.json', function(data) {
             $.each(data, function(key, value) {
                 $("#ciiu-principal").append('<option value="' + key + '">' + value + '</option>');
             }); // close each()
         }); // close getJSON()
+}
 
 
     function loadDepartamentos() {
@@ -2199,14 +2201,15 @@ $.getJSON('/js/ciiu.json', function(data) {
         console.log(target.value);
     })
 
-$('#departamento').on('change', function (item) {
-    var url = '/js/colombia.json';
+// $('#departamento').on('change', function (item) {
+//     var url = '/js/colombia.json';
 
-$.getJSON(url, function(data){
-      console.log(data)
-    });
+// $.getJSON(url, function(data){
+//       console.log(data)
+//     });
 
 });
 
+loadCiiu();
 
 </script> @endsection
