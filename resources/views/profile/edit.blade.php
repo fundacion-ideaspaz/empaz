@@ -2173,7 +2173,7 @@
     });
   }
 
- function loadmunicipios()(item) {
+ function loadmunicipios(item) {
 
     var url = '/js/colombia.json';
     $.get(url, function (data) {
