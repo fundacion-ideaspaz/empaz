@@ -2193,7 +2193,7 @@
     })
 
     $('#departamento').on('change', function (item) {
-        var url = '/js/colombia.json';
+    var url = '/js/colombia.json';
     $.get(url, function (data) {
         if (item.id){
             var contentMenu = document.getElementById("municipio");
@@ -2201,7 +2201,7 @@
             contentMenu.innerHTML = ventana;
   }
       });
-        console.log(item.id);
+        console.log(ventana);
     })
 
 
