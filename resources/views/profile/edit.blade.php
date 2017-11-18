@@ -2199,7 +2199,7 @@
         console.log(target.value);
     })
 
-    $('#municipio').on('change', function (item) {
+    $('#departamento').on('change', function (item) {
         var municipio = item.id;
         if (municipio) {
             loadmunicipios()
