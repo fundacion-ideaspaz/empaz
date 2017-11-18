@@ -2192,17 +2192,14 @@
         console.log(target.value);
     })
 
-    $('#departamento').on('change', function (item) {
-    var url = '/js/colombia.json';
-    $.get(url, function (data) {
-        if (item.id){
-            var contentMenu = document.getElementById("municipio");
-            var ventana = '<option value="' + item.ciudades + '">' + item.ciudades + '</option>';
-            contentMenu.innerHTML = ventana;
-  }
-      });
-        console.log(ventana);
-    })
+    $('#departamento').on('change', function () {
+        var url = '/js/colombia.json';
+$.getJSON(url, function(data){
+     $.each(data, function(id,value){
+        $("#municipio").append('<option value="'+id+'">'+value+'</option>');
+     });
+    });
+});
 
 
 </script> @endsection
