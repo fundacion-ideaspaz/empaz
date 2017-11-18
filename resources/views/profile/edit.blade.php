@@ -1338,8 +1338,8 @@
 
                     <div class="form-group col-md-12">
                         <label for="sector_economico">Código CIIU Actividad Económica Principal</label>
-                        <select class="form-control" name="sector_economico">
-                            <option value="1011"> 1011 - Procesamiento y conservación de carne y productos cárnicos</option>
+                        <select class="form-control" name="sector_economico" id="ciiu-principal">
+                            <!-- <option value="1011"> 1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                             <option value="1012"> 1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
                             <option value="1020"> 1020 - Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos</option>
                             <option value="1030"> 1030 - Elaboración de aceites y grasas de origen vegetal y animal</option>
@@ -1739,7 +1739,7 @@
                             <option value="6130"> 6130 - Actividades de telecomunicación satelital</option>
                             <option value="6190"> 6190 - Otras actividades de telecomunicaciones</option>
                             <option value="9511"> 9511 - Mantenimiento y reparación de computadores y de equipo periférico</option>
-                            <option value="9512"> 9512 - Mantenimiento y reparación de equipos de comunicación</option>
+                            <option value="9512"> 9512 - Mantenimiento y reparación de equipos de comunicación</option> -->
                         </select>
                     </div>
 
@@ -2157,6 +2157,13 @@
 </div>
 <script>
 
+$.getJSON('/js/ciiu.json', function(data) {
+            $.each(data, function(key, value) {
+                $("#ciiu-principal").append('<option value="' + key + '">' + value + '</option>');
+            }); // close each()
+        }); // close getJSON()
+
+
     function loadDepartamentos() {
 
     var url = '/js/colombia.json';
@@ -2196,7 +2203,7 @@ $('#departamento').on('change', function (item) {
     var url = '/js/colombia.json';
 
 $.getJSON(url, function(data){
-      console.log(data.id)
+      console.log(data)
     });
 
 });
