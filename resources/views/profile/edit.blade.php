@@ -225,7 +225,7 @@
                         <label for="departamento">Departamento</label>
                         <select class="form-control" id="departamento" name="departamento">
                             <option>Seleccione una opcion</option>
-                            <option value="Amazonas">Amazonas</option>
+                           <!--  <option value="Amazonas">Amazonas</option>
                             <option value="Antioquia">Antioquia</option>
                             <option value="Arauca">Arauca</option>
                             <option value="AtláNtico">AtláNtico</option>
@@ -257,7 +257,7 @@
                             <option value="Tolima">Tolima</option>
                             <option value="Valle Del Cauca">Valle Del Cauca</option>
                             <option value="Vaupes">Vaupes</option>
-                            <option value="Vichada">Vichada</option>
+                            <option value="Vichada">Vichada</option> -->
                         </select>
                     </div>
 
