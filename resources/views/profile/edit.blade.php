@@ -2189,7 +2189,9 @@
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
-            loadTimelinees()
+            $('#departamento').prop('disabled', false);
+            $('#municipio').prop('disabled', false);
+            loadDepartamentos()
         } else {
             $('#municipio').prop('disabled', 'disabled');
             $('#departamento').prop('disabled', 'disabled');
