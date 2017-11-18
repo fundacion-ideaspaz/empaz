@@ -2192,13 +2192,18 @@
         console.log(target.value);
     })
 
-    $('#departamento').on('change', function () {
-        var url = '/js/colombia.json';
+$('#departamento').on('change', function (item) {
+    var url = '/js/colombia.json';
+
 $.getJSON(url, function(data){
+    if (item.id){
      $.each(data, function(id,value){
-        $("#municipio").append('<option value="'+id+'">'+value+'</option>');
+
+        $("#municipio").append('<option value="'+item.id+'">'+item.value+'</option>');
      });
+}
     });
+
 });
 
 
