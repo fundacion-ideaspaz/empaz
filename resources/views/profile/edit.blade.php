@@ -2156,11 +2156,27 @@
     </div>
 </div>
 <script>
+
+    function loadTimelinees() {
+
+    var url = '/js/colombia.json';
+    $.get(url, function (data) {
+      console.log(data.length);
+      if (data.length > 0) {
+        $.each(data, function (index, item) {
+          var contentMenu = document.getElementById("departamento");
+          var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+
+          $(contentMenu).append(ventana);
+        });
+      }
+    });
+  }
+
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
-            $('#municipio').prop('disabled', false);
-            $('#departamento').prop('disabled', false);
+            loadTimelinees()
         } else {
             $('#municipio').prop('disabled', 'disabled');
             $('#departamento').prop('disabled', 'disabled');
