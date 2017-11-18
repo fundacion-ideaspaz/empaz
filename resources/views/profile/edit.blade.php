@@ -2208,7 +2208,7 @@ $.getJSON('/js/ciiu.json', function(data) {
 //       console.log(data)
 //     });
 
-});
+// });
 
 loadCiiu();
 
