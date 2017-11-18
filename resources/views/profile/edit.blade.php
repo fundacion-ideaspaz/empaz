@@ -265,7 +265,7 @@
                         <label for="municipio">Municipio</label>
                         <select class="form-control" id="municipio" name="municipio">
                             <option>Seleccione una opcion</option>
-                            <option value="Abejorral">Abejorral</option>
+                            <!-- <option value="Abejorral">Abejorral</option>
                             <option value="Abrego">Abrego</option>
                             <option value="Abriaqui">Abriaqui</option>
                             <option value="Acacias">Acacias</option>
@@ -1296,7 +1296,7 @@
                             <option value="Zetaquira">Zetaquira</option>
                             <option value="Zipacon">Zipacon</option>
                             <option value="Zipaquira">Zipaquira</option>
-                            <option value="Zona Bananera">Zona Bananera</option>
+                            <option value="Zona Bananera">Zona Bananera</option> -->
                         </select>
                     </div>
 
@@ -2157,7 +2157,7 @@
 </div>
 <script>
 
-    function loadTimelinees() {
+    function loadDepartamentos() {
 
     var url = '/js/colombia.json';
     $.get(url, function (data) {
@@ -2173,6 +2173,19 @@
     });
   }
 
+ function loadmunicipios()(item) {
+
+    var url = '/js/colombia.json';
+    $.get(url, function (data) {
+        if (item.id){
+            var contentMenu = document.getElementById("municipio");
+            var ventana = '<option value="' + item.ciudades + '">' + item.ciudades + '</option>';
+            contentMenu.innerHTML = ventana;
+  }
+      });
+}  
+
+
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
@@ -2183,4 +2196,17 @@
         }
         console.log(target.value);
     })
+
+    $('#municipio').on('change', function (item) {
+        var municipio = (this)item.id;
+        if (municipio == municipio) {
+            loadmunicipios()
+        } else {
+            $('#municipio').prop('disabled', 'disabled');
+            $('#departamento').prop('disabled', 'disabled');
+        }
+        console.log(target.value);
+    })
+
+
 </script> @endsection
