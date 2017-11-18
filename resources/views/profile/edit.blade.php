@@ -2198,8 +2198,8 @@
     })
 
     $('#municipio').on('change', function (item) {
-        var municipio = (this)item.id;
-        if (municipio == municipio) {
+        var municipio = item.id;
+        if (municipio) {
             loadmunicipios()
         } else {
             $('#municipio').prop('disabled', 'disabled');
