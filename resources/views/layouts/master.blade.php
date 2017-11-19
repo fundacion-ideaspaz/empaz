@@ -21,18 +21,16 @@
   <header class="master">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="row">
-        <div class="col-md-3">
           <a class="navbar-brand" href="/home">
             <img src="/img/logo-b.svg" width="130">
           </a>
-        </div>
-        <div class="col-md-9">
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
-<div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#">Manual de usuario</a>
@@ -64,6 +62,7 @@
                 @endif @if(Auth::user()->role === 'empresa')
                 <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                 @endif
+                <div class="dropdown-divider"></div>
               <div class="menu-logout">
             <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
           document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
@@ -78,7 +77,6 @@
               @endif
             </ul>
           </div>
-        </div>
       </div>
     </nav>
   </header>
