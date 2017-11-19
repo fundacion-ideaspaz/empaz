@@ -19,7 +19,7 @@
 
 <body>
   <header class="master">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="/home">
             <img src="/img/logo-b.svg" width="130">
           </a>
@@ -54,7 +54,6 @@
                                   <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
                               </div>
                               @endif
-                              <div class="dropdown-divider"></div>
                                @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
                                   <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                                   <a class="dropdown-item" href="/dimensiones"><i class="fa fa-list-ul" aria-hidden="true"></i> Dimensiones</a>
@@ -63,8 +62,6 @@
                               @endif @if(Auth::user()->role === 'empresa')
                               <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                               @endif
-
-                              <div class="dropdown-divider"></div>
 
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
