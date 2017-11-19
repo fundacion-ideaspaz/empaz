@@ -2183,8 +2183,18 @@ $.getJSON('/js/ciiu.json', function(data) {
   }
 
  function loadmunicipios(item) {
+    var url = '/js/colombia.json';
+    $.get(url, function (data) {
+      console.log(data.id);
+      if (data.length > 0) {
+        $.each(data, function (index, item) {
+          var contentMenu = document.getElementById("departamento");
+          var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
 
-    
+          $(contentMenu).append(ventana);
+        });
+      }
+    });   
 }  
 
 
