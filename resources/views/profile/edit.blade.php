@@ -2205,7 +2205,7 @@ $('#departamento').on('change', function (item) {
     var url = '/js/colombia.json';
 
 $.getJSON(url, function(data){
-      console.log(data)
+      console.log(this.id)
     });
 
 });
