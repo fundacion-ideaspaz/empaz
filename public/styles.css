@@ -121,7 +121,9 @@ header.master{
     margin-bottom: 30px;
 }
 
-
+.menu-logout{
+    background: #fff;
+}
 
 .navbar-brand{
     margin-left: 15px;
