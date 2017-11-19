@@ -20,12 +20,7 @@
 <body>
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="row">
-  <div class="col-md-3">
   <a class="navbar-brand" href="/login"><img src="img/logo.svg" width="130"></a>
-  </div>
-  <div class="col-md-3"></div>
-  <div class="col-md-6" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -46,8 +41,6 @@
   <i class="fa fa-user" aria-hidden="true"></i> Ingresar
 </button>
 </div> 
-  </div>
-  </div>
 
 </nav>
 </header>
