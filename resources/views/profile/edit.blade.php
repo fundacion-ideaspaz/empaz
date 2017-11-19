@@ -2238,8 +2238,8 @@ var searchIntoJson = function (obj, column, value) {
  });
 
  $("#departamento").change(function () {
- var departamentoId = $("#departamento").val();
- loadCiudades(departamentoId);
+ var departamento = $("#departamento").val();
+ loadCiudades(departamento);
  });
 
 var loadCiudades = function (departamentoId) {
