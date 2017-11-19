@@ -102,6 +102,14 @@ header.master{
     margin: 0 10px;
 }
 
+.nav-item:last-child:after {
+    display: inline-block;
+    content: "/";
+    color: #fff;
+    font-weight: 100;
+    margin: 0 10px;
+}
+
 .navbar-light .navbar-nav .nav-link{
     display: inline-block;
 }
