@@ -2185,7 +2185,7 @@ $.getJSON('/js/ciiu.json', function(data) {
  function loadmunicipios() {
     var url = '/js/colombia.json';
     $.get(url, function (data) {
-      console.log(data[id]);
+      console.log(this.data);
       if (data.length > 0) {
         $.each(data, function (index, item) {
           var contentMenu = document.getElementById("departamento");
