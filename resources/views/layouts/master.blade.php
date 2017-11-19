@@ -31,8 +31,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="col-md-9">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse col-md-9" id="navbarNavDropdown">
               <ul class="navbar-nav">
                     <li class="nav-item">
                       <a class="nav-link" href="#">Manual de usuario</a>
@@ -85,7 +84,6 @@
                     @endif
               </ul>
           </div>
-        </div>
 
       </div>
     </nav>
