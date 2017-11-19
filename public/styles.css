@@ -28,6 +28,7 @@ section ul li{
 #section02{
     height: auto!important;
     padding: 50px 0;
+    min-height: 100vh!important;
 }
 
 #section02 h4, #section02 ul li{

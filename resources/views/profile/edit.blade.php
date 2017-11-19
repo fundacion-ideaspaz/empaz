@@ -2201,14 +2201,14 @@ $.getJSON('/js/ciiu.json', function(data) {
         console.log(target.value);
     })
 
-// $('#departamento').on('change', function (item) {
-//     var url = '/js/colombia.json';
+$('#departamento').on('change', function (item) {
+    var url = '/js/colombia.json';
 
-// $.getJSON(url, function(data){
-//       console.log(data)
-//     });
+$.getJSON(url, function(data){
+      console.log(data)
+    });
 
-// });
+});
 
 loadCiiu();
 
