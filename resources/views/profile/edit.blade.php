@@ -2214,9 +2214,19 @@ $.getJSON('/js/ciiu.json', function(data) {
     })
 
 
-$.getJSON("/js/colombia.json", function (data) {
- departamentos = data;
- });
+var ciudades;
+var searchIntoJson = function (obj, column, value) {
+ var results = [];
+ var valueField;
+ var searchField = column;
+ for (var i = 0 ; i < obj.length ; i++) {
+ valueField = obj[i][searchField].toString();
+ if (valueField === value) {
+ results.push(obj[i]);
+ }
+ }
+ return results;
+};
 
  $.getJSON("/js/colombia.json", function (data) {
  ciudades = data;
