@@ -2247,7 +2247,7 @@ var loadCiudades = function (departamentoId) {
  $("#municipio").empty();
  $("#municipio").append('<option value="" selected="selected"></option>');
  $.each(ciudadesDepto, function (i, valor) {
- $("#municipio").append('<option value="' + valor.ciudadId + '">' + valor.nombreCiudad + '</option>');
+ $("#municipio").append('<option value="' + valor.ciudades + '">' + valor.ciudades + '</option>');
  });
 };
 
