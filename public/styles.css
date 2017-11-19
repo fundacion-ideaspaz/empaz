@@ -91,7 +91,6 @@ header.master{
 }
 
 .navbar-expand-lg .navbar-collapse{
-    display: flex;
     justify-content: flex-end;
 }
 
