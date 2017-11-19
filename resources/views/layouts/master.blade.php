@@ -20,7 +20,6 @@
 <body>
   <header class="master">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="row">
           <a class="navbar-brand" href="/home">
             <img src="/img/logo-b.svg" width="130">
           </a>
@@ -82,8 +81,6 @@
                     @endif
               </ul>
           </div>
-
-      </div>
     </nav>
   </header>
   <div class="container app-container">
