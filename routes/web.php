@@ -118,7 +118,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm');
 
         // Wizard Steps
-        Route::get('/cuestionarios/new/', 'WizardController@new');
+        Route::get('/cuestionarios/new', 'WizardController@new');
         Route::get('/cuestionarios/{cuest_id}/dimensiones/',
                 'WizardController@dimensiones');
         Route::get('/cuestionarios/{cuest_id}/indicadores', 'WizardController@indicadores');
