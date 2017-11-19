@@ -2198,6 +2198,8 @@ $.getJSON('/js/ciiu.json', function(data) {
 }  
 
 
+
+
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
@@ -2211,16 +2213,44 @@ $.getJSON('/js/ciiu.json', function(data) {
         console.log(target.value);
     })
 
-$('#departamento').on('change', function (item) {
-//     var url = '/js/colombia.json';
 
-// $.getJSON(url, function(data){
-//       console.log(this.id)
-//     });
+$.getJSON("data/departamentos.json", function (data) {
+ departamentos = data;
+ });
 
-loadmunicipios()
+ $.getJSON("js/colombia.json", function (data) {
+ ciudades = data;
+ setTimeout(function () {
+ if (ciudades !== undefined) {
+ loadDepartamentos();
+ }
+ }, 2000);
+ });
 
-});
+ $("#departamento").change(function () {
+ var departamentoId = $("#departamento").val();
+ loadCiudades(departamentoId);
+ });
+
+var loadCiudades = function (departamentoId) {
+ var ciudadesDepto = searchIntoJson(ciudades, "departamentoId", departamentoId);
+ $("#municipio").empty();
+ $("#municipio").append('<option value="" selected="selected"></option>');
+ $.each(ciudadesDepto, function (i, valor) {
+ $("#municipio").append('<option value="' + valor.ciudadId + '">' + valor.nombreCiudad + '</option>');
+ });
+};
+
+// $('#departamento').on('change', function (item) {
+// //     var url = '/js/colombia.json';
+
+// // $.getJSON(url, function(data){
+// //       console.log(this.id)
+// //     });
+
+// loadmunicipios()
+
+// });
 
 loadCiiu();
 
