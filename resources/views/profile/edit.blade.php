@@ -2233,7 +2233,7 @@ $.getJSON("/js/colombia.json", function (data) {
  });
 
 var loadCiudades = function (departamentoId) {
- var ciudadesDepto = searchIntoJson(ciudades, "departamentoId", departamentoId);
+ var ciudadesDepto = searchIntoJson(ciudades, "departamento", departamento);
  $("#municipio").empty();
  $("#municipio").append('<option value="" selected="selected"></option>');
  $.each(ciudadesDepto, function (i, valor) {
