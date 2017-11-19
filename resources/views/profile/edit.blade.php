@@ -2182,7 +2182,7 @@ $.getJSON('/js/ciiu.json', function(data) {
     });
   }
 
- function loadmunicipios(item) {
+ function loadmunicipios() {
     var url = '/js/colombia.json';
     $.get(url, function (data) {
       console.log(data.id);
@@ -2212,11 +2212,13 @@ $.getJSON('/js/ciiu.json', function(data) {
     })
 
 $('#departamento').on('change', function (item) {
-    var url = '/js/colombia.json';
+//     var url = '/js/colombia.json';
 
-$.getJSON(url, function(data){
-      console.log(this.id)
-    });
+// $.getJSON(url, function(data){
+//       console.log(this.id)
+//     });
+
+loadmunicipios()
 
 });
 
