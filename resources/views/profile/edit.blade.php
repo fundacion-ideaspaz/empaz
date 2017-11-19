@@ -2214,11 +2214,11 @@ $.getJSON('/js/ciiu.json', function(data) {
     })
 
 
-$.getJSON("data/departamentos.json", function (data) {
+$.getJSON("/js/colombia.json", function (data) {
  departamentos = data;
  });
 
- $.getJSON("js/colombia.json", function (data) {
+ $.getJSON("/js/colombia.json", function (data) {
  ciudades = data;
  setTimeout(function () {
  if (ciudades !== undefined) {
