@@ -2244,6 +2244,7 @@ var searchIntoJson = function (obj, column, value) {
 
 var loadCiudades = function (departamentoId) {
  var ciudadesDepto = searchIntoJson(ciudades, "departamento", departamento);
+ console.log(ciudadesDepto);
  $("#municipio").empty();
  $("#municipio").append('<option value="" selected="selected"></option>');
  $.each(ciudadesDepto, function (i, valor) {
