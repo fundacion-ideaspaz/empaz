@@ -2,7 +2,7 @@
 <div class="indicadores-form">
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
-  <h1>{{$dimension->nombre}}</h1>
+  <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
       @foreach($indicadores as $indicador)
@@ -11,7 +11,34 @@
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
         {{ csrf_field() }}
         <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
-        <div class="input-group col-sm-12">
+        <table>
+          <tr>
+            <td>
+              Indicador
+            </td>
+            <td>
+              Nivel de importancia
+            </td>
+            <td>
+              Acciones
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{$indicador->nombre}}
+            </td>
+            <td>
+              <input name="nivel_importancia" class="slider-select" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
+            data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5" data-slider-step="1"
+            data-slider-value="" data-slider-tooltip="hide" />
+            </td>
+            <td>
+              <input type="submit" value="Asignar" class="btn btn-primary">
+            </td>
+          </tr>
+        </table>
+
+        <!-- <div class="input-group col-sm-12">
           <label for="importancia">Asigna un nivel de importancia para este indicador y agregalo a la dimensión:</label>
         </div>
         <div class="input-group col-sm-5">
@@ -21,7 +48,7 @@
         </div>
         <div class="input-group col-sm-7">
           <input type="submit" value="Asignar" class="btn btn-primary">
-        </div>
+        </div> -->
       </form>
       @endif @endforeach
     </div>
