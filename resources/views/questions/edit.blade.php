@@ -5,7 +5,7 @@
             <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="nombre">Nombre de la pregunta</label>
+                    <label for="nombre">Texto</label>
                     <input type="text" class="form-control" name="nombre" value="{{$pregunta->nombre}}">
                 </div>
                 <div class="form-group">
