@@ -7,22 +7,18 @@
     <div class="card-body">
       @foreach($indicadores as $indicador)
       @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
-      <h3>{{$indicador->nombre}}</h3>
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
         {{ csrf_field() }}
         <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
-        <table>
+        <table class="table table-bordered table-hover table-striped">
+        <thead>
           <tr>
-            <td>
-              Indicador
-            </td>
-            <td>
-              Nivel de importancia
-            </td>
-            <td>
-              Acciones
-            </td>
+            <th>Indicador</th>
+            <th>Nivel de importancia</th>
+            <th>Acciones</th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>
               {{$indicador->nombre}}
@@ -36,6 +32,7 @@
               <input type="submit" value="Asignar" class="btn btn-primary">
             </td>
           </tr>
+          </tbody>
         </table>
 
         <!-- <div class="input-group col-sm-12">
