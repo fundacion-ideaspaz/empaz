@@ -2262,7 +2262,7 @@ var searchIntoJson = function (obj, column, value) {
  //            loadDepartamentos()
  //        }
  // loadCiudades(departamento);
-loadmunicipios(data);
+loadmunicipios();
 
  });
 
