@@ -2215,6 +2215,7 @@ $.getJSON('/js/ciiu.json', function(data) {
 
 
 var ciudades;
+
 var searchIntoJson = function (obj, column, value) {
  var results = [];
  var valueField;
@@ -2237,10 +2238,31 @@ var searchIntoJson = function (obj, column, value) {
  }, 2000);
  });
 
+ function loadmunicipios() {
+    var url = '/js/colombia.json';
+    $.get(url, function (data) {
+        console.log(data.departamento)
+      if (data.length > 0) {
+        $.each(data, function (index, item) {
+          var contentMenu = document.getElementById("departamento");
+          var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+
+          $(contentMenu).append(ventana);
+        });
+      }
+    });   
+}  
+
  $("#departamento").change(function () {
- var departamento = $("#departamento").val();
-    console.log(departamento);
- loadCiudades(departamento);
+ // var departamento = $("#departamento").val();
+ // if (target.value === 'Colombia') {
+ //            $('#departamento').prop('disabled', false);
+ //            $('#municipio').prop('disabled', false);
+ //            loadDepartamentos()
+ //        }
+ // loadCiudades(departamento);
+loadmunicipios(data);
+
  });
 
 var loadCiudades = function (departamentoId) {
