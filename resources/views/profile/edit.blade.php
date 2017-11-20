@@ -2241,7 +2241,8 @@ var searchIntoJson = function (obj, column, value) {
  function loadmunicipios() {
     var url = '/js/colombia.json';
     $.get(url, function (data) {
-        console.log(data.departamento)
+        var Departamento = this.departamento;
+        console.log(Departamento);
       if (data.length > 0) {
         $.each(data, function (index, item) {
           var contentMenu = document.getElementById("departamento");
