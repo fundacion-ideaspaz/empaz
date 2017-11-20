@@ -2239,12 +2239,13 @@ var searchIntoJson = function (obj, column, value) {
 
  $("#departamento").change(function () {
  var departamento = $("#departamento").val();
+    console.log(departamento);
  loadCiudades(departamento);
  });
 
 var loadCiudades = function (departamentoId) {
  var ciudadesDepto = searchIntoJson(ciudades, "departamento", departamento);
- console.log(ciudadesDepto);
+
  $("#municipio").empty();
  $("#municipio").append('<option value="" selected="selected"></option>');
  $.each(ciudadesDepto, function (i, valor) {
