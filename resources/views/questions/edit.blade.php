@@ -2,6 +2,9 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
+            <div class="fs-title">
+                <h1>Editar pregunta</h1>
+            </div>
             <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">

@@ -24,7 +24,8 @@ class WizardController extends Controller
         $cuestionario = Cuestionario::find($cuest_id);
         $dimensionesIds = DimensionCuestionario
             ::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
-        $dimensiones = Dimension::whereNotIn("id", $dimensionesIds)->get();
+        $dimensiones = Dimension::whereNotIn("id", $dimensionesIds)
+                        ->where("estado", "=", "activo")->get();
         return view('cuestionarios.dimensiones')->with([
             "cuestionario" => $cuestionario,
             "dimensiones" => $dimensiones

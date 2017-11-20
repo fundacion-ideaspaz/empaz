@@ -2,7 +2,9 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h3>Crear Indicador</h3>
+            <div class="fs-title">
+                <h1>Crear Indicador</h1>
+            </div>
             <form action="/indicadores" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">

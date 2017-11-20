@@ -1,7 +1,10 @@
-@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.master') @section('title', 'Editar Dimensión') @section('content')
 <div class="row dimensiones-form">
     <div class="card col-12">
         <div class="card-body">
+            <div class="fs-title">
+                <h1>Editar Dimensión</h1>
+            </div>
             <form action="/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">

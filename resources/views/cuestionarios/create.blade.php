@@ -1,8 +1,10 @@
-@extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.master') @section('title', 'Crear Cuestionario') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h3>Crear Cuestionario</h3>
+            <div class="fs-title">
+                <h1>Crear Cuestionario</h1>
+            </div>
             <form action="/cuestionarios" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
