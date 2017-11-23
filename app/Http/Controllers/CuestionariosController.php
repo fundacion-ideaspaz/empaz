@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Cuestionario;
 use App\Dimension;
 use App\DimensionCuestionario;
+use App\IndicadoresDimensiones;
+use App\IndicadoresPreguntas;
 
 class CuestionariosController extends Controller
 {
@@ -16,7 +18,7 @@ class CuestionariosController extends Controller
 
     public function index()
     {
-        $cuestionarios = Cuestionario::all();
+        $cuestionarios = Cuestionario::orderBy("cuest_id_parent", "ASC")->get();
         return view("cuestionarios.index")->with([
             "cuestionarios" => $cuestionarios
         ]);
@@ -39,6 +41,8 @@ class CuestionariosController extends Controller
         $preguntas = $request["preguntas"];
         $cuestionario = $request->except('preguntas');
         $newCuestionario = Cuestionario::create($cuestionario);
+        $newCuestionario->cuest_id_parent = $newCuestionario->id;
+        $newCuestionario->save();
         return redirect("/cuestionarios/".$newCuestionario->id."/dimensiones");
     }
 
@@ -53,22 +57,56 @@ class CuestionariosController extends Controller
     public function update($id, Request $request)
     {
         $validations = [
-            "nombre" => "required",
             "descripcion" => "required",
-            "estado" => "required",
-            "version" => "required|integer"
+            "estado" => "required"
         ];
         $this->validate($request, $validations);
-        $inputs = $request->except("preguntas");
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
         $cuestionario->save();
-        return redirect("/cuestionarios");
+        return redirect("/cuestionarios/".$cuestionario->id."/dimensiones");
     }
 
-    public function show($id)
+    public function getCopy($id)
     {
-        return redirect("/cuestionarios/".$id."/edit");
+        $cuestionario = Cuestionario::find($id);
+        return view("cuestionarios.copy")->with([
+            "cuestionario" => $cuestionario
+        ]);
+    }
+
+
+    public function postCopy($id, Request $request)
+    {
+        $fromVersion = $request->type === 'true';
+        $cuestionario = Cuestionario::find($id);
+        $cuestionarioCopy = new Cuestionario($cuestionario->toArray());
+        $lastVersion = Cuestionario
+            ::where('cuest_id_parent', '=', $cuestionario->cuest_id_parent)
+            ->latest()->first();
+        $cuestionarioCopy->version = (int)$lastVersion->version+1;
+        $cuestionarioCopy->save();
+        if($fromVersion){
+            $dimensionesCuestionario = DimensionCuestionario
+                ::where("cuestionario_id", "=", $id)->get();
+            foreach($dimensionesCuestionario as $dimCuest){
+                $dimCuest->cuestionario_id = $cuestionarioCopy->id;
+                $newDimCuest = DimensionCuestionario::create($dimCuest->toArray());
+            }
+            $indicadoresDimensiones = IndicadoresDimensiones
+                ::where("cuestionario_id", "=", $id)->get();
+            foreach($indicadoresDimensiones as $dimIndicador){
+                $dimIndicador->cuestionario_id = $cuestionarioCopy->id;
+                $newDimCuest = IndicadoresDimensiones::create($dimIndicador->toArray());
+            }
+            $indicadoresPreguntas = IndicadoresPreguntas
+                ::where("cuestionario_id", "=", $id)->get();
+            foreach($indicadoresPreguntas as $indPreg){
+                $indPreg->cuestionario_id = $cuestionarioCopy->id;
+                $newDimCuest = IndicadoresPreguntas::create($indPreg->toArray());
+            }            
+        }
+        return redirect("/cuestionarios");
     }
 
     public function delete($id, Request $request)

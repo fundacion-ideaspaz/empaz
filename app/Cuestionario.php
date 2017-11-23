@@ -13,7 +13,8 @@ class Cuestionario extends Model
         'nombre',
         'descripcion',
         'version',
-        'estado'
+        'estado',
+        'cuest_id_parent'
     ];
 
     public function dimensiones()

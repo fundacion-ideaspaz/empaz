@@ -9,7 +9,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="number" class="form-control" name="version" value="{{$cuestionario->version}}">
+                    <input type="number" class="form-control" name="version" value="{{$cuestionario->version}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>

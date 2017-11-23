@@ -113,6 +113,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cuestionarios/{id}/dimensiones/{dimension_id}/delete',
                 'CuestionariosController@deleteDimensiones');
         Route::post('/cuestionarios/{id}', 'CuestionariosController@update');
+        Route::get('/cuestionarios/{id}/copy', 'CuestionariosController@getCopy');
+        Route::post('/cuestionarios/{id}/copy', 'CuestionariosController@postCopy');
         Route::get('/cuestionarios/{id}/delete', 'CuestionariosController@delete');
         Route::post('/cuestionarios/{id}/delete', 'CuestionariosController@deleteConfirm');
 

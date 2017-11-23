@@ -474,3 +474,15 @@ input[type="text"].form-control {
     border-radius: .25rem;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+tr.children td:last-child {
+    padding-right: 35px;
+}
+
+tr.children td:first-child {
+    padding-left: 35px;
+}
+
+.version-column{
+    width: 20px;
+}

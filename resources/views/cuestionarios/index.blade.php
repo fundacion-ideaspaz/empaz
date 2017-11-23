@@ -14,10 +14,10 @@
         </thead>
         <tbody>
           @foreach($cuestionarios as $cuestionario)
-          <p></p>
+          @if($cuestionario->id === $cuestionario->cuest_id_parent)
           <tr>
             <td>{{$cuestionario->nombre}}</td>
-            <td>
+            <td class="version-column">
               {{ $cuestionario->version }}
             </td>
             <td>
@@ -25,10 +25,28 @@
             </td>
             <td width="25%">
               <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/copy"><i class="fa fa-clone" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" data-placement="bottom" title="{{$cuestionario->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             </td>
           </tr>
+          @else
+          <tr class="children">
+              <td>- {{$cuestionario->nombre}}</td>
+              <td class="version-column">
+                {{ $cuestionario->version }}
+              </td>
+              <td>
+                {{ $cuestionario->estado }}
+              </td>
+              <td width="25%">
+                <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/copy"><i class="fa fa-clone" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" data-placement="bottom" title="{{$cuestionario->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+              </td>
+            </tr>
+          @endif
           @endforeach
         </tbody>
       </table>
