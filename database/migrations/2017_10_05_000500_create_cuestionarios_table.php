@@ -14,6 +14,7 @@ class CreateCuestionariosTable extends Migration
             $table->string('descripcion');
             $table->string('version');
             $table->string('estado');
+            $table->integer('cuest_id_parent')->nullable();
             $table->timestamps();
         });
     }

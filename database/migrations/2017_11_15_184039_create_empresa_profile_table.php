@@ -12,8 +12,8 @@ class CreateEmpresaProfileTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('pais');
-            $table->string('departamento');
-            $table->string('municipio');
+            $table->string('departamento')->nullable();
+            $table->string('municipio')->nullable();
             $table->string('direccion');
             $table->string('telefono');
             $table->string('web');
