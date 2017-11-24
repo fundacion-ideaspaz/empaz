@@ -3,6 +3,15 @@
   <div class="card col-12">
     <div class="card-body">
       <h3>Agregar dimensiones al cuestionario {{$cuestionario->nombre}}</h3>
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
       @if(sizeof($cuestionario->dimensiones) > 0)
       <h4>Dimensiones asignadas al cuestionario</h4>
       @endif
@@ -52,20 +61,11 @@
             Atrás
           </a>
           <a class="btn btn-primary pull-right"
-            href="/cuestionarios/{{$cuestionario->id}}/indicadores">
+            href="/cuestionarios/{{$cuestionario->id}}/dimensiones/validate">
             Siguiente
           </a>
         </div>
       </div>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
   </div>
 </div>
 <script>

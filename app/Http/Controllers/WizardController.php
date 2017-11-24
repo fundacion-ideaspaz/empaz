@@ -32,6 +32,22 @@ class WizardController extends Controller
         ]);
     }
 
+    public function validateDimensiones($cuest_id){
+        $dimensionesCuest = DimensionCuestionario
+            ::where("cuestionario_id", "=", $cuest_id)->get();
+        $total = 0;
+        foreach($dimensionesCuest as $dimCuest){
+            $total += (int)$dimCuest->importancia;
+        }
+        if($total < 100){
+            return redirect("/cuestionarios/".$cuest_id."/dimensiones")
+                ->withErrors([
+                    "total" => "La suma de importancia de las dimensiones no da 100%"
+                ]);
+        }
+        return redirect("/cuestionarios/".$cuest_id."/indicadores");
+    }
+
     public function indicadores($cuest_id)
     {
         $cuestionario = Cuestionario::find($cuest_id);

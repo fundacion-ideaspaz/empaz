@@ -16,11 +16,13 @@
           @foreach($cuestionarios as $cuestionario)
           @if($cuestionario->id === $cuestionario->cuest_id_parent)
           <tr>
-            <td>{{$cuestionario->nombre}}</td>
+            <td class="nombre-column">
+              {{$cuestionario->nombre}}
+            </td>
             <td class="version-column">
               {{ $cuestionario->version }}
             </td>
-            <td>
+            <td class="estado-column">
               {{ $cuestionario->estado }}
             </td>
             <td width="25%">
@@ -36,7 +38,7 @@
               <td class="version-column">
                 {{ $cuestionario->version }}
               </td>
-              <td>
+              <td class="estado">
                 {{ $cuestionario->estado }}
               </td>
               <td width="25%">
