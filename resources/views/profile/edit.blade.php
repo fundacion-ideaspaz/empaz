@@ -1339,6 +1339,7 @@
                     <div class="form-group col-md-12">
                         <label for="sector_economico">Código CIIU Actividad Económica Principal</label>
                         <select class="form-control" name="sector_economico" id="ciiu-principal">
+                            <option value="Ninguno"> Ninguno</option>
                             <option value="1011"> 1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                             <option value="1012"> 1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
                             <option value="1020"> 1020 - Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos</option>
@@ -1746,6 +1747,7 @@
                     <div class="form-group col-md-12">
                         <label for="codigo_ciiu">Código CIIU Actividad Económica Secundaria</label>
                         <select class="form-control" name="codigo_ciiu">
+                        <option value="Ninguno"> Ninguno</option>
                             <option value="1011"> 1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                             <option value="1012"> 1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
                             <option value="1020"> 1020 - Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos</option>
@@ -2155,16 +2157,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="main.js"></script>
 <script>
-
-function loadCiiu(){
-$.getJSON('/js/ciiu.json', function(data) {
-            $.each(data, function(key, value) {
-                $("#ciiu-principal").append('<option value="' + key + '">' + value + '</option>');
-            }); // close each()
-        }); // close getJSON()
-}
-
 
     function loadDepartamentos() {
 
@@ -2198,80 +2192,8 @@ $.getJSON('/js/ciiu.json', function(data) {
         console.log(target.value);
     })
 
-
-var ciudades;
-
-var searchIntoJson = function (obj, column, value) {
- var results = [];
- var valueField;
- var searchField = column;
- for (var i = 0 ; i < obj.length ; i++) {
- valueField = obj[i][searchField].toString();
- if (valueField === value) {
- results.push(obj[i]);
- }
- }
- return results;
-};
-
- $.getJSON("/js/colombia.json", function (data) {
- ciudades = data;
- setTimeout(function () {
- if (ciudades !== undefined) {
- loadDepartamentos();
- }
- }, 2000);
- });
-
- function loadmunicipios() {
-    var url = '/js/colombia.json';
-    $.get(url, function (data) {
-        var Departamento = this.departamento;
-        console.log(Departamento);
-      if (data.length > 0) {
-        $.each(data, function (index, item) {
-          var contentMenu = document.getElementById("departamento");
-          var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
-
-          $(contentMenu).append(ventana);
-        });
-      }
-    });   
-}  
-
- $("#departamento").change(function () {
- // var departamento = $("#departamento").val();
- // if (target.value === 'Colombia') {
- //            $('#departamento').prop('disabled', false);
- //            $('#municipio').prop('disabled', false);
- //            loadDepartamentos()
- //        }
- // loadCiudades(departamento);
-loadmunicipios();
-
- });
-
-var loadCiudades = function (departamentoId) {
- var ciudadesDepto = searchIntoJson(ciudades, "departamento", departamento);
-
- $("#municipio").empty();
- $("#municipio").append('<option value="" selected="selected"></option>');
- $.each(ciudadesDepto, function (i, valor) {
- $("#municipio").append('<option value="' + valor.ciudades + '">' + valor.ciudades + '</option>');
- });
-};
-
-// $('#departamento').on('change', function (item) {
-// //     var url = '/js/colombia.json';
-
-// // $.getJSON(url, function(data){
-// //       console.log(this.id)
-// //     });
-
-// loadmunicipios()
-
-// });
-
-loadCiiu();
+$(function(){
+                (new handleDeparmentsAndCitiesSelectors('#departments', '#cities'));
+            });
 
 </script> @endsection
