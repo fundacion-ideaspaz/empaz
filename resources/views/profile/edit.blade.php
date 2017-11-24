@@ -223,7 +223,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="departamento">Departamento</label>
-                        <select class="form-control" id="departamento" name="departamento">
+                        <select class="form-control" id="departments" name="departamento">
                             <option>Seleccione una opcion</option>
                         </select>
                     </div>
@@ -1102,7 +1102,7 @@
       console.log(data.length);
       if (data.length > 0) {
         $.each(data, function (index, item) {
-          var contentMenu = document.getElementById("departamento");
+          var contentMenu = document.getElementById("departments");
           var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
 
           $(contentMenu).append(ventana);
@@ -1117,12 +1117,12 @@
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
-            $('#departamento').prop('disabled', false);
-            $('#municipio').prop('disabled', false);
+            $('#departments').prop('disabled', false);
+            $('#cities').prop('disabled', false);
             loadDepartamentos()
         } else {
-            $('#municipio').prop('disabled', 'disabled');
-            $('#departamento').prop('disabled', 'disabled');
+            $('#cities').prop('disabled', 'disabled');
+            $('#departments').prop('disabled', 'disabled');
         }
         console.log(target.value);
     })
