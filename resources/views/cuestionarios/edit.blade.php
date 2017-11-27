@@ -29,9 +29,9 @@
                 </div>
         </div>
         <div class="from-group">
-            <a href="/cuestionarios/{{$cuestionario->id}}/dimensiones" class="btn btn-info">
+            <!-- <a href="/cuestionarios/{{$cuestionario->id}}/dimensiones" class="btn btn-info">
                 Dimensiones
-            </a>
+            </a> -->
             <input type="submit" class="btn btn-primary" value="Guardar">
         </div>
         @if ($errors->any())
