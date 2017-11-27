@@ -54,19 +54,19 @@
   <div class="carousel-inner">
     <div class="carousel-item active" id="slide1">
       <div class="content-slider">
-        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB), que permite evaluar los aportes en construcción de paz que genera una organización desde su gestión estratégica y mediante iniciativas en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
+        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
         <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a></div>
       </div>
     </div>
     <div class="carousel-item" id="slide2">
       <div class="content-slider">
-        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB), que permite evaluar los aportes en construcción de paz que genera una organización desde su gestión estratégica y mediante iniciativas en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
+        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
         <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a></div>
       </div>
     </div>
     <div class="carousel-item" id="slide3">
       <div class="content-slider">
-        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB), que permite evaluar los aportes en construcción de paz que genera una organización desde su gestión estratégica y mediante iniciativas en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
+        <div class="text"><h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
         <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a></div>
       </div>
     </div>
@@ -82,7 +82,7 @@
     <div class="col-md-7"><div class="text">
     <h3>¿Por qué una herramienta de medición empresarial para la paz?</h3>
 
-    <h4>Cada vez más empresas quieren invertir en la construcción de paz, pero no saben cómo, ni cómo medir los resultados de sus actividades al respecto. Las que ya están realizando acciones valiosas en la materia, también necesitan lineamientos sobre cómo planear y dar seguimiento a estas acciones y cómo superar las brechas.</h4>
+    <h4>Cada vez más empresas quieren invertir en la construcción de paz, pero no saben qué ni cómo medir los resultados de sus actividades al respecto. Aquellas que ya están realizando acciones prometedoras en la materia, también necesitan lineamientos sobre cómo planear y dar seguimiento a estas acciones y cómo superar las brechas y aprovechar las oportunidades que se presenten.</h4>
 
 <h4>Aplicar EmPaz le permite a la organización:</h4>
 
@@ -91,7 +91,7 @@
 <li>Realizar un proceso de autoevaluación y aprendizaje interno para el mejoramiento continuo de la gestión.</li>
 <li>Obtener insumos para la toma de decisiones a nivel estratégico y operativo.</li>
 <li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de la organización.</li>
-<li>Visibilizar ante los grupos de interés internos y externos, oportunidades y resultados de la empresa en construcción de paz.</li>
+<li>Visibilizar ante los grupos de interés internos y externos, oportunidades y resultados de la empresa en la construcción de paz.</li>
         </div></div>
   </div>
 </div>  
