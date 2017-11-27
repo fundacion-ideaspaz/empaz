@@ -16,6 +16,8 @@ class CreateUsersTable extends Migration
             $table->string('cargo')->nullable();
             $table->string('telefono')->nullable();
             $table->string('password');
+            $table->string('confirmation_code')->nullable();
+            $table->string('estado')->default('activo');
             $table->rememberToken();
             $table->timestamps();
         });

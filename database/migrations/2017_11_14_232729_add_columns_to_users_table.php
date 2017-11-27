@@ -9,16 +9,16 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('confirmation_code')->nullable();
-            $table->string('estado')->default('activo');
+            // $table->string('confirmation_code')->nullable();
+            // $table->string('estado')->default('activo');
         });
     }
 
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('confirmation_code');
-            $table->dropColumn('estado');
+            // $table->dropColumn('confirmation_code');
+            // $table->dropColumn('estado');
         });
     }
 }

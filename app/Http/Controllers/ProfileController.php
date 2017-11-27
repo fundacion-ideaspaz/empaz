@@ -79,9 +79,13 @@ class ProfileController extends Controller
             $inputs["confirmation_code"] = str_random(12);
             $user = User::create($inputs);
             Mail::to($user->email)->send(new AccountCreated($user));
-            return redirect("/home");
+            return redirect("/registro/exito");
         } else {
             return redirect()->back();
         }
+    }
+
+    public function registroExito(){
+        return view('users.registro-exito');
     }
 }

@@ -14,6 +14,7 @@
 Auth::routes();
 Route::get('/registro', 'ProfileController@registro');
 Route::post('/registro', 'ProfileController@saveRegistro');
+Route::get('/registro/exito', 'ProfileController@registroExito');
 Route::get('/', function () {
     if (!Auth::user()) {
         return redirect('/login');

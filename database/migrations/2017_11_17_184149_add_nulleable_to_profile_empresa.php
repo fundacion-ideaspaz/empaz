@@ -14,8 +14,8 @@ class AddNulleableToProfileEmpresa extends Migration
     public function up()
     {
         Schema::table('empresa_profile', function (Blueprint $table) {
-            $table->string('departamento')->nullable()->change();
-            $table->string('municipio')->nullable()->change();
+            // $table->string('departamento')->nullable()->change();
+            // $table->string('municipio')->nullable()->change();
         });
     }
 
@@ -27,8 +27,8 @@ class AddNulleableToProfileEmpresa extends Migration
     public function down()
     {
         Schema::table('empresa_profile', function (Blueprint $table) {
-            $table->string('departamento')->nullable(false)->change();
-            $table->string('municipio')->nullable(false)->change();
+            // $table->string('departamento')->nullable(false)->change();
+            // $table->string('municipio')->nullable(false)->change();
         });
     }
 }
