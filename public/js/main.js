@@ -39,7 +39,7 @@ function handleDeparmentsAndCitiesSelectors(deparmentsSelector, citiesSelector) 
 	}
 
 	function loadCities(deparment) {
-		$citiesSelect.find('option').remove(); // Clean the selector
+		// $citiesSelect.find('option').remove(); // Clean the selector
 
 		var department = loadedData[deparment] || {}; // Load cities by department
 		var cities = department.ciudades || [];
