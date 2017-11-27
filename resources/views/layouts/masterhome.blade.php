@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<div id="mensaje"></div>
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/login"><img src="img/logo.svg" width="130"></a>
@@ -105,5 +106,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
   crossorigin="anonymous"></script>
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
-
+<script type="text/javascript">
+  var mensaje = document.cookie.split('mensaje=')[1];
+if(mensaje != null) document.getElementById('mensaje').style.display = 'none';
+else document.cookie = 'mensaje=visto;path=/';
+</script>
 </html>

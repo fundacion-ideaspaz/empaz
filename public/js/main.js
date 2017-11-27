@@ -3,7 +3,7 @@ function handleDeparmentsAndCitiesSelectors(deparmentsSelector, citiesSelector) 
 	var $deparmentsSelect = $(deparmentsSelector);
 	var $citiesSelect = $(citiesSelector);
 	var loadedData = [];
-	var jsonSourceUri = 'colombia.json';
+	var jsonSourceUri = '/js/colombia.json';
 
 	if ($deparmentsSelect.length === 0 || $citiesSelect.length === 0) return;
 
