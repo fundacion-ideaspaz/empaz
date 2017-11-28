@@ -122,6 +122,7 @@ class CuestionarioMath extends Model {
         $i = $j = 0;
         foreach ($dimensiones as $dimension) {
             $sumatoriaDimensionTemp = 0;
+            $arrayDimensionTemp = array_fill(0, $cantidadDimensiones, 0);
             $j = 0;
             foreach ($indicadores as $indicador) {
                 if ($resultMatriz[$i][$j] > 0) {
