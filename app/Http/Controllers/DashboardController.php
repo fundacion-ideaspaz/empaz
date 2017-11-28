@@ -19,7 +19,9 @@ class DashboardController extends Controller
         $cuestResult = CuestionarioResult::find($cuest_id);
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
-                    ::where("cuestionario_id", "=", $cuestionario_id)->get();
+                    ::where("cuestionario_id", "=", $cuestionario_id)
+                    ->where("cuestionario_result_id", "=", $cuest_id)
+                    ->get();
         $preguntasIds = $preguntasCuest->pluck("pregunta_id");
         $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
         $indicadoresCuest = IndicadoresDimensiones
@@ -30,8 +32,6 @@ class DashboardController extends Controller
         $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
         $dimensionesCuest = DimensionCuestionario
                         ::where("cuestionario_id", "=", $cuestionario_id)->get();
-
-
         $rIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
 
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
