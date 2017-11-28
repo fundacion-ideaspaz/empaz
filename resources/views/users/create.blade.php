@@ -1,4 +1,4 @@
-@extends('layouts.masterAnimation') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
 <div class="container">
   <div class="fs-form-wrap" id="fs-form-wrap">
     <div class="fs-title">
