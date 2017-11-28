@@ -508,6 +508,16 @@ tr.children td:first-child {
 
 @media all and (max-width: 980px) { 
     header .bg-light{
-        background-color: #f00;
+    background-color: #00aabf!important;
     }
+
+    h4{
+    font-size: 1em;
+}
+
+.navbar-nav .dropdown-menu {
+    position: relative!important;
+    float: none;
+    transform: none!important;
+}
 }
