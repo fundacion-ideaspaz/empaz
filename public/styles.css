@@ -500,6 +500,10 @@ tr.children td:first-child {
     width: 150px;
 }
 
+.navbar-toggler-icon .fa{
+    margin-top: 5px;
+}
+
 
 
 @media all and (max-width: 980px) { 
