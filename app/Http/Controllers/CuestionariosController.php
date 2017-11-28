@@ -49,7 +49,15 @@ class CuestionariosController extends Controller
     public function edit($id)
     {
         $cuestionario = Cuestionario::find($id);
-        return view("cuestionarios.edit")->with([
+        $lastCuest = Cuestionario
+                ::where("cuest_id_parent", "=", $cuestionario->cuest_id_parent)
+                ->orderBy("version", "DESC")->first();
+        if($cuestionario->id == $lastCuest->id){
+            $view = "cuestionarios.edit-total";
+        }else{
+            $view = "cuestionarios.edit";
+        }
+        return view($view)->with([
             "cuestionario" => $cuestionario
         ]);
     }
@@ -61,6 +69,7 @@ class CuestionariosController extends Controller
             "estado" => "required"
         ];
         $this->validate($request, $validations);
+        $inputs = $request->only(["descripcion", "estado"]);
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
         $cuestionario->save();
