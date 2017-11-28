@@ -7,6 +7,15 @@
             </div>
             <form action="/cuestionarios" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
@@ -32,15 +41,6 @@
             <a href="/cuestionarios" class="btn btn-warning">Atrás</a>
             <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
         </div>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         </form>
     </div>
 </div>

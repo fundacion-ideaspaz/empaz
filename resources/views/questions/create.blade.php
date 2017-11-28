@@ -6,6 +6,15 @@
         </div>
         <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
             {{ csrf_field() }}
+            @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
             <div class="form-group">
                 <label for="nombre">Texto</label>
                 <input type="text" class="form-control" name="nombre">
@@ -59,15 +68,7 @@
     <div class="from-group">
         <input type="submit" class="btn btn-primary" value="Guardar">
     </div>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+    
     </form>
 </div>
 <script>
