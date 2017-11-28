@@ -115,6 +115,15 @@ header.master{
     display: inline-block;
 }
 
+.navbar-light .navbar-toggler {
+    color: rgb(255, 255, 255)!important;
+    border-color: rgb(255, 255, 255)!important;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: none!important;
+}
+
 #section02 h3{
     color: #fff;
     margin-top: 50px;
