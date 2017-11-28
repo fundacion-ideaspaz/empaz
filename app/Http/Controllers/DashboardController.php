@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
         $i=0;
         foreach ($dimensiones as $dimension) {
-            $arrayPorcentajeDimension = intval($dimensionesCuest[$i]->importancia);
+            $arrayPorcentajeDimension[$i] = intval($dimensionesCuest[$i]->importancia);
             $i++;
         }
 
