@@ -7,6 +7,8 @@
             </div>
             <form action="/indicadores" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                @if ($errors->any())
+
                 <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -35,8 +37,7 @@
         <div class="from-group">
             <input type="submit" class="btn btn-primary" value="Guardar">
         </div>
-        @if ($errors->any())
-        
+                
         </form>
     </div>
 </div>
