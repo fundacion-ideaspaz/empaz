@@ -24,19 +24,19 @@ function handleDeparmentsAndCitiesSelectors(deparmentsSelector, citiesSelector) 
 		});
 	}
 
-	function loadDeparments() {
-		if (loadedData.length === 0) return;
+	// function loadDeparments() {
+	// 	if (loadedData.length === 0) return;
 
-		var departmentKeys = Object.keys(loadedData);
+	// 	var departmentKeys = Object.keys(loadedData);
 
-		$(departmentKeys).each(function(index, key) {
-			var department = loadedData[key];
-			var option = $("<option>").attr('value', department.departamento).text(department.departamento);
-			$deparmentsSelect.append(option);
-		});
+	// 	$(departmentKeys).each(function(index, key) {
+	// 		var department = loadedData[key];
+	// 		var option = $("<option>").attr('value', department.departamento).text(department.departamento);
+	// 		$deparmentsSelect.append(option);
+	// 	});
 
-		loadCities(departmentKeys[0]); // Loads cities for the first department
-	}
+	// 	loadCities(departmentKeys[0]); // Loads cities for the first department
+	// }
 
 	function loadCities(deparment) {
 		$citiesSelect.find('option').remove(); // Clean the selector

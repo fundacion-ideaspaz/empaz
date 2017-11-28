@@ -499,3 +499,11 @@ tr.children td:first-child {
 .nombre-column{
     width: 150px;
 }
+
+
+
+@media all and (max-width: 980px) { 
+    header .bg-light{
+        background-color: #f00;
+    }
+}
