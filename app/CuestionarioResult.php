@@ -14,108 +14,120 @@ class CuestionarioResult extends Model
         'value'
     ];
 
-    public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest)
-    {
-        $cantidadPreguntas= $preguntas->count();
-        $cantidadIndicadores= $indicadores->count();
+    
+    public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest) {
+        $cantidadPreguntas = $preguntas->count();
+        $cantidadIndicadores = $indicadores->count();
+        $conteoIndicadores = array_fill(0, $cantidadIndicadores, 0);
+        $totalIndicadores = array_fill(0, $cantidadIndicadores, 0);
+        $calificacionIndicadores = array_fill(0, $cantidadIndicadores, 0);
         $matrizRelations = array_fill(0, $cantidadIndicadores, array_fill(0, $cantidadPreguntas, 0));
         $arrayResults = array_fill(0, $cantidadPreguntas, 0);
         $resultMatriz = $matrizRelations;
-        $i=0;
+        $i = 0;
         foreach ($preguntasCuest as $pregunta) {
             $arrayResults[$i] = $pregunta->opcion->valueRespuesta();
             $i++;
         }
-        $i=$j=0;
+        $i = $j = 0;
         foreach ($indicadores as $indicador) {
-            $j=0;
+            $j = 0;
             foreach ($preguntas as $pregunta) {
                 $isFromIndicador = IndicadoresPreguntas
-                ::where("pregunta_id", '=', $pregunta->id)
-                ->where("cuestionario_id", "=", $cuestionario_id)
-                ->where("indicador_id", "=", $indicador->id)
-                ->count();
+                        ::where("pregunta_id", '=', $pregunta->id)
+                        ->where("cuestionario_id", "=", $cuestionario_id)
+                        ->where("indicador_id", "=", $indicador->id)
+                        ->count();
                 if ($isFromIndicador > 0) {
                     $matrizRelations[$i][$j] = 1;
-                    $resultMatriz[$i][$j] = $matrizRelations[$i][$j] * $arrayResults[$j];
+                    $resultMatriz[$i][$j] = $arrayResults[$j];
                 }
                 $j++;
             }
             $i++;
         }
-        $matrizPercentages = $matrizRelations;
-        $i=$j=0;
+        $i = $j = 0;
         foreach ($indicadores as $indicador) {
-            $j=0;
+            $j = 0;
             foreach ($preguntas as $pregunta) {
-                $divisorResult = (5 * $this->contador($resultMatriz, $i, $cantidadPreguntas));
-                if ($divisorResult == 0) {
-                    $matrizPercentages[$i][$j] = 0;
-                } else {
-                    $matrizPercentages[$i][$j] = $resultMatriz[$i][$j] / $divisorResult;
+                if ($resultMatriz[$i][$j] > 0) {
+
+                    $conteoIndicadores[$i] = $conteoIndicadores[$i] + $resultMatriz[$i][$j];
+
+                    $totalIndicadores[$i] = $totalIndicadores[$i] + 5;
                 }
                 $j++;
             }
             $i++;
         }
-
-        return $matrizPercentages;
-    }
-
-    public function contador($matriz, $i, $cantidadPreguntas)
-    {
-        $cantidad=0;
-        for ($j=0; $j<$cantidadPreguntas; $j++) {
-            if ($matriz[$i][$j]>0) {
-                  $cantidad++;
-            }
+        $i = 0;
+        foreach ($indicadores as $indicador) {
+            $calificacionIndicadores[$i] = $conteoIndicadores[$i] / $totalIndicadores[$i][$j];
+            $i++;
         }
-        return $cantidad;
+        return $calificacionIndicadores;
     }
-
-    public function puntajeDimensiones($cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $matrizIndicadores)
-    {
+        
+    public function puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $calificacionIndicadores) {
         $cantidadDimensiones = $dimensiones->count();
         $cantidadIndicadores = $indicadores->count();
         $matrizRelations = array_fill(0, $cantidadDimensiones, array_fill(0, $cantidadIndicadores, 0));
         $arrayResults = array_fill(0, $cantidadDimensiones, 0);
         $resultMatriz = $matrizRelations;
-        $arraySumatorias = array_fill(0, $cantidadDimensiones, 0);
-        $i=$j=0;
+        $arrayDimensionTemp = array_fill(0, $cantidadDimensiones, 0);
+        $sumatoriaDimensionTemp = 0;
+        $arrayDimensionResultado = array_fill(0, $cantidadDimensiones, 0);
+        $arrayDimensionesCalculadas = array_fill(0, $cantidadDimensiones, 0);
+        $i = $j = 0;
         foreach ($dimensiones as $dimension) {
-            $j=0;
-            $sumatoriaT = 0;
-            $sumatoriaSr = 0;
+            $j = 0;
             foreach ($indicadores as $indicador) {
                 $nivel_importancia = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
-                    return $value->indicador_id == $indicador->id && $value->dimension_id = $dimension->id;
-                })->nivel_importancia;
+                            return $value->indicador_id == $indicador->id && $value->dimension_id = $dimension->id;
+                        })->nivel_importancia;
                 $resultMatriz[$i][$j] = intval($nivel_importancia);
-                $sumatoriaT += intval($nivel_importancia) || 0;
-                $sumatoriaSr += intval($nivel_importancia) * intval($matrizIndicadores[$i]);
                 $j++;
             }
-            $arraySumatorias[$i] = ($sumatoriaSr)/$sumatoriaT;
             $i++;
         }
-        return $arraySumatorias;
+        $i = $j = 0;
+        foreach ($dimensiones as $dimension) {
+            $sumatoriaDimensionTemp = 0;
+            $arrayDimensionTemp = array_fill(0, $cantidadDimensiones, 0);
+            $j = 0;
+            foreach ($indicadores as $indicador) {
+                if ($resultMatriz[$i][$j] > 0) {
+                    $arrayDimensionTemp[$j] = $resultMatriz[$i][$j];
+                    $sumatoriayDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
+                }
+                $j++;
+                $calificacionIndicadores[$i] = sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
+            }
+            $i++;
+        }
+        $i = 0;
+        foreach ($dimensiones as $dimension) {
+            $arrayDimensionesCalculadas[$i] = $calificacionIndicadores[$i] * $arrayPorcentajeDimension[$i];
+            $i++;
+        }
+        return $arrayDimensionesCalculadas;
     }
-
-    public function puntajeCuestionario($cuestionario_id, $dimensiones, $arrayDimensiones, $dimensionesCuest)
-    {
-        $sumaDimensiones = 0;
-        foreach ($arrayDimensiones as $dimension) {
-            $sumaDimensiones += $dimension;
+        
+    function sumaProductos($array1, $array2) {
+        $resultado = 0;
+        if (count($array1) == count($array2)) {
+            for ($i = 0; $i < count($array1); $i++) {
+                $resultado += $array1[$i] * $array2[$i];
+            }
         }
-        $ponderacionDim = $sumaDimensiones/$dimensiones->count();
-        $i=0;
-        $sumatoria1 = $sumatoria2 = 0;
-        foreach ($arrayDimensiones as $dimension) {
-            $sumatoria1 += $dimension * $dimensionesCuest[$i]->importancia;
-            $sumatoria2 += $dimensionesCuest[$i]->importancia;
-            $i++;
+        return $resultado;
+    }
+        
+    public function puntajeCuestionario($arrayDimensionesCalculadas) {
+        $diagnostico = 0;
+        foreach ($arrayDimensionesCalculadas as $dimension) {
+            $diagnostico = $diagnostico + $dimension;
         }
-        $diagnostico = $sumatoria1 / $sumatoria2;
         return $diagnostico;
     }
 }
