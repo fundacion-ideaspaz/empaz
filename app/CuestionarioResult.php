@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class CuestionarioResult extends Model
 {
     protected $table = 'cuestionarios_result';
-    
+
     protected $fillable = [
         'user_id',
         'cuestionario_id',
         'value'
     ];
 
-    
+
     public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest) {
         $cantidadPreguntas = $preguntas->count();
         $cantidadIndicadores = $indicadores->count();
@@ -67,7 +67,7 @@ class CuestionarioResult extends Model
         }
         return $calificacionIndicadores;
     }
-        
+
     public function puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $calificacionIndicadores) {
         $cantidadDimensiones = $dimensiones->count();
         $cantidadIndicadores = $indicadores->count();
@@ -101,18 +101,21 @@ class CuestionarioResult extends Model
                     $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
                 }
                 $j++;
-                $calificacionIndicadores[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             }
+            $arrayDimensionResultado[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             $i++;
         }
+
+
+
         $i = 0;
         foreach ($dimensiones as $dimension) {
-            $arrayDimensionesCalculadas[$i] = $calificacionIndicadores[$i] * $arrayPorcentajeDimension[$i];
+            $arrayDimensionesCalculadas[$i] =   $arrayDimensionResultado[$i] * $arrayPorcentajeDimension[$i];
             $i++;
         }
         return $arrayDimensionesCalculadas;
     }
-        
+
     function sumaProductos($array1, $array2) {
         $resultado = 0;
         if (count($array1) == count($array2)) {
@@ -122,7 +125,7 @@ class CuestionarioResult extends Model
         }
         return $resultado;
     }
-        
+
     public function puntajeCuestionario($arrayDimensionesCalculadas) {
         $diagnostico = 0;
         foreach ($arrayDimensionesCalculadas as $dimension) {
