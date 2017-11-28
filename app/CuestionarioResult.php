@@ -101,7 +101,7 @@ class CuestionarioResult extends Model
                     $sumatoriayDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
                 }
                 $j++;
-                $calificacionIndicadores[$i] = sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
+                $calificacionIndicadores[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             }
             $i++;
         }
