@@ -44,6 +44,15 @@ class DashboardController extends Controller
         $rDimensiones = $cuestResult->puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $rIndicadores);
         $rCuestionario = $cuestResult->puntajeCuestionario($rDimensiones);
         
+        dd([
+            'rIndicadores' => $rIndicadores,
+            'rDimensiones' => $rDimensiones,
+            'rCuestionario' => $rCuestionario,
+            'preguntas' => $preguntas,
+            'indicadores' => $indicadores,
+            'dimensiones' => $dimensiones,
+        ]);
+
         return view("reportes.index")->with([
             'rIndicadores' => $rIndicadores,
             'rDimensiones' => $rDimensiones,

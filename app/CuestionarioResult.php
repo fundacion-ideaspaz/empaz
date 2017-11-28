@@ -62,7 +62,7 @@ class CuestionarioResult extends Model
         }
         $i = 0;
         foreach ($indicadores as $indicador) {
-            $calificacionIndicadores[$i] = $conteoIndicadores[$i] / $totalIndicadores[$i][$j];
+            $calificacionIndicadores[$i] = $conteoIndicadores[$i] / $totalIndicadores[$i];
             $i++;
         }
         return $calificacionIndicadores;
@@ -98,7 +98,7 @@ class CuestionarioResult extends Model
             foreach ($indicadores as $indicador) {
                 if ($resultMatriz[$i][$j] > 0) {
                     $arrayDimensionTemp[$j] = $resultMatriz[$i][$j];
-                    $sumatoriayDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
+                    $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
                 }
                 $j++;
                 $calificacionIndicadores[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
