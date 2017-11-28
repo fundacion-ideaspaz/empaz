@@ -25,7 +25,7 @@ class OpcionesRespuestas extends Model
                     return 1;
                 }
                 if($tipoRespuesta == 4){
-                    return 1;
+                    return 2;
                 }
                 return 3;
             case 3:
