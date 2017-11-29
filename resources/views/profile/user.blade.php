@@ -4,8 +4,8 @@
         <div class="card-body">
             <div class="row header">
             <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div>
-            <div class="col-md-8"><h1>{{Auth::user()->nombre}}</h1></div>
-            <div class="col-md-2"> @if(Auth::user()->role === 'superadmin')
+            <div class="col-md-7"><h1>{{Auth::user()->nombre}}</h1></div>
+            <div class="col-md-3"> @if(Auth::user()->role === 'superadmin')
       <a class="btn btn-primary" href="/users">Panel de administración</a>
       @endif
       @if(Auth::user()->role === 'experto')

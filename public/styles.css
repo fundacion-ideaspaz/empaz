@@ -533,7 +533,7 @@ tr.children td:first-child {
     margin-bottom: 30px;
 }
 
-.cuerpo .col-md-4{
+.cuerpo .col-md-4, .cuerpo .col-md-6{
     padding: 20px 15px;
     color: #999;
 }
