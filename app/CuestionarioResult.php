@@ -95,6 +95,7 @@ class CuestionarioResult extends Model
             }
             $i++;
         }
+
         $i = $j = 0;
         foreach ($dimensiones as $dimension) {
             $sumatoriaDimensionTemp = 0;
@@ -104,15 +105,16 @@ class CuestionarioResult extends Model
                 if ($resultMatriz[$i][$j] > 0) {
                     $arrayDimensionTemp[$j] = $resultMatriz[$i][$j];
                     $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
+                }else{
+                  $arrayDimensionTemp[$j] = 0;
+                  $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + 0;
                 }
                 $j++;
             }
             $arrayDimensionResultado[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             $i++;
         }
-
-
-
+        
         $i = 0;
         foreach ($dimensiones as $dimension) {
             $arrayDimensionesCalculadas[$i] =   $arrayDimensionResultado[$i] * $arrayPorcentajeDimension[$i];
