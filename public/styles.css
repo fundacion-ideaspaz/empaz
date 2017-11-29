@@ -558,6 +558,16 @@ tr.children td:first-child {
     color: #00aabf;
 }
 
+.slider-handle{
+    background-color: #00aabf!important;
+    background-image: none;
+}
+
+.slider-selection.tick-slider-selection{
+    background: #00aabf!important;
+    background-image: none!important;
+}
+
 
 
 @media all and (max-width: 980px) { 
