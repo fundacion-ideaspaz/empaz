@@ -396,6 +396,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 	position: fixed;
 }
 
+.registro-exitoso{
+    border: 1px solid #00aabf!important;
+    background: rgba(0, 170, 191, 0.19);
+}
+
 .fs-form-overview {
     padding-top: 5.5em!important;
 }
