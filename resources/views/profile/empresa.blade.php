@@ -2,15 +2,31 @@
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
-            <h1>{{$empresa->nombre}}</h1>
-            <ul>
-                <li>Pais: {{ $empresa->pais }}</li>
-                <li>Municipio: {{ $empresa->municipio }}</li>
-                <li>Departamento: {{ $empresa->departamento }}</li>
-                <li>Web: {{ $empresa->web }}</li>
-                <li>Numero de trabajadores: {{ $empresa->num_trabajadores }}</li>
-                <li>NIT: {{ $empresa->nit }}</li>
-            </ul>
+            <div class="row header">
+            <div class="col-md-4"></div>
+            <div class="col-md-8"><h1>{{$empresa->nombre}}</h1></div>
+            </div>
+            <div class="row cuerpo">
+            <div class="col-md-4">
+                <span class="label">Pais:</span> {{ $empresa->pais }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Municipio:</span> {{ $empresa->municipio }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Departamento:</span> {{ $empresa->departamento }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Web:</span> {{ $empresa->web }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Numero de trabajadores:</span> {{ $empresa->num_trabajadores }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">NIT:</span> {{ $empresa->nit }}
+            </div>
+    
+            </div>
             <a class="btn btn-primary" href="/responder">Ver cuestionarios</a>
         </div>
     </div>
