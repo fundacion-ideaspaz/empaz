@@ -672,7 +672,7 @@ button.fs-continue:hover {
 	text-align: center;
 	background: transparent;
 	color: rgba(0,0,0,0.3);
-	content: 'or press ENTER';
+	content: 'or presione ENTER';
 	font-size: 0.65em;
 	pointer-events: none;
 }
