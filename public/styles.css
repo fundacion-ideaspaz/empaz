@@ -517,7 +517,7 @@ tr.children td:first-child {
     background: #f2f2f2;
 }
 
-.cuerpo {
+.cuerpo .col-md-4{
     padding: 20px 15px;
 }
 
