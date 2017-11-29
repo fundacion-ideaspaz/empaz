@@ -69,7 +69,7 @@
                                     Ingresar
                                 </button>
 
-                                <a class="recuperarpass" href="{{ route('password.request') }}">
+                                <a class="recuperarpass" style="color: #fff;" href="{{ route('password.request') }}">
                                     ¿Olvido su contraseña?
                                 </a>
                             </div>
