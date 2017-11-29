@@ -524,6 +524,10 @@ tr.children td:first-child {
     font-size: 1em;
 }
 
+.navbar-nav .nav-item {
+    text-align: center;
+}
+
 .navbar-nav .dropdown-menu {
     position: relative!important;
     float: none!important;
