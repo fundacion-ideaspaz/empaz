@@ -22,13 +22,8 @@
 
 <body>
 <header class="master">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="row">
-  <div class="col-md-3">
-  <a class="navbar-brand" href="/login"><img src="/img/logo-b.svg" width="130"></a>
-  </div>
-  <div class="col-md-3"></div>
-  <div class="col-md-6" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/login"><img src="img/logo.svg" width="130"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
   </button>
@@ -39,18 +34,17 @@
         <a class="nav-link" href="#">Manual de usuario</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/faq">FAQs</a>
+        <a class="nav-link" href="/faq">Preguntas frecuentes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Glosario</a>
+        <a class="nav-link" href="/glosario">Glosario</a>
       </li>
     </ul>
-   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   <i class="fa fa-user" aria-hidden="true"></i> Ingresar
 </button>
 </div> 
-  </div>
-  </div>
+
 </nav>
 </header>
   <div>

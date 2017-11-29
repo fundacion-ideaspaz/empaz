@@ -35,7 +35,7 @@
         <a class="nav-link" href="/faq">Preguntas frecuentes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Glosario</a>
+        <a class="nav-link" href="/glosario">Glosario</a>
       </li>
     </ul>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
