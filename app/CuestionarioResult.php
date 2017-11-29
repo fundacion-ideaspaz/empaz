@@ -86,11 +86,11 @@ class CuestionarioResult extends Model
                             return $value->indicador_id == $indicador->id && $value->dimension_id == $dimension->id;
                         });
                 if($indCuest){
-                    $nivel_importancia = $indCuest->nivel_importancia;
+                    $nivel_importancia = intval($indCuest->nivel_importancia);
                 } else {
                     $nivel_importancia = null;
                 }
-                $resultMatriz[$i][$j] = intval($nivel_importancia);
+                $resultMatriz[$i][$j] = $nivel_importancia;
                 $j++;
             }
             $i++;
