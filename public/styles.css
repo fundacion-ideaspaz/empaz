@@ -520,4 +520,8 @@ tr.children td:first-child {
     float: none!important;
     transform: none!important;
 }
+
+.modal.show .modal-dialog{
+    max-width: 90%;
+}
 }
