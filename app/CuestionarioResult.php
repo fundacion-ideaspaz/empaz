@@ -83,7 +83,7 @@ class CuestionarioResult extends Model
             $j = 0;
             foreach ($indicadores as $indicador) {
                 $nivel_importancia = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
-                            return $value->indicador_id == $indicador->id && $value->dimension_id = $dimension->id;
+                            return $value->indicador_id == $indicador->id && $value->dimension_id == $dimension->id;
                         })->nivel_importancia;
                 $resultMatriz[$i][$j] = intval($nivel_importancia);
                 $j++;
