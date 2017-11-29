@@ -543,10 +543,9 @@ tr.children td:first-child {
 }
 
 .card-body table .btn.btn-danger {
-    color: #fff;
     color: #dc3545!important;
-    background-color: transpa;
-    border-color: transparent;
+    background-color:!important;
+    border-color: transparent!important;
 }
 
 .cuerpo .col-md-4, .cuerpo .col-md-6{
