@@ -396,6 +396,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 	position: fixed;
 }
 
+.fs-form-overview {
+    padding-top: 5.5em!important;
+}
+
 #section02{
 	height: 100vh;
 	background-color: #00aabf;
