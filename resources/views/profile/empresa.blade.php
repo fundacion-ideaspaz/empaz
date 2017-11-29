@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
             <div class="row header">
-            <div class="col-md-4"></div>
+            <div class="col-md-4"><i class="fa fa-address-card" aria-hidden="true"></i></div>
             <div class="col-md-8"><h1>{{$empresa->nombre}}</h1></div>
             </div>
             <div class="row cuerpo">
