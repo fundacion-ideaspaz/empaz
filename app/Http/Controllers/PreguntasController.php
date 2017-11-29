@@ -42,6 +42,8 @@ class PreguntasController extends Controller
         $respuestas = $request->respuestas;
         $inputs = $request->except(["indicadores"]);
         $pregunta = Pregunta::create($inputs);
+        $respuestas[sizeof($respuestas)] = "No aplica";
+        $respuestas[sizeof($respuestas)] = "No hay información";
         foreach ($respuestas as $number => $respuesta) {
             if ($respuesta != null) {
                 $newRespuesta = new OpcionesRespuestas();

@@ -35,11 +35,14 @@
                 </div>
                 <div class="form-group">
                     @foreach($pregunta->opcionesRespuestas as $opcion)
+                    @if($opcion->descripcion != 'No aplica' && $opcion->descripcion != 'No hay información')
                     <label for="respuesta_{{$opcion->number}}">
                         Respuesta {{ $opcion->number}}
                     </label>
                     <input type="text" name="respuesta_{{$opcion->number}}" id="respuesta_{{$opcion->number}}" class="form-control" value="{{$opcion->descripcion}}"
-                    /> @endforeach
+                    />
+                    @endif
+                    @endforeach
                 </div>
                 <div class="from-group">
                     <input type="submit" class="btn btn-primary" value="Guardar">
