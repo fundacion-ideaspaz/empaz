@@ -7,22 +7,30 @@
     <div class="card-body">
       @foreach($preguntas as $pregunta)
       @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
-      <h3>{{$pregunta->nombre}}</h3>
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
         {{ csrf_field() }}
         <input type="hidden" name="indicador_id" value="{{$indicador->id}}">
-        <div class="input-group col-sm-12">
-          <label for="importancia">Escoja si la pregunta es requerida y agregala al indicador:</label>
-        </div>
-        <div class="input-group col-sm-5">
-          <select name="required" id="required" class="form-control">
+        <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Pregunta</th>
+            <th>Requerida</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{$pregunta->nombre}}</td>
+            <td><select name="required" id="required" class="form-control">
             <option value="true">Requerida</option>
             <option value="false">Opcional</option>
-          </select>
-        </div>
-        <div class="input-group col-sm-7">
-          <input type="submit" value="Asignar" class="btn btn-primary">
-        </div>
+          </select></td>
+            <td>
+            <input type="submit" value="Asignar" class="btn btn-primary">
+            </td>
+          </tr>
+        </tbody>
+      </table>
       </form>
       @endif
       @endforeach
