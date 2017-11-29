@@ -5,8 +5,7 @@
   <h1>{{$indicador->nombre}}</h1>
   <div class="card col-12">
     <div class="card-body">
-        {{ csrf_field() }}
-        <input type="hidden" name="indicador_id" value="{{$indicador->id}}">
+        
         <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -19,6 +18,8 @@
         @foreach($preguntas as $pregunta)
       @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
+      {{ csrf_field() }}
+        <input type="hidden" name="indicador_id" value="{{$indicador->id}}">
           <tr>
             <td>{{$pregunta->nombre}}</td>
             <td><select name="required" id="required" class="form-control">
