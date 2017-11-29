@@ -82,9 +82,14 @@ class CuestionarioResult extends Model
         foreach ($dimensiones as $dimension) {
             $j = 0;
             foreach ($indicadores as $indicador) {
-                $nivel_importancia = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
+                $indCuest = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
                             return $value->indicador_id == $indicador->id && $value->dimension_id == $dimension->id;
-                        })->nivel_importancia;
+                        });
+                if($indCuest){
+                    $nivel_importancia = $indCuest->nivel_importancia;
+                } else {
+                    $nivel_importancia = null;
+                }
                 $resultMatriz[$i][$j] = intval($nivel_importancia);
                 $j++;
             }
