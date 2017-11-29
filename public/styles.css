@@ -519,11 +519,18 @@ tr.children td:first-child {
 
 .header .fa{
     background: #00aabf;
-    padding: 40px;
+    padding: 34px;
     font-size: 40px;
     border-radius: 50%;
     color: #f2f2f2;
-    margin-bottom: 20px;
+    margin-bottom: 20px
+}
+
+.header h1{
+    border-bottom: none;
+    padding-top: 26px;
+    color: #00aabf;
+    margin-bottom: 30px;
 }
 
 .cuerpo .col-md-4{
