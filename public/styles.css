@@ -533,6 +533,22 @@ tr.children td:first-child {
     margin-bottom: 30px;
 }
 
+.card-body table .btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #00aabf!important;
+}
+
+.card-body table .btn.btn-danger {
+    color: #fff;
+    color: #dc3545!important;
+    background-color: transpa;
+    border-color: transparent;
+}
+
 .cuerpo .col-md-4, .cuerpo .col-md-6{
     padding: 20px 15px;
     color: #999;
