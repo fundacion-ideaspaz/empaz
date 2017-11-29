@@ -5,7 +5,7 @@
   <h1>{{$indicador->nombre}}</h1>
   <div class="card col-12">
     <div class="card-body">
-      
+      @foreach($preguntas as $pregunta)
       @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
         {{ csrf_field() }}
@@ -19,7 +19,6 @@
           </tr>
         </thead>
         <tbody>
-        @foreach($preguntas as $pregunta)
           <tr>
             <td>{{$pregunta->nombre}}</td>
             <td><select name="required" id="required" class="form-control">
@@ -30,12 +29,11 @@
             <input type="submit" value="Asignar" class="btn btn-primary">
             </td>
           </tr>
-          @endforeach
         </tbody>
       </table>
       </form>
       @endif
-      
+      @endforeach
     </div>
   </div>
   @endif
