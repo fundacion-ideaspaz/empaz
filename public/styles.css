@@ -544,7 +544,7 @@ tr.children td:first-child {
 
 .card-body table .btn.btn-danger {
     color: #dc3545!important;
-    background-color:!important;
+    background-color:transparent!important;
     border-color: transparent!important;
 }
 
