@@ -4,8 +4,8 @@
         <div class="card-body">
             <div class="row header">
             <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div>
-            <div class="col-md-7"><h1>{{$empresa->nombre}}</h1></div>
-            <div class="col-md-3"><a class="btn btn-primary" href="/responder">Ver cuestionarios</a>
+            <div class="col-md-8"><h1>{{$empresa->nombre}}</h1></div>
+            <div class="col-md-2"><a class="btn btn-primary" href="/responder">Ver cuestionarios</a>
         </div></div>
             </div>
             <div class="row cuerpo">
