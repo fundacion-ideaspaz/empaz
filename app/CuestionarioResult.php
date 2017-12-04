@@ -1,20 +1,14 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
 class CuestionarioResult extends Model
 {
     protected $table = 'cuestionarios_result';
-
     protected $fillable = [
         'user_id',
         'cuestionario_id',
         'value'
     ];
-
-
     public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest) {
         $cantidadPreguntas = $preguntas->count();
         $cantidadIndicadores = $indicadores->count();
@@ -51,9 +45,7 @@ class CuestionarioResult extends Model
             $j = 0;
             foreach ($preguntas as $pregunta) {
                 if ($resultMatriz[$i][$j] > 0) {
-
                     $conteoIndicadores[$i] = $conteoIndicadores[$i] + $resultMatriz[$i][$j];
-
                     $totalIndicadores[$i] = $totalIndicadores[$i] + 5;
                 }
                 $j++;
@@ -67,7 +59,6 @@ class CuestionarioResult extends Model
         }
         return $calificacionIndicadores;
     }
-
     public function puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $calificacionIndicadores) {
         $cantidadDimensiones = $dimensiones->count();
         $cantidadIndicadores = $indicadores->count();
@@ -95,7 +86,6 @@ class CuestionarioResult extends Model
             }
             $i++;
         }
-
         $i = $j = 0;
         foreach ($dimensiones as $dimension) {
             $sumatoriaDimensionTemp = 0;
@@ -114,7 +104,7 @@ class CuestionarioResult extends Model
             $arrayDimensionResultado[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             $i++;
         }
-        
+
         $i = 0;
         foreach ($dimensiones as $dimension) {
             $arrayDimensionesCalculadas[$i] =   $arrayDimensionResultado[$i] * $arrayPorcentajeDimension[$i];
@@ -122,7 +112,6 @@ class CuestionarioResult extends Model
         }
         return $arrayDimensionesCalculadas;
     }
-
     function sumaProductos($array1, $array2) {
         $resultado = 0;
         if (count($array1) == count($array2)) {
@@ -132,7 +121,6 @@ class CuestionarioResult extends Model
         }
         return $resultado;
     }
-
     public function puntajeCuestionario($arrayDimensionesCalculadas) {
         $diagnostico = 0;
         foreach ($arrayDimensionesCalculadas as $dimension) {
