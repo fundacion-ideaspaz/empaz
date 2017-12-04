@@ -16,17 +16,17 @@
           <input type="email" id="email" name="email" class="fs-anim-lower" required>
         </li>
         <li>
-          <label for="password" class="fs-field-label fs-anim-upper">Password</label>
+          <label for="password" class="fs-field-label fs-anim-upper">Contraseña</label>
           <input type="password" id="password" name="password" class="fs-anim-lower" required>
         </li>
         @if($role === 'empresa' || $role === 'experto')
         <li>
-          <label for="cargo" class="fs-field-label fs-anim-upper">Cargo</label>
+          <label for="cargo" class="fs-field-label fs-anim-upper">Cargo en la Institución</label>
           <input type="text" name="cargo" id="cargo" class="fs-anim-lower" required>
         </li>
         @endif @if($role === 'empresa')
         <li>
-          <label for="telefono" class="fs-field-label fs-anim-upper">Telefono</label>
+          <label for="telefono" class="fs-field-label fs-anim-upper">Teléfono</label>
           <input type="tel" name="telefono" id="telefono" class="fs-anim-lower" required>
         </li>
         </ol>

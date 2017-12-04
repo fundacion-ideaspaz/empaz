@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Panel de Preguntas') @section('content')
+@extends('layouts.master') @section('title', 'Panel de Cuestionarios') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">

@@ -117,7 +117,7 @@
                                 </button>
 
                                 <a class="recuperarpass" href="{{ route('password.request') }}">
-                                    ¿Olvido su contraseña?
+                                    ¿Olvidó su contraseña?
                                 </a>
                             </div>
                         </div>

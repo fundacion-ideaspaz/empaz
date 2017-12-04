@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
-      <h2>Cuestionarios</h2>
+      <h2>Cuestionarios disponibles</h2>
       <table class="table table-striped table-hover">
         <thead>
           <tr>

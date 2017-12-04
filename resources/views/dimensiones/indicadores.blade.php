@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Agregar Dimensiones - Cuestionario') @section('content')
+@extends('layouts.master') @section('title', 'Agregar indicadores - Cuestionario') @section('content')
 <div class="indicadores-form">
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())

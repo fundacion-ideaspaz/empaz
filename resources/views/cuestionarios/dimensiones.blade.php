@@ -2,7 +2,7 @@
 <div class="row indicadores-form">
   <div class="card col-12">
     <div class="card-body">
-      <h3>Agregar dimensiones al cuestionario {{$cuestionario->nombre}}</h3>
+      <h1>Agregar dimensiones</h1>
       @if ($errors->any())
       <div class="alert alert-danger">
         <ul>

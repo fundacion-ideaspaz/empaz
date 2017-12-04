@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Agregar Indicadores - Cuestionario') @section('content')
+@extends('layouts.master') @section('title', 'Agregar preguntas - Cuestionario') @section('content')
 <div class="preguntas-form">
   @foreach($indicadores as $indicador)
   @if($preguntas->isNotEmpty())
@@ -72,8 +72,8 @@
     <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/indicadores">
       Atrás
     </a>
-    <a class="btn btn-primary pull-right" href="/cuestionarios/{{$cuestionario->id}}/preguntas">
-      Siguiente
+    <a class="btn btn-primary pull-right" href="/cuestionarios/">
+      Finalizar
     </a>
   </div>
 </div>

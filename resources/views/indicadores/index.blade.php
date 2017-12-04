@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'listado de Indicadores') @section('content')
+@extends('layouts.master') @section('title', 'Panel de Indicadores') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">

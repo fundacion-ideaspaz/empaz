@@ -25,18 +25,18 @@
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Contraseña</label>
           <input type="password" id="password" name="password" class="form-control" required>
         </div>
         @if($role === 'empresa' || $role === 'experto')
         <div class="form-group">
-          <label for="cargo">Cargo</label>
+          <label for="cargo">Cargo en la Institución</label>
           <input type="text" name="cargo" id="cargo" class="form-control" required>
         </div>
         @endif
         @if($role === 'empresa')
         <div class="form-group">
-          <label for="telefono">Telefono</label>
+          <label for="telefono">Teléfono</label>
           <input type="tel" name="telefono" id="telefono" class="form-control" required>
         </div>
         @endif

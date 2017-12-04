@@ -7,6 +7,15 @@
             </div>
             <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="nombre">Texto</label>
                     <input type="text" class="form-control" name="nombre" value="{{$pregunta->nombre}}">
@@ -44,15 +53,7 @@
                 <div class="from-group">
                     <input type="submit" class="btn btn-primary" value="Guardar">
                 </div>
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
+                
             </form>
         </div>
     </div>
