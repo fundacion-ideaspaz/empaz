@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\CuestionarioResult;
 use App\RespuestaCuestionario;
@@ -11,11 +12,13 @@ use App\Indicador;
 use App\Dimension;
 use App\DimensionCuestionario;
 use App\CuestionarioMath;
+use App\ProfileEmpresa;
 
 class DashboardController extends Controller
 {
     public function reporteIndicadores($cuest_id)
     {
+      $empresa = ProfileEmpresa::where('user_id', '=', Auth::user()->id)->first();
         $cuestResult = CuestionarioResult::find($cuest_id);
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
@@ -46,6 +49,7 @@ class DashboardController extends Controller
 
 
         return view("reportes.index")->with([
+            'empresa' => $empresa,
             'rImportancia' => $arrayPorcentajeDimension,
             'rIndicadores' => $rIndicadores,
             'rDimensiones' => $rDimensiones,

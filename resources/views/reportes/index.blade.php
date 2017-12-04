@@ -2,6 +2,27 @@
 <div class="row">
   <div class="card col-12">
     <div class="card-body">
+      <h1>Información Basica</h1>
+      <table class="table">
+        <tr>
+          <td><strong>Empresa</strong></td>
+            <td>{{$empresa->nombre}}</td>
+              </tr>
+               <tr>
+          <td><strong>Representante</strong></td>
+            <td>{{Auth::user()->nombre}}</td>
+              </tr>
+             <tr>           
+          <td><strong>Email</strong></td>
+            <td>{{Auth::user()->email}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-body">
       <h1>Diagnostico: {{$rCuestionario}}%</h1>
     </div>
   </div>
