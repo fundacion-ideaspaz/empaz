@@ -17,6 +17,12 @@ class OpcionesRespuestas extends Model
     public function valueRespuesta()
     {
         $tipoRespuesta = $this->pregunta->tipo_respuesta;
+        if($this->descripcion == 'No aplica'){
+            return null;
+        }
+        if($this->descripcion == 'No hay información'){
+            return 1;
+        }
         switch ($this->number) {
             case 1:
                 return 5;
@@ -34,10 +40,6 @@ class OpcionesRespuestas extends Model
                 }
                 return 1;
             case 4:
-                return 1;
-            case -1:
-                return 1;
-            case -2:
                 return 1;
         }
     }

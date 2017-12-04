@@ -1,20 +1,14 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
 class CuestionarioResult extends Model
 {
     protected $table = 'cuestionarios_result';
-
     protected $fillable = [
         'user_id',
         'cuestionario_id',
         'value'
     ];
-
-
     public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest) {
         $cantidadPreguntas = $preguntas->count();
         $cantidadIndicadores = $indicadores->count();
@@ -51,9 +45,7 @@ class CuestionarioResult extends Model
             $j = 0;
             foreach ($preguntas as $pregunta) {
                 if ($resultMatriz[$i][$j] > 0) {
-
                     $conteoIndicadores[$i] = $conteoIndicadores[$i] + $resultMatriz[$i][$j];
-
                     $totalIndicadores[$i] = $totalIndicadores[$i] + 5;
                 }
                 $j++;
@@ -67,7 +59,6 @@ class CuestionarioResult extends Model
         }
         return $calificacionIndicadores;
     }
-
     public function puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $calificacionIndicadores) {
         $cantidadDimensiones = $dimensiones->count();
         $cantidadIndicadores = $indicadores->count();
@@ -82,10 +73,15 @@ class CuestionarioResult extends Model
         foreach ($dimensiones as $dimension) {
             $j = 0;
             foreach ($indicadores as $indicador) {
-                $nivel_importancia = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
-                            return $value->indicador_id == $indicador->id && $value->dimension_id = $dimension->id;
-                        })->nivel_importancia;
-                $resultMatriz[$i][$j] = intval($nivel_importancia);
+                $indCuest = $indicadoresCuest->first(function ($value, $key) use ($indicador, $dimension) {
+                            return $value->indicador_id == $indicador->id && $value->dimension_id == $dimension->id;
+                        });
+                if($indCuest){
+                    $nivel_importancia = intval($indCuest->nivel_importancia);
+                } else {
+                    $nivel_importancia = null;
+                }
+                $resultMatriz[$i][$j] = $nivel_importancia;
                 $j++;
             }
             $i++;
@@ -99,14 +95,15 @@ class CuestionarioResult extends Model
                 if ($resultMatriz[$i][$j] > 0) {
                     $arrayDimensionTemp[$j] = $resultMatriz[$i][$j];
                     $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + $resultMatriz[$i][$j];
+                }else{
+                  $arrayDimensionTemp[$j] = 0;
+                  $sumatoriaDimensionTemp = $sumatoriaDimensionTemp + 0;
                 }
                 $j++;
             }
             $arrayDimensionResultado[$i] = $this->sumaProductos($arrayDimensionTemp, $calificacionIndicadores) / $sumatoriaDimensionTemp;
             $i++;
         }
-
-
 
         $i = 0;
         foreach ($dimensiones as $dimension) {
@@ -115,7 +112,6 @@ class CuestionarioResult extends Model
         }
         return $arrayDimensionesCalculadas;
     }
-
     function sumaProductos($array1, $array2) {
         $resultado = 0;
         if (count($array1) == count($array2)) {
@@ -125,7 +121,6 @@ class CuestionarioResult extends Model
         }
         return $resultado;
     }
-
     public function puntajeCuestionario($arrayDimensionesCalculadas) {
         $diagnostico = 0;
         foreach ($arrayDimensionesCalculadas as $dimension) {
