@@ -62,7 +62,7 @@
     var budgetChart2 = new FusionCharts({
         type: 'radar',
         renderAt: 'chart-container2',
-        width: '100%',
+        width: '1140',
         height: '450',
         dataFormat: 'json',
         dataSource: {
