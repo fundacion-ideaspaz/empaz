@@ -21,16 +21,12 @@
   </div>
 </div>
 <div class="row">
-  <div class="card col-12">
-    <div class="card-body">
     <div class="col-md-2">
       <h1>Diagnostico: {{$rCuestionario}}%</h1>
     </div>
     <div class="col-md-10">
       lorem
     </div>
-    </div>
-  </div>
 </div>
 <div class="row">
   <div class="card col-12">
