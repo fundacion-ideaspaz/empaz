@@ -85,7 +85,7 @@
 <h1>Resultados generales</h1>
 <div class="row">
     <div class="col-md-2 resultado-g">
-      <h1>{{$rCuestionario}}%</h1>
+      {{$rCuestionario}}%
     </div>
     <div class="col-md-10">
       lorem
