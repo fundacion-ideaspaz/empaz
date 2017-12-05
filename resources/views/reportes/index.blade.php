@@ -177,6 +177,7 @@
 @foreach($rDimensiones as $i=>$dimension)
   <div class="card">
     <div class="card-header" role="tab" id="headingOne">
+    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
     <div class="row">
       <div class="col-md-2">
         {{$dimension}}%
@@ -187,12 +188,8 @@
       <div class="col-md-6">
         {{ $dimensiones[$i]->descripcion}}
       </div>
-    </div>
-      <h5 class="mb-0">
-        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Acción sin daño / Do No Harm
+    </div>             
         </a>
-      </h5>
     </div>
 
     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
