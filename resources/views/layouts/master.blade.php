@@ -16,6 +16,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
     rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/fusioncharts.charts.js"></script>
+<script src="/js/fusioncharts.js"></script>
 </head>
 
 <body>
@@ -88,8 +90,6 @@
 
 <script src="/popper/umd/popper.js"></script>
 <script src="/js/bootstrap-slider.js"></script>
-<script src="/js/fusioncharts.charts.js"></script>
-<script src="/js/fusioncharts.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
   crossorigin="anonymous"></script>
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
