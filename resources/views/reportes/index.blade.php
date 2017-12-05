@@ -69,7 +69,7 @@
             "chart": {
                 "captionFontSize": "14",
                 "subcaptionFontSize": "14",
-                "numberPrefix":"$",
+                "numberPrefix":"%",
                 "baseFontColor" : "#333333",
                 "baseFont" : "Helvetica Neue,Arial",                        
                 "subcaptionFontBold": "0",
@@ -83,7 +83,7 @@
                 "legendShadow": "0",
                 "divLineAlpha": "10",
                 "usePlotGradientColor": "0",
-                "numberPreffix": "$",
+                "numberPreffix": "%",
                 "legendBorderAlpha": "0",
                 "legendShadow": "0"
             },
@@ -100,7 +100,7 @@
             ],
             "dataset": [
                 {
-                    "seriesname": "Allocated Budget",
+                    "seriesname": "Porcentaje de afectacción",
                     "data": [
                         { "value": "10" },
                         { "value": "20" },
