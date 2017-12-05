@@ -140,7 +140,11 @@
       </div>
     </div>
 <div class="row">
+  <div class="card col-12">
+    <div class="card-body">
   <div id="chart-container2">FusionCharts will render here</div>
+  </div>
+  </div>
 </div>
 <h1>Resultados generales</h1>
 <div class="row">
