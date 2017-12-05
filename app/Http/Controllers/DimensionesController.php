@@ -7,6 +7,7 @@ use App\Dimension;
 use App\Enunciado;
 use App\Indicador;
 use App\IndicadoresDimensiones;
+use App\DimensionCuestionario;
 use Storage;
 
 class DimensionesController extends Controller
@@ -113,7 +114,18 @@ class DimensionesController extends Controller
 
     public function delete($id, Request $request)
     {
-        return view("dimensiones.delete")->with(["id" => $id]);
+        $dimensionesCuest = DimensionCuestionario
+                        ::where("dimension_id", "=", $id)->get();
+        if($dimensionesCuest->count() > 0){
+            return view("dimensiones.delete")->with([
+                "id" => $id,
+                "can_delete" => false
+            ]);
+        }
+        return view("dimensiones.delete")->with([
+            "id" => $id,
+            "can_delete" => true
+        ]);
     }
 
     public function deleteConfirm($id, Request $request)
