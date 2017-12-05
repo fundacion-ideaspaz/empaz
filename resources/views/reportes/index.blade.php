@@ -4,7 +4,7 @@
     var ageGroupChart = new FusionCharts({
         type: 'pie2d',
         renderAt: 'chart-container',
-        width: '450',
+        width: '100%',
         height: '300',
         dataFormat: 'json',
         dataSource: {
@@ -61,7 +61,7 @@
 <h1>Información Basica</h1>
 <div class="row">
       
-      <div class="col-md-2"></div>
+      <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div>
       <div class="col-md-5">
       <table class="table">
         <tr>
@@ -79,6 +79,7 @@
       </table>
       </div>
       <div class="col-md-5">
+        <h3>Importancia de Dimensiones</h3>
         <div id="chart-container">FusionCharts will render here</div>
       </div>
     </div>
@@ -91,10 +92,10 @@
       lorem
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
   <div class="card col-12">
     <div class="card-body">
-      <h1>Importancia de Dimensiones</h1>
+      <h1></h1>
       <table class="table">
         @foreach($rImportancia as $i=>$importancia)
         <script type="text/javascript"></script>
@@ -107,7 +108,7 @@
       </table>
     </div>
   </div>
-</div>
+</div> -->
 <div class="row">
   <div class="card col-12">
     <div class="card-body">
