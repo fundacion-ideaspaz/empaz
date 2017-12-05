@@ -84,7 +84,7 @@
     </div>
 <h1>Resultados generales</h1>
 <div class="row">
-    <div class="col-md-2 resultados">
+    <div class="col-md-2 resultado-g">
       <h1>{{$rCuestionario}}%</h1>
     </div>
     <div class="col-md-10">

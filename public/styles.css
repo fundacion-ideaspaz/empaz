@@ -87,6 +87,18 @@ a{
         font-weight: 300;
 }
 
+.resultado-g{
+    background: #ff2929;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 header.master{
 	background-color:#00aabf; 
 }
