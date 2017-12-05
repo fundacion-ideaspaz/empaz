@@ -36,7 +36,10 @@ class IndicadoresController extends Controller
             "descripcion" => "required",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $inputs = $request->all();
         $indicador = Indicador::create($inputs);
         return redirect("/indicadores");
@@ -57,7 +60,10 @@ class IndicadoresController extends Controller
             "descripcion" => "required",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $inputs = $request->all();
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
@@ -72,7 +78,18 @@ class IndicadoresController extends Controller
 
     public function delete($id, Request $request)
     {
-        return view("indicadores.delete")->with(["id" => $id]);
+        $indicadoresCuest = IndicadoresDimensiones
+                        ::where("indicador_id", "=", $id)->get();
+        if($indicadoresCuest->count() > 0){
+            return view("indicadores.delete")->with([
+                "id" => $id,
+                "can_delete" => false
+            ]);
+        }
+        return view("indicadores.delete")->with([
+            "id" => $id,
+            "can_delete" => true
+        ]);
     }
 
     public function deleteConfirm($id, Request $request)

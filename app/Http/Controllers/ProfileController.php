@@ -53,8 +53,11 @@ class ProfileController extends Controller
             "num_trabajadores"  => "required",
             "sector_economico"  => "required",
             "codigo_ciiu"  => "required",
-         ];
-        $this->validate($request, $validations);
+        ];
+         $messages = array(
+            'direccion.required' => 'El campo dirección es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $inputs = $request->all();
         $inputs["user_id"] = $id;
         ProfileEmpresa::create($inputs);

@@ -37,7 +37,10 @@ class CuestionariosController extends Controller
             "estado" => "required",
             "version" => "required|integer"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $preguntas = $request["preguntas"];
         $cuestionario = $request->except('preguntas');
         $newCuestionario = Cuestionario::create($cuestionario);
@@ -68,7 +71,10 @@ class CuestionariosController extends Controller
             "descripcion" => "required",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $inputs = $request->only(["descripcion", "estado"]);
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
