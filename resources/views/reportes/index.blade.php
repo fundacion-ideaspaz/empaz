@@ -139,13 +139,6 @@
         <div id="chart-container">FusionCharts will render here</div>
       </div>
     </div>
-<div class="row">
-  <div class="card col-12">
-    <div class="card-body">
-  <div id="chart-container2">FusionCharts will render here</div>
-  </div>
-  </div>
-</div>
 <h1>Resultados generales</h1>
 <div class="row">
     <div class="col-md-2 resultado-g">
@@ -154,6 +147,13 @@
     <div class="col-md-10">
       lorem
     </div>
+</div>
+<div class="row">
+  <div class="card col-12">
+    <div class="card-body">
+  <div id="chart-container2">FusionCharts will render here</div>
+  </div>
+  </div>
 </div>
 <!-- <div class="row">
   <div class="card col-12">
@@ -172,36 +172,35 @@
     </div>
   </div>
 </div> -->
-<div class="row">
-  <div class="card col-12">
-    <div class="card-body">
-      <h1>Reporte de Indicadores</h1>
-      <table class="table">
-        @foreach($rIndicadores as $i=>$indicador)
-        <tr>
-          <td>{{ $indicadores[$i]->nombre }}</td>
-            <td>{{ $indicadores[$i]->descripcion}}</td>
-          <td>{{$indicador}}%</td>
-          @endforeach
-        </tr>
-      </table>
+<h1>Reporte de Dimensiones</h1>
+<div id="accordion" role="tablist">
+@foreach($rDimensiones as $i=>$dimension)
+  <div class="card">
+    <div class="card-header" role="tab" id="headingOne">
+    <div class="row">
+      <div class="col-md-2">
+        {{$dimension}}%
+      </div>
+      <div class="col-md-4">
+        {{ $dimensiones[$i]->nombre }}
+      </div>
+      <div class="col-md-6">
+        {{ $dimensiones[$i]->descripcion}}
+      </div>
+    </div>
+      <h5 class="mb-0">
+        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Acción sin daño / Do No Harm
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <p>---</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="card col-12">
-    <div class="card-body">
-      <h1>Reporte de Dimensiones</h1>
-      <table class="table">
-        @foreach($rDimensiones as $i=>$dimension)
-        <tr>
-          <td>{{ $dimensiones[$i]->nombre }}</td>
-            <td>{{ $dimensiones[$i]->descripcion}}</td>
-          <td>{{$dimension}}%</td>
-          @endforeach
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
+  @endforeach
+ </div> 
 @endsection
