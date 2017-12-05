@@ -57,6 +57,62 @@
         }
     }).render();
 });
+
+  FusionCharts.ready(function () {
+    var budgetChart2 = new FusionCharts({
+        type: 'radar',
+        renderAt: 'chart-container2',
+        width: '100%',
+        height: '450',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "numberPrefix":"$",
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",                        
+                "subcaptionFontBold": "0",
+                "paletteColors": "#008ee4,#6baa01",
+                "bgColor" : "#ffffff",
+                "radarfillcolor": "#ffffff",
+                "showBorder" : "0",
+                "showShadow" : "0",
+                "showCanvasBorder": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "divLineAlpha": "10",
+                "usePlotGradientColor": "0",
+                "numberPreffix": "$",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0"
+            },
+            "categories": [
+                {
+                    "category": [
+                        { "label": "Dimensión 1" },
+                        { "label": "Dimensión 2" },
+                        { "label": "Dimensión 3" },
+                        { "label": "Dimensión 4" },
+                        { "label": "Dimensión 5" }
+                    ]
+                }
+            ],
+            "dataset": [
+                {
+                    "seriesname": "Allocated Budget",
+                    "data": [
+                        { "value": "10" },
+                        { "value": "20" },
+                        { "value": "30" },
+                        { "value": "15" },
+                        { "value": "5" }
+                    ]
+                }
+            ]
+        }
+    }).render();
+});
 </script>
 <h1>Información Basica</h1>
 <div class="row">
@@ -91,6 +147,9 @@
     <div class="col-md-10">
       lorem
     </div>
+</div>
+<div class="row">
+  <div id="chart-container2">FusionCharts will render here</div>
 </div>
 <!-- <div class="row">
   <div class="card col-12">
