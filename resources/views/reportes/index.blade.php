@@ -139,6 +139,9 @@
         <div id="chart-container">FusionCharts will render here</div>
       </div>
     </div>
+<div class="row">
+  <div id="chart-container2">FusionCharts will render here</div>
+</div>
 <h1>Resultados generales</h1>
 <div class="row">
     <div class="col-md-2 resultado-g">
@@ -147,9 +150,6 @@
     <div class="col-md-10">
       lorem
     </div>
-</div>
-<div class="row">
-  <div id="chart-container2">FusionCharts will render here</div>
 </div>
 <!-- <div class="row">
   <div class="card col-12">
