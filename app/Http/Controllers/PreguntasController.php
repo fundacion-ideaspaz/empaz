@@ -38,7 +38,10 @@ class PreguntasController extends Controller
             "respuestas" => "required|array",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $respuestas = $request->respuestas;
         $inputs = $request->except(["indicadores"]);
         $pregunta = Pregunta::create($inputs);
@@ -71,7 +74,10 @@ class PreguntasController extends Controller
             "descripcion" => "required",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $inputs = $request->except('tipo_respuesta');
         $pregunta = Pregunta::find($id);
         $pregunta->update($inputs);
@@ -86,7 +92,18 @@ class PreguntasController extends Controller
 
     public function delete($id, Request $request)
     {
-        return view("questions.delete")->with(["id" => $id]);
+        $preguntasCuest = IndicadoresPreguntas
+                        ::where("pregunta_id", "=", $id)->get();
+        if($preguntasCuest->count() > 0){
+            return view("questions.delete")->with([
+                "id" => $id,
+                "can_delete" => false
+            ]);    
+        }
+        return view("questions.delete")->with([
+            "id" => $id,
+            "can_delete" => true
+        ]);
     }
 
     public function deleteConfirm($id, Request $request)

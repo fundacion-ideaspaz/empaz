@@ -7,6 +7,7 @@ use App\Dimension;
 use App\Enunciado;
 use App\Indicador;
 use App\IndicadoresDimensiones;
+use App\DimensionCuestionario;
 use Storage;
 
 class DimensionesController extends Controller
@@ -35,7 +36,10 @@ class DimensionesController extends Controller
             "enunciados" => "required|array",
             "estado"  => "required"
          ];
-        $this->validate($request, $validations);
+         $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $logo = '';
         if ($request->file("logo")) {
             $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
@@ -74,7 +78,10 @@ class DimensionesController extends Controller
             "enunciados" => "required|array",
             "estado" => "required"
         ];
-        $this->validate($request, $validations);
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+        $this->validate($request, $validations, $messages);
         $dimension = Dimension::find($id);
         if ($request->file("logo")) {
             $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
@@ -107,7 +114,18 @@ class DimensionesController extends Controller
 
     public function delete($id, Request $request)
     {
-        return view("dimensiones.delete")->with(["id" => $id]);
+        $dimensionesCuest = DimensionCuestionario
+                        ::where("dimension_id", "=", $id)->get();
+        if($dimensionesCuest->count() > 0){
+            return view("dimensiones.delete")->with([
+                "id" => $id,
+                "can_delete" => false
+            ]);
+        }
+        return view("dimensiones.delete")->with([
+            "id" => $id,
+            "can_delete" => true
+        ]);
     }
 
     public function deleteConfirm($id, Request $request)
