@@ -58,8 +58,9 @@
     }).render();
 });
 </script>
+<h1>Información Basica</h1>
 <div class="row">
-      <h1>Información Basica</h1>
+      
       <div class="col-md-2"></div>
       <div class="col-md-5">
       <table class="table">
