@@ -31,6 +31,8 @@ class AccountCreated extends Mailable
      */
     public function build()
     {
-        return $this->from('info@solanonetworks.com')->view('users.created');
+        return $this->from('info@solanonetworks.com')
+                ->subject('Su cuenta ha sido creada')
+                ->view('users.created');
     }
 }
