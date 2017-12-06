@@ -86,19 +86,19 @@
             if (respuestaTipo === "tipo_2") {
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "block");
-                $("#respuesta_4").attr("disabled", true);
+                $("#respuesta_4 input").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false");
             }
             if (respuestaTipo === "tipo_3") {
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "none");
-                $("#respuesta_4").attr("disabled", true);
-                $("#respuesta_3").attr("disabled", true);
+                $("#respuesta_4 input").attr("disabled", true);
+                $("#respuesta_3 input").attr("disabled", true);
             }
             if (respuestaTipo === "tipo_4") {
                 $("#respuesta_4").css("display", "none");
                 $("#respuesta_3").css("display", "block");
-                $("#respuesta_4").attr("disabled", true);
+                $("#respuesta_4 input").attr("disabled", true);
                 $("#respuesta_3").attr("disabled", "false");
             }
         });

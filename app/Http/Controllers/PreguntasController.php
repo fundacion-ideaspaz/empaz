@@ -78,10 +78,18 @@ class PreguntasController extends Controller
             'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
+        $respuestas = $request->respuestas;
         $inputs = $request->except('tipo_respuesta');
         $pregunta = Pregunta::find($id);
         $pregunta->update($inputs);
         $pregunta->save();
+        foreach ($respuestas as $id => $respuesta) {
+            if ($respuesta != null) {
+                $newRespuesta = OpcionesRespuestas::find($id);
+                $newRespuesta->descripcion = $respuesta;
+                $newRespuesta->save();
+            }
+        }
         return redirect("/preguntas");
     }
 
