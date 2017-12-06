@@ -6,7 +6,7 @@
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
         @foreach($cuestionario->allPreguntas($cuestionario->id) as $pregunta)
-          @component('components/preguntafield', ['pregunta' => $pregunta])
+          @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id])
           @endcomponent
         @endforeach
         <div class="from-group">

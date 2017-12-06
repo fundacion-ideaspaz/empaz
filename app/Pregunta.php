@@ -48,4 +48,13 @@ class Pregunta extends Eloquent
     {
         return $this->hasMany("App\OpcionesRespuestas");
     }
+
+    public function isRequired($cuest_id)
+    {
+        
+        $indPreg = IndicadoresPreguntas::
+            where("pregunta_id", "=", $this->id)
+            ->where("cuestionario_id", "=", $cuest_id)->first();
+        return $indPreg->required;
+    }
 }

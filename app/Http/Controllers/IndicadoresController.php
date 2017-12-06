@@ -106,7 +106,7 @@ class IndicadoresController extends Controller
             "required" => "required"
         ];
         $this->validate($request, $validations);
-        $required = boolval($request->required);
+        $required = $request->required === 'true';
         $indicador_id = $request->indicador_id;
         $indicadorCuestionario = new IndicadoresPreguntas();
         $indicadorCuestionario->pregunta_id = $pregunta_id;
