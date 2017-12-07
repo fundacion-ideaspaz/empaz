@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
+Route::post('login', 'Auth\LoginController@authenticate')->name('login');
 Route::get('/registro', 'ProfileController@registro');
 Route::post('/registro', 'ProfileController@saveRegistro');
 Route::get('/registro/exito', 'ProfileController@registroExito');
