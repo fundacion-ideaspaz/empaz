@@ -40,15 +40,15 @@
                 {
                     "label": "Dimensión 1",
                     "value": "25"
-                }, 
+                },
                 {
                     "label": "Dimensión 2",
                     "value": "25"
-                }, 
+                },
                 {
                     "label": "Dimensión 3",
                     "value": "40"
-                }, 
+                },
                 {
                     "label": "Dimensión 4",
                     "value": "10"
@@ -71,7 +71,7 @@
                 "subcaptionFontSize": "14",
                 "numberPrefix":"%",
                 "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",                        
+                "baseFont" : "Helvetica Neue,Arial",
                 "subcaptionFontBold": "0",
                 "paletteColors": "#008ee4,#6baa01",
                 "bgColor" : "#ffffff",
@@ -116,7 +116,7 @@
 </script>
 <h1>Información Basica</h1>
 <div class="row">
-      
+
       <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div>
       <div class="col-md-5">
       <table class="table">
@@ -128,7 +128,7 @@
           <td><strong>Representante</strong></td>
             <td>{{Auth::user()->nombre}}</td>
               </tr>
-             <tr>           
+             <tr>
           <td><strong>Email</strong></td>
             <td>{{Auth::user()->email}}</td>
         </tr>
@@ -188,7 +188,7 @@
       <div class="col-md-6">
         {{ $dimensiones[$i]->descripcion}}
       </div>
-    </div>             
+    </div>
         </a>
     </div>
 
@@ -199,5 +199,117 @@
     </div>
   </div>
   @endforeach
- </div> 
+ </div>
+
+
+
+
+
+
+ <div class="row">
+   <div class="card col-12">
+     <div class="card-body">
+       <h1>Información Basica</h1>
+       <table class="table">
+         <tr>
+           <td><strong>Empresa</strong></td>
+             <td>{{$empresa->nombre}}</td>
+               </tr>
+                <tr>
+           <td><strong>Representante</strong></td>
+             <td>{{Auth::user()->nombre}}</td>
+               </tr>
+              <tr>
+           <td><strong>Email</strong></td>
+             <td>{{Auth::user()->email}}</td>
+         </tr>
+       </table>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="card col-12">
+     <div class="card-body">
+       <h1>Diagnostico: {{$rCuestionario}}%</h1>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="card col-12">
+     <div class="card-body">
+       <h1>Porcentaje de Dimensiones (Importancia)</h1>
+       <table class="table">
+         @foreach($rImportancia as $i=>$importancia)
+         <tr>
+           <td>{{ $dimensiones[$i]->nombre }}</td>
+             <td>{{ $dimensiones[$i]->descripcion}}</td>
+           <td>{{$importancia}}%</td>
+           @endforeach
+         </tr>
+       </table>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="card col-12">
+     <div class="card-body">
+       <h1>Reporte de Indicadores</h1>
+       <table class="table">
+         @foreach($rIndicadores as $i=>$indicador)
+         <tr>
+           <td>{{ $indicadores[$i]->nombre }}</td>
+             <td>{{ $indicadores[$i]->descripcion}}</td>
+           <td>{{$indicador}}%</td>
+           @endforeach
+         </tr>
+       </table>
+     </div>
+   </div>
+ </div>
+ <div class="row">
+   <div class="card col-12">
+     <div class="card-body">
+       <h1>Reporte de Dimensiones</h1>
+       <table class="table">
+         @foreach($rDimensiones as $i=>$dimension)
+         <tr>
+           <td>{{ $dimensiones[$i]->nombre }}</td>
+             <td>{{ $eDimensiones[$i]->descripcion}}</td>
+           <td>{{$dimension}}%</td>
+           @endforeach
+         </tr>
+       </table>
+     </div>
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection
