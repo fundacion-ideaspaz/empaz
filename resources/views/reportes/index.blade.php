@@ -1,6 +1,13 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
-var dimensiones = '{$importancia}}';
+    var locations = [
+
+    @foreach($rImportancia as $i=>$importancia)
+   {{ $dimensiones[$i]->nombre }}
+             {{ $dimensiones[$i]->descripcion}}
+           {{$importancia}}
+           @endforeach
+    ];
 
     console.log(dimensiones);
     console.log(locations);
