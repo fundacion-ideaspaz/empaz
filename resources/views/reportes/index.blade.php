@@ -11,9 +11,10 @@ var dimensiones = '{$importancia}}';
 
 
     ];
-    console.log(locations)
+    console.log(dimensiones);
+    console.log(locations);
+
   FusionCharts.ready(function () {
-    
 
     var ageGroupChart = new FusionCharts({
         type: 'pie2d',
