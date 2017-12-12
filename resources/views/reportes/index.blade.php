@@ -1,10 +1,5 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
-    var dimension = '{{ $dimensiones[$i]->nombre }}';
-    var valorDimen = '{{$importancia}}';
-
-    console.log(dimension);
-    console.log(valorDimen);
 
   FusionCharts.ready(function () {
 
@@ -46,8 +41,8 @@
             "data": [
              @foreach($rImportancia as $i=>$importancia)
              {
-                "label": dimension,
-                "value": valorDimen
+                "label": "{{ $dimensiones[$i]->nombre }}",
+                "value": "{{$importancia}}"
              },
            @endforeach
             ]
