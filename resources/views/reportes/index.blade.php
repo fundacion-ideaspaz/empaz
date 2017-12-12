@@ -50,61 +50,59 @@
     }).render();
 });
 
-//   FusionCharts.ready(function () {
-//     var budgetChart2 = new FusionCharts({
-//         type: 'radar',
-//         renderAt: 'chart-container2',
-//         width: '1140',
-//         height: '450',
-//         dataFormat: 'json',
-//         dataSource: {
-//             "chart": {
-//                 "captionFontSize": "14",
-//                 "subcaptionFontSize": "14",
-//                 "numberPrefix":"%",
-//                 "baseFontColor" : "#333333",
-//                 "baseFont" : "Helvetica Neue,Arial",
-//                 "subcaptionFontBold": "0",
-//                 "paletteColors": "#008ee4,#6baa01",
-//                 "bgColor" : "#ffffff",
-//                 "radarfillcolor": "#ffffff",
-//                 "showBorder" : "0",
-//                 "showShadow" : "0",
-//                 "showCanvasBorder": "0",
-//                 "legendBorderAlpha": "0",
-//                 "legendShadow": "0",
-//                 "divLineAlpha": "10",
-//                 "usePlotGradientColor": "0",
-//                 "numberPreffix": "%",
-//                 "legendBorderAlpha": "0",
-//                 "legendShadow": "0"
-//             },
-//             "categories": [
-//                 {
-//                     "category": [
-//                         { "label": "Dimensión 1" },
-//                         { "label": "Dimensión 2" },
-//                         { "label": "Dimensión 3" },
-//                         { "label": "Dimensión 4" },
-//                         { "label": "Dimensión 5" }
-//                     ]
-//                 }
-//             ],
-//             "dataset": [
-//                 {
-//                     "seriesname": "Porcentaje de afectacción",
-//                     "data": [
-//                         { "value": "10" },
-//                         { "value": "20" },
-//                         { "value": "30" },
-//                         { "value": "15" },
-//                         { "value": "5" }
-//                     ]
-//                 }
-//             ]
-//         }
-//     }).render();
-// });
+  FusionCharts.ready(function () {
+    var budgetChart2 = new FusionCharts({
+        type: 'radar',
+        renderAt: 'chart-container2',
+        width: '1140',
+        height: '450',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "numberPrefix":"%",
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
+                "subcaptionFontBold": "0",
+                "paletteColors": "#008ee4,#6baa01",
+                "bgColor" : "#ffffff",
+                "radarfillcolor": "#ffffff",
+                "showBorder" : "0",
+                "showShadow" : "0",
+                "showCanvasBorder": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "divLineAlpha": "10",
+                "usePlotGradientColor": "0",
+                "numberPreffix": "%",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0"
+            },
+            "categories": [
+                {
+                    "category": [
+
+
+              @foreach($rDimensiones as $i=>$dimension)
+                    { "label": "{{ $dimensiones[$i]->nombre }}"},
+              @endforeach
+                    ]
+                }
+            ],
+            "dataset": [
+                {
+                    "seriesname": "Porcentaje de afectacción",
+                    "data": [
+                        @foreach($rDimensiones as $i=>$dimension)
+                    { "label": "{{$dimension}}"},
+                        @endforeach
+                    ]
+                }
+            ]
+        }
+    }).render();
+});
 
 
 </script>
