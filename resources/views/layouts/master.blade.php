@@ -63,10 +63,13 @@
                                   <a class="dropdown-item" href="/dimensiones"><i class="fa fa-list-ul" aria-hidden="true"></i> Dimensiones</a>
                                   <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
                                   <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
-                              @endif @if(Auth::user()->role === 'empresa')
+                              @endif
+                              @if(Auth::user()->role === 'empresa')
                               <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                               @endif
-
+                              @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
+                              <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Dashboard</a>
+                              @endif
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
