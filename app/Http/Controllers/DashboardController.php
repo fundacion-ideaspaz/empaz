@@ -2,39 +2,58 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Illuminate\Http\Request;
+use App\Cuestionario;
 use App\CuestionarioResult;
-use App\RespuestaCuestionario;
-use App\Pregunta;
-use App\IndicadoresDimensiones;
-use App\Indicador;
 use App\Dimension;
 use App\DimensionCuestionario;
-use App\CuestionarioMath;
+use App\Indicador;
+use App\IndicadoresDimensiones;
+use App\Pregunta;
 use App\ProfileEmpresa;
-use App\Enunciado;
+use App\RespuestaCuestionario;
+use Auth;
 
-class DashboardController extends Controller {
+class DashboardController extends Controller
+{
+    public function index()
+    {
+        $cuestionarios_resueltos = CuestionarioResult::all();
+        return view('dashboard.index')->with([
+            'cuestionarios_resueltos' => $cuestionarios_resueltos,
+        ]);
+    }
 
-    public function reporteIndicadores($cuest_id) {
+    public function view($cuest_respuesta_id)
+    {
+        $cuestRes = CuestionarioResult::find($cuest_respuesta_id);
+        $respuestas = RespuestaCuestionario
+            ::where('cuestionario_result_id', '=', $cuest_respuesta_id)->get();
+        $cuestionario = Cuestionario::find($cuestRes->cuestionario_id);
+        return view('dashboard.view')->with([
+            'cuestionario' => $cuestionario,
+            'respuestas' => $respuestas,
+        ]);
+    }
+
+    public function resultadoCuestionario($cuest_id)
+    {
         $empresa = ProfileEmpresa::where('user_id', '=', Auth::user()->id)->first();
         $cuestResult = CuestionarioResult::find($cuest_id);
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
-                ::where("cuestionario_id", "=", $cuestionario_id)
-                ->where("cuestionario_result_id", "=", $cuest_id)
-                ->get();
+            ::where("cuestionario_id", "=", $cuestionario_id)
+            ->where("cuestionario_result_id", "=", $cuest_id)
+            ->get();
         $preguntasIds = $preguntasCuest->pluck("pregunta_id");
         $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
         $indicadoresCuest = IndicadoresDimensiones
-                ::where("cuestionario_id", "=", $cuestionario_id)->get();
+            ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $indicadoresIds = $indicadoresCuest->pluck("indicador_id");
         $dimensionesIds = $indicadoresCuest->pluck("dimension_id");
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
         $dimensionesCuest = DimensionCuestionario
-                ::where("cuestionario_id", "=", $cuestionario_id)->get();
+            ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $rIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
         $enunciados = array_fill(0, $dimensiones->count(), 0);
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);

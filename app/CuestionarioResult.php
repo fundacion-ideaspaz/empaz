@@ -1,6 +1,7 @@
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
+
 class CuestionarioResult extends Model
 {
     protected $table = 'cuestionarios_result';
@@ -59,6 +60,7 @@ class CuestionarioResult extends Model
         }
         return $calificacionIndicadores;
     }
+    
     public function puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $calificacionIndicadores) {
         $cantidadDimensiones = $dimensiones->count();
         $cantidadIndicadores = $indicadores->count();
@@ -112,6 +114,7 @@ class CuestionarioResult extends Model
         }
         return $arrayDimensionesCalculadas;
     }
+    
     function sumaProductos($array1, $array2) {
         $resultado = 0;
         if (count($array1) == count($array2)) {
@@ -121,11 +124,20 @@ class CuestionarioResult extends Model
         }
         return $resultado;
     }
+    
     public function puntajeCuestionario($arrayDimensionesCalculadas) {
         $diagnostico = 0;
         foreach ($arrayDimensionesCalculadas as $dimension) {
             $diagnostico = $diagnostico + $dimension;
         }
         return $diagnostico;
+    }
+
+    public function cuestionario(){
+        return $this->belongsTo('\App\Cuestionario');
+    }
+
+    public function user(){
+        return $this->belongsTo('\App\User');
     }
 }

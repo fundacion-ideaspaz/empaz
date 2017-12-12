@@ -48,7 +48,7 @@ Route::get('/users/{id}/activate/{code}', 'ProfileController@activateAccount');
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/user', 'ProfileController@profileUser');
     // Reportes
-    Route::get('reportes/{cuest_id}', 'DashboardController@reporteIndicadores');
+    Route::get('reportes/{cuest_id}', 'DashboardController@resultadoCuestionario');
 
     Route::middleware(['empresa'])->group(function () {
         Route::get('/profile/empresa', 'ProfileController@profileEmpresa');
@@ -69,6 +69,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/users/{id}', 'UserController@show');
         Route::get('/users/{id}/delete', 'UserController@delete');
         Route::post('/users/{id}/delete', 'UserController@deleteConfirm');
+    });
+
+    Route::middleware(['consulta'])->group(function () {
+        Route::get('/dashboard', 'DashboardController@index');
+        Route::get('/dashboard/{cuest_respuesta_id}', 'DashboardController@view');
     });
 
     Route::middleware(['experto'])->group(function () {
