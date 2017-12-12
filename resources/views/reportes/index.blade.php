@@ -178,7 +178,7 @@
         {{ $dimensiones[$i]->nombre }}
       </div>
       <div class="col-md-6">
-        {{ $dimensiones[$i]->descripcion}}
+        {{ $eDimensiones[$i]->descripcion}}
       </div>
     </div>
         </a>
