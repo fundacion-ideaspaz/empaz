@@ -23,6 +23,15 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function indexCuest($cuest_id)
+    {
+        $cuestionarios_resueltos = CuestionarioResult
+            ::where('cuestionario_id', '=', $cuest_id)->get();
+        return view('dashboard.index')->with([
+            'cuestionarios_resueltos' => $cuestionarios_resueltos,
+        ]);
+    }
+
     public function view($cuest_respuesta_id)
     {
         $cuestRes = CuestionarioResult::find($cuest_respuesta_id);
@@ -100,18 +109,16 @@ class DashboardController extends Controller
             // get the value of a dimension from 1% to 100%
         }
 
-
-
         return view("reportes.index")->with([
-                    'empresa' => $empresa,
-                    'rImportancia' => $arrayPorcentajeDimension,
-                    'rIndicadores' => $rIndicadores,
-                    'rDimensiones' => $rDimensiones,
-                    'rCuestionario' => $rCuestionario,
-                    'preguntas' => $preguntas,
-                    'indicadores' => $indicadores,
-                    'dimensiones' => $dimensiones,
-                    'eDimensiones' => $enunciados,
+            'empresa' => $empresa,
+            'rImportancia' => $arrayPorcentajeDimension,
+            'rIndicadores' => $rIndicadores,
+            'rDimensiones' => $rDimensiones,
+            'rCuestionario' => $rCuestionario,
+            'preguntas' => $preguntas,
+            'indicadores' => $indicadores,
+            'dimensiones' => $dimensiones,
+            'eDimensiones' => $enunciados,
         ]);
     }
 

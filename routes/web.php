@@ -74,6 +74,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['consulta'])->group(function () {
         Route::get('/dashboard', 'DashboardController@index');
         Route::get('/dashboard/{cuest_respuesta_id}', 'DashboardController@view');
+        Route::get('/dashboard/cuestionario/{cuest_id}', 'DashboardController@indexCuest');
     });
 
     Route::middleware(['experto'])->group(function () {
