@@ -1,16 +1,10 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
-    var locations = [
+    var dimension = '{{ $dimensiones[$i]->nombre }}';
+    var valorDimen = '{{$importancia}}';
 
-    @foreach($rImportancia as $i=>$importancia)
-   {{ $dimensiones[$i]->nombre }}
-             {{ $dimensiones[$i]->descripcion}}
-           {{$importancia}}
-           @endforeach
-    ];
-
-    console.log(dimensiones);
-    console.log(locations);
+    console.log(dimension);
+    console.log(valorDimen);
 
   FusionCharts.ready(function () {
 
@@ -50,82 +44,72 @@
                 "legendItemFontColor": '#666666'
             },
             "data": [
-                {
-                    "label": "Dimensión 1",
-                    "value": "25"
-                },
-                {
-                    "label": "Dimensión 2",
-                    "value": "25"
-                },
-                {
-                    "label": "Dimensión 3",
-                    "value": "40"
-                },
-                {
-                    "label": "Dimensión 4",
-                    "value": "10"
-                }
+             @foreach($rImportancia as $i=>$importancia)
+             {
+                "label": dimension,
+                "value": valorDimen
+             },
+           @endforeach
             ]
         }
     }).render();
 });
 
-  FusionCharts.ready(function () {
-    var budgetChart2 = new FusionCharts({
-        type: 'radar',
-        renderAt: 'chart-container2',
-        width: '1140',
-        height: '450',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "captionFontSize": "14",
-                "subcaptionFontSize": "14",
-                "numberPrefix":"%",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "subcaptionFontBold": "0",
-                "paletteColors": "#008ee4,#6baa01",
-                "bgColor" : "#ffffff",
-                "radarfillcolor": "#ffffff",
-                "showBorder" : "0",
-                "showShadow" : "0",
-                "showCanvasBorder": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "divLineAlpha": "10",
-                "usePlotGradientColor": "0",
-                "numberPreffix": "%",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0"
-            },
-            "categories": [
-                {
-                    "category": [
-                        { "label": "Dimensión 1" },
-                        { "label": "Dimensión 2" },
-                        { "label": "Dimensión 3" },
-                        { "label": "Dimensión 4" },
-                        { "label": "Dimensión 5" }
-                    ]
-                }
-            ],
-            "dataset": [
-                {
-                    "seriesname": "Porcentaje de afectacción",
-                    "data": [
-                        { "value": "10" },
-                        { "value": "20" },
-                        { "value": "30" },
-                        { "value": "15" },
-                        { "value": "5" }
-                    ]
-                }
-            ]
-        }
-    }).render();
-});
+//   FusionCharts.ready(function () {
+//     var budgetChart2 = new FusionCharts({
+//         type: 'radar',
+//         renderAt: 'chart-container2',
+//         width: '1140',
+//         height: '450',
+//         dataFormat: 'json',
+//         dataSource: {
+//             "chart": {
+//                 "captionFontSize": "14",
+//                 "subcaptionFontSize": "14",
+//                 "numberPrefix":"%",
+//                 "baseFontColor" : "#333333",
+//                 "baseFont" : "Helvetica Neue,Arial",
+//                 "subcaptionFontBold": "0",
+//                 "paletteColors": "#008ee4,#6baa01",
+//                 "bgColor" : "#ffffff",
+//                 "radarfillcolor": "#ffffff",
+//                 "showBorder" : "0",
+//                 "showShadow" : "0",
+//                 "showCanvasBorder": "0",
+//                 "legendBorderAlpha": "0",
+//                 "legendShadow": "0",
+//                 "divLineAlpha": "10",
+//                 "usePlotGradientColor": "0",
+//                 "numberPreffix": "%",
+//                 "legendBorderAlpha": "0",
+//                 "legendShadow": "0"
+//             },
+//             "categories": [
+//                 {
+//                     "category": [
+//                         { "label": "Dimensión 1" },
+//                         { "label": "Dimensión 2" },
+//                         { "label": "Dimensión 3" },
+//                         { "label": "Dimensión 4" },
+//                         { "label": "Dimensión 5" }
+//                     ]
+//                 }
+//             ],
+//             "dataset": [
+//                 {
+//                     "seriesname": "Porcentaje de afectacción",
+//                     "data": [
+//                         { "value": "10" },
+//                         { "value": "20" },
+//                         { "value": "30" },
+//                         { "value": "15" },
+//                         { "value": "5" }
+//                     ]
+//                 }
+//             ]
+//         }
+//     }).render();
+// });
 
 
 </script>
