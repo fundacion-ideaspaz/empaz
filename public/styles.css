@@ -405,7 +405,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 	margin: auto;
 	color: #fff;
 	text-align: center;
-	position: fixed;
+	position: relative;
 }
 
 .registro-exitoso{
