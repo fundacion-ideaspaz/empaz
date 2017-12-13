@@ -95,7 +95,7 @@
                     "seriesname": "Porcentaje de afectacción",
                     "data": [
                         @foreach($rDimensiones as $i=>$dimension)
-                    { "label": "{{$dimension}}"},
+                    { "value": "{{$dimension}}"},
                         @endforeach
                     ]
                 }
