@@ -11,6 +11,7 @@ use App\IndicadoresDimensiones;
 use App\Pregunta;
 use App\ProfileEmpresa;
 use App\RespuestaCuestionario;
+use App\Enunciado;
 use Auth;
 
 class DashboardController extends Controller
