@@ -1,6 +1,6 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
-var element = document.querySelector('.resultado-g');
+var element = document.querySelector('resultado-g');
 var content = element && element.getAttribute("data-sema");
 
 console.log(content);
