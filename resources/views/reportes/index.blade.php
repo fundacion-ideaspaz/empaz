@@ -134,7 +134,7 @@
     </div>
 <h1>Resultados generales</h1>
 <div class="row">
-    <div class="col-md-2 resultado-g" data-sema="prueba">
+    <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
       {{$rCuestionario}}%
     </div>
     <div class="col-md-10">
@@ -278,6 +278,10 @@
 
 <script type="text/javascript">
   var content = $('.resultado-g').attr("data-sema");
+
+  if( content == 100){
+    alert("loco");
+  };
 
 console.log(content);
 </script>
