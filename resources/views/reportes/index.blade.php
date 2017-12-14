@@ -282,7 +282,7 @@
   if( content >= 86 && content <= 100){
     alert("verde");
   }
-  if else( content >= 57 && content <= 85){
+  else if( content >= 57 && content <= 85){
     alert("otro verde");
   };
 
