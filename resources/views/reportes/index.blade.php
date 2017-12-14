@@ -279,8 +279,11 @@
 <script type="text/javascript">
   var content = $('.resultado-g').attr("data-sema");
 
-  if( content >= 50 && content <= 100){
-    alert("loco");
+  if( content >= 86 && content <= 100){
+    alert("verde");
+  }
+  if else( content >= 57 && content <= 85){
+    alert("otro verde");
   };
 
 console.log(content);
