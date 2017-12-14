@@ -1,5 +1,9 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
+var element = document.querySelector('.resultado-g');
+var content = element && element.getAttribute("data-sema");
+
+console.log(content);
 
   FusionCharts.ready(function () {
 
@@ -133,7 +137,7 @@
     </div>
 <h1>Resultados generales</h1>
 <div class="row">
-    <div class="col-md-2 resultado-g">
+    <div class="col-md-2 resultado-g" data-sema="prueba">
       {{$rCuestionario}}%
     </div>
     <div class="col-md-10">
