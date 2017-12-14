@@ -1,7 +1,7 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
 var element = document.querySelector;
-var content = $('resultado-g').getAttribute("data-sema");
+var content = $('resultado-g').attr("data-sema");
 
 console.log(content);
 
