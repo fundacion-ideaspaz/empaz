@@ -279,7 +279,7 @@
 <script type="text/javascript">
   var content = $('.resultado-g').attr("data-sema");
 
-  if( content == 100){
+  if( content >= 50 && content <= 100){
     alert("loco");
   };
 
