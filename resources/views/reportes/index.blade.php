@@ -1,9 +1,6 @@
 @extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
-var element = document.querySelector;
-var content = $('.resultado-g').attr("data-sema");
 
-console.log(content);
 
   FusionCharts.ready(function () {
 
@@ -279,33 +276,11 @@ console.log(content);
    </div>
  </div>
 
+<script type="text/javascript">
+  var content = $('.resultado-g').attr("data-sema");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(content);
+</script>
 
 
 @endsection
