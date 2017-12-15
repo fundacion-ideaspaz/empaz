@@ -681,8 +681,8 @@
 
                     <div class="form-group col-md-12">
                         <label for="codigo_ciiu">Código CIIU Actividad Económica Secundaria</label>
-                        <select class="form-control" name="codigo_ciiu">
-                        <option value="Ninguno"> Ninguno</option>
+                        <select class="form-control" name="codigo_ciiu" id="ciiu-secundario">
+                            <option value="Ninguno"> Ninguno</option>
                             <option value="1011"> 1011 - Procesamiento y conservación de carne y productos cárnicos</option>
                             <option value="1012"> 1012 - Procesamiento y conservación de pescados, crustáceos y moluscos</option>
                             <option value="1020"> 1020 - Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos</option>
@@ -1097,22 +1097,18 @@
 
     function loadDepartamentos() {
 
-    var url = '/js/colombia.json';
-    $.get(url, function (data) {
-      console.log(data.length);
-      if (data.length > 0) {
-        $.each(data, function (index, item) {
-          var contentMenu = document.getElementById("departments");
-          var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+        var url = '/js/colombia.json';
+        $.get(url, function (data) {
+            if (data.length > 0) {
+                $.each(data, function (index, item) {
+                    var contentMenu = document.getElementById("departments");
+                    var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
 
-          $(contentMenu).append(ventana);
+                    $(contentMenu).append(ventana);
+                });
+            }
         });
-      }
-    });
-  }
-
-
-
+    }
 
     $('#pais').on('change', function (e) {
         const target = e.target;
@@ -1124,11 +1120,22 @@
             $('#cities').prop('disabled', 'disabled');
             $('#departments').prop('disabled', 'disabled');
         }
-        console.log(target.value);
     })
 
-$(function(){
-                (new handleDeparmentsAndCitiesSelectors('#departments', '#cities'));
-            });
+    $('#ciiu-principal').on('change', function (e) {
+        $this = $(this);
+        val = $this.val();
+        for (option of $(`#ciiu-secundario option`)) {
+            $option = $(option);
+            if ($option.val() !== "") {
+                $option.removeAttr("disabled");
+            }
+        }
+        $(`#ciiu-secundario option[value="${val}"]`).attr("disabled", "true");
+    })
+
+    $(function () {
+        (new handleDeparmentsAndCitiesSelectors('#departments', '#cities'));
+    });
 
 </script> @endsection
