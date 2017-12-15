@@ -18,7 +18,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $cuestionarios_resueltos = CuestionarioResult::paginate(10);
+        $cuestionarios_resueltos = CuestionarioResult::paginate(20);
         return view('dashboard.index')->with([
             'cuestionarios_resueltos' => $cuestionarios_resueltos,
         ]);
@@ -27,7 +27,7 @@ class DashboardController extends Controller
     public function indexCuest($cuest_id)
     {
         $cuestionarios_resueltos = CuestionarioResult
-            ::where('cuestionario_id', '=', $cuest_id)->paginate(10);
+            ::where('cuestionario_id', '=', $cuest_id)->paginate(20);
         return view('dashboard.index')->with([
             'cuestionarios_resueltos' => $cuestionarios_resueltos,
         ]);
