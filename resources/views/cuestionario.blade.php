@@ -12,7 +12,7 @@
         <div class="from-group">
           <input type="submit" class="btn btn-primary pull-left" value="Guardar">
           <input type="submit" class="btn btn-success pull-left" value="Enviar para evaluar">
-          <input type="submit" class="btn btn-danger float-right" value="Limpiar respuestas">
+          <input type="reset" class="btn btn-danger float-right" value="Limpiar respuestas">
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">

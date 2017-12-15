@@ -30,12 +30,6 @@
                             <div class="col-md-10">
                               <i class="fa fa-user" aria-hidden="true"></i>
                                 <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
@@ -44,12 +38,6 @@
                             <div class="col-md-10">
                               <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                                 <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 
@@ -61,6 +49,11 @@
                                     </label>
                                 </div>
                             </div>
+                            @if ($errors)
+                                <span class="help-block">
+                                    <strong>{{ $errors->first() }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group">
