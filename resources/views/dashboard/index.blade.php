@@ -31,7 +31,7 @@
     </div>
     <div class="card-footer">
       <div class="pull-righ">
-        <!-- <a class="btn btn-primary" href="/indicadores/new/">Crear indicador</a> -->
+          {{ $cuestionarios_resueltos->links() }}
       </div>
     </div>
   </div>

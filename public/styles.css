@@ -579,7 +579,9 @@ tr.children td:first-child {
     background-image: none!important;
 }
 
-
+ul.pagination li {
+    margin: 0 3px 0 3px;
+}
 
 @media all and (max-width: 980px) { 
     header .bg-light{
@@ -588,29 +590,29 @@ tr.children td:first-child {
 
     h4{
     font-size: 1em;
-}
+    }
 
-.navbar-nav{
-    margin-top: 20px;
-}
+    .navbar-nav{
+        margin-top: 20px;
+    }
 
-.navbar-nav .nav-item {
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-    background: rgba(8, 8, 8, 0.09);
-}
+    .navbar-nav .nav-item {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+        background: rgba(8, 8, 8, 0.09);
+    }
 
-.navbar-nav .nav-item:after{
-    display: none;
-}
+    .navbar-nav .nav-item:after{
+        display: none;
+    }
 
-.navbar-nav .dropdown-menu {
-    position: relative!important;
-    float: none!important;
-    transform: none!important;
-}
+    .navbar-nav .dropdown-menu {
+        position: relative!important;
+        float: none!important;
+        transform: none!important;
+    }
 
-.modal.show .modal-dialog{
-    max-width: 90%;
-}
+    .modal.show .modal-dialog{
+        max-width: 90%;
+    }
 }
