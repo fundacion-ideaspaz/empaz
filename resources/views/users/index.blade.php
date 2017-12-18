@@ -37,7 +37,7 @@
         <div class="btn-group" role="group">
           <button id="createButtonsGroup" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            Create new user
+            Crear nuevo usuario
           </button>
           <div class="dropdown-menu" aria-labelledby="createButtonsGroup">
             <a href="/users/new/superadmin" class="dropdown-item">SuperAdmin</a>
