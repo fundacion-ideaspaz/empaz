@@ -1,4 +1,7 @@
 @extends('layouts.masterAnimationCues') @section('title', 'Crear Pregunta') @section('content')
+<div class="container">
+
+      <div class="fs-form-wrap" id="fs-form-wrap">
 <div class="row indicadores-form">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform" autocomplete="off">
@@ -24,5 +27,7 @@
         </div>
         @endif
       </form>
+  </div>
+  </div>
   </div>
   @endsection
