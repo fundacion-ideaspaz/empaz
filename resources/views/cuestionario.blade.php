@@ -1,5 +1,4 @@
 @extends('layouts.masterAnimationCues') @section('title', 'Crear Pregunta') @section('content')
-<div class="container">
 
       <div class="fs-form-wrap" id="fs-form-wrap">
 <div class="row indicadores-form">
@@ -27,7 +26,6 @@
         </div>
         @endif
       </form>
-  </div>
   </div>
   </div>
   @endsection
