@@ -1,8 +1,9 @@
 @extends('layouts.master') @section('title', 'Agregar preguntas - Cuestionario') @section('content')
 <div class="preguntas-form">
+<h1>Agregar Pregunta</h1>
   @foreach($indicadores as $indicador)
   @if($preguntas->isNotEmpty())
-  <h1>{{$indicador->nombre}}</h1>
+  <h2>{{$indicador->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
         
@@ -45,7 +46,7 @@
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
-            <th>Dimension</th>
+            <th>Indicador</th>
             <th>Pregunta</th>
             <th>Acciones</th>
           </tr>
