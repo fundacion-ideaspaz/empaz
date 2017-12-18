@@ -60,7 +60,7 @@
                               @endif
                                @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
                                   <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
-                                  <a class="dropdown-item" href="/dimensiones"><i class="fa fa-list-ul" aria-hidden="true"></i> Dimensiones</a>
+                                  <a class="dropdown-item" href="/dimensiones"><i class="fa fa-pie-chart" aria-hidden="true"></i> Dimensiones</a>
                                   <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
                                   <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
                               @endif
@@ -68,7 +68,7 @@
                               <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                               @endif
                               @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
-                              <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Dashboard</a>
+                              <a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></i></i> Resultaods</a>
                               @endif
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
