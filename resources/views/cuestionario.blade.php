@@ -1,7 +1,7 @@
 @extends('layouts.masterAnimationCues') @section('title', 'Crear Pregunta') @section('content')
 <div class="row indicadores-form">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
-      <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform">
+      <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform" autocomplete="off">
       <ol class="fs-fields">
         {{ csrf_field() }}
         @foreach($cuestionario->allPreguntas($cuestionario->id) as $pregunta)
