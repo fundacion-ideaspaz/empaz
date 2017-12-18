@@ -1,6 +1,6 @@
 <li data-input-trigger>
   <label class="fs-field-label fs-anim-upper" for="respuesta-{{$pregunta->id}}">{{$pregunta->nombre}}</label>
-  <select class="form-control cs-select cs-skin-boxes fs-anim-lower" name="{{$pregunta->id}}"
+  <select class="form-control" name="{{$pregunta->id}}"
     id="respuesta-{{$pregunta->id}}" @if($pregunta->isRequired($cuest_id)) required @endif>
     <option value="">Seleccione una opción...</option>
     @foreach($pregunta->opcionesRespuestas as $opcion)
