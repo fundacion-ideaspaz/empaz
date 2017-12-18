@@ -7,6 +7,7 @@
         <thead>
           <tr>
             <th>Cuestionario</th>
+            <th>Empresa</th>
             <th>Usuario</th>
             <th width="25%">Acciones</th>
           </tr>
@@ -18,6 +19,7 @@
               {{$cuestRes->cuestionario->nombre}}
               Version {{$cuestRes->cuestionario->version}}
             </td>
+            <td>{{$cuestRes->user->empresa}}</td>
             <td>{{$cuestRes->user->nombre}}</td>
             <td width="25%">
               <a class="btn btn-success" href="/dashboard/{{$cuestRes->id}}">
