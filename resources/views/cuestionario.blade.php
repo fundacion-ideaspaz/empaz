@@ -1,4 +1,4 @@
-@extends('layouts.masterAnimation') @section('title', 'Crear Pregunta') @section('content')
+@extends('layouts.masterAnimationCues') @section('title', 'Crear Pregunta') @section('content')
 <div class="row indicadores-form">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform">
