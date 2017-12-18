@@ -5,6 +5,7 @@
   <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
+    <h1>Agregar Indicadores</h1>
       @foreach($indicadores as $indicador)
       @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
@@ -58,7 +59,7 @@
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
-            <th>Dimension</th>
+            <th>Dimensión</th>
             <th>Indicador</th>
             <th>Acciones</th>
           </tr>
