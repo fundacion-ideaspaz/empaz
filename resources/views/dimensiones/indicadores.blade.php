@@ -6,6 +6,7 @@
   <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
+    @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
         {{ csrf_field() }}
         <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
@@ -19,7 +20,6 @@
         </thead>
         <tbody>
          @foreach($indicadores as $indicador)
-      @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
           <tr>
             <td>
               {{$indicador->nombre}}
