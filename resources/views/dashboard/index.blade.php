@@ -19,7 +19,7 @@
               {{$cuestRes->cuestionario->nombre}}
               Version {{$cuestRes->cuestionario->version}}
             </td>
-            <td>{{$cuestRes->user->empresa}}</td>
+            <td>{{$cuestRes->user->empresa->nombre}}</td>
             <td>{{$cuestRes->user->nombre}}</td>
             <td width="25%">
               <a class="btn btn-success" href="/dashboard/{{$cuestRes->id}}">
