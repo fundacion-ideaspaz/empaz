@@ -9,7 +9,7 @@
         </label>
       </div>
       <div class="form-group">
-        <a href="/indicadores" class="btn btn-primary">Regresar</a>
+        <a href="/dimensiones" class="btn btn-primary">Regresar</a>
       </div>
       @else
       <h2>¿Eliminar Dimensión?</h2>
