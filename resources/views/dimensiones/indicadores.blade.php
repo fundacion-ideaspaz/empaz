@@ -6,10 +6,6 @@
   <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
-    @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
-      <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
-        {{ csrf_field() }}
-        <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
         <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -19,7 +15,12 @@
           </tr>
         </thead>
         <tbody>
-         @foreach($indicadores as $indicador)
+        @foreach($indicadores as $indicador)
+        @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
+      <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
+        {{ csrf_field() }}
+        <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
+         
           <tr>
             <td>
               {{$indicador->nombre}}
@@ -33,7 +34,8 @@
               <input type="submit" value="Asignar" class="btn btn-primary">
             </td>
           </tr>
-           @endforeach @endif
+          </form>
+          @endif @endforeach
           </tbody>
         </table>
 
@@ -48,7 +50,7 @@
         <div class="input-group col-sm-7">
           <input type="submit" value="Asignar" class="btn btn-primary">
         </div> -->
-      </form>
+      
       
     </div>
   </div>
