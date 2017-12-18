@@ -1,13 +1,11 @@
 @extends('layouts.master') @section('title', 'Agregar indicadores - Cuestionario') @section('content')
 <div class="indicadores-form">
+<h1>Agregar Indicadores</h1>
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
   <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
-    <h1>Agregar Indicadores</h1>
-      @foreach($indicadores as $indicador)
-      @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
       <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
         {{ csrf_field() }}
         <input type="hidden" name="dimension_id" value="{{$dimension->id}}">
@@ -20,6 +18,8 @@
           </tr>
         </thead>
         <tbody>
+         @foreach($indicadores as $indicador)
+      @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
           <tr>
             <td>
               {{$indicador->nombre}}
@@ -33,6 +33,7 @@
               <input type="submit" value="Asignar" class="btn btn-primary">
             </td>
           </tr>
+          @endif @endforeach
           </tbody>
         </table>
 
@@ -48,7 +49,7 @@
           <input type="submit" value="Asignar" class="btn btn-primary">
         </div> -->
       </form>
-      @endif @endforeach
+      
     </div>
   </div>
   @endif
