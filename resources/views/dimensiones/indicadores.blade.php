@@ -33,7 +33,7 @@
               <input type="submit" value="Asignar" class="btn btn-primary">
             </td>
           </tr>
-          @endif @endforeach
+           @endforeach @endif
           </tbody>
         </table>
 
