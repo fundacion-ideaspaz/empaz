@@ -1,4 +1,4 @@
-<div class="form-group">
+<li>
   <label>{{$pregunta->nombre}}</label>
   <select class="form-control" name="{{$pregunta->id}}"
     id="respuesta-{{$pregunta->id}}" @if($pregunta->isRequired($cuest_id)) required @endif>
@@ -9,4 +9,4 @@
     @endif
     @endforeach
   </select>
-</div>
+</li>
