@@ -5,12 +5,13 @@
 
 /* Custom select skin: fullscreen color picker (adjusted for fullscreen form) */
 div.cs-skin-boxes {
-	background: transparent;
-	font-size: 0.65em;
-	font-weight: 700;
-	max-width: 300px;
-	z-index: 2000;
-	color: #fff;
+    background: transparent;
+    font-size: 0.65em;
+    font-weight: 700;
+    max-width: 100%;
+    z-index: 2000;
+    color: #fff;
+    padding: 20px;
 }
 
 @media screen and (max-width: 30em) {
@@ -18,13 +19,12 @@ div.cs-skin-boxes {
 }
 
 .cs-skin-boxes > span {
-	border: 3px solid #292c30;
-	border-radius: 5px;
-	width: 150px;
-	height: 140px;
-	font-size: 0.5em;
-	padding: 0 0 0 10px;
-	background: #555b64;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-size: 0.5em;
+    padding: 0 0 0 10px;
 }
 
 div.cs-skin-boxes:focus > span {
