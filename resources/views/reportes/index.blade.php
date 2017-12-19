@@ -199,7 +199,7 @@
 
 
 
- <div class="row">
+ <!-- <div class="row">
    <div class="card col-12">
      <div class="card-body">
        <h1>Información Basica</h1>
@@ -226,8 +226,8 @@
        <h1>Diagnostico: {{$rCuestionario}}%</h1>
      </div>
    </div>
- </div>
- <div class="row">
+ </div> -->
+ <!-- <div class="row">
    <div class="card col-12">
      <div class="card-body">
        <h1>Porcentaje de Dimensiones (Importancia)</h1>
@@ -242,8 +242,8 @@
        </table>
      </div>
    </div>
- </div>
- <div class="row">
+ </div> -->
+ <!-- <div class="row">
    <div class="card col-12">
      <div class="card-body">
        <h1>Reporte de Indicadores</h1>
@@ -258,8 +258,8 @@
        </table>
      </div>
    </div>
- </div>
- <div class="row">
+ </div> -->
+ <!-- <div class="row">
    <div class="card col-12">
      <div class="card-body">
        <h1>Reporte de Dimensiones</h1>
@@ -274,7 +274,7 @@
        </table>
      </div>
    </div>
- </div>
+ </div> -->
 
 <script type="text/javascript">
   var content = $('.resultado-g').attr("data-sema");
