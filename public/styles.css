@@ -583,6 +583,16 @@ ul.pagination li {
     margin: 0 3px 0 3px;
 }
 
+.alert-danger.empre {
+    color: #721c24;
+    position: absolute;
+    top: 240px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
 @media all and (max-width: 980px) { 
     header .bg-light{
     background-color: #00aabf!important;
