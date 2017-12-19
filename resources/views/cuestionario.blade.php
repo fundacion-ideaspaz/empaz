@@ -4,8 +4,9 @@
 <div class="row indicadores-form">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform" autocomplete="off">
+      {{ csrf_field() }}
       <ol class="fs-fields">
-        {{ csrf_field() }}
+        
         @foreach($cuestionario->allPreguntas($cuestionario->id) as $pregunta)
           @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id])
           @endcomponent
