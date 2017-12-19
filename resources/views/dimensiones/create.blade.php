@@ -46,16 +46,20 @@
                     <input type="text" class="form-control" name="enunciados[]" placeholder="Bajo" required>
                 </div>
                 <div class="form-group">
+                    <label for="enunciados">Medio bajo</label>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio bajo" required>
+                </div>
+                <div class="form-group">
                     <label for="enunciados">Medio</label>
                     <input type="text" class="form-control" name="enunciados[]" placeholder="Medio" required>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Alto</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Alto" required>
+                    <label for="enunciados">Medio alto</label>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio alto" required>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Muy Alto</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Muy Alto" required>
+                    <label for="enunciados">Alto</label>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Alto" required>
                 </div>
         </div>
         <div class="from-group">
