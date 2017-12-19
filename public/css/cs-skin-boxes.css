@@ -33,7 +33,7 @@ div.cs-skin-boxes:focus > span {
 
 .cs-skin-boxes > span::before {
 	content: '';
-	display: block;
+	display: none;
 	padding-top: 110px;
 	margin-left: -10px;
 	box-shadow: 0 25px 0 #292c30, inset 0 -10px #292c30;
