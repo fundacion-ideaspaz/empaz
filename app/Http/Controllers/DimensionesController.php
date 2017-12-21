@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Dimension;
-use App\Enunciado;
-use App\Indicador;
-use App\IndicadoresDimensiones;
 use App\DimensionCuestionario;
+use App\Enunciado;
+use App\IndicadoresDimensiones;
+use Illuminate\Http\Request;
 use Storage;
 
 class DimensionesController extends Controller
@@ -34,9 +33,9 @@ class DimensionesController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "enunciados" => "required|array",
-            "estado"  => "required"
-         ];
-         $messages = array(
+            "estado" => "required",
+        ];
+        $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
@@ -47,9 +46,10 @@ class DimensionesController extends Controller
         $inputs = $request->all();
         $enunciados = [
             "bajo" => $inputs["enunciados"][0],
-            "medio" => $inputs["enunciados"][1],
-            "alto" => $inputs["enunciados"][2],
-            "muy alto" => $inputs["enunciados"][3]
+            "medio bajo" => $inputs["enunciados"][1],
+            "medio" => $inputs["enunciados"][2],
+            "medio alto" => $inputs["enunciados"][3],
+            "alto" => $inputs["enunciados"][4],
         ];
         $inputs["logo"] = $logo;
         $dimension = Dimension::create($inputs);
@@ -57,7 +57,7 @@ class DimensionesController extends Controller
             $new_enunciado = Enunciado::create([
                 "nivel_importancia" => $nivel_importancia,
                 "descripcion" => $enunciado,
-                "dimension_id" => $dimension->id
+                "dimension_id" => $dimension->id,
             ]);
         }
         return redirect("/dimensiones");
@@ -76,7 +76,7 @@ class DimensionesController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "enunciados" => "required|array",
-            "estado" => "required"
+            "estado" => "required",
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
@@ -92,15 +92,16 @@ class DimensionesController extends Controller
         }
         $enunciados = [
             "bajo" => $inputs["enunciados"][0],
-            "medio" => $inputs["enunciados"][1],
-            "alto" => $inputs["enunciados"][2],
-            "muy alto" => $inputs["enunciados"][3]
+            "medio bajo" => $inputs["enunciados"][1],
+            "medio" => $inputs["enunciados"][2],
+            "medio alto" => $inputs["enunciados"][3],
+            "alto" => $inputs["enunciados"][4],
         ];
         $dimension->update($inputs);
         $dimension->save();
         foreach ($enunciados as $nivel_importancia => $enunciado) {
             $newEnunciado = Enunciado::where("dimension_id", "=", $dimension->id)
-                        ->where("nivel_importancia", "=", $nivel_importancia)->first();
+                ->where("nivel_importancia", "=", $nivel_importancia)->first();
             $newEnunciado->descripcion = $enunciado;
             $newEnunciado->save();
         }
@@ -109,22 +110,22 @@ class DimensionesController extends Controller
 
     public function show($id)
     {
-        return redirect("/dimensiones/".$id."/edit");
+        return redirect("/dimensiones/" . $id . "/edit");
     }
 
     public function delete($id, Request $request)
     {
         $dimensionesCuest = DimensionCuestionario
-                        ::where("dimension_id", "=", $id)->get();
-        if($dimensionesCuest->count() > 0){
+            ::where("dimension_id", "=", $id)->get();
+        if ($dimensionesCuest->count() > 0) {
             return view("dimensiones.delete")->with([
                 "id" => $id,
-                "can_delete" => false
+                "can_delete" => false,
             ]);
         }
         return view("dimensiones.delete")->with([
             "id" => $id,
-            "can_delete" => true
+            "can_delete" => true,
         ]);
     }
 
@@ -139,7 +140,7 @@ class DimensionesController extends Controller
     {
         $validations = [
             "nivel_importancia" => "required",
-            "dimension_id" => "required"
+            "dimension_id" => "required",
         ];
         $this->validate($request, $validations);
         $importancia = $request->nivel_importancia;
@@ -150,7 +151,7 @@ class DimensionesController extends Controller
         $dimensionCuestionario->cuestionario_id = $cuest_id;
         $dimensionCuestionario->nivel_importancia = $importancia;
         $dimensionCuestionario->save();
-        return redirect("/cuestionarios/".$cuest_id."/indicadores");
+        return redirect("/cuestionarios/" . $cuest_id . "/indicadores");
     }
 
     public function deleteIndicadores($id, $indicador_id, Request $request)
@@ -160,6 +161,6 @@ class DimensionesController extends Controller
             ->where("indicador_id", "=", $indicador_id)->first();
         $dimensionCuestionario->delete();
         $cuestionario_id = $request->cuestionario_id;
-        return redirect("/cuestionarios/".$cuestionario_id."/indicadores");
+        return redirect("/cuestionarios/" . $cuestionario_id . "/indicadores");
     }
 }
