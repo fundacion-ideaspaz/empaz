@@ -22,7 +22,8 @@
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
+                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">
+                        {{$cuestionario->descripcion}}
                     </textarea>
                 </div>
                 <div class="form-group">
