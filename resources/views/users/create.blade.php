@@ -15,29 +15,29 @@
         </div>
         @endif
         {{ csrf_field() }}
-        <input type="hidden" name="role" id="role" value="{{$role}}">
+        <input type="hidden" name="role" value="{{ old('role') }}" id="role" value="{{$role}}">
         <div class="form-group">
           <label for="nombre" >Nombre</label>
-          <input type="text"  id="nombre" name="nombre" class="form-control" required>
+          <input type="text"  id="nombre" name="nombre" value="{{ old('nombre') }}" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" class="form-control" required>
+          <input type="password" id="password" name="password" value="{{ old('password') }}" class="form-control" required>
         </div>
         @if($role === 'empresa' || $role === 'experto')
         <div class="form-group">
           <label for="cargo">Cargo en la Institución</label>
-          <input type="text" name="cargo" id="cargo" class="form-control" required>
+          <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="form-control" required>
         </div>
         @endif
         @if($role === 'empresa')
         <div class="form-group">
           <label for="telefono">Teléfono</label>
-          <input type="tel" name="telefono" id="telefono" class="form-control" required>
+          <input type="tel" name="telefono" value="{{ old('telefono') }}" id="telefono" class="form-control" required>
         </div>
         @endif
         <div class="form-group">

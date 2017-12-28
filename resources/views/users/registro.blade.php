@@ -5,29 +5,29 @@
       </div>
       <form action="/registro" method="post" id="myform" class="fs-form fs-form-full" autocomplete="off">
         {{ csrf_field() }}
-        <input type="hidden" name="role" id="role" value="{{$role}}">
+        <input type="hidden" name="role" value="{{ old('role') }}" id="role" value="{{$role}}">
         <ol class="fs-fields">
         <li>
           <label for="nombre" class="fs-field-label fs-anim-upper">Nombre</label>
-          <input type="text" id="nombre" name="nombre" class="fs-anim-lower" required>
+          <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="fs-anim-lower" required>
         </li>
         <li>
           <label for="email" class="fs-field-label fs-anim-upper">Email</label>
-          <input type="email" id="email" name="email" class="fs-anim-lower" required>
+          <input type="email" id="email" name="email" value="{{ old('email') }}" class="fs-anim-lower" required>
         </li>
         <li>
           <label for="password" class="fs-field-label fs-anim-upper">Contraseña</label>
-          <input type="password" id="password" name="password" class="fs-anim-lower" required>
+          <input type="password" id="password" name="password" value="{{ old('password') }}" class="fs-anim-lower" required>
         </li>
         @if($role === 'empresa' || $role === 'experto')
         <li>
           <label for="cargo" class="fs-field-label fs-anim-upper">Cargo en la Institución</label>
-          <input type="text" name="cargo" id="cargo" class="fs-anim-lower" required>
+          <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="fs-anim-lower" required>
         </li>
         @endif @if($role === 'empresa')
         <li>
           <label for="telefono" class="fs-field-label fs-anim-upper">Teléfono</label>
-          <input type="tel" name="telefono" id="telefono" class="fs-anim-lower" required>
+          <input type="tel" name="telefono" value="{{ old('telefono') }}" id="telefono" class="fs-anim-lower" required>
         </li>
         </ol>
         @endif

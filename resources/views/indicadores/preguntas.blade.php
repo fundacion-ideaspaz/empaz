@@ -23,7 +23,7 @@
         <input type="hidden" name="indicador_id" value="{{$indicador->id}}">
           <tr>
             <td>{{$pregunta->nombre}}</td>
-            <td><select name="required" id="required" class="form-control">
+            <td><select name="required" value="{{ old('required') }}" id="required" class="form-control">
             <option value="true">Requerida</option>
             <option value="false">Opcional</option>
           </select></td>

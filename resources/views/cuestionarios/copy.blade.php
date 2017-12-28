@@ -7,7 +7,7 @@
         {{ csrf_field() }}
         <div class="form-group">
           <label for="type">¿Que tipo de versionamiento quiere realizar?</label>
-          <select name="type" id="type" class="form-control">
+          <select name="type" value="{{ old('type') }}" id="type" class="form-control">
             <option value="true">Empezar desde versión anterior</option>
             <option value="false">Empezar desde 0</option>
           </select>

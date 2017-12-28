@@ -18,16 +18,16 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$dimension->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$dimension->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{$dimension->descripcion}}</textarea>
+                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$dimension->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Logo de la dimension</label>
-                    <input type="file" name="logo" id="logo" class="form-control">
+                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
                     <small id="passwordHelp" class="form-text text-muted">
                         No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
                     </small>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control">
+                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control">
                         <option value="activo" @if($dimension->estado === "activo") selected @endif>Activo</option>
                         <option value="inactivo" @if($dimension->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>

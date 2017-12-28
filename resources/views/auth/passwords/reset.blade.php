@@ -11,13 +11,13 @@
                     <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                        <input type="hidden" name="token" value="{{ old('token') }}" value="{{ $token }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" value="{{ $email or old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -31,7 +31,7 @@
                             <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" value="{{ old('password') }}" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
