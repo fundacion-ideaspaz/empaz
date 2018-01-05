@@ -5,7 +5,7 @@
       </div>
       <form action="/registro" method="post" id="myform" class="fs-form fs-form-full" autocomplete="off">
         {{ csrf_field() }}
-        <input type="hidden" name="role" value="{{ old('role') }}" id="role" value="{{$role}}">
+        <input type="hidden" name="role" value="empresa" id="role" value="{{$role}}">
         <ol class="fs-fields">
         <li>
           <label for="nombre" class="fs-field-label fs-anim-upper">Nombre</label>
