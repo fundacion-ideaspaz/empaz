@@ -31,6 +31,13 @@ section ul li{
     min-height: 100vh!important;
 }
 
+.flecha{
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    bottom: 100px;
+}
+
 #section02 h4, #section02 ul li{
 font-size: 1em;
 font-weight: 400; 
