@@ -44,23 +44,23 @@
                 <h4>Descripción de la calificación</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo (0-10%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Bajo" required>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio bajo (11-30%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio bajo" required>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio (31-60%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio" required>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio alto (61-85%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Medio alto" required>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Alto (86-100%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Alto" required>
+                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
                 </div>
         </div>
         <div class="from-group">
