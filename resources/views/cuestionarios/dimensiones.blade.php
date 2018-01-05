@@ -24,7 +24,7 @@
           </div>
           <div class="col-sm-3">
             <div class="input-group">
-              <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" type="text" required/>
+              <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
             </div>
           </div>
@@ -46,7 +46,7 @@
           </div>
           <div class="col-sm-3">
             <div class="input-group">
-              <input class="form-control" name="importancia" type="text" required/>
+              <input class="form-control" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
             </div>
           </div>

@@ -7,11 +7,11 @@
         {{ csrf_field() }}
         <div class="form-group">
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" class="form-control" required>
+          <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="cargo">Cargo</label>
-          <select name="cargo" id="cargo" class="form-control" required>
+          <select name="cargo" value="{{ old('cargo') }}" id="cargo" class="form-control" required>
             <option selected disabled>Escoja un cargo</option>
             <option value="experto">Experto tematico</option>
             <option value="empresa">Empresa</option>
@@ -21,11 +21,11 @@
         </div>
         <div class="form-group">
           <label for="correo">Correo</label>
-          <input type="email" id="correo" name="correo" class="form-control" required>
+          <input type="email" id="correo" name="correo" value="{{ old('correo') }}" class="form-control" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" required>
+          <input type="password" id="password" name="password" value="{{ old('password') }}" class="form-control" required>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-primary" value="Guardar">

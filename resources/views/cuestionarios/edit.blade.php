@@ -9,20 +9,20 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}" readonly>
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$cuestionario->nombre}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
+                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="number" class="form-control" name="version" value="{{$cuestionario->version}}" readonly>
+                    <input type="number" class="form-control" name="version" value="{{ old('version') }}" value="{{$cuestionario->version}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control">
+                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control">
                         <option value="activo" @if($cuestionario->estado === "activo") selected @endif>Activo</option>
                         <option value="inactivo" @if($cuestionario->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>

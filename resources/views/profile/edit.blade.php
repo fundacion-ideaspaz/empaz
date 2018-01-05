@@ -17,12 +17,12 @@
                     @endif {{ csrf_field() }}
                     <div class="form-group col-md-12">
                         <label for="nombre">Nombre de la Empresa</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la empresa">
+                        <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" id="nombre" placeholder="Nombre de la empresa">
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="pais">País</label>
-                        <select class="form-control" required id="pais" name="pais">
+                        <select class="form-control" required id="pais" name="pais" value="{{ old('pais') }}">
                             <option>Seleccione una opcion</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
@@ -223,36 +223,36 @@
 
                     <div class="form-group col-md-4">
                         <label for="departamento">Departamento</label>
-                        <select class="form-control" id="departments" name="departamento">
+                        <select class="form-control" id="departments" name="departamento" value="{{ old('departamento') }}">
                             <option>Seleccione una opcion</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="municipio">Municipio</label>
-                        <select class="form-control" id="cities" name="municipio">
+                        <select class="form-control" id="cities" name="municipio" value="{{ old('municipio') }}">
                             <option>Seleccione una opcion</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="direccion">Dirección Empresa</label>
-                        <input type="text" name="direccion" class="form-control">
+                        <input type="text" name="direccion" value="{{ old('direccion') }}" class="form-control">
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="telefono">Telefono Empresa</label>
-                        <input type="tel" name="telefono" class="form-control">
+                        <input type="tel" name="telefono" value="{{ old('telefono') }}" class="form-control">
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="web">Pagina Web Empresa</label>
-                        <input type="text" name="web" class="form-control">
+                        <input type="text" name="web" value="{{ old('web') }}" class="form-control">
                     </div>
 
                     <div class="form-group  col-md-6">
                         <label for="tamano">Tamaño de la empresa</label>
-                        <select class="form-control" name="tamano">
+                        <select class="form-control" name="tamano" value="{{ old('tamano') }}">
                             <option selected>Seleccionar...</option>
                             <option value="1">Micro</option>
                             <option value="2">Pequeña</option>
@@ -268,7 +268,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="nit">NIT</label>
-                        <input type="number" name="nit" class="form-control" placeholder="Enter NIT">
+                        <input type="number" name="nit" value="{{ old('nit') }}" class="form-control" placeholder="Enter NIT">
                     </div>
 
                     <div class="form-group col-md-12">

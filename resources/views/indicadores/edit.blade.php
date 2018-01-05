@@ -18,16 +18,16 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$indicador->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$indicador->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{$indicador->descripcion}}</textarea>
+                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$indicador->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control">
+                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control">
                         <option value="activo" @if($indicador->estado === "activo") selected @endif>Activo</option>
                         <option value="inactivo" @if($indicador->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>

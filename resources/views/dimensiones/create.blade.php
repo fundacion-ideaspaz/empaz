@@ -18,24 +18,25 @@
         @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+                    <textarea name="descripcion" id="descripcion" class="form-control">
+                        {{ old('descripcion') }}
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Logo de la dimensión</label>
                     <br>
                     <!-- <label class="custom-file"> -->
-                    <input type="file" name="logo" id="logo" class="form-control">
+                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
                     <!-- <span class="custom-file-control"></span> -->
                     </label>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control">
+                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control">
                         <option value="activo">Activo</option>
                         <option value="inactivo">Inactivo</option>
                     </select>

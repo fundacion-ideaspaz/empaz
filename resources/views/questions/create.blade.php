@@ -17,18 +17,19 @@
     @endif
             <div class="form-group">
                 <label for="nombre">Texto</label>
-                <input type="text" class="form-control" name="nombre">
+                <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
             </div>
 
             <div class="form-group">
                 <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+                <textarea name="descripcion" id="descripcion" class="form-control">
+                    {{ old('descripcion') }}
                 </textarea>
             </div>
 
             <div class="form-group">
                 <label for="estado">Estado</label>
-                <select name="estado" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
                 </select>

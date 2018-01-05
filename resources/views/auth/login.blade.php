@@ -29,7 +29,7 @@
 
                             <div class="col-md-10">
                               <i class="fa fa-user" aria-hidden="true"></i>
-                                <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" value="{{ old('email') }}" required autofocus>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@
 
                             <div class="col-md-10">
                               <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" required>
+                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" value="{{ old('password') }}" required>
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                                        <input type="checkbox" name="remember" value="{{ old('remember') }}" {{ old('remember') ? 'checked' : '' }}> Recordarme
                                     </label>
                                 </div>
                             </div>
