@@ -73,6 +73,7 @@
     </div>
   </div>
 </div>
+<div class="flecha"><img src="img/flecha-ini.svg" width="50"></div>
 </section>
 <section id="section02">
 <div class="container">
