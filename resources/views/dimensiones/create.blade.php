@@ -27,7 +27,7 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="file">Logo de la dimensión</label>
+                    <label for="file">Archivo adjutno</label>
                     <br>
                     <!-- <label class="custom-file"> -->
                     <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
