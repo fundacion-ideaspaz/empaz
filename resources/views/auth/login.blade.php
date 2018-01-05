@@ -1,9 +1,9 @@
-@extends('layouts.masterhome') @section('title', 'login') 
+@extends('layouts.masterhome') @section('title', 'login')
 
 
 @section('content')
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal {{ !$errors->has('auth') ? 'fade' : '' }}" id="exampleModal" data-keep-showing="{{ $errors->has('auth') }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -73,5 +73,13 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
+@endsection
+
+@section('inlinejs')
+  <script type="text/javascript">
+    $(function () {
+        $('*[data-keep-showing="1"]').modal('show').addClass('fade'); // Keep showing login modal when there are errors.
+    });
+  </script>
 @endsection
