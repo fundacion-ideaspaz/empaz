@@ -41,7 +41,7 @@
                         <option value="inactivo">Inactivo</option>
                     </select>
                 </div>
-                <h4>Enunciados</h4>
+                <h4>Descripción de la calificación</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo</label>
                     <input type="text" class="form-control" name="enunciados[]" placeholder="Bajo" required>
