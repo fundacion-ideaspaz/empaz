@@ -2,7 +2,7 @@
 <div class="row indicadores-form">
   <div class="card col-12">
     <div class="card-body">
-      <h1>Agregar dimensiones</h1>
+      <h1>Agregar Dimensiones</h1>
       @if ($errors->any())
       <div class="alert alert-danger">
         <ul>
