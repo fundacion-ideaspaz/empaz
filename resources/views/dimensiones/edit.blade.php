@@ -26,7 +26,7 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="file">Logo de la dimension</label>
+                    <label for="file">Archivo adjunto</label>
                     <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
                     <small id="passwordHelp" class="form-text text-muted">
                         No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
@@ -40,7 +40,7 @@
                         <option value="inactivo" @if($dimension->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>
                 </div>
-                <h4>Enunciados</h4>
+                <h4>Descripción de la calificación</h4>
                 @foreach($enunciados as $enunciado)
                 <div class="form-group">
                     <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
