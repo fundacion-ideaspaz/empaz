@@ -491,6 +491,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     width: 2.8em;
 }
 
+.r-cuestionario .fs-form-overview .cs-skin-boxes > span {
+    border-radius: 5px;
+    width: 100%;
+    height: 70px;
+    font-size: 1.1em;
+        white-space: normal;
+}
+
 .card{
     padding: 25px 25px;
     border: none!important;
