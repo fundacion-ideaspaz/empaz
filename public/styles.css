@@ -521,12 +521,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 .r-cuestionario  .cs-skin-boxes .cs-options li{
     box-shadow: none;
+    border-bottom: 1px dotted #fff;
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options span{
     white-space: normal;
     position: relative;
     width: 94%;
+    color: #fff;
 }
 
 .card{
