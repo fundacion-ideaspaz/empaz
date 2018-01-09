@@ -150,10 +150,12 @@
   crossorigin="anonymous"></script>
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 <script type="text/javascript">
-  $(window).scroll(function () {
+    $(window).scroll(function () {
       if ($(this).scrollTop() >= 120) {
         $('.navbar').addClass("bgcolor");
+        $('.navbar').removeClass("bg-light");
       } else {
+        $('.navbar').addClass("bg-light");
         $('.navbar').removeClass("bgcolor");
       }
 });

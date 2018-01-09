@@ -125,7 +125,7 @@
         $('.navbar').addClass("bgcolor");
         $('.navbar').removeClass("bg-light");
       } else {
-        $('.navbar').aadClass("bg-light");
+        $('.navbar').addClass("bg-light");
         $('.navbar').removeClass("bgcolor");
       }
 });
