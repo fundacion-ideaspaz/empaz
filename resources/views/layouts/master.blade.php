@@ -95,7 +95,7 @@
     <div class="col-md-6"></div>
     <div class="col-md-6">
             <a href="http://ideaspaz.org/" target="_blank"><img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100"></a>
-      <a class="navbar-brand" href="#"><img src="img/ccb_logo.svg" width="150"></a>
+      <a class="navbar-brand" href="#"><img src="/img/ccb_logo.svg" width="150"></a>
     </div>
   </div>
 </footer>
