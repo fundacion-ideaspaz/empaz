@@ -1,9 +1,10 @@
 @extends('layouts.master') @section('title', 'Agregar indicadores - Cuestionario') @section('content')
 <div class="indicadores-form">
 <h1>Agregar Indicadores</h1>
+<div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
-  <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
+  
   <h4>{{$dimension->nombre}}</h4>
   <div class="card col-12">
     <div class="card-body">

@@ -1,9 +1,10 @@
 @extends('layouts.master') @section('title', 'Agregar preguntas - Cuestionario') @section('content')
 <div class="preguntas-form">
 <h1>Agregar Pregunta</h1>
+<div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   @foreach($indicadores as $indicador)
   @if($preguntas->isNotEmpty())
-  <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
+  
   <h4>{{$indicador->nombre}}</h4>
   <div class="card col-12">
     <div class="card-body">

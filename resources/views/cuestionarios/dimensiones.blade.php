@@ -12,9 +12,10 @@
         </ul>
       </div>
       @endif
+      <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
       @if(sizeof($cuestionario->dimensiones) > 0)
 
-      <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
+
       <h4>Dimensiones asignadas al cuestionario</h4>
       @endif
       @foreach($cuestionario->dimensiones as $dimension)
