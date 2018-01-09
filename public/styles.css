@@ -641,6 +641,16 @@ ul.pagination li {
     border-color: #f5c6cb;
 }
 
+footer {
+    text-align: right;
+    padding: 20px 50px;
+    background: #f2f2f2;
+}
+
+.bgcolor{
+background: #00aabf;
+}
+
 @media all and (max-width: 980px) { 
     header .bg-light{
     background-color: #00aabf!important;
@@ -664,11 +674,7 @@ ul.pagination li {
     font-size: 1.3em;
 }
 
-footer .col-md-6{
-    text-align: right;
-    padding: 20px 50px;
-    background: #f2f2f2;
-}
+
 
     .navbar-nav .nav-item:after{
         display: none;
