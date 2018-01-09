@@ -29,8 +29,10 @@
           <label for="telefono" class="fs-field-label fs-anim-upper">Teléfono</label>
           <input type="tel" name="telefono" value="{{ old('telefono') }}" id="telefono" class="fs-anim-lower" required>
         </li>
+
         </ol>
         @endif
+          <input type="checkbox" name="vehicle" value="ok">Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="#">Ver aquí</a>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
           <!-- <a href="/users" class="btn btn-default">Cancelar</a> -->
         @if ($errors->any())
