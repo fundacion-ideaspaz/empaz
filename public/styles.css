@@ -660,6 +660,10 @@ ul.pagination li {
         background: rgba(8, 8, 8, 0.09);
     }
 
+    #section02 h3 {
+    font-size: 1.3em;
+}
+
     .navbar-nav .nav-item:after{
         display: none;
     }
