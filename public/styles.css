@@ -664,7 +664,7 @@ ul.pagination li {
     font-size: 1.3em;
 }
 
-footer{
+footer .col-md-6{
     text-align: right;
     padding: 20px 50px;
     background: #f2f2f2;
