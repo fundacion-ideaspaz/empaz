@@ -512,6 +512,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     box-shadow: none;
 }
 
+.r-cuestionario .cs-skin-boxes .cs-options span{
+        white-space: normal;
+}
+
 .card{
     padding: 25px 25px;
     border: none!important;
