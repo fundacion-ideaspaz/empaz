@@ -35,7 +35,7 @@
           
           <tr class="children">
               <!-- <td>- {{$cuestionario->nombre}}</td> -->
-              <td class="version-column">
+              <td colspan="4">
               <div class="row">
               @else
 <div class="col-md-4">{{ $cuestionario->version }}
