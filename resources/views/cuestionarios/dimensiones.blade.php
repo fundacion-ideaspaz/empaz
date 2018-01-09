@@ -14,7 +14,7 @@
       @endif
       @if(sizeof($cuestionario->dimensiones) > 0)
 
-      {{$cuestionario->nombre}} / versión {{ $cuestionario->version }}  asdsadasdasd
+      <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
       <h4>Dimensiones asignadas al cuestionario</h4>
       @endif
       @foreach($cuestionario->dimensiones as $dimension)
