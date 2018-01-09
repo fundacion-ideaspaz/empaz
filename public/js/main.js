@@ -58,11 +58,3 @@ function handleDeparmentsAndCitiesSelectors(deparmentsSelector, citiesSelector) 
 	loadData();
 
 }
-
-$(window).scroll(function () {
-			if ($(this).scrollTop() >= 120) {
-				$('.navbar').addClass("bgcolor");
-			} else {
-				$('.navbar').removeClass("bgcolor");;
-			}
-		});
