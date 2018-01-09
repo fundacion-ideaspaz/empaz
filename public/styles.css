@@ -464,6 +464,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
   min-height: calc(100vh - 99px);
 }
 
+.r-cuestionario .fs-fields > li label.fs-field-label {
+    display: inline-block;
+    padding: 0 5px 1em 0;
+    font-weight: 700;
+    pointer-events: none;
+    color: #00aabf;
+    font-size: 0.7em;
+}
+
 .card{
     padding: 25px 25px;
     border: none!important;
