@@ -4,7 +4,7 @@
     <div class="card-body">
       <h2>Registro exitoso</h2>
       <p>A tu correo hemos enviado un link de activación. Por favor, revisa tu correo
-        y activa tu cuenta para poder utilizar la plataforma de EmPaz.
+        y activa tu cuenta para poder utilizar la plataforma de EmPaz. En caso de no recibir el correo, revisa tu bandeja de correo no deseado.
       </p>
     </div>
   </div>

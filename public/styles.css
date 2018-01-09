@@ -586,6 +586,10 @@ tr.children td:first-child {
     background-image: none!important;
 }
 
+.fs-form-overview .alert-danger{
+    display: none;
+}
+
 ul.pagination li {
     margin: 0 3px 0 3px;
 }
