@@ -119,6 +119,14 @@
   var mensaje = document.cookie.split('mensaje=')[1];
   if(mensaje != null) document.getElementById('mensaje').style.display = 'none';
   else document.cookie = 'mensaje=visto;path=/';
+
+  $(window).scroll(function () {
+      if ($(this).scrollTop() >= 120) {
+        $('.navbar').addClass("bgcolor");
+      } else {
+        $('.navbar').removeClass("bgcolor");
+      }
+});
 </script>
 @yield('inlinejs')
 </html>
