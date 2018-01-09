@@ -84,6 +84,7 @@
     </nav>
 </header>
 <section>
+
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -139,7 +140,8 @@
   <div class="row">
     <div class="col-md-6"></div>
     <div class="col-md-6">
-      <img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100">
+            <a href="http://ideaspaz.org/" target="_blank"><img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100"></a>
+      <a class="navbar-brand" href="#"><img src="img/ccb_logo" width="130"></a>
     </div>
   </div>
 </footer>

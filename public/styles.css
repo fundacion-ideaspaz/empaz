@@ -461,6 +461,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .app-container{
   padding-top: 100px;
   padding-bottom: 40px;
+  min-height: calc(100vh - 99px);
 }
 
 .card{
