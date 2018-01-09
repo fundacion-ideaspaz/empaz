@@ -60,7 +60,7 @@ a:hover{
 }
 
 header .bg-light{
-	background-color: transparent;
+	background-color: transparent!important;
 }
 
 nav .row{

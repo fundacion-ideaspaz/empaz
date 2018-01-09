@@ -123,7 +123,9 @@
   $(window).scroll(function () {
       if ($(this).scrollTop() >= 120) {
         $('.navbar').addClass("bgcolor");
+        $('.navbar').removeClass("bg-light");
       } else {
+        $('.navbar').aadClass("bg-light");
         $('.navbar').removeClass("bgcolor");
       }
 });
