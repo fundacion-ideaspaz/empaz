@@ -41,7 +41,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   <i class="fa fa-user" aria-hidden="true"></i> Ingresar
 </button>
-</div> 
+</div>
 
 </nav>
 </header>
@@ -96,7 +96,7 @@
 <li>Visibilizar ante los grupos de interés internos y externos, oportunidades y resultados de la empresa en la construcción de paz.</li>
         </div></div>
   </div>
-</div>  
+</div>
 </section>
   <div >
     @yield('content')
@@ -109,7 +109,8 @@
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 <script type="text/javascript">
   var mensaje = document.cookie.split('mensaje=')[1];
-if(mensaje != null) document.getElementById('mensaje').style.display = 'none';
-else document.cookie = 'mensaje=visto;path=/';
+  if(mensaje != null) document.getElementById('mensaje').style.display = 'none';
+  else document.cookie = 'mensaje=visto;path=/';
 </script>
+@yield('inlinejs')
 </html>
