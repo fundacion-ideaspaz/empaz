@@ -648,7 +648,7 @@ footer {
 }
 
 .bgcolor{
-background: #00aabf;
+background: #00aabf!important;
 }
 
 @media all and (max-width: 980px) { 
