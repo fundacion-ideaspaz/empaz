@@ -38,7 +38,7 @@
               <td colspan="4">
               <div class="row">
               @else
-<div class="col-md-4">{{ $cuestionario->version }}
+<div class="col-md-4">Versión {{ $cuestionario->version }}
 <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 <a class="btn btn-sm btn-primary" href="/cuestionarios/{{$cuestionario->id}}/copy"><i class="fa fa-clone" aria-hidden="true"></i></a>
                 <a class="btn btn-sm btn-danger" href="/cuestionarios/{{$cuestionario->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
