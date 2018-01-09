@@ -11,6 +11,7 @@
           @endforeach
         </ul>
       </div>
+      {{$cuestionario->nombre}} / versión {{ $cuestionario->version }} 
       @endif
       @if(sizeof($cuestionario->dimensiones) > 0)
       <h4>Dimensiones asignadas al cuestionario</h4>
