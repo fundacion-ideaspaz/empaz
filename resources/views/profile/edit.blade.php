@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Crear Indicador') @section('content')
+@extends('layouts.master') @section('title', 'Perfil de la Empresa') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
