@@ -487,6 +487,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     font-weight: 400;
 }
 
+.r-cuestionario .fs-numbers {
+    width: 2.8em;
+}
+
 .card{
     padding: 25px 25px;
     border: none!important;
