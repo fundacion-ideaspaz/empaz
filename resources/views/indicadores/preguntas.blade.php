@@ -4,7 +4,7 @@
   @foreach($indicadores as $indicador)
   @if($preguntas->isNotEmpty())
   <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
-  <h2>{{$indicador->nombre}}</h2>
+  <h4>{{$indicador->nombre}}</h4>
   <div class="card col-12">
     <div class="card-body">
         
