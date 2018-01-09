@@ -128,6 +128,14 @@
     </div>
   </div>
 </div> 
+<footer>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100">
+    </div>
+  </div>
+</footer>
 </body>
 <script src="/popper/umd/popper.js"></script>
 <script src="/js/bootstrap-slider.js"></script>

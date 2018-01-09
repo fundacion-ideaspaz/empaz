@@ -98,6 +98,14 @@
   </div>
 </div>
 </section>
+<footer>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100">
+    </div>
+  </div>
+</footer>
   <div >
     @yield('content')
   </div>
