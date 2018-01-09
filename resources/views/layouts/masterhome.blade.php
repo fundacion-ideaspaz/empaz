@@ -101,7 +101,8 @@
   <div class="row">
     <div class="col-md-6"></div>
     <div class="col-md-6">
-      <img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100">
+      <a href="http://ideaspaz.org/" target="_blank"><img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100"></a>
+      <a class="navbar-brand" href="#"><img src="img/logo.svg" width="130"></a>
     </div>
   </div>
 </footer>
