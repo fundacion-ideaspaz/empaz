@@ -7,7 +7,7 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Role</th>
+            <th>Rol</th>
             <th>Empresa</th>
             <th>Email</th>
             <th width="20%">Acciones</th>
@@ -24,8 +24,8 @@
             </td>
             <td>{{$user->email}}</td>
             <td width="20%">
-              <a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-danger" href="/users/{{$user->id}}/delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/edit" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-danger" href="/users/{{$user->id}}/delete" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>
           </tr>
           @endforeach
