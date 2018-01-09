@@ -593,6 +593,7 @@ tr.children td:first-child {
 .terminos p{
     font-size: 12px;
     display: inline-block;
+    margin-left: 10px;
 }
 
 .terminos {
