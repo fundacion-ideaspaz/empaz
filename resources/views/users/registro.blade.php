@@ -32,7 +32,7 @@
 
         </ol>
         @endif
-          <div class="fs-submit"><input type="checkbox"  name="vehicle" value="ok"><p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. </p><a href="#">Ver aquí</a></div>
+          <div class="fs-submit"><input type="checkbox"  name="terminos" value="terminos"><p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="#">Ver aquí</a></p></div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
           <!-- <a href="/users" class="btn btn-default">Cancelar</a> -->
         @if ($errors->any())

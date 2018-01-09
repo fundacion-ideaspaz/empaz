@@ -590,6 +590,11 @@ tr.children td:first-child {
     display: none;
 }
 
+.terminos p{
+    font-size: 11px;
+    display: inline-block;
+}
+
 ul.pagination li {
     margin: 0 3px 0 3px;
 }
