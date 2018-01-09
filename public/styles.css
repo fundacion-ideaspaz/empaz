@@ -586,6 +586,11 @@ tr.children td:first-child {
     background-image: none!important;
 }
 
+.children td{
+    padding: 0;
+
+}
+
 .fs-form-overview .alert-danger{
     display: none;
 }
