@@ -581,6 +581,12 @@ tr.children td:first-child {
     background-image: none;
 }
 
+.app-container h4{
+    font-weight: 500;
+        margin-left: 25px;
+        margin-bottom: 0;
+}
+
 .migas{
     text-align: right;
     color: #00aabf;
