@@ -508,12 +508,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     display: none;
 }
 
+.r-cuestionario .cs-skin-boxes .cs-options li.cs-selected::after {
+    content: '\2714';
+    color: rgb(245, 243, 243);
+    position: absolute;
+    font-size: 2em;
+    top: 80%;
+    right: 20px;
+    -webkit-transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
+    transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
+}
+
 .r-cuestionario  .cs-skin-boxes .cs-options li{
     box-shadow: none;
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options span{
-        white-space: normal;
+    white-space: normal;
+    position: relative;
+    width: 94%;
 }
 
 .card{
