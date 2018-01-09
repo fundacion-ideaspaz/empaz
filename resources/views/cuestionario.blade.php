@@ -1,6 +1,6 @@
 @extends('layouts.masterAnimationCues') @section('title', 'Crear Pregunta') @section('content')
 
-      <div class="fs-form-wrap" id="fs-form-wrap">
+      <div class="fs-form-wrap r-cuestionario" id="fs-form-wrap">
       <div class="fs-title">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       </div>
@@ -13,7 +13,7 @@
           @endcomponent
         @endforeach
         </ol>
-        <div class="from-group">
+        <div class="fs-submit">
           <input type="submit" class="btn btn-primary pull-left" value="Guardar">
           <input type="submit" class="btn btn-success pull-left" value="Enviar para evaluar">
           <input type="reset" class="btn btn-danger float-right" value="Limpiar respuestas">
