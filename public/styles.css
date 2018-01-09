@@ -46,7 +46,7 @@ font-weight: 400;
 
 header{
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     width: 100%;
 }
 
@@ -91,7 +91,6 @@ nav a{
 
 .navbar {
     padding: 1rem 1rem!important;
-    z-index: 1000;
 }
 
 .btn{
