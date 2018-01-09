@@ -3,6 +3,7 @@
 <h1>Agregar Pregunta</h1>
   @foreach($indicadores as $indicador)
   @if($preguntas->isNotEmpty())
+  <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   <h2>{{$indicador->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">

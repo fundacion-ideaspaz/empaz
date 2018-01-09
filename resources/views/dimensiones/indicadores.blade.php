@@ -3,6 +3,7 @@
 <h1>Agregar Indicadores</h1>
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
+  <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   <h2>{{$dimension->nombre}}</h2>
   <div class="card col-12">
     <div class="card-body">
