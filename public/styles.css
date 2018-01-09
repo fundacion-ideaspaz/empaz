@@ -587,6 +587,10 @@ tr.children td:first-child {
         margin-bottom: 0;
 }
 
+.slider-tick-label{
+    font-size: 12px!important;
+}
+
 .migas{
     text-align: right;
     color: #00aabf;
