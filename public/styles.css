@@ -591,6 +591,10 @@ tr.children td:first-child {
 
 }
 
+.children td .row{
+    padding: 10px;
+}
+
 .fs-form-overview .alert-danger{
     display: none;
 }
