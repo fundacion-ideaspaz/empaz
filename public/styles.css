@@ -513,10 +513,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     color: rgb(245, 243, 243);
     position: absolute;
     font-size: 2em;
-    top: 80%!important;
+    top: 30%!important;
     right: 20px!important;
-    -webkit-transform: none;
-    transform: none;
+    -webkit-transform: none!important;
+    transform: none!important;
 }
 
 .r-cuestionario  .cs-skin-boxes .cs-options li{
