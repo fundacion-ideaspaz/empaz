@@ -473,6 +473,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     font-size: 0.7em;
 }
 
+.r-cuestionario .cs-select > span::after {
+    content: '\25BE';
+    right: 0em;
+}
+
+ .r-cuestionario div.cs-select.cs-skin-boxes{
+    padding-right: 30px;
+ }
+
+  .r-cuestionario .cs-skin-boxes > span {
+    font-size: 0.6em;
+    font-weight: 400;
+}
+
 .card{
     padding: 25px 25px;
     border: none!important;
