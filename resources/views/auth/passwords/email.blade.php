@@ -1,7 +1,7 @@
 @extends('layouts.master') @section('title', 'Recuperar contraseña')
 
 @section('content')
-<div class="container">
+<div class="container recuperar">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">

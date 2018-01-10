@@ -44,6 +44,11 @@ font-size: 1em;
 font-weight: 400; 
 }
 
+.recuperar{
+    background: #f2f2f2;
+    padding: 30px;
+}
+
 header{
     position: fixed;
     z-index: 100;
