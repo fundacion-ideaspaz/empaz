@@ -23,7 +23,7 @@
         }
     </style>
 
-    <table class="wrapper" width="100%" cellpadding="0" cellspacing="0">
+    <table class="wrapper" width="650" align="center" cellpadding="0" cellspacing="0">
     <tr>
     <td style="background-color: #00aabf; padding: 15px; text-align: center;">
         <img src="http://empazweb.org/img/logo-b.png">
