@@ -14,56 +14,55 @@ use App\RespuestaCuestionario;
 use App\Enunciado;
 use Auth;
 
-class DashboardController extends Controller
-{
-    public function index()
-    {
+class DashboardController extends Controller {
+
+    public function index() {
         $cuestionarios_resueltos = CuestionarioResult::paginate(20);
         return view('dashboard.index')->with([
-            'cuestionarios_resueltos' => $cuestionarios_resueltos,
+                    'cuestionarios_resueltos' => $cuestionarios_resueltos,
         ]);
     }
 
-    public function indexCuest($cuest_id)
-    {
+    public function indexCuest($cuest_id) {
         $cuestionarios_resueltos = CuestionarioResult
-            ::where('cuestionario_id', '=', $cuest_id)->paginate(20);
+                ::where('cuestionario_id', '=', $cuest_id)->paginate(20);
         return view('dashboard.index')->with([
-            'cuestionarios_resueltos' => $cuestionarios_resueltos,
+                    'cuestionarios_resueltos' => $cuestionarios_resueltos,
         ]);
     }
 
-    public function view($cuest_respuesta_id)
-    {
+    public function view($cuest_respuesta_id) {
         $cuestRes = CuestionarioResult::find($cuest_respuesta_id);
         $respuestas = RespuestaCuestionario
-            ::where('cuestionario_result_id', '=', $cuest_respuesta_id)->get();
+                ::where('cuestionario_result_id', '=', $cuest_respuesta_id)->get();
         $cuestionario = Cuestionario::find($cuestRes->cuestionario_id);
         return view('dashboard.view')->with([
-            'cuestionario' => $cuestionario,
-            'respuestas' => $respuestas,
+                    'cuestionario' => $cuestionario,
+                    'respuestas' => $respuestas,
         ]);
     }
 
-    public function resultadoCuestionario($cuest_id)
-    {
-        $empresa = ProfileEmpresa::where('user_id', '=', Auth::user()->id)->first();
+    public function resultadoCuestionario($cuest_id) {
         $cuestResult = CuestionarioResult::find($cuest_id);
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
-            ::where("cuestionario_id", "=", $cuestionario_id)
-            ->where("cuestionario_result_id", "=", $cuest_id)
-            ->get();
+                ::where("cuestionario_id", "=", $cuestionario_id)
+                ->where("cuestionario_result_id", "=", $cuest_id)
+                ->get();
         $preguntasIds = $preguntasCuest->pluck("pregunta_id");
         $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
         $indicadoresCuest = IndicadoresDimensiones
-            ::where("cuestionario_id", "=", $cuestionario_id)->get();
+                ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $indicadoresIds = $indicadoresCuest->pluck("indicador_id");
         $dimensionesIds = $indicadoresCuest->pluck("dimension_id");
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
+
+        $empresa = ProfileEmpresa::where('user_id', '=', $cuestResult->user_id)->first();
+
+
         $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
         $dimensionesCuest = DimensionCuestionario
-            ::where("cuestionario_id", "=", $cuestionario_id)->get();
+                ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $rIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
         $enunciados = array_fill(0, $dimensiones->count(), 0);
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
@@ -101,25 +100,21 @@ class DashboardController extends Controller
             }
 
             $enunciados[$i] = Enunciado::where("dimension_id", "=", $dimension->id)->where("nivel_importancia", "=", $nivel)->first();
-            //bajo 0-15% - bajo
-            //medio bajo 16-30% - medio
-            //medio 31-50% - alto
-            //medio alto 51-85% - Muy alto
-            //alto 86-100% - Muy alto
+    
             $i++;
-            // get the value of a dimension from 1% to 100%
+            
         }
 
         return view("reportes.index")->with([
-            'empresa' => $empresa,
-            'rImportancia' => $arrayPorcentajeDimension,
-            'rIndicadores' => $rIndicadores,
-            'rDimensiones' => $rDimensiones,
-            'rCuestionario' => $rCuestionario,
-            'preguntas' => $preguntas,
-            'indicadores' => $indicadores,
-            'dimensiones' => $dimensiones,
-            'eDimensiones' => $enunciados,
+                    'empresa' => $empresa,
+                    'rImportancia' => $arrayPorcentajeDimension,
+                    'rIndicadores' => $rIndicadores,
+                    'rDimensiones' => $rDimensiones,
+                    'rCuestionario' => $rCuestionario,
+                    'preguntas' => $preguntas,
+                    'indicadores' => $indicadores,
+                    'dimensiones' => $dimensiones,
+                    'eDimensiones' => $enunciados,
         ]);
     }
 
