@@ -33,6 +33,9 @@
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
+                <li class="nav-item">
+       <a class="nav-link" href="/dummypdf.pdf" target="_blank">Acerca de Empaz</a>
+    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual de usuario</a>
                     </li>
