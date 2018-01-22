@@ -50,6 +50,7 @@
           <tr>
             <th>Indicador</th>
             <th>Pregunta</th>
+            <th>¿Requerida?</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -58,6 +59,7 @@
           <tr>
             <td>{{$indicador->nombre}}</td>
             <td>{{$pregunta->nombre}}</td>
+            <td>{{$pregunta->required == 1 ? 'True' : 'False'}}</td>
             <td>
               <form action="/indicadores/{{$indicador->id}}/preguntas/{{$pregunta->id}}/delete" method="POST">
                 {{ csrf_field() }}
