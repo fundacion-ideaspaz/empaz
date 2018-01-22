@@ -75,7 +75,7 @@
     <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/indicadores">
       Atrás
     </a>
-    <a class="btn btn-primary pull-right" href="/cuestionarios/">
+    <a class="btn btn-primary pull-right" href="/cuestionarios/{{$cuestionario->id}}/preguntas/validate">
       Finalizar
     </a>
   </div>

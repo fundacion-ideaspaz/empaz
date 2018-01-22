@@ -68,6 +68,12 @@ class WizardController extends Controller
 
     public function preguntas($cuest_id)
     {
+        $indicadoresDimensiones = IndicadoresDimensiones::where('cuestionario_id', '=', $cuest_id)->first();
+        if(!$indicadoresDimensiones){
+            return redirect('/cuestionarios/'.$cuest_id.'/indicadores')->withErrors([
+                'error.blank' => 'Debes agregar al menos un indicador'
+            ]);
+        }
         $cuestionario = Cuestionario::find($cuest_id);
         $indicadoresIds = IndicadoresDimensiones
         ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
@@ -82,5 +88,16 @@ class WizardController extends Controller
             "cuestionario" => $cuestionario,
             "preguntas" => $preguntas
         ]);
+    }
+
+    public function validatePreguntas($cuest_id){
+        $indicadoresPreguntas = IndicadoresPreguntas::where('cuestionario_id', '=', $cuest_id)->first();
+        if(!$indicadoresPreguntas){
+            return redirect('/cuestionarios/'.$cuest_id.'/preguntas')->withErrors([
+                'error.blank' => 'Debes agregar al menos una pregunta'
+            ]);
+        }else{
+            return redirect('/cuestionarios');
+        }
     }
 }

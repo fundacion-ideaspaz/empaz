@@ -133,6 +133,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/cuestionarios/{cuest_id}/indicadores', 'WizardController@indicadores');
         Route::post('/cuestionarios/{id}/indicadores/{indicador_id}', 'DimensionesController@storeIndicadores');
         Route::get('/cuestionarios/{cuest_id}/preguntas/', 'WizardController@preguntas');
+        Route::get('/cuestionarios/{cuest_id}/preguntas/validate', 'WizardController@validatePreguntas');
         Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
     });
 });
