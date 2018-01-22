@@ -9,16 +9,16 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$cuestionario->nombre}}" readonly>
+                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
+                    <textarea name="descripcion" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="number" class="form-control" name="version" value="{{ old('version') }}" value="{{$cuestionario->version}}" readonly>
+                    <input type="number" class="form-control" name="version" value="{{$cuestionario->version}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
