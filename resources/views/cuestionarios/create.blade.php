@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="number" class="form-control" name="version" value="{{ old('version') }}" value="1" readonly>
+                    <input type="number" class="form-control" name="version" value="1" readonly>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
