@@ -18,7 +18,7 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$dimension->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{$dimension->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -31,11 +31,11 @@
                     <small id="passwordHelp" class="form-text text-muted">
                         No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
                     </small>
-                    <img src="{{asset(" storage/ ".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
+                    <img src="{{asset('storage/'.$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control">
+                    <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control" @if(!$canEditEstado) disabled="disabled" @endif>
                         <option value="activo" @if($dimension->estado === "activo") selected @endif>Activo</option>
                         <option value="inactivo" @if($dimension->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>

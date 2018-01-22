@@ -26,9 +26,17 @@
             </td> -->
             <td>{{ucfirst($dimension->estado)}}</td>
             <td width="25%">
-              <a class="btn btn-sm btn-primary" href="/dimensiones/{{$dimension->id}}/edit" data-toggle="tooltip" data-placement="bottom" title="Editar><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-danger" href="/dimensiones/{{$dimension->id}}/delete" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" title="{{$dimension->descripcion}}"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+              <a class="btn btn-sm btn-primary" href="/dimensiones/{{$dimension->id}}/edit" data-toggle="tooltip" data-placement="bottom"
+                title="Editar">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-sm btn-danger" href="/dimensiones/{{$dimension->id}}/delete" data-toggle="tooltip" data-placement="bottom"
+                title="Eliminar">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" title="{{$dimension->descripcion}}">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              </a>
             </td>
           </tr>
           @endforeach

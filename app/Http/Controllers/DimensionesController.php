@@ -67,7 +67,18 @@ class DimensionesController extends Controller
     {
         $dimension = Dimension::find($id);
         $enunciados = Enunciado::where("dimension_id", "=", $dimension->id)->get();
-        return view("dimensiones.edit")->with(["dimension" => $dimension, "enunciados" => $enunciados]);
+        $dimensionCuestionario = DimensionCuestionario
+            ::where('dimension_id', '=', $dimension->id)
+            ->first();
+        $canEditEstado = true;
+        if ($dimensionCuestionario) {
+            $canEditEstado = false;
+        }
+        return view("dimensiones.edit")->with([
+            "dimension" => $dimension,
+            "enunciados" => $enunciados,
+            "canEditEstado" => $canEditEstado,
+        ]);
     }
 
     public function update($id, Request $request)
