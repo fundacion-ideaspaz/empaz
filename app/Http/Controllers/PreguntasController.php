@@ -62,8 +62,16 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
+        $indicadoresPreguntas = IndicadoresPreguntas
+            ::where('pregunta_id', '=', $pregunta->id)
+            ->first();
+        $canEditEstado = true;
+        if ($indicadoresPreguntas) {
+            $canEditEstado = false;
+        }
         return view("questions.edit")->with([
-            "pregunta" => $pregunta
+            "pregunta" => $pregunta,
+            "canEditEstado" => $canEditEstado,
         ]);
     }
 

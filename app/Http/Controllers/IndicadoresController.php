@@ -48,8 +48,16 @@ class IndicadoresController extends Controller
     public function edit($id)
     {
         $indicador = Indicador::find($id);
+        $indicadorDimension = IndicadoresDimensiones
+            ::where('indicador_id', '=', $indicador->id)
+            ->first();
+        $canEditEstado = true;
+        if ($indicadorDimension) {
+            $canEditEstado = false;
+        }
         return view("indicadores.edit")->with([
-            "indicador" => $indicador
+            "indicador" => $indicador,
+            "canEditEstado" => $canEditEstado,
         ]);
     }
 
