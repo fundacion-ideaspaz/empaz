@@ -157,7 +157,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-2 resultado-g">
                         {{$dimension}}%
                     </div>
                     <div class="col-md-4">
