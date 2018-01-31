@@ -103,6 +103,7 @@
             }
     }).render();
     });</script>
+<div class="content-blanco">
 <h1>Información Basica</h1>
 <div class="row">
 
@@ -128,6 +129,8 @@
         <div id="chart-container">FusionCharts will render here</div>
     </div>
 </div>
+</div>
+<div class="content-blanco">
 <h1>Resultados generales</h1>
 <div class="row">
     <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
@@ -137,6 +140,8 @@
         lorem
     </div>
 </div>
+</div>
+<div class="content-blanco">
 <div class="row">
     <div class="card col-12">
         <div class="card-body">
@@ -144,7 +149,9 @@
         </div>
     </div>
 </div>
+</div>
 
+<div class="content-blanco">
 <h1>Reporte de Dimensiones</h1>
 <div id="accordion" role="tablist">
     @foreach($rDimensiones as $i=>$dimension)
@@ -172,6 +179,7 @@
         </div>
     </div>
     @endforeach
+</div>
 </div>
 
 
