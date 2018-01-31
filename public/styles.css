@@ -752,9 +752,21 @@ body.tablero{
     margin-bottom: 20px;
 }
 
-.content-blanco.no-margen{
-    margin-left: 0;
-    margin-right: 0;
+.content-blanco.no-margen .row{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.content-blanco.no-margen .col-md-10{
+    background: #f2f2f2;
+    padding: 15px;
+}
+
+.content-blanco .fa-address-card{
+    width: 100%;
+    font-size: 100px;
+    text-align: right;
+    color: #00aabf;
 }
 
 .amarillo{
