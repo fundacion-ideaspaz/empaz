@@ -15,7 +15,7 @@
         </div>
         @endif
         {{ csrf_field() }}
-        <input type="hidden" name="role" value="{{ old('role') }}" id="role" value="{{$role}}">
+        <input type="hidden" name="role" id="role" value="{{$role}}">
         <div class="form-group">
           <label for="nombre" >Nombre</label>
           <input type="text"  id="nombre" name="nombre" value="{{ old('nombre') }}" class="form-control" required>
