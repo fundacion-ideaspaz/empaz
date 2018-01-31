@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Eliminar Pregunta') @section('content')
+@extends('layouts.masterTablero') @section('title', 'Eliminar Pregunta') @section('content')
 <script type="text/javascript">
 
 
