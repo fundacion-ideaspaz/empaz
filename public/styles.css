@@ -749,6 +749,7 @@ body.tablero{
 .content-blanco{
     background: #fff;
     padding:20px;
+    margin-bottom: 20px;
 }
 
 @media all and (max-width: 980px) { 
