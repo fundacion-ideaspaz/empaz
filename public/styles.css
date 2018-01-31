@@ -752,6 +752,15 @@ body.tablero{
     margin-bottom: 20px;
 }
 
+.content-blanco.no-margen{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.amarillo{
+        background: #ffec0b!important;
+}
+
 @media all and (max-width: 980px) { 
     header .bg-light{
     background-color: #00aabf!important;

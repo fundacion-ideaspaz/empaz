@@ -130,7 +130,7 @@
     </div>
 </div>
 </div>
-<div class="content-blanco">
+<div class="content-blanco no-margen">
 <h1>Resultados generales</h1>
 <div class="row">
     <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
@@ -140,8 +140,6 @@
         lorem
     </div>
 </div>
-</div>
-<div class="content-blanco">
 <div class="row">
     <div class="card col-12">
         <div class="card-body">
@@ -186,23 +184,18 @@
 <script type="text/javascript">
     var content = $('.resultado-g').attr("data-sema");
     if (content >= 86 && content <= 100){
-    alert("verde");
     $('.resultado-g').addClass('verde');
     }
     else if (content >= 57 && content <= 85){
-    alert("otro verde");
     $('.resultado-g').addClass('otro-verde');
     }
     else if (content >= 31 && content <= 60){
-    alert("amarillo");
     $('.resultado-g').addClass('amarillo');
     }
     else if (content >= 11 && content <= 30){
-    alert("naranja");
     $('.resultado-g').addClass('naranja');
     }
     else{
-    alert("rojo");
     $('.resultado-g').addClass('rojo');
     };
     console.log(content);
