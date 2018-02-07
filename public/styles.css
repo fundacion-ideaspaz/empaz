@@ -783,7 +783,7 @@ body.tablero{
 }
 
 .container{
-    *transform: translateX(-25%);
+    transform: translateX(-25%);
 }
 
 @media all and (max-width: 980px) { 
