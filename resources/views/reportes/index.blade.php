@@ -157,7 +157,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
-                    <div class="col-md-2 resultado-d" data-sema="{{$dimension}}">
+                    <div class="col-md-2 resultado-d" data-dime="{{$dimension}}">
                         {{$dimension}}%
                     </div>
                     <div class="col-md-4">
@@ -199,7 +199,7 @@
     $('.resultado-g').addClass('rojo');
     };
 
-    var contentD = $('.resultado-d').attr("data-sema");
+    var contentD = $('.resultado-d').attr("data-dime");
     if (contentD >= 86 && contentD <= 100){
     $('.resultado-d').addClass('verde');
     }
