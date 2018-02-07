@@ -782,10 +782,6 @@ body.tablero{
     color: #f00;
 }
 
-.container{
-    transform: translateX(-25%);
-}
-
 @media all and (max-width: 980px) { 
     header .bg-light{
     background-color: #00aabf!important;
