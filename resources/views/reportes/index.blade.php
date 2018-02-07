@@ -157,7 +157,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
-                    <div class="col-md-2 resultado-g" data-sema="{{$dimension}}">
+                    <div class="col-md-2 resultado-d" data-sema="{{$dimension}}">
                         {{$dimension}}%
                     </div>
                     <div class="col-md-4">
@@ -170,9 +170,9 @@
             </a>
         </div>
 
-        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                <p>---</p>
+                
             </div>
         </div>
     </div>
@@ -198,6 +198,25 @@
     else{
     $('.resultado-g').addClass('rojo');
     };
+
+    var content = $('.resultado-d').attr("data-sema");
+    if (content >= 86 && content <= 100){
+    $('.resultado-d').addClass('verde');
+    }
+    else if (content >= 57 && content <= 85){
+    $('.resultado-d').addClass('otro-verde');
+    }
+    else if (content >= 31 && content <= 60){
+    $('.resultado-d').addClass('amarillo');
+    }
+    else if (content >= 11 && content <= 30){
+    $('.resultado-d').addClass('naranja');
+    }
+    else{
+    $('.resultado-d').addClass('rojo');
+    };
+
+
     console.log(content);
 </script>
 
