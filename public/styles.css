@@ -773,6 +773,19 @@ body.tablero{
         background: #ffec0b!important;
 }
 
+.help-block{
+    background: #f9bfbf;
+    padding: 10px;
+    margin: 10px 14px;
+    display: inline-block;
+    border: 1px solid #f00;
+    color: #f00;
+}
+
+.container{
+    *transform: translateX(-25%);
+}
+
 @media all and (max-width: 980px) { 
     header .bg-light{
     background-color: #00aabf!important;
