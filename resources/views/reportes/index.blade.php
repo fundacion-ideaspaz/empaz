@@ -199,17 +199,17 @@
     $('.resultado-g').addClass('rojo');
     };
 
-    var content = $('.resultado-d').attr("data-sema");
-    if (content >= 86 && content <= 100){
+    var contentD = $('.resultado-d').attr("data-sema");
+    if (contentD >= 86 && contentD <= 100){
     $('.resultado-d').addClass('verde');
     }
-    else if (content >= 57 && content <= 85){
+    else if (contentD >= 57 && contentD <= 85){
     $('.resultado-d').addClass('otro-verde');
     }
-    else if (content >= 31 && content <= 60){
+    else if (contentD >= 31 && contentD <= 60){
     $('.resultado-d').addClass('amarillo');
     }
-    else if (content >= 11 && content <= 30){
+    else if (contentD >= 11 && contentD <= 30){
     $('.resultado-d').addClass('naranja');
     }
     else{
