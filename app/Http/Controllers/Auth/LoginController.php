@@ -55,7 +55,7 @@ class LoginController extends Controller
         else
         {
             return view('auth.login')->withErrors([
-                "auth" => "Datos incorrectos. Vuelte a intentarlo."
+                "auth" => "Datos incorrectos. Vuelve a intentarlo."
             ]);
         }
     }
