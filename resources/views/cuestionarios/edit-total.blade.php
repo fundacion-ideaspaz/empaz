@@ -18,13 +18,11 @@
         @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" value="{{$cuestionario->nombre}}" readonly>
+                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">
-                        {{$cuestionario->descripcion}}
-                    </textarea>
+                    <textarea name="descripcion" value="{{ old('descripcion') }}" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
