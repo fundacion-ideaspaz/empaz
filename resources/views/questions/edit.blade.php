@@ -48,8 +48,7 @@
                     <label for="respuesta_{{$opcion->id}}">
                         Respuesta {{ $opcion->number}}
                     </label>
-                    <input type="text" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" value="{{$opcion->descripcion}}"
-                    />
+                    <input type="text" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" value="{{$opcion->descripcion}}"/>
                     @endif
                     @endforeach
                 </div>
