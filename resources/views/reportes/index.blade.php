@@ -172,7 +172,7 @@
 
         <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                
+                {{$indicador}}%
             </div>
         </div>
     </div>
