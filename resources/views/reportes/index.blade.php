@@ -211,6 +211,7 @@
 
 
 <script type="text/javascript">
+
     var content = $('.resultado-g').attr("data-sema");
     if (content >= 86 && content <= 100){
     $('.resultado-g').addClass('verde');
@@ -230,19 +231,19 @@
 
     var contentD = $('.resultado-d').attr("data-dime");
     if (contentD >= 86 && contentD <= 100){
-    $('.resultado-d').addClass('verde');
+    $(this).addClass('verde');
     }
     else if (contentD >= 57 && contentD <= 85){
-    $('.resultado-d').addClass('otro-verde');
+    $(this).addClass('otro-verde');
     }
     else if (contentD >= 31 && contentD <= 60){
-    $('.resultado-d').addClass('amarillo');
+    $(this).addClass('amarillo');
     }
     else if (contentD >= 11 && contentD <= 30){
-    $('.resultado-d').addClass('naranja');
+    $(this).addClass('naranja');
     }
     else{
-    $('.resultado-d').addClass('rojo');
+    $(this).addClass('rojo');
     };
 
     var contentI = $('.resultado-i').attr("data-dime");
