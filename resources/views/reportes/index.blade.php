@@ -180,7 +180,7 @@
 </div>
 
 <div class="content-blanco">
-<h1>Reporte de Dimensiones</h1>
+<h1>Reporte de Indicadores</h1>
 <div id="accordion" role="tablist">
     @foreach($rIndicadores as $i=>$rindicador)
     <div class="card">
