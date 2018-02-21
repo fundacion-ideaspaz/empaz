@@ -179,6 +179,36 @@
 </div>
 </div>
 
+<div class="content-blanco">
+<h1>Reporte de Dimensiones</h1>
+<div id="accordion" role="tablist">
+    @foreach($rIndicadores as $i=>$rindicador)
+    <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+            <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
+                <div class="row">
+                    <div class="col-md-2 resultado-d" data-dime="{{$dimension}}">
+                        {{$indicador}}%
+                    </div>
+                    <div class="col-md-4">
+                        {{ $indicadores[$i]->nombre }}
+                    </div>
+                    <div class="col-md-6">
+                      {{ $indicadores[$i]->descripcion }}
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
+</div>
+
 
 <script type="text/javascript">
     var content = $('.resultado-g').attr("data-sema");
