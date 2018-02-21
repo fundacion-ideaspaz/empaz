@@ -188,7 +188,7 @@
             <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
                     <div class="col-md-2 resultado-d" data-dime="{{$dimension}}">
-                        {{$indicador}}%
+                        {{$rindicador}}%
                     </div>
                     <div class="col-md-4">
                         {{ $indicadores[$i]->nombre }}
