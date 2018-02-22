@@ -103,8 +103,9 @@
             }
     }).render();
     });</script>
+<div id="informeC">   
 <div class="content-blanco">
-<h1>Información Basica</h1>
+<h1>Información Basica</h1><button id="informe">Descargar PDF</button>
 <div class="row">
 
     <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div>
@@ -208,8 +209,8 @@
 </div>
 </div>
 
-
-
+</div> 
+<div id="informeCPDF"></div>
 
 <script type="text/javascript">
 
@@ -286,6 +287,21 @@
 
 
     console.log(contentClassD);
+
+    var doc = new jsPDF();
+    var informeDescarga = {
+        '#informeCPDF': function (element, renderer) {
+            return true;
+        }
+    };
+
+    $('#informe').click( function() {
+        doc.fromHTML($('#informeC').html(), 15, 15, {
+            'width': 170,
+            'elementHandlers': informeDescarga
+        });
+        doc.sace('informe.pdf');
+    });
 </script>
 
 

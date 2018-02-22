@@ -19,6 +19,7 @@
     <script src="/js/fusioncharts.charts.js"></script>
 <script src="/js/fusioncharts.js"></script>
 <script src="/js/fusioncharts.powercharts.js"></script>
+<script src="/js/jspdf.min.js"></script>
 </head>
 
 <body class="tablero">
