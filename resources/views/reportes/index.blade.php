@@ -136,8 +136,10 @@
     <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
         {{$rCuestionario}}%
     </div>
-    <div class="col-md-10">
-        lorem
+    <div class="col-md-10" id="resultados" data-sema="{{$rCuestionario}}">
+        Los aportes a la construcción de paz de su empresa se ubican en el nivel Intermedio 
+(puntaje obtenido: 31-50%)
+La empresa cuenta con políticas o planes en materia de construcción de paz en fase de desarrollo, en proceso de implementación inicial, o a nivel puntual, con acciones incidentales o proyectos piloto. Cualquiera de estas acciones representa un buen inicio hacia la integración de la construcción de paz de manera más integral en las actividades de la empresa. En esta línea, se recomienda revisar en qué medida el compromiso de la empresa con la construcción de paz es formulado a manera explícita desde los altos niveles directivos y de gobierno, y divulgado en todos los áreas de la empresa, para que los trabajadores y contratistas que actúen en nombre de la empresa, estén familiarizados con este compromiso y lo integren en el día a día de su trabajo. Para ampliar y profundizar los aportes de su empresa a la prevención de conflictos y la promoción de la paz y la reconciliación, es importante incluir objetivos y metas, indicadores y mecanismos de control para planear y medir resultados concretos en esta materia, en estrategias y políticas, planes y procesos.
     </div>
 </div>
 <div class="row">
@@ -229,21 +231,39 @@
     $('.resultado-g').addClass('rojo');
     };
 
-    var contentD = $('.resultado-d').attr("data-dime");
-    if (contentD >= 86 && contentD <= 100){
-    $(this).addClass('verde');
+    var contentR = $('#resultados').attr("data-sema");
+    var ventana = document.getElementById("#resultados");
+    if (contentR >= 86 && content <= 100){
+    $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel de <strong>Líder</strong> (puntaje obtenido: 86-100%) Su empresa cuenta con políticas, planes y procedimientos en materia de construcción de paz, que son implementados a diferentes niveles y áreas de operación. Con esto, la empresa muestra que su compromiso con la construcción de paz se traduce de manera concreta en acciones, que pueden servir de buenas prácticas replicables por otras empresas y en otros sectores. Se recomienda que la empresa busque espacios para compartir sus experiencias en construcción de paz con sus pares, y que forje alianzas con otros actores – privados, públicos, sociales – para ampliar el alcance de sus impactos en prevención de conflictos y promoción de paz y reconciliación. Para seguir mejorando la gestión en esta materia, recomendamos que su empresa, en intervalos definidos, evalúa la pertinencia y efectividad de sus acciones, actualizando sus análisis de riesgos e impactos y ajustando los indicadores de resultado, de ser necesario. Asimismo, es importante a manera continua, revisar los sistemas de monitoreo y evaluación existentes y seguir incluyendo lecciones aprendidas en el ciclo de mejora continua de la gestión y la toma de decisiones.");
     }
-    else if (contentD >= 57 && contentD <= 85){
-    $(this).addClass('otro-verde');
+    else if (contentR >= 57 && contentR <= 85){
+    $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel <strong>Avanzado</strong> (puntaje obtenido: 51-85%) Su empresa ha incluido el tema de la construcción de paz en políticas, planes o procedimientos, y logra aportes significativos a la prevención de conflictos y promoción de la paz y reconciliación en su área de influencia. Sin embargo, el compromiso empresarial con la construcción de paz todavía no es de conocimiento generalizado o implementado en todos los niveles de la empresa, por todos los trabajadores y transversal a la operación y la inversión social de la misma. Por esto, además de realizar campañas de sensibilización de empleados y contratistas sobre cómo incorporar el enfoque de construcción de paz en el día a día de la operación, se recomienda evaluar en qué aspectos y en qué niveles de la organización se pueden fortalecer los aportes a la construcción de paz, asegurar que las acciones todas las áreas –comerciales y de responsabilidad social- estén alineadas para este propósito, y formular metas, indicadores y mecanismos de control para medir y dar seguimiento a los resultados logrados.");
     }
-    else if (contentD >= 31 && contentD <= 60){
-    $(this).addClass('amarillo');
+    else if (contentR >= 31 && contentR <= 60){
+    $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel <strong>Intermedio</strong> (puntaje obtenido: 31-50%) La empresa cuenta con políticas o planes en materia de construcción de paz en fase de desarrollo, en proceso de implementación inicial, o a nivel puntual, con acciones incidentales o proyectos piloto. Cualquiera de estas acciones representa un buen inicio hacia la integración de la construcción de paz de manera más integral en las actividades de la empresa. En esta línea, se recomienda revisar en qué medida el compromiso de la empresa con la construcción de paz es formulado a manera explícita desde los altos niveles directivos y de gobierno, y divulgado en todos los áreas de la empresa, para que los trabajadores y contratistas que actúen en nombre de la empresa, estén familiarizados con este compromiso y lo integren en el día a día de su trabajo. Para ampliar y profundizar los aportes de su empresa a la prevención de conflictos y la promoción de la paz y la reconciliación, es importante incluir objetivos y metas, indicadores y mecanismos de control para planear y medir resultados concretos en esta materia, en estrategias y políticas, planes y procesos");
     }
-    else if (contentD >= 11 && contentD <= 30){
-    $(this).addClass('naranja');
+    else if (contentR >= 11 && contentR <= 30){
+    $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel <strong>Básico</strong> (puntaje obtenido: 16-30%) La empresa tiene algún conocimiento de las acciones que puede realizar el sector privado para aportar a la prevención de conflictos, la construcción de paz y la promoción de la reconciliación. En este sentido, al haber diligenciado la medición EmPaz, su empresa ha mostrado su compromiso con la mejora de su gestión en esta materia. Si bien el tema de prevención de conflictos y promoción de la paz aún no se ve reflejado de manera sistemática en sus políticas y prácticas en el momento, se evidencia que su empresa realiza acciones al respecto de manera incidental y esporádica. Si la empresa quiere fortalecer sus aportes a la construcción de paz, debe integrar el enfoque de prevención de conflictos y construcción de paz de manera más sistemática e intencional, en sus políticas y prácticas. Asimismo, es importante que desde los altos niveles directivos se difunda el compromiso explícito de la empresa con la paz y que este compromiso sea incluido en políticas y estrategias, procesos y prácticas, con indicadores de resultado y mecanismos de control para medir resultados. Acciones como la formación y sensibilización pueden ayudar a que gerentes, trabajadores y contratistas integren el enfoque en prevención de conflictos y promoción de la paz en la operación y las intervenciones sociales, en todos niveles y áreas geográficas donde la empresa hace presencia.");
     }
     else{
-    $(this).addClass('rojo');
+    $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel de <strong>Principiante</strong> (puntaje obtenido: 0-10%) Le felicitamos por haber diligenciado la medición EmPaz. Con esto, su empresa demuestra un interés en promover la paz y la reconciliación. Se evidencia que los aportes a este propósito todavía no son muy marcados en este momento. La empresa no cuenta con políticas y prácticas para la prevención de conflictos y construcción de paz, que son implementadas de manera sistemática en todos los niveles de la organización. Para empezar a generar aportes significativos, recomendamos suplir brechas en conocimientos, sensibilización y formación sobre el tema de la paz entre directivas, trabajadores, contratistas y proveedores y promover una cultura de paz organizacional, que se manifieste en actitudes y acciones en el día a día de la operación. Asimismo, se recomienda incluir el enfoque de prevención de conflictividades y promoción de la paz y la reconciliación en políticas y estrategias, y alinear procesos y mecanismos existentes de la empresa con objetivos, indicadores e incentivos que permiten planear, medir y controlar los aportes de su empresa a este importante propósito.");
+    };
+
+    var contentD = $('.resultado-d').attr("data-dime");
+    if (contentD >= 86 && contentD <= 100){
+    $('.resultado-d').addClass('verde');
+    }
+    else if (contentD >= 57 && contentD <= 85){
+    $('.resultado-d').addClass('otro-verde');
+    }
+    else if (contentD >= 31 && contentD <= 60){
+    $('.resultado-d').addClass('amarillo');
+    }
+    else if (contentD >= 11 && contentD <= 30){
+    $('.resultado-d').addClass('naranja');
+    }
+    else{
+    $('.resultado-d').addClass('rojo');
     };
 
     var contentI = $('.resultado-i').attr("data-dime");

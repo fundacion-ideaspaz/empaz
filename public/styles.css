@@ -1,4 +1,4 @@
-body{
+help-blockbody{
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
@@ -773,7 +773,7 @@ body.tablero{
         background: #ffec0b!important;
 }
 
-.help-block{
+.help-block-error{
     background: #f9bfbf;
     padding: 10px;
     margin: 10px 14px;
