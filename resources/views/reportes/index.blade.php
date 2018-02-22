@@ -298,7 +298,7 @@
             'width': 170,
             'elementHandlers': informeDescarga
         });
-        doc.sace('informe.pdf');
+        doc.save('informe.pdf');
     });
 </script>
 
