@@ -186,7 +186,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
-                    <div class="col-md-2 resultado-i" data-dime="{{$dimension}}">
+                    <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
                         {{$rindicador}}%
                     </div>
                     <div class="col-md-4">
@@ -263,7 +263,7 @@
     $('.resultado-d').addClass('rojo');
     };
 
-    var contentI = $('.resultado-i').attr("data-dime");
+    var contentI = $('.resultado-i').attr("data-indi");
     if (contentI >= 86 && contentI <= 100){
     $('.resultado-i').addClass('verde');
     }
