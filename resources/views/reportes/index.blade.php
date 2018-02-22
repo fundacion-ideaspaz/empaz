@@ -246,41 +246,41 @@
     $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel de <strong>Principiante</strong> (puntaje obtenido: 0-10%) Le felicitamos por haber diligenciado la medición EmPaz. Con esto, su empresa demuestra un interés en promover la paz y la reconciliación. Se evidencia que los aportes a este propósito todavía no son muy marcados en este momento. La empresa no cuenta con políticas y prácticas para la prevención de conflictos y construcción de paz, que son implementadas de manera sistemática en todos los niveles de la organización. Para empezar a generar aportes significativos, recomendamos suplir brechas en conocimientos, sensibilización y formación sobre el tema de la paz entre directivas, trabajadores, contratistas y proveedores y promover una cultura de paz organizacional, que se manifieste en actitudes y acciones en el día a día de la operación. Asimismo, se recomienda incluir el enfoque de prevención de conflictividades y promoción de la paz y la reconciliación en políticas y estrategias, y alinear procesos y mecanismos existentes de la empresa con objetivos, indicadores e incentivos que permiten planear, medir y controlar los aportes de su empresa a este importante propósito.");
     };
 
-    var contentD = $('.resultado-d').attr("data-dime");
-    var contentClassD = ".resultado-d" + "-" + contentD;
-    // var contentDi = $('.resultado-d').attr("data-dime");
-    if (contentD >= 86 && contentD <= 100){
-    $('.resultado-d').addClass('verde');
-    }
-    else if (contentD >= 57 && contentD <= 85){
-    $('.resultado-d').addClass('otro-verde');
-    }
-    else if (contentD >= 31 && contentD <= 60){
-    $('.resultado-d').addClass('amarillo');
-    }
-    else if (contentD >= 11 && contentD <= 30){
-    $('.resultado-d').addClass('naranja');
-    }
-    else{
-    $('.resultado-d').addClass('rojo');
-    };
+    // var contentD = $('.resultado-d').attr("data-dime");
+    // var contentClassD = ".resultado-d" + "-" + contentD;
+    // // var contentDi = $('.resultado-d').attr("data-dime");
+    // if (contentD >= 86 && contentD <= 100){
+    // $('.resultado-d').addClass('verde');
+    // }
+    // else if (contentD >= 57 && contentD <= 85){
+    // $('.resultado-d').addClass('otro-verde');
+    // }
+    // else if (contentD >= 31 && contentD <= 60){
+    // $('.resultado-d').addClass('amarillo');
+    // }
+    // else if (contentD >= 11 && contentD <= 30){
+    // $('.resultado-d').addClass('naranja');
+    // }
+    // else{
+    // $('.resultado-d').addClass('rojo');
+    // };
 
-    var contentI = $('.resultado-i').attr("data-indi");
-    if (contentI >= 86 && contentI <= 100){
-    $('.resultado-i').addClass('verde');
-    }
-    else if (contentI >= 57 && contentI <= 85){
-    $('.resultado-i').addClass('otro-verde');
-    }
-    else if (contentI >= 31 && contentI <= 60){
-    $('.resultado-i').addClass('amarillo');
-    }
-    else if (contentI >= 11 && contentI <= 30){
-    $('.resultado-i').addClass('naranja');
-    }
-    else{
-    $('.resultado-i').addClass('rojo');
-    };
+    // var contentI = $('.resultado-i').attr("data-indi");
+    // if (contentI >= 86 && contentI <= 100){
+    // $('.resultado-i').addClass('verde');
+    // }
+    // else if (contentI >= 57 && contentI <= 85){
+    // $('.resultado-i').addClass('otro-verde');
+    // }
+    // else if (contentI >= 31 && contentI <= 60){
+    // $('.resultado-i').addClass('amarillo');
+    // }
+    // else if (contentI >= 11 && contentI <= 30){
+    // $('.resultado-i').addClass('naranja');
+    // }
+    // else{
+    // $('.resultado-i').addClass('rojo');
+    // };
 
 
     console.log(contentClassD);
