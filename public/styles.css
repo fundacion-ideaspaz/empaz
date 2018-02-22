@@ -750,6 +750,7 @@ body.tablero{
     background: #fff;
     padding:20px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .content-blanco.no-margen .row{
@@ -767,6 +768,12 @@ body.tablero{
     font-size: 100px;
     text-align: right;
     color: #00aabf;
+}
+
+#informe{
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .amarillo{
