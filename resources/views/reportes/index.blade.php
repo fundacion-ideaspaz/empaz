@@ -136,7 +136,7 @@
     <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
         {{$rCuestionario}}%
     </div>
-    <div class="col-md-10" id="resultados" data-sema="{{$rCuestionario}}">
+    <div class="col-md-10" id="resultados" data-texto="{{$rCuestionario}}">
     </div>
 </div>
 <div class="row">
@@ -228,7 +228,7 @@
     $('.resultado-g').addClass('rojo');
     };
 
-    var contentR = $('#resultados').attr("data-sema");
+    var contentR = $('#resultados').attr("data-texto");
     var ventana = document.getElementById("#resultados");
     if (contentR >= 86 && contentR <= 100){
     $(ventana).append("Los aportes a la construcción de paz de su empresa se ubican en el nivel de <strong>Líder</strong> (puntaje obtenido: 86-100%) Su empresa cuenta con políticas, planes y procedimientos en materia de construcción de paz, que son implementados a diferentes niveles y áreas de operación. Con esto, la empresa muestra que su compromiso con la construcción de paz se traduce de manera concreta en acciones, que pueden servir de buenas prácticas replicables por otras empresas y en otros sectores. Se recomienda que la empresa busque espacios para compartir sus experiencias en construcción de paz con sus pares, y que forje alianzas con otros actores – privados, públicos, sociales – para ampliar el alcance de sus impactos en prevención de conflictos y promoción de paz y reconciliación. Para seguir mejorando la gestión en esta materia, recomendamos que su empresa, en intervalos definidos, evalúa la pertinencia y efectividad de sus acciones, actualizando sus análisis de riesgos e impactos y ajustando los indicadores de resultado, de ser necesario. Asimismo, es importante a manera continua, revisar los sistemas de monitoreo y evaluación existentes y seguir incluyendo lecciones aprendidas en el ciclo de mejora continua de la gestión y la toma de decisiones.");
