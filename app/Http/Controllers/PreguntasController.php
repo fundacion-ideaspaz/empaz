@@ -80,6 +80,7 @@ class PreguntasController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
+            "respuestas" => "required|array",
             "estado" => "required"
         ];
         $messages = array(
