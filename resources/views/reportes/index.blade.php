@@ -137,9 +137,6 @@
         {{$rCuestionario}}%
     </div>
     <div class="col-md-10" id="resultados" data-sema="{{$rCuestionario}}">
-        Los aportes a la construcción de paz de su empresa se ubican en el nivel Intermedio 
-(puntaje obtenido: 31-50%)
-La empresa cuenta con políticas o planes en materia de construcción de paz en fase de desarrollo, en proceso de implementación inicial, o a nivel puntual, con acciones incidentales o proyectos piloto. Cualquiera de estas acciones representa un buen inicio hacia la integración de la construcción de paz de manera más integral en las actividades de la empresa. En esta línea, se recomienda revisar en qué medida el compromiso de la empresa con la construcción de paz es formulado a manera explícita desde los altos niveles directivos y de gobierno, y divulgado en todos los áreas de la empresa, para que los trabajadores y contratistas que actúen en nombre de la empresa, estén familiarizados con este compromiso y lo integren en el día a día de su trabajo. Para ampliar y profundizar los aportes de su empresa a la prevención de conflictos y la promoción de la paz y la reconciliación, es importante incluir objetivos y metas, indicadores y mecanismos de control para planear y medir resultados concretos en esta materia, en estrategias y políticas, planes y procesos.
     </div>
 </div>
 <div class="row">
