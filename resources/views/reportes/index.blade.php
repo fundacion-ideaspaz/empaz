@@ -154,7 +154,7 @@
     @foreach($rDimensiones as $i=>$dimension)
     <div class="card">
         <div class="card-header" role="tab" id="headingOne">
-            <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
+            <span data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
                     <div class="col-md-2 resultado-d resultado-d-{{$dimension}}" data-dime="{{$dimension}}">
                         {{$dimension}}%
@@ -166,7 +166,7 @@
                       {{ $dimensiones[$i]->descripcion }}
                     </div>
                 </div>
-            </a>
+            </span>
         </div>
 
         <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
@@ -184,7 +184,7 @@
     @foreach($rIndicadores as $i=>$rindicador)
     <div class="card">
         <div class="card-header" role="tab" id="headingOne">
-            <a data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
+            <span data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
                     <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
                         {{$rindicador}}%
@@ -196,7 +196,7 @@
                       {{ $indicadores[$i]->descripcion }}
                     </div>
                 </div>
-            </a>
+            </span>
         </div>
 
         <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
