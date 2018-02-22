@@ -213,7 +213,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
                 <div class="row">
-                    <div class="col-md-2 resultado-d resultado-d-100 verde" data-dime="100">
+                    <div class="col-md-2 resultado-d resultado-d-100" data-dime="100">
                         100%
                     </div>
                     <div class="col-md-4">
@@ -235,7 +235,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
                 <div class="row">
-                    <div class="col-md-2 resultado-d resultado-d-60 verde" data-dime="60">
+                    <div class="col-md-2 resultado-d resultado-d-60" data-dime="60">
                         60%
                     </div>
                     <div class="col-md-4">
@@ -257,7 +257,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
                 <div class="row">
-                    <div class="col-md-2 resultado-d resultado-d-100 verde" data-dime="100">
+                    <div class="col-md-2 resultado-d resultado-d-100" data-dime="100">
                         100%
                     </div>
                     <div class="col-md-4">
@@ -279,7 +279,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <a data-toggle="collapse" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
                 <div class="row">
-                    <div class="col-md-2 resultado-d resultado-d-60 verde" data-dime="60">
+                    <div class="col-md-2 resultado-d resultado-d-60" data-dime="60">
                         60%
                     </div>
                     <div class="col-md-4">
