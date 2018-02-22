@@ -247,7 +247,7 @@
     };
 
     var contentD = $('.resultado-d').attr("data-dime");
-    var contentClassD = ".resultado-d"-contentD;
+    var contentClassD = contentD;
     // var contentDi = $('.resultado-d').attr("data-dime");
     if (contentD >= 86 && contentD <= 100){
     $('.resultado-d').addClass('verde');
