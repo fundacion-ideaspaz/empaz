@@ -36,7 +36,11 @@ class PreguntasController extends Controller
             "descripcion" => "required",
             "tipo_respuesta" => "required",
             "respuestas" => "required|array",
-            "estado" => "required"
+            "estado" => "required",
+            "respuesta_1"  => "required",
+            "respuesta_2"  => "required",
+            "respuesta_3"  => "required",
+            "respuesta_4"  => "required"
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
@@ -81,7 +85,11 @@ class PreguntasController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "respuestas" => "required|array",
-            "estado" => "required"
+            "estado" => "required",
+            "respuesta_1"  => "required",
+            "respuesta_2"  => "required",
+            "respuesta_3"  => "required",
+            "respuesta_4"  => "required"
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
