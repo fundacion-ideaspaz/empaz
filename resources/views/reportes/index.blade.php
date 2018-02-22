@@ -286,8 +286,6 @@
     // };
 
 
-    console.log(contentClassD);
-
     var doc = new jsPDF();
     var informeDescarga = {
         '#informeCPDF': function (element, renderer) {
