@@ -45,22 +45,22 @@
             </div>
             <div class="form-group" id="respuesta_1">
                 <label for="respuesta_1">Respuesta 1</label>
-                <input type="text" name="respuestas[]" class="form-control">
+                <input type="text" name="respuestas[]" class="form-control" required>
             </div>
 
             <div class="form-group" id="respuesta_2">
                 <label for="respuesta_2">Respuesta 2</label>
-                <input type="text" name="respuestas[]" class="form-control">
+                <input type="text" name="respuestas[]" class="form-control" required>
             </div>
 
             <div class="form-group" id="respuesta_3">
                 <label for="respuesta_3">Respuesta 3</label>
-                <input type="text" name="respuestas[]" class="form-control">
+                <input type="text" name="respuestas[]" class="form-control" required>
             </div>
 
             <div class="form-group" id="respuesta_4">
                 <label for="respuesta_4">Respuesta 4</label>
-                <input type="text" name="respuestas[]" class="form-control">
+                <input type="text" name="respuestas[]" class="form-control" required>
             </div>
 
     </div>
