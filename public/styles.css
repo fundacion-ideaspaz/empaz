@@ -773,6 +773,18 @@ body.tablero{
         background: #ffec0b!important;
 }
 
+.otro-verde{
+        background: #CDDC39!important;
+}
+
+.naranja{
+    background: #FF9800!important;
+}
+
+.verde{
+        background: #8BC34A!important;
+}
+
 .help-block-error{
     background: #f9bfbf;
     padding: 10px;
