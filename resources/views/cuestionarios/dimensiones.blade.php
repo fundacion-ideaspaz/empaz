@@ -23,7 +23,7 @@
           <tr>
             <th>Nombre</th>
             <th>Versión</th>
-            <th width="25%">Acciones</th>
+            <th width="10%">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,8 @@
               <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
             </div></td>
-           <td><button class="btn btn-danger">Eliminar</button></td> 
+           <td><button class="btn btn-danger borrar" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></button>  
+           </td> 
         </tr>        
         </form>
         @endforeach
