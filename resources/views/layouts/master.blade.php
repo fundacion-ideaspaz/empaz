@@ -114,9 +114,10 @@
 <script src="/js/jquery.multi-select.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
+    $('tbody').sortable();
   })
-  $('tbody').sortable();
+  
 </script>
 
 </script>
