@@ -31,9 +31,8 @@
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
   
-  <h4>{{$dimension->nombre}}</h4>
-  <div class="card col-12">
-    <div class="card-body">
+  <h4>Asociar indicadores a dimensiones</h4>
+  <p>{{$dimension->nombre}}</p>
         <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -80,8 +79,6 @@
         </div> -->
       
       
-    </div>
-  </div>
   @endif
   @endforeach
   <div class="form-group">
