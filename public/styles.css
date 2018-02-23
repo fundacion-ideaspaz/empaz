@@ -672,10 +672,15 @@ tr.children td:first-child {
     background-image: none;
 }
 
-.app-container h4{
+.app-container h4 {
     font-weight: 500;
-        margin-left: 25px;
-        margin-bottom: 0;
+    margin-left: 25px;
+    margin-bottom: 0;
+    font-size: 22px;
+    padding: 0;
+    padding-top: 15px;
+    margin: 15px 0;
+    border-top: 1px solid #eaecef;
 }
 
 .slider-tick-label{
