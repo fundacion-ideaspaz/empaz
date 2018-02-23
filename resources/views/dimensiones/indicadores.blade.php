@@ -3,8 +3,6 @@
 <h1>Agregar Indicadores</h1>
 <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
 <h4>Indicadores asociados</h4>
-  <div class="card col-12">
-    <div class="card-body">
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -29,8 +27,6 @@
           @endforeach @endforeach
         </tbody>
       </table>
-    </div>
-  </div>
 
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
