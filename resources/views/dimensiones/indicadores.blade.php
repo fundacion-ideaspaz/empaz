@@ -2,7 +2,7 @@
 <div class="indicadores-form">
 <h1>Agregar Indicadores</h1>
 <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
-<h1>Indicadores asociados</h1>
+<h4>Indicadores asociados</h4>
   <div class="card col-12">
     <div class="card-body">
       <table class="table table-bordered table-hover table-striped">
