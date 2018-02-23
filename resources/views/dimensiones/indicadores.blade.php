@@ -2,6 +2,36 @@
 <div class="indicadores-form">
 <h1>Agregar Indicadores</h1>
 <div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
+<h1>Indicadores asociados</h1>
+  <div class="card col-12">
+    <div class="card-body">
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Dimensión</th>
+            <th>Indicador</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach($dimensiones as $dimension) @foreach($dimension->indicadores($cuestionario->id) as $indicador)
+          <tr>
+            <td>{{$dimension->nombre}}</td>
+            <td>{{$indicador->nombre}}</td>
+            <td>
+              <form action="/dimensiones/{{$dimension->id}}/indicadores/{{$indicador->id}}/delete" method="POST">
+                {{ csrf_field() }}
+                <input type="hidden" name="cuestionario_id" value="{{$cuestionario->id}}">
+                <input type="submit" value="Eliminar" class="btn btn-danger">
+              </form>
+            </td>
+          </tr>
+          @endforeach @endforeach
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   @foreach($dimensiones as $dimension)
   @if($indicadores->isNotEmpty())
   
@@ -58,35 +88,6 @@
   </div>
   @endif
   @endforeach
-  <h1>Indicadores asociados</h1>
-  <div class="card col-12">
-    <div class="card-body">
-      <table class="table table-bordered table-hover table-striped">
-        <thead>
-          <tr>
-            <th>Dimensión</th>
-            <th>Indicador</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($dimensiones as $dimension) @foreach($dimension->indicadores($cuestionario->id) as $indicador)
-          <tr>
-            <td>{{$dimension->nombre}}</td>
-            <td>{{$indicador->nombre}}</td>
-            <td>
-              <form action="/dimensiones/{{$dimension->id}}/indicadores/{{$indicador->id}}/delete" method="POST">
-                {{ csrf_field() }}
-                <input type="hidden" name="cuestionario_id" value="{{$cuestionario->id}}">
-                <input type="submit" value="Eliminar" class="btn btn-danger">
-              </form>
-            </td>
-          </tr>
-          @endforeach @endforeach
-        </tbody>
-      </table>
-    </div>
-  </div>
   <div class="form-group">
     <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/dimensiones">
       Atrás
