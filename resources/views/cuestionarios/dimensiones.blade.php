@@ -46,25 +46,32 @@
       @if(sizeof($dimensiones) > 0)
       <h4>Dimensiones disponibles para ser asignadas</h4>
       @endif
-      @foreach($dimensiones as $dimension)
-      <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Versión</th>
+            <th width="25%">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach($dimensiones as $dimension)
+        <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <div class="form-group row">
-          <div class="col-sm-12">
-            <label>{{$dimension->nombre}}</label>
-          </div>
-          <div class="col-sm-3">
-            <div class="input-group">
+        <tr>
+          <td><label>{{$dimension->nombre}}</label></td>
+          <td>            <div class="input-group">
               <input class="form-control" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <button class="btn btn-primary">Agregar</button>
-          </div>
-        </div>
-      </form>
+            </div></td>
+            <td><button class="btn btn-primary">Agregar</button></td>
+        </tr>
+         </form>
       @endforeach
+        </tbody>
+        </table>
+      
+     
       <div class="form-group">
           <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/edit">
             Atrás
