@@ -22,7 +22,7 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Versión</th>
+            <th width="15%">Versión</th>
             <th width="10%">Acciones</th>
           </tr>
         </thead>
@@ -51,8 +51,8 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Versión</th>
-            <th width="25%">Acciones</th>
+            <th width="15%">Versión</th>
+            <th width="10%">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -65,7 +65,7 @@
               <input class="form-control" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
             </div></td>
-            <td><button class="btn btn-primary">Agregar</button></td>
+            <td><button class="btn btn-primary editar" data-toggle="tooltip" data-placement="bottom" title="Agregar"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></td>
         </tr>
          </form>
       @endforeach
