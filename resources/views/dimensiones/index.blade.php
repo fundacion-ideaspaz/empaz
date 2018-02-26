@@ -3,6 +3,11 @@
   <div class="col-12 card">
     <div class="card-body">
       <h2>Lista de Dimensiones</h2>
+      <div class="card-footer">
+      <div class="pull-righ">
+        <a class="btn btn-primary" href="/dimensiones/new/">Crear dimensión</a>
+      </div>
+    </div>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
