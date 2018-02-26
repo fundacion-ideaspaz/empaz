@@ -77,6 +77,7 @@ class DimensionesController extends Controller
         return view("dimensiones.edit")->with([
             "dimension" => $dimension,
             "enunciados" => $enunciados,
+            "canEditEstado" => $canEditEstado,
         ]);
     }
 
@@ -86,6 +87,7 @@ class DimensionesController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "enunciados" => "required|array",
+            "estado" => "required",
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
