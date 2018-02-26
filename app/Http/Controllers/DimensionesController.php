@@ -87,7 +87,7 @@ class DimensionesController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "enunciados" => "required|array",
-            "estado" => "required",
+            "estado",
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
