@@ -77,7 +77,6 @@ class DimensionesController extends Controller
         return view("dimensiones.edit")->with([
             "dimension" => $dimension,
             "enunciados" => $enunciados,
-            "canEditEstado" => $canEditEstado,
         ]);
     }
 
