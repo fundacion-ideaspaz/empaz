@@ -71,9 +71,9 @@ class DimensionesController extends Controller
             ::where('dimension_id', '=', $dimension->id)
             ->first();
         $canEditEstado = true;
-        if ($dimensionCuestionario) {
-            $canEditEstado = true;
-        }
+        // if ($dimensionCuestionario) {
+        //     $canEditEstado = false;
+        // }
         return view("dimensiones.edit")->with([
             "dimension" => $dimension,
             "enunciados" => $enunciados,
