@@ -72,7 +72,7 @@ class DimensionesController extends Controller
             ->first();
         $canEditEstado = true;
         if ($dimensionCuestionario) {
-            $canEditEstado = false;
+            $canEditEstado = true;
         }
         return view("dimensiones.edit")->with([
             "dimension" => $dimension,
