@@ -59,6 +59,9 @@
     $(document).ready(function () {
     var estado = $( "#estado" ).val();
     console.log(estado);
+    if($('#estado').val().trim() === ''){
+        $(this).val(stado);
+    }
 });
 </script>
 @endsection
