@@ -56,3 +56,8 @@
     </div>
 </div>
 @endsection
+
+<script type="text/javascript">
+    var estado = $( "#estado" ).val();
+    console.log(estado);
+</script>
