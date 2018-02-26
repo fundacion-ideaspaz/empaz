@@ -86,8 +86,7 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "enunciados" => "required|array",
-            "estado" => "required",
+            "enunciados" => "required|array"
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
