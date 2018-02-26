@@ -18,17 +18,17 @@
         @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{ old('descripcion') }}</textarea>
+                    <textarea name="descripcion" id="descripcion" class="form-control" required>{{ old('descripcion') }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Archivo adjutno</label>
                     <br>
                     <!-- <label class="custom-file"> -->
-                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
+                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control" required>
                     <!-- <span class="custom-file-control"></span> -->
                     </label>
                 </div>
