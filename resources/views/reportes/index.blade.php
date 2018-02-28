@@ -164,7 +164,7 @@
                         {{ $dimensiones[$i]->nombre }}
                     </div>
                     <div class="col-md-6">
-                      {{ $dimension[$i]->$enunciados }}
+                      {{ $dimensiones[$i]->descripcion }}
                     </div>
                 </div>
             </span>
