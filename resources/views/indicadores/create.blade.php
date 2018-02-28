@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{ old('descripcion') }}</textarea>
+                    <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control">{{ old('descripcion') }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
