@@ -20,6 +20,7 @@
     <script src="/js/fusioncharts.charts.js"></script>
 <script src="/js/fusioncharts.js"></script>
 <script src="/js/fusioncharts.powercharts.js"></script>
+<script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
 </head>
 
 <body>

@@ -28,7 +28,7 @@
                     <label for="file">Archivo adjutno</label>
                     <br>
                     <!-- <label class="custom-file"> -->
-                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control" required>
+                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
                     <!-- <span class="custom-file-control"></span> -->
                     </label>
                 </div>
