@@ -42,6 +42,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/faq', 'FaqController@index')->name('faq');
+Route::get('/admin', 'AmdController@index')->name('admin');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');
 Route::get('/users/{id}/activate/{code}', 'ProfileController@activateAccount');
 
