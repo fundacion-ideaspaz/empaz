@@ -845,3 +845,9 @@ body.tablero{
         max-width: 90%;
     }
 }
+
+.indicadores-dimension {
+    background-color: white !important;
+    margin: 0 0;
+    border: 1px solid #f2f2f2;
+}

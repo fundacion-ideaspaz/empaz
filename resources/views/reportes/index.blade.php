@@ -84,7 +84,7 @@
                     "category": [
 
 
-                            @foreach($rDimensiones as $i=> $dimension)
+                            @foreach($puntajeDimensiones as $i=> $dimension)
                     { "label": "{{ $dimensiones[$i]->nombre }}"},
                             @endforeach
                     ]
@@ -94,7 +94,7 @@
                     {
                     "seriesname": "Porcentaje de afectacción",
                             "data": [
-                                    @foreach($rDimensiones as $i=> $dimension)
+                                    @foreach($puntajeDimensiones as $i=> $dimension)
                             { "value": "{{$dimension}}"},
                                     @endforeach
                             ]
@@ -152,10 +152,10 @@
 <div class="content-blanco">
 <h1>Reporte de Dimensiones</h1>
 <div id="accordion" role="tablist">
-    @foreach($rDimensiones as $i=>$dimension)
+    @foreach($puntajeDimensiones as $i=>$dimension)
     <div class="card">
         <div class="card-header" role="tab" id="headingOne">
-            <span data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
+            <span data-toggle="collapse" href="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
                     <div class="col-md-2 resultado-d resultado-d-{{$dimension}}" data-dime="{{$dimension}}">
                         {{$dimension}}%
@@ -169,46 +169,36 @@
                 </div>
             </span>
         </div>
-
-        <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
-</div>
-
-<div class="content-blanco">
-<h1>Reporte de Indicadores</h1>
-<div id="accordion" role="tablist">
-    @foreach($rIndicadores as $i=>$rindicador)
-    <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-            <span data-toggle="collapse" href="#collapse{{ $i }}" aria-expanded="true" aria-controls="collapse{{ $i }}">
-                <div class="row">
-                    <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
-                        {{$rindicador}}%
-                    </div>
-                    <div class="col-md-4">
-                        {{ $indicadores[$i]->nombre }}
-                    </div>
-                    <div class="col-md-6">
-                      {{ $indicadores[$i]->descripcion }}
+        @foreach($puntajeIndicadores as $j=>$rindicador)
+        @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
+        <div id="collapse{{$i}}" class="collapse indicadores-dimension" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body card-indicadores">
+                <h1>Indicadores de la dimension</h1>
+                <div class="card card-indicadores">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <span>
+                            <div class="row">
+                                <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
+                                    {{$rindicador}}%
+                                </div>
+                                <div class="col-md-4">
+                                    {{ $indicadores[$j]->nombre }}
+                                </div>
+                                <div class="col-md-6">
+                                {{ $indicadores[$j]->descripcion }}
+                                </div>
+                            </div>
+                        </span>
                     </div>
                 </div>
-            </span>
-        </div>
-
-        <div id="collapse{ $i }}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
             </div>
         </div>
+        @endif
+        @endforeach
     </div>
     @endforeach
 </div>
 </div>
-
 </div> 
 <div id="informeCPDF"></div>
 
