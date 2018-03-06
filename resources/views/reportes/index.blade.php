@@ -50,6 +50,7 @@
             }
     }).render();
     });
+
     FusionCharts.ready(function () {
     var budgetChart2 = new FusionCharts({
     type: 'radar',
@@ -102,7 +103,50 @@
                     ]
             }
     }).render();
-    });</script>
+    });
+
+    FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'column2d',
+        renderAt: 'chart-container-bar',
+        width: '100%',
+        height: '350',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "xAxisName": "Indicador",
+                "numberPrefix": "%",
+                "paletteColors": "#0075c2",
+                "bgColor": "#ffffff",
+                "borderAlpha": "20",
+                "canvasBorderAlpha": "0",
+                "usePlotGradientColor": "0",
+                "plotBorderAlpha": "10",
+                "placevaluesInside": "1",
+                "rotatevalues": "1",
+                "valueFontColor": "#ffffff",                
+                "showXAxisLine": "1",
+                "xAxisLineColor": "#999999",
+                "divlineColor": "#999999",               
+                "divLineIsDashed": "1",
+                "showAlternateHGridColor": "0",
+                "subcaptionFontBold": "0",
+                "subcaptionFontSize": "14"
+            },            
+            "data": [
+                 @foreach($puntajeIndicadores as $j=>$rindicador)
+                    @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
+                    {
+                    "label": "{{ $indicadores[$j]->nombre }}",
+                            "value": "{{$rindicador}}"
+                    },
+                    @endif
+                @endforeach
+            ]
+        }
+    }).render();
+});
+    </script>
 <div id="informeC">   
 <div class="content-blanco">
 <h1>Información Basica</h1><button id="informe">Descargar PDF</button>
@@ -178,6 +222,10 @@
                     <div class="card-header" role="tab" id="headingOne">
                         <span>
                             <div class="row">
+                            <div class="col-md-6">
+                                <div id="chart-container-bar">FusionCharts will render here</div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
                                     {{$rindicador}}%
                                 </div>
@@ -187,6 +235,7 @@
                                 <div class="col-md-6">
                                 {{ $indicadores[$j]->descripcion }}
                                 </div>
+                            </div>
                             </div>
                         </span>
                     </div>
