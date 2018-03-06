@@ -104,11 +104,12 @@
             }
     }).render();
     });
-
+    @foreach($puntajeIndicadores as $j=>$rindicador)
+                    @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
     FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
-        renderAt: 'chart-container-bar',
+        renderAt: 'chart-container-bar{{$i}}',
         width: '100%',
         height: '350',
         dataFormat: 'json',
@@ -134,18 +135,18 @@
                 "subcaptionFontSize": "14"
             },            
             "data": [
-                 @foreach($puntajeIndicadores as $j=>$rindicador)
-                    @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
+                 
                     {
                     "label": "{{ $indicadores[$j]->nombre }}",
                             "value": "{{$rindicador}}"
                     },
-                    @endif
-                @endforeach
+                
             ]
         }
     }).render();
 });
+        @endif
+                @endforeach
     </script>
 <div id="informeC">   
 <div class="content-blanco">
@@ -223,7 +224,7 @@
                         <span>
                             <div class="row">
                             <div class="col-md-6">
-                                <div id="chart-container-bar">FusionCharts will render here</div>
+                                <div id="chart-container-bar{{$i}}">FusionCharts will render here</div>
                             </div>
                             <div class="col-md-6">
                                 <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
