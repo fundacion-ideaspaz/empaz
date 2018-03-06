@@ -169,7 +169,7 @@
                         {{ $dimensiones[$i]->nombre }}
                     </div>
                     <div class="col-md-6">
-                      {{ HTML:field($dimensiones[$i]->descripcion) }}
+                      {{ !! $dimensiones[$i]->descripcion !!}}
                     </div>
                 </div>
             </span>
