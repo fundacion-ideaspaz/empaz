@@ -587,6 +587,10 @@ label {
     background: #f2f2f2;
 }
 
+#accordion .indicadores-dimension{
+    padding: 20px;
+}
+
 input[type="text"].form-control {
     display: block;
     width: 100%;
