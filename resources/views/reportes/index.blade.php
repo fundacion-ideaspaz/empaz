@@ -180,7 +180,7 @@
             <div class="card-body card-indicadores">
                 <h4>Indicadores de la dimension</h4>
                 <div class="card card-indicadores">
-                    <div class="card-header" role="tab" id="headingOne">
+                    <div>
                         <span>
                             <div class="row">
                             <div class="col-md-6">
