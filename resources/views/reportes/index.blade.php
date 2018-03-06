@@ -104,49 +104,9 @@
             }
     }).render();
     });
-    @foreach($puntajeIndicadores as $j=>$rindicador)
-                    @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
-    FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
-        renderAt: 'chart-container-bar{{$i}}',
-        width: '100%',
-        height: '350',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "xAxisName": "Indicador",
-                "numberPrefix": "%",
-                "paletteColors": "#0075c2",
-                "bgColor": "#ffffff",
-                "borderAlpha": "20",
-                "canvasBorderAlpha": "0",
-                "usePlotGradientColor": "0",
-                "plotBorderAlpha": "10",
-                "placevaluesInside": "1",
-                "rotatevalues": "1",
-                "valueFontColor": "#ffffff",                
-                "showXAxisLine": "1",
-                "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
-                "showAlternateHGridColor": "0",
-                "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14"
-            },            
-            "data": [
-                 
-                    {
-                    "label": "{{ $indicadores[$j]->nombre }}",
-                            "value": "{{$rindicador}}"
-                    },
-                
-            ]
-        }
-    }).render();
-});
-        @endif
-                @endforeach
+
+
+
     </script>
 <div id="informeC">   
 <div class="content-blanco">
@@ -224,6 +184,47 @@
                         <span>
                             <div class="row">
                             <div class="col-md-6">
+                                <script type="text/javascript">
+                                        FusionCharts.ready(function () {
+    var revenueChart = new FusionCharts({
+        type: 'column2d',
+        renderAt: 'chart-container-bar{{$i}}',
+        width: '100%',
+        height: '350',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "xAxisName": "Indicador",
+                "numberPrefix": "%",
+                "paletteColors": "#0075c2",
+                "bgColor": "#ffffff",
+                "borderAlpha": "20",
+                "canvasBorderAlpha": "0",
+                "usePlotGradientColor": "0",
+                "plotBorderAlpha": "10",
+                "placevaluesInside": "1",
+                "rotatevalues": "1",
+                "valueFontColor": "#ffffff",                
+                "showXAxisLine": "1",
+                "xAxisLineColor": "#999999",
+                "divlineColor": "#999999",               
+                "divLineIsDashed": "1",
+                "showAlternateHGridColor": "0",
+                "subcaptionFontBold": "0",
+                "subcaptionFontSize": "14"
+            },            
+            "data": [
+                 
+                    {
+                    "label": "{{ $indicadores[$j]->nombre }}",
+                            "value": "{{$rindicador}}"
+                    },
+                
+            ]
+        }
+    }).render();
+});
+                                </script>
                                 <div id="chart-container-bar{{$i}}">FusionCharts will render here</div>
                             </div>
                             <div class="col-md-6">
