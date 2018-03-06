@@ -232,11 +232,8 @@
                                 <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
                                     {{$rindicador}}%
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-10">
                                     {{ $indicadores[$j]->nombre }}
-                                </div>
-                                <div class="col-md-6">
-                                {{ $indicadores[$j]->descripcion }}
                                 </div>
                             </div>
                             </div>
