@@ -169,7 +169,7 @@
                         {{ $dimensiones[$i]->nombre }}
                     </div>
                     <div class="col-md-6">
-                      {{ html_entity_decode($dimensiones[$i]->descripcion) }}
+                      {{ HTML:field($dimensiones[$i]->descripcion) }}
                     </div>
                 </div>
             </span>
