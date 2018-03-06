@@ -179,9 +179,6 @@
         <div id="collapse{{$i}}" class="collapse indicadores-dimension" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body card-indicadores">
                 <h4>Indicadores de la dimension</h4>
-                <div class="card card-indicadores">
-                    <div>
-                        <span>
                             <div class="row">
                             <div class="col-md-6">
                                 <script type="text/javascript">
@@ -236,9 +233,6 @@
                                     {{ $indicadores[$j]->nombre }}
                                 </div>
                             </div>
-                            </div>
-                            </div>
-                        </span>
                     </div>
                 </div>
             </div>
