@@ -217,7 +217,7 @@
                  
                     {
                     "label": "{{ $indicadores[$j]->nombre }}",
-                            "value": "{{$rindicador}}"
+                    "value": "{{$rindicador}}"
                     },
                 
             ]
@@ -228,6 +228,7 @@
                                 <div id="chart-container-bar{{$i}}">FusionCharts will render here</div>
                             </div>
                             <div class="col-md-6">
+                            <div class="row">
                                 <div class="col-md-2 resultado-i" data-indi="{{$rindicador}}">
                                     {{$rindicador}}%
                                 </div>
@@ -237,6 +238,7 @@
                                 <div class="col-md-6">
                                 {{ $indicadores[$j]->descripcion }}
                                 </div>
+                            </div>
                             </div>
                             </div>
                         </span>
