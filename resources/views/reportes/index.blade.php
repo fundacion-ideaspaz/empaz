@@ -178,7 +178,7 @@
         @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
         <div id="collapse{{$i}}" class="collapse indicadores-dimension" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body card-indicadores">
-                <h1>Indicadores de la dimension</h1>
+                <h4>Indicadores de la dimension</h4>
                 <div class="card card-indicadores">
                     <div class="card-header" role="tab" id="headingOne">
                         <span>
