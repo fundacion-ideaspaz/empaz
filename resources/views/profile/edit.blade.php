@@ -263,7 +263,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="num_trabajadores" class="form-label">Número de trabajadores</label>
-                        <input class="form-control" name="num_trabajadores" type="number" value="0" id="num_trabajadores">
+                        <input class="form-control" name="num_trabajadores" type="number" value="0" min="0" id="num_trabajadores">
                     </div>
 
                     <div class="form-group col-md-12">
