@@ -180,6 +180,12 @@ header.master{
     margin-left: 15px;
 }
 
+.navbar-brand img{
+    margin-left: 15px;
+    margin-right: 45px;
+}
+
+
 .dropdown-menu:before{
     content: " ";
     position: absolute;
