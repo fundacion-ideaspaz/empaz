@@ -168,5 +168,9 @@
           }
         } );
       })();
+
+      if($('.cs-select').hasclass('.cs-active'){
+        alert('prueba').
+      })
     </script>
 </html>
