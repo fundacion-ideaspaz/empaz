@@ -151,9 +151,9 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
     document.ready(function(){
-      console.log(ready);
+      console.log('ready');
           if($('.cs-select').hasclass('.cs-active')){
-        console.log(ready);
+        console.log('prueba');
       };
     }
       )
