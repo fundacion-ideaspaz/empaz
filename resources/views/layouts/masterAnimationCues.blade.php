@@ -190,8 +190,9 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
 
-          if($('.cs-select').hasClass('.cs-active')){
-        console.log('prueba');  };
+      if($('.cs-select').hasClass('cs-active')){
+        console.log('prueba');  
+      };
 
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
