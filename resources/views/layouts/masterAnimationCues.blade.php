@@ -217,7 +217,7 @@
         $('.fs-field-label').addClass('prueba');
       });
 
-       $('.cs-options').click(function(){
+       $('.cs-selected').click(function(){
         $('.fs-field-label').removeClass('prueba');
       });
        
