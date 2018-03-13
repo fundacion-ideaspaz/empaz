@@ -194,6 +194,10 @@
         console.log('prueba');  
       };
 
+      $('.cs-select').click(function(){
+        $('.fs-field-label').addClass('prueba');
+      })
+
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
