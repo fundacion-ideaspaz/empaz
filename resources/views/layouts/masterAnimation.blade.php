@@ -167,10 +167,13 @@
             classie.add( document.body, 'overview' ); // for demo purposes only
           }
         } );
+
+        if($('.cs-select').hasclass('.cs-active'){
+        alert('prueba').
+      });
+          
       })();
 
-      if($('.cs-select').hasclass('.cs-active'){
-        alert('prueba').
-      })
+      
     </script>
 </html>
