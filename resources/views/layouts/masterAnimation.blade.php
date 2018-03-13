@@ -153,7 +153,7 @@
     document.ready(function(){
       console.log('ready');
           if($('.cs-select').hasclass('.cs-active')){
-        console.log('prueba');
+        console.log('prueba');  
       };
     }
       )
