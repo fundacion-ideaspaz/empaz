@@ -21,7 +21,7 @@
         </li>
         @if($role === 'empresa' || $role === 'experto')
         <li>
-          <label for="cargo" class="fs-field-label fs-anim-upper">Cargo en la Institución</label>
+          <label for="cargo" class="fs-field-label fs-anim-upper">Cargo</label>
           <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="fs-anim-lower" required>
         </li>
         @endif @if($role === 'empresa')
@@ -32,7 +32,7 @@
 
         </ol>
         @endif
-          <div class="fs-submit terminos"><input type="checkbox"  name="terminos" value="terminos"><p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="#">Ver aquí</a></p></div>
+          <div class="fs-submit terminos"><input type="checkbox"  name="terminos" value="terminos"><p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="/terminos-condiciones-EMPAZ.pdf" target="_blank">Ver aquí</a></p></div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
           <!-- <a href="/users" class="btn btn-default">Cancelar</a> -->
         @if ($errors->any())
