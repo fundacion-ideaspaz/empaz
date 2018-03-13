@@ -189,13 +189,10 @@
     <script src="/js/selectFx.js"></script>
     <script src="/js/fullscreenForm.js"></script>
     <script>
-        document.ready(function(){
-      console.log('ready');
+
           if($('.cs-select').hasclass('.cs-active')){
-        console.log('prueba');  
-      };
-    }
-      )
+        console.log('prueba');  };
+
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
