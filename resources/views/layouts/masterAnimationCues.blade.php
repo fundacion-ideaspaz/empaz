@@ -190,7 +190,7 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
 
-          if($('.cs-select').hasclass('.cs-active')){
+          if($('.cs-select').hasClass('.cs-active')){
         console.log('prueba');  };
 
       (function() {
