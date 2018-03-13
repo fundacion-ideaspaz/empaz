@@ -269,6 +269,7 @@
                     <div class="form-group col-md-12">
                         <label for="nit">NIT</label>
                         <input type="number" name="nit" value="{{ old('nit') }}" class="form-control" placeholder="Enter NIT">
+                        <sapn>Digite el número de identificación sin puntos ni guiones, para el NIT el dígito de Verificación no es requerido.</sapn>
                     </div>
 
                     <div class="form-group col-md-12">

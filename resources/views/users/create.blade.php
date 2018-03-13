@@ -30,7 +30,7 @@
         </div>
         @if($role === 'empresa' || $role === 'experto')
         <div class="form-group">
-          <label for="cargo">Cargo en la Institución</label>
+          <label for="cargo">Cargo</label>
           <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="form-control" required>
         </div>
         @endif
