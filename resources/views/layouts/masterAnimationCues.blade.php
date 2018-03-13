@@ -216,5 +216,10 @@
        $('.cs-select').click(function(){
         $('.fs-field-label').addClass('prueba');
       });
+
+       $('.cs-options').click(function(){
+        $('.fs-field-label').removeClass('prueba');
+      });
+       
     </script>
 </html>
