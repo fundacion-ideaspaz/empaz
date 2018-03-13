@@ -150,6 +150,13 @@
     <script src="/js/selectFx.js"></script>
     <script src="/js/fullscreenForm.js"></script>
     <script>
+    document.ready(function(){
+      console.log(ready);
+          if($('.cs-select').hasclass('.cs-active')){
+        console.log(ready);
+      };
+    }
+      )
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
@@ -168,10 +175,6 @@
           }
         } );
 
-        if($('.cs-select').hasclass('.cs-active'){
-        alert('prueba').
-      });
-          
       })();
 
       
