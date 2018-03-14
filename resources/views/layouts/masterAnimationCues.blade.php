@@ -190,7 +190,7 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
 
-      if($('#preguntaC').hasClass('cs-active')){
+      if($('div').hasClass('cs-active')){
         console.log('prueba');  
       };
 
@@ -213,8 +213,8 @@
         } );
       })();
 
-       $('.cs-select').click(function(){
-        var idPrueba = $('.cs-select').attr(id);
+       $('.fs-current').click(function(){
+        var idPrueba = $(this).attr(id);
         $('.fs-field-label').addClass('prueba');
         console.log(idPrueba);
       });
