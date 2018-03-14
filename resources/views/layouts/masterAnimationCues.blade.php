@@ -214,7 +214,9 @@
       })();
 
        $('.cs-select').click(function(){
+        var idPrueba = $('.cs-select').attr(id);
         $('.fs-field-label').addClass('prueba');
+        console.log(idPrueba);
       });
 
        $('.cs-options').click(function(){
