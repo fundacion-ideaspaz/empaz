@@ -91,6 +91,9 @@
 </header>
   <div>
     @yield('content')
+    <span class="alerta-r">
+      <p>Al finalizar de contestar el cuestionario y antes de enviarlo para evaluación usted podrá rectificar sus respuestas y editarlas si es necesario</p>
+    </span>
   </div>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
