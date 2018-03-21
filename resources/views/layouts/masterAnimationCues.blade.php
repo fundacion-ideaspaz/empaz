@@ -200,8 +200,7 @@
 
       $(document).ready(function(){
  	$( ".pregunta-select" ).click(function() {
-  $( this ).addClass( "myClass" );
-    if($('.pregunta-select').hasClass('myClass')){
+    if($('.pregunta-select').hasClass('cs-active')){
   alert('prueba');
   }
 });
