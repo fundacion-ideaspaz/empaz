@@ -512,7 +512,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 .r-cuestionario .cs-skin-boxes .cs-options li{
     width: 100%;
-    height: 20%;
+    height: calc(20% - 10px);
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options li:first-child{
