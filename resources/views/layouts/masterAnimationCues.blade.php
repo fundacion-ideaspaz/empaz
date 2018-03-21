@@ -201,7 +201,7 @@
       $(document).ready(function(){
  	$( ".pregunta-select" ).click(function() {
     if($('.pregunta-select').hasClass('cs-active')){
-  alert('prueba');
+  $('.fs-field-label').addClass('activo');
   }
 });
 });
