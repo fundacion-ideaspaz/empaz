@@ -190,6 +190,10 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
 
+    var selecte = document.getElementsByClassName("cs-select");
+
+    console.log(selecte);
+
       if($('div').hasClass('cs-active')){
         console.log('prueba');  
       };
@@ -213,15 +217,15 @@
         } );
       })();
 
-       $('.fs-current').click(function(){
-        var idPrueba = $(this).attr(id);
-        $('.fs-field-label').addClass('prueba');
-        console.log(idPrueba);
-      });
+      //  $('.fs-current').click(function(){
+      //   var idPrueba = $(this).attr(id);
+      //   $('.fs-field-label').addClass('prueba');
+      //   console.log(idPrueba);
+      // });
 
-       $('.cs-options').click(function(){
-        $('.fs-field-label').removeClass('prueba');
-      });
+      //  $('.cs-options').click(function(){
+      //   $('.fs-field-label').removeClass('prueba');
+      // });
        
     </script>
 </html>
