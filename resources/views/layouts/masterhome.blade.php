@@ -10,6 +10,7 @@
   <meta name="keywords" content="Empresas,Paz">
   <meta name="author" content="FIP, CCB">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
@@ -84,7 +85,7 @@
     </div>
   </div>
 </div>
-<div class="flecha"><a href="#section02"><img src="img/flecha-ini.svg" width="50"></a></div>
+<div class="flecha"><a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50"></a></div>
 </section>
 <section id="section02">
 <div class="container">
