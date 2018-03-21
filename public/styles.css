@@ -864,13 +864,21 @@ body.tablero{
 
 .alerta-r{
     display: block;
-    width: 66.5%;
+    width: 26.5%;
     color: #5a5a5a;
     margin: auto;
     background: #00aabf2b;
     border: 1px solid #00aabf;
     padding: 10px;
     margin-bottom: 20px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 20px;
+    left: 16.6%;
+}
+
+.dnone{
+    display: none;
 }
 
 .r-cuestionario .fs-fields > li label.fs-field-label.activo{
