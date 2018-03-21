@@ -209,6 +209,10 @@
   	$('.fs-field-label').removeClass('activo');
   }
 });
+
+  $('.alerta-r').click(function(){
+    $(this).addClass('dnone');
+  })
 });
 
 
