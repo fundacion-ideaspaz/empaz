@@ -43,11 +43,11 @@
        <a class="nav-link" href="/dummypdf.pdf" target="_blank">Acerca de Empaz</a>
     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual de usuario</a>
+                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/faq">FAQs</a>
+                      <a class="nav-link" href="/faq">Preguntas frecuentes</a>
                     </li>
 
                     <li class="nav-item">
@@ -173,5 +173,18 @@
         $('.navbar').removeClass("bgcolor");
       }
 });
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 2000);
+                return false;
+            }
+        }
+    });
 </script>
 </html>

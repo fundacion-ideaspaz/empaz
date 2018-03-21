@@ -84,7 +84,7 @@
     </div>
   </div>
 </div>
-<div class="flecha"><img src="img/flecha-ini.svg" width="50"></div>
+<div class="flecha"><a href="#section02"><img src="img/flecha-ini.svg" width="50"></a></div>
 </section>
 <section id="section02">
 <div class="container">
@@ -141,6 +141,20 @@
         $('.navbar').removeClass("bgcolor");
       }
 });
+
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 2000);
+                return false;
+            }
+        }
+    });
 </script>
 @yield('inlinejs')
 </html>
