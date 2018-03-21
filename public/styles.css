@@ -862,6 +862,17 @@ body.tablero{
     border: 1px solid #f2f2f2;
 }
 
+.alerta-r{
+    display: block;
+    width: 66.5%;
+    color: #5a5a5a;
+    margin: auto;
+    background: #00aabf2b;
+    border: 1px solid #00aabf;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 .r-cuestionario .fs-fields > li label.fs-field-label.activo{
     color: #fff;
     z-index: 10000;
