@@ -868,7 +868,7 @@ body.tablero{
     padding: 20px;
     width: 100%;
     position: fixed;
-    /* top: 0; */
-    /* left: 0; */
+    top: 94px;
+    left: 11px;
     font-size: 16px;
 }

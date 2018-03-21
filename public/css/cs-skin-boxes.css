@@ -52,6 +52,7 @@ div.cs-skin-boxes:focus > span {
 	height: 100%;
 	top: 83px;
 	left: 0;
+	padding-top: 70px;
 	overflow: auto;
 	background: #00aabf;
 	font-size: 12px;
