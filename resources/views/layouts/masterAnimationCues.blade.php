@@ -192,9 +192,9 @@
 
     var selecte = document.getElementsByClassName("cs-select");
 
-    console.log(selecte);
+    // console.log(selecte);
 
-      if($('div').hasClass('cs-active')){
+      if($(selecte).hasClass('cs-active')){
         console.log('prueba');  
       };
 
