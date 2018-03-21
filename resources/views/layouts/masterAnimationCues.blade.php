@@ -190,7 +190,7 @@
     <script src="/js/fullscreenForm.js"></script>
     <script>
 
-    var selecte = document.getElementsByClassName("cs-select");
+    var selecte = document.getElementsByClassName("pregunta-select");
 
     // console.log(selecte);
 
