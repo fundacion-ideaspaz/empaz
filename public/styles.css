@@ -839,6 +839,17 @@ body.tablero{
     font-size: 1.3em;
 }
 
+.r-cuestionario .fs-fields > li label.fs-field-label.activo{
+color: #fff;
+    z-index: 10000;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    /* top: 0; */
+    /* left: 0; */
+    font-size: 16px;
+}
+
 
 
     .navbar-nav .nav-item:after{
