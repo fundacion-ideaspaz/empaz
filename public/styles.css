@@ -840,7 +840,7 @@ body.tablero{
 }
 
 .r-cuestionario .fs-fields > li label.fs-field-label.activo{
-color: #fff;
+    color: #fff;
     z-index: 10000;
     padding: 20px;
     width: 100%;
