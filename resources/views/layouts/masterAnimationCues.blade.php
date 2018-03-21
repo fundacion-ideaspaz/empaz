@@ -194,7 +194,7 @@
 
     // console.log(selecte);
 
-      if($(".pregunta-select").has('cs-active')){
+      if($(".pregunta-select").has('.cs-active')){
         console.log('prueba');  
       };
 
