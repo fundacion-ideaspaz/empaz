@@ -37,7 +37,7 @@
        <a class="nav-link" href="/dummypdf.pdf" target="_blank">Acerca de Empaz</a>
     </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dummypdf.pdf">Manual de usuario</a>
+        <a class="nav-link" href="/dummypdf.pdf">Manual</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/faq">Preguntas frecuentes</a>

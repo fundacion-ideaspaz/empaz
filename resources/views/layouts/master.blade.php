@@ -44,11 +44,11 @@
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual de usuario</a>
+                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/faq">FAQs</a>
+                      <a class="nav-link" href="/faq">Preguntas frecuentes</a>
                     </li>
 
                     <li class="nav-item">
