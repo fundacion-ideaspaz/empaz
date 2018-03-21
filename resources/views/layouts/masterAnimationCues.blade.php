@@ -202,6 +202,8 @@
  	$( ".pregunta-select" ).click(function() {
     if($('.pregunta-select').hasClass('cs-active')){
   $('.fs-field-label').addClass('activo');
+  }else {
+  	$('.fs-field-label').removeClass('activo');
   }
 });
 });
