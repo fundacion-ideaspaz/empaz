@@ -198,6 +198,17 @@
         console.log('prueba');  
       };
 
+      $(document).ready(function(){
+ 	$( ".pregunta-select" ).click(function() {
+  $( this ).addClass( "myClass" );
+    if($('.pregunta-select').hasClass('myClass')){
+  alert('prueba');
+  }
+});
+});
+
+
+
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
