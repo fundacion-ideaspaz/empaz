@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <p>Por favor ingrese su correo electrónico para que podamos enviarle un enlace para restablecer su contraseña.</p>
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
 
