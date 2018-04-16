@@ -213,10 +213,21 @@
   }
 });
 
+    $( ".fs-continue" ).click(function() {
+    if($('#myform').hasClass('fs-form-overview')){
+  $('.alerta-r').addClass('dnone');
+  }
+});
+
+
+  f
+
   $('.alerta-r').click(function(){
     $(this).addClass('dnone');
   })
 });
+
+      myform
 
 
 
