@@ -32,6 +32,15 @@ section ul li{
     min-height: 100vh!important;
 }
 
+.creditos{
+    position: absolute;
+    bottom: 10px;
+    z-index: 10;
+    color: #fff;
+    font-size: 12px;
+    left: 10px;
+}
+
 .flecha{
     position: absolute;
     left: 50%;
