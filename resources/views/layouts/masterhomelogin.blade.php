@@ -124,6 +124,7 @@
     </div>
   </div>
 </div>
+<div class="creditos">Foto: Revista Semana</div>
 </section>
 <section id="section02">
   <div class="container">
