@@ -214,6 +214,7 @@
 });
 
     $( ".fs-continue" ).click(function() {
+      console.log("continue");
     if($('#myform').hasClass('fs-form-overview')){
   $('.alerta-r').addClass('dnone');
   }
