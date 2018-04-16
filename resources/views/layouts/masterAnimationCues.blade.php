@@ -224,8 +224,6 @@
   })
 });
 
-      myform
-
 
 
       (function() {
