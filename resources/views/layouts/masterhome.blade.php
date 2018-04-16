@@ -86,6 +86,7 @@
   </div>
 </div>
 <div class="flecha"><a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50"></a></div>
+<div class="creditos">Foto: Revista Semana</div>
 </section>
 <section id="section02">
 <div class="container">
