@@ -75,7 +75,6 @@
                               @endif
                               @if(Auth::user()->role === 'empresa')
                               <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
-                              <a class="" href="/profile/empresa" ><i class="fa fa-user" aria-hidden="true"></i> Edfitar Perfil</a>
                               @endif
                               @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
                               <a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></i></i> Resultados</a>
