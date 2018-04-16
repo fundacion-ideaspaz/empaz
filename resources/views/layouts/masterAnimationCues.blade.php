@@ -219,9 +219,6 @@
   }
 });
 
-
-  f
-
   $('.alerta-r').click(function(){
     $(this).addClass('dnone');
   })
