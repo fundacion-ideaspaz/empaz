@@ -21,6 +21,55 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script> 
 <!-- <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script> -->
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript">
+
+    function loadDepartamentos() {
+
+        var url = '/js/colombia.json';
+        $.get(url, function (data) {
+            if (data.length > 0) {
+                $.each(data, function (index, item) {
+                    var contentMenu = document.getElementById("departments");
+                    var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+
+                    $(contentMenu).append(ventana);
+                });
+            }
+        });
+    }
+
+    console.log("funciona");
+
+    $('#pais').on('change', function (e) {
+        const target = e.target;
+        if (target.value === 'Colombia') {
+            $('#departments').prop('disabled', false);
+            $('#cities').prop('disabled', false);
+            loadDepartamentos()
+        } else {
+            $('#cities').prop('disabled', 'disabled');
+            $('#departments').prop('disabled', 'disabled');
+        }
+    })
+
+    $('#ciiu-principal').on('change', function (e) {
+        $this = $(this);
+        val = $this.val();
+        for (option of $('#ciiu-secundario option')) {
+            $option = $(option);
+            if ($option.val() !== "") {
+                $option.removeAttr("disabled");
+            }
+        }
+        $('#ciiu-secundario option[value="${val}"]').attr("disabled", "true");
+    });
+
+    $(function () {
+        (new handleDeparmentsAndCitiesSelectors('#departments', '#cities'));
+    });
+
+</script>
 </head>
 
 <body>
