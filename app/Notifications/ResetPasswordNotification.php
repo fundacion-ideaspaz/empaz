@@ -42,7 +42,7 @@ class ResetPasswordNotification extends Notification
     public function message($notifiable)
     {
         return $this->line('Estas recibiendo este correo porque:')
-                    ->action('Reset Password', url('password/reset', $this->token).'?email='.urlencode($notifiable->email))
-                    ->line('If you did not request a password reset, no further action is required.');
+                    ->action('Reestablecer contraseña', url('password/reset', $this->token).'?email='.urlencode($notifiable->email))
+                    ->line('Si no solicitó restablecer la contraseña, haga caso omiso a este correo.');
     }
 }
