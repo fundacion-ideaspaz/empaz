@@ -72,6 +72,7 @@ div.cs-skin-boxes:focus > span {
 	width: 100%;
 	height: 100%;
 	padding: 10px;
+	list-style: decimal;
 }
 
 .cs-skin-boxes .cs-options li {
