@@ -1094,7 +1094,7 @@
     </div>
 </div>
 <script type="text/javascript" src="/js/main.js"></script>
-<script>
+<script type="text/javascript">
 
     function loadDepartamentos() {
 
@@ -1126,13 +1126,13 @@
     $('#ciiu-principal').on('change', function (e) {
         $this = $(this);
         val = $this.val();
-        for (option of $(`#ciiu-secundario option`)) {
+        for (option of $('#ciiu-secundario option')) {
             $option = $(option);
             if ($option.val() !== "") {
                 $option.removeAttr("disabled");
             }
         }
-        $(`#ciiu-secundario option[value="${val}"]`).attr("disabled", "true");
+        $('#ciiu-secundario option[value="${val}"]').attr("disabled", "true");
     })
 
     $(function () {
