@@ -85,7 +85,7 @@ div.cs-select:focus {
 }
 
 .cs-select ul {
-	list-style: none;
+	list-style: decimal;
 	margin: 0;
 	padding: 0;
 	width: 100%;

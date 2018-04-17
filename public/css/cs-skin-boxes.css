@@ -73,6 +73,7 @@ div.cs-skin-boxes:focus > span {
 	height: 100%;
 	padding: 10px;
 	list-style: decimal;
+	padding-left: 50px;
 }
 
 .cs-skin-boxes .cs-options li {
@@ -82,7 +83,6 @@ div.cs-skin-boxes:focus > span {
 	position: relative;
 	cursor: pointer;
 	border-radius: 14px;
-	overflow: hidden;
 	opacity: 0;
 	color: rgba(255,255,255,0.6);
 	border: 10px solid transparent;
