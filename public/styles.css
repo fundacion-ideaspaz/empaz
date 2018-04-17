@@ -907,3 +907,11 @@ body.tablero{
     left: 11px;
     font-size: 16px;
 }
+
+body.overview .alerta-r{
+    display: none;
+}
+
+
+
+
