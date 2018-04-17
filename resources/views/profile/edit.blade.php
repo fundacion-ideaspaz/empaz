@@ -1095,52 +1095,70 @@
 </div>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
-
 'use strict';
 
-    function loadDepartamentos() {
+function loadDepartamentos() {
 
-        var url = '/js/colombia.json';
-        $.get(url, function (data) {
-            if (data.length > 0) {
-                $.each(data, function (index, item) {
-                    var contentMenu = document.getElementById("departments");
-                    var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+    var url = '/js/colombia.json';
+    $.get(url, function (data) {
+        if (data.length > 0) {
+            $.each(data, function (index, item) {
+                var contentMenu = document.getElementById("departments");
+                var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
 
-                    $(contentMenu).append(ventana);
-                });
-            }
-        });
-    }
-
-    console.log("funciona");
-
-    $('#pais').on('change', function (e) {
-        const target = e.target;
-        if (target.value === 'Colombia') {
-            $('#departments').prop('disabled', false);
-            $('#cities').prop('disabled', false);
-            loadDepartamentos()
-        } else {
-            $('#cities').prop('disabled', 'disabled');
-            $('#departments').prop('disabled', 'disabled');
+                $(contentMenu).append(ventana);
+            });
         }
-    })
+    });
+}
 
-    $('#ciiu-principal').on('change', function (e) {
-        $this = $(this);
-        val = $this.val();
-        for (option of $(`#ciiu-secundario option`)) {
+$('#pais').on('change', function (e) {
+    var target = e.target;
+    if (target.value === 'Colombia') {
+        $('#departments').prop('disabled', false);
+        $('#cities').prop('disabled', false);
+        loadDepartamentos();
+    } else {
+        $('#cities').prop('disabled', 'disabled');
+        $('#departments').prop('disabled', 'disabled');
+    }
+});
+
+$('#ciiu-principal').on('change', function (e) {
+    $this = $(this);
+    val = $this.val();
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = $('#ciiu-secundario option')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            option = _step.value;
+
             $option = $(option);
             if ($option.val() !== "") {
                 $option.removeAttr("disabled");
             }
         }
-        $(`#ciiu-secundario option[value="${val}"]`).attr("disabled", "true");
-    });
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
 
-    $(function () {
-        (new handleDeparmentsAndCitiesSelectors('#departments', '#cities'));
-    });
+    $('#ciiu-secundario option[value="${val}"]').attr("disabled", "true");
+});
 
+$(function () {
+    new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
+});
 </script> @endsection
