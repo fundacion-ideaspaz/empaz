@@ -1096,6 +1096,8 @@
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
 
+'use strict';
+
     function loadDepartamentos() {
 
         var url = '/js/colombia.json';
