@@ -214,8 +214,9 @@
 });
 
     $( ".fs-continue" ).click(function() {
+      
+    if($('.fs-form').hasClass('fs-show')){
       console.log("continue");
-    if($('.fs-form').hasClass('fs-form-overview')){
         $('.alerta-r').addClass('dnone');
   };
 });
