@@ -1111,6 +1111,8 @@
         });
     }
 
+    console.log("funciona");
+
     $('#pais').on('change', function (e) {
         const target = e.target;
         if (target.value === 'Colombia') {
