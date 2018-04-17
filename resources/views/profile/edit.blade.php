@@ -1096,20 +1096,20 @@
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
 
-    function loadDepartamentos() {
+    // function loadDepartamentos() {
 
-        var url = '/js/colombia.json';
-        $.get(url, function (data) {
-            if (data.length > 0) {
-                $.each(data, function (index, item) {
-                    var contentMenu = document.getElementById("departments");
-                    var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
+    //     var url = '/js/colombia.json';
+    //     $.get(url, function (data) {
+    //         if (data.length > 0) {
+    //             $.each(data, function (index, item) {
+    //                 var contentMenu = document.getElementById("departments");
+    //                 var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
 
-                    $(contentMenu).append(ventana);
-                });
-            }
-        });
-    }
+    //                 $(contentMenu).append(ventana);
+    //             });
+    //         }
+    //     });
+    // }
 
     console.log("funciona");
 
