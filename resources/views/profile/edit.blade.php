@@ -1126,11 +1126,11 @@ $('#pais').on('change', function (e) {
 
  $('#ciiu-principal').on('change', function (e) {
         var loco = $(this);
-        val = loco.val();
+        var val = loco.val();
         for (option of $(`#ciiu-secundario option`)) {
-            $option = $(option);
-            if ($option.val() !== "") {
-                $option.removeAttr("disabled");
+            var optionV = $(option);
+            if (optionV.val() !== "") {
+                optionV.removeAttr("disabled");
             }
         }
         $(`#ciiu-secundario option[value="${val}"]`).attr("disabled", "true");
