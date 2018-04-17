@@ -101,7 +101,7 @@ class DashboardController extends Controller
         $i = 0;
         $nivel = "bajo";
         foreach ($dimensiones as $dimension) {
-            $puntajeDimensiones[$i] = ($puntajeDimensiones[$i] / $arrayPorcentajeDimension[$i]) * 100;
+            $puntajeDimensiones[$i] = round(($puntajeDimensiones[$i] / $arrayPorcentajeDimension[$i]) * 100, 2);
             if ($puntajeDimensiones[$i] >= 0 && $puntajeDimensiones[$i] <= 15) {
                 $nivel = "bajo";
             } elseif ($puntajeDimensiones[$i] >= 16 && $puntajeDimensiones[$i] <= 30) {
