@@ -32,6 +32,12 @@ section ul li{
     min-height: 100vh!important;
 }
 
+.cre{
+    color: #fff;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
 .creditos{
     position: absolute;
     bottom: 10px;

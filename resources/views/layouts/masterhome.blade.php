@@ -93,6 +93,7 @@
   <div class="row">
     <div class="col-md-5 circular">
       <img src="/img/content1.jpg">
+      <p class="cre">Foto: Revista Semana</p>
     </div>
     <div class="col-md-7"><div class="text">
     <h3>¿Por qué una herramienta de medición empresarial para la paz?</h3>
