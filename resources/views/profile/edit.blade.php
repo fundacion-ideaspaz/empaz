@@ -1125,8 +1125,8 @@ $('#pais').on('change', function (e) {
 });
 
  $('#ciiu-principal').on('change', function (e) {
-        $this = $(this);
-        val = $this.val();
+        var loco = $(this);
+        val = loco.val();
         for (option of $(`#ciiu-secundario option`)) {
             $option = $(option);
             if ($option.val() !== "") {
