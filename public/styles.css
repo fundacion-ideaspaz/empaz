@@ -915,6 +915,7 @@ body.overview .alerta-r{
 .tool{
     background-color:#ccc;
     min-width: 500px!important;
+    width: 500px!important;
 }
 
 
