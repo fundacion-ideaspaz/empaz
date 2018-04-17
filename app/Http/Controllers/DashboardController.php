@@ -89,7 +89,7 @@ class DashboardController extends Controller
         }
 
         $puntajeDimensiones = $cuestResult->puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $puntajeIndicadores);
-        $rCuestionario = $cuestResult->puntajeCuestionario($puntajeDimensiones);
+        $rCuestionario = round($cuestResult->puntajeCuestionario($puntajeDimensiones), 2);
 
         $i = 0;
         foreach ($puntajeIndicadores as $rindicador) {
