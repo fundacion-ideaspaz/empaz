@@ -1125,39 +1125,17 @@ $('#pais').on('change', function (e) {
     }
 });
 
-$('#ciiu-principal').on('change', function (e) {
-    $this = $(this);
-    val = $this.val();
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = $('#ciiu-secundario option')[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            option = _step.value;
-
+    $('#ciiu-principal').on('change', function (e) {
+        $this = $(this);
+        val = $this.val();
+        for (option of $('#ciiu-secundario option')) {
             $option = $(option);
             if ($option.val() !== "") {
                 $option.removeAttr("disabled");
             }
         }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    $('#ciiu-secundario option[value="${val}"]').attr("disabled", "true");
-});
+        $('#ciiu-secundario option[value="${val}"]').attr("disabled", "true");
+    });
 
 $(function () {
     new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
