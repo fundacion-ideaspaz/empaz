@@ -258,4 +258,11 @@
       // });
        
     </script>
+    <script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('tbody').sortable();
+  })
+  
+</script>
 </html>
