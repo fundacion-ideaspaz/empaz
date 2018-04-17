@@ -1124,17 +1124,6 @@ $('#pais').on('change', function (e) {
     }
 });
 
- $('#ciiu-principal').on('change', function (e) {
-        var loco = $(this);
-        var val = loco.val();
-        for (option of $(`#ciiu-secundario option`)) {
-            var optionV = $(option);
-            if (optionV.val() !== "") {
-                optionV.removeAttr("disabled");
-            }
-        }
-        $(`#ciiu-secundario option[value="${val}"]`).attr("disabled", "true");
-    });
 
 $(function () {
     new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
