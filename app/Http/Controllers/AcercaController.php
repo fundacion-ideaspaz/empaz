@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FaqController extends Controller
+class AcercaController extends Controller
 {
     public function index()
     {
