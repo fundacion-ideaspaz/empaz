@@ -215,9 +215,9 @@
 
     $( ".fs-continue" ).click(function() {
       console.log("continue");
-    if($('#myform').hasClass('fs-form-overview')){
-  $('.alerta-r').addClass('dnone');
-  }
+    if($('.fs-form').hasClass('fs-form-overview')){
+        $('.alerta-r').addClass('dnone');
+  };
 });
 
   $('.alerta-r').click(function(){
