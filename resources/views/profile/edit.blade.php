@@ -1094,7 +1094,7 @@
     </div>
 </div>
 <script type="text/javascript" src="/js/main.js"></script>
-<script>
+<script type="text/javascript">
 
     function loadDepartamentos() {
 
