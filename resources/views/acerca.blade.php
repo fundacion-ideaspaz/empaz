@@ -2,7 +2,7 @@
   <div class="row dimensiones-form">
     <div class="card col-12">
         <div class="card-body">
-<h2>Glosario</h2>
+<h2>Acerca de EMPAZ</h2>
 
 <p>La herramienta digital de medición de aportes empresariales a la paz fue desarrollada por Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB). La iniciativa nació como respuesta a la demanda expresada desde el sector privado en Colombia, de contar con un instrumento que permita validar y hacer seguimiento a las acciones empresariales que puedan prevenir la violencia y construir paz en sus áreas de operación y de inversión social. </p>
   
