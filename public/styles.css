@@ -912,7 +912,7 @@ body.overview .alerta-r{
     display: none;
 }
 
-.tooltip.top .tooltip-inner {
+.tool{
     background-color:#ccc;
     min-width: 500px!important;
 }
