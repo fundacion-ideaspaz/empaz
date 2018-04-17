@@ -20,9 +20,6 @@
     rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script> 
-    <script src="/js/fusioncharts.charts.js"></script>
-<script src="/js/fusioncharts.js"></script>
-<script src="/js/fusioncharts.powercharts.js"></script>
 <!-- <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script> -->
 </head>
 
