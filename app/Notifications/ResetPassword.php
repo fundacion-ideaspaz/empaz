@@ -43,7 +43,7 @@ class ResetPassword extends Notification
         return (new MailMessage)
             ->subject('Solicitud de restablecimiento de contraseña')
             ->line('Hemos recibido una solicitud para restablecer su contraseña, Haga clic en el siguiente enlace para cambiarla.')
-            ->action('Restablecer Contraseña', url('password/reset', $this->token) . '?email=' . urlencode($notifiable->email))
+            ->action('Restablecer Contraseña', url('password/reset', $this->token)
             ->line('Si no solicitó restablecer la contraseña, haga caso omiso a este correo.');
     }
 
