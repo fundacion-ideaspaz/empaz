@@ -138,7 +138,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/cuestionarios/{cuest_id}/preguntas/validate', 'WizardController@validatePreguntas');
         Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
 
-        Route::get('/password/reset', 'Auth\ForgotPasswordController.php@showLinkRequestFrom')->name('password.request');
+        Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestFrom')->name('password.request');
         Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
     });
