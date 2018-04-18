@@ -52,6 +52,7 @@ Saludos,<br>Empaz
 @isset($actionText)
 @component('mail::subcopy')
 Si tiene problemas para hacer clic en el botón "{{ $actionText }}" copie y pegue la siguiente URL en su navegador web: [{{ $actionUrl }}]({{ $actionUrl }})
+para mayor información puede escribirnos a <a href="mailto:info@empazweb.org">info@empazweb.org</a>
 @endcomponent
 @endisset
 @endcomponent
