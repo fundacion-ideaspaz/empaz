@@ -138,5 +138,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/cuestionarios/{cuest_id}/preguntas/validate', 'WizardController@validatePreguntas');
         Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
 
+
+        Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@getReset');
+        Route::post('/password/reset', 'Auth\ResetPasswordController@postReset');
+
     });
 });

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Foundation\Auth\Passwords\PasswordsBroker;
+use Illuminate\Contracts\Auth\PasswordBroker;
 
 class ResetPasswordController extends Controller
 {
