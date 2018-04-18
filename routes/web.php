@@ -141,7 +141,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Cuestionarios Routes
         Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-        Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+        Route::post('password/reset', 'Auth\ResetPasswordController@ResetsPasswords');
 
     });
 });
