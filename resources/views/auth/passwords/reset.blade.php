@@ -9,7 +9,23 @@
                 <h1>Recuperar contraseña</h1></div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
+                {!! Form::open(['url' => 'password/reset', 'method' => "POST"]) !!}
+                        
+                    {{ Form::hidden('token', $token) }}
+
+                    {{ Form::label('email', 'Email Address:') }}
+                    {{ Form::email('email', $email, ['class' => 'form-control']) }}
+
+                    {{ Form::label('password', 'New Password:') }}
+                    {{ Form::password('password', ['class' => 'form-control']) }}
+
+                    {{ Form::label('password_confirmation', 'Confirm New Password:') }}
+                    {{ Form::password('password_confirmation', ['class' => 'form-control']) }}
+
+                    {{ Form::submit('Reset Password', ['class' => 'btn btn-primary']) }}
+
+                    {!! Form::close() !!}
+                 <!--    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ old('token') }}" value="{{ $token }}">
@@ -62,7 +78,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

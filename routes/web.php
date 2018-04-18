@@ -139,7 +139,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
 
 
-        Route::post('/password/reset', 'Auth\ResetPasswordController@postReset');
+        Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
     });
 });

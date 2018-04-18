@@ -3,15 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Contracts\Auth\PasswordBroker;
-
-use App\User;
-use Validator;
-
-
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class ResetPasswordController extends Controller
 {
@@ -40,15 +32,8 @@ class ResetPasswordController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('guest');
-    // }
-    public function __construct(Guard $auth, PasswordBroker $passwords)
+    public function __construct()
     {
-        $this->auth = $auth;
-        $this->passwords = $passwords;
-
         $this->middleware('guest');
     }
 }
