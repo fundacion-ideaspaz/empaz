@@ -1,4 +1,6 @@
-<?php namespace Illuminate\Auth\Notifications;
+<?php 
+
+namespace Illuminate\Auth\Notifications;
 
 use Illuminate\Notifications\Notification;
 
