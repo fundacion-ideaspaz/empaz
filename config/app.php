@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://ec2-18-218-90-62.us-east-2.compute.amazonaws.com/'),
 
     /*
     |--------------------------------------------------------------------------
