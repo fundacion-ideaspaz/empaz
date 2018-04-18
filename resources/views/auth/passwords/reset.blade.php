@@ -9,7 +9,7 @@
                 <h1>Recuperar contraseña</h1></div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.reset') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ old('token') }}" value="{{ $token }}">
