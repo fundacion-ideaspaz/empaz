@@ -55,7 +55,7 @@ return [
     |
     */
     'from' => [
-        'address' => 'empazprueba@gmail.com',
+        'address' => 'info@empazweb.org',
         'name' => 'Proyecto Empaz'
     ],
 
