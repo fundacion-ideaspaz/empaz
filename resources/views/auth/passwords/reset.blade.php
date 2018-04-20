@@ -9,10 +9,10 @@
                 <h1>Recuperar contraseña</h1></div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('/password/reset') }}">
                         {{ csrf_field() }}
 
-                        <input type="hidden" name="token" value="{{ old('token') }}" value="{{ $token }}">
+                        <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">Email</label>
