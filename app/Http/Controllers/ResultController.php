@@ -10,7 +10,9 @@ use Auth;
 
 class ResultController extends Controller {
 
-    public function index($id) {
+    public function index() {
+        $id = Auth::user()->id;
+        
         $cuestionarios_result = CuestionarioResult::where("user_id", '=',  $id)->get();     
         
          return view("result.index")->with([
