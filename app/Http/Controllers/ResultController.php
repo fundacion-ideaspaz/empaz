@@ -11,7 +11,7 @@ use Auth;
 class ResultController extends Controller {
 
     public function index($id) {
-        $cuestionarios = CuestionarioResult::where("user_id", '=',  $id)->get();     
+        $cuestionarios_result = CuestionarioResult::where("user_id", '=',  $id)->get();     
         
          return view("result.index")->with([
             "cuestionarios_result" => $cuestionarios_result
