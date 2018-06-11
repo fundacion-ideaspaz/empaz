@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" value="{{ old('viewport') }}" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>EmPaz - Medición empresarial para la Paz</title>
+  <title>EmPaz - Medición Empresarial para la Paz</title>
   <meta name="description" content="EmPaz es una herramienta en línea, desarrollada por la Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB), que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.">
   <meta name="keywords" content="Empresas,Paz">
   <meta name="author" content="FIP, CCB">
@@ -80,7 +80,7 @@
                               @endif
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
+                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i>
                                   Cerrar sesión
                                   </a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -147,7 +147,7 @@
 <li>Visibilizar ante los grupos de interés internos y externos, oportunidades y resultados de la empresa en la construcción de paz.</li>
         <!-- <a href="/registero" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRASE</a></div></div> -->
   </div>
-</div>  
+</div>
 </section>
 <footer>
   <div class="row">
