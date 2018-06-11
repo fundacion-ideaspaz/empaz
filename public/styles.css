@@ -4,7 +4,7 @@ help-blockbody{
 }
 
 h1, h2, h3, h4, h5{
-	
+
     font-family: 'Roboto Slab', serif;
 }
 
@@ -57,7 +57,7 @@ section ul li{
 
 #section02 h4, #section02 ul li{
 font-size: 1em;
-font-weight: 400; 
+font-weight: 400;
 }
 
 .recuperar{
@@ -118,6 +118,11 @@ nav a{
     color: #fff!important;
 }
 
+.dropdown-icon{
+	margin-right: 15px;
+	width: 15px;
+}
+
 .dropdown-menu a{
     color: #00aabf!important;
 }
@@ -146,7 +151,7 @@ a{
 }
 
 header.master{
-	background-color:#00aabf; 
+	background-color:#00aabf;
 }
 
 .navbar-expand-lg .navbar-collapse{
@@ -163,7 +168,7 @@ header.master{
 
 .nav-item:last-child:after {
     display: inline-block;
-    content: "/";
+    content: "";
     color: #fff;
     font-weight: 100;
     margin: 0 10px;
@@ -188,7 +193,7 @@ header.master{
     margin-bottom: 30px;
 }
 
-.menu-logout{
+.dropdown-highlight{
     background: #fff;
 }
 
@@ -284,6 +289,11 @@ header.master{
  border: 20px solid rgba(0, 0, 0, 0.14);
 }
 
+.modal-open {
+    padding-right: 0px !important;
+		overflow-y: scroll;
+}
+
 .modal.show .modal-dialog {
     -webkit-transform: translate(0,0);
     transform: translate(-50%,-50%);
@@ -318,9 +328,9 @@ header.master{
     flex-direction: column;
     background-color: transparent;
     /* background-clip: padding-box; */
-    border: none; 
+    border: none;
     /* border-radius: .3rem; */
-    outline: 0; 
+    outline: 0;
     padding: 0 20px;
 }
 
@@ -577,10 +587,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
     margin-left: 25px;
 }
 
-.logout-link{
-    color: white;
-}
-
 .logout-link:hover{
     text-decoration: none;
     color: white;
@@ -832,7 +838,7 @@ body.tablero{
     color: #f00;
 }
 
-@media all and (max-width: 980px) { 
+@media all and (max-width: 980px) {
     header .bg-light{
     background-color: #00aabf!important;
     }
@@ -917,7 +923,3 @@ body.overview .alerta-r{
     min-width: 500px!important;
     width: 500px!important;
 }
-
-
-
-

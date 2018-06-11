@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
     rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <!-- <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script> -->
 </head>
 
@@ -52,43 +52,40 @@
                       <a class="nav-link" href="/glosario">Glosario</a>
                     </li>
 
+                    <!-- If user is authenticated -->
                     @if(Auth::user())
                     <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
                               @if(Auth::user()->role === 'superadmin')
                               <div class="menu-usuarios">
-                                  <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
+                                  <a class="dropdown-item" href="/users"><i class="dropdown-icon fa fa-users" aria-hidden="true"></i>Usuarios</a>
                               </div>
                               @endif
                                @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
-                                  <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
-                                  <a class="dropdown-item" href="/dimensiones"><i class="fa fa-pie-chart" aria-hidden="true"></i> Dimensiones</a>
-                                  <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
-                                  <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
+                                  <a class="dropdown-item" href="/cuestionarios"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
+                                  <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
+                                  <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
+                                  <a class="dropdown-item" href="/preguntas"><i class="dropdown-icon fa fa-question-circle" aria-hidden="true"></i></i>Preguntas</a>
                               @endif
                               @if(Auth::user()->role === 'empresa')
-                              <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
+                              <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
                               @endif
                               @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
-                              <a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></i></i> Resultados</a>
+                              <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
                               @endif
-                              <div class="menu-logout">
-                                  <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
-                                  Cerrar sesión
-                                  </a>
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                  </form>
-                              </div>
+                              <a class="dropdown-highlight dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}"><i class="dropdown-icon fa fa-info-circle" aria-hidden="true"></i>Perfil</a>
+                              <a class="dropdown-highlight dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"><i class="dropdown-icon fa fa-sign-out" aria-hidden="true"></i>Salir</a>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
 
                           </div>
-                    </li>
-                    @endif
+                      </li>
+                      @endif
               </ul>
           </div>
     </nav>
@@ -117,7 +114,7 @@
     $('[data-toggle="tooltip"]').tooltip();
     $('tbody').sortable();
   })
-  
+
 </script>
 
 

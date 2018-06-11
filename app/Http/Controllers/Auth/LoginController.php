@@ -50,11 +50,17 @@ class LoginController extends Controller
         ];
         if (Auth::attempt($credentials))
         {
-            return redirect()->intended('home');
+            $role = Auth::user()->role;
+            switch ($role) {
+                case 'empresa':
+                    return redirect('/profile/empresa');
+                default:
+                    return redirect('/profile/user');
+            }
         }
         else
         {
-            return view('auth.login')->withErrors([
+            return view('home')->withErrors([
                 "auth" => "Datos incorrectos. Vuelve a intentarlo."
             ]);
         }

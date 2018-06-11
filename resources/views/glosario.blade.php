@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'login') @section('content')
+@extends('layouts.master') @section('title', 'Glosario') @section('content')
 <h2>Glosario</h2>
   <div id="accordion" role="tablist">
   <div class="card">
@@ -238,5 +238,5 @@
       </div>
     </div>
   </div>
- </div> 
+ </div>
 @endsection

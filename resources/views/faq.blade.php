@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'login') @section('content')
+@extends('layouts.master') @section('title', 'FAQs') @section('content')
 
 
 <h2>Preguntas frecuentes</h2>
@@ -15,7 +15,7 @@
     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
         <p>Esta iniciativa nació a raíz de la necesidad detectada desde la Cámara de Comercio de Bogotá y la Fundación Ideas para la paz, de propiciarles una guía práctica a aquellas empresas que quieren hacer un aporte a la construcción de paz en el país, pero que no saben cómo ni cómo medir sus resultados.</p>
-<p>Teniendo en cuenta que la construcción de paz desde el sector privado es una práctica que se encuentra en pleno desarrollo hasta la fecha – tanto en Colombia como en el mundo –, existen brechas en conocimiento y entendimiento de los aportes concretos que pueden hacer las empresas a este propósito. Por otro lado, durante los pilotos de la herramienta EmPaz hemos identificado que diferentes empresas ya están realizando acciones con la intención de aportar a la paz, pero les faltan lineamientos sobre cómo medir los resultados e impactos de estas acciones y, en el caso de brechas identificadas, cómo mejorar los alcances de las mismas. Asimismo, las acciones en construcción de paz suelen ser iniciativas valiosas pero puntuales: muy pocas empresas cuentan con un enfoque integral en construcción de paz, que permita alinear sus diferentes actividades – comerciales, sociales, de relacionamiento con grupos de interés – a este mismo propósito.</p> 
+<p>Teniendo en cuenta que la construcción de paz desde el sector privado es una práctica que se encuentra en pleno desarrollo hasta la fecha – tanto en Colombia como en el mundo –, existen brechas en conocimiento y entendimiento de los aportes concretos que pueden hacer las empresas a este propósito. Por otro lado, durante los pilotos de la herramienta EmPaz hemos identificado que diferentes empresas ya están realizando acciones con la intención de aportar a la paz, pero les faltan lineamientos sobre cómo medir los resultados e impactos de estas acciones y, en el caso de brechas identificadas, cómo mejorar los alcances de las mismas. Asimismo, las acciones en construcción de paz suelen ser iniciativas valiosas pero puntuales: muy pocas empresas cuentan con un enfoque integral en construcción de paz, que permita alinear sus diferentes actividades – comerciales, sociales, de relacionamiento con grupos de interés – a este mismo propósito.</p>
 <p>Con EmPaz, queremos ayudar a las empresas en atender estas brechas y demandas. Por esto, la herramienta tiene el propósito combinado de evaluar, instruir y promover la mejora continua del desempeño de las empresas en Colombia con respecto a su promoción de la paz en el país. </p>
 </p>
       </div>
@@ -244,5 +244,5 @@
       </div>
     </div>
   </div>
- </div> 
+ </div>
 @endsection

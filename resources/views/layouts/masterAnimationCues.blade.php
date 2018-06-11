@@ -77,7 +77,7 @@
                               @endif
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
+                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i>
                                   Cerrar sesión
                                   </a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -110,7 +110,7 @@
       <div class="row">
       <div class="col-md-5 derecha">
         <h3>Registrar nueva empresa</h3>
-         <a href="/registro">Crear nueva empresa</a>
+         <a href="/registro">Crear nuevo perfil</a>
       </div>
       <div class="col-md-7">
       <h3>Ingresar</h3>
@@ -175,7 +175,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 <footer>
   <div class="row">
     <div class="col-md-6"></div>
@@ -201,7 +201,7 @@
     // console.log(selecte);
 
       if($(".pregunta-select").has('.cs-active')){
-        console.log('prueba');  
+        console.log('prueba');
       };
 
       $(document).ready(function(){
@@ -214,7 +214,7 @@
 });
 
     $( ".fs-continue" ).click(function() {
-      
+
     if($('.fs-form').hasClass('fs-show')){
       console.log("continue");
         $('.alerta-r').addClass('dnone');
@@ -231,7 +231,7 @@
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
-        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
           new SelectFx( el, {
             stickyPlaceholder: false,
             onChange: function(val){
@@ -256,13 +256,13 @@
       //  $('.cs-options').click(function(){
       //   $('.fs-field-label').removeClass('prueba');
       // });
-       
+
     </script>
     <script type="text/javascript">
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $('tbody').sortable();
   })
-  
+
 </script>
 </html>

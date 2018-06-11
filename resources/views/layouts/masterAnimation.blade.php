@@ -49,7 +49,7 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   <i class="fa fa-user" aria-hidden="true"></i> Ingresar
 </button>
-</div> 
+</div>
 
 </nav>
 </header>
@@ -68,7 +68,7 @@
       <div class="row">
       <div class="col-md-5 derecha">
         <h3>Registrar nueva empresa</h3>
-         <a href="/registro">Crear nueva empresa</a>
+         <a href="/registro">Crear nuevo perfil</a>
       </div>
       <div class="col-md-7">
       <h3>Ingresar</h3>
@@ -133,7 +133,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 <footer>
   <div class="row">
     <div class="col-md-6"></div>
@@ -156,7 +156,7 @@
       (function() {
         var formWrap = document.getElementById( 'fs-form-wrap' );
 
-        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {  
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
           new SelectFx( el, {
             stickyPlaceholder: false,
             onChange: function(val){
@@ -173,6 +173,6 @@
 
       })();
 
-      
+
     </script>
 </html>

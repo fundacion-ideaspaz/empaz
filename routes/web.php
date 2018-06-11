@@ -11,39 +11,16 @@
 |
 */
 Auth::routes();
+Route::get('/', 'HomeController@index')->name('home');
 Route::post('login', 'Auth\LoginController@authenticate')->name('login');
 Route::get('/registro', 'ProfileController@registro');
 Route::post('/registro', 'ProfileController@saveRegistro');
 Route::get('/registro/exito', 'ProfileController@registroExito');
-Route::get('/', function () {
-    if (!Auth::user()) {
-        return redirect('/login');
-    }
-    $role = Auth::user()->role;
-    switch ($role) {
-        case 'empresa':
-            return redirect('/profile/empresa');
-        default:
-            return redirect('/profile/user');
-    }
-});
-Route::get('/home', function () {
-    if (!Auth::user()) {
-        return redirect('/login');
-    } else {
-        $role = Auth::user()->role;
-        switch ($role) {
-            case 'empresa':
-                return redirect('/profile/empresa');
-            default:
-                return redirect('/profile/user');
-        }
-    }
-});
-
+Route::get('/home', function () { return redirect('/');});
+Route::get('/login', function () { return redirect('/');});
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::get('/acerca', 'AcercaController@index')->name('acerca');
-Route::get('/admin', 'AmdController@index')->name('admin');
+Route::get('/admin', 'AdmController@index')->name('admin');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');
 Route::get('/users/{id}/activate/{code}', 'ProfileController@activateAccount');
 
@@ -91,7 +68,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dimensiones/{id}', 'DimensionesController@show');
         Route::get('/dimensiones/{id}/delete', 'DimensionesController@delete');
         Route::post('/dimensiones/{id}/delete', 'DimensionesController@deleteConfirm');
-    
+
     // Indicadores Routes
         Route::get('/indicadores', 'IndicadoresController@index');
         Route::get('/indicadores/new/', 'IndicadoresController@create');
@@ -103,7 +80,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/indicadores/{id}', 'IndicadoresController@show');
         Route::get('/indicadores/{id}/delete', 'IndicadoresController@delete');
         Route::post('/indicadores/{id}/delete', 'IndicadoresController@deleteConfirm');
-    
+
     // Preguntas Routes
         Route::get('/preguntas', 'PreguntasController@index');
         Route::get('/preguntas/new/', 'PreguntasController@create');
@@ -113,7 +90,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/preguntas/{id}', 'PreguntasController@show');
         Route::get('/preguntas/{id}/delete', 'PreguntasController@delete');
         Route::post('/preguntas/{id}/delete', 'PreguntasController@deleteConfirm');
-    
+
         // Cuestionarios Routes
         Route::get('/cuestionarios', 'CuestionariosController@index');
         Route::post('/cuestionarios', 'CuestionariosController@store');

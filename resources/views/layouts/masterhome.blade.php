@@ -38,23 +38,60 @@
 
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-    <li class="nav-item">
-       <a class="nav-link" href="/acerca">Acerca de Empaz</a>
-    </li>
       <li class="nav-item">
-                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
-                    </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/faq">Preguntas frecuentes</a>
+         <a class="nav-link" href="/acerca">Acerca de Empaz</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/glosario">Glosario</a>
-      </li>
-    </ul>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  <i class="fa fa-user" aria-hidden="true"></i> Ingresar
-</button>
-</div>
+        <li class="nav-item">
+                        <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
+                      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq">Preguntas frecuentes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/glosario">Glosario</a>
+        </li>
+
+        <!-- If user is authenticated -->
+        @if(Auth::user())
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  @if(Auth::user()->role === 'superadmin')
+                  <div class="menu-usuarios">
+                      <a class="dropdown-item" href="/users"><i class="dropdown-icon fa fa-users" aria-hidden="true"></i>Usuarios</a>
+                  </div>
+                  @endif
+                   @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+                      <a class="dropdown-item" href="/cuestionarios"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
+                      <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
+                      <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
+                      <a class="dropdown-item" href="/preguntas"><i class="dropdown-icon fa fa-question-circle" aria-hidden="true"></i></i>Preguntas</a>
+                  @endif
+                  @if(Auth::user()->role === 'empresa')
+                  <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
+                  @endif
+                  @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
+                  <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
+                  @endif
+                  <a class="dropdown-highlight dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}"><i class="dropdown-icon fa fa-info-circle" aria-hidden="true"></i>Perfil</a>
+                  <a class="dropdown-highlight dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();"><i class="dropdown-icon fa fa-sign-out" aria-hidden="true"></i>Salir</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+
+              </div>
+        </li>
+      </ul>
+      @else
+      </ul>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa fa-user" aria-hidden="true"></i> Ingresar
+      </button>
+      @endif
+    </div>
 
 </nav>
 </header>
@@ -112,6 +149,80 @@
   </div>
 </div>
 </section>
+
+<div class="modal {{ !$errors->has('auth') ? 'fade' : '' }}" id="exampleModal" data-keep-showing="{{ $errors->has('auth') }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+      <div class="col-md-5 derecha">
+        <h3>Registrar nueva empresa</h3>
+         <a href="/registro">Crear nuevo perfil</a>
+      </div>
+      <div class="col-md-7">
+      <h3>Ingresar</h3>
+         <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+
+                            <div class="col-md-10">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                                <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" value="{{ old('email') }}" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+
+                            <div class="col-md-10">
+                              <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" value="{{ old('password') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="contentemail">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" value="{{ old('remember') }}" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                                    </label>
+                                </div>
+                            </div>
+                            @if ($errors)
+                                <span class="help-block">
+                                    <strong>{{ $errors->first() }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <button type="submit" class="btn btn-primary">
+                                    Ingresar
+                                </button>
+
+                                <a class="recuperarpass" style="color: #fff!important;" href="{{ route('password.request') }}">
+                                    ¿Olvidó su contraseña?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <footer>
   <div class="row">
     <div class="col-md-6"></div>
@@ -121,10 +232,18 @@
     </div>
   </div>
 </footer>
-  <div >
+
+
+  <!-- <div >
     @yield('content')
-  </div>
+  </div> -->
+
 </body>
+<script type="text/javascript">
+  $(function () {
+      $('*[data-keep-showing="1"]').modal('show').addClass('fade'); // Keep showing login modal when there are errors.
+  });
+</script>
 <script src="/popper/umd/popper.js"></script>
 <script src="/js/bootstrap-slider.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"

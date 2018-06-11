@@ -1,5 +1,4 @@
-@extends('layouts.masterhome') @section('title', 'login')
-
+@extends('layouts.masterhome') @section('title', 'Home')
 
 @section('content')
 
@@ -15,7 +14,7 @@
       <div class="row">
       <div class="col-md-5 derecha">
         <h3>Registrar nueva empresa</h3>
-         <a href="/registro">Crear nueva empresa</a>
+         <a href="/registro">Crear nuevo perfil</a>
       </div>
       <div class="col-md-7">
       <h3>Ingresar</h3>
