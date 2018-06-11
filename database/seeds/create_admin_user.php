@@ -19,4 +19,5 @@ class create_admin_user extends Seeder
             'role' => 'superadmin'
         ]);
     }
-}
+
+    
