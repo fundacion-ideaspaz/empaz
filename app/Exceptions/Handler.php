@@ -42,6 +42,7 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
+     
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
@@ -60,6 +61,9 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest(route('/home'));
+        $request->session()->flash('message.level', 'danger');
+        $request->session()->flash('message.content', 'Error!');
+
+        return redirect()->guest(route('home'));
     }
 }

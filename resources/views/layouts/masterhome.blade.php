@@ -97,9 +97,10 @@
 </header>
 <section>
 <div class="content-text">
-  <div class="text"><h4><strong>EmPaz*</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
-        <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
-      </div>
+  <div class="text">
+    <h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
+    <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
+  </div>
 </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -232,7 +233,6 @@
     </div>
   </div>
 </footer>
-
 
   <!-- <div >
     @yield('content')
