@@ -18,7 +18,7 @@ Route::post('/registro', 'ProfileController@saveRegistro');
 Route::get('/registro/exito', 'ProfileController@registroExito');
 Route::get('/home', function () { return redirect('/');});
 Route::get('/login', function () { return redirect('/');});
-Route::get('/faq', 'FaqController@index')->name('faq');
+Route::resource('faqs', 'FaqController');
 Route::get('/acerca', 'AcercaController@index')->name('acerca');
 Route::get('/admin', 'AdmController@index')->name('admin');
 Route::get('/glosario', 'GlosarioController@index')->name('glosario');

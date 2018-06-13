@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/faq">Preguntas frecuentes</a>
+                      <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
                     </li>
 
                     <li class="nav-item">
@@ -64,7 +64,7 @@
                                   <a class="dropdown-item" href="/users"><i class="dropdown-icon fa fa-users" aria-hidden="true"></i>Usuarios</a>
                               </div>
                               @endif
-                               @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+                              @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
                                   <a class="dropdown-item" href="/cuestionarios"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
                                   <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
                                   <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
@@ -91,6 +91,7 @@
     </nav>
   </header>
   <div class="container app-container">
+    @include('inc.messages')
     @yield('content')
   </div>
   <footer>

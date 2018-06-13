@@ -45,7 +45,7 @@
                         <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
                       </li>
         <li class="nav-item">
-          <a class="nav-link" href="/faq">Preguntas frecuentes</a>
+          <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/glosario">Glosario</a>
