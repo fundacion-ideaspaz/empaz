@@ -4,11 +4,11 @@
         {!! Form::open(['action' => ['FaqController@update', $faq->id], 'method' =>'POST']) !!}
         <div class="form-group">
           {{Form::bsLabel('Pregunta')}}
-          {{Form::bsText('question', $faq->question, ['placeholder'=>'Ingrese la pregunta'])}}
+          {{Form::bsText('question', $faq->question)}}
         </div>
         <div class="form-group">
           {{Form::bsLabel('Respuesta')}}
-          {{Form::bsTextArea('answer', $faq->answer, ['placeholder'=>'Ingrese la respuesta correspondiente'])}}
+          {{Form::bsTextArea('answer', $faq->answer)}}
         </div>
           {{ Form::hidden('_method', 'PUT') }}
           {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary'])}}
