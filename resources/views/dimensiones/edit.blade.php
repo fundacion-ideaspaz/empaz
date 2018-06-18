@@ -26,14 +26,6 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="file">Archivo adjunto</label>
-                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
-                    <small id="passwordHelp" class="form-text text-muted">
-                        No necesitas cambiar el logo. Si dejas este campo en blanco, el logo permanecerá igual.
-                    </small>
-                    <img src="{{asset('storage/'.$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
-                </div>
-                <div class="form-group">
                     <label for="estado">Estado</label>
                     <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control" @if(!$canEditEstado) disabled="disabled" @endif>
                         <option value="activo" @if($dimension->estado === "activo") selected @endif>Activo</option>
@@ -65,4 +57,3 @@
 });
 </script>
 @endsection
-

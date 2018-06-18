@@ -21,16 +21,8 @@
                     <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
+                    <label for="descripcion">Descripción</label><br>
                     <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control" required>{{ old('descripcion') }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="file">Archivo adjutno</label>
-                    <br>
-                    <!-- <label class="custom-file"> -->
-                    <input type="file" name="logo" value="{{ old('logo') }}" id="logo" class="form-control">
-                    <!-- <span class="custom-file-control"></span> -->
-                    </label>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
@@ -64,7 +56,7 @@
         <div class="from-group">
             <input type="submit" class="btn btn-primary" value="Guardar">
         </div>
-        
+
         </form>
     </div>
 </div>
