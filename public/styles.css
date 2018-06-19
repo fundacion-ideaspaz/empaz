@@ -13,7 +13,7 @@ section ul li{
 }
 
 h4{
-	font-size: 1.2em;
+	font-size: 1.1em;
     font-weight: 200;
     margin-bottom: 40px;
     line-height: 1.5em;
@@ -53,9 +53,9 @@ section ul li{
 
 .flecha{
     position: absolute;
-    left: 50%;
+    left: 48%;
     margin-left: -25px;
-    bottom: 100px;
+    bottom: 20px;
     z-index: 1000;
 }
 
@@ -467,7 +467,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 }
 
 .content-text .text{
-	width: 60%;
+	width: 70%;
 	color: #fff;
 	text-align: center;
 	position: relative;

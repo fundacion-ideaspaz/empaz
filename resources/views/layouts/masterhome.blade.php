@@ -99,11 +99,14 @@
 <section>
 <div class="content-text">
   <div class="text">
-    <h4><strong>EmPaz</strong> es una herramienta en línea, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, que permite evaluar los aportes a la construcción de paz que genera una organización desde su gestión estratégica y a través de iniciativas, en el marco de su operación comercial e inversión social. Está dirigida a empresas de cualquier tamaño y sector, a fundaciones empresariales, asociaciones y gremios.</h4>
+    <h2>¡Bienvenido a EmPaz!</h2>
+    <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva, y está dirigida a empresas de cualquier tamaño y sector. </h4>
+      <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
+      <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
     <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
   </div>
 </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -124,29 +127,32 @@
     </div>
   </div>
 </div>
-<div class="flecha"><a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50"></a></div>
+<div class="flecha">
+  <a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50" style="margin-left:16px;"></a>
+  <h4 style="color: #fff">Conozca más</h4>
+</div>
 <div class="creditos">Foto: Revista Semana</div>
 </section>
 <section id="section02">
 <div class="container">
   <div class="row">
-    <div class="col-md-5 circular">
+    <div class="col-md-5 circular" style="margin-top:10%">
       <img src="/img/content1.jpg">
       <p class="cre">Foto: Revista Semana</p>
     </div>
     <div class="col-md-7"><div class="text">
-    <h3>¿Por qué una herramienta de medición empresarial para la paz?</h3>
+    <h3>¿Para qué una herramienta de medición empresarial para la paz?</h3>
 
-    <h4>Cada vez más empresas quieren invertir en la construcción de paz, pero no saben qué ni cómo medir los resultados de sus actividades al respecto. Aquellas que ya están realizando acciones prometedoras en la materia, también necesitan lineamientos sobre cómo planear y dar seguimiento a estas acciones y cómo superar las brechas y aprovechar las oportunidades que se presenten.</h4>
+    <h4>Aunque cada vez más empresas quieren invertir en la construcción de paz, muchas no saben cómo hacerlo ni de qué manera medir los resultados. Aquellas que ya están realizando acciones prometedoras para este propósito, también necesitan lineamientos sobre cómo planear y darles seguimiento y, sobre todo, cómo superar las brechas para aprovechar las oportunidades que se presenten.</h4>
 
-<h4>Aplicar EmPaz le permite a la organización:</h4>
+<h4>Aplicar EmPaz le permite a su empresa:</h4>
 
 <ul>
-<li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en el área de influencia de la empresa.</li>
+<li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en su área de influencia.</li>
 <li>Realizar un proceso de autoevaluación y aprendizaje interno para el mejoramiento continuo de la gestión.</li>
 <li>Obtener insumos para la toma de decisiones a nivel estratégico y operativo.</li>
-<li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de la organización.</li>
-<li>Visibilizar ante los grupos de interés internos y externos, oportunidades y resultados de la empresa en la construcción de paz.</li>
+<li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de su organización.</li>
+<li>Visibilizar ante sus grupos de interés internos y externos, oportunidades y resultados de su empresa en la construcción de paz.</li>
         </div></div>
   </div>
 </div>
