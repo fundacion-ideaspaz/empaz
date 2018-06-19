@@ -1,29 +1,29 @@
-@extends('layouts.master') @section('title', 'Acerca') @section('content')
+@extends('layouts.master') @section('title', 'Manual') @section('content')
   <div class="row dimensiones-form">
     <div class="card col-12">
         <div class="card-body">
-<h2>Acerca de EMPAZ</h2>
+<h2>EmPaz - Paso a paso</h2>
 
-<p>La herramienta digital de medición de aportes empresariales a la paz fue desarrollada por Fundación Ideas para la Paz (FIP) y la Cámara de Comercio de Bogotá (CCB). La iniciativa nació como respuesta a la demanda expresada desde el sector privado en Colombia, de contar con un instrumento que permita validar y hacer seguimiento a las acciones empresariales que puedan prevenir la violencia y construir paz en sus áreas de operación y de inversión social. </p>
-  
-<h5>El proceso de desarrollo de EmPaz</h5>
+<h5>¿Cómo diligenciar la herramienta de medición empresarial EmPaz? Estos son los pasos a seguir:</h5>
 
-<p>EmPaz es el resultado de un ejercicio participativo de diseño y pilotaje de varios años. Se basa en lineamientos y casos documentados en la literatura disponible a nivel mundial sobre sector privado y paz y una sistematización de las mejores prácticas identificadas por la FIP y la CCB, complementadas con los aportes de un número importante de expertos y líderes empresariales colombianos, quienes revisaron y pilotearon la herramienta en sus organizaciones.</p>
+<ul>
+  <li>Registrarse y crear su nuevo perfil, donde le pedimos unos datos sobre su empresa y la persona que diligencia el cuestionario (estos datos son confidenciales y serán guardados en una base de datos de acceso reservado para los expertos de la FIP y CCB).</li>
+  <li>Después, usted puede escoger el cuestionario que quiere llenar. El cuestionario Base de EmPaz contiene las preguntas que son relevantes para cualquier empresa, sin importar su tipo, tamaño o sector. Le recomendamos llenar este cuestionario primero, antes de llenar el cuestionario para Macrosector, sí aplica, y que contiene preguntas adicionales adaptadas a los riesgos y oportunidades de sectores económicos específicos. </li>
+  <li>El sistema le guiará a través de la herramienta, presentándole las preguntas con las diferentes opciones de respuesta. (Cada respuesta tiene un puntaje asignado entre 1 y 5, que corresponde al nivel de importancia de la misma. Este puntaje no es visible para el usuario).</li>
+  <li>Antes de guardar el cuestionario completo para permitir la evaluación, usted tiene acceso a todas las preguntas y respuestas, con la opción de cambiar respuestas si lo considera pertinente.</li>
+  <li>En cada pregunta, usted encontrará descripciones de términos y conceptos con su explicación. También puede consultar la sección Glosario, donde encontrará todos los términos con relación a construcción de paz y prevención de conflictos más relevantes de EmPaz.</li>
+  <li>EmPaz le pide una respuesta en cada pregunta. Sin embargo, en algunas preguntas usted puede escoger la opción “No aplica”, cuando el tema no aplica debido a las características específicas de su empresa. En otras preguntas, consideramos que el tema abordado representa unos mínimos base que debe cumplir cualquier empresa comprometida con la paz. En estos casos, no existe la opción “No aplica” y usted deberá escoger la respuesta que más se acerca a la situación de su compañía.</li>
+  <li>Si no existen o no se tiene acceso a los datos necesarios para responder, usted puede escoger la opción “No hay información”. Tenga en cuenta que esta respuesta se valora con la calificación mínima de 1 punto. La razón es que se considera altamente importante que las empresas registren con precisión la información cuantitativa y cualitativa relevante con respecto a sus acciones en construcción de paz, de manera transparente y de fácil acceso, para que sus grupos de interés puedan comprobar la información.</li>
+  <li>Cuando usted ha validado todas sus respuestas, guarde su formulario y EmPaz generará el informe de resultados. Allí, encontrará de manera clara y concisa, gráficas y textos explicativos de los resultados, con la descripción del nivel de cumplimiento de los diferentes aspectos en prevención de conflicto y construcción de paz abordados en la herramienta EmPaz, y algunas recomendaciones generales para mejorar sus aportes a este propósito.</li>
+</ul>
 
-<h5>Contenidos</h5>
+<p>
+  <strong>Importante:</strong> le recomendamos responder todas las preguntas antes de cerrar sesión, dado que al salir e ingresar de nuevo usted deberá responder desde el inicio.
+</p>
+<p>Si usted tiene toda la información relativa a los temas de las preguntas a la mano, diligenciar EmPaz puede demorar entre una y dos horas.</p>
 
-<p>La herramienta digital EmPaz consta de cuestionarios –en la actualidad, se cuenta con un cuestionario General y un cuestionario para Macrosector Agroindustria (próximo a publicarse) con un promedio de 30 preguntas. Estas preguntas están asociadas a indicadores, los cuales a su vez, pertenecen a 6 dimensiones claves para lograr una paz sostenible. Estas dimensiones, que forman parte del modelo conceptual de intervención empresarial para la construcción de paz, desarrollado por la FIP, son: gestión estratégica para la paz, que abarca aspectos clave como la debida diligencia en derechos humanos, gestión de riesgos sensible al conflicto, transparencia y fomento de una cultura de legalidad, entre otros; Desarrollo económico inclusivo, Sostenibilidad ambiental, Institucionalidad y participación democrática, Capital humano y Reconciliación y convivencia.</p>
+<p>Para más información y detalles sobre la metodología de medición, ver el <a href="/pdfs/ManualEMPAZ.pdf" target="_blank">Manual de usuario</a>. </p>
+<p>Si desea conocer más sobre las bases conceptuales de la herramienta EmPaz, como por ejemplo, las Dimensiones de intervención empresarial para construir paz y los indicadores de medición, por favor consulte la <a href="/acerca">Guía Sobre EmPaz</a>.</p>
 
-<h5>¿Cómo funciona?</h5>
-<p>Después de haber registrado los datos de su empresa, usted puede escoger el cuestionario que quiere llenar. El cuestionario General EmPaz contiene las preguntas base que son relevantes para cualquier empresa, sin importar su tipo, tamaño o sector. Le recomendamos llenar este cuestionario primero, antes de llenar el cuestionario para Macrosector, que contiene preguntas adicionales adaptadas a los riesgos y oportunidades de sectores económicos específicos. Nota que a la fecha, se cuenta con un cuestionario de macrosector, que es el de agroindustria (a mediano plazo, se desarrollarán ediciones para otros macrosectores). </p>
-<p>Después de contestar todas las preguntas del cuestionario, la empresa obtiene un informe de diagnóstico, claro y conciso, con gráficas, descripciones del nivel de cumplimiento de los diferentes aspectos en prevención de conflicto y construcción de paz abordados en la herramienta EmPaz, y algunas recomendaciones generales para mejorar sus aportes a este importante propósito.</p>
-
-<p>Para más información y detalles sobre la metodología de medición, ver el manual de usuario.</p>
-
-<h5>EmPaz Premium</h5>
-<p>Adicional a EmPaz en su versión online, la FIP y la CCB desarrollaron EmPaz Premium, la versión ampliada de la herramienta y de acceso exclusivo, desarrollada para organizaciones empresariales que desean contar con un análisis personalizado y alineado con las necesidades específicas de su operación. Para esto, EmPaz Premium se basa en el acompañamiento de expertos FIP que visitan las instalaciones, realizan entrevistas con directivas, funcionarios clave y grupos de interés externos y aplican un protocolo de análisis de documentos de la empresa. Este trayecto tiene un costo, que es definido acorde a la necesidad de cada empresa.</p>
-
-<h5>Más información</h5>
-<p>Si desea recibir más información sobre EmPaz o si está interesado en explorar opciones de aplicar EmPaz Premium, por favor contactar: info@empazweb.org, o teléfono: +57 1 218 3449.</p>
 </div></div></div>
 @endsection

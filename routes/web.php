@@ -21,8 +21,14 @@ Route::get('/login', function () { return redirect('/');});
 Route::resource('glosario', 'GlosarioController');
 Route::resource('faqs', 'FaqController');
 Route::get('/acerca', 'AcercaController@index')->name('acerca');
+Route::get('/manual', 'ManualController@index')->name('manual');
 Route::get('/admin', 'AdmController@index')->name('admin');
 Route::get('/users/{id}/activate/{code}', 'ProfileController@activateAccount');
+
+Route::group(array('prefix' => 'files'), function() {
+  Route::get('/', 'FilesController@index');
+  Route::post('/', 'FilesController@store');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/user', 'ProfileController@profileUser');

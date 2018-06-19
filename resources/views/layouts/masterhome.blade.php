@@ -42,8 +42,8 @@
          <a class="nav-link" href="/acerca">Acerca de Empaz</a>
       </li>
         <li class="nav-item">
-                        <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
-                      </li>
+          <a class="nav-link" href="/manual">Manual</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
         </li>
@@ -68,6 +68,7 @@
                       <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
                       <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
                       <a class="dropdown-item" href="/preguntas"><i class="dropdown-icon fa fa-question-circle" aria-hidden="true"></i></i>Preguntas</a>
+                      <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
                   @endif
                   @if(Auth::user()->role === 'empresa')
                   <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>

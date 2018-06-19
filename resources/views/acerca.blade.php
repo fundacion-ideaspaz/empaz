@@ -24,6 +24,6 @@
 <p>Adicional a EmPaz en su versión online, la FIP y la CCB desarrollaron EmPaz Premium, la versión ampliada de la herramienta y de acceso exclusivo, desarrollada para organizaciones empresariales que desean contar con un análisis personalizado y alineado con las necesidades específicas de su operación. Para esto, EmPaz Premium se basa en el acompañamiento de expertos FIP que visitan las instalaciones, realizan entrevistas con directivas, funcionarios clave y grupos de interés externos y aplican un protocolo de análisis de documentos de la empresa. Este trayecto tiene un costo, que es definido acorde a la necesidad de cada empresa.</p>
 
 <h5>Más información</h5>
-<p>Si desea recibir más información sobre EmPaz o si está interesado en explorar opciones de aplicar EmPaz Premium, por favor contactar: info@empazweb.org, o teléfono: +57 1 218 3449.</p>
+<p>Para conocer los términos y condiciones asociados al uso de la herramienta EmPaz dirígase <a href="/pdfs/TerminosCondicionesEMPAZ.pdf">aquí</a>. Si desea recibir más información sobre EmPaz o si está interesado en explorar opciones de aplicar EmPaz Premium, por favor contactar: info@empazweb.org, o teléfono: +57 1 218 3449.</p>
 </div></div></div>
 @endsection
