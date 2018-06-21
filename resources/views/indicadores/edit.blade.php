@@ -7,13 +7,9 @@
             </div>
             <form action="/indicadores/{{$indicador->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                @if(!$canEditEstado)
+                <div class="alert alert-warning">
+                  <p>Este indicador se encuentra asociado un cuestionario, por tanto no puede ser desactivado.</p>
                 </div>
                 @endif
                 <div class="form-group">
@@ -27,10 +23,17 @@
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control" @if(!$canEditEstado) disabled="disabled" @endif>
-                        <option value="activo" @if($indicador->estado === "activo") selected @endif>Activo</option>
-                        <option value="inactivo" @if($indicador->estado === "inactivo") selected @endif>Inactivo</option>
+                    @if(!$canEditEstado)
+                    <select name="estado" id="estado" class="form-control" readonly >
+                        <option value="activo" {{$indicador->estado === 'activo' ? "selected" : 'disabled' }}>Activo</option>
+                        <option value="inactivo" {{$indicador->estado === 'inactivo' ? "selected" : 'disabled' }}>Inactivo</option>
                     </select>
+                    @else
+                    <select name="estado" id="estado" class="form-control" >
+                        <option value="activo" {{$indicador->estado === 'activo' ? "selected" : '' }}>Activo</option>
+                        <option value="inactivo" {{$indicador->estado === 'inactivo' ? "selected" : '' }}>Inactivo</option>
+                    </select>
+                    @endif
                 </div>
                 <div class="from-group">
                     <input type="submit" class="btn btn-primary" value="Guardar">

@@ -7,13 +7,9 @@
             </div>
             <form action="/preguntas/{{$pregunta->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                @if(!$canEditEstado)
+                <div class="alert alert-warning">
+                  <p>Esta pregunta se encuentra asociada un cuestionario, por tanto no puede ser desactivada.</p>
                 </div>
                 @endif
                 <div class="form-group">
@@ -23,7 +19,20 @@
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
                     <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control">{{$pregunta->descripcion}}</textarea>
-                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    @if(!$canEditEstado)
+                    <select name="estado" id="estado" class="form-control" readonly >
+                        <option value="activo" {{$pregunta->estado === 'activo' ? "selected" : 'disabled' }}>Activo</option>
+                        <option value="inactivo" {{$pregunta->estado === 'inactivo' ? "selected" : 'disabled' }}>Inactivo</option>
+                    </select>
+                    @else
+                    <select name="estado" id="estado" class="form-control" >
+                        <option value="activo" {{$pregunta->estado === 'activo' ? "selected" : '' }}>Activo</option>
+                        <option value="inactivo" {{$pregunta->estado === 'inactivo' ? "selected" : '' }}>Inactivo</option>
+                    </select>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="tipo_respuesta">Tipo de Respuesta</label>
@@ -33,13 +42,6 @@
                         <option value="tipo_2" {{ $pregunta->tipo_respuesta === 'tipo_2' ? 'selected': ''}}>Tipo 2</option>
                         <option value="tipo_3" {{ $pregunta->tipo_respuesta === 'tipo_3' ? 'selected': ''}}>Tipo 3</option>
                         <option value="tipo_4" {{ $pregunta->tipo_respuesta === 'tipo_4' ? 'selected': ''}}>Tipo 4</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <select name="estado" id="estado" class="form-control" @if(!$canEditEstado) disabled="disabled" @endif>
-                        <option value="activo" @if($pregunta->estado === "activo") selected @endif >Activo</option>
-                        <option value="inactivo" @if($pregunta->estado === "inactivo") selected @endif >Inactivo</option>
                     </select>
                 </div>
                 <div class="form-group">

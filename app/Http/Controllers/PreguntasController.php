@@ -115,7 +115,7 @@ class PreguntasController extends Controller
             return view("questions.delete")->with([
                 "id" => $id,
                 "can_delete" => false
-            ]);    
+            ]);
         }
         return view("questions.delete")->with([
             "id" => $id,

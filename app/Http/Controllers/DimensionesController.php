@@ -39,10 +39,6 @@ class DimensionesController extends Controller
             'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
-        $logo = '';
-        if ($request->file("logo")) {
-            $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
-        }
         $inputs = $request->all();
         $enunciados = [
             "bajo" => $inputs["enunciados"][0],
@@ -51,7 +47,6 @@ class DimensionesController extends Controller
             "medio alto" => $inputs["enunciados"][3],
             "alto" => $inputs["enunciados"][4],
         ];
-        $inputs["logo"] = $logo;
         $dimension = Dimension::create($inputs);
         foreach ($enunciados as $nivel_importancia => $enunciado) {
             $new_enunciado = Enunciado::create([
@@ -93,13 +88,7 @@ class DimensionesController extends Controller
         );
         $this->validate($request, $validations, $messages);
         $dimension = Dimension::find($id);
-        if ($request->file("logo")) {
-            $logo = Storage::disk('local')->putFile('dimensiones', $request->file("logo"));
-            $inputs = $request->all();
-            $inputs["logo"] = $logo;
-        } else {
-            $inputs = $request->all();
-        }
+        $inputs = $request->all();
         $enunciados = [
             "bajo" => $inputs["enunciados"][0],
             "medio bajo" => $inputs["enunciados"][1],

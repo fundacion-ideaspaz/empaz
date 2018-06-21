@@ -17,7 +17,7 @@ class Consulta
     public function handle($request, Closure $next)
     {
         $currentRole = Auth::user()->role;
-        if ($currentRole === 'consulta'|| $currentRole === 'superadmin') {
+        if ($currentRole === 'consulta'|| $currentRole === 'superadmin'|| $currentRole === 'experto') {
             return $next($request);
         } else {
             return abort(403, 'Unauthorized.');

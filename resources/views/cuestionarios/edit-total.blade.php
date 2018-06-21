@@ -18,7 +18,7 @@
         @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$cuestionario->nombre}}" readonly>
+                    <text type="text" class="form-control" name="nombre" readonly>{{$cuestionario->nombre}}</text>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="version">Version</label>
-                    <input type="number" class="form-control" name="version" value="{{ old('version') }}" value="{{$cuestionario->version}}" readonly>
+                    <text type="number" class="form-control" name="version" value="{{ old('version') }}" readonly>{{$cuestionario->version}}</text>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
@@ -37,10 +37,10 @@
                 </div>
         </div>
         <div class="from-group">
-            <a href="/cuestionarios/{{$cuestionario->id}}/dimensiones" class="btn btn-info">
-                Dimensiones
+            <a class="btn btn-danger" href="/cuestionarios">
+              Cancelar
             </a>
-            <input type="submit" class="btn btn-primary" value="Guardar">
+            <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
         </div>
         </form>
     </div>

@@ -8,13 +8,13 @@ use App\Pregunta;
 class Cuestionario extends Model
 {
     protected $table = 'cuestionarios';
-    
+
     protected $fillable = [
         'nombre',
         'descripcion',
         'version',
         'estado',
-        'cuest_id_parent'
+        'cuest_id_parent',
     ];
 
     public function dimensiones()

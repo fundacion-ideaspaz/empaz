@@ -119,7 +119,7 @@ class CuestionariosController extends Controller
             foreach($indicadoresPreguntas as $indPreg){
                 $indPreg->cuestionario_id = $cuestionarioCopy->id;
                 $newDimCuest = IndicadoresPreguntas::create($indPreg->toArray());
-            }            
+            }
         }
         return redirect("/cuestionarios");
     }

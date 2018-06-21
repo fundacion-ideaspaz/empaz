@@ -34,8 +34,7 @@
                 title="Eliminar">
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </a>
-              <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" title="{{$dimension->descripcion}}">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              <a class="btn btn-sm btn-primary descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i> <span>{!!$dimension->descripcion!!}</span> </a>
               </a>
             </td>
           </tr>

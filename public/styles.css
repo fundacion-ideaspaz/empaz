@@ -75,6 +75,37 @@ header{
     width: 100%;
 }
 
+a.descripcion.tip {
+    text-decoration: none;
+		text-transform: none!important;
+}
+a.descripcion.tip:hover {
+    position: relative
+}
+a.descripcion.tip span {
+    display: none
+}
+a.descripcion.tip:hover span {
+	border-radius: 5px;
+  padding: 5px 20px 5px 5px;
+	line-height: 18px;
+  display: block;
+  z-index: 100;
+  background: black;
+  margin: 10px;
+	min-width: 350px;
+	max-height: 300px;
+  position: absolute;
+  top: 20px;
+	right: 0px;
+	white-space: pre-line;
+	color: #fff;
+	text-align:left;
+	font-family: arial;
+	font-size: 1.05em;
+	overflow-y: auto;
+}
+
 a:hover{
     color: #7abee5!important;
 }
@@ -651,6 +682,10 @@ tr.children td:first-child {
     padding-left: 35px;
 }
 
+.nombre-column{
+	width: 150px;
+}
+
 .version-column{
     width: 20px;
 }
@@ -659,8 +694,8 @@ tr.children td:first-child {
     width: 20px;
 }
 
-.nombre-column{
-    width: 150px;
+.creado-column{
+	width: 20px;
 }
 
 .navbar-toggler-icon .fa{
@@ -743,13 +778,12 @@ tr.children td:first-child {
     background-image: none!important;
 }
 
-.children td{
-    padding: 0;
-
+.parent{
+	background-color: rgba(0,0,0,.05)!important;
 }
 
-.children td .row .col-md-4{
-    padding: 10px;
+.children{
+	background-color: #fff!important;
 }
 
 .fs-form-overview .alert-danger{

@@ -36,14 +36,14 @@
               <input class="form-control" value="{{$dimension->pivot->importancia}}" name="importancia" value="{{ old('importancia') }}" type="text" required/>
               <div class="input-group-addon">%</div>
             </div></td>
-           <td><button class="btn btn-danger borrar" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></button>  
-           </td> 
-        </tr>        
+           <td><button class="btn btn-danger borrar" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></button>
+           </td>
+        </tr>
         </form>
         @endforeach
         </tbody>
         </table>
-     
+
       @if(sizeof($dimensiones) > 0)
       <h4>Dimensiones disponibles para ser asignadas</h4>
       @endif
@@ -70,9 +70,7 @@
          </form>
       @endforeach
         </tbody>
-        </table>
-      
-     
+        </table>     
       <div class="form-group">
           <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/edit">
             Atrás
