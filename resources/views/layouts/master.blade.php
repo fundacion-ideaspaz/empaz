@@ -37,7 +37,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="/acerca" target="_blank">Acerca de Empaz</a>
+                      <a class="nav-link" href="/acerca">Acerca de Empaz</a>
                     </li>
 
                     <li class="nav-item">
@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="/faqs" target="_blank">Preguntas frecuentes</a>
+                      <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
                     </li>
 
                     <li class="nav-item">

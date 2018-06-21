@@ -104,6 +104,10 @@
       <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
       <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
     <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
+    <div class="flecha">
+      <a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50"></a>
+    </div>
+    <h4 style="color: #fff">Conozca más</h4>
   </div>
 </div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -127,25 +131,19 @@
     </div>
   </div>
 </div>
-<div class="flecha">
-  <a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50" style="margin-left:16px;"></a>
-  <h4 style="color: #fff">Conozca más</h4>
-</div>
 <div class="creditos">Foto: Revista Semana</div>
 </section>
 <section id="section02">
 <div class="container">
   <div class="row">
-    <div class="col-md-5 circular" style="margin-top:10%">
+    <div class="col-md-5 circular" style="margin-top:5%">
       <img src="/img/content1.jpg">
       <p class="cre">Foto: Revista Semana</p>
     </div>
     <div class="col-md-7"><div class="text">
-    <h3>¿Para qué una herramienta de medición empresarial para la paz?</h3>
+    <h3>Empresas y paz: un buen negocio</h3>
 
-    <h4>Aunque cada vez más empresas quieren invertir en la construcción de paz, muchas no saben cómo hacerlo ni de qué manera medir los resultados. Aquellas que ya están realizando acciones prometedoras para este propósito, también necesitan lineamientos sobre cómo planear y darles seguimiento y, sobre todo, cómo superar las brechas para aprovechar las oportunidades que se presenten.</h4>
-
-<h4>Aplicar EmPaz le permite a su empresa:</h4>
+    <h4>Las empresas sostenibles prosperan en entornos estables y pacíficos. Estos entornos eliminan los costos directos e indirectos de la violencia, mejoran la calidad de los mercados, aumentan los rendimientos financieros y favorecen la atracción de capital de inversión. Por esto, apostarle a la paz no solo significa hacer un aporte al bienestar de la sociedad: es un buen negocio. Aplicar EmPaz le permite a su empresa:</h4>
 
 <ul>
 <li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en su área de influencia.</li>
