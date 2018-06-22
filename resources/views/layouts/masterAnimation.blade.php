@@ -26,114 +26,74 @@
 <body>
 <header class="master">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/login"><img src="img/logo-b.png" width="130"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
-  </button>
+        <a class="navbar-brand" href="/home">
+          <img src="/img/logo-b.png" width="130">
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-    <li class="nav-item">
-       <a class="nav-link" href="/acerca" target="_blank">Acerca de Empaz</a>
-    </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/dummypdf.pdf">Manual</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/faq">Preguntas frecuentes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/glosario">Glosario</a>
-      </li>
-    </ul>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  <i class="fa fa-user" aria-hidden="true"></i> Ingresar
-</button>
-</div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/acerca">Acerca de Empaz</a>
+                  </li>
 
-</nav>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/manual" target="_blank">Manual</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/glosario" target="_blank">Glosario</a>
+                  </li>
+
+                  <!-- If user is authenticated -->
+                  @if(Auth::user())
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @if(Auth::user()->role === 'superadmin')
+                            <div class="menu-usuarios">
+                                <a class="dropdown-item" href="/users"><i class="dropdown-icon fa fa-users" aria-hidden="true"></i>Usuarios</a>
+                            </div>
+                            @endif
+                            @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+                                <a class="dropdown-item" href="/cuestionarios"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
+                                <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
+                                <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
+                                <a class="dropdown-item" href="/preguntas"><i class="dropdown-icon fa fa-question-circle" aria-hidden="true"></i></i>Preguntas</a>
+                                <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
+                            @endif
+                            @if(Auth::user()->role != 'consulta')
+                            <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
+                            @endif
+                            @if(Auth::user()->role != 'empresa')
+                            <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
+                            @endif
+                            <a class="dropdown-highlight dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}"><i class="dropdown-icon fa fa-info-circle" aria-hidden="true"></i>Perfil</a>
+                            <a class="dropdown-highlight dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="dropdown-icon fa fa-sign-out" aria-hidden="true"></i>Salir</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+
+                        </div>
+                    </li>
+                    @endif
+            </ul>
+        </div>
+  </nav>
 </header>
   <div>
     @yield('content')
   </div>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="row">
-      <div class="col-md-5 derecha">
-        <h3>Registrar nueva empresa</h3>
-         <a href="/registro">Crear nuevo perfil</a>
-      </div>
-      <div class="col-md-7">
-      <h3>Ingresar</h3>
-         <div class="panel panel-default">
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                            <div class="col-md-10">
-                              <i class="fa fa-user" aria-hidden="true"></i>
-                                <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-
-                            <div class="col-md-10">
-                              <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" value="{{ old('password') }}" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group" id="contentemail">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" value="{{ old('remember') }}" {{ old('remember') ? 'checked' : '' }}> Recordarme
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-10">
-                                <button type="submit" class="btn btn-primary">
-                                    Ingresar
-                                </button>
-
-                                <a class="recuperarpass" href="{{ route('password.request') }}">
-                                    ¿Olvidó su contraseña?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div></div></div>
-      </div>
-    </div>
-  </div>
-</div>
 <footer>
   <div class="row">
     <div class="col-md-6"></div>

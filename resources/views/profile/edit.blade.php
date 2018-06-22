@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Perfil de la Empresafile ') @section('content')
+@extends('layouts.master') @section('title', 'Perfil de la Empresa') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
@@ -6,7 +6,6 @@
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
                 <div class="row">
                     @if ($errors->any())
-
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)

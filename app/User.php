@@ -30,7 +30,6 @@ class User extends Authenticatable
     {
         $validate = [
             "nombre" => "required",
-            "organizacion" => "required",
             "email" => "required|unique:users|email",
             "password" => "required|confirmed|min:8",
         ];
@@ -41,7 +40,6 @@ class User extends Authenticatable
                 break;
             case "empresa":
                 $validate["cargo"] = "required";
-                $validate["telefono"] = "required|numeric";
                 break;
             case "experto":
                 $validate["cargo"] = "required";

@@ -9,41 +9,44 @@
         <ol class="fs-fields">
         <li>
           <label for="nombre" class="fs-field-label fs-anim-upper">Nombre</label>
-          <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="fs-anim-lower" required>
+          <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="fs-anim-lower" required maxlength="191" title="Diligencie este campo para continuar">
         </li>
         <li>
           <label for="email" class="fs-field-label fs-anim-upper">Email</label>
-          <input type="email" id="email" name="email" value="{{ old('email') }}" class="fs-anim-lower" required>
+          <input type="email" id="email" name="email" value="{{ old('email') }}" class="fs-anim-lower" required title="Diligencie este campo para continuar">
         </li>
         <li>
           <label for="password" class="fs-field-label fs-anim-upper">Contraseña</label>
-          <input type="password" id="password" name="password" value="{{ old('password') }}" class="fs-anim-lower" required>
+          <input type="password" id="password" name="password" value="{{ old('password') }}" class="fs-anim-lower" required title="Diligencie este campo para continuar">
+          <small id="passwordHelp" class="form-text text-muted">La contraseña debe tener al menos 8 caracteres.</small>
         </li>
-        @if($role === 'empresa' || $role === 'experto')
+        <li>
+          <label for="password_confirmation" class="fs-field-label fs-anim-upper">Confirmación de la contraseña</label>
+          <input type="password" id="password_confirmation" name="password_confirmation" class="fs-anim-lower" maxlength="191" required title="Diligencie este campo para continuar">
+          <small id="passwordHelp" class="form-text text-muted">Digite la contraseña nuevamente.</small>
+        </li>
         <li>
           <label for="cargo" class="fs-field-label fs-anim-upper">Cargo</label>
-          <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="fs-anim-lower" required>
+          <input type="text" name="cargo" value="{{ old('cargo') }}" id="cargo" class="fs-anim-lower" required title="Diligencie este campo para continuar">
         </li>
-        @endif @if($role === 'empresa')
         <li>
           <label for="telefono" class="fs-field-label fs-anim-upper">Teléfono</label>
-          <input type="tel" name="telefono" value="{{ old('telefono') }}" id="telefono" placeholder="opcional" class="fs-anim-lower">
+          <input type="tel" name="telefono" value="{{ old('telefono') }}" id="telefono" placeholder="Opcional" class="fs-anim-lower" title="Diligencie este campo para continuar">
         </li>
 
         </ol>
-        @endif
-          <div class="fs-submit terminos"><input type="checkbox" required  name="terminos" value="terminos"><p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a></p></div>
+          <div class="fs-submit terminos">
+            <input type="checkbox" name="terminos" value="terminos" oninvalid="this.setCustomValidity('Debe aceptar los términos para continuar su registro.')" oninput="this.setCustomValidity('')" required>
+            <p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a></p>
+          </div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
-          <!-- <a href="/users" class="btn btn-default">Cancelar</a> -->
-        @if ($errors->any())
-        <div class="alert alert-danger empre">
-          <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-        </div>
-        @endif
+          @if ($errors->any())
+          <div class="alert alert-danger empre">
+              @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+              @endforeach
+          </div>
+          @endif
       </form>
     </div>
 @endsection

@@ -17,7 +17,7 @@ class Empresa
     public function handle($request, Closure $next)
     {
         $currentRole = Auth::user()->role;
-        if ($currentRole != 'empresa' || $currentRole === 'superadmin' || $currentRole === 'experto') {
+        if ($currentRole === 'empresa' || $currentRole === 'superadmin' || $currentRole === 'experto') {
             return $next($request);
         } else {
             return abort(403, 'Unauthorized.');
