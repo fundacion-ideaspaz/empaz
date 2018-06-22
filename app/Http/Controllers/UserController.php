@@ -51,10 +51,30 @@ class UserController extends Controller
 
     public function update($id, Request $request)
     {
+        //Validation
+        $validation_pwd = [
+            "nombre" => "required",
+            "organizacion" => "required",
+            "role" => "required",
+            "password" => "confirmed|min:8",
+        ];
+
+        $validation_only = [
+            "nombre" => "required",
+            "organizacion" => "required",
+            "role" => "required",
+        ];
+        $messages = array(
+            'descripcion.required' => 'El campo descripción es requerido.',
+        );
+
+        //Update
         $user = User::find($id);
         if (!$request->password) {
+            $this->validate($request, $validation_only, $messages);
             $user->update($request->except('password'));
         } else {
+            $this->validate($request, $validation_pwd, $messages);
             $request["password"] = bcrypt($request->password);
             $user->update($request->all());
             $user->save();

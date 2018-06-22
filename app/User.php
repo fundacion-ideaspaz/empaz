@@ -19,6 +19,7 @@ class User extends Authenticatable
         'password',
         'estado',
         'confirmation_code',
+        'organizacion',
     ];
 
     protected $hidden = [
@@ -29,8 +30,9 @@ class User extends Authenticatable
     {
         $validate = [
             "nombre" => "required",
+            "organizacion" => "required",
             "email" => "required|unique:users|email",
-            "password" => "required|min:5",
+            "password" => "required|confirmed|min:8",
         ];
         switch ($role) {
             case "superadmin":

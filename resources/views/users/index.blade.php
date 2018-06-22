@@ -2,28 +2,32 @@
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
-      <h2>Lista de Usuarios</h2>
+      <h2>Panel de Usuarios</h2>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Nombre</th>
+            <th width="20%">Nombre</th>
             <th>Rol</th>
             <th>Empresa</th>
             <th>Email</th>
-            <th width="20%">Acciones</th>
+            <th width="15%">Acciones</th>
           </tr>
         </thead>
         <tbody>
           @foreach($users as $user)
           <p></p>
           <tr>
-            <td>{{$user->nombre}}</td>
+            <td width="25%">{{$user->nombre}}</td>
             <td>{{$user->role}}</td>
             <td>
-              @if($user->empresa) {{$user->empresa->nombre}} @endif
+              @if($user->empresa)
+              {{$user->empresa->nombre}}
+              @else
+              {{$user->organizacion}}
+              @endif
             </td>
             <td>{{$user->email}}</td>
-            <td width="20%">
+            <td width="15%">
               <a class="btn btn-sm btn-primary" href="/users/{{$user->id}}/edit" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               <a class="btn btn-sm btn-danger" href="/users/{{$user->id}}/delete" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-trash" aria-hidden="true"></i></a>
             </td>

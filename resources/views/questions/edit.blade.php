@@ -14,7 +14,7 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Texto</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$pregunta->nombre}}">
+                    <textarea type="text" rows="1.5" class="form-control" name="nombre">{{$pregunta->nombre}}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -50,12 +50,13 @@
                     <label for="respuesta_{{$opcion->id}}">
                         Respuesta {{ $opcion->number}}
                     </label>
-                    <input type="text" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" value="{{$opcion->descripcion}}"/>
+                    <textarea type="text" rows="1.5" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" >{{$opcion->descripcion}}</textarea>
                     @endif
                     @endforeach
                 </div>
                 <div class="from-group">
-                    <input type="submit" class="btn btn-primary" value="Guardar">
+                    <a href="/preguntas" class="btn btn-warning">Atrás</a>
+                    <input type="submit" class="btn btn-primary pull-right" value="Guardar">
                 </div>
 
             </form>

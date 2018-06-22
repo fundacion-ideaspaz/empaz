@@ -7,19 +7,9 @@
             </div>
             <form action="/indicadores" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                @if ($errors->any())
-
-                <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" maxlength="191">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -34,9 +24,10 @@
                 </div>
         </div>
         <div class="from-group">
-            <input type="submit" class="btn btn-primary" value="Guardar">
+          <a href="/indicadores" class="btn btn-warning">Atrás</a>
+          <input type="submit" class="btn btn-primary pull-right" value="Guardar">
         </div>
-                
+
         </form>
     </div>
 </div>

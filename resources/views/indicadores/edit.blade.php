@@ -14,7 +14,7 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$indicador->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{$indicador->nombre}}" maxlength="191">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -36,7 +36,8 @@
                     @endif
                 </div>
                 <div class="from-group">
-                    <input type="submit" class="btn btn-primary" value="Guardar">
+                  <a href="/indicadores" class="btn btn-warning">Atrás</a>
+                  <input type="submit" class="btn btn-primary pull-right" value="Guardar">
                 </div>
             </form>
         </div>

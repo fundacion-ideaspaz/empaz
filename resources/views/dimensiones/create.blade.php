@@ -7,22 +7,13 @@
             </div>
             <form action="/dimensiones" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
-                @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required>
+                    <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" maxlength="191">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label><br>
-                    <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control" required>{{ old('descripcion') }}</textarea>
+                    <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control" >{{ old('descripcion') }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
@@ -33,28 +24,29 @@
                 </div>
                 <h4>Descripción de la calificación</h4>
                 <div class="form-group">
-                    <label for="enunciados">Bajo (0-10%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
+                    <label for="enunciados">Bajo (0-15%)</label>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel bajo"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Medio bajo (11-30%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
+                    <label for="enunciados">Medio bajo (16-40%)</label>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel medio bajo"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Medio (31-60%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
+                    <label for="enunciados">Medio (41-60%)</label>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio alto (61-85%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio alto"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Alto (86-100%)</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="Descripción" required>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel alto"></textarea>
                 </div>
         </div>
         <div class="from-group">
-            <input type="submit" class="btn btn-primary" value="Guardar">
+            <a href="/dimensiones" class="btn btn-warning">Atrás</a>
+            <input type="submit" class="btn btn-primary pull-right" value="Guardar">
         </div>
 
         </form>

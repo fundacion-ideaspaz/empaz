@@ -6,18 +6,9 @@
         </div>
         <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
             {{ csrf_field() }}
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <div class="form-group">
                 <label for="nombre">Texto</label>
-                <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}">
+                <textarea type="text" rows="1.5" class="form-control" name="nombre" value="{{ old('nombre') }}"></textarea>
             </div>
 
             <div class="form-group">
@@ -45,27 +36,28 @@
             </div>
             <div class="form-group" id="respuesta_1">
                 <label for="respuesta_1">Respuesta 1</label>
-                <input type="text" name="respuestas[]" class="form-control" required>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
             </div>
 
             <div class="form-group" id="respuesta_2">
                 <label for="respuesta_2">Respuesta 2</label>
-                <input type="text" name="respuestas[]" class="form-control" required>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
             </div>
 
             <div class="form-group" id="respuesta_3">
                 <label for="respuesta_3">Respuesta 3</label>
-                <input type="text" name="respuestas[]" class="form-control" required>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
             </div>
 
             <div class="form-group" id="respuesta_4">
                 <label for="respuesta_4">Respuesta 4</label>
-                <input type="text" name="respuestas[]" class="form-control" required>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
             </div>
 
     </div>
     <div class="from-group">
-        <input type="submit" class="btn btn-primary" value="Guardar">
+        <a href="/preguntas" class="btn btn-warning">Atrás</a>
+        <input type="submit" class="btn btn-primary pull-right" value="Guardar">
     </div>
 
     </form>

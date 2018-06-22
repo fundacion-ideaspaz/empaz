@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
+                    <textarea class="ckeditor" rows="10" cols="80" name="descripcion" id="descripcion" class="form-control">{{$cuestionario->descripcion}}</textarea>
                     </textarea>
                 </div>
                 <div class="form-group">

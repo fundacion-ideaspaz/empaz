@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
-      <h2>Lista de Dimensiones</h2>
+      <h2>Panel de Dimensiones</h2>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
@@ -16,14 +16,6 @@
           <p></p>
           <tr>
             <td>{{$dimension->nombre}}</td>
-            <!-- <td>{{$dimension->descripcion}}</td> -->
-            <!-- <td>
-              @if($dimension->logo)
-              <img class="dimension-logo" src="{{asset("storage/".$dimension->logo)}}" alt="logo-{{$dimension->nombre}}">
-              @else
-              <span>No logo avalaible.</span>
-              @endif
-            </td> -->
             <td>{{ucfirst($dimension->estado)}}</td>
             <td width="25%">
               <a class="btn btn-sm btn-primary" href="/dimensiones/{{$dimension->id}}/edit" data-toggle="tooltip" data-placement="bottom"

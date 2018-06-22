@@ -14,7 +14,7 @@
                 @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" value="{{$dimension->nombre}}">
+                    <input type="text" class="form-control" name="nombre" value="{{$dimension->nombre}}" maxlength="191">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
@@ -38,12 +38,12 @@
                 @foreach($enunciados as $enunciado)
                 <div class="form-group">
                     <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
-                    <input type="text" class="form-control" name="enunciados[]" placeholder="{{ucfirst($enunciado->nivel_importancia)}}" required
-                        value="{{$enunciado->descripcion}}">
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{$enunciado->descripcion}}</textarea>
                 </div>
                 @endforeach
                 <div class="from-group">
-                    <input type="submit" class="btn btn-primary" value="Guardar">
+                  <a href="/dimensiones" class="btn btn-warning">Atrás</a>
+                  <input type="submit" class="btn btn-primary pull-right" value="Guardar">
                 </div>
             </form>
         </div>
