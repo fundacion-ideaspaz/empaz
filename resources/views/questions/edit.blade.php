@@ -46,9 +46,14 @@
                 </div>
                 <div class="form-group">
                     @foreach($pregunta->opcionesRespuestas as $opcion)
-                    @if($opcion->descripcion != 'No aplica' && $opcion->descripcion != 'No hay información')
+                    @if($opcion->number != 5 && $opcion->number != 6)
                     <label for="respuesta_{{$opcion->id}}">
                         Respuesta {{ $opcion->number}}
+                    </label>
+                    <textarea type="text" rows="1.5" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" >{{$opcion->descripcion}}</textarea>
+                    @elseif($opcion->number === 5)
+                    <label for="respuesta_{{$opcion->id}}">
+                        Respuesta N/A
                     </label>
                     <textarea type="text" rows="1.5" name="respuestas[{{$opcion->id}}]" id="respuesta_{{$opcion->id}}" class="form-control" >{{$opcion->descripcion}}</textarea>
                     @endif

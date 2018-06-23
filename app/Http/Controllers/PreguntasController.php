@@ -45,16 +45,24 @@ class PreguntasController extends Controller
         $respuestas = $request->respuestas;
         $inputs = $request->except(["indicadores"]);
         $pregunta = Pregunta::create($inputs);
-        $respuestas[sizeof($respuestas)] = "No aplica";
+        // $respuestas[sizeof($respuestas)] = "No aplica";
         $respuestas[sizeof($respuestas)] = "No hay información";
         foreach ($respuestas as $number => $respuesta) {
+          if ($number<=3) {
             if ($respuesta != null) {
                 $newRespuesta = new OpcionesRespuestas();
                 $newRespuesta->number = $number+1;
                 $newRespuesta->pregunta_id = $pregunta->id;
                 $newRespuesta->descripcion = $respuesta;
                 $newRespuesta->save();
-            }
+              }
+          }else {
+            $newRespuesta = new OpcionesRespuestas();
+            $newRespuesta->number = $number+1;
+            $newRespuesta->pregunta_id = $pregunta->id;
+            $newRespuesta->descripcion = $respuesta;
+            $newRespuesta->save();
+          }
         }
         return redirect("/preguntas");
     }
