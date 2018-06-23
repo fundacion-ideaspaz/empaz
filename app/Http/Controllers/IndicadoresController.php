@@ -18,7 +18,7 @@ class IndicadoresController extends Controller
 
     public function index()
     {
-        $indicadores = Indicador::orderBy('nombre','asc')->get();
+        $indicadores = Indicador::orderBy('nombre','asc')->paginate(25);
         return view("indicadores.index")->with([
             "indicadores" => $indicadores
         ]);

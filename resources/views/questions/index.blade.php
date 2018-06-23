@@ -29,6 +29,12 @@
           @endforeach
         </tbody>
       </table>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-5">
+          {{ $questions->render() }}
+        </div>
+      </div>
+
     </div>
     <div class="card-footer">
       <div class="pull-righ">

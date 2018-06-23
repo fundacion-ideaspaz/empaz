@@ -6,15 +6,17 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
+            <th>No.</th>
             <th>Nombre</th>
             <th>Estado</th>
             <th width="25%">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($dimensiones as $dimension)
+          @foreach($dimensiones as $indexKey => $dimension)
           <p></p>
           <tr>
+            <td>  {{$indexKey+1}}</td>
             <td>{{$dimension->nombre}}</td>
             <td>{{ucfirst($dimension->estado)}}</td>
             <td width="25%">
@@ -33,6 +35,11 @@
           @endforeach
         </tbody>
       </table>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-5">
+          {{ $dimensiones->render() }}
+        </div>
+      </div>
     </div>
     <div class="card-footer">
       <div class="pull-righ">
