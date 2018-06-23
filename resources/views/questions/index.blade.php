@@ -6,15 +6,17 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
+            <th>No.</th>
             <th>Texto</th>
             <th>Estado</th>
             <th width="25%">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($questions as $pregunta)
+          @foreach($questions as $indexKey => $pregunta)
           <p></p>
           <tr>
+            <td>  {{$indexKey+1}}</td>
             <td>{{$pregunta->nombre}}</td>
             <td>{{ucfirst($pregunta->estado)}}</td>
             <td width="25%">

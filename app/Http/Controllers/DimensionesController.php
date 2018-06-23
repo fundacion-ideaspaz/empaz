@@ -18,7 +18,7 @@ class DimensionesController extends Controller
 
     public function index()
     {
-        $dimensiones = Dimension::all();
+        $dimensiones = Dimension::orderBy('nombre','asc')->get();
         return view("dimensiones.index")->with(["dimensiones" => $dimensiones]);
     }
 

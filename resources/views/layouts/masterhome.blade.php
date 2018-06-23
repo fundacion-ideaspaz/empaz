@@ -140,18 +140,22 @@
       <img src="/img/content1.jpg">
       <p class="cre">Foto: Revista Semana</p>
     </div>
-    <div class="col-md-7"><div class="text">
-    <h3>Empresas y paz: un buen negocio</h3>
+    <div class="col-md-7">
+      <div class="text">
+        <h3>Empresas y paz: un buen negocio</h3>
 
-    <h4>Las empresas sostenibles prosperan en entornos estables y pacíficos. Estos entornos eliminan los costos directos e indirectos de la violencia, mejoran la calidad de los mercados, aumentan los rendimientos financieros y favorecen la atracción de capital de inversión. Por esto, apostarle a la paz no solo significa hacer un aporte al bienestar de la sociedad: es un buen negocio. Aplicar EmPaz le permite a su empresa:</h4>
+        <h4>Las empresas sostenibles prosperan en entornos estables y pacíficos. Estos entornos eliminan los costos directos e indirectos de la violencia, mejoran la calidad de los mercados, aumentan los rendimientos financieros y favorecen la atracción de capital de inversión. Por esto, apostarle a la paz no solo significa hacer un aporte al bienestar de la sociedad: es un buen negocio.</h4>
+        <h4>Aplicar EmPaz le permite a su empresa:</h4>
 
-<ul>
-<li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en su área de influencia.</li>
-<li>Realizar un proceso de autoevaluación y aprendizaje interno para el mejoramiento continuo de la gestión.</li>
-<li>Obtener insumos para la toma de decisiones a nivel estratégico y operativo.</li>
-<li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de su organización.</li>
-<li>Visibilizar ante sus grupos de interés internos y externos, oportunidades y resultados de su empresa en la construcción de paz.</li>
-        </div></div>
+        <ul>
+        <li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en su área de influencia.</li>
+        <li>Realizar un proceso de autoevaluación y aprendizaje interno para el mejoramiento continuo de la gestión.</li>
+        <li>Obtener insumos para la toma de decisiones a nivel estratégico y operativo.</li>
+        <li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de su organización.</li>
+        <li>Visibilizar ante sus grupos de interés internos y externos, oportunidades y resultados de su empresa en la construcción de paz.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 </section>

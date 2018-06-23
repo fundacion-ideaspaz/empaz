@@ -18,7 +18,7 @@ class PreguntasController extends Controller
 
     public function index()
     {
-        $questions = Pregunta::all();
+        $questions = Pregunta::orderBy("nombre", "asc")->get();
         return view("questions.index")->with([
             "questions" => $questions
         ]);
