@@ -150,9 +150,9 @@ class CuestionariosController extends Controller
         foreach($importancias as $imp){
             $importanciaTotal += $imp;
         }
-        if($importanciaTotal + $importancia > 100){
+        if($importanciaTotal + $importancia != 100){
             return redirect("/cuestionarios/".$id."/dimensiones")->withErrors([
-                "errors" => "La suma de la importancia de las dimensiones no puede superar el 100%"
+                "errors" => "La suma de la importancia de las dimensiones debe ser igual a 100%"
             ]);
         }
         $dimensionCuestionario = new DimensionCuestionario();

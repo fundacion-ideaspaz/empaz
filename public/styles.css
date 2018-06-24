@@ -171,7 +171,7 @@ a{
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 0.85em;
         font-weight: 300;
 }
 
@@ -650,8 +650,8 @@ label {
 }
 
 .container h1, .container h2{
-    border-bottom: 1px solid #cccccc6b;
-    padding-bottom: 26px;
+    /* border-bottom: 1px solid #cccccc6b; */
+    /* padding-bottom: 26px; */
     color: #00aabf;
     margin-bottom: 30px;
 }
@@ -776,7 +776,6 @@ tr.children td:first-child {
 .migas{
     text-align: right;
     color: #00aabf;
-    margin-top: -10px;
 }
 
 .slider-selection.tick-slider-selection{

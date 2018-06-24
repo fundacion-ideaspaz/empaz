@@ -56,7 +56,7 @@
 
                     @if(Auth::user())
                     <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -80,7 +80,7 @@
                               @endif
                               <div class="menu-logout">
                                   <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i> 
+                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i>
                                   Cerrar sesión
                                   </a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

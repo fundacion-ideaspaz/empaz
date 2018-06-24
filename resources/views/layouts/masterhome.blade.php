@@ -54,7 +54,7 @@
         <!-- If user is authenticated -->
         @if(Auth::user())
         <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -103,10 +103,12 @@
     <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva, y está dirigida a empresas de cualquier tamaño y sector. </h4>
       <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
       <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
-    <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
-    <div class="flecha">
-      <a class="nav-link" href="#section02"><img src="img/flecha-ini.svg" width="50"></a>
-    </div>
+      @if(!Auth::user())
+      <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
+      @endif
+      <div class="flecha">
+        <a class="" href="#section02"><img src="img/flecha-ini.svg" width="50"></a>
+      </div>
     <h4 style="color: #fff">Conozca más</h4>
   </div>
 </div>

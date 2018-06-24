@@ -42,7 +42,7 @@ class WizardController extends Controller
         if($total < 100){
             return redirect("/cuestionarios/".$cuest_id."/dimensiones")
                 ->withErrors([
-                    "total" => "La suma de importancia de las dimensiones no da 100%"
+                    "total" => "La suma de importancia de las dimensiones debe ser igual a 100%"
                 ]);
         }
         return redirect("/cuestionarios/".$cuest_id."/indicadores");

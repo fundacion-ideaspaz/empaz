@@ -55,7 +55,7 @@
                   <!-- If user is authenticated -->
                   @if(Auth::user())
                   <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                           aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
