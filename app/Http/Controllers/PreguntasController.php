@@ -48,21 +48,11 @@ class PreguntasController extends Controller
         // $respuestas[sizeof($respuestas)] = "No aplica";
         $respuestas[sizeof($respuestas)] = "No hay información";
         foreach ($respuestas as $number => $respuesta) {
-          if ($number<=3) {
-            if ($respuesta != null) {
-                $newRespuesta = new OpcionesRespuestas();
-                $newRespuesta->number = $number+1;
-                $newRespuesta->pregunta_id = $pregunta->id;
-                $newRespuesta->descripcion = $respuesta;
-                $newRespuesta->save();
-              }
-          }else {
             $newRespuesta = new OpcionesRespuestas();
             $newRespuesta->number = $number+1;
             $newRespuesta->pregunta_id = $pregunta->id;
             $newRespuesta->descripcion = $respuesta;
             $newRespuesta->save();
-          }
         }
         return redirect("/preguntas");
     }
@@ -88,6 +78,7 @@ class PreguntasController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
+            "tipo_respuesta" => "required",
             "respuestas" => "required|array",
             "estado" => "required"
         ];
@@ -96,17 +87,69 @@ class PreguntasController extends Controller
         );
         $this->validate($request, $validations, $messages);
         $respuestas = $request->respuestas;
-        $inputs = $request->except('tipo_respuesta');
+        $inputs = $request->all();
         $pregunta = Pregunta::find($id);
         $pregunta->update($inputs);
         $pregunta->save();
+
+        // Check if there are missing fields in options table ---Provisional
+
+        foreach ($pregunta->opcionesRespuestas as $opcion) {
+          $options[$opcion->number] = $opcion;
+        }
+        if (count($options) === 4 && $opcion->number ===4) {
+          $status = "minus_two";
+        } elseif (count($options) === 5 && $opcion->number ===5) {
+          $status = "minus_one";
+        } else {
+          $status = "ok";
+        }
+
+        // Assign existing and new answers
+
         foreach ($respuestas as $id => $respuesta) {
-            if ($respuesta != null) {
+          // Minus two clause ----> Provisional
+            if ($status === "minus_two" && $id === "new_5") {
+              //Create N/A
+              $newRespuesta = new OpcionesRespuestas();
+              $newRespuesta->number = 5;
+              $newRespuesta->pregunta_id = $pregunta->id;
+              $newRespuesta->descripcion = $respuesta;
+              $newRespuesta->save();
+              //Create No information
+              $newRespuesta = new OpcionesRespuestas();
+              $newRespuesta->number = 6;
+              $newRespuesta->pregunta_id = $pregunta->id;
+              $newRespuesta->descripcion = "No hay información";
+              $newRespuesta->save();
+            }
+            elseif ($id == "new_3" && $id == "new_4") {
+                if ($id==="new_3") {
+                  $number = 3;
+                }else {
+                  $number = 4;
+                }
+                $newRespuesta = new OpcionesRespuestas();
+                $newRespuesta->number = $number;
+                $newRespuesta->pregunta_id = $pregunta->id;
+                $newRespuesta->descripcion = $respuesta;
+                $newRespuesta->save();
+            } else {
                 $newRespuesta = OpcionesRespuestas::find($id);
                 $newRespuesta->descripcion = $respuesta;
                 $newRespuesta->save();
             }
         }
+        //Minus one clause --->> Provisional
+        if ($status === "minus_one" ) {
+          //Create No information
+          $newRespuesta = new OpcionesRespuestas();
+          $newRespuesta->number = 6;
+          $newRespuesta->pregunta_id = $pregunta->id;
+          $newRespuesta->descripcion = "No hay información";
+          $newRespuesta->save();
+        }
+
         return redirect("/preguntas");
     }
 

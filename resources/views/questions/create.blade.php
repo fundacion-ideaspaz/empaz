@@ -32,7 +32,6 @@
                     <option value="tipo_2">Tipo 2</option>
                     <option value="tipo_3">Tipo 3</option>
                     <option value="tipo_4">Tipo 4</option>
-                    <option value="tipo_4">Tipo 5</option>
                 </select>
             </div>
             <div class="form-group" id="respuesta_1">
@@ -55,7 +54,7 @@
                 <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
             </div>
             <div class="form-group" id="respuesta_5">
-                <label for="respuesta_6">Respuesta N/A</label>
+                <label for="respuesta_5">Respuesta N/A</label>
                 <input type="text" name="respuestas[]" class="form-control" value="No aplica">
             </div>
     </div>
