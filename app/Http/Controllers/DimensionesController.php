@@ -141,15 +141,21 @@ class DimensionesController extends Controller
             "nivel_importancia" => "required",
             "dimension_id" => "required",
         ];
+
+        //Check cuestionario_dimension
+        $dimensionCuestionario = DimensionCuestionario::where('dimension_id', '=', $request->dimension_id)
+        ->orWhere('cuestionario_id', '=', $cuest_id)->first();
+
         $this->validate($request, $validations);
         $importancia = $request->nivel_importancia;
         $dimension_id = $request->dimension_id;
-        $dimensionCuestionario = new IndicadoresDimensiones();
-        $dimensionCuestionario->indicador_id = $indicador_id;
-        $dimensionCuestionario->dimension_id = $dimension_id;
-        $dimensionCuestionario->cuestionario_id = $cuest_id;
-        $dimensionCuestionario->nivel_importancia = $importancia;
-        $dimensionCuestionario->save();
+        $dimensionIndicador = new IndicadoresDimensiones();
+        $dimensionIndicador->indicador_id = $indicador_id;
+        $dimensionIndicador->dimension_id = $dimension_id;
+        $dimensionIndicador->cuestionario_id = $cuest_id;
+        $dimensionIndicador->nivel_importancia = $importancia;
+        $dimensionIndicador->cuestionario_dimension_id = $dimensionCuestionario->id;
+        $dimensionIndicador->save();
         return redirect("/cuestionarios/" . $cuest_id . "/indicadores");
     }
 

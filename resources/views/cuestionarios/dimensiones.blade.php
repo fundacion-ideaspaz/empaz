@@ -37,7 +37,6 @@
       <table class="table table-striped table-hover">
         <tbody>
         @foreach($dimensiones as $dimension)
-        <!-- <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data"> -->
         <form action="/cuestionarios/{{$cuestionario->id}}/dimensiones/{{$dimension->id}}" method="post" class="form" enctype="multipart/form-data">
         {{ csrf_field() }}
         <tr>

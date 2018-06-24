@@ -150,7 +150,7 @@ class CuestionariosController extends Controller
         foreach($importancias as $imp){
             $importanciaTotal += $imp;
         }
-        if($importanciaTotal + $importancia != 100){
+        if($importanciaTotal + $importancia > 100){
             return redirect("/cuestionarios/".$id."/dimensiones")->withErrors([
                 "errors" => "La suma de la importancia de las dimensiones debe ser igual a 100%"
             ]);

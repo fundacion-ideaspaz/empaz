@@ -22,6 +22,20 @@ class Cuestionario extends Model
         return $this->belongsToMany("App\Dimension", "cuestionarios_dimensiones")->withPivot("importancia");
     }
 
+    public function validateCuestionario($cuest_id){
+      //Validate dimensions
+      $importancias = DimensionCuestionario::where("cuestionario_id", "=", $cuest_id)->pluck("importancia");
+      $importanciaTotal = 0;
+      foreach($importancias as $imp){
+          $importanciaTotal += $imp;
+      }
+      if ($importanciaTotal === 100) {
+        return "valid";
+      } else {
+        return "invalid";
+      }
+    }
+
 
     public function allPreguntas($cuest_id)
     {
