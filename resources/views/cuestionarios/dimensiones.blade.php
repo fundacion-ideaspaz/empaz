@@ -1,7 +1,5 @@
 @extends('layouts.master') @section('title', 'Agregar Dimensiones - Cuestionario') @section('content')
-<div class="row indicadores-form">
-  <div class="card col-12">
-    <div class="card-body">
+<div class="indicadores-form">
       <div class="row">
         <div class="col-sm-9"><h1>Agregar Dimensiones</h1></div>
         <div class="col-sm-3 migas pull-right">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
@@ -31,9 +29,8 @@
         </tbody>
         </table>
 
+      <h4>Asignar dimensiones a cuestionario</h4>
       @if(sizeof($dimensiones) > 0)
-      <h4>Dimensiones para asignar</h4>
-      @endif
       <table class="table table-striped table-hover">
         <tbody>
         @foreach($dimensiones as $dimension)
@@ -57,18 +54,19 @@
       @endforeach
         </tbody>
         </table>
-      <div class="form-group">
+        @else
+        <p>No hay dimensiones disponibles para asignar a este cuestionario.</p>
+        @endif
+        <div class="form-group">
           <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/edit">
             Atrás
           </a>
           <a class="btn btn-primary pull-right"
-            href="/cuestionarios/{{$cuestionario->id}}/dimensiones/validate">
-            Siguiente
-          </a>
-        </div>
+          href="/cuestionarios/{{$cuestionario->id}}/dimensiones/validate">
+          Siguiente
+        </a>
       </div>
   </div>
-</div>
 <script>
   $(document).ready(function () {
     $('#dimensiones-select').multiSelect()

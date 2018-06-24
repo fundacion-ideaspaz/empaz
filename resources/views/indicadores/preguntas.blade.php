@@ -1,50 +1,26 @@
-@extends('layouts.master') @section('title', 'Agregar preguntas - Cuestionario') @section('content')
+@extends('layouts.master') @section('title', 'Agregar Preguntas') @section('content')
 <div class="preguntas-form">
-<h1>Agregar Pregunta</h1>
-<div class="migas">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
-  @foreach($indicadores as $indicador)
-  @if($preguntas->isNotEmpty())
-  
-  <h4>{{$indicador->nombre}}</h4>
-  <div class="card col-12">
-    <div class="card-body">
-        
-        <table class="table table-bordered table-hover table-striped">
-        <thead>
-          <tr>
-            <th>Pregunta</th>
-            <th>Requerida</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-        @foreach($preguntas as $pregunta)
-      @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
-      <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
-      {{ csrf_field() }}
-        <input type="hidden" name="indicador_id" value="{{$indicador->id}}">
-          <tr>
-            <td>{{$pregunta->nombre}}</td>
-            <td><select name="required" value="{{ old('required') }}" id="required" class="form-control">
-            <option value="true">Requerida</option>
-            <option value="false">Opcional</option>
-          </select></td>
-            <td>
-            <input type="submit" value="Asignar" class="btn btn-primary">
-            </td>
-          </tr>
-       </form>
-      @endif
-      @endforeach   
-        </tbody>
-      </table>
-    </div>
+  <div class="row">
+    <div class="col-sm-9"><h1>Agregar Preguntas</h1></div>
+    <div class="col-sm-3 migas pull-right">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   </div>
-  @endif
-  @endforeach
-  <h1>Preguntas asociadas</h1>
-  <div class="card col-12">
-    <div class="card-body">
+
+<h4>Preguntas asignadas</h4>
+
+<?php
+  $flag="f";
+  foreach($indicadores as $indicador){
+    foreach($indicador->preguntas($cuestionario->id) as $pregunta){
+      if ($pregunta) {
+        $flag = "t";
+      }else{
+        $flag = "f";
+      }
+    }
+  }
+ ?>
+
+@if($flag === "t")
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -57,22 +33,67 @@
         <tbody>
           @foreach($indicadores as $indicador) @foreach($indicador->preguntas($cuestionario->id) as $pregunta)
           <tr>
-            <td>{{$indicador->nombre}}</td>
-            <td>{{$pregunta->nombre}}</td>
-            <td>{{$pregunta->required == 1 ? 'True' : 'False'}}</td>
-            <td>
+            <td width="20%">{{$indicador->nombre}}</td>
+            <td width="55">{{$pregunta->nombre}}</td>
+            <td width="15%">{{$pregunta->required == 1 ? 'Si' : 'No'}}</td>
+            <td width="10%">
               <form action="/indicadores/{{$indicador->id}}/preguntas/{{$pregunta->id}}/delete" method="POST">
                 {{ csrf_field() }}
                 <input type="hidden" name="cuestionario_id" value="{{$cuestionario->id}}">
-                <input type="submit" value="Eliminar" class="btn btn-danger">
+                <button class="btn btn-danger borrar pull-right" data-toggle="tooltip" data-placement="bottom" title="Eliminar">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
               </form>
             </td>
           </tr>
           @endforeach @endforeach
         </tbody>
       </table>
-    </div>
+  @else
+    <p>No tiene preguntas asignadas a este cuestionario.</p>
+  @endif
+
+<h4>Asginar preguntas a dimensiones</h4>
+
+@if(count($preguntas)>0)
+  <div class="form-group">
+      <label for="indicador">Indicador: </label>
+      <select name="indicador" id="indicador" class="form-control" value="{{old('indicador')}}">
+        @foreach($indicadores as $indicador)
+          <option value="{{$indicador->id}}">{{$indicador->nombre}}</option>
+        @endforeach
+      </select>
   </div>
+
+  <table class="table table-bordered table-hover table-striped">
+    <label for="indicador">Preguntas: </label>
+      <tbody>
+      @foreach($preguntas as $pregunta)
+          <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
+          {{ csrf_field() }}
+          @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
+            <input type="hidden" name="indicador_id" id="indicador_field">
+              <tr>
+                <td>{{$pregunta->nombre}}</td>
+                <td width="15%"><select name="required" value="{{ old('required') }}" id="required" class="form-control">
+                  <option value="true">Requerida</option>
+                  <option value="false">Opcional</option>
+                </select>
+                </td>
+                <td width="10%">
+                  <button class="btn btn-primary editar pull-right" data-toggle="tooltip" data-placement="bottom" title="Agregar">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            @endif
+           </form>
+      @endforeach
+      </tbody>
+      </table>
+  @else
+  <p>No hay preguntas disponibles para asignar a este cuestionario.</p>
+  @endif
   <div class="form-group">
     <a class="btn btn-warning" href="/cuestionarios/{{$cuestionario->id}}/indicadores">
       Atrás
@@ -82,20 +103,16 @@
     </a>
   </div>
 </div>
-</div>
-@if ($errors->any())
-<div class="alert alert-danger">
-  <ul>
-    @foreach ($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-</div>
-</div>
+
 <script>
   $(document).ready(function () {
-    $('#preguntas-select').multiSelect()
-  });
+      $('#preguntas-select').multiSelect();
+      $("#indicador").bind('change', function () {
+          var cur_indicador_id = this.value;
+          document.getElementById("indicador_field").value = String(cur_indicador_id);
+        });
+      $('#indicador').trigger('change');
+      });
+
+  </script>
 </script> @endsection

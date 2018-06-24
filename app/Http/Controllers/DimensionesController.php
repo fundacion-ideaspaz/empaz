@@ -144,7 +144,7 @@ class DimensionesController extends Controller
 
         //Check cuestionario_dimension
         $dimensionCuestionario = DimensionCuestionario::where('dimension_id', '=', $request->dimension_id)
-        ->orWhere('cuestionario_id', '=', $cuest_id)->first();
+        ->where('cuestionario_id', '=', $cuest_id)->first();
 
         $this->validate($request, $validations);
         $importancia = $request->nivel_importancia;

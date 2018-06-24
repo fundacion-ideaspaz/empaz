@@ -113,15 +113,22 @@ class IndicadoresController extends Controller
             "indicador_id" => "required",
             "required" => "required"
         ];
+
+        //Check dimension_indicador
+        $indicadorDimension = IndicadoresDimensiones::where('indicador_id', '=', $request->indicador_id)
+        ->where('cuestionario_id', '=', $cuest_id)
+        ->first();
+
         $this->validate($request, $validations);
         $required = $request->required === 'true';
         $indicador_id = $request->indicador_id;
-        $indicadorCuestionario = new IndicadoresPreguntas();
-        $indicadorCuestionario->pregunta_id = $pregunta_id;
-        $indicadorCuestionario->indicador_id = $indicador_id;
-        $indicadorCuestionario->cuestionario_id = $cuest_id;
-        $indicadorCuestionario->required = $required;
-        $indicadorCuestionario->save();
+        $indicadorPregunta = new IndicadoresPreguntas();
+        $indicadorPregunta->pregunta_id = $pregunta_id;
+        $indicadorPregunta->indicador_id = $indicador_id;
+        $indicadorPregunta->cuestionario_id = $cuest_id;
+        $indicadorPregunta->dimension_indicador_id = $indicadorDimension->id;
+        $indicadorPregunta->required = $required;
+        $indicadorPregunta->save();
         return redirect("/cuestionarios/".$cuest_id."/preguntas");
     }
 
