@@ -37,8 +37,8 @@
                 </div>
         </div>
         <div class="from-group">
-            <a class="btn btn-danger" href="/cuestionarios">
-              Cancelar
+            <a class="btn btn-warning" href="/cuestionarios">
+              Atrás
             </a>
             <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
         </div>
