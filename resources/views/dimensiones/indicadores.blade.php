@@ -8,8 +8,8 @@
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
-            <th>Dimensión</th>
-            <th width="30%">Indicador</th>
+            <th width="40%">Dimensión</th>
+            <th width="35%">Indicador</th>
             <th width="15%">Importancia</th>
             <th width="10%">Acciones</th>
           </tr>
@@ -19,7 +19,12 @@
           <tr>
             <td>{{$dimension->nombre}}</td>
             <td>{{$indicador->nombre}}</td>
-            <td>{{$indicador->nivel_importancia}}</td>
+            <?php
+            $importance_array= ['1'=>'Baja',
+                                '2' => 'Media',
+                                '3' => 'Alta',
+                                '4' => 'Muy Alta']; ?>
+            <td>{{$importance_array[$indicador->nivel_importancia]}}</td>
             <td>
               <form action="/dimensiones/{{$dimension->id}}/indicadores/{{$indicador->id}}/delete" method="POST">
                 {{ csrf_field() }}

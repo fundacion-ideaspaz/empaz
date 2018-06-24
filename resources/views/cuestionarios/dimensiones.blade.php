@@ -43,7 +43,7 @@
           <td><label>{{$dimension->nombre}}</label></td>
           <td width = "10%">
             <div class="input-group">
-              <input class="form-control" name="importancia" value="{{ old('importancia') }}" type="text" required oninvalid="this.setCustomValidity('Debe ingresar un valor válido')"/>
+              <input class="form-control" name="importancia" value="{{ old('importancia') }}" type="text" required oninvalid="this.setCustomValidity('Debe ingresar un valor válido')" title="Seleccione el nivel de importancia"/>
               <div class="input-group-addon">%</div>
             </div>
           </td >
