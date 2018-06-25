@@ -61,13 +61,23 @@
 	font-size: 1.2em;
 }
 
-.fs-form-overview .fs-fields::before {
+/* .fs-form-overview .fs-fields::before {
 	display: block;
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 	color: #00aabf;
 	content: 'Confirmar respuestas';
 	font-weight: 700;
 	font-size: 1.85em;
+	font-family: 'Roboto Slab', serif;
+} */
+
+.fs-form-overview .fs-fields::before {
+	display: block;
+	margin-bottom: 1.5em;
+	color: #00aabf;
+	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registra la información en la plataforma.';
+	font-weight: 300;
+	font-size: 1em;
 	font-family: 'Roboto Slab', serif;
 }
 

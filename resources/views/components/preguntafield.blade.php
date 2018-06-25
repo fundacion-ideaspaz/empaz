@@ -6,6 +6,7 @@ $tipo_array = ["tipo_1" => "6",
               "tipo_4" => "5"];
 
 $no_respuestas = $tipo_array[$pregunta->tipo_respuesta];
+$letters = ["A", "B", "C", "D", "E", "F"];
  ?>
 
 <li data-input-trigger id="r-{{$pregunta->id}}">
@@ -26,7 +27,7 @@ $no_respuestas = $tipo_array[$pregunta->tipo_respuesta];
     $opcion = $pregunta->opcionesRespuestas->where('number', "=", $idx_opcion)->first();
      ?>
      @if(!($pregunta->isRequired($cuest_id) && $opcion->number === 5))
-        <option value="{{$opcion->id}}" >{{$opcion->descripcion}}</option>
+        <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-1]}}. {{$opcion->descripcion}}</option>
      @endif
     @endfor
   </select>

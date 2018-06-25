@@ -20,7 +20,7 @@
         <input type="submit" class="btn btn-primary pull-left" value="Guardar">
         <input type="submit" class="btn btn-success pull-left" value="Enviar para evaluar">
         @endif
-        <input type="reset" class="btn btn-danger float-right" value="Limpiar respuestas">
+        <a href="/responder/{{$cuestionario->id}}" class="btn btn-danger float-right">Limpiar respuestas</a>
       </div>
         @if ($errors->any())
         <div class="alert alert-danger">
