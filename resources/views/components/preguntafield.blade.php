@@ -1,5 +1,5 @@
 <li data-input-trigger id="r-{{$pregunta->id}}">
-  <label class="fs-field-label fs-anim-upper" for="respuesta-{{$pregunta->id}}">{{$pregunta->nombre}}</label>
+  <label class="fs-field-label fs-anim-upper" for="respuesta-{{$pregunta->id}}">{{$index}}. {{$pregunta->nombre}}</label>
     <a class="descripcion tip info-cuestionario pull-right" data-placement="bottom" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i> <span>{!!$pregunta->descripcion!!}</span> </a>
 <!--   <a class="btn btn-sm btn-primary descripcion" data-placement="bottom" href="#" data-toggle="tooltip" data-html="true" title="<div class'tool'>{{$pregunta->descripcion}}</div>"><i class="fa fa-info-circle" aria-hidden="true"></i></a> -->
   <select  class="form-control pregunta-select cs-select cs-skin-boxes fs-anim-lower" name="{{$pregunta->id}}"

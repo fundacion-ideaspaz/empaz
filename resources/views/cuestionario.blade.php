@@ -7,8 +7,8 @@
       <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform" autocomplete="off">
       {{ csrf_field() }}
       <ol class="fs-fields">
-        @foreach($cuestionario->allPreguntas($cuestionario->id) as $pregunta)
-          @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id])
+        @foreach($cuestionario->allPreguntas($cuestionario->id) as $index => $pregunta)
+          @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id, 'index' => $index+1])
           @endcomponent
         @endforeach
       </ol>
