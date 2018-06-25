@@ -1,6 +1,5 @@
 @extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
 <div class="row">
-    <!-- <div class="fs-form-wrap" id="fs-form-wrap"> -->
       <div class="card col-12">
         <div class="card-body">
         <div class="fs-title">

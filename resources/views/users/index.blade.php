@@ -39,7 +39,7 @@
     <div class="card-footer">
       <div class="pull-righ">
         <div class="btn-group" role="group">
-          <button id="createButtonsGroup" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          <button id="createButtonsGroup" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             Crear nuevo usuario
           </button>

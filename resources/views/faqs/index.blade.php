@@ -1,13 +1,17 @@
 @extends('layouts.master') @section('title', 'FAQs') @section('content')
 
-
-<h2>Preguntas frecuentes
-@if(Auth::user())
-  @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+<div class="row">
+<div class="col-12 card">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="col-sm-4">
+      @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
       <a href="/faqs/create" class="btn btn-primary btn-sm pull-right" title="Agregar"> <span class="fa fa-plus"></span></a>
-  @endif
-@endif
-</h2>
+      @endif
+    </div>
+  </div>
 @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
@@ -26,9 +30,9 @@
           @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
           {!! Form::open(['action' => ['FaqController@destroy', $faq->id], 'method' =>'POST', 'class' =>  'pull-right']) !!}
           {{ Form::hidden('_method', 'DELETE') }}
-          {!! Form::button('<span class="fa fa-trash"></span>', ['type'=>'submit', 'class'=>'btn btn-danger btn-sm list-button', 'title' => 'Eliminar' ]) !!}
+          {!! Form::button('<span class="fa fa-trash "></span>', ['type'=>'submit', 'class'=>'btn btn-danger borrar btn-sm list-button', 'title' => 'Eliminar' ]) !!}
           {!! Form::close() !!}
-          <a href="/faqs/{{$faq->id}}/edit" class="btn btn-secondary btn-sm pull-right list-button" title="Editar"> <span class="fa fa-edit"></span></a>
+          <a href="/faqs/{{$faq->id}}/edit" class="btn btn-primary editar btn-sm pull-right list-button" title="Editar"> <span class="fa fa-edit"></span></a>
           @endif
         @endif
       </h5>
@@ -45,5 +49,6 @@
  @else
  <h5>No hay preguntas frecuentes disponibles.</p>
  @endif
-
+</div>
+</div>
 @endsection

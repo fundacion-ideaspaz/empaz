@@ -6,7 +6,7 @@
       <form action="/users/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">
-          <label for="confirm">Seguro deseas eliminar este usuario? De ser asi, da click en el boton de abajo.</label>
+          <label for="confirm">¿Está seguro de eliminar este usuario?</label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-danger" value="Eliminar">

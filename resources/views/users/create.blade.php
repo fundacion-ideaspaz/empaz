@@ -1,6 +1,6 @@
 @extends('layouts.master') @section('title', 'Crear Usuario') @section('content')
-<div class="container">
-  <div class="fs-form-wrap" id="fs-form-wrap">
+<div class="row">
+        <div class="card col-12">
     <div class="fs-title">
       <h2>Crear Usuario</h2>
       </div>
