@@ -5,7 +5,7 @@
       @if(!$can_delete)
       <h2>No se puede eliminar este indicador</h2>
       <div class="form-group">
-        <label for="confirm">Este indicador no puede ser eliminado porque pertenece a un cuestionario.
+        <label for="confirm">Este indicador no puede ser eliminado porque está asignado a un cuestionario.
         </label>
       </div>
       <div class="form-group">
@@ -16,7 +16,7 @@
       <form action="/indicadores/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">
-          <label for="confirm">¿Seguro deseas eliminar esta indicador? De ser asi, da clic en el boton de abajo.</label>
+          <label for="confirm">¿Está seguro de eliminar esta indicador?</label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-danger" value="Eliminar">

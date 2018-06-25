@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
             <div class="fs-title">
-                <h1>Crear Indicador</h1>
+                <h2>Crear Indicador</h2>
             </div>
             <form action="/indicadores" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -22,13 +22,13 @@
                         <option value="inactivo">Inactivo</option>
                     </select>
                 </div>
-        </div>
         <div class="from-group">
           <a href="/indicadores" class="btn btn-warning">Atrás</a>
           <input type="submit" class="btn btn-primary pull-right" value="Guardar">
         </div>
 
         </form>
+      </div>
     </div>
 </div>
 @endsection

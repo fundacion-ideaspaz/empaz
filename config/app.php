@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        GeneaLabs\LaravelCaffeine\Providers\Service::class,
 
         /*
          * Package Service Providers...

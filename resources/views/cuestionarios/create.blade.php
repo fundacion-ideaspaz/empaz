@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
             <div class="fs-title">
-                <h1>Crear Cuestionario</h1>
+                <h2>Crear Cuestionario</h2>
             </div>
             <form action="/cuestionarios" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -31,15 +31,6 @@
             <a href="/cuestionarios" class="btn btn-warning">Atrás</a>
             <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
         </div>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         </form>
     </div>
 </div>

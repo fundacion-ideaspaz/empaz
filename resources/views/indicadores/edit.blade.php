@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
             <div class="fs-title">
-                <h1>Editar Indicador</h1>
+                <h2>Editar Indicador</h2>
             </div>
             <form action="/indicadores/{{$indicador->id}}" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}

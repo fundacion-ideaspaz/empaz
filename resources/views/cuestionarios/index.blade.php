@@ -22,8 +22,8 @@
             </td>
             <td class="version-column">
               {{ $cuestionario->version }}
-              <span class="fa fa-{{$cuestionario->validateCuestionario($cuestionario->id) === "valid" ? "check valid-icon"  : "times invalid-icon"}}"
-                title="{{$cuestionario->validateCuestionario($cuestionario->id) === "valid" ? "Cuestionario válido"  : "Cuestionario inválido"}}"></span>
+              <span class="fa fa-{{$cuestionario->validateCuestionario()[0] === "valid" ? "check valid-icon"  : "times invalid-icon"}}"
+                title="{{$cuestionario->validateCuestionario()[0] === "valid" ? "Cuestionario válido"  : $cuestionario->validateCuestionario()[1]}}"></span>
             </td>
             <td class="estado-column">
               {{ $cuestionario->estado }}
@@ -44,8 +44,8 @@
                 <td class="nombre-column"></td>
                 <td class="version-column">
                   {{ $cuestionario->version }}
-                  <span class="fa fa-{{$cuestionario->validateCuestionario($cuestionario->id) === "valid" ? "check valid-icon"  : "times invalid-icon"}}"
-                    title="{{$cuestionario->validateCuestionario($cuestionario->id) === "valid" ? "Cuestionario válido"  : "Cuestionario inválido"}}"></span>
+                  <span class="fa fa-{{$cuestionario->validateCuestionario()[0] === "valid" ? "check valid-icon"  : "times invalid-icon"}}"
+                    title="{{$cuestionario->validateCuestionario()[0] === "valid" ? "Cuestionario válido"  : $cuestionario->validateCuestionario()[1]}}"></span>
                 </td>
                 <td class="estado-column">{{$cuestionario->estado}}</td>
                 <td class="creado-column">{{$cuestionario->created_at}}</td>
@@ -58,7 +58,6 @@
               </tr>
               @endif
               @endforeach
-
         </tbody>
       </table>
     </div>

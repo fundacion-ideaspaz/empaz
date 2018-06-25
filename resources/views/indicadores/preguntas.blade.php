@@ -1,7 +1,8 @@
 @extends('layouts.master') @section('title', 'Agregar Preguntas') @section('content')
 <div class="preguntas-form">
+  <div class="card col-12">
   <div class="row">
-    <div class="col-sm-9"><h1>Agregar Preguntas</h1></div>
+    <div class="col-sm-9"><h2>Agregar Preguntas</h2></div>
     <div class="col-sm-3 migas pull-right">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
   </div>
 
@@ -102,6 +103,7 @@
       Finalizar
     </a>
   </div>
+</div>
 </div>
 
 <script>

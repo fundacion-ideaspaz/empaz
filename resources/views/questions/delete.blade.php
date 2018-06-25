@@ -5,7 +5,7 @@
       @if(!$can_delete)
       <h2>No se puede eliminar esta pregunta</h2>
       <div class="form-group">
-        <label for="confirm">Esta pregunta no puede ser eliminada porque pertenece a un cuestionario.
+        <label for="confirm">Esta pregunta no puede ser eliminada porque está asignada a un cuestionario.
         </label>
       </div>
       <div class="form-group">
@@ -16,7 +16,7 @@
       <form action="/preguntas/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">
-          <label for="confirm">¿Seguro deseas eliminar esta pregunta? De ser asi, da clic en el boton de abajo.</label>
+          <label for="confirm">¿Está seguro de eliminar esta pregunta?</label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-danger" value="Eliminar">

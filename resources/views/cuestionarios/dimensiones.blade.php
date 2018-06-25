@@ -1,7 +1,8 @@
-@extends('layouts.master') @section('title', 'Agregar Dimensiones - Cuestionario') @section('content')
+@extends('layouts.master') @section('title', 'Agregar Dimensiones') @section('content')
 <div class="indicadores-form">
+      <div class="card col-12">
       <div class="row">
-        <div class="col-sm-9"><h1>Agregar Dimensiones</h1></div>
+        <div class="col-sm-9"><h2>Agregar Dimensiones</h2></div>
         <div class="col-sm-3 migas pull-right">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
       </div>
       <h4>Dimensiones asignadas</h4>
@@ -67,6 +68,7 @@
         </a>
       </div>
   </div>
+</div>
 <script>
   $(document).ready(function () {
     $('#dimensiones-select').multiSelect()

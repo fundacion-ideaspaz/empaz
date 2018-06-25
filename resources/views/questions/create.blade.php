@@ -1,8 +1,10 @@
 @extends('layouts.master') @section('title', 'Crear Pregunta') @section('content')
-<div>
-    <div class="fs-form-wrap" id="fs-form-wrap">
+<div class="row">
+    <!-- <div class="fs-form-wrap" id="fs-form-wrap"> -->
+      <div class="card col-12">
+        <div class="card-body">
         <div class="fs-title">
-            <h1>Crear pregunta</h1>
+            <h2>Crear pregunta</h2>
         </div>
         <form action="/preguntas" method="post" class="form fs-form fs-form-full" id="myform" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -57,13 +59,13 @@
                 <label for="respuesta_5">Respuesta N/A</label>
                 <input type="text" name="respuestas[]" class="form-control" value="No aplica">
             </div>
-    </div>
-    <div class="from-group">
-        <a href="/preguntas" class="btn btn-warning">Atrás</a>
-        <input type="submit" class="btn btn-primary pull-right" value="Guardar">
-    </div>
-
+            <div class="from-group">
+                <a href="/preguntas" class="btn btn-warning">Atrás</a>
+                <input type="submit" class="btn btn-primary pull-right" value="Guardar">
+            </div>
     </form>
+  </div>
+</div>
 </div>
 <script>
 
