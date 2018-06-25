@@ -96,7 +96,7 @@ a.descripcion.tip:hover span {
 	min-width: 350px;
 	max-height: 300px;
   position: absolute;
-  top: 20px;
+  top: 0px;
 	right: 0px;
 	white-space: pre-line;
 	color: #fff;
@@ -524,6 +524,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 .registro-exitoso{
     border: 1px solid #00aabf!important;
     background: rgba(0, 170, 191, 0.19);
+}
+
+.form-text.text-muted{
+	font-size: 0.7em;
+}
+
+.fs-field-label{
+	font-size: 0.9em!important;
+}
+
+.fs-fields input{
+	font-size: 0.8em!important;
+}
+
+.fs-form-wrap{
+	padding-top: 9vh;
+}
+
+.fs-nav-dots{
+	display: none;
 }
 
 .fs-form-overview {
@@ -986,7 +1006,7 @@ body.tablero{
     position: fixed;
     top: 94px;
     left: 11px;
-    font-size: 16px;
+    font-size: 10px;
 }
 
 body.overview .alerta-r{

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProfileEmpresa extends Model
 {
     protected $table = 'empresa_profile';
-    
+
     protected $fillable = [
         'nombre',
         'pais',
@@ -23,4 +23,9 @@ class ProfileEmpresa extends Model
         'user_id',
         'nit'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

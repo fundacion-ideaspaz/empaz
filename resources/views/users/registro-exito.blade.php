@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Panel de Usuarios') @section('content')
+@extends('layouts.master') @section('title', 'Registro Exitoso') @section('content')
 <div class="row">
   <div class="col-12 card registro-exitoso">
     <div class="card-body">

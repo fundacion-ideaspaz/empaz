@@ -78,7 +78,7 @@ class WizardController extends Controller
         $indicadoresIds = IndicadoresDimensiones
         ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
         $preguntasIds = IndicadoresPreguntas
-            ::where("cuestionario_id", "=", $cuest_id)->pluck("pregunta_id");
+            ::where("cuestionario_id", "=", $cuest_id)->orderBy('created_at', 'asc')->pluck("pregunta_id");
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $preguntas = Pregunta::where("estado", "=", "activo")
                         ->whereNotIn("id", $preguntasIds)

@@ -6,39 +6,36 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                <h1>Recuperar contraseña</h1></div>
+                <h2>Recuperar contraseña</h2>
+                </div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <p>Por favor ingrese su correo electrónico para que podamos enviarle un enlace para restablecer su contraseña.</p>
+                    <p></p>
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email</label>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" value="{{ old('email') }}" required>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                              @if ($errors->has('email'))
+                              <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                              </span>
+                              @endif
                             </div>
+                          </div>
+
+                          <div class="col-md-4 col-md-offset-4">
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-primary">
+                                Enviar enlace
+                              </button>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Enviar enlace
-                                </button>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

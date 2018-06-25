@@ -1,9 +1,9 @@
-@extends('layouts.master') @section('title', 'Perfil de la Empresa') @section('content')
+@extends('layouts.master') @section('title', 'Editar Perfil') @section('content')
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
           <h2>Perfil de su empresa</h2>
-            <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
+            <form action="/profile/{{Auth::user()->id}}/edit" method="POST" class="form">
               {{ csrf_field() }}
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -14,13 +14,13 @@
                     <!-- Fill name -->
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombre de la Empresa</label>
-                        <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" id="nombre" placeholder="Nombre de la empresa">
+                        <input type="text" class="form-control" name="nombre" value="{{$empresa->nombre}}" id="nombre">
                     </div>
 
                     <!-- Select Country -->
                     <div class="form-group col-md-4">
                         <label for="pais">País</label>
-                        <select class="form-control" required id="pais" name="pais" value="{{ old('pais') }}">
+                        <select class="form-control" id="pais" name="pais">
                           <?php
                               function utf8_fopen_read($fileName) {
                                 $fc = iconv('windows-1250', 'utf-8', file_get_contents($fileName));
@@ -41,9 +41,8 @@
                               fclose($file);
                               sort($countries);
                           ?>
-                            <option>Seleccione una opción</option>
                             @foreach($countries as $country)
-                              <option value="{{$country}}">{{$country}}</option>
+                              <option value="{{$country}}" selected="{{$empresa->pais === $country ? 'selected' : ''}}" >{{$country}}</option>
                             @endforeach
                           </select>
                     </div>
@@ -51,7 +50,7 @@
                     <!-- Select departamento -->
                     <div class="form-group col-md-4">
                         <label for="departamento">Departamento</label>
-                        <select class="form-control" id="departments" name="departamento" value="{{ old('departamento') }} ">
+                        <select class="form-control" id="departments" name="departamento">
                             <option>Seleccione una opcion</option>
                         </select>
                     </div>
@@ -59,7 +58,7 @@
                     <!-- Select municipio -->
                     <div class="form-group col-md-4">
                         <label for="municipio">Municipio</label>
-                        <select class="form-control" id="cities" name="municipio" value="{{ old('municipio') }}">
+                        <select class="form-control" id="cities" name="municipio" value="{{ $empresa->municipio ? $empresa->municipio : '' }}">
                             <option>Seleccione una opcion</option>
                         </select>
                     </div>
@@ -67,19 +66,19 @@
                     <!-- FIll address -->
                     <div class="form-group col-md-6">
                         <label for="direccion">Dirección</label>
-                        <input type="text" name="direccion" value="{{ old('direccion') }}" class="form-control">
+                        <input type="text" name="direccion" value="{{$empresa->direccion}}" class="form-control">
                         <small id="passwordHelp" class="form-text text-muted">Diligencie la dirección completa de su empresa, por ejemplo: Calle 12 # 13 - 24 Of. 301 Edificio Torre Empresarial</small>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" name="telefono" value="{{ old('telefono') }}" class="form-control">
+                        <input type="tel" name="telefono" value="{{$empresa->telefono}}" class="form-control">
                         <small id="passwordHelp" class="form-text text-muted">Si su empresa se ubica en Colombia digite: código ciudad + número sin espacios, puntos ni guiones. En caso de que su empresa no se encuentre en Colombia digite: código país + código ciudad + número.</small>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="web">Pagina Web</label>
-                        <input type="text" name="web" value="{{ old('web') }}" class="form-control">
+                        <input type="text" name="web" value="{{ $empresa->web ? $empresa->web : '' }}" class="form-control">
                     </div>
 
                     <div class="form-group  col-md-6">
@@ -91,29 +90,29 @@
                             4. Gran Empresa: planta de personal superior a los doscientos (200) trabajadores y activos totales superiores a treinta mil (30.000) salarios mínimos mensuales legales vigentes.</span>
                           </a>
                         </label>
-                        <select class="form-control" name="tamano" value="{{ old('tamano') }}">
-                            <option selected>Seleccione una opción</option>
-                            <option value="1">Micro</option>
-                            <option value="2">Pequeña</option>
-                            <option value="3">Mediana</option>
-                            <option value="4">Grande</option>
+                        <select class="form-control" id="tamano" name="tamano">
+                          <option >Seleccione una opción</option>
+                            <option value="1" selected={{$empresa->tamano === "1" ? 'selected' : ''}}>Micro</option>
+                            <option value="2" selected={{$empresa->tamano === "2" ? 'selected' : ''}}>Pequeña</option>
+                            <option value="3" selected={{$empresa->tamano === "3" ? 'selected' : ''}}>Mediana</option>
+                            <option value="4" selected={{$empresa->tamano === "4" ? 'selected' : ''}}>Grande</option>
                         </select>
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="num_trabajadores" class="form-label">Número de trabajadores</label>
-                        <input class="form-control" name="num_trabajadores" type="number" value="0" min="0" id="num_trabajadores" value="{{old('num_trabajadores')}}">
+                        <input class="form-control" name="num_trabajadores" type="number" min="0" id="num_trabajadores" value="{{ $empresa->num_trabajadores }}">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="nit">NIT</label>
-                        <input type="number" id="nit" name="nit" value="{{ old('nit') }}" class="form-control" placeholder="Ingrese el NIT">
+                        <input type="number" id="nit" name="nit" value="{{$empresa->nit ? $empresa->nit : ''}}" class="form-control" placeholder="Ingrese el NIT">
                         <small id="passwordHelp" class="form-text text-muted">Digite el número de identificación sin puntos ni guiones, para el NIT el dígito de Verificación no es requerido.</small>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="sector_economico">Sector Económico</label>
-                        <select class="form-control" name="sector_economico" value="{{old('sector_economico')}}">
+                        <select class="form-control" name="sector_economico" value="{{$empresa->sector_economico}}">
                             <?php
                             $filename = base_path('public\sectores_empaz.csv');
                             $file = utf8_fopen_read($filename, "r");
@@ -131,7 +130,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="ciiu_principal">Código CIIU Actividad Económica Principal</label>
-                        <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{old('ciiu_principal')}}">
+                        <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{$empresa->ciiu_principal ? $empresa->ciiu_principal : ''}}">
                             <option value="Ninguno" selected>Ninguno</option>
                             <?php
                             $filename = base_path('public\codigos_ciiu.csv');
@@ -154,7 +153,7 @@
 
                     <div class="form-group col-md-12">
                         <label for="ciiu_secundario">Código CIIU Actividad Económica Secundaria</label>
-                        <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{old('ciiu_secundario')}}">
+                        <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{$empresa->ciiu_secundario ? $empresa->ciiu_secundario : '' }}">
                             <option value="Ninguno">Ninguno</option>
                             @foreach($ciiu_array as $ciiu => $ciiu_d)
                               <option value="{{$ciiu}}">{{$ciiu}} - {{$ciiu_d}}</option>

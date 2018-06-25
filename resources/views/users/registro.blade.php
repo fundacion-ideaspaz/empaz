@@ -1,9 +1,9 @@
-@extends('layouts.masterAnimation') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.masterAnimation') @section('title', 'Crear Usuario') @section('content')
   <div class="fs-form-wrap" id="fs-form-wrap">
     <div class="fs-title">
       <h2>Crear Usuario</h2>
       </div>
-      <form action="/registro" method="post" id="myform" class="fs-form fs-form-full" autocomplete="off">
+      <form action="/registro" method="post" id="myForm" class="fs-form fs-form-full" autocomplete="off">
         {{ csrf_field() }}
         <input type="hidden" name="role" value="empresa" id="role" value="{{$role}}">
         <ol class="fs-fields">
@@ -13,7 +13,7 @@
         </li>
         <li>
           <label for="email" class="fs-field-label fs-anim-upper">Email</label>
-          <input type="email" id="email" name="email" value="{{ old('email') }}" class="fs-anim-lower" required title="Diligencie este campo para continuar">
+          <input type="email" id="email" name="email" value="{{ old('email') }}" class="fs-anim-lower" required title="Diligencie este campo para continuar" oninvalid="this.setCustomValidity('Ingrese un correo válido')" oninput="this.setCustomValidity('')">
         </li>
         <li>
           <label for="password" class="fs-field-label fs-anim-upper">Contraseña</label>

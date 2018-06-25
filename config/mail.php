@@ -56,7 +56,7 @@ return [
     */
     'from' => [
         'address' => 'info@empazweb.org',
-        'name' => 'Proyecto Empaz'
+        'name' => 'EmPaz - Medición Empresarial'
     ],
 
     /*

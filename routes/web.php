@@ -36,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('reportes/{cuest_id}', 'DashboardController@resultadoCuestionario');
 
     Route::middleware(['empresa'])->group(function () {
+        Route::get('/profile/{id}/edit', 'ProfileController@editEmpresa');
+        Route::post('/profile/{id}/edit', 'ProfileController@updateEmpresa');
         Route::get('/profile/empresa', 'ProfileController@profileEmpresa');
         Route::post('/profile/empresa/{id}', 'ProfileController@saveEmpresa');
         // Responder Cuestionario Routes

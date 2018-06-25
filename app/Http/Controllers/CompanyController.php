@@ -36,7 +36,7 @@ class CompanyController extends Controller
         }
         return redirect("/users");
     }
-    
+
     public function store(Request $request){
         $request->validate([
             'nombre' => 'required|max:255',
@@ -49,7 +49,7 @@ class CompanyController extends Controller
             'nit' => 'required|max:255',
             'sector' => 'required|max:255',
             'tamano' => 'required|max:255',
-            'nit' => 'required|max:255',
+            'nit' => 'max:255',
             'numerotrabajadores' => 'required|max:255',
             'ciudadprincipal' => 'required|max:255',
             'operacion' => 'required|max:255',
