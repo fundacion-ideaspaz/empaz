@@ -21,14 +21,24 @@ $letters = ["A", "B", "C", "D", "E", "F"];
 
   <select  class="form-control pregunta-select cs-select cs-skin-boxes fs-anim-lower" name="{{$pregunta->id}}"
     id="respuesta-{{$pregunta->id}}" @if($pregunta->isRequired($cuest_id)) required @endif>
-    <option value="">Por favor, seleccione la respuesta que más se acerca a la situación de su empresa</option>
-    @for($idx_opcion = 1; $idx_opcion <= $no_respuestas; $idx_opcion++)
-    <?php
-    $opcion = $pregunta->opcionesRespuestas->where('number', "=", $idx_opcion)->first();
-     ?>
-     @if(!($pregunta->isRequired($cuest_id) && $opcion->number === 5))
-        <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-1]}}. {{$opcion->descripcion}}</option>
-     @endif
-    @endfor
+     <option value="">Por favor, seleccione la respuesta que más se acerca a la situación de su empresa</option>
+     @for($idx_opcion = 1; $idx_opcion <= count($letters); $idx_opcion++)
+         <?php
+         $opcion = $pregunta->opcionesRespuestas->where('number', "=", $idx_opcion)->first();
+         $set_diff = count($letters)-$no_respuestas;
+         if ($pregunta->isRequired($cuest_id)){
+           $minus = 2;
+         } else {
+           $minus = 1;
+         }
+         ?>
+         @if($opcion->number<=$no_respuestas-2)
+             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-1]}}. {{$opcion->descripcion}}</option>
+         @elseif(!$pregunta->isRequired($cuest_id) && $idx_opcion === 5)
+             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-$set_diff-1]}}. {{$opcion->descripcion}}</option>
+         @elseif($idx_opcion === 6)
+             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-$set_diff-$minus]}}. {{$opcion->descripcion}}</option>
+         @endif
+     @endfor
   </select>
 </li>
