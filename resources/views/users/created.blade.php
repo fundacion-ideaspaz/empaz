@@ -9,7 +9,7 @@
 	<td style="background-color: #f2f2f2; padding: 20px; text-align: center;">
 		<h2 style="color: #666;">Estimado/a, {{$user->nombre}}</h2>
   <p style="color: #666; text-align: center;">
-    Han creado una cuenta para usted en la plataforma EmPaz. Para activar su cuenta, por favor haga click en el siguiente enlace:
+    Hemos creado una cuenta para usted en la plataforma EmPaz. Para activar su cuenta, por favor haga click en el siguiente enlace:
   </p>
   <p>
     <a style="color: #fff; font-size: 16px; display: block; text-align: center; width: 200px; margin:auto; background-color: #00aabf; padding: 10px 20px; text-decoration: none;" href="{{URL::to('/')}}/users/{{$user->id}}/activate/{{$user->confirmation_code}}">Activar Cuenta</a>

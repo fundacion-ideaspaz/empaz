@@ -15,6 +15,7 @@ function platformSlashes($path) {
     <div class="card col-12">
         <div class="card-body">
           <h2>Perfil de su empresa</h2>
+          <p>Permítanos conocer mejor su empresa. Por favor diligencie o actualice la información solicitada a continuación.</p>
             <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
               {{ csrf_field() }}
                 <div class="row">

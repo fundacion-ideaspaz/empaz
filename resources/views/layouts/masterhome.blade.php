@@ -18,13 +18,13 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-<!--[if IE]>
+<!-- [if IE]>
   <style type="text/css">
   .container{
     transform: translateX(-25%);
 }
 </style>
-<![endif]-->
+<![endif] -->
 </head>
 
 <body>
@@ -98,18 +98,22 @@
 </header>
 <section>
 <div class="content-text">
-  <div class="text">
-    <h2>¡Bienvenido a EmPaz!</h2>
-    <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva, y está dirigida a empresas de cualquier tamaño y sector. </h4>
-      <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
-      <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
+    <div class="text">
+      <div class="back-ground">
+      <div class="home-text">
+        <h2>¡Bienvenido a EmPaz!</h2>
+        <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva, y está dirigida a empresas de cualquier tamaño y sector. </h4>
+        <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
+        <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
+      </div>
+    </div>
       @if(!Auth::user())
       <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
       @endif
       <div class="flecha">
-        <a class="" href="#section02"><img src="img/flecha-ini.svg" width="50"></a>
+        <a class="" href="#section02"><img src="img/flecha-ini.svg" style="height: 50px; width: 50px;"></a>
       </div>
-    <h4 style="color: #fff">Conozca más</h4>
+      <h4 style="color: #fff">Conozca más</h4>
   </div>
 </div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

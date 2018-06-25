@@ -1,6 +1,12 @@
 @extends('layouts.master') @section('title', 'Archivos') @section('content')
 
+<div class="row">
+<div class="col-12 card">
+
+
 <h2>Carga de Archivos</h2>
+
+<p> <strong>Nota:</strong> Es necesario cargar los dos archivos si se requiere actualizar la información.</p>
 
 {!! Form::open(['action' => 'FilesController@store', 'method'=>'POST', 'files'=>'true'])!!}
 
@@ -20,5 +26,7 @@
 
 {!! Form::close() !!}
 
+</div>
+</div>
 
 @endsection

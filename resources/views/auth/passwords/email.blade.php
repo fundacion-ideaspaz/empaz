@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Recuperar contraseña')
+@extends('layouts.master') @section('title', 'Recuperar Contraseña')
 
 @section('content')
 <div class="container recuperar">
@@ -8,8 +8,8 @@
                 <div class="panel-heading">
                 <h2>Recuperar contraseña</h2>
                 </div>
-
                 <div class="panel-body">
+                  <p>Por favor ingrese el correo electrónico registrado en la plataforma, al cual recibirá un enlace para restablecer su contraseña.</p>
                     <p></p>
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
