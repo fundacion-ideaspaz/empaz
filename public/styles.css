@@ -102,8 +102,12 @@ a.descripcion.tip:hover span {
 	color: #fff;
 	text-align:left;
 	font-family: arial;
-	font-size: 1.05em;
+	font-size: 1.05em!important;
 	overflow-y: auto;
+}
+
+.info-cuestionario{
+	font-size: 0.5em!important;
 }
 
 a:hover{
@@ -531,11 +535,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 }
 
 .fs-field-label{
-	font-size: 0.9em!important;
+	font-size: 0.7em!important;
 }
 
 .fs-fields input{
-	font-size: 0.8em!important;
+	font-size: 0.6em!important;
 }
 
 .fs-form-wrap{
@@ -986,6 +990,7 @@ body.tablero{
     margin: auto;
     background: #00aabf2b;
     border: 1px solid #00aabf;
+		border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
     font-size: 12px;

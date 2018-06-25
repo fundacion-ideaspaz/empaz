@@ -20,11 +20,6 @@
         </tbody>
       </table>
     </div>
-<!--     <div class="card-footer">
-      <div class="pull-righ">
-        <a class="btn btn-primary" href="/cuestionarios/new/">Crear Cuestionario</a>
-      </div>
-    </div> -->
   </div>
 </div>
 @endsection
