@@ -5,11 +5,13 @@
     <div class="col-sm-8">
       <h2>Glosario</h2>
     </div>
+    @if(Auth::user())
+    @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
     <div class="col-sm-4">
-      @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
       <a href="/glosario/create" class="btn btn-primary btn-sm pull-right" title="Agregar"> <span class="fa fa-plus"></span></a>
-      @endif
       </div>
+      @endif
+      @endif
   </div>
 @if (session('status'))
     <div class="alert alert-success">
