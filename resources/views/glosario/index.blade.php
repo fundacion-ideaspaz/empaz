@@ -5,9 +5,9 @@
     <div class="col-sm-8">
       <h2>Glosario</h2>
     </div>
-    @if(Auth::user())
-    @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
-    <div class="col-sm-4">
+      @if(Auth::user())
+      @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+      <div class="col-sm-4">
       <a href="/glosario/create" class="btn btn-primary btn-sm pull-right" title="Agregar"> <span class="fa fa-plus"></span></a>
       </div>
       @endif
@@ -47,8 +47,14 @@
   </div>
   @endforeach
  </div>
+ <div class="row">
+   <div class="col-sm-6 col-sm-offset-5">
+     {{ $terminos->render() }}
+   </div>
+ </div>
  @else
  <h5>No hay entradas disponibles en el glosario.</p>
  @endif
-</div></div>
+</div>
+</div>
 @endsection

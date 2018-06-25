@@ -20,7 +20,7 @@ class GlosarioController extends Controller
      */
      public function index()
      {
-       $terminos = TerminoGlosario::orderBy('keyword','asc')->get();
+       $terminos = TerminoGlosario::orderBy('keyword','asc')->paginate(25);
        return view('glosario.index')->with('terminos', $terminos);
      }
 

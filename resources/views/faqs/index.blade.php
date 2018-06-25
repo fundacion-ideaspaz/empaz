@@ -48,6 +48,11 @@
   </div>
   @endforeach
  </div>
+ <div class="row">
+   <div class="col-sm-6 col-sm-offset-5">
+     {{ $faqs->render() }}
+   </div>
+ </div>
  @else
  <h5>No hay preguntas frecuentes disponibles.</p>
  @endif

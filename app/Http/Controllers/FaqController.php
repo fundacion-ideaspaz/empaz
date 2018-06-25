@@ -20,7 +20,7 @@ class FaqController extends Controller
 
     public function index()
     {
-      $faqs = Faq::orderBy('question','asc')->get();
+      $faqs = Faq::orderBy('question','asc')->paginate(25);
       return view('faqs.index')->with('faqs', $faqs);
     }
 
