@@ -26,7 +26,7 @@
     <table width="650" align="center" cellpadding="0" cellspacing="0">
     <tr>
     <td style="background-color: #00aabf; padding: 15px; text-align: center;">
-        <img src="http://empazweb.org/img/logo-b.png">
+        <img src="http://ec2-18-218-90-62.us-east-2.compute.amazonaws.com/img/logo-b.png">
     </td>
     </tr>
         <tr>

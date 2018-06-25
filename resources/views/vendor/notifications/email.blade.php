@@ -6,7 +6,6 @@
 @if ($level == 'error')
 # Whoops!
 @else
-# Hola
 @endif
 @endif
 
@@ -45,7 +44,6 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-Saludos,<br>Empaz
 @endif
 
 {{-- Subcopy --}}
