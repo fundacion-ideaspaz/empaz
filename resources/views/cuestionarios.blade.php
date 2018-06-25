@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Cuestionarios Activos') @section('content')
+@extends('layouts.master') @section('title', 'Cuestionario') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
@@ -12,7 +12,7 @@
             <td>{{$cuestionario->nombre}}</td>
             <td width="25%">
               <a class="btn btn-sm btn-primary" href="/responder/{{$cuestionario->id}}">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Ir a las preguntas
+                <i class="fa fa-list-ol" aria-hidden="true"></i> Ir a las preguntas
               </a>
             </td>
           </tr>
