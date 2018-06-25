@@ -8,6 +8,7 @@
           <h5>Seleccione el cuestionario que desea diligenciar:</h5>
           <br>
           @foreach($cuestionarios as $cuestionario)
+          @if($cuestionario->validateCuestionario()[0]==="valid")
           <tr>
             <td>{{$cuestionario->nombre}}</td>
             <td width="25%">
@@ -16,6 +17,7 @@
               </a>
             </td>
           </tr>
+          @endif
           @endforeach
         </tbody>
       </table>

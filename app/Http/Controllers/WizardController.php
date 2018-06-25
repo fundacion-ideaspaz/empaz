@@ -71,7 +71,7 @@ class WizardController extends Controller
         $indicadoresDimensiones = IndicadoresDimensiones::where('cuestionario_id', '=', $cuest_id)->first();
         if(!$indicadoresDimensiones){
             return redirect('/cuestionarios/'.$cuest_id.'/indicadores')->withErrors([
-                'error.blank' => 'Debes agregar al menos un indicador'
+                'error.blank' => 'Debe agregar al menos un indicador'
             ]);
         }
         $cuestionario = Cuestionario::find($cuest_id);
@@ -82,7 +82,7 @@ class WizardController extends Controller
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $preguntas = Pregunta::where("estado", "=", "activo")
                         ->whereNotIn("id", $preguntasIds)
-                        ->get();
+                        ->orderBy("nombre", "asc");
         return view('indicadores.preguntas')->with([
             "indicadores" => $indicadores,
             "cuestionario" => $cuestionario,
