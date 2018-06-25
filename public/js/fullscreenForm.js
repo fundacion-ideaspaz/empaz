@@ -451,7 +451,7 @@
 		var message = '';
 		switch( err ) {
 			case 'NOVAL' :
-				message = 'Por favor diligencie el campo para continuar';
+				message = 'Por favor ingrese una de respuesta para continuar';
 				break;
 			case 'INVALIDEMAIL' :
 				message = 'El email es inválido';

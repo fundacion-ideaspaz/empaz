@@ -1,4 +1,16 @@
 @extends('layouts.master') @section('title', 'Perfil de la Empresa') @section('content')
+
+<?php
+
+function platformSlashes($path) {
+    if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+        $path = str_replace('/', '\\', $path);
+    }
+    return $path;
+}
+
+ ?>
+
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
@@ -30,7 +42,7 @@
                                 return $handle;
                               }
 
-                              $filename = base_path('public\countries.csv');
+                              $filename = base_path(platformSlashes('public/countries.csv'));
                               $file = utf8_fopen_read($filename, "r");
                               $countries = array();
                               while (($data = fgetcsv($file, 200, ",")) !==FALSE ){
@@ -115,7 +127,7 @@
                         <label for="sector_economico">Sector Económico</label>
                         <select class="form-control" name="sector_economico" value="{{old('sector_economico')}}">
                             <?php
-                            $filename = base_path('public\sectores_empaz.csv');
+                            $filename = base_path(platformSlashes('public/sectores_empaz.csv'));
                             $file = utf8_fopen_read($filename, "r");
                             $sectores = array();
                             while (($data = fgetcsv($file, 500, ",")) !==FALSE ){
@@ -134,7 +146,7 @@
                         <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{old('ciiu_principal')}}">
                             <option value="Ninguno" selected>Ninguno</option>
                             <?php
-                            $filename = base_path('public\codigos_ciiu.csv');
+                            $filename = base_path(platformSlashes('public/codigos_ciiu.csv'));
                             $file = utf8_fopen_read($filename, "r");
                             $ciius = array();
                             $ciius_description = array();

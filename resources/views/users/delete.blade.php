@@ -1,8 +1,8 @@
-@extends('layouts.master') @section('title', 'Crear usuario') @section('content')
+@extends('layouts.master') @section('title', 'Elminar Usuario') @section('content')
 <div class="row">
   <div class="card col-12">
     <div class="card-body">
-      <h2>¿Eliminar Usuario?</h2>
+      <h2>Eliminar Usuario</h2>
       <form action="/users/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">

@@ -64,10 +64,11 @@
 .fs-form-overview .fs-fields::before {
 	display: block;
 	margin-bottom: 2.5em;
-	color: #3b3f45;
+	color: #00aabf;
 	content: 'Confirmar respuestas';
 	font-weight: 700;
 	font-size: 1.85em;
+	font-family: 'Roboto Slab', serif;
 }
 
 /* Switch view animation (we hide the current view, switch the view class and show it again) */

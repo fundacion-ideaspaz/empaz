@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Perfil Empresa') @section('content')
+@extends('layouts.master') @section('title', 'Perfil') @section('content')
 <div class="row indicadores-form">
   <div class="card col-12">
         <div class="card-body">
@@ -20,9 +20,9 @@
             <div class="col-md-6">
                 <span class="label">Email:</span> {{ Auth::user()->email }}
             </div>
-    
+
             </div>
-            
+
     </div>
 </div>
 @endsection
