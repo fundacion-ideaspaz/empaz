@@ -73,7 +73,7 @@
           <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
           {{ csrf_field() }}
           @if(!$indicador->preguntas($cuestionario->id)->pluck("id")->contains($pregunta->id))
-            <input type="hidden" name="indicador_id" id="indicador_field">
+            <input type="hidden" name="indicador_id" class="indicador-id">
               <tr>
                 <td>{{$pregunta->nombre}}</td>
                 <td width="15%"><select name="required" value="{{ old('required') }}" id="required" class="form-control">
@@ -111,7 +111,7 @@
       $('#preguntas-select').multiSelect();
       $("#indicador").bind('change', function () {
           var cur_indicador_id = this.value;
-          document.getElementById("indicador_field").value = String(cur_indicador_id);
+          $('.indicador-id').val(cur_indicador_id)
         });
       $('#indicador').trigger('change');
       });

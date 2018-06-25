@@ -74,16 +74,13 @@
           <label for="indicador">Indicadores: </label>
           <tbody>
           @foreach($indicadores as $indicador)
-          <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline">
-            <input type="hidden" name="dimension_id" id="dimension_field" value="1">
+          <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline" onsubmit="DoSubmit();" id="#myForm">
                 {{ csrf_field() }}
                     @if(!$dimension->indicadores($cuestionario->id)->pluck("id")->contains($indicador->id))
+                    <input class="dimension-id" type="hidden" name="dimension_id" value="{{old('dimension_id')}}">
                     <tr>
                     <td>{{$indicador->nombre}}</td>
                     <td width="15%">
-                      <!-- <input name="nivel_importancia" class="slider-select" id="ex21" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3, 4]"
-                    data-slider-ticks-labels='["Bajo", "Medio", "Alto", "Muy Alto"]' data-slider-min="1" data-slider-max="5" data-slider-step="1"
-                    data-slider-value="" data-slider-tooltip="hide" /> -->
                     <select name="nivel_importancia" id="nivel_importancia" class="form-control" title="Seleccione el nivel de importancia">
                         <option value="1">Baja</option>
                         <option value="2">Media</option>
@@ -92,7 +89,7 @@
                     </select>
                     </td>
                     <td width="10%">
-                      <button class="btn btn-primary editar pull-right" data-toggle="tooltip" data-placement="bottom" title="Agregar">
+                      <button type="submit" class="btn btn-primary editar pull-right" data-toggle="tooltip" data-placement="bottom" title="Agregar">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       </button>
                     </td>
@@ -123,10 +120,9 @@
 
     $("#dimension").bind('change', function () {
         var cur_dimension_id = this.value;
-        document.getElementById("dimension_field").value = String(cur_dimension_id);
+        $('.dimension-id').val(cur_dimension_id)
       });
     $('#dimension').trigger('change');
-
 
     });
 

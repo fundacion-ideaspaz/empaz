@@ -142,11 +142,13 @@ class DimensionesController extends Controller
             "dimension_id" => "required",
         ];
 
+        $this->validate($request, $validations);
+
         //Check cuestionario_dimension
         $dimensionCuestionario = DimensionCuestionario::where('dimension_id', '=', $request->dimension_id)
         ->where('cuestionario_id', '=', $cuest_id)->first();
 
-        $this->validate($request, $validations);
+
         $importancia = $request->nivel_importancia;
         $dimension_id = $request->dimension_id;
         $dimensionIndicador = new IndicadoresDimensiones();

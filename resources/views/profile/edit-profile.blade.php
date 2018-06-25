@@ -3,7 +3,7 @@
     <div class="card col-12">
         <div class="card-body">
           <h2>Perfil de su empresa</h2>
-            <form action="/profile/{{Auth::user()->id}}/edit" method="POST" class="form">
+            <form action="/profile/{{Auth::user()->id}}/edit" method="POST" class="form" >
               {{ csrf_field() }}
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -91,11 +91,11 @@
                           </a>
                         </label>
                         <select class="form-control" id="tamano" name="tamano">
-                          <option >Seleccione una opción</option>
                             <option value="1" selected={{$empresa->tamano === "1" ? 'selected' : ''}}>Micro</option>
                             <option value="2" selected={{$empresa->tamano === "2" ? 'selected' : ''}}>Pequeña</option>
                             <option value="3" selected={{$empresa->tamano === "3" ? 'selected' : ''}}>Mediana</option>
                             <option value="4" selected={{$empresa->tamano === "4" ? 'selected' : ''}}>Grande</option>
+                            <option >Seleccione una opción</option>
                         </select>
                     </div>
 
@@ -168,6 +168,7 @@
 </div>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript">
+
 'use strict';
 
 function loadDepartamentos() {
