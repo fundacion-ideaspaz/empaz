@@ -7,7 +7,7 @@
             <div class="col-md-9"><h1>{{$empresa->nombre}}</h1></div>
         </div>
         </div>
-            <div class="row cuerpo">
+        <div class="row cuerpo">
               <div class="col-md-12">
                 <h4>Datos del usuario</h4>
               </div>
@@ -50,7 +50,6 @@
             <?php
             $tamanos = ["Micro", "Pequeña", "Mediana", "Grande"];
              ?>
-
             <div class="col-md-4">
                 <span class="label">Tamaño:</span> {{ $tamanos[$empresa->tamano-1] }}
             </div>
