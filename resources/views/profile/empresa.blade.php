@@ -60,7 +60,7 @@
             <div class="col-md-4">
                 <span class="label">Sector económico:</span> {{ $empresa->sector_economico }}
             </div>
-            @if($empresa->web)
+            @if($empresa->nit)
             <div class="col-md-4">
                 <span class="label">NIT:</span> {{ $empresa->nit }}
             </div>

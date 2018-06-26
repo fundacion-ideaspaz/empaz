@@ -54,7 +54,7 @@
     <p>No tiene preguntas asignadas a este cuestionario.</p>
   @endif
 
-<h4>Asginar preguntas a dimensiones</h4>
+<h4>Asginar preguntas a indicadores</h4>
 
 @if(count($preguntas)>0)
   <div class="form-group">
