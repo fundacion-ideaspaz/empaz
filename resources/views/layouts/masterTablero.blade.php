@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
+  <link rel="shortcut icon" href="favicon.ico"/> 
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">

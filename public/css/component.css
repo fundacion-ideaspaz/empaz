@@ -61,24 +61,20 @@
 	font-size: 1.2em;
 }
 
-/* .fs-form-overview .fs-fields::before {
-	display: block;
-	margin-bottom: 2em;
-	color: #00aabf;
-	content: 'Confirmar respuestas';
-	font-weight: 700;
-	font-size: 1.85em;
-	font-family: 'Roboto Slab', serif;
-} */
-
 .fs-form-overview .fs-fields::before {
 	display: block;
 	margin-bottom: 1.5em;
 	color: #00aabf;
-	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registra la información en la plataforma.';
-	font-weight: 300;
-	font-size: 1em;
+	content: 'Confirmar información de registro';
+	font-weight: 600;
+	font-size: 1.2em;
 	font-family: 'Roboto Slab', serif;
+}
+
+.r-cuestionario .fs-form-overview .fs-fields::before {
+	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registra la información en la plataforma.'!important;
+	font-size: 1.2em!important;
+	font-weight: 400;
 }
 
 /* Switch view animation (we hide the current view, switch the view class and show it again) */

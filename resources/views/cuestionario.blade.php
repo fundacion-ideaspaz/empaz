@@ -4,7 +4,7 @@
       <div class="fs-title">
       <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
       </div>
-      <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="myform" autocomplete="off">
+      <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="cuestForm" autocomplete="off">
       {{ csrf_field() }}
       <ol class="fs-fields">
         @foreach($cuestionario->allPreguntas($cuestionario->id) as $index => $pregunta)

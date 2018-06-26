@@ -82,7 +82,7 @@ class WizardController extends Controller
         $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
         $preguntas = Pregunta::where("estado", "=", "activo")
                         ->whereNotIn("id", $preguntasIds)
-                        ->orderBy("nombre", "asc");
+                        ->orderBy("nombre", "asc")->get();
         return view('indicadores.preguntas')->with([
             "indicadores" => $indicadores,
             "cuestionario" => $cuestionario,
