@@ -119,12 +119,16 @@ a.descripcion.tip:hover span {
 	color: #fff;
 	text-align:left;
 	font-family: arial;
-	font-size: 1.05em!important;
+	font-size: 1.05em;
 	overflow-y: auto;
 }
 
-.info-cuestionario{
-	font-size: 0.5em!important;
+.info-cuestionario span{
+	font-size: 0.55em!important;
+	background-color: rgb(255, 255, 255,1)!important;
+	color: black!important;
+	line-height: 1em!important;
+	z-index: 100;
 }
 
 a:hover{
@@ -202,8 +206,8 @@ a{
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
     text-transform: uppercase;
-    font-size: 0.85em;
-        font-weight: 300;
+    font-size: 1.2vw;
+  	font-weight: 300;
 }
 
 .resultado-g{
@@ -539,6 +543,16 @@ left: 0;
 	padding-right: 10vw;
 }
 
+
+ .content-text .text h2{
+	font-size: 2.3vw;
+}
+
+.content-text .text h4{
+	font-size: 1.15vw;
+}
+
+
 .back-ground {
 	border-radius: 30px;
 	width: auto;
@@ -559,11 +573,6 @@ left: 0;
 	text-align: center;
 }
 
-
-.content-text .text h4{
-	font-size: 0.9em;
-	max-margin-bottom: 10px;
-}
 
 .registro-exitoso{
     border: 1px solid #00aabf!important;
@@ -726,6 +735,7 @@ label {
     margin-bottom: .5rem;
     font-family: 'Roboto Slab', serif;
     color: #999;
+		font-size: 1.5vw;
 }
 
 .container h1, .container h2{

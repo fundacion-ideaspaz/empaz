@@ -95,7 +95,7 @@
                             <option value="2" selected={{$empresa->tamano === "2" ? 'selected' : ''}}>Pequeña</option>
                             <option value="3" selected={{$empresa->tamano === "3" ? 'selected' : ''}}>Mediana</option>
                             <option value="4" selected={{$empresa->tamano === "4" ? 'selected' : ''}}>Grande</option>
-                            <option >Seleccione una opción</option>
+                            <option value="" >Seleccione una opción</option>
                         </select>
                     </div>
 

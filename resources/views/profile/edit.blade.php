@@ -16,7 +16,7 @@ function platformSlashes($path) {
         <div class="card-body">
           <h2>Perfil de su empresa</h2>
           <p>Permítanos conocer mejor su empresa. Por favor diligencie o actualice la información solicitada a continuación.</p>
-            <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form">
+            <form action="/profile/empresa/{{Auth::user()->id}}" method="POST" class="form" autocomplete="false">
               {{ csrf_field() }}
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -33,7 +33,7 @@ function platformSlashes($path) {
                     <!-- Select Country -->
                     <div class="form-group col-md-4">
                         <label for="pais">País</label>
-                        <select class="form-control" required id="pais" name="pais" value="{{ old('pais') }}">
+                        <select class="form-control" id="pais" name="pais" value="{{ old('pais') }}">
                           <?php
                               function utf8_fopen_read($fileName) {
                                 $fc = iconv('windows-1250', 'utf-8', file_get_contents($fileName));
@@ -54,7 +54,7 @@ function platformSlashes($path) {
                               fclose($file);
                               sort($countries);
                           ?>
-                            <option>Seleccione una opción</option>
+                            <option value="">Seleccione una opción</option>
                             @foreach($countries as $country)
                               <option value="{{$country}}">{{$country}}</option>
                             @endforeach
@@ -105,7 +105,7 @@ function platformSlashes($path) {
                           </a>
                         </label>
                         <select class="form-control" name="tamano" value="{{ old('tamano') }}">
-                            <option selected>Seleccione una opción</option>
+                            <option value="">Seleccione una opción</option>
                             <option value="1">Micro</option>
                             <option value="2">Pequeña</option>
                             <option value="3">Mediana</option>
@@ -115,7 +115,7 @@ function platformSlashes($path) {
 
                     <div class="form-group col-md-6">
                         <label for="num_trabajadores" class="form-label">Número de trabajadores</label>
-                        <input class="form-control" name="num_trabajadores" type="number" value="0" min="0" id="num_trabajadores" value="{{old('num_trabajadores')}}">
+                        <input class="form-control" name="num_trabajadores" type="number" min="0" id="num_trabajadores" value="{{old('num_trabajadores')}}">
                     </div>
 
                     <div class="form-group col-md-6">

@@ -72,7 +72,7 @@
 }
 
 .r-cuestionario .fs-form-overview .fs-fields::before {
-	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registra la información en la plataforma.'!important;
+	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registrar la información en la plataforma.'!important;
 	font-size: 1.2em!important;
 	font-weight: 400;
 }

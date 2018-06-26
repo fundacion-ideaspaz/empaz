@@ -8,8 +8,20 @@
         </div>
         </div>
             <div class="row cuerpo">
+              <div class="col-md-12">
+                <h4>Datos del usuario</h4>
+              </div>
             <div class="col-md-4">
-                <span class="label">Contacto:</span> {{ $empresa->user->nombre }}
+                <span class="label">Nombre:</span> {{ $empresa->user->nombre }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Correo electrónico:</span> {{ $empresa->user->email }}
+            </div>
+            <div class="col-md-4">
+                <span class="label">Cargo:</span> {{ $empresa->user->cargo }}
+            </div>
+            <div class="col-md-12">
+              <h4>Datos de la empresa</h4>
             </div>
             <div class="col-md-4">
                 <span class="label">País:</span> {{ $empresa->pais }}
@@ -35,8 +47,12 @@
                 <span class="label">Web:</span> {{ $empresa->web }}
             </div>
             @endif
+            <?php
+            $tamanos = ["Micro", "Pequeña", "Mediana", "Grande"];
+             ?>
+
             <div class="col-md-4">
-                <span class="label">Tamaño:</span> {{ $empresa->tamano }}
+                <span class="label">Tamaño:</span> {{ $tamanos[$empresa->tamano-1] }}
             </div>
             <div class="col-md-4">
                 <span class="label">Numero de trabajadores:</span> {{ $empresa->num_trabajadores }}
