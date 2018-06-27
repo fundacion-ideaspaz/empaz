@@ -98,7 +98,9 @@ class Cuestionario extends Model
 
     public function cuestionario_done(){
         $done = CuestionarioResult::where("cuestionario_id", "=", $this->id)->where("user_id", "=", Auth::user()->id);
-        return true;
+        if ($done) {
+          return true;
+        }
     }
 
 }
