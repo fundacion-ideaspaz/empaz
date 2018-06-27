@@ -33,10 +33,16 @@ class DimensionesController extends Controller
             "nombre" => "required",
             "descripcion" => "required",
             "enunciados" => "required|array",
+            "enunciados.*" => "required",
             "estado" => "required",
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
+            'enunciados.0.required' => 'El campo de enunciado bajo es requerido.',
+            'enunciados.1.required' => 'El campo de enunciado medio bajo es requerido.',
+            'enunciados.2.required' => 'El campo de enunciado medio es requerido.',
+            'enunciados.3.required' => 'El campo de enunciado medio alto es requerido.',
+            'enunciados.4.required' => 'El campo de enunciado alto es requerido.',
         );
         $this->validate($request, $validations, $messages);
         $inputs = $request->all();
@@ -81,10 +87,16 @@ class DimensionesController extends Controller
         $validations = [
             "nombre" => "required",
             "descripcion" => "required",
-            "enunciados" => "required|array"
+            "enunciados" => "required|array",
+            "enunciados.*" => "required",
         ];
         $messages = array(
             'descripcion.required' => 'El campo descripción es requerido.',
+            'enunciados.0.required' => 'El campo de enunciado bajo es requerido.',
+            'enunciados.1.required' => 'El campo de enunciado medio bajo es requerido.',
+            'enunciados.2.required' => 'El campo de enunciado medio es requerido.',
+            'enunciados.3.required' => 'El campo de enunciado medio alto es requerido.',
+            'enunciados.4.required' => 'El campo de enunciado alto es requerido.',
         );
         $this->validate($request, $validations, $messages);
         $dimension = Dimension::find($id);

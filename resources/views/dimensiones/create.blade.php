@@ -25,7 +25,7 @@
                 <h4>Descripción de la calificación</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo (0-15%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel bajo"></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel bajo" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio bajo (16-40%)</label>
@@ -33,11 +33,11 @@
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio (41-60%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio"></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio alto (61-85%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio alto"></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio alto" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Alto (86-100%)</label>
