@@ -5,6 +5,7 @@
             <div class="fs-title">
                 <h2>Crear Dimensión</h2>
             </div>
+            {{ old('enunciados.0') }}
             <form action="/dimensiones" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -22,26 +23,26 @@
                         <option value="inactivo">Inactivo</option>
                     </select>
                 </div>
-                <h4>Descripción de la calificación</h4>
+                <h4>Enunciados para la calificación</h4>
                 <div class="form-group">
                     <label for="enunciados">Bajo (0-15%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel bajo" ></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{  old('enunciados.0')  }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio bajo (16-40%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel medio bajo"></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control"> {{  old('enunciados.1')  }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio (41-60%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio" ></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" > {{  old('enunciados.2')  }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Medio alto (61-85%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para medio alto" ></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{  old('enunciados.3')  }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="enunciados">Alto (86-100%)</label>
-                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" placeholder="Enunciado para nivel alto"></textarea>
+                    <textarea type="text" rows="1.5" name="enunciados[]" class="form-control">{{  old('enunciados.4')  }}</textarea>
                 </div>
         </div>
         <div class="from-group">
