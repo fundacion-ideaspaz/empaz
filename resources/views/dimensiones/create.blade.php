@@ -5,7 +5,6 @@
             <div class="fs-title">
                 <h2>Crear Dimensión</h2>
             </div>
-            {{ old('enunciados.0') }}
             <form action="/dimensiones" method="post" class="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
