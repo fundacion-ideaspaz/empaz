@@ -267,9 +267,9 @@
                                                               foreach ($puntajeIndicadores as $j => $rindicador) {
                                                                 if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
                                                                   echo "{";
-                                                                  echo '"label": "'. $indicadores[$j]->nombre.'",';
+                                                                  echo '"label": "'. chunk_split($indicadores[$j]->nombre, 150, '\n').'",';
                                                                   echo '"value": "'.$rindicador.'",';
-                                                                  echo '"tooltext": "'.$indicadores[$j]->descripcion.'"';
+                                                                  echo '"tooltext": "'. chunk_split($indicadores[$j]->descripcion, 150, '\n').'"';
                                                                   echo "},";
                                                                 }
                                                                }
