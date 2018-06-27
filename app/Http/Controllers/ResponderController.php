@@ -24,7 +24,9 @@ class ResponderController extends Controller
             return redirect('/responder');
         }
         if ($cuestionario->cuestionario_result) {
+          if ($cuestionario->cuestionario_result->user_id === Auth::user()->id) {
             return redirect('/reportes/'.$cuestionario->cuestionario_result->id);
+          }
         }
         return view('cuestionario')->with(['cuestionario' => $cuestionario]);
     }
