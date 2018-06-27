@@ -266,7 +266,7 @@
                                                               <?php
                                                               foreach ($puntajeIndicadores as $j => $rindicador) {
                                                                 if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
-                                                                  echo '{ label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"} \';
+                                                                  echo '{ label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"} \n';
                                                                 }
                                                                }
                                                                ?>
