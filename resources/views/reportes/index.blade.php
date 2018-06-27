@@ -266,7 +266,7 @@
                                                               <?php
                                                               foreach ($puntajeIndicadores as $j => $rindicador) {
                                                                 if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
-                                                                  echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
+                                                                  echo '{ label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
                                                                 }
                                                                }
                                                                ?>
@@ -285,6 +285,8 @@
     </div>
     @endforeach
 </div>
+<br>
+<p class="report-text">Si desea conocer más acerca de los aportes empresariales para la paz contáctenos al correo <a href="mailto:info@empazweb.org?subject=feedback">info@empazweb.org</a>, aquí podrá conseguir asesoría personalizada que permita conocer más aprofundidad el estado de su empresa. </p>
 </div>
 </div>
 <div id="informeCPDF"></div>
@@ -329,24 +331,24 @@ function color_squares() {
     };
 
 
-      var contentD = $('.resultado-d').attr("data-dime");
-      var contentClassD = ".resultado-d" + "-" + contentD;
-      // var contentDi = $('.resultado-d').attr("data-dime");
-      if (contentD >= 86 && contentD <= 100){
-        $(contentClassD).addClass('verde');
-      }
-      else if (contentD >= 61 && contentD <= 85){
-        $(contentClassD).addClass('otro-verde');
-      }
-      else if (contentD >= 41 && contentD <= 60){
-        $(contentClassD).addClass('amarillo');
-      }
-      else if (contentD >= 16 && contentD <= 40){
-        $(contentClassD).addClass('naranja');
-      }
-      else if (contentD >= 0 && contentD <= 15){
-        $(contentClassD).addClass('rojo');
-      };
+      // var contentD = $('.resultado-d').attr("data-dime");
+      // var contentClassD = ".resultado-d" + "-" + contentD;
+      // // var contentDi = $('.resultado-d').attr("data-dime");
+      // if (contentD >= 86 && contentD <= 100){
+      //   $(contentClassD).addClass('verde');
+      // }
+      // else if (contentD >= 61 && contentD <= 85){
+      //   $(contentClassD).addClass('otro-verde');
+      // }
+      // else if (contentD >= 41 && contentD <= 60){
+      //   $(contentClassD).addClass('amarillo');
+      // }
+      // else if (contentD >= 16 && contentD <= 40){
+      //   $(contentClassD).addClass('naranja');
+      // }
+      // else if (contentD >= 0 && contentD <= 15){
+      //   $(contentClassD).addClass('rojo');
+      // };
 };
 
 $(document).ready(function(){
