@@ -203,7 +203,7 @@
 
 
 <div class="content-blanco">
-<h5>Resultado por dimensiones</h5>{{count($indicadores)}}
+<h5>Resultado por dimensiones</h5>
 <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p>
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
