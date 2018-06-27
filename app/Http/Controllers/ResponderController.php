@@ -21,7 +21,10 @@ class ResponderController extends Controller
     {
         $cuestionario = Cuestionario::find($id);
         if ($cuestionario->estado === 'inactivo') {
-            return redirect('/home');
+            return redirect('/responder');
+        }
+        if ($cuestionario->cuestionario_result) {
+            return redirect('/reportes/'.$cuestionario->cuestionario_result->id);
         }
         return view('cuestionario')->with(['cuestionario' => $cuestionario]);
     }

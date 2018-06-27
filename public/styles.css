@@ -132,7 +132,7 @@ a.descripcion.tip:hover span {
 }
 
 a:hover{
-    color: #7abee5!important;
+    color: #7abee5;
 }
 
 .btn:hover{
@@ -217,7 +217,19 @@ a{
     justify-content: center;
     align-items: center;
     padding: 40px;
-    color: #fff;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.resultado-d{
+    background: #ff2929;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: black;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -944,8 +956,11 @@ body.tablero{
 .content-blanco{
     background: #fff;
     padding:20px;
+		font-size: 1.1vw!important;
     margin-bottom: 20px;
     position: relative;
+		margin-left: 5vw;
+		margin-right: 5vw;
 }
 
 .content-blanco.no-margen .row{
@@ -960,7 +975,6 @@ body.tablero{
 
 .content-blanco .fa-address-card{
     width: 100%;
-    font-size: 100px;
     text-align: right;
     color: #00aabf;
 }
@@ -971,20 +985,24 @@ body.tablero{
     right: 20px;
 }
 
+.rojo {
+	background: rgb(255,0,0)!important;
+}
+
 .amarillo{
-        background: #ffec0b!important;
+        background: rgb(255,255,0)!important;
 }
 
 .otro-verde{
-        background: #CDDC39!important;
+        background: rgb(123,229,17)!important;
 }
 
 .naranja{
-    background: #FF9800!important;
+    background: rgb(251,151,5)!important;
 }
 
 .verde{
-        background: #8BC34A!important;
+        background: rgb(39,205,79)!important;
 }
 
 .help-block-error{
@@ -1081,4 +1099,13 @@ body.overview .alerta-r{
     background-color:#ccc;
     min-width: 500px!important;
     width: 500px!important;
+}
+
+.nav-pills .nav-link.active{
+	background-color: #9bc6d9!important;
+	color: black!important;
+}
+
+.dim_description{
+	color: black!important;
 }

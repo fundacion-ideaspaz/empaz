@@ -79,6 +79,7 @@ class DashboardController extends Controller
         $dimensionesCuest = DimensionCuestionario
             ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $puntajeIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
+
         $enunciados = array_fill(0, $dimensiones->count(), 0);
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
         $i = 0;
@@ -89,7 +90,7 @@ class DashboardController extends Controller
         }
 
         $puntajeDimensiones = $cuestResult->puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $puntajeIndicadores);
-        $rCuestionario = round($cuestResult->puntajeCuestionario($puntajeDimensiones), 2);
+        $rCuestionario = round($cuestResult->puntajeCuestionario($puntajeDimensiones), 0);
 
         $i = 0;
         foreach ($puntajeIndicadores as $rindicador) {
@@ -99,28 +100,30 @@ class DashboardController extends Controller
         }
 
         $i = 0;
+        $niveles = [];
         $nivel = "bajo";
         foreach ($dimensiones as $dimension) {
-            $puntajeDimensiones[$i] = round(($puntajeDimensiones[$i] / $arrayPorcentajeDimension[$i]) * 100, 2);
+            $puntajeDimensiones[$i] = round(($puntajeDimensiones[$i] / $arrayPorcentajeDimension[$i]) * 100, 0);
             if ($puntajeDimensiones[$i] >= 0 && $puntajeDimensiones[$i] <= 15) {
                 $nivel = "bajo";
-            } elseif ($puntajeDimensiones[$i] >= 16 && $puntajeDimensiones[$i] <= 30) {
-                $nivel = "bajo";
-            } elseif ($puntajeDimensiones[$i] >= 31 && $puntajeDimensiones[$i] <= 50) {
+            } elseif ($puntajeDimensiones[$i] >= 16 && $puntajeDimensiones[$i] <= 40) {
+                $nivel = "medio bajo";
+            } elseif ($puntajeDimensiones[$i] >= 41 && $puntajeDimensiones[$i] <= 60) {
                 $nivel = "medio";
-            } elseif ($puntajeDimensiones[$i] >= 51 && $puntajeDimensiones[$i] <= 85) {
-                $nivel = "alto";
+            } elseif ($puntajeDimensiones[$i] >= 61 && $puntajeDimensiones[$i] <= 85) {
+                $nivel = "medio alto";
             } elseif ($puntajeDimensiones[$i] >= 86 && $puntajeDimensiones[$i] <= 100) {
-                $nivel = "muy alto";
+                $nivel = "alto";
             }
 
             $enunciados[$i] = Enunciado::where("dimension_id", "=", $dimension->id)->where("nivel_importancia", "=", $nivel)->first();
-
+            $niveles[$i] = $nivel;
             $i++;
 
         }
 
         return view("reportes.index")->with([
+            'cuestionario'=> $cuestResult,
             'empresa' => $empresa,
             'rImportancia' => $arrayPorcentajeDimension,
             'puntajeIndicadores' => $puntajeIndicadores,
@@ -130,6 +133,7 @@ class DashboardController extends Controller
             'indicadores' => $indicadores,
             'dimensiones' => $dimensiones,
             'eDimensiones' => $enunciados,
+            'niveles' => $niveles,
         ]);
     }
 

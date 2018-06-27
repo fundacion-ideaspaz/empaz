@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
-  <link rel="shortcut icon" href="favicon.ico"/> 
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -39,59 +39,57 @@
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="/acerca">Acerca de Empaz</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/acerca">Acerca de Empaz</a>
+                  </li>
 
-                    <li class="nav-item">
-                      <a class="nav-link" href="/dummypdf.pdf" target="_blank">Manual</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/manual" target="_blank">Manual</a>
+                  </li>
 
-                    <li class="nav-item">
-                      <a class="nav-link" href="/faq">Preguntas frecuentes</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faqs">Preguntas frecuentes</a>
+                  </li>
 
-                    <li class="nav-item">
-                      <a class="nav-link" href="/glosario">Glosario</a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/glosario" target="_blank">Glosario</a>
+                  </li>
 
+                    <!-- If user is authenticated -->
                     @if(Auth::user())
                     <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Acciones de usuario
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}">Perfil</a>
                               @if(Auth::user()->role === 'superadmin')
                               <div class="menu-usuarios">
-                                  <a class="dropdown-item" href="/users"><i class="fa fa-user" aria-hidden="true"></i> Usuarios</a>
+                                  <a class="dropdown-item" href="/users"><i class="dropdown-icon fa fa-users" aria-hidden="true"></i>Usuarios</a>
                               </div>
                               @endif
-                               @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
-                                  <a class="dropdown-item" href="/cuestionarios"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
-                                  <a class="dropdown-item" href="/dimensiones"><i class="fa fa-pie-chart" aria-hidden="true"></i> Dimensiones</a>
-                                  <a class="dropdown-item" href="/indicadores"><i class="fa fa-area-chart" aria-hidden="true"></i> Indicadores</a>
-                                  <a class="dropdown-item" href="/preguntas"><i class="fa fa-question-circle" aria-hidden="true"></i></i> Preguntas</a>
+                              @if(Auth::user()->role === 'experto' || Auth::user()->role === 'superadmin')
+                                  <a class="dropdown-item" href="/cuestionarios"><i class="dropdown-icon fa fa-list-ul" aria-hidden="true"></i>Cuestionario</a>
+                                  <a class="dropdown-item" href="/dimensiones"><i class="dropdown-icon fa fa-pie-chart" aria-hidden="true"></i>Dimensiones</a>
+                                  <a class="dropdown-item" href="/indicadores"><i class="dropdown-icon fa fa-area-chart" aria-hidden="true"></i>Indicadores</a>
+                                  <a class="dropdown-item" href="/preguntas"><i class="dropdown-icon fa fa-question-circle" aria-hidden="true"></i></i>Preguntas</a>
+                                  <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
                               @endif
-                              @if(Auth::user()->role === 'empresa')
-                              <a class="dropdown-item" href="/responder"><i class="fa fa-list-ul" aria-hidden="true"></i> Cuestionario</a>
+                              @if(Auth::user()->role != 'consulta')
+                              <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>EmPaz</a>
                               @endif
-                              @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
-                              <a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i></i></i> Resultados</a>
+                              @if(Auth::user()->role != 'empresa')
+                              <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
                               @endif
-                              <div class="menu-logout">
-                                  <a class="logout-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();"><i class="fa fa-lock" aria-hidden="true"></i>
-                                  Cerrar sesión
-                                  </a>
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                  </form>
-                              </div>
+                              <a class="dropdown-highlight dropdown-item" href="{{ Auth::user()->role === 'empresa' ? '/profile/empresa' : '/profile/user' }}"><i class="dropdown-icon fa fa-info-circle" aria-hidden="true"></i>Perfil</a>
+                              <a class="dropdown-highlight dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"><i class="dropdown-icon fa fa-sign-out" aria-hidden="true"></i>Salir</a>
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
 
                           </div>
-                    </li>
-                    @endif
+                      </li>
+                      @endif
               </ul>
           </div>
     </nav>

@@ -53,6 +53,10 @@ class User extends Authenticatable
         return $this->hasOne("\App\ProfileEmpresa");
     }
 
+    public function cuestionario_result(){
+       return $this->hasOne("\App\CuestionarioResult");
+    }
+
     /**
      * Send the password reset notification.
      *

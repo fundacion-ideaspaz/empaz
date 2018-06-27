@@ -90,4 +90,9 @@ class Cuestionario extends Model
         $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
         return $preguntas;
     }
+
+    public function cuestionario_result(){
+       return $this->hasOne("\App\CuestionarioResult");
+    }
+
 }
