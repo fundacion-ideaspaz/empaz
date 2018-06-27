@@ -34,7 +34,7 @@
                     </select>
                     @endif
                 </div>
-                <h4>Descripción de la calificación</h4>
+                <h4>Enunciados para la calificación</h4>
                 @foreach($enunciados as $enunciado)
                 <div class="form-group">
                     <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
