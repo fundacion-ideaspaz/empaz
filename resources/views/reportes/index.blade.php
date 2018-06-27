@@ -203,7 +203,7 @@
 
 
 <div class="content-blanco">
-<h5>Resultado por dimensiones</h5>
+<h5>Resultado por dimensiones</h5>{{print_r($puntajeIndicadores)}}
 <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p>
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
@@ -264,9 +264,10 @@
                                                     "data": [
 
                                                               <?php
-                                                              foreach ($puntajeIndicadores as $j => $rindicador) {
+                                                               foreach ($puntajeIndicadores as $j => $rindicador) {
                                                                 if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
                                                                   echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
+
                                                                 }
                                                                }
                                                                ?>
@@ -283,6 +284,14 @@
             </div>
         </div>
     </div>
+    <?php
+     foreach ($puntajeIndicadores as $j => $rindicador) {
+      if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
+        echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
+
+      }
+     }
+     ?>
     @endforeach
 </div>
 <br>
