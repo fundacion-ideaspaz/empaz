@@ -223,7 +223,7 @@ a{
 }
 
 .resultado-d{
-    background: #ff2929;
+    /* background: #ff2929; */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -232,6 +232,15 @@ a{
     color: black;
     font-size: 2rem;
     font-weight: bold;
+}
+
+.report-text{
+	font-size: 1.05vw;
+}
+@media screen and (max-width: 1200px) {
+	.report-text{
+		font-size: 2em;
+	}
 }
 
 header.master{
