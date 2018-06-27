@@ -10,7 +10,8 @@
         "genealabs/laravel-caffeine": "^0.6.11",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.4.0"
+        "laravelcollective/html": "^5.4.0",
+        "lrgt/laravel-form-ajax-validation": "^5.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
