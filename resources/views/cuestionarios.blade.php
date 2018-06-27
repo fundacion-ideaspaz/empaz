@@ -12,12 +12,12 @@
           <tr>
             <td>{{$cuestionario->nombre}}</td>
             <td width="25%">
-              @if(Auth::user()->cuestionario_result)
-              @if(Auth::user()->cuestionario_result->cuestionario_id === $cuestionario->id)
+              @if(Auth::user()->cuestionario_result && Auth::user()->cuestionario_result->cuestionario_id === $cuestionario->id)
+              <!-- @if(Auth::user()->cuestionario_result->cuestionario_id === $cuestionario->id) -->
                 <a class="btn btn-sm btn-primary" href="/reportes/{{Auth::user()->cuestionario_result->id}}">
                   <i class="fa fa-tachometer" aria-hidden="true"></i> Ver resultados
                 </a>
-              @endif
+              <!-- @endif -->
               @else
                 <a class="btn btn-sm btn-primary" href="/responder/{{$cuestionario->id}}">
                   <i class="fa fa-list-ol" aria-hidden="true"></i> Ir a las preguntas
