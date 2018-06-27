@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Auth;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Pregunta;
@@ -93,6 +94,11 @@ class Cuestionario extends Model
 
     public function cuestionario_result(){
        return $this->hasOne("\App\CuestionarioResult");
+    }
+
+    public function cuestionario_done(){
+        $done = CuestionarioResult::where("cuestionario_id", "=", $this->id)->where("user_id", "=", Auth::user()->id);
+        return true;
     }
 
 }

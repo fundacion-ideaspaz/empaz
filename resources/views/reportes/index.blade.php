@@ -134,11 +134,11 @@
             </tr>
               <tr>
               <td><strong>Representante</strong></td>
-              <td>{{Auth::user()->nombre}}</td>
+              <td>{{$empresa->user->nombre}}</td>
             </tr>
               <tr>
               <td><strong>Email</strong></td>
-              <td>{{Auth::user()->email}}</td>
+              <td>{{$empresa->user->email}}</td>
             </tr>
               <tr>
               <td><strong>Fecha del informe:</strong></td>
@@ -203,7 +203,7 @@
 
 
 <div class="content-blanco">
-<h5>Resultado por dimensiones</h5>{{print_r($puntajeIndicadores)}}
+<h5>Resultado por dimensiones</h5>{{count($indicadores)}}
 <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p>
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
@@ -284,14 +284,6 @@
             </div>
         </div>
     </div>
-    <?php
-     foreach ($puntajeIndicadores as $j => $rindicador) {
-      if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
-        echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
-
-      }
-     }
-     ?>
     @endforeach
 </div>
 <br>

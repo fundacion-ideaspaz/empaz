@@ -66,19 +66,23 @@ class DashboardController extends Controller
                 "indicadores.nombre",
                 "indicadores.descripcion",
                 "indicadores.estado",
-                "dimension_indicador.dimension_id"
+                "dimension_indicador.dimension_id",
+                "dimension_indicador.cuestionario_id"
             )
             ->
-            whereIn("indicadores.id", $indicadoresIds)
-            ->join('dimension_indicador', 'dimension_indicador.indicador_id', '=', 'indicadores.id')
-            ->get();
-        // dd($indicadores);
+            whereIn("indicadores.id", $indicadoresIds)->where('cuestionario_id', $cuestionario_id)
+            ->join('dimension_indicador', 'dimension_indicador.indicador_id', '=', 'indicadores.id')->get();
+
+
+        // // dd($indicadores);
         $empresa = ProfileEmpresa::where('user_id', '=', $cuestResult->user_id)->first();
 
         $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
         $dimensionesCuest = DimensionCuestionario
             ::where("cuestionario_id", "=", $cuestionario_id)->get();
+
         $puntajeIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
+
 
         $enunciados = array_fill(0, $dimensiones->count(), 0);
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
@@ -94,9 +98,9 @@ class DashboardController extends Controller
 
         $i = 0;
         foreach ($puntajeIndicadores as $rindicador) {
-            $puntajeIndicadores[$i] = intval($rindicador * 100);
-            $i++;
-            //  Convert the indicadores result to percent
+          $puntajeIndicadores[$i] = intval($rindicador * 100);
+          $i++;
+          //  Convert the indicadores result to percent
         }
 
         $i = 0;
