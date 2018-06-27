@@ -564,6 +564,14 @@ left: 0;
 	font-size: 1.15vw;
 }
 
+@media screen and (max-width: 1200px) {
+	.content-text .text h4{
+		font-size: 0.9em;
+	}
+	.content-text .text h2{
+	 font-size: 1.4em;
+ }
+}
 
 .back-ground {
 	border-radius: 30px;
