@@ -25,7 +25,8 @@ class WizardController extends Controller
         $dimensionesIds = DimensionCuestionario
             ::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
         $dimensiones = Dimension::whereNotIn("id", $dimensionesIds)
-                        ->where("estado", "=", "activo")->get();
+                        ->where("estado", "=", "activo")->orderBy("nombre", "asc")->get();
+
         return view('cuestionarios.dimensiones')->with([
             "cuestionario" => $cuestionario,
             "dimensiones" => $dimensiones
@@ -55,9 +56,9 @@ class WizardController extends Controller
         ::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
         $indicadoresIds = IndicadoresDimensiones
             ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
-        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
+        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->orderBy("nombre", "asc")->get();
         $indicadores = Indicador::where("estado", "=", "activo")
-                        ->whereNotIn("id", $indicadoresIds)
+                        ->whereNotIn("id", $indicadoresIds)->orderBy("nombre", "asc")
                         ->get();
         return view('dimensiones.indicadores')->with([
             "dimensiones" => $dimensiones,
@@ -79,7 +80,7 @@ class WizardController extends Controller
         ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
         $preguntasIds = IndicadoresPreguntas
             ::where("cuestionario_id", "=", $cuest_id)->orderBy('created_at', 'asc')->pluck("pregunta_id");
-        $indicadores = Indicador::whereIn("id", $indicadoresIds)->get();
+        $indicadores = Indicador::whereIn("id", $indicadoresIds)->orderBy("nombre", "asc")->get();
         $preguntas = Pregunta::where("estado", "=", "activo")
                         ->whereNotIn("id", $preguntasIds)
                         ->orderBy("nombre", "asc")->get();

@@ -7,10 +7,6 @@
       </div>
       <h4>Dimensiones asignadas</h4>
       @if(sizeof($cuestionario->dimensiones) > 0)
-
-      @else
-      <p>No tiene dimensiones asignadas a este cuestionario.</p>
-      @endif
       <table class="table table-striped table-hover">
         <tbody>
         @foreach($cuestionario->dimensiones as $dimension)
@@ -29,6 +25,10 @@
         @endforeach
         </tbody>
         </table>
+
+      @else
+      <p>No tiene dimensiones asignadas a este cuestionario.</p>
+      @endif
 
       <h4>Asignar dimensiones a cuestionario</h4>
       @if(sizeof($dimensiones) > 0)

@@ -84,11 +84,19 @@ class Cuestionario extends Model
     }
 
 
-    public function allPreguntas($cuest_id)
+    public function allPreguntas()
     {
-        $preguntasIds = IndicadoresPreguntas::
-            where("cuestionario_id", "=", $cuest_id)->pluck("pregunta_id");
-        $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
+        $preguntas = Pregunta::
+        select(
+            "preguntas.id",
+            "preguntas.nombre",
+            "preguntas.descripcion",
+            "preguntas.estado",
+            "preguntas.tipo_respuesta",
+            "indicador_pregunta.order")
+            ->where("indicador_pregunta.cuestionario_id", "=", $this->id)
+            ->leftJoin('indicador_pregunta', 'preguntas.id', '=', 'indicador_pregunta.pregunta_id')
+            ->orderBy("indicador_pregunta.order","asc")->get();
         return $preguntas;
     }
 
@@ -103,7 +111,6 @@ class Cuestionario extends Model
       if ($response) {
         return 1;
       }
-
     }
 
 }

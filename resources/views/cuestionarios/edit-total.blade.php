@@ -6,16 +6,12 @@
                 <h2>Editar Cuestionario</h2>
             </div>
             <form action="/cuestionarios/{{$cuestionario->id}}" method="post" class="form" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+              {{ csrf_field() }}
+              @if(!$canEditEstado)
+              <div class="alert alert-warning">
+                <p>Este cuestionario ya ha sido diligenciado por uno o más usuarios, para realizar modificaciones genere una nueva versión desde el Panel de Dimensiones.</p>
+              </div>
+              @endif
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <text type="text" class="form-control" name="nombre" readonly>{{$cuestionario->nombre}}</text>
@@ -40,7 +36,9 @@
             <a class="btn btn-warning" href="/cuestionarios">
               Atrás
             </a>
+            @if($canEditEstado)
             <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
+            @endif
         </div>
         </form>
     </div>

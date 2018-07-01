@@ -8,6 +8,7 @@ use App\Dimension;
 use App\DimensionCuestionario;
 use App\IndicadoresDimensiones;
 use App\IndicadoresPreguntas;
+use App\CuestionarioResult;
 
 class CuestionariosController extends Controller
 {
@@ -51,7 +52,17 @@ class CuestionariosController extends Controller
 
     public function edit($id)
     {
+        //Check if can be edited
         $cuestionario = Cuestionario::find($id);
+
+        $cuestionario_result = CuestionarioResult::where('cuestionario_id', $id)->first();
+        $canEditEstado = true;
+        if ($cuestionario_result) {
+            $canEditEstado = false;
+        }
+
+        //Find cuestionario
+
         $lastCuest = Cuestionario
                 ::where("cuest_id_parent", "=", $cuestionario->cuest_id_parent)
                 ->orderBy("version", "DESC")->first();
@@ -60,8 +71,10 @@ class CuestionariosController extends Controller
         }else{
             $view = "cuestionarios.edit";
         }
+
         return view($view)->with([
-            "cuestionario" => $cuestionario
+            "cuestionario" => $cuestionario,
+            "canEditEstado" => $canEditEstado,
         ]);
     }
 

@@ -111,7 +111,11 @@ class IndicadoresController extends Controller
     {
         $validations = [
             "indicador_id" => "required",
-            "required" => "required"
+            "required" => "required",
+            "order" => "required"
+        ];
+        $messages = [
+            "order.required" => "La posición de la pregunta es requerida"
         ];
 
         //Check dimension_indicador
@@ -122,7 +126,10 @@ class IndicadoresController extends Controller
         $this->validate($request, $validations);
         $required = $request->required === 'true';
         $indicador_id = $request->indicador_id;
+        $order = $request->order;
+
         $indicadorPregunta = new IndicadoresPreguntas();
+        $indicadorPregunta->order = $order;
         $indicadorPregunta->pregunta_id = $pregunta_id;
         $indicadorPregunta->indicador_id = $indicador_id;
         $indicadorPregunta->cuestionario_id = $cuest_id;

@@ -28,6 +28,7 @@
             <th>Indicador</th>
             <th>Pregunta</th>
             <th>¿Requerida?</th>
+            <th>Posición</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -36,7 +37,8 @@
           <tr>
             <td width="20%">{{$indicador->nombre}}</td>
             <td width="55">{{$pregunta->nombre}}</td>
-            <td width="15%">{{$pregunta->required == 1 ? 'Si' : 'No'}}</td>
+            <td width="10%">{{$pregunta->required == 1 ? 'Si' : 'No'}}</td>
+            <td width="5%">{{$pregunta->order}}</td>
             <td width="10%">
               <form action="/indicadores/{{$indicador->id}}/preguntas/{{$pregunta->id}}/delete" method="POST">
                 {{ csrf_field() }}
@@ -81,6 +83,7 @@
                   <option value="false">Opcional</option>
                 </select>
                 </td>
+                <td width="10%"><input type="text" name="order" title="Ingrese la ubicación de la pregunta en números" placeholder="Posición"> </td>
                 <td width="10%">
                   <button class="btn btn-primary editar pull-right" data-toggle="tooltip" data-placement="bottom" title="Agregar">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>

@@ -51,7 +51,7 @@ class Pregunta extends Eloquent
 
     public function isRequired($cuest_id)
     {
-        
+
         $indPreg = IndicadoresPreguntas::
             where("pregunta_id", "=", $this->id)
             ->where("cuestionario_id", "=", $cuest_id)->first();
