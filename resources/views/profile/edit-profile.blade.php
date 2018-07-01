@@ -39,10 +39,9 @@
                                 }
                               }
                               fclose($file);
-                              sort($countries);
                           ?>
                             @foreach($countries as $country)
-                              <option value="{{$country}}" selected="{{$empresa->pais === $country ? 'selected' : ''}}" >{{$country}}</option>
+                              <option value="{{$country}}" @if ($empresa->pais === $country) selected = 'selected' @endif >{{$country}}</option>
                             @endforeach
                           </select>
                     </div>
@@ -51,15 +50,19 @@
                     <div class="form-group col-md-4">
                         <label for="departamento">Departamento</label>
                         <select class="form-control" id="departments" name="departamento">
-                            <option>Seleccione una opcion</option>
+                            <option value="">Seleccione una opción</option>
                         </select>
                     </div>
 
                     <!-- Select municipio -->
                     <div class="form-group col-md-4">
                         <label for="municipio">Municipio</label>
-                        <select class="form-control" id="cities" name="municipio" value="{{ $empresa->municipio ? $empresa->municipio : '' }}">
-                            <option>Seleccione una opcion</option>
+                        <select class="form-control" id="cities" name="municipio">
+                          @if($empresa->municipio)
+                          <option value="{{$empresa->municipio}}" selected="selected">{{$empresa->municipio}}</option>
+                          @else
+                          <option value="" selected="selected">Seleccione una opción</option>
+                          @endif
                         </select>
                     </div>
 
@@ -78,24 +81,24 @@
 
                     <div class="form-group col-md-6">
                         <label for="web">Pagina Web</label>
-                        <input type="text" name="web" value="{{ $empresa->web ? $empresa->web : '' }}" class="form-control">
+                        <input type="text" name="web" value="{{ $empresa->web}}" class="form-control">
                     </div>
 
                     <div class="form-group  col-md-6">
                         <label for="tamano">Tamaño de la Empresa
-                          <a class="descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span>1. Microempresa: planta de personal no superior a los diez (10) trabajadores y activos totales excluida la vivienda por valor inferior a quinientos (500) salarios mínimos mensuales legales vigentes.
-                            2. Pequeña empresa: planta de personal entre once (11) y cincuenta (50) trabajadores y activos totales por valor entre quinientos uno (501) y menos de cinco mil (5.000) salarios mínimos mensuales legales vigentes.
-                            3. Mediana empresa: planta de personal entre cincuenta y uno (51) y doscientos (200) trabajadores y activos totales por valor entre cinco mil uno (5.001) a treinta mil (30.000) salarios mínimos mensuales legales vigentes.
-                            4. Gran Empresa: planta de personal superior a los doscientos (200) trabajadores y activos totales superiores a treinta mil (30.000) salarios mínimos mensuales legales vigentes.</span>
+                          <a class="info-cuestionario descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span>1. <strong>Microempresa</strong>: planta de personal no superior a los diez (10) trabajadores y activos totales excluida la vivienda por valor inferior a quinientos (500) salarios mínimos mensuales legales vigentes.
+                            2. <strong>Pequeña empresa</strong>: planta de personal entre once (11) y cincuenta (50) trabajadores y activos totales por valor entre quinientos uno (501) y menos de cinco mil (5.000) salarios mínimos mensuales legales vigentes.
+                            3. <strong>Mediana empresa</strong>: planta de personal entre cincuenta y uno (51) y doscientos (200) trabajadores y activos totales por valor entre cinco mil uno (5.001) a treinta mil (30.000) salarios mínimos mensuales legales vigentes.
+                            4. <strong>Gran Empresa</strong>: planta de personal superior a los doscientos (200) trabajadores y activos totales superiores a treinta mil (30.000) salarios mínimos mensuales legales vigentes.</span>
                           </a>
                         </label>
-                        <select class="form-control" id="tamano" name="tamano">
-                            <option value="1" selected={{$empresa->tamano === "1" ? 'selected' : ''}}>Micro</option>
-                            <option value="2" selected={{$empresa->tamano === "2" ? 'selected' : ''}}>Pequeña</option>
-                            <option value="3" selected={{$empresa->tamano === "3" ? 'selected' : ''}}>Mediana</option>
-                            <option value="4" selected={{$empresa->tamano === "4" ? 'selected' : ''}}>Grande</option>
-                            <option value="" >Seleccione una opción</option>
+                        <select class="form-control" id="tamano" name="tamano" strict="false">
+                          <option value="" >Seleccione una opción</option>
+                            <option value="1" @if ($empresa->tamano === "1") selected = 'selected' @endif>Micro</option>
+                            <option value="2" @if ($empresa->tamano === "2") selected = 'selected' @endif>Pequeña</option>
+                            <option value="3" @if ($empresa->tamano === "3") selected = 'selected' @endif>Mediana</option>
+                            <option value="4" @if ($empresa->tamano === "4") selected = 'selected' @endif>Grande</option>
                         </select>
                     </div>
 
@@ -106,7 +109,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="nit">NIT</label>
-                        <input type="number" id="nit" name="nit" value="{{$empresa->nit ? $empresa->nit : ''}}" class="form-control" placeholder="Ingrese el NIT">
+                        <input type="number" id="nit" name="nit" value="{{$empresa->nit ? $empresa->nit : ''}}" class="form-control">
                         <small id="passwordHelp" class="form-text text-muted">Digite el número de identificación sin puntos ni guiones, para el NIT el dígito de Verificación no es requerido.</small>
                     </div>
 
@@ -123,7 +126,7 @@
                             fclose($file);
                              ?>
                              @foreach($sectores as $sector)
-                               <option value="{{$sector}}">{{$sector}}</option>
+                               <option value="{{$sector}}" @if ($empresa->sector_economico === $sector) selected = 'selected' @endif>{{$sector}}</option>
                              @endforeach
                         </select>
                     </div>
@@ -131,7 +134,6 @@
                     <div class="form-group col-md-12">
                         <label for="ciiu_principal">Código CIIU Actividad Económica Principal</label>
                         <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{$empresa->ciiu_principal ? $empresa->ciiu_principal : ''}}">
-                            <option value="Ninguno" selected>Ninguno</option>
                             <?php
                             $filename = base_path('public\codigos_ciiu.csv');
                             $file = utf8_fopen_read($filename, "r");
@@ -146,7 +148,7 @@
                             fclose($file);
                              ?>
                              @foreach($ciiu_array as $ciiu => $ciiu_d)
-                               <option value="{{$ciiu}}">{{$ciiu}} - {{$ciiu_d}}</option>
+                               <option value="{{$ciiu}}" @if ($empresa->ciiu_principal === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                              @endforeach
                         </select>
                     </div>
@@ -156,7 +158,7 @@
                         <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{$empresa->ciiu_secundario ? $empresa->ciiu_secundario : '' }}">
                             <option value="Ninguno">Ninguno</option>
                             @foreach($ciiu_array as $ciiu => $ciiu_d)
-                              <option value="{{$ciiu}}">{{$ciiu}} - {{$ciiu_d}}</option>
+                              <option value="{{$ciiu}}" @if ($empresa->ciiu_secundario === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -178,43 +180,44 @@ function loadDepartamentos() {
         if (data.length > 0) {
             $.each(data, function (index, item) {
                 var contentMenu = document.getElementById("departments");
-                var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
-
+                if ("{{$empresa->departamento}}" == item.departamento) {
+                  var flag = true;
+                  var ventana = "<option value='" + item.departamento + "' selected='selected'>" + item.departamento + "</option>";
+                } else {
+                  var flag = false;
+                  var ventana = "<option value='" + item.departamento + "' >" + item.departamento + "</option>";
+                }
                 $(contentMenu).append(ventana);
             });
         }
     });
 }
 
-$('#pais').on('change', function (e) {
+function loadData() {
+    new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
+};
+
+
+$('#pais').bind('change', function (e) {
     var target = e.target;
     if (target.value === 'Colombia') {
         $('#departments').prop('disabled', false);
         $('#cities').prop('disabled', false);
         loadDepartamentos();
+        loadData();
+        $('#nit').prop('disabled', false);
+        $('#ciiu-principal').prop('disabled', false);
+        $('#ciiu-secundario').prop('disabled', false);
     } else {
         $('#cities').prop('disabled', 'disabled');
         $('#cities').val("N/A");
         $('#departments').prop('disabled', 'disabled');
         $('#departments').val("N/A");
+        $('#nit').prop('disabled', 'disabled');
+        $('#ciiu-principal').prop('disabled', 'disabled');
+        $('#ciiu-secundario').prop('disabled', 'disabled');
     }
 });
+$('#pais').trigger('change');
 
-$('#pais').on('change', function (e) {
-    var target = e.target;
-    if (target.value === 'Colombia') {
-        $('#nit').prop('disabled', false);
-        $('#ciiu-principal').prop('disabled', false);
-        $('#ciiu-secundario').prop('disabled', false);
-    } else {
-      $('#nit').prop('disabled', 'disabled');
-      $('#ciiu-principal').prop('disabled', 'disabled');
-      $('#ciiu-secundario').prop('disabled', 'disabled');
-    }
-});
-
-
-$(function () {
-    new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
-});
 </script> @endsection

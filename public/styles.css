@@ -893,7 +893,7 @@ tr.children td:first-child {
     border-color: transparent!important;
 }
 
-.cuerpo .col-md-4, .cuerpo .col-md-6{
+.cuerpo .col-md-4, .cuerpo .col-md-6, .cuerpo .col-md-12{
     padding: 20px 15px;
     color: #999;
 }

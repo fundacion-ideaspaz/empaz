@@ -19,7 +19,8 @@ class ProfileEmpresa extends Model
         'tamano',
         'num_trabajadores',
         'sector_economico',
-        'codigo_ciiu',
+        'ciiu_principal',
+        'ciiu_secundario',
         'user_id',
         'nit'
     ];

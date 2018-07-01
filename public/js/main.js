@@ -10,16 +10,11 @@ function handleDeparmentsAndCitiesSelectors(deparmentsSelector, citiesSelector) 
 	function loadData() {
 		$.get(jsonSourceUri, function (data) {
 			if (data.length > 0) {
-				console.log(data);
 				// Convert department array to be an object
 				loadedData = data.reduce(function(carry, value) {
 					carry[value.departamento] = value;
 					return carry;
 				}, {});
-
-				console.log(loadedData);
-
-				// loadDeparments();
 			}
 		});
 	}

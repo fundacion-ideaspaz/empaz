@@ -165,6 +165,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         GeneaLabs\LaravelCaffeine\Providers\Service::class,
 
+
         /*
          * Package Service Providers...
          */

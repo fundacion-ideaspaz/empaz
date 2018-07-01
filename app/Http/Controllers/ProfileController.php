@@ -42,7 +42,7 @@ class ProfileController extends Controller
 
     public function saveEmpresa($id, Request $request)
     {
-        $validations = [
+        $validation_foreign = [
             "nombre" => "required",
             "pais" => "required",
             "direccion"  => "required",
@@ -51,6 +51,20 @@ class ProfileController extends Controller
             "num_trabajadores"  => "required",
             "sector_economico"  => "required",
         ];
+        $validation_colombia = [
+            "nombre" => "required",
+            "pais" => "required",
+            "departamento" => "required",
+            "municipio" => "required",
+            "direccion"  => "required",
+            "telefono"  => "required",
+            "tamano"  => "required",
+            "num_trabajadores"  => "required",
+            "nit" => "required|digits:9",
+            "sector_economico"  => "required",
+            "ciiu_principal" => "required",
+        ];
+
          $messages = array(
             'pais.required' => 'El campo país es requerido.',
             'direccion.required' => 'El campo dirección es requerido.',
@@ -58,11 +72,22 @@ class ProfileController extends Controller
             'tamano.required' => 'El campo tamaño de la empresa es requerido.',
             'num_trabajadores.required' => 'El número de trabajores es requerido.',
             'sector_economico.required' => 'El sector económico es requerido.',
+            'nit.required' => 'El NIT de la empresa es requerido.',
+            "ciiu_principal.required" => 'El código CIIU principal de la empresa es requerido.'
 
         );
-        $this->validate($request, $validations, $messages);
+
+        //Get inputs
         $inputs = $request->all();
         $inputs["user_id"] = $id;
+        $pais = $inputs["pais"];
+
+        //Validation
+        if ($pais === "Colombia") {
+          $this->validate($request, $validation_colombia, $messages);
+        } else {
+          $this->validate($request, $validation_foreign, $messages);
+        }
         ProfileEmpresa::create($inputs);
         return redirect("/profile/empresa");
     }
@@ -74,28 +99,55 @@ class ProfileController extends Controller
 
     public function updateEmpresa($id, Request $request)
     {
-        $validations = [
-            "nombre" => "required",
-            "pais" => "required",
-            "direccion"  => "required",
-            "telefono"  => "required",
-            "tamano"  => "required",
-            "num_trabajadores"  => "required",
-            "sector_economico"  => "required",
-        ];
-         $messages = array(
-            'pais.required' => 'El campo país es requerido.',
-            'direccion.required' => 'El campo dirección es requerido.',
-            'telefono.required' => 'El campo teléfono es requerido.',
-            'tamano.required' => 'El campo tamaño de la empresa es requerido.',
-            'num_trabajadores.required' => 'El número de trabajores es requerido.',
-            'sector_economico.required' => 'El sector económico es requerido.',
+      $validation_foreign = [
+          "nombre" => "required",
+          "pais" => "required",
+          "direccion"  => "required",
+          "telefono"  => "required",
+          "tamano"  => "required",
+          "num_trabajadores"  => "required",
+          "sector_economico"  => "required",
+      ];
+      $validation_colombia = [
+          "nombre" => "required",
+          "pais" => "required",
+          "departamento" => "required",
+          "municipio" => "required",
+          "direccion"  => "required",
+          "telefono"  => "required",
+          "tamano"  => "required",
+          "num_trabajadores"  => "required",
+          "nit" => "required|digits:9",
+          "sector_economico"  => "required",
+          "ciiu_principal" => "required",
+      ];
 
-        );
-        $this->validate($request, $validations, $messages);
-        $inputs = $request->all();
-        $inputs["user_id"] = $id;
-        ProfileEmpresa::create($inputs);
+       $messages = array(
+          'pais.required' => 'El campo país es requerido.',
+          'direccion.required' => 'El campo dirección es requerido.',
+          'telefono.required' => 'El campo teléfono es requerido.',
+          'tamano.required' => 'El campo tamaño de la empresa es requerido.',
+          'num_trabajadores.required' => 'El número de trabajores es requerido.',
+          'sector_economico.required' => 'El sector económico es requerido.',
+          'nit.required' => 'El NIT de la empresa es requerido.',
+          "ciiu_principal.required" => 'El código CIIU principal de la empresa es requerido.'
+
+      );
+
+      //Get inputs
+      $inputs = $request->all();
+      $inputs["user_id"] = $id;
+      $pais = $inputs["pais"];
+
+      //Validation
+      if ($pais === "Colombia") {
+        $this->validate($request, $validation_colombia, $messages);
+      } else {
+        $this->validate($request, $validation_foreign, $messages);
+      }
+
+        $profile_empresa = ProfileEmpresa::where('user_id', '=', Auth::user()->id)->first();
+        $profile_empresa->update($inputs);
         return redirect("/profile/empresa");
     }
 
