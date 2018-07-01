@@ -30,6 +30,10 @@ Route::group(array('prefix' => 'files'), function() {
   Route::post('/', 'FilesController@store');
 });
 
+Route::get('/genealabs/laravel-caffeine/drip', function() {
+    return response(null, 204);
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/user', 'ProfileController@profileUser');
     // Reportes
