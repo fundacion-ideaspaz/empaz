@@ -6,7 +6,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Nombre</th>            
+                        <th>Nombre</th>
                         <th width="25%">Acciones</th>
                     </tr>
                 </thead>
@@ -20,12 +20,7 @@
                             <a class="btn btn-sm btn-primary" href="/reportes/{{$cuestionario_result->cuestionario_id}}" data-toggle="tooltip" data-placement="bottom" title="Reporte"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                           </td>
                     </tr>
-
-
-
                     @endforeach
-
-
                 </tbody>
             </table>
         </div>

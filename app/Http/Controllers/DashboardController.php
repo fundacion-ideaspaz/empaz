@@ -12,6 +12,7 @@ use App\IndicadoresDimensiones;
 use App\Pregunta;
 use App\ProfileEmpresa;
 use App\RespuestaCuestionario;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -35,7 +36,12 @@ class DashboardController extends Controller
 
     public function view($cuest_respuesta_id)
     {
+
         $cuestRes = CuestionarioResult::find($cuest_respuesta_id);
+        if ((Auth::user()->id != $cuestRes->user_id) && (Auth::user()->role === "empresa")) {
+          $cuestionarios = Cuestionario::where("estado", '=', 'activo')->get();
+          return view('cuestionarios')->with(['cuestionarios' => $cuestionarios]);
+        }
         $respuestas = RespuestaCuestionario
             ::where('cuestionario_result_id', '=', $cuest_respuesta_id)->get();
         $cuestionario = Cuestionario::find($cuestRes->cuestionario_id);
@@ -48,6 +54,10 @@ class DashboardController extends Controller
     public function resultadoCuestionario($cuest_id)
     {
         $cuestResult = CuestionarioResult::find($cuest_id);
+        if ((Auth::user()->id != $cuestResult->user_id) && (Auth::user()->role === "empresa")) {
+          $cuestionarios = Cuestionario::where("estado", '=', 'activo')->get();
+          return view('cuestionarios')->with(['cuestionarios' => $cuestionarios]);
+        }
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
             ::where("cuestionario_id", "=", $cuestionario_id)

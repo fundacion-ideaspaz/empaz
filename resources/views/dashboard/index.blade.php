@@ -1,12 +1,13 @@
-@extends('layouts.master') @section('title', 'Panel de Indicadores') @section('content')
+@extends('layouts.master') @section('title', 'Cuestionarios Resueltos') @section('content')
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">
-      <h2>Lista de Cuestionarios Resueltos</h2>
+      <h2>Panel de cuestionarios resueltos</h2>
       <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th>Cuestionario</th>
+            <th>Versión</th>
             <th>Empresa</th>
             <th>Usuario</th>
             <th width="25%">Acciones</th>
@@ -15,26 +16,22 @@
         <tbody>
           @foreach($cuestionarios_resueltos as $cuestRes)
           <tr>
-            <td>
-              {{$cuestRes->cuestionario->nombre}}
-              Version {{$cuestRes->cuestionario->version}}
-            </td>
+            <td>{{$cuestRes->cuestionario->nombre}}</td>
+            <td>{{$cuestRes->cuestionario->version}}</td>
             <td>{{$cuestRes->user->empresa->nombre}}</td>
             <td>{{$cuestRes->user->nombre}}</td>
-            <td width="25%">
-              <a class="btn btn-success" href="/dashboard/{{$cuestRes->id}}">
-                Ver Cuestionario
+            <td width="10%">
+              <a class="btn btn-sm btn-primary" href="/dashboard/{{$cuestRes->id}}" title="Ver Respuestas">
+                <span class="fa fa-search"></span>
+              </a>
+              <a class="btn btn-sm btn-primary" href="/reportes/{{$cuestRes->id}}" title="Ver Tablero">
+                <span class="fa fa-tachometer"></span>
               </a>
             </td>
           </tr>
           @endforeach
         </tbody>
       </table>
-    </div>
-    <div class="card-footer">
-      <div class="pull-righ">
-          {{ $cuestionarios_resueltos->links() }}
-      </div>
     </div>
   </div>
 </div>
