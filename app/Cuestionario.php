@@ -98,12 +98,10 @@ class Cuestionario extends Model
 
     public function cuestionario_done(){
       #check if it has a result
-      $response = $this->cuestionario_result;
-
+      $response = CuestionarioResult::where("cuestionario_id", "=", $this->id)
+      ->where("user_id", "=", Auth::user()->id)->first();
       if ($response) {
-        if ($response->user_id === Auth::user()->id) {
-          return 1;
-        }
+        return 1;
       }
 
     }
