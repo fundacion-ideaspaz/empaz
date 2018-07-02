@@ -200,28 +200,6 @@ div.cs-skin-boxes:focus > span {
 	transition-delay: 0.19s;
 }
 
-.cs-skin-boxes .cs-options li.cs-selected::after {
-	content: '\2714';
-	color: rgba(0,0,0,0.1);
-	position: absolute;
-	font-size: 2em;
-	top: 50%;
-	left: 90%;
-	-webkit-transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
-	transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
-}
-
-.cs-skin-boxes .cs-options li.cs-selected span::after {
-	content: '';
-}
-
-@media screen and (max-width: 30em) {
-	.cs-skin-boxes .cs-options li.cs-selected::after {
-		-webkit-transform: translate3d(-50%,-50%,0);
-		transform: translate3d(-50%,-50%,0);
-	}
-}
-
 .cs-skin-boxes .cs-options li.color-588c75 {
 	background-color: #588c75;
 }

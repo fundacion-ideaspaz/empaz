@@ -101,8 +101,9 @@
             @endif
 
             </div>
-            <div class= "row" style="margin-top:10px; align-content: center;">
-              <a href="/profile/{{$empresa->id}}/edit" class="btn btn-primary pull-right" title="Editar"> Editar <span class="fa fa-edit"></span></a>
+            <div class= "" style="margin-top:10px; align-content: center;">
+              <a href="/profile/{{$empresa->id}}/edit" class="btn btn-primary" title="Editar"> Editar <span class="fa fa-edit"></span></a>
+              <a href="/responder" class="btn btn-primary pull-right" title="Ir a EmPaz">Ir a la herramienta  <span class="fa fa-briefcase"></span></a>
             </div>
 
     </div>

@@ -28,6 +28,17 @@ section ul li{
     font-family: 'Roboto Slab', serif;
 }
 
+.indicador-box{
+	border-radius: 5px;
+	border: 3px solid #e4e4e4;
+	height: 80%;
+	overflow-y:scroll;
+	font-size: 0.8em;
+	max-height: 30vh;
+}
+
+
+
 h4{
 	font-size: 1.1em;
     font-weight: 200;
@@ -96,6 +107,7 @@ header{
 a.descripcion.tip {
     text-decoration: none;
 		text-transform: none!important;
+		z-index: 2001;
 }
 a.descripcion.tip:hover {
     position: relative
@@ -213,7 +225,7 @@ a{
 
 @media screen and (max-width: 1200px) {
 	.navbar-light .navbar-nav .nav-link {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 }
 
@@ -246,7 +258,10 @@ a{
 }
 @media screen and (max-width: 1200px) {
 	.report-text{
-		font-size: 2em;
+		font-size: 1.5em;
+	}
+	.indicador-box{
+		font-size: 1.3em;
 	}
 }
 
@@ -637,6 +652,7 @@ left: 0;
 
 .fs-form-wrap{
 	padding-top: 7vh;
+	/* display: none; */
 }
 
 .fs-nav-dots{
@@ -714,24 +730,31 @@ left: 0;
 		border: 1px solid rgb(168, 166, 164, 0.2);
 }
 
+.cs-skin-boxes .cs-options li{
+	  list-style-type: none;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+}
+
 .cs-skin-boxes .cs-options li:hover{
 	background: rgb(168, 166, 164, 0.5);
-	color: rgb(168, 166, 164, 0.2);
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options li:first-child{
     display: none;
 }
 
-.r-cuestionario .cs-skin-boxes .cs-options li.cs-selected::after {
-    content: '\2714';
+.r-cuestionario .cs-skin-boxes .cs-options li.cs-selected {
+	background-color: rgb(168, 166, 164, 0.5);
+    /* content: '\2714';
     color: #00AABF;
     position: absolute;
     font-size: 2em;
     top: 30%!important;
     right: 20px!important;
     -webkit-transform: none!important;
-    transform: none!important;
+    transform: none!important; */
 }
 
 .r-cuestionario  .cs-skin-boxes .cs-options li{
@@ -1111,14 +1134,7 @@ body.tablero{
 }
 
 .r-cuestionario .fs-fields > li label.fs-field-label.activo{
-    color: #fff;
-    z-index: 10000;
-    padding: 20px;
-    width: 100%;
-    position: fixed;
-    top: 94px;
-    left: 11px;
-    font-size: 10px;
+		display: none;
 }
 
 body.overview .alerta-r{

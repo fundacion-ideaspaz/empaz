@@ -163,7 +163,8 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a href="/profile/empresa" class="btn btn-warning"> Atrás</a>
+                <button type="submit" class="btn btn-primary pull-right">Guardar</button>
             </form>
         </div>
     </div>

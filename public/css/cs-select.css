@@ -60,7 +60,7 @@ div.cs-select:focus {
 }
 
 .cs-select .cs-selected span::after {
-	content: '\2713';
+	/* content: '\2713'; */
 	margin-left: 1em;
 }
 

@@ -7,11 +7,13 @@
     type: 'pie2d',
             renderAt: 'chart-container',
             width: '100%',
-            height: '300',
+            height: '200',
             dataFormat: 'json',
             dataSource: {
             "chart": {
             "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
+            "chartTopMargin": "0",
+            "chartBottomMargin": "0",
                     "bgColor": "#ffffff",
                     "showBorder": "0",
                     "use3DLighting": "0",
@@ -36,7 +38,8 @@
                     "legendBorderAlpha": '0',
                     "legendShadow": '0',
                     "legendItemFontSize": '10',
-                    "legendItemFontColor": '#666666'
+                    "legendItemFontColor": '#666666',
+                    "enableSmartLabels": "1",
             },
                     "data": [
                             @foreach($rImportancia as $i=> $importancia)
@@ -55,7 +58,7 @@
     type: 'radar',
             renderAt: 'chart-container2',
             width: '100%',
-            height: '300',
+            height: '330',
             dataFormat: 'json',
             dataSource: {
             "chart": {
@@ -122,12 +125,10 @@
 <!-- <button id="informe">Descargar PDF</button> -->
 <div class="row">
 
-  <!-- <div class="col-md-2"><i class="fa fa-address-card" aria-hidden="true"></i></div> -->
-    <div class="col-sm-12 col-md-7">
+    <div class="col-sm-12 col-md-12">
       <h5>Información de la empresa</h5>
       <br>
         <table class="table report-text">
-          <div class="col-sm-7 col-md-7">
             <tr>
               <td><strong>Empresa</strong></td>
               <td>{{$empresa->nombre}}</td>
@@ -144,18 +145,24 @@
               <td><strong>Fecha del informe:</strong></td>
               <td>{{$cuestionario->created_at->toDateString()}}</td>
             </tr>
-          </div>
         </table>
-    </div>
-    <div class="col-sm-12 col-md-5">
-      <h5>Convenciones </h5>
-      <br>
-      <img src="/table_results.svg" width="80%">
     </div>
 </div>
 </div>
 <div class="content-blanco no-margen">
 <h5>Resultado general</h5>
+<p class="report-text">En este informe, usted encuentra los resultados obtenidos por su empresa en las seis dimensiones de intervención empresarial para la paz y los indicadores de medición en cada una de las dimensiones (para más información sobre dimensiones, indicadores y preguntas asociadas, ver la sección Manual).</p>
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <p class="report-text">El resultado general y el resultado en cada dimensión, se visualiza mediante el mapa de calor EmPaz:</p>
+    <img src="/table_results.svg" width="70%">
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <p class="report-text">Esta es la importancia que tienen las dimensiones en la medición EmPaz:</p>
+      <div id="chart-container">FusionCharts will render here</div>
+  </div>
+</div>
+
 <p class="report-text">El puntaje obtenido por su empresa es:</p>
 <div class="row">
     <div class="col-md-2 resultado-g" data-sema="{{$rCuestionario}}">
@@ -165,15 +172,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="card col-sm-12 col-md-6">
-      <div class="card-header align-items-center d-flex justify-content-center">
-        <h5>Importancia de dimensiones</h5>
-      </div>
-        <div class="card-body">
-            <div id="chart-container">FusionCharts will render here</div>
-        </div>
-    </div>
-    <div class="card col-sm-12 col-md-6">
+    <div class="card col-sm-12 col-md-12">
       <div class="card-header align-items-center d-flex justify-content-center">
         <h5>Resultado por dimensiones</h5>
       </div>
@@ -183,6 +182,7 @@
     </div>
 </div>
 <div class="row">
+  <p class="report-text">Para conocer su significado, por favor haga click en la dimensión: </p>
 <ul class="nav nav-pills nav-justified w-100" id="pills-tab" role="tablist">
   @foreach($dimensiones as $idx => $dim)
   <li class="nav-item">
@@ -203,7 +203,7 @@
 
 
 <div class="content-blanco">
-<h5>Resultado por dimensiones</h5>
+<h5>Resultado detallado por dimensiones</h5>
 <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p>
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
@@ -211,7 +211,7 @@
         <div class="card-header" role="tab" id="headingOne">
             <span data-toggle="collapse" href="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
-                    <div class="col-md-2 resultado-d resultado-d-{{$dimension}}" data-dime="{{$dimension}}" onload="color_squares()">
+                    <div class="col-md-2 resultado-d" data-dime="{{$dimension}}" onload="color_dimension_squares()">
                         {{ $dimension }}%
                     </div>
                     <div class="col-md-3 report-text" style=" display: flex; justify-content: center; flex-direction: column;">
@@ -234,13 +234,13 @@
                                             var revenueChart = new FusionCharts({
                                                 type: 'column2d',
                                                 renderAt: 'chart-container-bar{{$i}}',
-                                                width: '70%',
+                                                width: '99%',
                                                 height: '280',
                                                 dataFormat: 'json',
                                                 dataSource: {
                                                     "chart": {
                                                         "xAxisName": "Indicador",
-                                                        "numberPrefix": "%",
+                                                        "numberSuffix": "%",
                                                         "paletteColors": "#0075c2",
                                                         "bgColor": "#ffffff",
                                                         "borderAlpha": "20",
@@ -248,6 +248,7 @@
                                                         "usePlotGradientColor": "0",
                                                         "plotBorderAlpha": "10",
                                                         "placevaluesInside": "1",
+                                                        "showBorder": "0",
                                                         "rotatevalues": "1",
                                                         "valueFontColor": "#ffffff",
                                                         "showXAxisLine": "1",
@@ -259,15 +260,15 @@
                                                         "subcaptionFontBold": "0",
                                                         "subcaptionFontSize": "14",
                                                         "yAxisMaxValue": "100",
-                                                        "yAxisMinValue": "0"
+                                                        "yAxisMinValue": "0",
+                                                        "rotateValues": "0"
                                                     },
                                                     "data": [
 
                                                               <?php
                                                                foreach ($puntajeIndicadores as $j => $rindicador) {
                                                                 if ($indicadores[$j]->dimension_id == $dimensiones[$i]->id) {
-                                                                  echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'", "tooltext": "'. $indicadores[$j]->descripcion.'"}, ';
-
+                                                                  echo '{ "label": "'. $indicadores[$j]->nombre.'", "value": "'.$rindicador.'",}, ';
                                                                 }
                                                                }
                                                                ?>
@@ -278,7 +279,20 @@
 
 
                                         </script>
-                                <div id="chart-container-bar{{$i}}" style="  display: table; margin: 0 auto;">FusionCharts will render here</div>
+                                        <div class="row">
+                                          <div class="col-sm-12 col-md-6" id="chart-container-bar{{$i}}" >FusionCharts will render here</div>
+                                          <div class="col-sm-12 col-md-6">
+                                            <select class="form-control" id="selected_i_{{$dimensiones[$i]->id}}" onclick="show_indicator({{$dimensiones[$i]->id}})">
+                                              <option value="" selected="true">Seleccione un indicador de la lista</option>
+                                              @foreach($puntajeIndicadores as $j => $rindicador)
+                                              @if($indicadores[$j]->dimension_id == $dimensiones[$i]->id)
+                                              <option value="{{$indicadores[$j]->descripcion}}">{{$indicadores[$j]->nombre}}</option>
+                                              @endif
+                                              @endforeach
+                                            </select>
+                                            <div class="indicador-box" contenteditable="true" id="selected_i_d_{{$dimensiones[$i]->id}}"></div>
+                                          </div>
+                                        </div>
                             </div>
                 </div>
             </div>
@@ -287,14 +301,14 @@
     @endforeach
 </div>
 <br>
-<p class="report-text">Si desea conocer más acerca de los aportes empresariales para la paz contáctenos al correo <a href="mailto:info@empazweb.org?subject=feedback">info@empazweb.org</a>, aquí podrá conseguir asesoría personalizada que permita conocer más aprofundidad el estado de su empresa. </p>
+<p class="report-text">Si desea conocer más acerca de los aportes empresariales para la paz contáctenos al correo <a href="mailto:info@empazweb.org?subject=feedback">info@empazweb.org</a>, aquí podrá conseguir asesoría personalizada que permita conocer más a profundidad el estado de su empresa. </p>
 </div>
 </div>
 <div id="informeCPDF"></div>
 
 <script type="text/javascript">
 
-function color_squares() {
+function color_result_square() {
 
     var content = $('.resultado-g').attr("data-sema");
     if (content >= 86 && content <= 100){
@@ -332,50 +346,41 @@ function color_squares() {
     };
 
 
-      // var contentD = $('.resultado-d').attr("data-dime");
-      // var contentClassD = ".resultado-d" + "-" + contentD;
-      // // var contentDi = $('.resultado-d').attr("data-dime");
-      // if (contentD >= 86 && contentD <= 100){
-      //   $(contentClassD).addClass('verde');
-      // }
-      // else if (contentD >= 61 && contentD <= 85){
-      //   $(contentClassD).addClass('otro-verde');
-      // }
-      // else if (contentD >= 41 && contentD <= 60){
-      //   $(contentClassD).addClass('amarillo');
-      // }
-      // else if (contentD >= 16 && contentD <= 40){
-      //   $(contentClassD).addClass('naranja');
-      // }
-      // else if (contentD >= 0 && contentD <= 15){
-      //   $(contentClassD).addClass('rojo');
-      // };
 };
 
-$(document).ready(function(){
-  color_squares();
+$('.resultado-d').each(function() {
+  var contentD = $(this).attr("data-dime");
+  if (contentD >= 86 && contentD <= 100){
+    var color_class = 'verde';
+  }
+  else if (contentD >= 61 && contentD <= 85){
+    var color_class = 'otro-verde';
+  }
+  else if (contentD >= 41 && contentD <= 60){
+    var color_class = 'amarillo';
+  }
+  else if (contentD >= 16 && contentD <= 40){
+    var color_class = 'naranja';
+  }
+  else if (contentD >= 0 && contentD <= 15){
+    var color_class = 'rojo';
+  };
+  $(this).addClass(color_class);
 });
 
+$(document).ready(function(){
+  color_result_square();
+});
 
-     // var contentI = $('.resultado-i').attr("data-indi");
-     // if (contentI >= 86 && contentI <= 100){
-     // $('.resultado-i').addClass('verde');
-     // }
-     // else if (contentI >= 57 && contentI <= 85){
-     // $('.resultado-i').addClass('otro-verde');
-     // }
-     // else if (contentI >= 31 && contentI <= 60){
-     // $('.resultado-i').addClass('amarillo');
-     // }
-     // else if (contentI >= 11 && contentI <= 30){
-     // $('.resultado-i').addClass('naranja');
-     // }
-     // else{
-     // $('.resultado-i').addClass('rojo');
-     // };
+function show_indicator(dim_id){
+
+  $("#selected_i_"+dim_id).change(function() {
+    var descrip = $(this).val();
+    $("#selected_i_d_"+dim_id).html( descrip );
+  });
+};
 
 
-    //
     // var doc = new jsPDF();
     // var informeDescarga = {
     //     '#informeCPDF': function (element, renderer) {
@@ -390,6 +395,7 @@ $(document).ready(function(){
     //     });
     //     doc.save('informe.pdf');
     // });
+
 </script>
 
 
