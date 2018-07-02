@@ -22,7 +22,7 @@
       </ol>
       <div class="fs-submit table-row">
         <div class="col-md-3" style="display: table-cell;">
-          <a href="/responder/{{$cuestionario->id}}" class="btn btn-danger">Limpiar</a>
+          <a href="/responder/edit/{{$cuestionario_result_id}}" class="btn btn-danger">Limpiar</a>
         </div>
         @if(Auth::user()->role === 'superadmin' ||Auth::user()->role === 'experto')
         <div class="col-md-3" style="display: table-cell;">
@@ -31,7 +31,7 @@
         @endif
         @if(Auth::user()->role === 'empresa')
         <div class="col-md-3" style="display: table-cell;">
-          <input type="submit" class="btn btn-primary" value="guardar">
+          <input type="submit" class="btn btn-primary" value="guardar" id="save_button">
         </div>
         <div class="col-md-3" style="display: table-cell;">
           <input type="submit" class="btn btn-success btn-small" value="enviar" onclick="validate_fields();" title="Todas las preguntas deben tener una respuesta asginada para enviar.">
@@ -54,6 +54,22 @@
     function validate_fields(){
       $("select").attr('required',true);
     }
+
+    $(document).on("click", function () {
+      var flag = 1;
+      $("select").each(function(){
+        if (!$(this).val()) {
+          flag = 0;
+        }
+      }
+      )
+      if (flag===1) {
+        $('#save_button').hide()
+      }
+    });
+
+
+
   </script>
 
   @endsection
