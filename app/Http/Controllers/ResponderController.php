@@ -37,6 +37,7 @@ class ResponderController extends Controller
         $cuestionarioResult = new CuestionarioResult();
         $cuestionarioResult->cuestionario_id = $id;
         $cuestionarioResult->user_id = Auth::user()->id;
+        $cuestionarioResult->completed = 0;
         $cuestionarioResult->save();
         $answers = $request->except("_token");
         foreach ($answers as $preguntaId => $opcionRespuestaId) {
