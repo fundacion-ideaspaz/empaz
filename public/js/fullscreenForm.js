@@ -66,7 +66,7 @@
 		// show progress bar
 		ctrlProgress : true,
 		// show navigation dots
-		ctrlNavDots : true,
+		ctrlNavDots : false,
 		// show [current field]/[total fields] status
 		ctrlNavPosition : true,
 		// reached the review and submit step
@@ -117,6 +117,10 @@
 		// continue button (jump to next field)
 		this.ctrlContinue = createElement( 'button', { cName : 'fs-continue', inner : 'Continuar', appendTo : this.ctrls } );
 		this._showCtrl( this.ctrlContinue );
+
+		//jump to overview buttom
+		this.ctrlJump = createElement( 'button', { cName : 'fs-jump', inner : 'Ir a resumen', appendTo : this.ctrls} );
+		this._showCtrl( this.ctrlJump );
 
 		// navigation dots
 		if( this.options.ctrlNavDots ) {
@@ -171,6 +175,12 @@
 			self._nextField();
 		} );
 
+		// jump to overview
+		this.ctrlJump.addEventListener( 'click', function() {
+			self._jumpOverview();
+		} );
+
+
 		// navigation dots
 		if( this.options.ctrlNavDots ) {
 			this.ctrlNavDots.forEach( function( dot, pos ) {
@@ -220,6 +230,53 @@
 			}
 		} );
 	};
+
+
+	/**
+	 * _jumpOverview function
+	 * jumps to the next field
+	 */
+	FForm.prototype._jumpOverview = function( backto ) {
+		if( this.isLastStep || this.isAnimating ) {
+			return false;
+		}
+		this.isAnimating = true;
+
+		var currentFld = this.fields[ this.current ];
+		// remove class "fs-current" from current field and add it to the next one
+		// also add class "fs-show" to the next field and the class "fs-hide" to the current one
+		classie.remove( currentFld, 'fs-current' );
+		classie.add( currentFld, 'fs-hide' );
+
+		this.summary = true;
+
+		// clear any previous error messages
+		this._clearError();
+
+		// after animation ends remove added classes from fields
+		var self = this,
+			onEndAnimationFn = function( ev ) {
+
+				classie.remove( self.fieldsList, 'fs-display-' + self.navdir );
+				classie.remove( currentFld, 'fs-hide' );
+
+					// show the complete form and hide the controls
+					// self._hideCtrl( self.ctrlNav );
+					self._hideCtrl( self.ctrlProgress );
+					self._hideCtrl( self.ctrlContinue );
+					self._hideCtrl( self.ctrlJump );
+					self._hideCtrl( self.ctrlFldStatus );
+					// replace class fs-form-full with fs-form-overview
+					classie.remove( self.formEl, 'fs-form-full' );
+					classie.add( self.formEl, 'fs-form-overview' );
+					classie.add( self.formEl, 'fs-show' );
+					// callback
+					self.options.onReview();
+				self.isAnimating = false;
+			};
+
+			onEndAnimationFn();
+	}
 
 	/**
 	 * nextField function
@@ -289,6 +346,7 @@
 					self._hideCtrl( self.ctrlNav );
 					self._hideCtrl( self.ctrlProgress );
 					self._hideCtrl( self.ctrlContinue );
+					self._hideCtrl( self.ctrlJump );
 					self._hideCtrl( self.ctrlFldStatus );
 					// replace class fs-form-full with fs-form-overview
 					classie.remove( self.formEl, 'fs-form-full' );
@@ -459,7 +517,9 @@
 			// ...
 		};
 		this.msgError.innerHTML = message;
-		this._showCtrl( this.msgError );
+		if (!this.summary) {
+			this._showCtrl( this.msgError );
+		}
 	}
 
 	// clears/hides the current error message

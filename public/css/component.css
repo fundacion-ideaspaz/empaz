@@ -112,6 +112,7 @@
 .fs-progress,
 .fs-numbers,
 button.fs-continue,
+button.fs-jump,
 .fs-message-error,
 .fs-message-final {
 	visibility: hidden;
@@ -636,6 +637,7 @@ button.fs-continue,
 
 /* Continue button and submit button */
 button.fs-submit,
+button.fs-jump,
 button.fs-continue {
     padding: 0.6em 1.5em;
     border: 2px solid #00aabf;
@@ -663,8 +665,16 @@ button.fs-continue {
 	font-size: 1.25em;
 }
 
+button.fs-jump {
+	position: absolute;
+	bottom: 0;
+	margin: 0 40px 60px;
+	font-size: 1.25em;
+}
+
 button.fs-submit:hover,
 button.fs-submit:focus,
+button.fs-jump:hover,
 button.fs-continue:hover {
 	background: #00aabf;
 	color: #fff;
@@ -679,7 +689,7 @@ button.fs-continue:hover {
 	text-align: center;
 	background: transparent;
 	color: rgba(0,0,0,0.3);
-	content: 'or presione ENTER';
+	content: 'o presione ENTER';
 	font-size: 0.65em;
 	pointer-events: none;
 }
@@ -857,7 +867,18 @@ input[type=text]::-ms-clear {
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		font-size: 2em;
+		font-size: 1.5em;
+	}
+
+	button.fs-jump {
+		left: 20px;
+		bottom: 20px;
+		margin: 0;
+		padding: 50px 0 0 50px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		font-size: 1.5em;
 	}
 
 	button.fs-continue::before {

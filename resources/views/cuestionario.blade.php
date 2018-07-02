@@ -14,14 +14,22 @@
           @endcomponent
         @endforeach
       </ol>
-      <div class="col-md-12 fs-submit">
+      <div class="fs-submit table-row">
+        <div class="col-md-3" style="display: table-cell;">
           <a href="/responder/{{$cuestionario->id}}" class="btn btn-danger">Limpiar</a>
+        </div>
         @if(Auth::user()->role === 'superadmin' ||Auth::user()->role === 'experto')
+        <div class="col-md-3" style="display: table-cell;">
           <a class="btn btn-warning" href="/responder">Volver</a>
+        </div>
         @endif
         @if(Auth::user()->role === 'empresa')
+        <div class="col-md-3" style="display: table-cell;">
           <input type="submit" class="btn btn-primary" value="Guardar">
+        </div>
+        <div class="col-md-3" style="display: table-cell;">
           <input type="submit" class="btn btn-success btn-small" value="Enviar">
+        </div>
         @endif
       </div>
         @if ($errors->any())

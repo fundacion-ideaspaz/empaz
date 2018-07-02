@@ -19,8 +19,7 @@ $letters = ["A", "B", "C", "D", "E", "F"];
   </div>
 </div>
 
-  <select  class="form-control pregunta-select cs-select cs-skin-boxes fs-anim-lower" name="{{$pregunta->id}}"
-    id="respuesta-{{$pregunta->id}}">
+  <select  class="form-control pregunta-select cs-select cs-skin-boxes fs-anim-lower" name="{{$pregunta->id}}" id="respuesta-{{$pregunta->id}}" required>
      <option value="">Por favor, seleccione la respuesta que más se acerca a la situación de su empresa</option>
      @for($idx_opcion = 1; $idx_opcion <= count($letters); $idx_opcion++)
          <?php

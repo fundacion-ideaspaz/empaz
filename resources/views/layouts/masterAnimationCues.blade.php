@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
-  <link rel="shortcut icon" href="favicon.ico"/> 
+  <link rel="shortcut icon" href="favicon.ico"/>
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -95,8 +95,7 @@
   <div>
     @yield('content')
     <span class="alerta-r">
-      <p>Al finalizar de contestar el cuestionario, y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario.</p>
-      <p>Haga click sobre este cuadro para cerrarlo y continuar.</p>
+      <p>Al finalizar de contestar el cuestionario, y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga click sobre e botón <strong>Ir a resumen</strong> o click sobre este cuadro para cerrarlo y continuar.</p>
     </span>
   </div>
 <footer>
