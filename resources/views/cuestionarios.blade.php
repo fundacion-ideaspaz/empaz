@@ -10,7 +10,7 @@
           @foreach($cuestionarios as $cuestionario)
           @if($cuestionario->validateCuestionario()[0]==="valid")
           <tr>
-            <td>{{$cuestionario->nombre}}</td>
+            <td>{{$cuestionario->nombre}} @if($cuestionario->started()) (Guardado) @endif </td>
             <td width="25%">
               @if($cuestionario->cuestionario_done())
                 <a class="btn btn-sm btn-primary" href="/reportes/{{$cuestionario->cuestionario_result->id}}">

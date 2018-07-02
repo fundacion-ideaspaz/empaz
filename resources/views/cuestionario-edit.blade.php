@@ -1,16 +1,22 @@
 @extends('layouts.masterAnimationCues') @section('title', 'Responder Cuestionario') @section('content')
 
       <div class="fs-form-wrap r-cuestionario" id="fs-form-wrap">
-      <div class="fs-title">
-      <h3>Responder cuestionario {{$cuestionario->nombre}}</h3>
-      </div>
-      <form action="/responder/{{$cuestionario->id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="cuestForm" autocomplete="off">
+      <form action="/responder/edit/{{$cuestionario_result_id}}" method="post" class="form fs-form fs-form-full" enctype="multipart/form-data" id="cuestForm" autocomplete="off">
       {{ csrf_field() }}
-      <?php
-       ?>
       <ol class="fs-fields">
         @foreach($cuestionario->allPreguntas() as $index => $pregunta)
-          @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id, 'index' => $index+1])
+        <?php
+        $respuesta_register = $respuestas_cuest->where('pregunta_id', '=', $pregunta->id)->first();
+        if ($respuesta_register) {
+          $selected_opcion_id = $respuesta_register->opcion_respuesta_id;
+        } else {
+          $selected_opcion_id = NULL;
+        }
+         ?>
+          @component('components/preguntafield-edit',['pregunta' => $pregunta,
+                                                  'cuest_id' => $cuestionario->id,
+                                                  'index' => $index+1,
+                                                  'selected_opcion_id' => $selected_opcion_id])
           @endcomponent
         @endforeach
       </ol>

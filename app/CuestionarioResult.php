@@ -141,4 +141,8 @@ class CuestionarioResult extends Model
     public function user(){
         return $this->belongsTo('\App\User');
     }
+
+    public function getRespuestas(){
+      return RespuestaCuestionario::where('cuestionario_result_id', '=', $this->id)->get();
+    }
 }

@@ -32,11 +32,11 @@ $letters = ["A", "B", "C", "D", "E", "F"];
          }
          ?>
          @if($opcion->number<=$no_respuestas-2)
-             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-1]}}. {{$opcion->descripcion}}</option>
+             <option value="{{$opcion->id}}" @if ($selected_opcion_id === $opcion->id) selected='selected' @endif>{{$letters[$idx_opcion-1]}}. {{$opcion->descripcion}}</option>
          @elseif(!$pregunta->isRequired($cuest_id) && $idx_opcion === 5)
-             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-$set_diff-1]}}. {{$opcion->descripcion}}</option>
+             <option value="{{$opcion->id}}" @if ($selected_opcion_id === $opcion->id) selected='selected' @endif>{{$letters[$idx_opcion-$set_diff-1]}}. {{$opcion->descripcion}}</option>
          @elseif($idx_opcion === 6)
-             <option value="{{$opcion->id}}" >{{$letters[$idx_opcion-$set_diff-$minus]}}. {{$opcion->descripcion}}</option>
+             <option value="{{$opcion->id}}" @if ($selected_opcion_id === $opcion->id) selected='selected' @endif>{{$letters[$idx_opcion-$set_diff-$minus]}}. {{$opcion->descripcion}}</option>
          @endif
      @endfor
   </select>

@@ -107,6 +107,16 @@ class Cuestionario extends Model
     public function cuestionario_done(){
       #check if it has a result
       $response = CuestionarioResult::where("cuestionario_id", "=", $this->id)
+      ->where('completed', "=", 1)
+      ->where("user_id", "=", Auth::user()->id)->first();
+      if ($response) {
+        return 1;
+      }
+    }
+
+    public function started() {
+      $response = CuestionarioResult::where("cuestionario_id", "=", $this->id)
+      ->where('completed', "=", 0)
       ->where("user_id", "=", Auth::user()->id)->first();
       if ($response) {
         return 1;

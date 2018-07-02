@@ -36,7 +36,6 @@ class DashboardController extends Controller
 
     public function view($cuest_respuesta_id)
     {
-
         $cuestRes = CuestionarioResult::find($cuest_respuesta_id);
         if ((Auth::user()->id != $cuestRes->user_id) && (Auth::user()->role === "empresa")) {
           $cuestionarios = Cuestionario::where("estado", '=', 'activo')->get();

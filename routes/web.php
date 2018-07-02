@@ -48,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/responder', 'ResponderController@all');
         Route::get('/responder/{id}', 'ResponderController@index');
         Route::post('/responder/{id}', 'ResponderController@store');
+        Route::get('/responder/edit/{id}', 'ResponderController@edit');
+        Route::post('/responder/edit/{id}', 'ResponderController@update');
     });
 
     Route::middleware(['superadmin'])->group(function () {
