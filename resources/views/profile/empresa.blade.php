@@ -73,7 +73,7 @@
               return $handle;
             }
 
-            $filename = base_path('public\codigos_ciiu.csv');
+            $filename = base_path(platformSlashes('public/codigos_ciiu.csv'));
             $file = utf8_fopen_read($filename, "r");
             $ciius = array();
             $ciius_description = array();
