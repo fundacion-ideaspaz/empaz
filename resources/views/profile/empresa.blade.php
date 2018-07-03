@@ -65,6 +65,13 @@
             </div>
             @endif
             <?php
+            function platformSlashes($path) {
+                if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+                    $path = str_replace('/', '\\', $path);
+                }
+                return $path;
+            }
+
             function utf8_fopen_read($fileName) {
               $fc = iconv('windows-1250', 'utf-8', file_get_contents($fileName));
               $handle=fopen("php://memory", "rw");
