@@ -174,7 +174,7 @@ function platformSlashes($path) {
                         <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{old('ciiu_secundario')}}">
                             <option value="Ninguno">Ninguno</option>
                             @foreach($ciiu_array as $ciiu => $ciiu_d)
-                              <option value="{{$ciiu}}" @if (old('ciiu_principal') === "$ciiu") selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
+                              <option value="{{$ciiu}}" @if (old('ciiu_secundario') === "$ciiu") selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                             @endforeach
                         </select>
                     </div>
