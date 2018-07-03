@@ -86,7 +86,7 @@ class DashboardController extends Controller
         // // dd($indicadores);
         $empresa = ProfileEmpresa::where('user_id', '=', $cuestResult->user_id)->first();
 
-        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->get();
+        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->orderBy('nombre','asc')->get();
         $dimensionesCuest = DimensionCuestionario
             ::where("cuestionario_id", "=", $cuestionario_id)->get();
 

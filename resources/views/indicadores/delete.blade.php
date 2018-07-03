@@ -16,7 +16,7 @@
       <form action="/indicadores/{{$id}}/delete" method="post" class="form">
         {{ csrf_field() }}
         <div class="form-group">
-          <label for="confirm">¿Está seguro de eliminar esta indicador?</label>
+          <label for="confirm">¿Está seguro de eliminar este indicador?</label>
         </div>
         <div class="form-group">
           <input type="submit" class="btn btn-danger" value="Eliminar">

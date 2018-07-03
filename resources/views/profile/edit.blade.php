@@ -72,7 +72,11 @@ function platformSlashes($path) {
                     <div class="form-group col-md-4">
                         <label for="municipio">Municipio</label>
                         <select class="form-control" id="cities" name="municipio">
-                            <option value="">Seleccione una opción</option>
+                          @if(old('municipio'))
+                          <option value="{{old('municipio')}}" selected="selected">{{old('municipio')}}</option>
+                          @else
+                          <option value="" selected="selected">Seleccione una opción</option>
+                          @endif
                         </select>
                     </div>
 
@@ -125,7 +129,7 @@ function platformSlashes($path) {
 
                     <div class="form-group col-md-12">
                         <label for="sector_economico">Sector Económico</label>
-                        <select class="form-control" name="sector_economico" value="{{old('sector_economico')}}">
+                        <select class="form-control" name="sector_economico">
                             <?php
                             $filename = base_path(platformSlashes('public/sectores_empaz.csv'));
                             $file = utf8_fopen_read($filename, "r");
@@ -144,7 +148,7 @@ function platformSlashes($path) {
 
                     <div class="form-group col-md-12">
                         <label for="ciiu_principal">Código CIIU Actividad Económica Principal</label>
-                        <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{old('ciiu_principal')}}">
+                        <select class="form-control" name="ciiu_principal" id="ciiu-principal">
                             <option value="">Seleccione una opción</option>
                             <?php
                             $filename = base_path(platformSlashes('public/codigos_ciiu.csv'));
@@ -160,7 +164,7 @@ function platformSlashes($path) {
                             fclose($file);
                              ?>
                              @foreach($ciiu_array as $ciiu => $ciiu_d)
-                               <option value="{{$ciiu}}" @if (old('ciiu_principal') === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
+                               <option value="{{$ciiu}}" @if (old('ciiu_principal') === "$ciiu") selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                              @endforeach
                         </select>
                     </div>
@@ -170,7 +174,7 @@ function platformSlashes($path) {
                         <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{old('ciiu_secundario')}}">
                             <option value="Ninguno">Ninguno</option>
                             @foreach($ciiu_array as $ciiu => $ciiu_d)
-                              <option value="{{$ciiu}}" @if (old('ciiu_principal') === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
+                              <option value="{{$ciiu}}" @if (old('ciiu_principal') === "$ciiu") selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -191,20 +195,30 @@ function loadDepartamentos() {
         if (data.length > 0) {
             $.each(data, function (index, item) {
                 var contentMenu = document.getElementById("departments");
-                var ventana = '<option value="' + item.departamento + '">' + item.departamento + '</option>';
-
+                if ("{{old('departamento')}}" == item.departamento) {
+                  var flag = true;
+                  var ventana = "<option value='" + item.departamento + "' selected='selected'>" + item.departamento + "</option>";
+                } else {
+                  var flag = false;
+                  var ventana = "<option value='" + item.departamento + "' >" + item.departamento + "</option>";
+                }
                 $(contentMenu).append(ventana);
             });
         }
     });
 }
 
-$('#pais').on('change', function (e) {
+function loadData() {
+    new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
+};
+
+$('#pais').bind('change', function (e) {
     var target = e.target;
     if (target.value === 'Colombia') {
         $('#departments').prop('disabled', false);
         $('#cities').prop('disabled', false);
         loadDepartamentos();
+        loadData();
         $('#nit').prop('disabled', false);
         $('#ciiu-principal').prop('disabled', false);
         $('#ciiu-secundario').prop('disabled', false);
@@ -219,9 +233,5 @@ $('#pais').on('change', function (e) {
     }
 });
 $('#pais').trigger('change');
-
-$(function () {
-    new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
-});
 
 </script> @endsection

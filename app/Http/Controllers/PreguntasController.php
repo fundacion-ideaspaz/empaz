@@ -39,6 +39,7 @@ class PreguntasController extends Controller
             "estado" => "required"
         ];
         $messages = array(
+            'nombre.required' => 'El campo texto es requerido.',
             'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
@@ -54,7 +55,7 @@ class PreguntasController extends Controller
             $newRespuesta->descripcion = $respuesta;
             $newRespuesta->save();
         }
-        return redirect("/preguntas");
+        return redirect("/preguntas")->with('success', 'La pregunta se ha creado exitosamente.');
     }
 
     public function edit($id)
@@ -83,7 +84,8 @@ class PreguntasController extends Controller
             "estado" => "required"
         ];
         $messages = array(
-            'descripcion.required' => 'El campo descripción es requerido.',
+          'nombre.required' => 'El campo texto es requerido.',
+          'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
         $respuestas = $request->respuestas;
@@ -150,7 +152,7 @@ class PreguntasController extends Controller
           $newRespuesta->save();
         }
 
-        return redirect("/preguntas");
+        return redirect("/preguntas")->with('success', 'La pregunta se ha modificado exitosamente.');
     }
 
     public function show($id)
@@ -178,6 +180,6 @@ class PreguntasController extends Controller
     {
         $pregunta = Pregunta::find($id);
         $pregunta->delete();
-        return redirect('/preguntas');
+        return redirect('/preguntas')->with('success', 'La pregunta ha sido eliminada.');
     }
 }

@@ -42,7 +42,7 @@ class IndicadoresController extends Controller
         $this->validate($request, $validations, $messages);
         $inputs = $request->all();
         $indicador = Indicador::create($inputs);
-        return redirect("/indicadores");
+        return redirect("/indicadores")->with('success', 'El indicador se ha creado exitosamente.');
     }
 
     public function edit($id)
@@ -76,7 +76,7 @@ class IndicadoresController extends Controller
         $indicador = Indicador::find($id);
         $indicador->update($inputs);
         $indicador->save();
-        return redirect("/indicadores");
+        return redirect("/indicadores")->with('success', 'El indicador se ha modificado exitosamente.');
     }
 
     public function show($id)
@@ -104,7 +104,7 @@ class IndicadoresController extends Controller
     {
         $indicador = Indicador::find($id);
         $indicador->delete();
-        return redirect('/indicadores');
+        return redirect('/indicadores')->with('success', 'El indicador se ha eliminado.');
     }
 
     public function storePreguntas($cuest_id, $pregunta_id, Request $request)
@@ -112,10 +112,10 @@ class IndicadoresController extends Controller
         $validations = [
             "indicador_id" => "required",
             "required" => "required",
-            "order" => "required"
+            "order" => "required",
         ];
         $messages = [
-            "order.required" => "La posición de la pregunta es requerida"
+            "order.required" => "La posición de la pregunta es requerida",
         ];
 
         //Check dimension_indicador
@@ -123,7 +123,7 @@ class IndicadoresController extends Controller
         ->where('cuestionario_id', '=', $cuest_id)
         ->first();
 
-        $this->validate($request, $validations);
+        $this->validate($request, $validations, $messages);
         $required = $request->required === 'true';
         $indicador_id = $request->indicador_id;
         $order = $request->order;

@@ -11,9 +11,11 @@
           {{Form::bsLabel('Significado')}}
           {{Form::bsTextArea('meaning', '', ['placeholder'=>'Ingrese el significado correspondiente'])}}
         </div>
-          {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary'])}}
+        <div class="table-row">
+          {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary pull-right'])}}
+          <a href="/glosario" class="btn btn-warning">Atrás</a>
+        </div>
         {!!Form::close()!!}
-</div>
 </div>
 </div>
 

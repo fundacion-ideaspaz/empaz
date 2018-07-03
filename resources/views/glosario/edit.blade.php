@@ -12,7 +12,10 @@
           {{Form::bsTextArea('meaning', $terminoGlosario->meaning)}}
         </div>
           {{ Form::hidden('_method', 'PUT') }}
-          {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary'])}}
+          <div class="table-row">
+            {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary pull-right'])}}
+            <a href="/glosario" class="btn btn-warning">Atrás</a>
+          </div>
         {!!Form::close()!!}
 </div>
 </div>

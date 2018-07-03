@@ -115,26 +115,41 @@ class CuestionariosController extends Controller
         $cuestionarioCopy->version = (int)$lastVersion->version+1;
         $cuestionarioCopy->save();
         if($fromVersion){
+            //Create dimensiones
             $dimensionesCuestionario = DimensionCuestionario
                 ::where("cuestionario_id", "=", $id)->get();
             foreach($dimensionesCuestionario as $dimCuest){
                 $dimCuest->cuestionario_id = $cuestionarioCopy->id;
                 $newDimCuest = DimensionCuestionario::create($dimCuest->toArray());
             }
+            //Create indicadores
             $indicadoresDimensiones = IndicadoresDimensiones
                 ::where("cuestionario_id", "=", $id)->get();
             foreach($indicadoresDimensiones as $dimIndicador){
+                //Change cuestionario_id for new cuestionario
                 $dimIndicador->cuestionario_id = $cuestionarioCopy->id;
+                //Change cuestionario_dimension_id for new cuestionario
+                $cuestionario_dimension_id = DimensionCuestionario::
+                  where('cuestionario_id', '=', $cuestionarioCopy->id)
+                  ->where('dimension_id', '=', $dimIndicador->dimension_id)->first()->id;
+                $dimIndicador->cuestionario_dimension_id = $cuestionario_dimension_id;
                 $newDimCuest = IndicadoresDimensiones::create($dimIndicador->toArray());
             }
+            //Create preguntas
             $indicadoresPreguntas = IndicadoresPreguntas
                 ::where("cuestionario_id", "=", $id)->get();
             foreach($indicadoresPreguntas as $indPreg){
+              //Change cuestionario_id for new cuestionario
                 $indPreg->cuestionario_id = $cuestionarioCopy->id;
+                //CHange dimension_indicador_id for cuestionario
+                $dimension_indicador_id = IndicadoresDimensiones::
+                  where('cuestionario_id', '=', $cuestionarioCopy->id)
+                  ->where('indicador_id', '=', $indPreg->indicador_id)->first()->id;
+                $indPreg->dimension_indicador_id = $dimension_indicador_id;
                 $newDimCuest = IndicadoresPreguntas::create($indPreg->toArray());
             }
         }
-        return redirect("/cuestionarios");
+        return redirect("/cuestionarios")->with('success', 'La copia del cuestionario se ha creado exitosamente.');
     }
 
     public function delete($id, Request $request)
@@ -146,7 +161,7 @@ class CuestionariosController extends Controller
     {
         $cuestionario = Cuestionario::find($id);
         $cuestionario->delete();
-        return redirect('/cuestionarios');
+        return redirect('/cuestionarios')->with('success', 'El cuestionario ha sido eliminado.');
     }
 
     public function storeDimensiones($id, $dimension_id, Request $request)

@@ -9,7 +9,7 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="nombre">Texto</label>
-                <textarea type="text" rows="1.5" class="form-control" name="nombre" value="{{ old('nombre') }}"></textarea>
+                <textarea type="text" rows="1.5" class="form-control" name="nombre">{{ old('nombre') }}</textarea>
             </div>
 
             <div class="form-group">
@@ -19,40 +19,40 @@
 
             <div class="form-group">
                 <label for="estado">Estado</label>
-                <select name="estado" value="{{ old('estado') }}" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
-                    <option value="activo">Activo</option>
-                    <option value="inactivo">Inactivo</option>
+                <select name="estado" id="estado" class="form-control cs-select cs-skin-boxes fs-anim-lower">
+                    <option value="activo" @if(old('estado')==='activo') selected='selected' @endif>Activo</option>
+                    <option value="inactivo" @if(old('estado')==='inactivo') selected='selected' @endif>Inactivo</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="tipo_respuesta">Tipo de Respuesta</label>
                 <br>
                 <select name="tipo_respuesta" id="tipo_respuesta" class="form-control">
-                    <option>Tipo de respuesta</option>
-                    <option value="tipo_1">Tipo 1</option>
-                    <option value="tipo_2">Tipo 2</option>
-                    <option value="tipo_3">Tipo 3</option>
-                    <option value="tipo_4">Tipo 4</option>
+                    <option value="">Tipo de respuesta</option>
+                    <option value="tipo_1" @if(old('tipo_respuesta')==='tipo_1') selected='selected' @endif>Tipo 1</option>
+                    <option value="tipo_2" @if(old('tipo_respuesta')==='tipo_2') selected='selected' @endif>Tipo 2</option>
+                    <option value="tipo_3" @if(old('tipo_respuesta')==='tipo_3') selected='selected' @endif>Tipo 3</option>
+                    <option value="tipo_4" @if(old('tipo_respuesta')==='tipo_4') selected='selected' @endif>Tipo 4</option>
                 </select>
             </div>
             <div class="form-group" id="respuesta_1">
                 <label for="respuesta_1">Respuesta 1</label>
-                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  >{{old('respuestas')[0]}}</textarea>
             </div>
 
             <div class="form-group" id="respuesta_2">
                 <label for="respuesta_2">Respuesta 2</label>
-                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  >{{old('respuestas')[1]}}</textarea>
             </div>
 
             <div class="form-group" id="respuesta_3">
                 <label for="respuesta_3">Respuesta 3</label>
-                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  >{{old('respuestas')[2]}}</textarea>
             </div>
 
             <div class="form-group" id="respuesta_4">
                 <label for="respuesta_4">Respuesta 4</label>
-                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  ></textarea>
+                <textarea type="text" rows="1.5" name="respuestas[]" class="form-control"  >{{old('respuestas')[3]}}</textarea>
             </div>
             <div class="form-group" id="respuesta_5">
                 <label for="respuesta_5">Respuesta N/A</label>
@@ -70,7 +70,7 @@
 
     $(document).ready(function () {
         $('#indicadores-select').multiSelect();
-        $("#tipo_respuesta").on('change', function () {
+        $("#tipo_respuesta").bind('change', function () {
             var respuestaTipo = this.value;
             if (respuestaTipo === "tipo_1") {
                 $("#respuesta_4").css("display", "block");
@@ -97,6 +97,7 @@
                 $("#respuesta_3").attr("disabled", false);
             }
         });
+        $('#tipo_respuesta').trigger('change');
     });
 
 </script> @endsection

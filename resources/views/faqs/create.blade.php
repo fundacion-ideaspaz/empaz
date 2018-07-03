@@ -12,7 +12,10 @@
           {{Form::bsLabel('Respuesta')}}
           {{Form::bsTextArea('answer', '', ['placeholder'=>'Ingrese la respuesta correspondiente'])}}
         </div>
-          {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary'])}}
+        <div class="table-row">
+          {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary pull-right'])}}
+          <a href="/faqs" class="btn btn-warning">Atrás</a>
+        </div>
         {!!Form::close()!!}
 </div>
 </div>

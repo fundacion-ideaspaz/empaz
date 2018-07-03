@@ -8,7 +8,8 @@ class CuestionarioResult extends Model
     protected $fillable = [
         'user_id',
         'cuestionario_id',
-        'value'
+        'value',
+        'completed'
     ];
     public function puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest) {
         $cantidadPreguntas = $preguntas->count();

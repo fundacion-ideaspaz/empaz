@@ -21,6 +21,9 @@ class FilesController extends Controller
       $this->validate($request, [
         'manual_file' => 'required',
         'tc_file' => 'required',
+      ],[
+        'manual_file.required' => 'El manual es requerido.',
+        'tc_file.required' => 'El documento de términos y condiciones es requerido.'
       ]);
 
       //Move manual file

@@ -69,12 +69,27 @@ class WizardController extends Controller
 
     public function preguntas($cuest_id)
     {
-        $indicadoresDimensiones = IndicadoresDimensiones::where('cuestionario_id', '=', $cuest_id)->first();
-        if(!$indicadoresDimensiones){
-            return redirect('/cuestionarios/'.$cuest_id.'/indicadores')->withErrors([
-                'error.blank' => 'Debe agregar al menos un indicador'
-            ]);
+        //Validate indicadores
+        $dimensions_id = DimensionCuestionario::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
+        $ind_status_array = [];
+
+        foreach ($dimensions_id as $dimension_id) {
+          $assigned_inds = IndicadoresDimensiones::where("cuestionario_id", "=", $cuest_id)
+          ->where("dimension_id", "=", $dimension_id)->pluck("id");
+          if (count($assigned_inds)>0) {
+            $ind_status_array[$dimension_id] = "true";
+          } else {
+            $ind_status_array[$dimension_id] = "false";
+          }
         }
+
+        if (in_array('false', $ind_status_array, true)) {
+          return redirect('/cuestionarios/'.$cuest_id.'/indicadores')->withErrors([
+              'error.blank' => 'Todas las dimensiones deben tener al menos un indicador asignado'
+          ]);
+        }
+
+        //Continue with questions
         $cuestionario = Cuestionario::find($cuest_id);
         $indicadoresIds = IndicadoresDimensiones
         ::where("cuestionario_id", "=", $cuest_id)->pluck("indicador_id");
@@ -92,13 +107,32 @@ class WizardController extends Controller
     }
 
     public function validatePreguntas($cuest_id){
-        $indicadoresPreguntas = IndicadoresPreguntas::where('cuestionario_id', '=', $cuest_id)->first();
-        if(!$indicadoresPreguntas){
-            return redirect('/cuestionarios/'.$cuest_id.'/preguntas')->withErrors([
-                'error.blank' => 'Debes agregar al menos una pregunta'
-            ]);
-        }else{
-            return redirect('/cuestionarios');
+
+      //validate $preguntas
+      $dimensions_id = DimensionCuestionario::where("cuestionario_id", "=", $cuest_id)->pluck("dimension_id");
+      $quest_status_array = [];
+
+      //Iterate over dimensions
+      foreach ($dimensions_id as $dimension_id) {
+        $indicadores_id = IndicadoresDimensiones::where("cuestionario_id", "=", $cuest_id)
+        ->where("dimension_id", "=", $dimension_id)->pluck("indicador_id");
+        //Iterate over indicators
+        foreach ($indicadores_id as $indicador_id) {
+          $assigned_quest = IndicadoresPreguntas::where("cuestionario_id", "=", $cuest_id)
+          ->where("indicador_id", "=", $indicador_id)->pluck("id");
+          if (count($assigned_quest)>0) {
+            $quest_status_array[$indicador_id] = "true";
+          } else {
+            $quest_status_array[$indicador_id] = "false";
+          }
         }
+      }
+
+      if (in_array('false', $quest_status_array, true)) {
+        return redirect('/cuestionarios/'.$cuest_id.'/preguntas')->withErrors([
+            'error.blank' => 'Todos los indicadores deben tener al menos una pregunta asignada']);
+      }else{
+            return redirect('/cuestionarios');
+      }
     }
 }

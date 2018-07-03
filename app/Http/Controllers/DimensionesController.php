@@ -61,7 +61,7 @@ class DimensionesController extends Controller
                 "dimension_id" => $dimension->id,
             ]);
         }
-        return redirect("/dimensiones");
+        return redirect("/dimensiones")->with('success', 'La dimensión se ha creado exitosamente.');
     }
 
     public function edit($id)
@@ -116,7 +116,7 @@ class DimensionesController extends Controller
             $newEnunciado->descripcion = $enunciado;
             $newEnunciado->save();
         }
-        return redirect("/dimensiones");
+        return redirect("/dimensiones")->with('success', 'La dimensión se ha modificado exitosamente.');
     }
 
     public function show($id)
@@ -144,7 +144,7 @@ class DimensionesController extends Controller
     {
         $dimension = Dimension::find($id);
         $dimension->delete();
-        return redirect('/dimensiones');
+        return redirect('/dimensiones')->with('success', 'La dimensión ha sido eliminada.');
     }
 
     public function storeIndicadores($cuest_id, $indicador_id, Request $request)

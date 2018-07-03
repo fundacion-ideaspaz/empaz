@@ -1,4 +1,9 @@
 @extends('layouts.master') @section('title', 'Editar Dimensión') @section('content')
+<?php
+
+$percentage = ['(0-15%)', '(16-40%)', '(41-60%)', '(61-85%)', '(86-100%)'];
+
+ ?>
 <div class="row dimensiones-form">
     <div class="card col-12">
         <div class="card-body">
@@ -35,9 +40,9 @@
                     @endif
                 </div>
                 <h4>Enunciados para la calificación</h4>
-                @foreach($enunciados as $enunciado)
+                @foreach($enunciados as $idx => $enunciado)
                 <div class="form-group">
-                    <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}}</label>
+                    <label for="enunciados">{{ucfirst($enunciado->nivel_importancia)}} {{$percentage[$idx]}}</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{$enunciado->descripcion}}</textarea>
                 </div>
                 @endforeach

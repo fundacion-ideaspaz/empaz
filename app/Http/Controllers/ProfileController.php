@@ -20,6 +20,9 @@ class ProfileController extends Controller
             $user->save();
         }
         Auth::login($user);
+        if ($user->role != "empresa") {
+          return redirect('/profile/user');
+        }
         return redirect('/profile/empresa');
     }
 

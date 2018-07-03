@@ -48,6 +48,9 @@ class GlosarioController extends Controller
        $this->validate($request,[
          'keyword' => 'required',
          'meaning' => 'required',
+       ],[
+         'keyword.required' => 'El término es requerido',
+         'meaning.required' => 'El significado es requerido'
        ]);
 
        //Create Term
@@ -59,7 +62,7 @@ class GlosarioController extends Controller
        //Save
        $terminoGlosario->save();
 
-       return redirect('glosario')->with('success','La entrada fue creada satisfactoriamente.');
+       return redirect('glosario')->with('success','La entrada se ha creado exitosamente.');
 
      }
 
@@ -96,6 +99,15 @@ class GlosarioController extends Controller
      */
      public function update(Request $request, $id)
      {
+       //Validation
+       $this->validate($request,[
+         'keyword' => 'required',
+         'meaning' => 'required',
+       ],[
+         'keyword.required' => 'El término es requerido',
+         'meaning.required' => 'El significado es requerido'
+       ]);
+
        $terminoGlosario = TerminoGlosario::find($id);
        $terminoGlosario->keyword = $request->input('keyword');
        $terminoGlosario->meaning = $request->input('meaning');
@@ -103,7 +115,7 @@ class GlosarioController extends Controller
        //Save
        $terminoGlosario->save();
 
-       return redirect('/glosario')->with('success', 'La entrada fue modificada exitosamente.');
+       return redirect('/glosario')->with('success', 'La entrada se ha modificado exitosamente.');
      }
 
     /**
@@ -116,6 +128,6 @@ class GlosarioController extends Controller
      {
        $terminoGlosario = TerminoGlosario::find($id);
        $terminoGlosario->delete();
-       return redirect('/glosario')->with('success', 'La entrada fue eliminada.');
+       return redirect('/glosario')->with('success', 'La entrada ha sido eliminada.');
      }
 }

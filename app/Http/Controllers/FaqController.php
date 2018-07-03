@@ -46,6 +46,9 @@ class FaqController extends Controller
       $this->validate($request,[
         'question' => 'required',
         'answer' => 'required',
+      ],[
+        'question.required' => 'La pregunta es requerida',
+        'answer.required' => 'La respuesta es requerida',
       ]);
 
       //Create Faq
@@ -57,7 +60,7 @@ class FaqController extends Controller
       //Save
       $faq->save();
 
-      return redirect('faqs')->with('success','La pregunta fue creada satisfactoriamente.');
+      return redirect('faqs')->with('success','La pregunta se ha creado exitosamente.');
 
     }
 
@@ -93,13 +96,22 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
+      //Validation
+      $this->validate($request,[
+        'question' => 'required',
+        'answer' => 'required',
+      ],[
+        'question.required' => 'La pregunta es requerida',
+        'answer.required' => 'La respuesta es requerida',
+      ]);
+
       $faq->question = $request->input('question');
       $faq->answer = $request->input('answer');
 
       //Save
       $faq->save();
 
-      return redirect('/faqs')->with('success', 'Pregunta frecuente modificada exitosamente.');
+      return redirect('/faqs')->with('success', 'La pregunta se ha modificado exitosamente.');
     }
 
     /**
@@ -112,6 +124,6 @@ class FaqController extends Controller
     {
       $faq->delete();
 
-      return redirect('/faqs')->with('success', 'La pregunta frecuente fue eliminada.');
+      return redirect('/faqs')->with('success', 'La pregunta frecuente ha sido eliminada.');
     }
 }

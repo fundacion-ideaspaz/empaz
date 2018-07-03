@@ -198,7 +198,6 @@ function loadData() {
     new handleDeparmentsAndCitiesSelectors('#departments', '#cities');
 };
 
-
 $('#pais').bind('change', function (e) {
     var target = e.target;
     if (target.value === 'Colombia') {
