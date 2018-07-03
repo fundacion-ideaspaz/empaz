@@ -26,7 +26,7 @@ class ResponderController extends Controller
         }
         //Check if its completed
         $cuestionario_result = CuestionarioResult::->where('cuestionario_id', $cuestionario->id)
-          ->where('user_id', Auth::user())->first()
+          ->where('user_id', Auth::user())->first();
 
         if ($cuestionario_result) {
           if ($cuestionario_result->completed === 1) {
