@@ -10,7 +10,7 @@
         </div>
         <div class="form-group">
           {{Form::bsLabel('Respuesta')}}
-          {{Form::bsTextArea('answer', '', ['placeholder'=>'Ingrese la respuesta correspondiente'])}}
+          {{Form::bsTextArea('answer', '', ['placeholder'=>'Ingrese la respuesta correspondiente', 'class' => 'ckeditor'])}}
         </div>
         <div class="table-row">
           {{Form::bsSubmit('Guardar', ['class'=>'btn btn-primary pull-right'])}}

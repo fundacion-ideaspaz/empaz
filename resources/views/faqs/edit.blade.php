@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
           {{Form::bsLabel('Respuesta')}}
-          {{Form::bsTextArea('answer', $faq->answer)}}
+          {{Form::bsTextArea('answer', $faq->answer, ['class' => 'ckeditor'])}}
         </div>
           {{ Form::hidden('_method', 'PUT') }}
           <div class="table-row">

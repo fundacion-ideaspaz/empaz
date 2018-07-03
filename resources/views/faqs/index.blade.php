@@ -42,7 +42,7 @@
 
     <div class="collapse" id="collapse{{$faq->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$faq->id}}" data-parent="#accordion">
       <div class="card-body">
-        <p>{{$faq->answer}}</p>
+        <p>{!!$faq->answer!!}</p>
       </div>
     </div>
   </div>
