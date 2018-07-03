@@ -25,11 +25,14 @@ class ResponderController extends Controller
             return redirect('/responder');
         }
         //Check if its completed
-        if ($cuestionario->cuestionario_result) {
-          if ($cuestionario->cuestionario_result->user_id === Auth::user()->id && $cuestionario->cuestionario_result->completed === 1) {
-            return redirect('/reportes/'.$cuestionario->cuestionario_result->id);
-          } elseif ($cuestionario->cuestionario_result->user_id === Auth::user()->id && $cuestionario->cuestionario_result->completed === 0) {
-            return redirect('/responder/edit/'.$cuestionario->cuestionario_result->id);
+        $cuestionario_result = CuestionarioResult::->where('cuestionario_id', $cuestionario->id)
+          ->where('user_id', Auth::user())->first()
+
+        if ($cuestionario_result) {
+          if ($cuestionario_result->completed === 1) {
+            return redirect('/reportes/'.$cuestionario_result->id);
+          } elseif ($cuestionario_result->completed === 0) {
+            return redirect('/responder/edit/'.$cuestionario_result->id);
           }
         }
         return view('cuestionario')->with(['cuestionario' => $cuestionario]);
