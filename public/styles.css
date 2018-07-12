@@ -121,7 +121,7 @@ a.descripcion.tip:hover span {
 	line-height: 18px;
   display: block;
   z-index: 100;
-  background: black;
+	background-color: rgb(255, 255, 255,1);
   margin: 10px;
 	min-width: 350px;
 	max-height: 300px;
@@ -129,18 +129,16 @@ a.descripcion.tip:hover span {
   top: 0px;
 	right: 0px;
 	white-space: pre-line;
-	color: #fff;
+	color: black;
 	text-align:left;
 	font-family: arial;
-	font-size: 1.05em;
+	font-size: 0.9em;
 	overflow-y: auto;
 }
 
 .info-cuestionario span{
-	font-size: 0.55em!important;
-	background-color: rgb(255, 255, 255,1)!important;
-	color: black!important;
-	line-height: 1em!important;
+	font-size: 0.35em!important;
+	line-height: 1.05em!important;
 	z-index: 100;
 }
 

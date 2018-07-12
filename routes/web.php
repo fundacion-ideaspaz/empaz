@@ -16,6 +16,7 @@ Route::post('login', 'Auth\LoginController@authenticate')->name('login');
 Route::get('/registro', 'ProfileController@registro');
 Route::post('/registro', 'ProfileController@saveRegistro');
 Route::get('/registro/exito', 'ProfileController@registroExito');
+Route::get('/restablecer', 'Auth\ResetPasswordController@restablecerSent')->name('auth.passwords.reset_sent');
 Route::get('/home', function () { return redirect('/');});
 Route::get('/login', function () { return redirect('/');});
 Route::resource('glosario', 'GlosarioController');
@@ -130,7 +131,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cuestionarios/{id}/preguntas/{pregunta_id}', 'IndicadoresController@storePreguntas');
 
         // Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        // Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        // Route::post('/password/email', 'Auth\ResetPasswordController@sendResetLinkEmail')->name('password.email');
 
         // Route::get('/password/reset{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
         // Route::post('/password/reset', 'Auth\ResetPasswordController@reset');

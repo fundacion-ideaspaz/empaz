@@ -16,9 +16,10 @@ class ResetPassword extends Notification
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct($token, $user)
     {
         $this->token = $token;
+        $this->user = $user;
     }
 
     /**
@@ -40,9 +41,10 @@ class ResetPassword extends Notification
      */
     public function toMail($notifiable)
     {
+
         return (new MailMessage)
             ->subject('Restablecimiento de contraseña')
-            ->line('Estimado/a usuario/a,')
+            ->line('Estimado/a '. $this->user . ',')
             ->line('Hemos recibido una solicitud para restablecer su contraseña. Haga clic en el siguiente enlace para cambiarla.')
             ->action('Restablecer Contraseña', url('password/reset', $this->token) . '?email=' . urlencode($notifiable->email))
             ->line('Si no solicitó restablecer la contraseña, haga caso omiso a este correo.')

@@ -24,6 +24,7 @@ class AccountCreated extends Mailable
         $this->user = $user;
     }
 
+
     /**
      * Build the message.
      *
@@ -31,7 +32,7 @@ class AccountCreated extends Mailable
      */
     public function build()
     {
-        return $this->from('info@empazweb.org')
+        return $this->from('info@empazweb.org', 'EmPaz - Medición Empresarial')
                 ->subject('Su cuenta ha sido creada')
                 ->view('users.created');
     }

@@ -99,14 +99,13 @@ function platformSlashes($path) {
                     </div>
 
                     <div class="form-group  col-md-6">
-                        <label for="tamano">Tamaño de la Empresa
-                          <a class="info-cuestionario descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <label for="tamano">Tamaño de la Empresa</label>
+                          <a class="descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span>1. Microempresa: planta de personal no superior a los diez (10) trabajadores y activos totales excluida la vivienda por valor inferior a quinientos (500) salarios mínimos mensuales legales vigentes.
                             2. Pequeña empresa: planta de personal entre once (11) y cincuenta (50) trabajadores y activos totales por valor entre quinientos uno (501) y menos de cinco mil (5.000) salarios mínimos mensuales legales vigentes.
                             3. Mediana empresa: planta de personal entre cincuenta y uno (51) y doscientos (200) trabajadores y activos totales por valor entre cinco mil uno (5.001) a treinta mil (30.000) salarios mínimos mensuales legales vigentes.
                             4. Gran Empresa: planta de personal superior a los doscientos (200) trabajadores y activos totales superiores a treinta mil (30.000) salarios mínimos mensuales legales vigentes.</span>
                           </a>
-                        </label>
                         <select class="form-control" name="tamano">
                             <option value="">Seleccione una opción</option>
                             <option value="1" @if (old('tamano') === "1") selected = 'selected' @endif>Micro</option>

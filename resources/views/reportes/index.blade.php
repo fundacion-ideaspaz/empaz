@@ -40,6 +40,9 @@
                     "legendItemFontSize": '10',
                     "legendItemFontColor": '#666666',
                     "enableSmartLabels": "1",
+                    "manageLabelOverflow": "1",
+                    "useEllipsesWhenOverflow": "1",
+                    "labelFontSize":"10",
             },
                     "data": [
                             @foreach($rImportancia as $i=> $importancia)
@@ -57,13 +60,13 @@
     var budgetChart2 = new FusionCharts({
     type: 'radar',
             renderAt: 'chart-container2',
-            width: '100%',
-            height: '330',
+            width: '85%',
+            height: '380',
             dataFormat: 'json',
             dataSource: {
             "chart": {
             "captionFontSize": "14",
-                    "legendPadding": "-60",
+                    "legendPadding": "-20",
                     "chartTopMargin": "20",
                     "plotToolText": "$label: $value%",
                     "subcaptionFontSize": "14",
@@ -87,7 +90,11 @@
                     "yAxisMaxValue" : "100",
                     "yAxisValuesStep": "5",
                     "legendAllowDrag": "1",
-                    "legendPosition": "bottom"
+                    "legendPosition": "bottom",
+                    "enableSmartLabels": "1",
+                    "manageLabelOverflow": "1",
+                    "useEllipsesWhenOverflow": "0",
+                    "labelFontSize":"10",
             },
                     "categories": [
                     {

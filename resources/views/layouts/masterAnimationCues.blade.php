@@ -95,7 +95,7 @@
   <div>
     @yield('content')
     <span class="alerta-r">
-      <p>Al finalizar de contestar el cuestionario, y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga click sobre e botón <strong>Ir a resumen</strong> o click sobre este cuadro para cerrarlo y continuar.</p>
+      <p>Al finalizar el cuestionario y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga click sobre el botón <strong>Ir a confirmar respuestas</strong> para guardar el cuestionario o click sobre este cuadro para cerrarlo y continuar.</p>
     </span>
   </div>
 <footer>

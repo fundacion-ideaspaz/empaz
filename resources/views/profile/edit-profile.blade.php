@@ -97,14 +97,13 @@ function platformSlashes($path) {
                     </div>
 
                     <div class="form-group  col-md-6">
-                        <label for="tamano">Tamaño de la Empresa
-                          <a class="info-cuestionario descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <label for="tamano">Tamaño de la Empresa</label>
+                          <a class="descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span>1. <strong>Microempresa</strong>: planta de personal no superior a los diez (10) trabajadores y activos totales excluida la vivienda por valor inferior a quinientos (500) salarios mínimos mensuales legales vigentes.
                             2. <strong>Pequeña empresa</strong>: planta de personal entre once (11) y cincuenta (50) trabajadores y activos totales por valor entre quinientos uno (501) y menos de cinco mil (5.000) salarios mínimos mensuales legales vigentes.
                             3. <strong>Mediana empresa</strong>: planta de personal entre cincuenta y uno (51) y doscientos (200) trabajadores y activos totales por valor entre cinco mil uno (5.001) a treinta mil (30.000) salarios mínimos mensuales legales vigentes.
                             4. <strong>Gran Empresa</strong>: planta de personal superior a los doscientos (200) trabajadores y activos totales superiores a treinta mil (30.000) salarios mínimos mensuales legales vigentes.</span>
                           </a>
-                        </label>
                         <select class="form-control" id="tamano" name="tamano" strict="false">
                           <option value="" >Seleccione una opción</option>
                             <option value="1" @if ($empresa->tamano === "1") selected = 'selected' @endif>Micro</option>
@@ -160,17 +159,17 @@ function platformSlashes($path) {
                             fclose($file);
                              ?>
                              @foreach($ciiu_array as $ciiu => $ciiu_d)
-                               <option value="{{$ciiu}}" @if ($empresa->ciiu_principal === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
+                               <option value="{{$ciiu}}" @if ($empresa->ciiu_principal == $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                              @endforeach
                         </select>
                     </div>
 
                     <div class="form-group col-md-12">
                         <label for="ciiu_secundario">Código CIIU Actividad Económica Secundaria</label>
-                        <select class="form-control" name="ciiu_secundario" id="ciiu-secundario" value="{{$empresa->ciiu_secundario ? $empresa->ciiu_secundario : '' }}">
+                        <select class="form-control" name="ciiu_secundario" id="ciiu-secundario">
                             <option value="Ninguno">Ninguno</option>
                             @foreach($ciiu_array as $ciiu => $ciiu_d)
-                              <option value="{{$ciiu}}" @if ($empresa->ciiu_secundario === $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
+                              <option value="{{$ciiu}}" @if ($empresa->ciiu_secundario == $ciiu) selected = 'selected' @endif>{{$ciiu}} - {{$ciiu_d}}</option>
                             @endforeach
                         </select>
                     </div>

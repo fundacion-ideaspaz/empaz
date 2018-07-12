@@ -7,7 +7,7 @@
 </tr>
 <tr>
 	<td style="background-color: #f2f2f2; padding: 20px; text-align: center;">
-		<h2 style="color: #666;">Estimado/a, {{$user->nombre}}</h2>
+		<h2 style="color: #666;">Estimado/a {{$user->nombre}}</h2>
   <p style="color: #666; text-align: center;">
     Hemos creado una cuenta para usted en la plataforma EmPaz. Para activar su cuenta, por favor haga click en el siguiente enlace:
   </p>
