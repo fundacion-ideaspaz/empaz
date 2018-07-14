@@ -5,7 +5,7 @@
         {!! Form::open(['action' => 'GlosarioController@store', 'method' =>'POST']) !!}
         <div class="form-group">
           {{Form::bsLabel('Entrada')}}
-          {{Form::bsText('keyword', '', ['placeholder'=>'Ingrese el término del glosario'])}}
+            {{Form::bsText('keyword', '', ['placeholder'=>'Ingrese el término del glosario' , 'maxlength' => 250])}}
         </div>
         <div class="form-group">
           {{Form::bsLabel('Significado')}}

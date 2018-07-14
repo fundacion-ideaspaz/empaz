@@ -6,7 +6,7 @@
         {!! Form::open(['action' => 'FaqController@store', 'method' =>'POST']) !!}
         <div class="form-group">
           {{Form::bsLabel('Pregunta')}}
-          {{Form::bsText('question', '', ['placeholder'=>'Ingrese la pregunta'])}}
+          {{Form::bsText('question', '', ['placeholder'=>'Ingrese la pregunta', 'maxlength' => 250])}}
         </div>
         <div class="form-group">
           {{Form::bsLabel('Respuesta')}}

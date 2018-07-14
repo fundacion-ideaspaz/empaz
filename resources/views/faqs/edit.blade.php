@@ -5,7 +5,7 @@
         {!! Form::open(['action' => ['FaqController@update', $faq->id], 'method' =>'POST']) !!}
         <div class="form-group">
           {{Form::bsLabel('Pregunta')}}
-          {{Form::bsText('question', $faq->question)}}
+          {{Form::bsText('question', $faq->question, ['maxlength' => 250])}}
         </div>
         <div class="form-group">
           {{Form::bsLabel('Respuesta')}}

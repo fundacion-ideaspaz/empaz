@@ -5,7 +5,7 @@
         {!! Form::open(['action' => ['GlosarioController@update', $terminoGlosario->id], 'method' =>'POST']) !!}
         <div class="form-group">
           {{Form::bsLabel('Entrada')}}
-          {{Form::bsText('keyword', $terminoGlosario->keyword)}}
+          {{Form::bsText('keyword', $terminoGlosario->keyword, ['maxlength' => 250])}}
         </div>
         <div class="form-group">
           {{Form::bsLabel('Significado')}}
