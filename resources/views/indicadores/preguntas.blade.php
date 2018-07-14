@@ -70,6 +70,14 @@
 
   <table class="table table-bordered table-hover table-striped">
     <label for="indicador">Preguntas: </label>
+      <thead>
+        <tr>
+          <th>Pregunta</th>
+          <th>¿Requerida?</th>
+          <th>Posición</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
       <tbody>
       @foreach($preguntas as $pregunta)
           <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/preguntas/{{$pregunta->id}}" class="form-inline">
@@ -83,7 +91,7 @@
                   <option value="false">Opcional</option>
                 </select>
                 </td>
-                <td width="10%"><input type="text" name="order" title="Ingrese la ubicación de la pregunta en números" placeholder="Posición"> </td>
+                <td width="5%"><input type="text" name="order" title="Ingrese la ubicación de la pregunta en números" placeholder="Posición"> </td>
                 <td width="10%">
                   <button class="btn btn-primary editar pull-right" data-toggle="tooltip" data-placement="bottom" title="Agregar">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
