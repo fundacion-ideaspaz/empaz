@@ -7,6 +7,7 @@
       </div>
       <h4>Dimensiones asignadas</h4>
       @if(sizeof($cuestionario->dimensiones) > 0)
+      <p>Para modificar el porcentaje de importancia de las dimensiones asignadas debe eliminar la dimensión, cambiar el valor de importancia, y agregar nuevamente la dimensión al cuestionario.</p>
       <table class="table table-striped table-hover">
         <tbody>
         @foreach($cuestionario->dimensiones as $dimension)
@@ -31,8 +32,8 @@
       @endif
 
       <h4>Asignar dimensiones a cuestionario</h4>
-        <p>Ingrese el porcentaje de importancia de la dimensión y presione el botón <span class="fa fa-plus"></span> para asignarla al cuestionario. Para eliminar una dimensión asignada al cuestionario presione el botón <span class="fa fa-trash"></span>. </p>
       @if(sizeof($dimensiones) > 0)
+      <p>Ingrese el porcentaje de importancia de la dimensión y presione el botón <span class="fa fa-plus"></span> para asignarla al cuestionario. Para eliminar una dimensión asignada al cuestionario presione el botón <span class="fa fa-trash"></span>. </p>
       <table class="table table-striped table-hover">
         <tbody>
         @foreach($dimensiones as $dimension)

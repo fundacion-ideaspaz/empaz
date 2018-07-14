@@ -5,7 +5,7 @@
       <div class="col-sm-9"><h2>Agregar Indicadores</h2></div>
       <div class="col-sm-3 migas pull-right">{{$cuestionario->nombre}} / versión {{ $cuestionario->version }} </div>
     </div>
-    <h4>Indicadores asginados</h4>
+    <h4>Indicadores asignados</h4>
 
     <?php
       $flag="f";
@@ -21,6 +21,7 @@
      ?>
 
     @if($flag === "t")
+    <p>Para modificar el nivel de importancia del indicador asignado debe eliminar el indicador, seleccionar el nuevo valor de importancia, y agregar nuevamente el indicador al cuestionario.</p>
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>
@@ -61,6 +62,7 @@
 
         <h4>Asignar indicadores a dimensiones</h4>
         @if(count($indicadores)>0)
+        <p>Seleccione la dimensión de la lista desplegable, luego seleccione el nivel de importancia del indicador dentro de la dimensión y presione el botón <span class="fa fa-plus"></span> para asignarlo al cuestionario. Para eliminar un indicador asignado al cuestionario presione el botón <span class="fa fa-trash"></span>. </p>
         <div class="form-group">
             <label for="dimension">Dimensión: </label>
             <select name="dimension" id="dimension" class="form-control">
@@ -72,6 +74,13 @@
 
         <table class="table table-bordered table-hover table-striped">
           <label for="indicador">Indicadores: </label>
+          <thead>
+            <tr>
+              <th >Indicador</th>
+              <th width="15%">Importancia</th>
+              <th width="10%">Acciones</th>
+            </tr>
+          </thead>
           <tbody>
           @foreach($indicadores as $indicador)
           <form method="POST" action="/cuestionarios/{{$cuestionario->id}}/indicadores/{{$indicador->id}}" class="form-inline" onsubmit="DoSubmit();" id="#myForm">

@@ -57,7 +57,11 @@ class CuestionarioResult extends Model
         }
         $i = 0;
         foreach ($indicadores as $indicador) {
+          if ($totalIndicadores[$i] != 0) {
             $calificacionIndicadores[$i] = $conteoIndicadores[$i] / $totalIndicadores[$i];
+          }else {
+            $calificacionIndicadores[$i] = null;
+          }
             $i++;
         }
         return $calificacionIndicadores;
@@ -146,4 +150,5 @@ class CuestionarioResult extends Model
     public function getRespuestas(){
       return RespuestaCuestionario::where('cuestionario_result_id', '=', $this->id)->get();
     }
+
 }

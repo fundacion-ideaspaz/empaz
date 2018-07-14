@@ -211,7 +211,7 @@
 
 <div class="content-blanco">
 <h5>Resultado detallado por dimensiones</h5>
-<p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p>
+<!-- <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p> -->
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
     <div class="card">
@@ -222,10 +222,10 @@
                         {{ $dimension }}%
                     </div>
                     <div class="col-md-3 report-text" style=" display: flex; justify-content: center; flex-direction: column;">
-                        <strong> {{ $dimensiones[$i]->nombre }}: {{$niveles[$i]}} </strong>
+                        <p>{{ $dimensiones[$i]->nombre }}: <strong>{{$niveles[$i]}} </strong></p>
                     </div>
                     <div class="col-md-7 report-text" style="display: flex; justify-content: center; flex-direction: column; overflow-y: auto">
-                      {!! $eDimensiones[$i]->descripcion !!}
+                      <p>{!! $eDimensiones[$i]->descripcion !!}. Ver aquí resultado por indicadores.</p>
                     </div>
                 </div>
             </span>
@@ -235,7 +235,7 @@
                 <h5>Indicadores de la dimensión</h5>
                             <div class="row">
                             <div class="col-md-12">
-                              <p class="report-text">Este gráfico de barras representa los puntajes obtenidos para cada uno de los indicadores dentro de la dimensión {{$dimensiones[$i]->nombre}}. Si desea conocer más información acerca de cada indicador, deslice el cursor sobre la barra y tendrá una breve descripción de cada uno de ellos.</p>
+                              <p class="report-text">Este gráfico representa los puntajes obtenidos por su empresa para cada uno de los indicadores dentro de la dimensión {{$dimensiones[$i]->nombre}}. Si desea conocer más información acerca de cada indicador, seleccione la opción en la lista desplegable y obtendrá una breve descripción de cada uno de ellos. Si el indicador aparece en cero en la gráfica, no aplica para su empresa.</p>
                                         <script type="text/javascript">
                                         FusionCharts.ready(function () {
                                             var revenueChart = new FusionCharts({
@@ -256,7 +256,7 @@
                                                         "plotBorderAlpha": "10",
                                                         "placevaluesInside": "1",
                                                         "showBorder": "0",
-                                                        "rotatevalues": "1",
+                                                        "rotatevalues": "0",
                                                         "valueFontColor": "#ffffff",
                                                         "showXAxisLine": "1",
                                                         "xAxisLineColor": "#999999",
@@ -268,7 +268,9 @@
                                                         "subcaptionFontSize": "14",
                                                         "yAxisMaxValue": "100",
                                                         "yAxisMinValue": "0",
-                                                        "rotateValues": "0"
+                                                        "manageLabelOverflow": "1",
+                                                        "useEllipsesWhenOverflow": "0",
+                                                        "labelFontSize":"9",
                                                     },
                                                     "data": [
 
@@ -287,8 +289,8 @@
 
                                         </script>
                                         <div class="row">
-                                          <div class="col-sm-12 col-md-6" id="chart-container-bar{{$i}}" >FusionCharts will render here</div>
-                                          <div class="col-sm-12 col-md-6">
+                                          <div class="col-sm-12 col-md-8" id="chart-container-bar{{$i}}" >FusionCharts will render here</div>
+                                          <div class="col-sm-12 col-md-4">
                                             <select class="form-control" id="selected_i_{{$dimensiones[$i]->id}}" onclick="show_indicator({{$dimensiones[$i]->id}})">
                                               <option value="" selected="true">Seleccione un indicador de la lista</option>
                                               @foreach($puntajeIndicadores as $j => $rindicador)
@@ -308,10 +310,11 @@
     @endforeach
 </div>
 <br>
-<p class="report-text">Si desea conocer más acerca de los aportes empresariales para la paz contáctenos al correo <a href="mailto:info@empazweb.org?subject=feedback">info@empazweb.org</a>, aquí podrá conseguir asesoría personalizada que permita conocer más a profundidad el estado de su empresa. </p>
+<p class="report-text">Si desea recibir más información sobre EmPaz y los resultados de su empresa, o si está interesado en conseguir asesoría personalizada que permita conocer más a profundidad el estado de su empresa, por favor contáctenos en: info@empazweb.org, o teléfono: +57 1 218 3449. </p>
+<p class="report-text">Le invitamos a comunicarse con nosotros para aplicar la herramienta EmPaz dentro de seis meses o un año con el fin permitir la comparación de sus resultados e identificar las mejoras en los aportes a la prevención de conflictos y construcción de paz de su empresa, con base en la aplicación de las lecciones aprendidas. </p>
 </div>
 </div>
-<div id="informeCPDF"></div>
+<!-- <div id="informeCPDF"></div> -->
 
 <script type="text/javascript">
 

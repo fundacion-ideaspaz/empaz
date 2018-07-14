@@ -123,4 +123,9 @@ class Cuestionario extends Model
       }
     }
 
+    public function get_response() {
+      return CuestionarioResult::where('cuestionario_id', $this->id)
+        ->where('user_id', '=', Auth::user()->id)->first();
+    }
+
 }

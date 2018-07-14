@@ -13,7 +13,7 @@
             <td>{{$cuestionario->nombre}} @if($cuestionario->started()) (Guardado) @endif </td>
             <td width="25%">
               @if($cuestionario->cuestionario_done())
-                <a class="btn btn-sm btn-primary" href="/reportes/{{$cuestionario->cuestionario_result->id}}">
+                <a class="btn btn-sm btn-primary" href="/reportes/{{$cuestionario->get_response()->id}}">
                   <i class="fa fa-tachometer" aria-hidden="true"></i> Ver resultados
                 </a>
               @else

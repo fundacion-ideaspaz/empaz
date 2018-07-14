@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Cuestionario;
 use App\CuestionarioResult;
 use App\RespuestaCuestionario;
+use Illuminate\Support\Facades\Hash;
 use Auth;
+use Config;
 
 class ResponderController extends Controller
 {
@@ -24,13 +26,13 @@ class ResponderController extends Controller
         if ($cuestionario->estado === 'inactivo') {
             return redirect('/responder');
         }
-        //Check if its completed
-        $cuestionario_result = CuestionarioResult::where('cuestionario_id', $cuestionario->id)
-          ->where('user_id', '=', Auth::user()->id)->first();
+        //Check if the user owns the cuestionario
+        $cuestionario_result = $cuestionario->get_response();
 
         if ($cuestionario_result) {
           if ($cuestionario_result->completed === 1) {
-            return redirect('/reportes/'.$cuestionario_result->id);
+            return redirect('/reportes/'.$cuestionario_result->id)
+              ->with('cuestionario_result', $cuestionario_result);
           } elseif ($cuestionario_result->completed === 0) {
             return redirect('/responder/edit/'.$cuestionario_result->id);
           }
@@ -45,6 +47,8 @@ class ResponderController extends Controller
         $cuestionarioResult->cuestionario_id = $id;
         $cuestionarioResult->user_id = Auth::user()->id;
         $cuestionarioResult->completed = 1;
+        $cuestionarioResult->hash = base64_encode(Hash::make
+                       ($cuestionarioResult->id . Config::get('APP_KEY')));
         $cuestionarioResult->save();
 
         //Iterate over questions

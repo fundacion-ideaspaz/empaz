@@ -86,9 +86,27 @@ class DashboardController extends Controller
         // // dd($indicadores);
         $empresa = ProfileEmpresa::where('user_id', '=', $cuestResult->user_id)->first();
 
-        $dimensiones = Dimension::whereIn("id", $dimensionesIds)->orderBy('nombre','asc')->get();
+
         $dimensionesCuest = DimensionCuestionario
-            ::where("cuestionario_id", "=", $cuestionario_id)->get();
+            ::where("cuestionario_id", "=", $cuestionario_id)
+            ->orderBy('importancia', 'desc')
+            ->get();
+
+
+        $dimensionesIds = $dimensionesCuest->pluck('dimension_id');
+
+        $dimensiones = Dimension
+            ::
+            select(
+                "dimensiones.id",
+                "dimensiones.nombre",
+                "dimensiones.descripcion",
+                "dimensiones.estado",
+                "dimensiones.created_at",
+                "dimensiones.updated_at")
+            ->whereIn("dimensiones.id", $dimensionesIds)->where('cuestionario_id', $cuestionario_id)
+            ->join('cuestionarios_dimensiones', 'cuestionarios_dimensiones.dimension_id', '=', 'dimensiones.id')
+            ->orderBy('cuestionarios_dimensiones.importancia', 'desc')->get();
 
         $puntajeIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
 
@@ -119,18 +137,23 @@ class DashboardController extends Controller
             $puntajeDimensiones[$i] = round(($puntajeDimensiones[$i] / $arrayPorcentajeDimension[$i]) * 100, 0);
             if ($puntajeDimensiones[$i] >= 0 && $puntajeDimensiones[$i] <= 15) {
                 $nivel = "bajo";
+                $texto = "principiante";
             } elseif ($puntajeDimensiones[$i] >= 16 && $puntajeDimensiones[$i] <= 40) {
                 $nivel = "medio bajo";
+                $texto = "básico";
             } elseif ($puntajeDimensiones[$i] >= 41 && $puntajeDimensiones[$i] <= 60) {
                 $nivel = "medio";
+                $texto = "intermedio";
             } elseif ($puntajeDimensiones[$i] >= 61 && $puntajeDimensiones[$i] <= 85) {
                 $nivel = "medio alto";
+                $texto = "avanzado";
             } elseif ($puntajeDimensiones[$i] >= 86 && $puntajeDimensiones[$i] <= 100) {
                 $nivel = "alto";
+                $texto = "líder";
             }
 
             $enunciados[$i] = Enunciado::where("dimension_id", "=", $dimension->id)->where("nivel_importancia", "=", $nivel)->first();
-            $niveles[$i] = $nivel;
+            $niveles[$i] = $texto;
             $i++;
 
         }
