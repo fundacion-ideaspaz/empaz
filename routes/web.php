@@ -17,6 +17,7 @@ Route::get('/registro', 'ProfileController@registro');
 Route::post('/registro', 'ProfileController@saveRegistro');
 Route::get('/registro/exito', 'ProfileController@registroExito');
 Route::get('/restablecer', 'Auth\ResetPasswordController@restablecerSent')->name('auth.passwords.reset_sent');
+Route::get('/restablecer/exito', 'Auth\ResetPasswordController@resetPasswordSuccess')->name('auth.passwords.reset_success');
 Route::get('/home', function () { return redirect('/');});
 Route::get('/login', function () { return redirect('/');});
 Route::resource('glosario', 'GlosarioController');

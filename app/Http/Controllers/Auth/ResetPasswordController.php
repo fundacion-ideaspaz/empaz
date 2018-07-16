@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
 {
@@ -25,7 +26,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-     protected $redirectTo = '/restablecer';
+     protected $redirectTo = '/restablecer/exito';
 
 
     /**
@@ -46,9 +47,22 @@ class ResetPasswordController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
 
+     protected function resetPassword($user, $password)
+    {
+        $user->forceFill([
+            'password' => bcrypt($password),
+            'remember_token' => Str::random(60),
+        ])->save();
+    }
 
     public function restablecerSent()
     {
       return view('auth.passwords.reset_sent');
     }
+
+    public function resetPasswordSuccess()
+    {
+        return view('auth.passwords.reset_ok');
+    }
+
 }

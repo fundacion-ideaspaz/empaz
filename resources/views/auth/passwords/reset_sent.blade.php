@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('title', 'Recuperar Contraseña')
+@extends('layouts.master') @section('title', 'Correo Enviado')
 
 @section('content')
 <div class="container recuperar">

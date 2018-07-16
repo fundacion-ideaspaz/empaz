@@ -1,15 +1,12 @@
 @extends('layouts.master') @section('title', 'Recuperar Contraseña')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-              <div class="panel-heading">
+<div class="row container">
+    <div class="card col-12">
+      <div class="card-body col-sm-8 col-offset-2">
+              <div class="fs-title">
                 <h2>Recuperar contraseña</h2>
               </div>
-
-                <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ url('/password/reset') }}">
                         {{ csrf_field() }}
 
@@ -19,15 +16,15 @@
                             <label for="email" class="col-md-6 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" value="{{ $email or old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" value="{{ $email or old('email') }}" required >
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-6 control-label">Nueva contraseña</label>
-
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" value="{{ old('password') }}" required>
+                                <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                         </div>
 
@@ -35,6 +32,7 @@
                             <label for="password-confirm" class="col-md-6 control-label">Confirmar nueva contraseña</label>
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <span toggle="#password-confirm" class="fa fa-fw fa-eye field-icon toggle-password-confirm"></span>
                             </div>
                         </div>
 
@@ -49,6 +47,26 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+
+<script type="text/javascript">
+$(".toggle-password").click(function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+$(".toggle-password-confirm").click(function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
+
 @endsection

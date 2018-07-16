@@ -199,13 +199,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+
+                          <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
                             <div class="col-md-10">
                               <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" value="{{ old('password') }}" required>
+                              <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" value="{{ old('password') }}" required>
+                              <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                        </div>
+                          </div>
 
                         <div class="form-group" id="contentemail">
                             <div class="col-md-6 col-md-offset-4">
@@ -296,5 +298,20 @@
         }
     });
 </script>
+
+<script type="text/javascript">
+$(".toggle-password").click(function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+    input.attr("style", "background-color: rgba(14, 14, 14, 0.2); border-radius: 0; border: none; border-bottom: 1px solid rgba(0, 0, 0, 0.39); color: #fff; margin-top: 30px;");
+
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
+
 @yield('inlinejs')
 </html>

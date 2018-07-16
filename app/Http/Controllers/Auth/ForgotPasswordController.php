@@ -36,4 +36,5 @@ class ForgotPasswordController extends Controller
     {
         return redirect()->route('auth.passwords.reset_sent')->with('status', trans($response));
     }
+
 }

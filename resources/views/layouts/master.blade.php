@@ -12,6 +12,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
+
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
@@ -22,6 +23,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
+
 </head>
 
 <body>
@@ -119,6 +121,5 @@
   })
 
 </script>
-
 
 </html>

@@ -1162,3 +1162,16 @@ body.overview .alerta-r{
 .dim_description{
 	color: black!important;
 }
+
+.field-icon {
+	margin-right: 10px;
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
