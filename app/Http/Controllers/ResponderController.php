@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cuestionario;
 use App\CuestionarioResult;
 use App\RespuestaCuestionario;
-use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Hash;
 use Auth;
 use Config;
 
@@ -47,8 +47,8 @@ class ResponderController extends Controller
         $cuestionarioResult->cuestionario_id = $id;
         $cuestionarioResult->user_id = Auth::user()->id;
         $cuestionarioResult->completed = 1;
-        $cuestionarioResult->hash = base64_encode(Hash::make
-                       ($cuestionarioResult->id . Config::get('APP_KEY')));
+        // $cuestionarioResult->hash = base64_encode(Hash::make
+        //                ($cuestionarioResult->id . Config::get('APP_KEY')));
         $cuestionarioResult->save();
 
         //Iterate over questions
