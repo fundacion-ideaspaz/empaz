@@ -126,7 +126,6 @@ a.descripcion.tip:hover span {
   display: block;
   z-index: 100;
 	background-color:rgb(245,248,250);
-	/* background-color: white; */
   margin: 10px;
 	min-width: 350px;
 	max-width: 400px;
@@ -735,7 +734,7 @@ left: 0;
     width: 100%;
     height: 10vh;
 		list-style-position:inside;
-		border: 1px solid rgb(168, 166, 164, 0.2);
+		border: 1px solid rgba(168, 166, 164, 0.2);
 }
 
 .cs-skin-boxes .cs-options li{
@@ -746,7 +745,7 @@ left: 0;
 }
 
 .cs-skin-boxes .cs-options li:hover{
-	background: rgb(168, 166, 164, 0.5);
+	background: rgba(168, 166, 164, 0.5);
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options li:first-child{
@@ -754,7 +753,7 @@ left: 0;
 }
 
 .r-cuestionario .cs-skin-boxes .cs-options li.cs-selected {
-	background-color: rgb(168, 166, 164, 0.5);
+	background-color: rgba(168, 166, 164, 0.5);
     /* content: '\2714';
     color: #00AABF;
     position: absolute;
