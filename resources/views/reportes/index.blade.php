@@ -60,7 +60,7 @@
     var budgetChart2 = new FusionCharts({
     type: 'radar',
             renderAt: 'chart-container2',
-            width: '85%',
+            width: '100%',
             height: '380',
             dataFormat: 'json',
             dataSource: {
@@ -95,8 +95,9 @@
                     "legendPosition": "bottom",
                     "enableSmartLabels": "1",
                     "manageLabelOverflow": "1",
-                    "useEllipsesWhenOverflow": "0",
-                    "labelFontSize":"10",
+                    // "useEllipsesWhenOverflow": "1",
+                    "labelFontSize":"1%",
+
             },
                     "categories": [
                     {
