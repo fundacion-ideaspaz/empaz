@@ -27,7 +27,7 @@ function platformSlashes($path) {
                     <!-- Fill name -->
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombre de la Empresa</label>
-                        <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" id="nombre" placeholder="Nombre de la empresa">
+                        <input type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" id="nombre" placeholder="Nombre de la empresa" maxlength="150">
                     </div>
 
                     <!-- Select Country -->
@@ -232,5 +232,20 @@ $('#pais').bind('change', function (e) {
     }
 });
 $('#pais').trigger('change');
+
+//Block selected option in ciiu_principal
+
+var $dropdown1 = $("select[name='ciiu_principal']");
+var $dropdown2 = $("select[name='ciiu_secundario']");
+
+$dropdown1.bind('change', function() {
+    $dropdown2.find('option').prop("disabled", false);
+    var selectedItem = $(this).val();
+    if (selectedItem) {
+        $dropdown2.find('option[value="' + selectedItem + '"]').prop("disabled", true);
+    }
+});
+$dropdown1.trigger('change');
+
 
 </script> @endsection

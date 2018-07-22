@@ -19,11 +19,13 @@ class FilesController extends Controller
     public function store(Request $request){
       // Validation
       $this->validate($request, [
-        'manual_file' => 'required',
-        'tc_file' => 'required',
+        'manual_file' => 'required|max:5000',
+        'tc_file' => 'required|max:5000',
       ],[
         'manual_file.required' => 'El manual es requerido.',
-        'tc_file.required' => 'El documento de términos y condiciones es requerido.'
+        'manual_file.max' => 'El tamaño máximo del manual es 5 MB',
+        'tc_file.required' => 'El archivo de términos y condiciones es requerido.',
+        'tc_file.max' => 'El tamaño máximo del archivo términos y condiciones es 5 MB'
       ]);
 
       //Move manual file

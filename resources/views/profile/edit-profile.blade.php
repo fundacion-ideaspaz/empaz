@@ -26,7 +26,7 @@ function platformSlashes($path) {
                     <!-- Fill name -->
                     <div class="form-group col-md-6">
                         <label for="nombre">Nombre de la Empresa</label>
-                        <input type="text" class="form-control" name="nombre" value="{{$empresa->nombre}}" id="nombre">
+                        <input type="text" class="form-control" name="nombre" value="{{$empresa->nombre}}" id="nombre" maxlength="150">
                     </div>
 
                     <!-- Select Country -->
@@ -145,6 +145,7 @@ function platformSlashes($path) {
                     <div class="form-group col-md-12">
                         <label for="ciiu_principal">Código CIIU Actividad Económica Principal</label>
                         <select class="form-control" name="ciiu_principal" id="ciiu-principal" value="{{$empresa->ciiu_principal ? $empresa->ciiu_principal : ''}}">
+                          <option value="">Seleccione una opción</option>
                             <?php
                             $filename = base_path(platformSlashes('public/codigos_ciiu.csv'));
                             $file = utf8_fopen_read($filename, "r");
@@ -230,5 +231,19 @@ $('#pais').bind('change', function (e) {
     }
 });
 $('#pais').trigger('change');
+
+//Block selected option in ciiu_principal
+
+var $dropdown1 = $("select[name='ciiu_principal']");
+var $dropdown2 = $("select[name='ciiu_secundario']");
+
+$dropdown1.bind('change', function() {
+    $dropdown2.find('option').prop("disabled", false);
+    var selectedItem = $(this).val();
+    if (selectedItem) {
+        $dropdown2.find('option[value="' + selectedItem + '"]').prop("disabled", true);
+    }
+});
+$dropdown1.trigger('change');
 
 </script> @endsection
