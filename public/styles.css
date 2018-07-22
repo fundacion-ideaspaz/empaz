@@ -125,7 +125,7 @@ a.descripcion.tip:hover span {
 	line-height: 18px;
   display: block;
   z-index: 100;
-	background-color:rgb(245,248,250);
+	background-color:rgb(255,255,255);
   margin: 10px;
 	min-width: 350px;
 	max-width: 400px;
@@ -145,6 +145,10 @@ a.descripcion.tip:hover span {
 	font-size: 0.35em!important;
 	line-height: 1.05em!important;
 	z-index: 100;
+}
+
+.fs-form-overview .info-cuestionario span{
+	font-size: 0.5em!important;
 }
 
 a:hover{
@@ -191,8 +195,9 @@ nav a{
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
-	color: #00aabf!important;
+	color: rgba(0, 0, 0, 0.5)!important;
 }
+
 
 .navbar {
     padding: 1rem 1rem!important;

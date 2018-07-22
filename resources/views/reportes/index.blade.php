@@ -68,9 +68,9 @@
             "captionFontSize": "14",
                     "legendPadding": "-20",
                     "chartTopMargin": "20",
-                    "plotToolText": "$label: $value%",
+                    "plotToolText": "$label",
                     "subcaptionFontSize": "14",
-                    "numberPrefix":"%",
+                    "numberSuffix":"%",
                     "baseFontColor" : "#333333",
                     "baseFont" : "Helvetica Neue,Arial",
                     "subcaptionFontBold": "0",
@@ -79,6 +79,7 @@
                     "radarfillcolor": "#ffffff",
                     "showBorder" : "0",
                     "showShadow" : "0",
+                    "showValues": "1",
                     "showCanvasBorder": "0",
                     "legendBorderAlpha": "0",
                     "legendShadow": "0",
@@ -87,8 +88,9 @@
                     "numberPreffix": "%",
                     "legendBorderAlpha": "0",
                     "legendShadow": "0",
+                    "showYAxisValues":"0",
                     "yAxisMaxValue" : "100",
-                    "yAxisValuesStep": "5",
+                    "yAxisValuesStep": "1",
                     "legendAllowDrag": "1",
                     "legendPosition": "bottom",
                     "enableSmartLabels": "1",
@@ -225,7 +227,7 @@
                         <p>{{ $dimensiones[$i]->nombre }}: <strong>{{$niveles[$i]}} </strong></p>
                     </div>
                     <div class="col-md-7 report-text" style="display: flex; justify-content: center; flex-direction: column; overflow-y: auto">
-                      <p>{!! $eDimensiones[$i]->descripcion !!}. Ver aquí resultado por indicadores.</p>
+                      <p>{!! $eDimensiones[$i]->descripcion !!}. <strong>Haga click</strong> sobre esta dimensión para ver resultado por indicadores.</p>
                     </div>
                 </div>
             </span>

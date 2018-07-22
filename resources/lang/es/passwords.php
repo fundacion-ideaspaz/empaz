@@ -14,9 +14,9 @@ return [
     */
 
     'password' => 'La contraseña debe tener al menos 8 caracteres y debe coincider con la confirmación.',
-    'reset' => 'Su contraseña ha sido reestablecida',
-    'sent' => 'A su correo hemos enviado el enlace para reestablecer su contraseña',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'reset' => 'Su contraseña ha sido restablecida',
+    'sent' => 'A su correo hemos enviado el enlace para restablecer su contraseña',
+    'token' => 'El token para restablecer su contraseña es inválido.',
+    'user' => "No se encontró un usuario registrado con ese correo.",
 
 ];
