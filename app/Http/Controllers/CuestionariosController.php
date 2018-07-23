@@ -149,7 +149,7 @@ class CuestionariosController extends Controller
                 $newDimCuest = IndicadoresPreguntas::create($indPreg->toArray());
             }
         }
-        return redirect("/cuestionarios")->with('success', 'La copia del cuestionario se ha creado exitosamente.');
+        return redirect("/cuestionarios")->with('success', 'La nueva versión del cuestionario se ha creado exitosamente.');
     }
 
     public function delete($id, Request $request)

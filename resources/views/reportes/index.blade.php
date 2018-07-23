@@ -164,7 +164,7 @@
 <p class="report-text">En este informe, usted encuentra los resultados obtenidos por su empresa en las seis dimensiones de intervención empresarial para la paz y los indicadores de medición en cada una de las dimensiones (para más información sobre dimensiones, indicadores y preguntas asociadas, ver la sección Manual).</p>
 <div class="row">
   <div class="col-sm-12 col-md-6">
-    <p class="report-text">El resultado general y el resultado en cada dimensión, se visualiza mediante el mapa de calor EmPaz:</p>
+    <p class="report-text">El resultado general y el resultado en cada dimensión, se visualizan mediante el mapa de calor EmPaz:</p>
     <img src="/table_results.svg" width="70%">
   </div>
   <div class="col-sm-12 col-md-6">
@@ -228,7 +228,7 @@
                         <p>{{ $dimensiones[$i]->nombre }}: <strong>{{$niveles[$i]}} </strong></p>
                     </div>
                     <div class="col-md-7 report-text" style="display: flex; justify-content: center; flex-direction: column; overflow-y: auto">
-                      <p>{!! $eDimensiones[$i]->descripcion !!}. <strong>Haga click</strong> sobre esta dimensión para ver resultado por indicadores.</p>
+                      <p>{!! $eDimensiones[$i]->descripcion !!} <strong>Haga click</strong> sobre esta dimensión para ver resultado por indicadores.</p>
                     </div>
                 </div>
             </span>
@@ -313,7 +313,7 @@
     @endforeach
 </div>
 <br>
-<p class="report-text">Si desea recibir más información sobre EmPaz y los resultados de su empresa, o si está interesado en conseguir asesoría personalizada que permita conocer más a profundidad el estado de su empresa, por favor contáctenos en: info@empazweb.org, o teléfono: +57 1 218 3449. </p>
+<p class="report-text">Si desea recibir más información sobre EmPaz y los resultados de su empresa, o si está interesado en conseguir asesoría personalizada que permita conocer más a profundidad el estado de su empresa, por favor contáctenos en el correo: info@empazweb.org, o teléfono: +57 1 218 3449. </p>
 <p class="report-text">Le invitamos a comunicarse con nosotros para aplicar la herramienta EmPaz dentro de seis meses o un año con el fin permitir la comparación de sus resultados e identificar las mejoras en los aportes a la prevención de conflictos y construcción de paz de su empresa, con base en la aplicación de las lecciones aprendidas. </p>
 </div>
 </div>

@@ -7,7 +7,6 @@
   </div>
 
 <h4>Preguntas asignadas</h4>
-
 <?php
   $flag="f";
   foreach($indicadores as $indicador){
@@ -22,6 +21,7 @@
  ?>
 
 @if($flag === "t")
+<p>En este formulario se puede determinar el orden en que las preguntas aparecen en el cuestionario para el usuario final (empresa). Para modificar el orden de las preguntas asignadas al cuestionario, debe desagregar la pregunta de la lista presionando el botón <span class="fa fa-trash"></span>, actualizar el número de la posición en el cuestionario, y volverla a asignar.</p>
       <table class="table table-bordered table-hover table-striped">
         <thead>
           <tr>
@@ -56,9 +56,10 @@
     <p>No tiene preguntas asignadas a este cuestionario.</p>
   @endif
 
-<h4>Asginar preguntas a indicadores</h4>
+<h4>Asignar preguntas a indicadores</h4>
 
 @if(count($preguntas)>0)
+<p>Para agregar una pregunta al cuestionario (1) seleccione el indicador al que pertenece de la lista desplegable, (2) seleccione si es Requerida (la empresa debe responderla obligatoriamente) u Opcional (la empresa puede seleccionar la respuesta “No aplica”), (3) ingrese el numero de la pregunta para determinar su posición en el cuestionario y (4) presione el botón <span class="fa fa-plus"></span> para asignar la pregunta al cuestionario. Para eliminar una pregunta del mismo presione el botón <span class="fa fa-trash"></span>. NOTA: Para que el cuestionario sea válido, cada indicador asignado al cuestionario debe tener por lo menos una pregunta asignada.  </p>
   <div class="form-group">
       <label for="indicador">Indicador: </label>
       <select name="indicador" id="indicador" class="form-control" value="{{old('indicador')}}">

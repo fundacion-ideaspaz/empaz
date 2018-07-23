@@ -9,7 +9,7 @@
               {{ csrf_field() }}
               @if(!$canEditEstado)
               <div class="alert alert-warning">
-                <p>Este cuestionario ya ha sido diligenciado por uno o más usuarios, para realizar modificaciones genere una nueva versión desde el Panel de Dimensiones.</p>
+                <p>Este cuestionario ya ha sido diligenciado por uno o más usuarios, para realizar modificaciones genere una nueva versión desde el Panel de Cuestionarios</p>
               </div>
               @endif
                 <div class="form-group">

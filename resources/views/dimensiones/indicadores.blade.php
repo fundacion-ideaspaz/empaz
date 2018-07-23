@@ -21,7 +21,7 @@
      ?>
 
     @if($flag === "t")
-    <p>Para modificar el nivel de importancia del indicador asignado debe eliminar el indicador, seleccionar el nuevo valor de importancia, y agregar nuevamente el indicador al cuestionario.</p>
+    <p>Para modificar el nivel de importancia del indicador asignado debe eliminar el indicador de la lista de indicadores asignados, seleccionar el nuevo valor de importancia, y agregar nuevamente el indicador al cuestionario.</p>
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>

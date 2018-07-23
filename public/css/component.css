@@ -94,7 +94,7 @@
 	display: block;
 	margin-bottom: 1em;
 	color: black;
-	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registrar la información en la plataforma.'!important;
+	content: 'Estas son las respuestas que usted seleccionó en cada pregunta de la herramienta EmPaz. Si es necesario, usted puede rectificar sus respuestas antes de registrar la información en la plataforma. Si quiere salir de la sesión antes de haber diligenciado todo el formulario, debe presionar el botón Guardar para registrar las respuestas a las preguntas que usted ha contestado hasta ahora.'!important;
 	font-weight: 150;
 	font-size: 0.9em;
 	font-family: 'Roboto Slab', serif;

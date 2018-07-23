@@ -109,7 +109,7 @@ header{
 }
 
 a.descripcion.tip {
-    text-decoration: none;
+    /* text-decoration: none; */
 		text-transform: none!important;
 		z-index: 2001;
 }
@@ -136,19 +136,19 @@ a.descripcion.tip:hover span {
 	white-space: pre-line;
 	color: black;
 	text-align:left;
-	font-family: arial;
+	/* font-family: sans-serif; */
 	font-size: 0.9em;
 	overflow-y: auto;
 }
 
 .info-cuestionario span{
 	font-size: 0.35em!important;
-	line-height: 1.05em!important;
+	line-height: 1.1em!important;
 	z-index: 100;
 }
 
 .fs-form-overview .info-cuestionario span{
-	font-size: 0.5em!important;
+	font-size: 0.6em!important;
 }
 
 a:hover{
@@ -231,13 +231,13 @@ a{
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
   	font-weight: 300;
 }
 
 @media screen and (max-width: 1200px) {
 	.navbar-light .navbar-nav .nav-link {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 }
 
@@ -1138,7 +1138,7 @@ body.tablero{
     font-size: 12px;
     position: fixed;
     bottom: 10px;
-    left: 25%;
+    left: 34%;
 }
 
 .dnone{
