@@ -26,6 +26,11 @@ class ResponderController extends Controller
         if ($cuestionario->estado === 'inactivo') {
             return redirect('/responder');
         }
+        //Check if the user has already a profile
+        if(!Auth::user()->empresa){
+          return redirect('/profile/empresa')->with('warning', 'Debe diligenciar la información de su empresa previo a diligenciar la herramienta.');
+        }
+
         //Check if the user owns the cuestionario
         $cuestionario_result = $cuestionario->get_response();
 

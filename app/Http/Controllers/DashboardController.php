@@ -123,6 +123,10 @@ class DashboardController extends Controller
         $puntajeDimensiones = $cuestResult->puntajeDimensiones($arrayPorcentajeDimension, $cuestionario_id, $dimensiones, $indicadores, $indicadoresCuest, $puntajeIndicadores);
         $rCuestionario = round($cuestResult->puntajeCuestionario($puntajeDimensiones), 0);
 
+        //Add value to database
+        $cuestResult->value = $rCuestionario;
+        $cuestResult->save();
+
         $i = 0;
         foreach ($puntajeIndicadores as $rindicador) {
           $puntajeIndicadores[$i] = intval($rindicador * 100);

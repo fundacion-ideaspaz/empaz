@@ -6,7 +6,8 @@
 
         {{ csrf_field() }}
         @foreach($cuestionario->allPreguntas($cuestionario->id) as $key=>$pregunta)
-          @component('components/preguntafilled',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id, 'respuesta' => $respuestas[$key]])
+          @component('components/preguntafilled',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id,
+                                                  'respuesta' => $respuestas[$key], 'key' => $key+1])
           @endcomponent
         @endforeach
         <div class="from-group">
