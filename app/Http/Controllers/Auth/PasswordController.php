@@ -42,13 +42,13 @@ class PasswordController extends Controller
      * @return array
      */
 
-    protected function getResetValidationRules()
-    {
-        return [
-            'password' => 'required|confirmed|min:8',
-        ];
-
-    }
+    // protected function getResetValidationRules()
+    // {
+    //     return [
+    //         'password' => 'required|confirmed|min:8',
+    //     ];
+    //
+    // }
 
     /**
      * Get the password reset validation messages.
