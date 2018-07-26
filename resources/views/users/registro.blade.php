@@ -36,8 +36,14 @@
 
         </ol>
           <div class="fs-submit terminos">
-            <input type="checkbox" name="terminos" value="terminos" oninvalid="this.setCustomValidity('Debe aceptar los términos para continuar su registro.')" oninput="this.setCustomValidity('')" required>
-            <p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a></p>
+            <div class="row">
+            <div class="col-sm-1">
+              <input type="checkbox" name="terminos" value="terminos" oninvalid="this.setCustomValidity('Debe aceptar los términos para continuar su registro.')" oninput="this.setCustomValidity('')" required>
+            </div>
+            <div class="col-sm-11">
+            <p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma y el aviso de privacidad de protección de datos personales. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a>.</p>
+          </div>
+        </div>
           </div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
           @if ($errors->any())
