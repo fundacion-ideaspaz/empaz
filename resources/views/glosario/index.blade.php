@@ -1,4 +1,7 @@
 @extends('layouts.master') @section('title', 'Glosario') @section('content')
+<!-- Caffeine -->
+<meta name="caffeinated" content="false">
+
 <div class="row">
 <div class="col-12 card">
   <div class="row">

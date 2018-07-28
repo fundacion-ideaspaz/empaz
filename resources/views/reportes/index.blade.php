@@ -1,4 +1,8 @@
 @extends('layouts.masterTablero') @section('title', 'Informe de diagnóstico') @section('content')
+
+<!-- Caffeine -->
+<meta name="caffeinated" content="false">
+
 <script type="text/javascript">
 
     FusionCharts.ready(function () {

@@ -1,5 +1,8 @@
 @extends('layouts.master') @section('title', 'Archivos') @section('content')
 
+<!-- Caffeine -->
+<meta name="caffeinated" content="false">
+
 <div class="row">
 <div class="col-12 card">
 

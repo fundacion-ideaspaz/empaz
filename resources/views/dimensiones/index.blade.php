@@ -1,4 +1,8 @@
 @extends('layouts.master') @section('title', 'Panel de Dimensiones') @section('content')
+
+<!-- Caffeine -->
+<meta name="caffeinated" content="false">
+
 <div class="row">
   <div class="col-12 card">
     <div class="card-body">

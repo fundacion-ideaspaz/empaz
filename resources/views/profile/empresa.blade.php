@@ -1,4 +1,8 @@
 @extends('layouts.master') @section('title', 'Perfil de la Empresa') @section('content')
+
+<!-- Caffeine -->
+<meta name="caffeinated" content="false">
+
 <div class="row indicadores-form">
     <div class="card col-12">
         <div class="card-body">
