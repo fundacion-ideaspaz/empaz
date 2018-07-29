@@ -31,6 +31,7 @@
           @endforeach
         </tbody>
       </table>
+      <p style="font-size: 0.8em;"> <strong>Nota</strong>: Para la correcta visualización del cuestionario, se recomienda ingresar desde un computador de escritorio o portátil.</p>
     </div>
   </div>
 </div>

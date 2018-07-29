@@ -119,7 +119,7 @@
 		this._showCtrl( this.ctrlContinue );
 
 		//jump to overview buttom
-		this.ctrlJump = createElement( 'button', { cName : 'fs-jump', inner : 'Ir a confirmar respuestas', appendTo : this.ctrls} );
+		this.ctrlJump = createElement( 'button', { cName : 'fs-jump', inner : 'Ir a resumen', appendTo : this.ctrls} );
 		this._showCtrl( this.ctrlJump );
 
 		// navigation dots

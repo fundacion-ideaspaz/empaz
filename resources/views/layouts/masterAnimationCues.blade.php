@@ -73,7 +73,7 @@
                                   <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
                               @endif
                               @if(Auth::user()->role != 'consulta')
-                              <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>EmPaz</a>
+                              <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>Cuestionario EmPaz</a>
                               @endif
                               @if(Auth::user()->role != 'empresa')
                               <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
@@ -94,9 +94,9 @@
   </header>
   <div>
     @yield('content')
-    <span class="alerta-r">
-      <p>Al finalizar el cuestionario y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga click sobre el botón <strong>Ir a confirmar respuestas</strong> para guardar el cuestionario o click sobre este cuadro para cerrarlo y continuar.</p>
-    </span>
+    <!-- <span class="alerta-r">
+      <p>Al finalizar el cuestionario y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga clic sobre el botón <strong>Ir a confirmar respuestas</strong> y luego <strong>Guardar</strong> para guardar el cuestionario o clic sobre este cuadro para cerrarlo y continuar.</p>
+    </span> -->
   </div>
 <footer>
   <div class="row">

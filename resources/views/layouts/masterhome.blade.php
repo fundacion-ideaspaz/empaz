@@ -78,7 +78,7 @@
                       <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
                   @endif
                   @if(Auth::user()->role != 'consulta')
-                  <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>EmPaz</a>
+                  <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>Cuestionario EmPaz</a>
                   @endif
                   @if(Auth::user()->role === 'consulta' || Auth::user()->role === 'superadmin')
                   <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>
@@ -109,13 +109,15 @@
       <div class="back-ground">
       <div class="home-text">
         <h2>¡Bienvenido a EmPaz!</h2>
-        <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva, y está dirigida a empresas de cualquier tamaño y sector. </h4>
-        <h4>Diligenciar EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos.</h4>
-        <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales.</h4>
+        <h4>Esta herramienta, desarrollada por la <strong>Fundación Ideas para la Paz (FIP)</strong> y la <strong>Cámara de Comercio de Bogotá (CCB)</strong>, mide los aportes empresariales a la construcción de paz. Es gratis, interactiva y está dirigida a empresas de cualquier tamaño y sector. </h4>
+        <h4>Diligenciar la herramienta EmPaz le permitirá contestar preguntas sobre diversos aspectos relacionados con la paz y la prevención de conflictos desde la operación comercial y la inversión social de su empresa. Los resultados obtenidos son presentados en un informe de diagnóstico con algunas recomendaciones para mejorar sus aportes a este propósito, acorde a su nivel de cumplimiento de los indicadores de medición establecidos. </h4>
+        <h4>Completar la evaluación le llevará alrededor de 1 a 2 horas, si tiene toda la información disponible. El registro de los datos de su empresa y los resultados de la evaluación son estrictamente confidenciales. Regístrese ya y diligencie el cuestionario.</h4>
       </div>
     </div>
       @if(!Auth::user())
-      <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
+      <div class="registrarse">
+        <a href="/registro" class="btn-registro"><i class="fa fa-user-plus" aria-hidden="true"></i> REGISTRARSE</a>
+      </div>
       @endif
       <div class="flecha">
         <a class="" href="#section02"><img src="img/flecha-ini.svg" style="height: 50px; width: 50px;"></a>
@@ -156,16 +158,15 @@
     <div class="col-md-7">
       <div class="text">
         <h3>Empresas y paz: un buen negocio</h3>
-
-        <h4>Las empresas sostenibles prosperan en entornos estables y pacíficos. Estos entornos eliminan los costos directos e indirectos de la violencia, mejoran la calidad de los mercados, aumentan los rendimientos financieros y favorecen la atracción de capital de inversión. Por esto, apostarle a la paz no solo significa hacer un aporte al bienestar de la sociedad: es un buen negocio.</h4>
-        <h4>Aplicar EmPaz le permite a su empresa:</h4>
+        <h4>Las empresas sostenibles prosperan en entornos estables y pacíficos. Estos entornos eliminan los costos directos e indirectos de la violencia, mejoran la calidad de los mercados, aumentan los rendimientos financieros y favorecen la atracción de capital de inversión. Por esto, apostarle a la paz no solo significa hacer un aporte al bienestar de la sociedad: es un buen negocio. </h4>
+        <h4>Aplicar la herramienta EmPaz le permite a su empresa:</h4>
 
         <ul>
-        <li>Identificar fortalezas y oportunidades de mejora para la construcción de paz en su área de influencia.</li>
+        <li>Identificar fortalezas y oportunidades de mejora para la prevención de la violencia y la construcción de paz en su área de influencia.</li>
         <li>Realizar un proceso de autoevaluación y aprendizaje interno para el mejoramiento continuo de la gestión.</li>
         <li>Obtener insumos para la toma de decisiones a nivel estratégico y operativo.</li>
-        <li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de conflictos de su organización.</li>
-        <li>Visibilizar ante sus grupos de interés internos y externos, oportunidades y resultados de su empresa en la construcción de paz.</li>
+        <li>Mejorar la capacidad de análisis y gestión de riesgos económicos, sociales, en derechos humanos y prevención de violencia y conflictos de su organización.</li>
+        <li>Visibilizar ante sus grupos de interés internos y externos, oportunidades y resultados de su empresa en la prevención de violencia y construcción de paz.</li>
         </ul>
       </div>
     </div>

@@ -9,6 +9,8 @@
       <?php
        ?>
       <ol class="fs-fields">
+        @component('components/instructions')
+        @endcomponent
         @foreach($cuestionario->allPreguntas() as $index => $pregunta)
           @component('components/preguntafield',['pregunta' => $pregunta, 'cuest_id' => $cuestionario->id, 'index' => $index+1])
           @endcomponent

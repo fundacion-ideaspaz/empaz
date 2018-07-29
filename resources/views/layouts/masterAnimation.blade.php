@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/css/bootstrap-slider.css">
-  <link rel="shortcut icon" href="favicon.ico"/> 
+  <link rel="shortcut icon" href="favicon.ico"/>
   <link href="/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -73,7 +73,7 @@
                                 <a class="dropdown-item" href="/files"><i class="dropdown-icon fa fa-copy" aria-hidden="true"></i></i>Archivos</a>
                             @endif
                             @if(Auth::user()->role != 'consulta')
-                            <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>EmPaz</a>
+                            <a class="dropdown-item" href="/responder"><i class="dropdown-icon fa fa-briefcase" aria-hidden="true"></i>Cuestionario EmPaz</a>
                             @endif
                             @if(Auth::user()->role != 'empresa')
                             <a class="dropdown-item" href="/dashboard"><i class="dropdown-icon fa fa-tachometer" aria-hidden="true"></i>Resultados</a>

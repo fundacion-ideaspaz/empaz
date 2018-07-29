@@ -141,6 +141,27 @@ a.descripcion.tip:hover span {
 	overflow-y: auto;
 }
 
+.instructions-box{
+	max-height: 80%;
+	overflow-y: auto;
+}
+
+.instructions{
+	font-size: 0.35em!important;
+}
+
+.fs-form-overview .instructions{
+	display: none;
+}
+
+.instructions-title{
+	font-size: 0.4em!important;
+}
+
+.fs-form-overview .instructions-title{
+	display: none;
+}
+
 .info-cuestionario span{
 	font-size: 0.35em!important;
 	line-height: 1.1em!important;
@@ -192,6 +213,7 @@ nav .row{
 
 nav a{
     color: #fff!important;
+		font-weight: 500!important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -229,7 +251,7 @@ a{
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #fff;
+    color: #021a16;
     text-transform: uppercase;
     font-size: 1.1vw;
   	font-weight: 300;
@@ -374,7 +396,8 @@ header.master{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1em;
-    display: inline-block;
+		display: table-cell;
+		vertical-align: middle;
 }
 
 #slide1 {
@@ -606,20 +629,23 @@ left: 0;
 	padding-right: 10vw;
 }
 
-
- .content-text .text h2{
-	font-size: 2.3vw;
+.registrarse{
+	display: inline-block;
 }
 
-.content-text .text h4{
-	font-size: 1.15vw;
+.text h2{
+	font-size: 2.2vw;
+}
+
+.text h4{
+	font-size: 1.1vw;
 }
 
 @media screen and (max-width: 1200px) {
-	.content-text .text h4{
+	.text h4{
 		font-size: 0.9em;
 	}
-	.content-text .text h2{
+	.text h2{
 	 font-size: 1.4em;
  }
 }
@@ -697,6 +723,10 @@ left: 0;
   padding-top: 120px;
   padding-bottom: 40px;
   min-height: calc(100vh - 99px);
+}
+
+.registro-cuestionario .fs-jump{
+	display: none;
 }
 
 .r-cuestionario .fs-fields > li label.fs-field-label {
@@ -778,6 +808,7 @@ left: 0;
     position: relative;
     width: 94%;
     color: #383633;
+		font-size: 13px;
 }
 
 .card{
@@ -1124,7 +1155,7 @@ body.tablero{
     border: 1px solid #f2f2f2;
 }
 
-.alerta-r{
+/* .alerta-r{
     display: block;
     width: 40%;
     color: #5a5a5a;
@@ -1138,7 +1169,7 @@ body.tablero{
     position: fixed;
     bottom: 10px;
     left: 34%;
-}
+} */
 
 .dnone{
     display: none;
