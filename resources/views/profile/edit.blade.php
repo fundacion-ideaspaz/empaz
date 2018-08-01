@@ -100,7 +100,7 @@ function platformSlashes($path) {
 
                     <div class="form-group  col-md-6">
                         <label for="tamano">Tamaño de la Empresa</label>
-                          <a class="descripcion tip" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                          <a class="descripcion tip pull-right" data-placement="bottom" href="#" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span>1. Microempresa: planta de personal no superior a los diez (10) trabajadores y activos totales excluida la vivienda por valor inferior a quinientos (500) salarios mínimos mensuales legales vigentes.
                             2. Pequeña empresa: planta de personal entre once (11) y cincuenta (50) trabajadores y activos totales por valor entre quinientos uno (501) y menos de cinco mil (5.000) salarios mínimos mensuales legales vigentes.
                             3. Mediana empresa: planta de personal entre cincuenta y uno (51) y doscientos (200) trabajadores y activos totales por valor entre cinco mil uno (5.001) a treinta mil (30.000) salarios mínimos mensuales legales vigentes.

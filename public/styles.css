@@ -135,8 +135,8 @@ a.descripcion.tip:hover span {
   z-index: 100;
 	background-color:rgb(255,255,255);
   margin: 10px;
-	min-width: 350px;
-	max-width: 400px;
+	min-width: 330px;
+	max-width: 350px;
 	max-height: 300px;
   position: absolute;
   top: 0px;
