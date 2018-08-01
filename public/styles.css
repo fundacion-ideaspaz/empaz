@@ -735,7 +735,7 @@ left: 0;
 	/* display: none; */
 }
 
-.fs-nav-dots{
+.r-cuestionario .fs-nav-dots{
 	display: none;
 }
 
@@ -768,6 +768,10 @@ left: 0;
 }
 
 .registro-cuestionario .fs-jump{
+	display: none;
+}
+
+.registro-cuestionario .fs-numbers{
 	display: none;
 }
 

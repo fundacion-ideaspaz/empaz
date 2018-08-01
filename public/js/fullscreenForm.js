@@ -66,7 +66,7 @@
 		// show progress bar
 		ctrlProgress : true,
 		// show navigation dots
-		ctrlNavDots : false,
+		ctrlNavDots : true,
 		// show [current field]/[total fields] status
 		ctrlNavPosition : true,
 		// reached the review and submit step
@@ -139,7 +139,7 @@
 			this.ctrlFldStatus = createElement( 'span', { cName : 'fs-numbers', appendTo : this.ctrls } );
 
 			// current field placeholder
-			this.ctrlFldStatusCurr = createElement( 'span', { cName : 'fs-number-current', inner : Number( this.current + 1 ) } );
+			this.ctrlFldStatusCurr = createElement( 'span', { cName : 'fs-number-current', inner : Number( this.current ) } );
 			this.ctrlFldStatus.appendChild( this.ctrlFldStatusCurr );
 
 			// total fields placeholder
@@ -405,7 +405,8 @@
 			// first, create next field number placeholder
 			this.ctrlFldStatusNew = document.createElement( 'span' );
 			this.ctrlFldStatusNew.className = 'fs-number-new';
-			this.ctrlFldStatusNew.innerHTML = Number( this.current + 1 );
+			//Cambio importante
+			this.ctrlFldStatusNew.innerHTML = Number( this.current  );
 
 			// insert it in the DOM
 			this.ctrlFldStatus.appendChild( this.ctrlFldStatusNew );
