@@ -226,7 +226,7 @@
     @foreach($puntajeDimensiones as $i=>$dimension)
     <div class="card">
         <div class="card-header" role="tab" id="headingOne">
-            <span data-toggle="collapse" href="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{ $i }}">
+            <span data-toggle="collapse" data-target="#collapse{{$i}}" href="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{ $i }}">
                 <div class="row">
                     <div class="col-md-2 resultado-d" data-dime="{{$dimension}}" onload="color_dimension_squares()">
                         {{ $dimension }}%
