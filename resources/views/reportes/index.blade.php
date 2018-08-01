@@ -191,6 +191,9 @@
         <h5>Resultado por dimensiones</h5>
       </div>
         <div class="card-body">
+          <div id="chart-error">
+            <p class="report-text"> <strong>Atención</strong>: no es posible visualizar esta gráfica usando este dispositivo. Para obtener esta información vea el "Resultado detallado por dimensiones" más adelante, de lo contrario consulte este informe usando un computador de escritorio o portátil.</p>
+          </div>
           <div id="chart-container2">FusionCharts will render here</div>
         </div>
     </div>
