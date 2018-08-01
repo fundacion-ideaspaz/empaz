@@ -783,7 +783,7 @@ left: 0;
 
 @media screen and (max-width: 30em) {
 	.r-cuestionario .cs-skin-boxes .cs-options li {
-		height: auto;
+		height: auto!important;
 	}
 	.cs-skin-boxes .cs-options ul {
 		padding-left: 10px!important;
