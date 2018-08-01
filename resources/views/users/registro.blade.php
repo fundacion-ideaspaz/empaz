@@ -2,7 +2,7 @@
   <div class="fs-form-wrap registro-cuestionario" id="fs-form-wrap">
     <div class="fs-title">
       <h2>Crear Usuario</h2>
-      </div>
+    </div>
       <form action="/registro" method="post" id="myform" class="fs-form fs-form-full" autocomplete="off">
         {{ csrf_field() }}
         <input type="hidden" name="role" value="empresa" id="role" value="{{$role}}">

@@ -20,8 +20,13 @@ main {
 }
 
 h1, h2, h3, h4, h5{
-
     font-family: 'Roboto Slab', serif;
+}
+
+@media (max-width:850px) {
+	h2 {
+		font-size: 1.7em;
+	}
 }
 
 strong {
@@ -142,20 +147,31 @@ a.descripcion.tip:hover span {
 }
 
 .instructions-box{
-	max-height: 60%;
 	overflow-y: auto;
+	max-height: 300px;
+	width: 100%;
+	z-index: 0;
+}
+
+.instructions-title{
+	font-size: 0.4em;
 }
 
 .instructions{
-	font-size: 0.35em!important;
+	font-size: 0.35em;
+}
+
+@media (max-width:850px) {
+	.instructions-title{
+		font-size: 0.8em!important;
+	}
+	.instructions{
+		font-size: 0.6em!important;
+	}
 }
 
 .fs-form-overview .instructions{
 	display: none;
-}
-
-.instructions-title{
-	font-size: 0.4em!important;
 }
 
 .fs-form-overview .instructions-title{
@@ -670,7 +686,6 @@ left: 0;
 	text-align: center;
 }
 
-
 .registro-exitoso{
     border: 1px solid #00aabf!important;
     background: rgba(0, 170, 191, 0.19);
@@ -729,6 +744,20 @@ left: 0;
 	display: none;
 }
 
+@media (max-width:850px) {
+	 .fs-continue {
+		overflow: hidden;
+	}
+	 button.fs-jump {
+		overflow: hidden;
+		content: 'Ir';
+	}
+}
+
+.registro-cuestionario .fs-form-overview .fs-submit {
+	margin-bottom: 30px;
+}
+
 .r-cuestionario .fs-fields > li label.fs-field-label {
     display: inline-block;
     padding: 0 5px 1em 0;
@@ -750,6 +779,21 @@ left: 0;
   .r-cuestionario .cs-skin-boxes > span {
     font-size: 0.6em;
     font-weight: 400;
+}
+
+@media screen and (max-width: 30em) {
+	.r-cuestionario .cs-skin-boxes .cs-options li {
+		height: auto;
+	}
+	.cs-skin-boxes .cs-options ul {
+		padding-left: 10px!important;
+	}
+	.js .fs-form-full .fs-fields > li {
+		width: 90vw!important;
+	}
+	.info-cuestionario span{
+		font-size: 0.55em!important;
+	}
 }
 
 .r-cuestionario .fs-numbers {
@@ -846,7 +890,6 @@ label {
     margin-bottom: .5rem;
     font-family: 'Roboto Slab', serif;
     color: #999;
-		font-size: 1.5vw;
 }
 
 .container h1, .container h2{

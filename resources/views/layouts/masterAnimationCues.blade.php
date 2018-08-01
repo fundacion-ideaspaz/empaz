@@ -92,12 +92,7 @@
           </div>
     </nav>
   </header>
-  <div>
     @yield('content')
-    <!-- <span class="alerta-r">
-      <p>Al finalizar el cuestionario y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario. Haga clic sobre el botón <strong>Ir a confirmar respuestas</strong> y luego <strong>Guardar</strong> para guardar el cuestionario o clic sobre este cuadro para cerrarlo y continuar.</p>
-    </span> -->
-  </div>
 <footer>
   <div class="row">
     <div class="col-md-6"></div>

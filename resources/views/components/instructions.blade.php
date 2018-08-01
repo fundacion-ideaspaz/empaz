@@ -1,6 +1,4 @@
 <li data-input-trigger>
-  <div class="row">
-  <div class="col-sm-12">
       <div class="instructions-box">
         <label class="fs-anim-upper instructions-title">Instrucciones para diligenciar el cuestionario:</label>
         <label class="fs-anim-upper instructions">
@@ -15,6 +13,4 @@
           <p>Si es necesario, usted podrá salir de la plataforma para volver a diligenciar el cuestionario en otro momento. Recuerde que en este caso es importante en la página de Confirmar respuestas, presionar el botón Guardar para que la herramienta guarde el formulario con las respuestas diligenciadas hasta el momento, para su siguiente sesión (nota que sin guardar, se perderán las respuestas seleccionadas). </p>
         </label>
       </div>
-    </div>
-  </div>
 </li>

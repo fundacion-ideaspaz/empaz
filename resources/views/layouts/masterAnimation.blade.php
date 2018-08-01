@@ -92,9 +92,7 @@
         </div>
   </nav>
 </header>
-  <div>
     @yield('content')
-  </div>
 <footer>
   <div class="row">
     <div class="col-md-6"></div>

@@ -289,10 +289,6 @@ div.cs-skin-boxes:focus > span {
 	letter-spacing: 1px;
 }
 
-@media screen and (max-width: 30em) {
-	.cs-skin-boxes .cs-options span { display: none; }
-}
-
 .cs-skin-boxes .cs-options li span:hover,
 .cs-skin-boxes li.cs-focus span,
 .cs-skin-boxes li.cs-selected span {
