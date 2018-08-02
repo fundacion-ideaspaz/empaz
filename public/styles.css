@@ -53,15 +53,12 @@ section ul li{
 	max-height: 30vh;
 }
 
-
-
 h4{
 	font-size: 1.1em;
     font-weight: 200;
     margin-bottom: 4vh;
     line-height: 1.5em;
 }
-
 
 section ul li{
     font-size: 1.2em;
@@ -168,20 +165,7 @@ a.descripcion.tip:hover span {
 	font-size: 0.35em;
 }
 
-@media (max-width:850px) {
-	.instructions-title{
-		font-size: 0.8em!important;
-	}
-	.instructions{
-		font-size: 0.6em!important;
-	}
-}
-
-.fs-form-overview .instructions{
-	display: none;
-}
-
-.fs-form-overview .instructions-title{
+.fs-form-overview .instructions-box{
 	display: none;
 }
 

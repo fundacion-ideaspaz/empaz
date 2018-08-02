@@ -272,7 +272,7 @@
 					classie.add( self.formEl, 'fs-show' );
 					// callback
 					self.options.onReview();
-				self.isAnimating = false;
+					self.isAnimating = false;
 			};
 
 			onEndAnimationFn();

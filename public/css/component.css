@@ -101,7 +101,7 @@
 }
 
 /* Switch view animation (we hide the current view, switch the view class and show it again) */
-.fs-form.fs-show {
+.fs-form .fs-show {
 	-webkit-animation: animFadeIn 0.5s;
 	animation: animFadeIn 0.5s;
 }
@@ -116,7 +116,7 @@
 	100% { opacity: 1; }
 }
 
-.fs-form.fs-show .fs-fields {
+.fs-form .fs-show .fs-fields {
 	-webkit-animation: animMove 0.5s;
 	animation: animMove 0.5s;
 }
@@ -146,7 +146,7 @@ button.fs-jump,
 }
 
 .fs-show {
-	visibility: visible !important;
+	visibility: visible!important;
 }
 
 /* Some general styles */
@@ -177,10 +177,6 @@ button.fs-jump,
 	padding: 0;
 	top: 0;
 	list-style: none;
-}
-
-.fs-form-overview ol {
-	max-width: ;
 }
 
 .fs-fields > li {
