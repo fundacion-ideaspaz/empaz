@@ -16,22 +16,14 @@
           @endcomponent
         @endforeach
       </ol>
-      <div class="fs-submit table-row">
-        <div class="col-md-3" style="display: table-cell;">
+      <div class="center-content fs-submit" style="position: relative;">
           <a href="/responder/{{$cuestionario->id}}" class="btn btn-danger">Limpiar</a>
-        </div>
         @if(Auth::user()->role === 'superadmin' ||Auth::user()->role === 'experto')
-        <div class="col-md-3" style="display: table-cell;">
           <a class="btn btn-warning" href="/responder">Volver</a>
-        </div>
         @endif
         @if(Auth::user()->role === 'empresa')
-        <div class="col-md-3" style="display: table-cell;">
           <input type="submit" class="btn btn-primary" value="guardar" id="save_button">
-        </div>
-        <div class="col-md-3" style="display: table-cell;">
           <input type="submit" class="btn btn-success btn-small" value="enviar" onclick="validate_fields();" title="Todas las preguntas deben tener una respuesta asginada para enviar.">
-        </div>
         @endif
       </div>
         @if ($errors->any())

@@ -43,9 +43,9 @@
             <div class="col-sm-11">
             <p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma y el aviso de privacidad de protección de datos personales. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a>.</p>
           </div>
-        </div>
           </div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>
+          </div>
           @if ($errors->any())
           <div class="alert alert-danger empre">
               @foreach ($errors->all() as $error)

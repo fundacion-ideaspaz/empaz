@@ -186,13 +186,13 @@ a.descripcion.tip:hover span {
 }
 
 .info-cuestionario span{
-	font-size: 0.35em!important;
+	font-size: 0.35em;
 	line-height: 1.1em!important;
 	z-index: 100;
 }
 
 .fs-form-overview .info-cuestionario span{
-	font-size: 0.6em!important;
+	font-size: 0.6em;
 }
 
 a:hover{
@@ -822,9 +822,10 @@ left: 0;
 	.js .fs-form-full .fs-fields > li {
 		width: 90vw!important;
 	}
-	.info-cuestionario span{
-		font-size: 0.55em!important;
+	a.descripcion.tip:hover span{
+		min-width: 280px;
 	}
+
 }
 
 .r-cuestionario .fs-numbers {
