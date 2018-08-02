@@ -26,6 +26,7 @@ class CuestionarioResult extends Model
             $i++;
         }
 
+
         $i = $j = 0;
         foreach ($indicadores as $indicador) {
             $j = 0;
@@ -43,6 +44,8 @@ class CuestionarioResult extends Model
             }
             $i++;
         }
+
+
         $i = $j = 0;
         foreach ($indicadores as $indicador) {
             $j = 0;

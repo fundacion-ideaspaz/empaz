@@ -6,6 +6,7 @@ use App\Cuestionario;
 use App\CuestionarioResult;
 use App\Dimension;
 use App\DimensionCuestionario;
+use App\IndicadoresPreguntas;
 use App\Enunciado;
 use App\Indicador;
 use App\IndicadoresDimensiones;
@@ -60,10 +61,21 @@ class DashboardController extends Controller
         $cuestionario_id = $cuestResult->cuestionario_id;
         $preguntasCuest = RespuestaCuestionario
             ::where("cuestionario_id", "=", $cuestionario_id)
-            ->where("cuestionario_result_id", "=", $cuest_id)
-            ->get();
+            ->where("cuestionario_result_id", "=", $cuest_id)->get();
         $preguntasIds = $preguntasCuest->pluck("pregunta_id");
-        $preguntas = Pregunta::whereIn("id", $preguntasIds)->get();
+
+        $preguntas = IndicadoresPreguntas::select(
+                "preguntas.id",
+                "preguntas.nombre",
+                "preguntas.descripcion",
+                "preguntas.estado",
+                "preguntas.tipo_respuesta",
+                "preguntas.created_at",
+                "preguntas.updated_at",
+                "indicador_pregunta.order")->whereIn("preguntas.id", $preguntasIds)
+                ->where("cuestionario_id", "=", $cuestionario_id)
+                ->leftJoin('preguntas', 'preguntas.id', '=', 'indicador_pregunta.pregunta_id')->get();
+
         $indicadoresCuest = IndicadoresDimensiones
             ::where("cuestionario_id", "=", $cuestionario_id)->get();
         $indicadoresIds = $indicadoresCuest->pluck("indicador_id");
@@ -109,7 +121,6 @@ class DashboardController extends Controller
             ->orderBy('cuestionarios_dimensiones.importancia', 'desc')->get();
 
         $puntajeIndicadores = $cuestResult->puntajeIndicadores($cuestionario_id, $preguntas, $indicadores, $preguntasCuest);
-
 
         $enunciados = array_fill(0, $dimensiones->count(), 0);
         $arrayPorcentajeDimension = array_fill(0, $dimensiones->count(), 0);
