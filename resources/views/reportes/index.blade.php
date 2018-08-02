@@ -70,7 +70,7 @@
             dataSource: {
             "chart": {
             "captionFontSize": "14",
-                    "legendPadding": "-20",
+                    "legendPadding": "10",
                     "chartTopMargin": "20",
                     "plotToolText": "$label",
                     "subcaptionFontSize": "14",
