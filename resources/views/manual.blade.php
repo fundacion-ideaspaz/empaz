@@ -24,9 +24,7 @@
 <p>Si usted tiene toda la información relativa a los temas de las preguntas a la mano, diligenciar la herramienta EmPaz puede demorar entre una y dos horas.</p>
 <p>Usted puede guardar las preguntas que ha contestado y, de ser necesario, salir de la plataforma para volver a diligenciar el cuestionario en otro momento. Para esto, después de ingresar de nuevo, en el panel de cuestionarios de EmPaz presione el botón "Ir a preguntas".</p>
 
-<p>Para más información y detalles sobre la metodología de medición, ver el <a href="/pdfs/ManualEMPAZ.pdf" target="_blank">Manual de usuario</a>. </p>
-
-<p>Si desea conocer más sobre las bases conceptuales de la herramienta EmPaz como, por ejemplo, las dimensiones de intervención empresarial para construir paz y los indicadores de medición, consulte la <a href="#">Guía Acerca de EmPaz</a>.</p>
+<p>Para más información y detalles sobre la metodología de medición y las bases conceptuales de la herramienta EmPaz, como, por ejemplo, las dimensiones de intervención empresarial para construir paz, ver el <a href="/pdfs/ManualEMPAZ.pdf" target="_blank">Manual de usuario</a>. </p>
 
 </div></div></div>
 @endsection
