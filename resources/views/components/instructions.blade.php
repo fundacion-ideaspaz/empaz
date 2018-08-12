@@ -9,7 +9,7 @@
 
           <p>Todas las preguntas son de respuesta obligatoria. Solo cuando usted ha constado el cuestionario completo, puede enviarlo para que la herramienta EmPaz genere su informe de diagnóstico con recomendaciones. </p>
           <p>Al finalizar el cuestionario y antes de enviarlo para evaluación, usted podrá rectificar sus respuestas y editarlas si es necesario.</p>
-          <p>En cualquier momento del cuestionario usted podrá usar el botón Ir a confirmar respuestas para acceder al resumen del cuestionario. Desde aquí usted podrá Guardar sus respuestas o Limpiar las respuestas.</p>
+          <p>En cualquier momento del cuestionario usted podrá usar el botón "Ir a resumen" para acceder al resumen del cuestionario. Desde aquí usted podrá Guardar sus respuestas o Limpiar las respuestas.</p>
           <p>Si es necesario, usted podrá salir de la plataforma para volver a diligenciar el cuestionario en otro momento. Recuerde que en este caso es importante en la página de Confirmar respuestas, presionar el botón Guardar para que la herramienta guarde el formulario con las respuestas diligenciadas hasta el momento, para su siguiente sesión (nota que sin guardar, se perderán las respuestas seleccionadas). </p>
         </label>
       </div>
