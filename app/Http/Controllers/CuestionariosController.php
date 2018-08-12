@@ -88,12 +88,12 @@ class CuestionariosController extends Controller
             'descripcion.required' => 'El campo descripción es requerido.',
         );
         $this->validate($request, $validations, $messages);
+        $canEditEstado = $request["canEditEstado"];
         $inputs = $request->only(["descripcion", "estado"]);
-        $canEditEstado = $request->canEditEstado;
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
         $cuestionario->save();
-        if ($canEditEstado) {
+        if ($canEditEstado === "true") {
           return redirect("/cuestionarios/".$cuestionario->id."/dimensiones");
         } else {
           return redirect("/cuestionarios");

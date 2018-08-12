@@ -31,7 +31,9 @@
                         <option value="activo" @if($cuestionario->estado === "activo") selected @endif>Activo</option>
                         <option value="inactivo" @if($cuestionario->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>
-                    <select name="canEditEstado" value="{{$canEditEstado}}" hidden></select>
+                    <select name="canEditEstado" class="form-control" hidden>
+                      <option value="{{ $canEditEstado ? 'true' : 'false'}}" selected></option>
+                    </select>
                 </div>
                 <div class="from-group">
                   <a class="btn btn-warning" href="/cuestionarios">
