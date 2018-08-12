@@ -31,13 +31,16 @@
                         <option value="inactivo" @if($cuestionario->estado === "inactivo") selected @endif>Inactivo</option>
                     </select>
                 </div>
+                <select name="canEditEstado" value="{{$canEditEstado}}" hidden></select>
         </div>
         <div class="from-group">
             <a class="btn btn-warning" href="/cuestionarios">
               Atrás
             </a>
             @if($canEditEstado)
-            <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
+              <input type="submit" class="btn btn-primary pull-right" value="Siguiente">
+            @else
+              <input type="submit" class="btn btn-primary pull-right" value="Guardar">
             @endif
         </div>
         </form>

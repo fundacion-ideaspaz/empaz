@@ -41,7 +41,7 @@
               <input type="checkbox" name="terminos" value="terminos" oninvalid="this.setCustomValidity('Debe aceptar los términos para continuar su registro.')" oninput="this.setCustomValidity('')" required>
             </div>
             <div class="col-sm-11">
-            <p>Al registrarse usted está aceptando los términos y condiciones de uso de la plataforma y el aviso de privacidad de protección de datos personales. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a>.</p>
+            <p>Al registrarse, usted acepta nuestros términos de uso y nuestra política de privacidad para la protección de datos personales. <a href="/pdfs/TerminosCondicionesEMPAZ.pdf" target="_blank">Ver aquí</a>.</p>
           </div>
           </div>
           <button class="fs-submit" type="submit" class="btn btn-primary" value="Guardar">Guardar</button>

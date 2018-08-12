@@ -199,7 +199,7 @@
     </div>
 </div>
 <div class="row">
-  <p class="report-text">Para conocer su significado, por favor haga click en la dimensión: </p>
+  <p class="report-text">Para conocer su significado, por favor haga clic en la dimensión: </p>
 <ul class="nav nav-pills nav-justified w-100" id="pills-tab" role="tablist">
   @foreach($dimensiones as $idx => $dim)
   <li class="nav-item">
@@ -221,7 +221,7 @@
 
 <div class="content-blanco">
 <h5>Resultado detallado por dimensiones</h5>
-<!-- <p class="report-text">Haga click sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p> -->
+<!-- <p class="report-text">Haga clic sobre alguna de las dimensiones para desplegar el resultado por indicadores.</p> -->
 <div id="accordion" role="tablist">
     @foreach($puntajeDimensiones as $i=>$dimension)
     <div class="card">
@@ -235,7 +235,7 @@
                         <p>{{ $dimensiones[$i]->nombre }}: <strong>{{$niveles[$i]}} </strong></p>
                     </div>
                     <div class="col-md-7 report-text" style="display: flex; justify-content: center; flex-direction: column; overflow-y: auto">
-                      <p>{!! $eDimensiones[$i]->descripcion !!} <strong>Haga click</strong> sobre esta dimensión para ver resultado por indicadores.</p>
+                      <p>{!! $eDimensiones[$i]->descripcion !!} <strong>Haga clic</strong> sobre esta dimensión para ver resultado por indicadores.</p>
                     </div>
                 </div>
             </span>

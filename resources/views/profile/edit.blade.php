@@ -52,6 +52,9 @@ function platformSlashes($path) {
                                 }
                               }
                               fclose($file);
+
+                              setlocale(LC_ALL,'es_ES.UTF-8');
+                              sort($countries, SORT_LOCALE_STRING);
                           ?>
                             <option value="">Seleccione una opción</option>
                             @foreach($countries as $country)

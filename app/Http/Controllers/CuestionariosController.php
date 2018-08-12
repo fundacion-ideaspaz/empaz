@@ -89,10 +89,15 @@ class CuestionariosController extends Controller
         );
         $this->validate($request, $validations, $messages);
         $inputs = $request->only(["descripcion", "estado"]);
+        $canEditEstado = $request->canEditEstado;
         $cuestionario = Cuestionario::find($id);
         $cuestionario->update($inputs);
         $cuestionario->save();
-        return redirect("/cuestionarios/".$cuestionario->id."/dimensiones");
+        if ($canEditEstado) {
+          return redirect("/cuestionarios/".$cuestionario->id."/dimensiones");
+        } else {
+          return redirect("/cuestionarios");
+        }
     }
 
     public function getCopy($id)
