@@ -30,6 +30,9 @@ h1, h2, h3, h4, h5{
 	.content-blanco h2{
 		font-size: 5em;
 	}
+	.instructions-box{
+		font-size: 1.7em!important;
+	}
 }
 
 [data-toggle~="collapse"] {
@@ -145,7 +148,6 @@ a.descripcion.tip:hover span {
 	white-space: pre-line;
 	color: black;
 	text-align:left;
-	/* font-family: sans-serif; */
 	font-size: 0.9em;
 	overflow-y: auto;
 }
@@ -170,7 +172,7 @@ a.descripcion.tip:hover span {
 }
 
 .info-cuestionario span{
-	font-size: 0.35em;
+	font-size: 0.35em!important;
 	line-height: 1.1em!important;
 	z-index: 100;
 }
@@ -707,7 +709,11 @@ left: 0;
 }
 
 .fs-field-label{
-	font-size: 0.62em!important;
+	font-size: 0.62em;
+}
+
+.fs-form-overview .fs-field-label{
+	font-size: 0.8em;
 }
 
 .fs-fields input{
@@ -759,6 +765,14 @@ left: 0;
 	display: none;
 }
 
+.fs-numbers{
+	display: none;
+}
+
+.fs-jump{
+	display: none;
+}
+
 @media (max-width:850px) {
 	 .fs-continue {
 		overflow: hidden;
@@ -779,7 +793,6 @@ left: 0;
     font-weight: 700;
     pointer-events: none;
     color: #00aabf;
-    font-size: 0.7em;
 }
 
 .r-cuestionario .cs-select > span::after {
@@ -808,6 +821,10 @@ left: 0;
 	}
 	a.descripcion.tip:hover span{
 		min-width: 280px;
+	}
+	.info-cuestionario span{
+		font-size: 0.6em!important;
+		z-index: 100;
 	}
 
 }

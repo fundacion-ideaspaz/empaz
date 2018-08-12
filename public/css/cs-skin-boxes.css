@@ -6,17 +6,22 @@
 /* Custom select skin: fullscreen color picker (adjusted for fullscreen form) */
 div.cs-skin-boxes {
     background: transparent;
-    font-size: 0.65em;
-    font-weight: 700;
     max-width: 100%;
     z-index: 2000;
     color: #fff;
     padding: 20px;
     height: auto;
+    font-size: 0.6em;
+}
+
+.fs-form-overview .cs-skin-boxes{
+  font-size: 0.6em;
 }
 
 @media screen and (max-width: 30em) {
-	div.cs-skin-boxes { font-size: 1em; }
+	.cs-skin-boxes  { font-size: 0.8em!important; }
+  .fs-field-label { font-size: 0.7em; }
+	.fs-form-overview .fs-field-label { font-size: 0.9em; }
 }
 
 .cs-skin-boxes > span {

@@ -56,6 +56,12 @@
       }
     });
 
+    $(document).on("click", "#continuar", function() {
+      $("#numbers").css('display', 'block');
+      $(".instructions-box").css('display', 'none');
+      $(".fs-jump").css('display', 'block');
+    });
+
 
   </script>
 

@@ -24,23 +24,23 @@
                 </div>
                 <h4>Enunciados para la calificación</h4>
                 <div class="form-group">
-                    <label for="enunciados">Bajo (0-15%)</label>
+                    <label for="enunciados">Principiante (0-15%)</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{  old('enunciados.0')  }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Medio bajo (16-40%)</label>
+                    <label for="enunciados">Básico (16-40%)</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control"> {{  old('enunciados.1')  }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Medio (41-60%)</label>
+                    <label for="enunciados">Intermedio (41-60%)</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" > {{  old('enunciados.2')  }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Medio alto (61-85%)</label>
+                    <label for="enunciados">Avanzado (61-85%)</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control" >{{  old('enunciados.3')  }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="enunciados">Alto (86-100%)</label>
+                    <label for="enunciados">Líder (86-100%)</label>
                     <textarea type="text" rows="1.5" name="enunciados[]" class="form-control">{{  old('enunciados.4')  }}</textarea>
                 </div>
         </div>

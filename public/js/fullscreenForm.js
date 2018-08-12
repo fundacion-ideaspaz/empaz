@@ -42,6 +42,9 @@
 			if( opt.inner ) {
 				el.innerHTML = opt.inner;
 			}
+			if( opt.id ) {
+				el.setAttribute("id", opt.id);
+			}
 			if( opt.appendTo ) {
 				opt.appendTo.appendChild( el );
 			}
@@ -106,6 +109,7 @@
 		this._initEvents();
 	};
 
+
 	/**
 	 * addControls function
 	 * create and insert the structure for the controls
@@ -115,7 +119,7 @@
 		this.ctrls = createElement( 'div', { cName : 'fs-controls', appendTo : this.el } );
 
 		// continue button (jump to next field)
-		this.ctrlContinue = createElement( 'button', { cName : 'fs-continue', inner : 'Continuar', appendTo : this.ctrls } );
+		this.ctrlContinue = createElement( 'button', { cName : 'fs-continue', inner : 'Continuar', appendTo : this.ctrls, id: 'continuar' } );
 		this._showCtrl( this.ctrlContinue );
 
 		//jump to overview buttom
@@ -136,14 +140,14 @@
 
 		// field number status
 		if( this.options.ctrlNavPosition ) {
-			this.ctrlFldStatus = createElement( 'span', { cName : 'fs-numbers', appendTo : this.ctrls } );
+			this.ctrlFldStatus = createElement( 'span', { cName : 'fs-numbers', appendTo : this.ctrls, id: 'numbers' } );
 
 			// current field placeholder
 			this.ctrlFldStatusCurr = createElement( 'span', { cName : 'fs-number-current', inner : Number( this.current ) } );
 			this.ctrlFldStatus.appendChild( this.ctrlFldStatusCurr );
 
 			// total fields placeholder
-			this.ctrlFldStatusTotal = createElement( 'span', { cName : 'fs-number-total', inner : this.fieldsCount } );
+			this.ctrlFldStatusTotal = createElement( 'span', { cName : 'fs-number-total', inner : this.fieldsCount -1 } );
 			this.ctrlFldStatus.appendChild( this.ctrlFldStatusTotal );
 			this._showCtrl( this.ctrlFldStatus );
 		}

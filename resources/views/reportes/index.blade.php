@@ -153,7 +153,7 @@
             </tr>
               <tr>
               <td><strong>Email</strong></td>
-              <td>{{$empresa->user->email}}</td>
+              <td style="word-break: break-all;">{{$empresa->user->email}}</td>
             </tr>
               <tr>
               <td><strong>Fecha del informe:</strong></td>
