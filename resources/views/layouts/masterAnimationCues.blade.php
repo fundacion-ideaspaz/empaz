@@ -126,7 +126,7 @@
   <div class="row">
     <div class="col-md-6"></div>
     <div class="col-md-6">
-            <a href="http://ideaspaz.org/" target="_blank"><img src="http://ideaspaz.org/img/website/graphics/logo.svg" width="100"></a>
+      <a class="navbar-brand" href="http://ideaspaz.org/" target="_blank"><img src="/img/logo.svg" width="100"></a>
       <a class="navbar-brand" href="https://www.ccb.org.co/" target="_blank"><img src="/img/CCB_140.png" width="190"></a>
     </div>
   </div>
