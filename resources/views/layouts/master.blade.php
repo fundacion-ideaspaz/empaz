@@ -207,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="row">
     <div class="col-md-6"></div>
     <div class="col-md-6">
-      <a class="navbar-brand" href="http://ideaspaz.org/" target="_blank"><img src="/img/logo.svg" width="100"></a>
+      <a class="navbar-brand" href="http://ideaspaz.org/" target="_blank"><img src="/img/logo-fip.svg" width="100"></a>
       <a class="navbar-brand" href="https://www.ccb.org.co/" target="_blank"><img src="/img/CCB_140.png" width="190"></a>
     </div>
   </div>
